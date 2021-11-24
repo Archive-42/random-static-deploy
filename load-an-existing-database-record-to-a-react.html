@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>load-an-existing-database-record-to-a-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="load-an-existing-database-record-to-a-react.js-form">Load an Existing Database Record to a React.js Form</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 10, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>15,549 Views</p></li>
+<li><p>Oct 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>15,549 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>24</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-creatingtheformcomponent" class="menu-link">Creating the Form Component</a></li>
+<li><a href="#module-interactingwiththeapi" class="menu-link">Interacting with the API</a></li>
+<li><a href="#module-railsservercode" class="menu-link">Rails Server Code</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The common operations in any information system are the <em>create</em>, <em>read</em>, <em>update</em>, and <em>delete</em> (CRUD) operations against a record in the database. In this guide, we’ll take a look at how to perform the <em>create</em> and <em>update</em> parts in the context of a React.js app. The component should be able to provide a form that will deal with saving information as a new record or updating an existing record. In traditional approaches, to distinguish a <span class="jsx-3120878690"><code>create</code></span> from an <span class="jsx-3120878690"><code>update</code></span> coming from a form, the <span class="jsx-3120878690"><code>id</code></span> value has to be present in order to indicate that the form details will perform an update rather than a create. This has been a security risk, however, since the <span class="jsx-3120878690"><code>id</code></span> is sometimes exposed either as a hidden value within HTML or as part of the URL to connect to. We’ll see in this guide that we can use React.js’ state management approach to maintain the <span class="jsx-3120878690"><code>id</code></span> value only within the React.js logic and not in the interface itself.</p>
+<p>Before we begin, let’s make three assumptions:</p>
+<ol type="1">
+<li>We’ll be persisting an object that models a person with an <span class="jsx-3120878690"><code>id</code></span>, <span class="jsx-3120878690"><code>first_name</code></span> and <span class="jsx-3120878690"><code>last_name</code></span>.</li>
+<li>React.js interacts with a backend API running in <span class="jsx-3120878690"><code>http://localhost:3000/api/v1/people/save</code></span>.</li>
+<li>To fetch data for an existing person, we can access an API via a GET request in the endpoint <span class="jsx-3120878690"><code>http://localhost:3000/api/v1/people/fetch</code></span>.</li>
+</ol>
+<p>This guide will provide a simple set of instructions on how to implement the backend using Ruby on Rails in the section <strong>Rails Server Code</strong> at the end. Regardless, you can still use your own favorite framework to implement the backend that meets the assumptions above.</p>
+<h2 id="creating-the-form-component">Creating the Form Component</h2>
+<p>Create an initial component that maintains the <span class="jsx-3120878690"><code>id</code></span>, <span class="jsx-3120878690"><code>first_name</code></span>, and <span class="jsx-3120878690"><code>last_name</code></span> states reflecting the data model of a person.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class PersonForm extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      id: props.id,
+10      firstName: &quot;&quot;,
+11      lastName: &quot;&quot;
+12    }
+13  }
+14
+15  updateFirstName(event) {
+16    this.setState({
+17      firstName: event.target.value 
+18    });
+19  }
+20
+21  updateLastName(event) {
+22    this.setState({
+23      lastName: event.target.value 
+24    });
+25  }
+26
+27  render() {
+28    return (
+29      &lt;div&gt;
+30        First Name:
+31        &lt;input type=&quot;text&quot; value={this.state.firstName} onChange={this.updateFirstName.bind(this)} /&gt;
+32        Last Name:
+33        &lt;input type=&quot;text&quot; value={this.state.lastName} onChange={this.updateLastName.bind(this)} /&gt;
+34        &lt;hr/&gt;
+35
+36        &lt;button&gt;
+37          Save
+38        &lt;/button&gt;
+39      &lt;/div&gt;
+40    );
+41  }
+42}</code></pre>
+<p>javascript</p>
+<p>This is a standard React.js component that has minimal logic in it, namely, the utilization of <span class="jsx-3120878690"><code>updateFirstName</code></span> and <span class="jsx-3120878690"><code>updateLastName</code></span> methods to update the state of <span class="jsx-3120878690"><code>firstName</code></span> and <span class="jsx-3120878690"><code>lastName</code></span> whenever the user changes something. Notice also that in the constructor, you get to pass an <span class="jsx-3120878690"><code>id</code></span> as part of <span class="jsx-3120878690"><code>props</code></span>. This suggests that it is possible to mount this component and pass an <span class="jsx-3120878690"><code>id</code></span> from the parent calling it, which will provide information to perform an update. Optionally, you can also not pass an <span class="jsx-3120878690"><code>id</code></span> suggesting that you’re using the component to create a new record.</p>
+<h2 id="interacting-with-the-api">Interacting with the API</h2>
+<p>Create a method that will perform a POST to the API endpoint <span class="jsx-3120878690"><code>/api/v1/people/save</code></span>. The method looks like the following:</p>
+<pre><code>1save() {
+2  var context = this;
+3
+4  $.ajax({
+5    url: &quot;http://localhost:3000/api/v1/people/save&quot;,
+6    method: &quot;POST&quot;,
+7    data: {
+8      id: context.state.id,
+9      first_name: context.state.firstName,
+10      last_name: context.state.lastName
+11    },
+12    success: function(response) {
+13      alert(&quot;Successfully saved record!&quot;);
+14    },
+15    error: function(response) {
+16      alert(&quot;Error in saving record!&quot;);
+17    }
+18  });
+19}</code></pre>
+<p>javascript</p>
+<p>Notice that you first have to create a proxy for <span class="jsx-3120878690"><code>this</code></span> so you can still refer to the instance of this component within the <span class="jsx-3120878690"><code>ajax</code></span> call, such as accessing the current state values <span class="jsx-3120878690"><code>context.state.id</code></span>, <span class="jsx-3120878690"><code>context.state.firstName</code></span>, and <span class="jsx-3120878690"><code>context.state.lastName</code></span>. This will perform a POST method against the API. If no <span class="jsx-3120878690"><code>id</code></span> was supplied then it creates a record. But if an <span class="jsx-3120878690"><code>id</code></span> was initially supplied to the component via <span class="jsx-3120878690"><code>props</code></span>, then the backend should perform an update instead.</p>
+<p>Finally, connect the <span class="jsx-3120878690"><code>save</code></span> method to the <span class="jsx-3120878690"><code>onClick</code></span> attribute of the component’s button:</p>
+<pre><code>1&lt;button onClick={this.save.bind(this)}&gt;
+2  Save
+3&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<h2 id="rails-server-code">Rails Server Code</h2>
+<p>Make sure you have an application server running with the specifications mentioned earlier. This section will allow you to implement a backend server written in Ruby on Rails using the sqlite database so you won’t have any dependencies besides Rails.</p>
+<ol type="1">
+<li><p>Create a new project.</p>
+<p>1$ rails new sampleapi 2$ cd sampleapi</p></li>
+</ol>
+<p>bash</p>
+<ol type="1">
+<li><p>Create a model for person and load it to the database.</p>
+<p>1$ rails g model Person first_name:string last_name:string 2$ rake db:migrate</p></li>
+</ol>
+<p>bash</p>
+<ol type="1">
+<li><p>In the file <span class="jsx-3120878690"><code>config/routes.rb</code></span>, create the API route definition.</p>
+<p>1namepsace :api do 2 namespace :v1 do 3 get “/people/fetch”, to: “people#fetch” 4 post “/people/save”, to: “people#save” 5 end 6end</p></li>
+</ol>
+<p>ruby</p>
+<ol type="1">
+<li><p>Create a controller for the API in <span class="jsx-3120878690"><code>app/controllers/api/v1/people_controller.rb</code></span>.</p>
+<p>1module Api 2 module V1 3 class PeopleController &lt; ApplicationController 4 protect_from_forgery with: :null_session 5 6 def fetch 7 person = Person.find(params[:id]) 8 9 render json: person 10 end 11 12 def save 13 person = Person.find_by_id(params[:id]) 14 15 if person.present? 16 person.first_name = params[:first_name] 17 person.last_name = params[:last_name] 18 else 19 person = Person.new(first_name: params[:first_name], last_name: params[:last_name]) 20 end 21 22 person.save! 23 24 render json: { message: “success”, id: person.id } 25 end 26 end 27 end 28end</p></li>
+</ol>
+<p>ruby</p>
+<ol type="1">
+<li><p>Run the server and bind it to localhost.</p>
+<p>1$ rails server -b 127.0.0.1</p></li>
+</ol>
+<p>bash</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>The final code should look like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class PersonForm extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      id: props.id,
+10      firstName: &quot;&quot;,
+11      lastName: &quot;&quot;
+12    }
+13  }
+14
+15  updateFirstName(event) {
+16    this.setState({
+17      firstName: event.target.value 
+18    });
+19  }
+20
+21  updateLastName(event) {
+22    this.setState({
+23      lastName: event.target.value 
+24    });
+25  }
+26
+27  save() {
+28    var context = this;
+29
+30    $.ajax({
+31      url: &quot;http://localhost:3000/api/v1/people/save&quot;,
+32      method: &quot;POST&quot;,
+33      data: {
+34        id: context.state.id,
+35        first_name: context.state.firstName,
+36        last_name: context.state.lastName
+37      },
+38      success: function(response) {
+39        alert(&quot;Successfully saved record!&quot;);
+40      },
+41      error: function(response) {
+42        alert(&quot;Error in saving record!&quot;);
+43      }
+44    });
+45  }
+46
+47  render() {
+48    return (
+49      &lt;div&gt;
+50        First Name:
+51        &lt;input type=&quot;text&quot; value={this.state.firstName} onChange={this.updateFirstName.bind(this)} /&gt;
+52        Last Name:
+53        &lt;input type=&quot;text&quot; value={this.state.lastName} onChange={this.updateLastName.bind(this)} /&gt;
+54        &lt;hr/&gt;
+55
+56        &lt;button onClick={this.save.bind(this)}&gt;
+57          Save
+58        &lt;/button&gt;
+59      &lt;/div&gt;
+60    );
+61  }
+62}</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>With just a few lines of code, you now have a recyclable component that deals with both the creation and updating of a record from a database. Of course, the information that is managed will largely depend on the attributes that were specified, as well as the API endpoints to connect to. However, the point of this approach is that you can take advantage of React.js’ state management mechanisms to create a form with an interface that reflects an existing schema in the backend. As opposed to other approaches, this is considered more secure since the <span class="jsx-3120878690"><code>id</code></span> value is never exposed in the user interface.</p>
+<p>As a challenge, I purposely left out the logic for fetching a record from the database. Try to see if you can write a method called <span class="jsx-3120878690"><code>fetch(id)</code></span> with logic that makes a call against <span class="jsx-3120878690"><code>/api/v1/people/fetch</code></span> and loads the values into the form by calling <span class="jsx-3120878690"><code>setState</code></span> within <span class="jsx-3120878690"><code>fetch(id)</code></span>. Ideally, this is the only addition you need as everything else in the form will follow the extracted attributes from the API.</p>
+<p>For any questions or concerns, or if you simply want to chat about programming in general, hit me up <span class="citation" data-cites="happyalampay">[@happyalampay]</span>(https://twitter.com/happyalampay)!</p>
+<p>24</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

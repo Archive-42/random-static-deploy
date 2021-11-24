@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-use-managed-identity-with-azure-blob-and-queue-storage</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="how-to-use-managed-identities-with-azure-blob-and-queue-storage">How to Use Managed Identities with Azure Blob and Queue Storage</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 16, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>5,434 Views</p></li>
+<li><p>Oct 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>5,434 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Blob Storage</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Engineering</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Platforms</span></p>
+<p>Introduction</p>
+<p>11</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-managedidentities" class="menu-link">Managed Identities</a></li>
+<li><a href="#module-usemanagedidentitieswithazurestorageblobs" class="menu-link">Use Managed Identities with Azure Storage Blobs</a></li>
+<li><a href="#module-connecttomultiplestorageaccounts" class="menu-link">Connect to Multiple Storage Accounts</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Azure Blob and Queue Storage is a low-cost solution to store and access unstructured data at scale. <a href="https://www.nuget.org/packages/Azure.Storage.Queues">Queues</a> integrate easily with managed identities, which are appealing because secrets such as connection strings are not required to be copied onto developers’ machines or checked into source control. In this guide, you will learn how to use managed identities to connect a .NET app service to Azure Blob Storage and Azure Queue Storage.</p>
+<h2 id="managed-identities">Managed Identities</h2>
+<p>In Azure, a managed identity allows an Azure resource to have an identity created for it automatically in Azure Active Directory (AD). This allows these resources to identify themselves to other protected Azure resources, such as storage accounts, using Azure AD authentication. This guide will look at using managed identities with Azure App Services.</p>
+<p>Azure App Services supports both user-assigned and system-assigned managed identities. There are a few differences:</p>
+<ul>
+<li><strong>System-assigned</strong> identities are linked to the lifecycle of Azure App Service. This means that when you delete the app service, its managed identities will also be deleted for you. Only a specific app service can identify itself as a specific user identity. This means that each deployment slot receives its own system-assigned identity.</li>
+<li><strong>User-assigned identities</strong> are a separate resource that appears in a resource group. The same user-assigned identity can be assigned to multiple resources. This is useful if you want all your deployment slots on an app service to have the same identity to reduce the number of role assignments.</li>
+</ul>
+<h2 id="use-managed-identities-with-azure-storage-blobs">Use Managed Identities with Azure Storage Blobs</h2>
+<p>To start using an Azure App Service managed identities, create a new project and install a few packages.</p>
+<p>Microsoft’s newest packages make it easy to do this with minimal code. Run the following commands in the command prompt:</p>
+<pre><code>1mkdir PLStorageManagedIdentity
+2cd PLStorageManagedIdentity
+3dotnet new mvc
+4dotnet add package Azure.Storage.Blobs
+5dotnet add package Azure.Identity
+6dotnet add package Microsoft.Extensions.Azure</code></pre>
+<p>sh</p>
+<p>The code above creates a new MVC project and installs <span class="jsx-3120878690"><code>Azure.Storage.Blobs</code></span>, <span class="jsx-3120878690"><code>Azure.Identity</code></span>, and <span class="jsx-3120878690"><code>Microsoft.Extensions.Azure</code></span>. <span class="jsx-3120878690"><code>Azure.Identity</code></span> is a generic package that allows you to fetch tokens to authorize with differences protected Azure resources.</p>
+<p>Then update your <span class="jsx-3120878690"><code>Startup.cs</code></span> file to register Blob Services for dependency injection.</p>
+<pre><code>1// Startup.cs
+2public void ConfigureServices(IServiceCollection services)
+3{
+4  services.AddControllersWithViews();
+5  services.AddAzureClients(cfg =&gt;
+6  {
+7     cfg.AddBlobServiceClient(Configuration.GetSection(&quot;Blobs&quot;)).WithCredential(new Azure.Identity.DefaultAzureCredential());
+8  });
+9}</code></pre>
+<p>csharp</p>
+<p>The code above will look at your configuration, such as <span class="jsx-3120878690"><code>AppSettings.json</code></span>, to determine which Azure Storage Blob account to connect. If it is run on your development machine, it will use Visual Studio or Azure CLI to attempt to authenticate. When run in the Azure App Service, it will use the user-assigned identity discussed above.</p>
+<p>To configure the Azure Storage Blob account, you can update <span class="jsx-3120878690"><code>AppSettings.json</code></span> to the following:</p>
+<pre><code>1{
+2  &quot;Logging&quot;: {
+3    &quot;LogLevel&quot;: {
+4      &quot;Default&quot;: &quot;Information&quot;,
+5      &quot;Microsoft&quot;: &quot;Warning&quot;,
+6      &quot;Microsoft.Hosting.Lifetime&quot;: &quot;Information&quot;
+7    }
+8  },
+9  &quot;AllowedHosts&quot;: &quot;*&quot;,
+10  &quot;Blobs&quot;: {
+11    &quot;ServiceUri&quot;: &quot;https://xxxxxxxx.blob.core.windows.net/&quot;
+12  }
+13}</code></pre>
+<p>json</p>
+<p>Note that no secrets like connection strings or passwords are required. You will also need to make sure your identities have the correct roles for the Azure Storage Blob account. If you need read and write access, assign the <span class="jsx-3120878690"><code>Storage Blob Data Contributor</code></span> built-in role.</p>
+<p>Finally, to use the newly registered blob services, update <span class="jsx-3120878690"><code>HomeController.cs</code></span> with the following:</p>
+<pre><code>1public HomeController(ILogger&lt;HomeController&gt; logger, BlobServiceClient blobServiceClient)
+2{
+3    _logger = logger;
+4    _blobContainerClient = blobServiceClient.GetBlobContainerClient(&quot;artifacts&quot;);
+5}
+6private readonly BlobContainerClient _blobContainerClient;
+7
+8public IActionResult Blob()
+9{
+10    var result = new { exists = _blobContainerClient.Exists() };
+11    return Json(result);
+12}</code></pre>
+<p>csharp</p>
+<p>With your roles set up correctly, you can now read and write to the blob container. Queue storage and file storage services can be also be authenticated in a similar way.</p>
+<h2 id="connect-to-multiple-storage-accounts">Connect to Multiple Storage Accounts</h2>
+<p>So far, the code above only connects to one storage account. The Azure SDK also makes it easy to connect to multiple storage accounts.</p>
+<pre><code>1services.AddAzureClients(cfg =&gt;
+2{
+3  cfg.AddBlobServiceClient(Configuration.GetSection(&quot;Blobs&quot;)).WithCredential(new Azure.Identity.DefaultAzureCredential());
+4  cfg.AddBlobServiceClient(Configuration.GetSection(&quot;Inputs&quot;)).WithName(&quot;Inputs&quot;).WithCredential(new Azure.Identity.DefaultAzureCredential());
+5});</code></pre>
+<p>csharp</p>
+<p>You have created a named registration and a default registration. They are configured separately in the <span class="jsx-3120878690"><code>AppSettings.json</code></span> file.</p>
+<pre><code>1{
+2  &quot;Blobs&quot;: {
+3    &quot;ServiceUri&quot;: &quot;https://xxxxxxxx.blob.core.windows.net/&quot;
+4  },
+5  &quot;Inputs&quot;: {
+6    &quot;ServiceUri&quot;: &quot;https://yyyyyyyy.blob.core.windows.net/&quot;
+7  }
+8}</code></pre>
+<p>There are two separate <span class="jsx-3120878690"><code>ServiceUri</code></span>s set. There are two configuration sections, one called <span class="jsx-3120878690"><code>Blobs</code></span> and one called <span class="jsx-3120878690"><code>Inputs</code></span>.</p>
+<p>To access them in the rest of your code, you need to use the <span class="jsx-3120878690"><code>IAzureClientFactory</code></span>.</p>
+<pre><code>1public HomeController(
+2    ILogger&lt;HomeController&gt; logger,
+3    IAzureClientFactory&lt;BlobServiceClient&gt; clientFactory,
+4    BlobServiceClient blobServiceClient)
+5{
+6    _logger = logger;
+7    var client2 = clientFactory.CreateClient(&quot;Inputs&quot;);
+8    _blobContainerClient = blobServiceClient.GetBlobContainerClient(&quot;artifacts&quot;);
+9}</code></pre>
+<p>csharp</p>
+<p>If you want to access the default Azure Storage Blob Account, you can directly inject <span class="jsx-3120878690"><code>BlobServiceClient</code></span> to the constructor. If you want to access a named registration, you need to inject the <span class="jsx-3120878690"><code>IAzureClientFactory&lt;T&gt;</code></span> and call its <span class="jsx-3120878690"><code>CreateClient("Inputs")</code></span> method. This is similar to using the <span class="jsx-3120878690"><code>HttpClientFactory</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Microsoft Azure has a growing list of <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities">services that support managed identities for Azure resources</a>. Using this feature can enhance the security of your application since you don’t need to manage secrets yourself. To build on these skills, read about <a href="https://app.pluralsight.com/guides/how-to-define-azure-rbac">How to Define Azure Role-based Access Control (RBAC)</a>.</p>
+<p>11</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

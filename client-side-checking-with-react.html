@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>client-side-checking-with-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="client-side-checking-with-react.js-jsx-events-using-onblur">Client-side Checking with React.js JSX Events Using onBlur</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 5, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>6,802 Views</p></li>
+<li><p>Oct 5, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>6,802 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>13</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-eventhandlers" class="menu-link">Event Handlers</a></li>
+<li><a href="#module-bindingtoonblur" class="menu-link">Binding to <code>onBlur</code></a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>One common event in HTML is <span class="jsx-3120878690"><code>onBlur</code></span>, wherein an input element loses focus as it is passed to another element. This is often done when the user hits tab or simply clicks the next input element. Capturing this event and applying logic to it allows other UI interactivity, such as validation of user input as focus is released. This way the user won’t have to wait to submit the input before finding out what went wrong. This simple example will demonstrate how to hook in logic with the <span class="jsx-3120878690"><code>onBlur</code></span> event in the context of a React.js component.</p>
+<h2 id="setup">Setup</h2>
+<p>Suppose you have a login form that accepts a username and password in the form of a React.js component.</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class LoginForm extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      username: &quot;&quot;,
+9      password: &quot;&quot;,
+10      messageUsername: &quot;&quot;,
+11      messagePassword: &quot;&quot;
+12    }
+13  }
+14
+15  render() {
+16    return (
+17      &lt;div&gt;
+18        &lt;label&gt;
+19          Username:
+20        &lt;/label&gt;
+21        &lt;input
+22          type=&quot;text&quot;
+23        /&gt;
+24        {this.state.messageUsername}
+25        &lt;br/&gt;
+26        &lt;label&gt;
+27          Password:
+28        &lt;/label&gt;
+29        &lt;input
+30          type=&quot;password&quot;
+31        /&gt;
+32        {this.state.messagePassword}
+33        &lt;hr/&gt;
+34        &lt;button&gt;
+35          Login
+36        &lt;/button&gt;
+37      &lt;/div&gt;
+38    );
+39  }
+40}</code></pre>
+<p>javascript</p>
+<p>The following state values are maintained in this component:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>username</code></span>: The variable to hold the username that the user would enter</li>
+<li><span class="jsx-3120878690"><code>password</code></span>: The variable to hold the password that the user would enter</li>
+<li><span class="jsx-3120878690"><code>messageUsername</code></span>: Message to be displayed after user loses focus from username input and some condition is passed to invoke a notification relating to the username.</li>
+<li><span class="jsx-3120878690"><code>messagePassword</code></span>: Message to be displayed after user loses focus from password input and some condition is passed to invoke a notification relating to the password.</li>
+</ul>
+<h2 id="event-handlers">Event Handlers</h2>
+<p>You should have an event handler function that will be triggered in the event of an <span class="jsx-3120878690"><code>onBlur</code></span>. To do this, first define the needed function:</p>
+<pre><code>1handleOnBlurUsername(event) {
+2  var username        = event.target.value;
+3  var messageUsername = &quot;&quot;;
+4
+5  if(!username) {
+6    messageUsername = &quot;Username required&quot;; 
+7  }
+8
+9  this.setState({
+10    username: username,
+11    messageUsername: messageUsername
+12  });
+13}</code></pre>
+<p>javascript</p>
+<p>The logic of the function is pretty simple. First, it gets the <span class="jsx-3120878690"><code>username</code></span> of the input by accessing it from <span class="jsx-3120878690"><code>event.target.value</code></span>. Next, it sets a blank value for a temporary <span class="jsx-3120878690"><code>messageUsername</code></span> variable. You apply a simple rule that checks if <span class="jsx-3120878690"><code>username</code></span> has a value. If not, then fill in a value of <span class="jsx-3120878690"><code>"Username required"</code></span> for <span class="jsx-3120878690"><code>messageUsername</code></span>. The function ends by updating the state of <span class="jsx-3120878690"><code>username</code></span> and <span class="jsx-3120878690"><code>messageUsername</code></span> for this component.</p>
+<h2 id="binding-to-onblur">Binding to `onBlur`</h2>
+<p>Given your event handler, attach the function to the <span class="jsx-3120878690"><code>input</code></span> element for the username like so:</p>
+<pre><code>1&lt;input
+2  type=&quot;text&quot;
+3  onBlur={this.handleOnBlurUsername.bind(this)}
+4/&gt;</code></pre>
+<p>jsx</p>
+<p>Make sure that you call <span class="jsx-3120878690"><code>.bind(this)</code></span> after the function in order to retain <span class="jsx-3120878690"><code>this</code></span> to point to the instance of the component.</p>
+<p>Now that the function is attached to the input, if a user leaves or releases focus from the input element for username and nothing was put in, <span class="jsx-3120878690"><code>messageUsername</code></span> will be set with a message which in turn will appear below the input element, thus notifying the user that they need to input a username.</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>The overall code should look like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class LoginForm extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      username: &quot;&quot;,
+9      password: &quot;&quot;,
+10      messageUsername: &quot;&quot;,
+11      messagePassword: &quot;&quot;
+12    }
+13  }
+14
+15  handleOnBlurUsername(event) {
+16    var username        = event.target.value;
+17    var messageUsername = &quot;&quot;;
+18
+19    if(!username) {
+20      messageUsername = &quot;Username required&quot;; 
+21    }
+22
+23    this.setState({
+24      username: username,
+25      messageUsername: messageUsername
+26    });
+27  }
+28
+29  render() {
+30    return (
+31      &lt;div&gt;
+32        &lt;label&gt;
+33          Username:
+34        &lt;/label&gt;
+35        &lt;input
+36          type=&quot;text&quot;
+37          onBlur={this.handleOnBlurUsername.bind(this)}
+38        /&gt;
+39        {this.state.messageUsername}
+40        &lt;br/&gt;
+41        &lt;label&gt;
+42          Password:
+43        &lt;/label&gt;
+44        &lt;input
+45          type=&quot;password&quot;
+46        /&gt;
+47        {this.state.messagePassword}
+48        &lt;hr/&gt;
+49        &lt;button&gt;
+50          Login
+51        &lt;/button&gt;
+52      &lt;/div&gt;
+53    );
+54  }
+55}
+56
+57Test it out by first clicking the username input element and then immediately pressing tab or clicking the password input element to release focus from the username input. The message should then appear after the focus is released if nothing was put in.</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>There are many events in HTML that allow you to attach event handlers to add additional logic and create a more interactive experience with the user. <span class="jsx-3120878690"><code>onBlur</code></span> triggers when focus is lost from the input element in context. In React.js, we bind event handlers by passing a method defined in the component to be called accordingly. <span class="jsx-3120878690"><code>.bind(this)</code></span> is called in order to retain the value of <span class="jsx-3120878690"><code>this</code></span> and expose component methods within the event handler function such as <span class="jsx-3120878690"><code>this.setState</code></span>.</p>
+<p>If you notice the code, only <span class="jsx-3120878690"><code>username</code></span> handling was implemented. As additional practice, try the same approach discussed in this guide to attach an event handler to <span class="jsx-3120878690"><code>onBlur</code></span> for the password section of the component. Try to add additional rules to change the message that appears below each input element if that rule is invoked.</p>
+<p>13</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

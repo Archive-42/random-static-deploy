@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>introduction-to-django-templates</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="introduction-to-django-templates">Introduction to Django Templates</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 18, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>17,601 Views</p></li>
+<li><p>Nov 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>17,601 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>73</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whydjangotemplates" class="menu-link">Why Django Templates</a></li>
+<li><a href="#module-templateconfiguration" class="menu-link">Template Configuration</a></li>
+<li><a href="#module-thedjangotemplatelanguage" class="menu-link">The Django Template Language</a></li>
+<li><a href="#module-templateinheritance" class="menu-link">Template Inheritance</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In the Django MTV model, the template is the presentation layer. This layer interacts with the user, sends the requests to the views, and responds to the user.</p>
+<p>Django templates deal with HTML/CSS/JS. All rendering is handled in templates. Other than the basic constructs of HTML/CSS/JS, Django comes with templating language to render dynamic data in the form of templates. In this guide, you will learn about the Django templates and the language constructs that are necessary to build a Django application.</p>
+<h2 id="why-django-templates">Why Django Templates</h2>
+<p>Django template is a text document or Python string marked up that uses Django template language. Django keeps the logic and code separate from the design. It is essential to know that Django templates do not contain the embedded code of Python into HTML.</p>
+<p>Django templates follow the DRY (do not repeat yourself) design principle, which requires developers to not repeat while designing a Django application. Django templates employ several other notions, such as template inheritance, tags, variables, filters, comments, etc.</p>
+<h2 id="template-configuration">Template Configuration</h2>
+<p>To configure the Django template system, go to the <span class="jsx-3120878690"><code>settings.py</code></span> file and update the <span class="jsx-3120878690"><code>DIRS</code></span> to the path of the templates folder. Generally, the <span class="jsx-3120878690"><code>templates</code></span> folder is created and kept in the sample directory where <span class="jsx-3120878690"><code>manage.py</code></span> lives. This templates folder contains all the templates you will create in different Django Apps.</p>
+<pre><code>1import os
+2
+3TEMPLATES = [
+4    {
+5        &#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;,
+6        &#39;DIRS&#39;: [os.path.join(BASE_DIR,&#39;templates&#39;)],
+7        &#39;APP_DIRS&#39;: True,
+8        &#39;OPTIONS&#39;: {
+9            &#39;context_processors&#39;: [
+10                &#39;django.template.context_processors.debug&#39;,
+11                &#39;django.template.context_processors.request&#39;,
+12                &#39;django.contrib.auth.context_processors.auth&#39;,
+13                &#39;django.contrib.messages.context_processors.messages&#39;,
+14            ],
+15        },
+16    },
+17]</code></pre>
+<p>python</p>
+<p>Alternatively, you can maintain a template folder for each app separately. If you are maintaining the template for every app separately, you don’t need to update the <span class="jsx-3120878690"><code>DIRS</code></span> in <span class="jsx-3120878690"><code>settings.py</code></span>. Make sure that your app is added in <span class="jsx-3120878690"><code>INSTALLED_APPS</code></span> in <span class="jsx-3120878690"><code>settings.py</code></span> .</p>
+<h2 id="the-django-template-language">The Django Template Language</h2>
+<p>In the Django template language, the syntax involves four major constructs.</p>
+<h3 id="variables">1. Variables</h3>
+<p>Variables output the value from the context. The context is generally a <span class="jsx-3120878690"><code>dict</code></span>-like object (mapping variable name with its respective value) passed from views.</p>
+<p>The basic syntax is:</p>
+<pre><code>1{{ variable_name }}</code></pre>
+<p>django</p>
+<p>For example, if you render the context set as shown below …</p>
+<pre><code>1from django.shortcuts import render
+2
+3def my_view(request):
+4    context = {
+5        &quot;author&quot;: &quot;Gaurav Singhal&quot;,
+6        &quot;website&quot;: {
+7            &quot;domain&quot;: &quot;https://pluralsight.com&quot;,
+8            &quot;views&quot;: 200
+9        },
+10        &quot;odds&quot;: [1, 3, 5]
+11    }
+12    return render(request, &quot;index.html&quot;, context)</code></pre>
+<p>python</p>
+<p>… you can access it in template <span class="jsx-3120878690"><code>index.html</code></span> as :</p>
+<pre><code>1{{author}}
+2{{website.domain}}
+3{{website.views}}</code></pre>
+<p>django</p>
+<h3 id="tags">2. Tags</h3>
+<p>Tags give logic to the template language to render the content logically.</p>
+<p>The basic syntax is:</p>
+<pre><code>1{% tag_name %}</code></pre>
+<p>django</p>
+<p>Example:</p>
+<pre><code>1{% if user.is_authenticated %}Howdy, {{ user.username }}, How are you {% endif %}</code></pre>
+<p>django</p>
+<p>There are several tags which are used in templates Some of them are:</p>
+<ul>
+<li><p>If/Else:</p>
+<pre><code>1{% if condition %} 
+2   renders if body 
+3{% else %} 
+4    renders else body 
+5{% endif %}</code></pre>
+<p>django</p></li>
+<li><p>For loop</p>
+<pre><code>1{% for odd in odds %}
+2{{odd}}
+3{% endfor %}</code></pre>
+<p>django</p></li>
+<li><p>include</p></li>
+</ul>
+<p>This is used to load a template and render it to the current context. It is very useful for creating several components separately, such as navbar, footer, etc., and then including them in several templates.</p>
+<pre><code>1{% include template_name %}</code></pre>
+<p>django</p>
+<ul>
+<li>block</li>
+</ul>
+<p>This defines the block to be overridden by the child template. You will get a better idea of blocks when we discuss template inheritance .</p>
+<pre><code>1{% block content %}
+2{% endblock %}</code></pre>
+<p>django</p>
+<p>You can read more about built-in tags in the <a href="https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#built-in-tag-reference">Django docs</a>.</p>
+<h3 id="filters">3. Filters</h3>
+<p>The filter is used to transform the value of the variable and tag argument.</p>
+<p>It can be used as:</p>
+<pre><code>1{{ my_variable | filter }}</code></pre>
+<p>django</p>
+<p>For example:</p>
+<pre><code>1{{ my_date|date:&quot;Y-m-d&quot; }}</code></pre>
+<p>django</p>
+<p>You can read more about filter and several built-in filters in the <a href="https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#ref-templates-builtins-filters">Django docs</a>.</p>
+<h3 id="comments">4. Comments</h3>
+<p>You can easily add a comment in Django templates:</p>
+<pre><code>1{# Comment here. It won&#39;t be rendered #}</code></pre>
+<p>django</p>
+<h2 id="template-inheritance">Template Inheritance</h2>
+<p>One of the most powerful parts of the Django template engine is template inheritance. This allows you to build a base skeleton template that contains all the base/common elements and defines blocks in a child/derived template after extending the base template. It is easier to understand in practice. Let’s first create a <span class="jsx-3120878690"><code>base.html</code></span>.</p>
+<pre><code>1&lt;html&gt;
+2   &lt;head&gt;
+3      &lt;title&gt;
+4         {% block title %}Base title{% endblock %}
+5      &lt;/title&gt;
+6        {% comment %} This Bootsrap css is added to all pages {% endcomment %}
+7      &lt;link rel=&quot;stylesheet&quot; href = &quot;https://cdn.jsdelivr.net/npm/[email protected]/dist/css/bootstrap.min.css&quot;&gt;
+8   &lt;/head&gt;
+9   &lt;body&gt;
+10    &lt;p&gt;
+11    Body content which remains in all the pages
+12    &lt;/p&gt;
+13      {% block content %}
+14         Body content
+15      {% endblock %}
+16   &lt;/body&gt;
+17&lt;/html&gt;</code></pre>
+<p>django</p>
+<p>Now create a child template and save it as <span class="jsx-3120878690"><code>index.html</code></span>.</p>
+<pre><code>1{% extends &#39;base.html&#39; %}
+2
+3{% block title %}
+4This is index title
+5{% endblock title %}
+6
+7{% block content %}
+8Main content of index.html
+9{% endblock content %}</code></pre>
+<p>django</p>
+<p>Now when you render the <span class="jsx-3120878690"><code>index.html</code></span> from the views, you will get the following output:</p>
+<pre><code>1Body content which remains in all the pages
+2
+3Main content of index.html</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>A Django template deals with passing information from a Django view to the browser and is considered the basic building block of a dynamic Django application. You can refer to the Django documentation to learn <a href="https://docs.djangoproject.com/en/3.1/topics/templates/#module-django.template">Django template</a> in depth.</p>
+<p>If you have any questions, feel free to reach out to me at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>73</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-set-react-router-default-route-redirect-to-home</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="how-to-set-react-router-default-route-redirect-to-home">How to Set React Router Default Route Redirect to /home</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 12, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>189,196 Views</p></li>
+<li><p>Nov 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>189,196 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Client-side Framework</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>177</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-routingconfiguration" class="menu-link">Routing Configuration</a></li>
+<li><a href="#module-implementingdefaultrouteredirect" class="menu-link">Implementing Default Route Redirect</a></li>
+<li><a href="#module-conditionallyredirecttothedefaultpath" class="menu-link">Conditionally Redirect to the Default Path</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Routing allows us to configure an app that accepts various URLs and is mapped to specific components. Once the matching URL is found, then the matching page/component will be rendered into the HTML DOM.</p>
+<p>The routing works by comparing the URL against the specified list of routes in our React app. Each route is linked to a <span class="jsx-3120878690"><code>&lt;Route&gt;</code></span> component where we have configured the complete routing configuration.</p>
+<p>In this guide, you will learn how to get started with routing and redirect the default route to <span class="jsx-3120878690"><code>/home</code></span>.</p>
+<h2 id="routing-configuration">Routing Configuration</h2>
+<p>To get started with routing with React, you need first to install the library using this npm command:</p>
+<pre><code>1npm install react-router-dom </code></pre>
+<p>powershell</p>
+<p>There are some key terms you should know to get started with the routing configuration.</p>
+<h3 id="browserrouter">BrowserRouter</h3>
+<p>BrowserRouter is the router implementation that uses the <em>HTML5 history API</em> to keep your UI up to date with the browser URL.</p>
+<p>It is BrowserRouter’s responsibility to store all the components and its routes as an object.</p>
+<h3 id="switch">Switch</h3>
+<p>Switch components are used to render the default components once the app rendered, and it will switch between routes as needed.</p>
+<h3 id="route">Route</h3>
+<p>The route is a statement that holds the specific path of the app along with the component’s name and renders it once it matches the URL.</p>
+<h3 id="link">Link</h3>
+<p>The link is similar to the HREF link, which allows you to redirect to the specific components based on the specified path.</p>
+<h2 id="implementing-default-route-redirect">Implementing Default Route Redirect</h2>
+<p>So far in this guide, you have learned how to install the package and the terms that you are going to use for implementing the routing.</p>
+<p>You can achieve the router configuration by using an API called <em>BrowserRouter</em>, which wraps all the components that reside in our React app like this.:</p>
+<pre><code>1&lt;Router&gt;
+2    &lt;Switch&gt;
+3        &lt;Route exact path=&quot;/path1&quot; component={comp1} /&gt;
+4        &lt;Route exact path=&quot;/path2&quot; component={comp2} /&gt;
+5        &lt;Route exact path=&quot;/path3&quot; component={comp3} /&gt;
+6        &lt;Route exact path=&quot;/path4&quot; component={comp4} /&gt;
+7    &lt;/Switch&gt;
+8&lt;/Router&gt;</code></pre>
+<p>jsx</p>
+<p>In the above example, the <span class="jsx-3120878690"><code>&lt;Router&gt;</code></span> is a parent component that wraps other child components as a <span class="jsx-3120878690"><code>&lt;Route&gt;</code></span> that is connected to the specific components.</p>
+<p>The next step is to create four different components, as explained below.</p>
+<p><strong>Home.jsx</strong></p>
+<pre><code>1import React from &#39;react&#39;;
+2export default Home =&gt; &lt;div&gt;This is home component&lt;/div&gt;;</code></pre>
+<p>jsx</p>
+<p><strong>Test1.jsx</strong></p>
+<pre><code>1import React from &#39;react&#39;;
+2export default Test1 =&gt; &lt;div&gt;This is Test1 component&lt;/div&gt;;</code></pre>
+<p>jsx</p>
+<p><strong>Test2.jsx</strong></p>
+<pre><code>1import React from &#39;react&#39;;
+2export default Test2 =&gt; &lt;div&gt;This is Test2 component&lt;/div&gt;;</code></pre>
+<p>jsx</p>
+<p><strong>Test3.jsx</strong></p>
+<pre><code>1import React from &#39;react&#39;;
+2export default Test3 =&gt; &lt;div&gt;This is Test3 component&lt;/div&gt;;</code></pre>
+<p>jsx</p>
+<p>These are the four simple components that you are going to use for the routing as an example. Next, you’ll move on to the <strong>index.js</strong> file and paste the following lines of source code:</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { render } from &quot;react-dom&quot;;
+3import {
+4  BrowserRouter as Router,
+5  Switch,
+6  Route,
+7  Link,
+8  Redirect
+9} from &quot;react-router-dom&quot;;
+10import Home from &quot;./Home&quot;;
+11import Test1 from &quot;./Test1&quot;;
+12import Test2 from &quot;./Test2&quot;;
+13import Test3 from &quot;./Test3&quot;;
+14
+15class App extends Component {
+16  constructor() {
+17    super();
+18    this.state = {
+19      name: &quot;React&quot;,
+20      isUserAuthenticated: true
+21    };
+22  }
+23
+24  render() {
+25    return (
+26      &lt;div&gt;
+27        &lt;Router&gt;
+28          &lt;div&gt;
+29            &lt;ul&gt;
+30              &lt;li&gt;
+31                &lt;Link to=&quot;/home&quot;&gt;Home&lt;/Link&gt;
+32              &lt;/li&gt;
+33              &lt;li&gt;
+34                &lt;Link to=&quot;/test1&quot;&gt;Test 1&lt;/Link&gt;
+35              &lt;/li&gt;
+36              &lt;li&gt;
+37                &lt;Link to=&quot;/test2&quot;&gt;Test 2&lt;/Link&gt;
+38              &lt;/li&gt;
+39              &lt;li&gt;
+40                &lt;Link to=&quot;/test3&quot;&gt;Test 3&lt;/Link&gt;
+41              &lt;/li&gt;
+42            &lt;/ul&gt;
+43            &lt;hr /&gt;
+44            &lt;Switch&gt;
+45              &lt;Route
+46                exact
+47                path=&quot;/&quot;
+48                render={() =&gt; {
+49                    return (
+50                      this.state.isUserAuthenticated ?
+51                      &lt;Redirect to=&quot;/home&quot; /&gt; :
+52                      &lt;Redirect to=&quot;/test1&quot; /&gt; 
+53                    )
+54                }}
+55              /&gt;
+56               &lt;Route exact path=&quot;/home&quot; component={Home} /&gt;
+57              &lt;Route exact path=&quot;/test1&quot; component={Test1} /&gt;
+58              &lt;Route exact path=&quot;/test2&quot; component={Test2} /&gt;
+59              &lt;Route exact path=&quot;/test3&quot; component={Test3} /&gt;
+60            &lt;/Switch&gt;
+61          &lt;/div&gt;
+62        &lt;/Router&gt;
+63      &lt;/div&gt;
+64    );
+65  }
+66}
+67
+68render(&lt;App /&gt;, document.getElementById(&quot;root&quot;));</code></pre>
+<p>jsx</p>
+<p>There are two sections in these components:</p>
+<ul>
+<li><p>The first section has the list of <span class="jsx-3120878690"><code>&lt;Link&gt;</code></span> along with a path for components, so once a user clicks on any of those links, the router finds the matching URL from the list of routes</p></li>
+<li><p>The second section has the <span class="jsx-3120878690"><code>&lt;Route&gt;</code></span> configuration. Each route has the name of the components along with the path declaration, so when the user clicks on any <span class="jsx-3120878690"><code>&lt;Link&gt;</code></span>, the matching <span class="jsx-3120878690"><code>&lt;Route&gt;</code></span> is identified and rendered accordingly.</p></li>
+</ul>
+<p>The main thing to notice is that once the app is rendered, it will find the path <span class="jsx-3120878690"><code>‘/’</code></span>. However, the need is to redirect to the <span class="jsx-3120878690"><code>/home</code></span> path, which you can achieve using <span class="jsx-3120878690"><code>&lt;Redirect&gt;</code></span> just like this:</p>
+<pre><code>1&lt;Route exact path=&quot;/&quot;&gt;
+2    &lt;Redirect to=&quot;/home&quot; /&gt;
+3&lt;/Route&gt;</code></pre>
+<p>jsx</p>
+<p>In this code snippet, the default app path for the initial render is <span class="jsx-3120878690"><code>‘/’</code></span>, so if there is no path attached then it should redirect to the matching path, which is <span class="jsx-3120878690"><code>/home</code></span>.</p>
+<p>The <span class="jsx-3120878690"><code>&lt;Redirect&gt;</code></span> allows us to redirect to the new components based on the matching path from the current components to other specified components by overriding the history object.</p>
+<h2 id="conditionally-redirect-to-the-default-path">Conditionally Redirect to the Default Path</h2>
+<p>So far, you have learned how to redirect the components to a specific path. But in many scenarios, you may want to render specific components based on some condition.</p>
+<p>For this, you can use the ternary condition before redirecting to the different components, as explained below.</p>
+<p>Set one Boolean variable into the state like this.:</p>
+<pre><code>1constructor() {
+2    super();
+3    this.state = {
+4      isUserAuthenticated: true
+5    };
+6}</code></pre>
+<p>jsx</p>
+<p>So before redirecting to specific components, you need to make sure that whether the user is already logged in or not, the source code should look like this:</p>
+<pre><code>1&lt;Route
+2    exact
+3    path=&quot;/&quot;
+4    render={() =&gt; {
+5        return (
+6            this.state.isUserAuthenticated ?
+7            &lt;Redirect to=&quot;/home&quot; /&gt; :
+8            &lt;Redirect to=&quot;/test1&quot; /&gt; 
+9        )
+10    }}
+11/&gt;</code></pre>
+<p>jsx</p>
+<p>From the above example, you can see that when the path <span class="jsx-3120878690"><code>‘/’</code></span> is found, it will go to the <em>render</em> props where it identifies that the user is logged in or not using the <span class="jsx-3120878690"><code>this.state.isUserAuthenticated</code></span>. Based on the value, the redirect will happen.</p>
+<p>This is how you can redirect to specific components using <span class="jsx-3120878690"><code>&lt;Redirect&gt;</code></span> and also do it conditionally.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The routing is the first configuration that any app needs, and you have learned one of the best approaches to redirect components to the default route even if you have an empty path into the URL.</p>
+<p>Make sure to use these two approaches in your React app to simplify the routing. I hope this guide will be helpful for you to learn the best approach. If you have any queries, feel free to reach out at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>177</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

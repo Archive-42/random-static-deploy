@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>building-a-time-series-chart-in-tableau</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="building-a-time-series-chart-in-tableau">Building a Time Series Chart in Tableau</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 30, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>21,323 Views</p></li>
+<li><p>Oct 30, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>21,323 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Tableau</span></p>
+<p>Introduction</p>
+<p>27</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-steps" class="menu-link">Steps</a></li>
+<li><a href="#module-addingcategoriestotimeseries" class="menu-link">Adding Categories to Time Series</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Time series forecasting is a critical requirement for many organizations. The starting point of forecasting is a time series visualization, which provides the flexibility to reflect on historical data and analyze trends and seasonal components. It also helps to compare multiple dimensions over time, spot trends, and identify seasonal patterns in the data. A few examples include stock market analysis, population trend analysis using a census, or sales and profit trends over time.</p>
+<h3 id="definition-of-time-series">Definition of Time Series</h3>
+<p>Time series analysis is a statistical technique used to record and analyze data points over a period of time, such as daily, monthly, yearly, etc. A time series chart is the graphical representation of the time series data across the interval period.</p>
+<p>In this guide, you will learn how to build a time series chart in Tableau.</p>
+<h2 id="steps">Steps</h2>
+<p>Tableau provides convenient options for building time series charts. The built-in date and time functions allow you to use the drag-and-drop option to create and analyze time trends, drill down with a click, and easily perform trend analysis comparisons.</p>
+<p>To build a time series chart in Tableau, we will use the built-in Sample Superstore data that comes with the Tableau installation. Please follow the steps outlined below to create a time series chart.</p>
+<ol type="1">
+<li>Drag the <strong>Order Date</strong> field to the <strong>Columns</strong> shelf and the <strong>Sales</strong> variable to the <strong>Rows</strong> shelf. The default chart will give us a yearly trend line chart. The <strong>Marks</strong> shelf automatically selects a line graph for the chart.</li>
+</ol>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/33efc0d6-bf1d-4103-b7a9-31bb8811773d_Fig2.0.html" /><figcaption aria-hidden="true">ts1</figcaption>
+</figure>
+<ol type="1">
+<li>In the chart above, we see that the display is in years. To further drill down to quarter and month levels, we can simply click on the <strong>plus icon</strong> on the order date in the <strong>Columns</strong> shelf. This will generate the following output, which now displays the data broken down to the month and quarter level.</li>
+</ol>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/18f07f87-98cf-4563-9739-c0021329abb1_Fig2.1.html" /><figcaption aria-hidden="true">ts2</figcaption>
+</figure>
+<ol type="1">
+<li>The above chart is useful, but it is displayed in a discrete format. It will be more beneficial if the data is displayed in continuous form. To convert the chart into a continuous format time series chart, the first step is to roll up the <strong>YEAR (Order Date)</strong> back to year level, and then the second step is to right-click on it and select the <strong>Year</strong> and <strong>Continuous</strong> options. This is illustrated in the chart below.</li>
+</ol>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4446c6f9-1bc0-4f02-bebd-215d29cfb8f9_fig_2.3.html" /><figcaption aria-hidden="true">ts3</figcaption>
+</figure>
+<ol type="1">
+<li>Another option in Tableau to build the continuous chart is to directly select the line chart type in the <strong>Show Me</strong> card, as shown in the chart below.</li>
+</ol>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8bc4d2c1-20ba-44d9-a8b3-33dfe6662254_Fig_2.4.html" /><figcaption aria-hidden="true">ts4</figcaption>
+</figure>
+<p>The above chart shows the trend of annual sales during the period 2016 through 2019. There is a continuous trend of increase in sales volume. However, it is better to analyze the time series data by breaking it down to a monthly level.</p>
+<ol type="1">
+<li>It is easy to change the chart breakdown from annual to monthly. This can be done by simply changing the <strong>Columns</strong> shelf from <strong>YEAR (Order Date)</strong> to <strong>MONTH (Order Date)</strong>. This will generate a monthly time series chart. From an analytics perspective, this chart is more insightful as it allows us to see the sales fluctuations across months and years. This is also useful for decomposing the seasonality and trend components of the time series data.</li>
+</ol>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/511cfc9f-7007-4822-83e2-559ca88c5958_Fig_2.5.html" /><figcaption aria-hidden="true">ts5</figcaption>
+</figure>
+<ol type="1">
+<li>Tableau also provides the ability to change the path property as well as the chart type.</li>
+</ol>
+<h3 id="change-the-path-property">Change the Path Property</h3>
+<p>We can change the path property by going into the <strong>Marks</strong> shelf and clicking on the <strong>Path</strong> option. There are three options for the type of line graph for the view, and selecting the second option will produce the following chart. The output is like the previous chart, but the trend shifts are more pronounced now.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/043ce8c4-902a-4f08-9017-0fc706e1866f_Fig_2.6.html" /><figcaption aria-hidden="true">ts6</figcaption>
+</figure>
+<h3 id="change-the-chart-type">Change the Chart Type</h3>
+<p>We can change the chart type to options such as a bar or an area chart, either from the <strong>Marks</strong> shelf or from the <strong>Show Me</strong> option. However, for time series data, this is not suggested as the line chart is the best option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/89221260-3037-4f17-b95d-bdeb2f6c68f5_Figure2.7.html" /><figcaption aria-hidden="true">ts7</figcaption>
+</figure>
+<h2 id="adding-categories-to-time-series">Adding Categories to Time Series</h2>
+<p>In the previous sections, we have learned how to build a time series chart with two variables, <span class="jsx-3120878690"><code>sales</code></span> and <span class="jsx-3120878690"><code>time</code></span>. However, sometimes it is important to add more variables to a chart to understand and analyze it better. For instance, it could be useful to visualize sales by segment across time. This can be done easily in two ways. First, simply drag the <strong>Segment</strong> field to the <strong>Color</strong> pane in the <strong>Marks</strong> shelf. The second method is to move the category to the <strong>Rows</strong> shelf to show it separately.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/01a123a6-35bd-48bb-b912-268abc2be230_Fig2.8.html" /><figcaption aria-hidden="true">ts8</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you learned about building a time series chart in Tableau and the different options available. You also learned about adding an additional category to a time series chart. This will help you in not just creating and analyzing time series data, but also in forecasting.</p>
+<p>27</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

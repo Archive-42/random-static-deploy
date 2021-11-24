@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>invoking-external-component-methods-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="invoking-external-component-methods-in-react.js">Invoking External Component Methods in React.js</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 10, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>5,993 Views</p></li>
+<li><p>Oct 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>5,993 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-invokingtheexternalcomponentsmethod" class="menu-link">Invoking the External Component’s Method</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React.js components can get complex as your app grows. In most cases, you will have nested components (components that are invoked by other components). These nested components may contain actions that force a state change in the parent component by invoking a method in the parent component. In this guide, we’ll take a look at how to use <span class="jsx-3120878690"><code>props</code></span> as a means of passing as well as invoking methods of external components.</p>
+<h2 id="setup">Setup</h2>
+<p>Suppose you have two components, a <span class="jsx-3120878690"><code>BannerMessage</code></span> and <span class="jsx-3120878690"><code>Editor</code></span>. The <span class="jsx-3120878690"><code>BannerMessage</code></span> is a component that maintains a single state variable called <span class="jsx-3120878690"><code>message</code></span>:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import Editor from &#39;./Editor&#39;;
+3
+4export default class BannerMessage extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      message: &quot;&quot;
+10    }
+11  }
+12
+13  updateMessage(message) {
+14    this.setState({
+15      message: message
+16    });
+17  }
+18
+19  render() {
+20    return (
+21      &lt;div&gt;
+22        &lt;h1&gt;
+23          {this.state.message}
+24        &lt;/h1&gt;
+25        &lt;hr/&gt;
+26        &lt;Editor
+27          updateMessage={this.updateMessage.bind(this)}
+28        /&gt;
+29      &lt;/div&gt;
+30    );
+31  }
+32}</code></pre>
+<p>javascript</p>
+<p>Notice that it contains a method called <span class="jsx-3120878690"><code>updateMessage</code></span> that accepts a <span class="jsx-3120878690"><code>message</code></span> value that is updated to the state <span class="jsx-3120878690"><code>message</code></span> of the component. In the <span class="jsx-3120878690"><code>render()</code></span> method, <span class="jsx-3120878690"><code>Editor</code></span> is mounted together with the attribute <span class="jsx-3120878690"><code>updateMessage</code></span>, whose value is <span class="jsx-3120878690"><code>this.updateMessage.bind(this)</code></span>. Calling <span class="jsx-3120878690"><code>.bind(this)</code></span> will allow the retention of <span class="jsx-3120878690"><code>this</code></span> pointing to the instance of the <span class="jsx-3120878690"><code>BannerMessage</code></span> component, even if it is passed to <span class="jsx-3120878690"><code>Editor</code></span>.</p>
+<p><span class="jsx-3120878690"><code>Editor</code></span>, on the other hand, looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class Editor extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      message: &quot;&quot;
+9    }
+10  }
+11
+12  handleMessageChanged(event) {
+13    this.setState({
+14      message: event.target.value
+15    });
+16  }
+17
+18  render() {
+19    return (
+20      &lt;div&gt;
+21        &lt;input type=&quot;text&quot; value={this.state.message} onChange={this.handleMessageChanged.bind(this)} /&gt;
+22        &lt;button&gt;
+23          Save Message
+24        &lt;/button&gt;
+25      &lt;/div&gt;
+26    );
+27  }
+28}</code></pre>
+<p>javascript</p>
+<p>The component maintains its own state <span class="jsx-3120878690"><code>message</code></span> that is updated every time the user modifies the value of its input element.</p>
+<h2 id="invoking-the-external-components-method">Invoking the External Component’s Method</h2>
+<p>In <span class="jsx-3120878690"><code>Editor</code></span>, create a method that will serve as an event handler for the button when it is clicked:</p>
+<pre><code>1handleButtonClicked() {
+2  this.props.updateMessage(this.state.message);
+3}</code></pre>
+<p>javascript</p>
+<p>Notice that the code can invoke the <span class="jsx-3120878690"><code>props</code></span> of the component, which in turn will call <span class="jsx-3120878690"><code>updateMessage</code></span> and pass the value of <span class="jsx-3120878690"><code>Editor</code></span>’s <span class="jsx-3120878690"><code>message</code></span> within its state. The call to <span class="jsx-3120878690"><code>updateMessage</code></span> in this context is the one passed by <span class="jsx-3120878690"><code>BannerMessage</code></span>:</p>
+<pre><code>1&lt;Editor
+2  updateMessage={this.updateMessage.bind(this)}
+3/&gt;</code></pre>
+<p>jsx</p>
+<p>Attach the event handler to the button’s <span class="jsx-3120878690"><code>onClick</code></span> event within <span class="jsx-3120878690"><code>Editor</code></span>:</p>
+<pre><code>1&lt;button onClick={this.handleButtonClicked.bind(this)}&gt;
+2  Save Message
+3&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<p>When the button is clicked, it will call <span class="jsx-3120878690"><code>updateMessage</code></span> from the component’s props, which is a reference to the <span class="jsx-3120878690"><code>updateMessage</code></span> of the parent that passed it (<span class="jsx-3120878690"><code>BannerMessage</code></span>).</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>The final code should look like the following:</p>
+<h3 id="bannermessage">BannerMessage</h3>
+<pre><code>1import React from &#39;react&#39;;
+2import Editor from &#39;./Editor&#39;;
+3
+4export default class BannerMessage extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      message: &quot;&quot;
+10    }
+11  }
+12
+13  updateMessage(message) {
+14    this.setState({
+15      message: message
+16    });
+17  }
+18
+19  render() {
+20    return (
+21      &lt;div&gt;
+22        &lt;h1&gt;
+23          {this.state.message}
+24        &lt;/h1&gt;
+25        &lt;hr/&gt;
+26        &lt;Editor
+27          updateMessage={this.updateMessage.bind(this)}
+28        /&gt;
+29      &lt;/div&gt;
+30    );
+31  }
+32}</code></pre>
+<p>javascript</p>
+<h3 id="editor">Editor</h3>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class Editor extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      message: &quot;&quot;
+9    }
+10  }
+11
+12  handleMessageChanged(event) {
+13    this.setState({
+14      message: event.target.value
+15    });
+16  }
+17
+18  handleButtonClicked() {
+19    this.props.updateMessage(this.state.message);
+20  }
+21
+22  render() {
+23    return (
+24      &lt;div&gt;
+25        &lt;input type=&quot;text&quot; value={this.state.message} onChange={this.handleMessageChanged.bind(this)} /&gt;
+26        &lt;button onClick={this.handleButtonClicked.bind(this)}&gt;
+27          Save Message
+28        &lt;/button&gt;
+29      &lt;/div&gt;
+30    );
+31  }
+32}</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p><span class="jsx-3120878690"><code>props</code></span> is a special member of a React.js component that holds values that are passed upon calling a component from another component. The <span class="jsx-3120878690"><code>props</code></span>’s keys are declared like HTML attributes, which eventually become references accessible within the component that was called. One such application is passing a reference to the method of the calling component in order to be invoked by the child component, thus triggering the parent’s logic. This will allow component-to-component communication while maintaining <span class="jsx-3120878690"><code>state</code></span> independence for each component. For practice, instead of the <span class="jsx-3120878690"><code>onClick</code></span> event, try to see if you can hook the calling of <span class="jsx-3120878690"><code>BannerMessage</code></span>’s <span class="jsx-3120878690"><code>updateMessage</code></span> from <span class="jsx-3120878690"><code>Editor</code></span>’s <span class="jsx-3120878690"><code>onChange</code></span> event handler. This way, the user doesn’t have to click the button in order for <span class="jsx-3120878690"><code>Editor</code></span> to communicate with <span class="jsx-3120878690"><code>BannerMessage</code></span>.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

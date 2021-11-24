@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>publish-machine-learning-models-in-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="publish-machine-learning-models-in-azure-machine-learning-studio">Publish Machine Learning Models in Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 21, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>1,084 Views</p></li>
+<li><p>Oct 21, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>1,084 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-buildthemodel" class="menu-link">Build the Model</a></li>
+<li><a href="#module-createthewebservice" class="menu-link">Create the Web Service</a></li>
+<li><a href="#module-customizewebserviceoutput" class="menu-link">Customize Web Service Output</a></li>
+<li><a href="#module-deploythewebservice" class="menu-link">Deploy the Web Service</a></li>
+<li><a href="#module-testthewebservice" class="menu-link">Test the Web Service</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>One of the most in-demand skills in the analytics workplace today is the ability to deploy machine learning algorithms. In many companies, data scientists are required not just to build predictive models, but also to deploy and publish them. This has become a key requirement in today’s era of building data science products. In this guide, you will learn how to publish a machine learning model in Azure Machine Learning Studio.</p>
+<h2 id="data">Data</h2>
+<p>You will use the Adult Census Income Binary Classification dataset available in Azure Machine Learning Studio. The data is a subset of the 1994 census database, using working adults over the age of 16 with an adjusted income index of greater than 100. The data is used as a classification machine learning problem where the objective is to classify people using demographics to predict whether a person earns over US$50,000 a year. The data comes from the <a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a>.</p>
+<h3 id="steps">Steps</h3>
+<p>There are two main steps to publish machine learning models. The first is to build the machine learning model, and the second is to deploy and publish it.</p>
+<h2 id="build-the-model">Build the Model</h2>
+<p>Building models is not covered in this guide. You can follow the steps detailed in the guide <a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a> to build the model you will deploy in this guide.</p>
+<p>The only change, although not mandatory, is that you can change the name of the experiment from <strong>Getting Started with Azure ML Studio</strong> to <strong>Publishing Model on Azure</strong>.</p>
+<p>The result from the model building step is the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e19e2cc2-6e80-44e1-b043-93d3880c108b_lc1.html" /><figcaption aria-hidden="true">lc1</figcaption>
+</figure>
+<p>You now have a machine learning algorithm built on Azure Machine Learning Studio, and the next step is to publish and deploy it, which is covered in the subsequent sections.</p>
+<h2 id="create-the-web-service">Create the Web Service</h2>
+<p>At the bottom of the workspace, click on <strong>Set Up Web Service</strong>, and select <strong>Predictive Web Service Recommended</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0211166c-edbe-4120-b876-bc7d1b055f83_lc2.html" /><figcaption aria-hidden="true">lc2</figcaption>
+</figure>
+<p>A predictive experiment is created, and several new modules will be added. For example, the <strong>Web service input</strong> and <strong>Web services output</strong> modules get added to the predictive experiment. These are the first and last modules in the experiment.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/30ec2779-9a39-4ee5-84b1-a79859e01eb8_lc3.html" /><figcaption aria-hidden="true">lc3</figcaption>
+</figure>
+<p>The <strong>Publishing model on Azure</strong> and <strong>Apply Transformation</strong> modules also get added. Run the experiment, and once all the modules run successfully, right-click on the <strong>Score model</strong> module, and select <strong>Visualize</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0e7bac9a-b9b7-4b79-8ee4-b7b69665a779_lc4.html" /><figcaption aria-hidden="true">lc4</figcaption>
+</figure>
+<p>The following output will be displayed. You can see two new variables being added. These are <span class="jsx-3120878690"><code>Scored Labels</code></span> and <span class="jsx-3120878690"><code>Scored Probabilities</code></span>. The first gives the predicted labels while the latter gives the probability score.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4fd42987-efe2-4642-ac11-50afd8b58e75_lc5.html" /><figcaption aria-hidden="true">lc5</figcaption>
+</figure>
+<h2 id="customize-web-service-output">Customize Web Service Output</h2>
+<p>You have created a predictive experiment, and the next step is to customize the output. To begin, delete the connection between the <strong>Score Model</strong> module and <strong>Web service output</strong>. Next, search and drag the <strong>Search Columns in Dataset</strong> module between the <strong>Score Model</strong> module and <strong>Web service output</strong>. Then make the connection as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9bf6dc27-e744-4c9e-8858-4eecced61c6a_lc7.html" /><figcaption aria-hidden="true">lc7</figcaption>
+</figure>
+<p>Click on the <strong>Search Columns in Dataset</strong> module, and then click <strong>Launch column selector</strong> to select the following variables.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a2b5e7da-33aa-47c4-b161-c6437112ae94_lc8.html" /><figcaption aria-hidden="true">lc8</figcaption>
+</figure>
+<p>Run the predictive experiment again, and visualize the output of the <strong>Search Columns in Dataset</strong> module. Only two columns are returned.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8e11d316-8be4-4326-9fb0-cb48a13612bc_lc9.html" /><figcaption aria-hidden="true">lc9</figcaption>
+</figure>
+<h2 id="deploy-the-web-service">Deploy the Web Service</h2>
+<p>After customizing the web service output, you are ready to deploy it. Click the <strong>Deploy Web Service</strong> icon at the bottom of your experiment. After the deployment is finished, you will see the following output with web service properties as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0fc23c12-4786-4a25-bdd2-1a72cb051389_lc10.html" /><figcaption aria-hidden="true">lc10</figcaption>
+</figure>
+<p>Copy the API key as shown below and paste it in a notepad or word document, whichever you prefer. This will be a different API key for your Azure account.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/be3bc21e-b6c2-449d-bbc2-5bc11d34685f_LC11NEW.html" /><figcaption aria-hidden="true">LC11</figcaption>
+</figure>
+<p>You can also see the <strong>Request/Response</strong> hyperlink in the output above. Click the hyperlink that will open a new browser tab containing the Request Response API documentation for your web service. It will also have a URL. Copy and save it in your notebook. This will be different URL for your Azure account.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c2ff0188-4bb7-4549-be2c-405ae62ac22d_lc12.html" /><figcaption aria-hidden="true">lc12</figcaption>
+</figure>
+<h2 id="test-the-web-service">Test the Web Service</h2>
+<p>You have created a web service and generated the required keys. The next step is to test the web service, which requires a OneDrive account. If you don’t have an account, create an account <a href="https://onedrive.live.com/">here</a>. Use the Microsoft Studio account to create the OneDrive account so you can access both accounts.</p>
+<p>Once the account is created, login to it. In the <strong>New</strong> menu, click <strong>Excel workbook</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c99d7f95-02c9-451b-ba55-6f9207d2077d_lc13.html" /><figcaption aria-hidden="true">lc13</figcaption>
+</figure>
+<p>This will open a new tab in the Excel workbook, as shown below. Save the workbook as <strong>Web Service ML</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5c3e5e21-0fd8-47f5-bd9f-4dcd89c2b1da_LC14.html" /><figcaption aria-hidden="true">lc14</figcaption>
+</figure>
+<p>Next, on the <strong>Insert</strong> tab, click <strong>Office Add-ins</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5d2aabea-3a80-4aa6-b7b5-a72737687417_lc15new.html" /><figcaption aria-hidden="true">lc15</figcaption>
+</figure>
+<p>Next, in the <strong>Office Add-ins</strong> dialog box, click <strong>Store</strong>. Then type <strong>Azure Machine Learning</strong> in the search box and you will see the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d2abee0e-e43e-4392-9b9c-9ec33fb25771_pm27.html" /><figcaption aria-hidden="true">pm27</figcaption>
+</figure>
+<p>The next step is to click and add the <strong>Azure Machine Learning</strong> icon to load it. Once the Azure Machine Learning plugin is loaded, you can see the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5285f1f0-f8b1-4e2b-b84b-c3312995bfc4_lc16.html" /><figcaption aria-hidden="true">lc16</figcaption>
+</figure>
+<p>Next, click on <strong>Add Web Service</strong>. Paste the Request Response URL you copied earlier into the <strong>URL</strong> box, and the API key into the <strong>API key</strong> box.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/177657df-3272-46b6-bbc7-48b8aa95c85d_lc17.html" /><figcaption aria-hidden="true">lc17</figcaption>
+</figure>
+<p>Click the <strong>Add</strong> button located below the <strong>API key</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d40b88e3-e241-4e99-8727-33ed4172c2d6_lc18.html" /><figcaption aria-hidden="true">lc18</figcaption>
+</figure>
+<p>Completing the above steps will create the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5f70724a-2c7f-491f-a0c3-d6acef5f9fb9_lc19.html" /><figcaption aria-hidden="true">lc19</figcaption>
+</figure>
+<p>To test the web service, you need to provide the inputs. In the above output, leave the <strong>My data has headers</strong> box checked, and click the <strong>Use sample data</strong> button. This will generate the output below. Enter the values as shown below, or values of your choice.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a5e95771-6d2e-41cd-83c6-998c880843a1_lc20.html" /><figcaption aria-hidden="true">lc20</figcaption>
+</figure>
+<p>Note that there is input provided to the <span class="jsx-3120878690"><code>income</code></span> variable, which is the target variable. You can leave this input blank and still test the web service. Next, select the header and data cells (A1 to O2). This is reflected in the <strong>Input</strong> pane. In the <strong>Output</strong> box, select <strong>P1</strong>. This will create the header for the predictions.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/64f7a65e-169e-4a3b-827e-0fc1bb921441_lc21.html" /><figcaption aria-hidden="true">lc21</figcaption>
+</figure>
+<p>Once the selection is made, click the <strong>Predict</strong> button. This will generate the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e5649330-e12b-44aa-aa83-f3b8e7e6b3e4_lc22finalpredictionserviceoutput.html" /><figcaption aria-hidden="true">lc22predictionswebserice</figcaption>
+</figure>
+<p>When the web service has finished running, view the data returned in cells P2 (Scored Label) and Q2 (Scored Probabilities). The web service has predicted the income class for this set of inputs to be <strong>&lt;=50K</strong>.</p>
+<p>You have successfully created and tested a machine learning web service that predicts income class.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Building data science products has applications across several industries. You can build a forecasting product to predict shipping volumes. Banks are building fraud detection algorithms. Even income tax institutions are using artificial intelligence to identify tax frauds.</p>
+<p>Some other application areas where data science models can be built and deployed are healthcare, crime prevention, stock market valuation, natural language processing, self-driving cars, computer vision, and advanced image recognition.</p>
+<p>In this guide, you learned how to publish machine learning models in Azure Machine Learning Studio. Building machine learning models is crucial, but adding the knowledge of deploying them to the cloud and testing the web service will add more power to your data science portfolio.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+<li><p><a href="named-entity-recognition-with-azure-machine-learning-studio/index.html">Named Entity Recognition with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-analytics-with-azure-machine-learning-studio/index.html">Text Analytics with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="extract-key-phrases-from-text-in-azure-machine-learning-studio/index.html">Extract Key Phrases from Text in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="visualizing-text-data-using-word-cloud-in-azure-machine-learning-studio/index.html">Visualizing Text Data using Word Cloud in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-preprocessing-in-azure-machine-learning-studio/index.html">Text Preprocessing in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="estimate-correlation-coefficient-in-azure-machine-learning-studio/index.html">Estimate Correlation Coefficient in Azure Machine Learning Studio</a></p></li>
+</ol>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

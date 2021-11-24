@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>using-multiple-fetch-statements-with-componentwillmount-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="using-multiple-fetch-statements-with-componentwillmount-in-react">Using Multiple Fetch Statements with ComponentWillMount In React</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Nov 9, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>8,758 Views</p></li>
+<li><p>Nov 9, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>8,758 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-thecomponentwillmountlifecyclehook" class="menu-link">The componentWillMount Lifecycle Hook</a></li>
+<li><a href="#module-usingmultiplefetchstatementswithincomponentdidmount" class="menu-link">Using Multiple Fetch Statements Within componentDidMount</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When writing code within your React app, you will most likely need to fetch data from an external API in order to render views based on that data. However, introducing asynchronous code into your app always comes with an overhead of complexity. To help combat this complexity, React introduces component lifecycle hooks. Component lifecycle hooks are methods that are triggered at certain phases in a component’s “lifecycle.” The two most common component lifecycle hooks that have been used in the past when it comes to HTTP requests are <span class="jsx-3120878690"><code>componentWillMount</code></span> and <span class="jsx-3120878690"><code>componentDidMount</code></span>.</p>
+<p>In this guide, you will see how <span class="jsx-3120878690"><code>componentWillMount</code></span> and <span class="jsx-3120878690"><code>componentDidMount</code></span> have been used to make HTTP requests in the past. You will also discover how to execute multiple HTTP fetch requests for data within them.</p>
+<h2 id="the-componentwillmount-lifecycle-hook">The componentWillMount Lifecycle Hook</h2>
+<p><span class="jsx-3120878690"><code>componentWillMount</code></span> used to be an integral part of any component’s lifecycle. I say “used to be” because now, <span class="jsx-3120878690"><code>componentWillMount</code></span> is deprecated as of React v. 17! In a lot of apps, it was the lifecycle hook that was used to request data, as the name sort of suggests that this would be the place to do it! However, the problem with this approach was that a component <span class="jsx-3120878690"><code>render</code></span> function was guaranteed to run before the HTTP request(s) was executed within <span class="jsx-3120878690"><code>componentWillMount</code></span>. This often meant that your component had no data to show within its view layer if that data relied upon the HTTP request.</p>
+<p>Because of this, you ultimately need to have some sort of default data or loading screen to show until the HTTP request comes back since the <span class="jsx-3120878690"><code>render</code></span> function will end up running before the successful execution of the request. Ultimately, this means that you can drop the use of <span class="jsx-3120878690"><code>componentWillMount</code></span> and simply set up some default data or a loading screen within the constructor of your class component. You can then move your HTTP request over to the <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method. The <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method is guaranteed to run directly after the execution of the first <span class="jsx-3120878690"><code>render</code></span> function. This makes it a reliable choice for fetching data!</p>
+<h2 id="using-multiple-fetch-statements-within-componentdidmount">Using Multiple Fetch Statements Within componentDidMount</h2>
+<p>In this section, you will learn how to make HTTP requests using the Fetch API from two different locations and merge the results. Let’s jump into the code!</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3class MyComponent extends React.Component {
+4    constructor(props) {
+5        super(props);
+6
+7        this.state = {
+8            mergedData: this.props.defaultData
+9        }
+10    }
+11
+12    componentDidMount() {
+13        Promise.all([
+14            fetch(this.props.urlOne).then(res =&gt; res.json()),
+15            fetch(this.props.urlTwo).then(res =&gt; res.json())
+16        ]).then(([urlOneData, urlTwoData]) =&gt; {
+17            this.setState({
+18                mergedData: urlOneData.concat(urlTwoData)
+19            });
+20        })
+21    }
+22
+23    render() {
+24        return (
+25            &lt;div&gt;
+26                &lt;h1&gt;Check out this Data!&lt;/h1&gt;
+27                &lt;DataView data={this.state.mergedData}/&gt;
+28            &lt;/div&gt;
+29        )
+30    }
+31}</code></pre>
+<p>jsx</p>
+<p>In the trivial example above, you can see the <span class="jsx-3120878690"><code>MyComponent</code></span> component. This component is getting some default data from props via a parent component. This is the data that will be shown initially.</p>
+<p>Then in the <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method, multiple fetch statements are being executed against two different APIs. The <span class="jsx-3120878690"><code>Promise.all</code></span> method is used to combine the results of these calls to <span class="jsx-3120878690"><code>fetch</code></span> into a single array. Using <span class="jsx-3120878690"><code>Promise.all</code></span> allows the component to execute these requests in parallel. Once both responses complete, you will have an array containing two sub-arrays. The <span class="jsx-3120878690"><code>setState</code></span> method is then called in order to set the <span class="jsx-3120878690"><code>mergedData</code></span> state based on the concatenated result of the two sub-arrays.</p>
+<p>And there you have it! You just learned how to use the Fetch API to execute multiple HTTP requests from within the <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <span class="jsx-3120878690"><code>componentWillMount</code></span> lifecycle method is a relic of the past. Please use it with caution! Going forward, all HTTP requests should be made from within the <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method.</p>
+<p>There is also another way to fetch data if you are using a functional component instead of a class component. That way is to use the <span class="jsx-3120878690"><code>useEffect</code></span> hook. For more information regarding <span class="jsx-3120878690"><code>useEffect</code></span>, please check out the React <a href="https://reactjs.org/docs/hooks-effect.html">documentation</a>.</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>encoders-and-decoders-for-neural-machine-translation</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="encoders-and-decoders-for-neural-machine-translation">Encoders and Decoders for Neural Machine Translation</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 19, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>2,035 Views</p></li>
+<li><p>Nov 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>2,035 Views</p></li>
+</ul>
+<p>Introduction</p>
+<p>8</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-thepowerofsequence2sequenceseq2seqmodeling" class="menu-link">The Power of Sequence2Sequence (seq2seq) Modeling</a></li>
+<li><a href="#module-encoderanddecoder" class="menu-link">Encoder and Decoder</a></li>
+<li><a href="#module-importingthelibrariesandloadingthedataset" class="menu-link">Importing the Libraries and Loading the Dataset.</a></li>
+<li><a href="#module-preprocessing" class="menu-link">Pre-processing</a></li>
+<li><a href="#module-featureengineering" class="menu-link">Feature Engineering</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>There are over 7,000 languages in the world. However, only 23 languages in total are most spoken around the globe, including English, Mandarin Chinese, Hindi, and Spanish. As the world is connecting faster, language translation bridges the communication gap.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a486dbbd-34da-4ebc-9f05-52863b9d11ff_4.html" /><figcaption aria-hidden="true">Hello in different languages</figcaption>
+</figure>
+<p><a href="https://en.clipdealer.com/vector/media/A:123557489">Image Source</a></p>
+<p>Google Translate can translate not only text but also speech and images in real-time. You can use it on your laptop, mobile, or even smartwatch. This guide will show the technology behind this magic.</p>
+<p>Before moving further, I would recommend reading these guides on <a href="getting-started-with-rnn.html">RNN</a> and <a href="introduction-to-lstm-units-in-rnn.html">LSTM</a>.</p>
+<p>To follow along with this guide, download and unzip the <span class="jsx-3120878690"><code>spa-eng.zip</code></span> file <a href="http://www.manythings.org/anki/">here</a>. You will only use the <em>spa.txt</em> file for this process.</p>
+<p>Let’s get started.</p>
+<h2 id="the-power-of-sequence2sequence-seq2seq-modeling">The Power of Sequence2Sequence (seq2seq) Modeling</h2>
+<p>There are multiple tasks that can be solved by using seq2seq modeling, including text summarization, speech recognition, image and video captioning, and question answering. It can also be used in genomics for DNA sequence modeling. A seq2seq model has two parts: an encoder and a decoder. Both work separately and come together to form a huge neural network model.</p>
+<p>This architecture has the ability to handle the input and output sequences of variable length. The below image shows the types of RNN models and their use cases.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/706812bb-08c0-4105-a6df-27f1979f0ff7_1.html" /><figcaption aria-hidden="true">types of rnn model</figcaption>
+</figure>
+<h2 id="encoder-and-decoder">Encoder and Decoder</h2>
+<p>The following sections will cover encoder-decoder in-depth.</p>
+<h3 id="encoder">Encoder</h3>
+<p>The encoder is at the feeding end; it understands the sequence and reduces the dimension of the input sequence. The sequence has a fixed size known as the <em>context vector</em>. This context vector acts like input to the decoder, which generates an output sequence when reaching the end token. Hence, you can call these seq2seq models encoder-decoder models.</p>
+<p>This architecture can handle input and output sequences of variable length.</p>
+<h3 id="decoder">Decoder</h3>
+<p>If you use LSTM for the encoder, use the same for the decoder. But it’s slightly more complex than the encoder network. You can say the decoder is in an “aware state.” It knows what words you have generated so far and what the previous hidden state was. The first layer of the decoder is initialized by using the context vector ‘C’ from the encoder network to generate the output. Then a special token is applied at the start to indicate the output generation. It applies a similar token at the end. The first output word is generated by running the stacked LSTM layers. A <em>SoftMax</em> activation function applies to the last layer. Its job is to introduce non-linearity in the network. Now this word is passed through the remaining layers and the generation sequence is repeated.</p>
+<p>Multiple factors depend upon improving the accuracy of the encoder-decoder model. The hyper-parameters such as optimizers, cross-entropy loss, learning rate, etc., play an important role in improving the model’s performance.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/08e9a6f3-ce63-4f45-b162-03f34660429a_2.html" /><figcaption aria-hidden="true">working of encoder and decoder</figcaption>
+</figure>
+<h2 id="importing-the-libraries-and-loading-the-dataset.">Importing the Libraries and Loading the Dataset.</h2>
+<p>This example will cover the simple implementation of seq2seq modeling in <a href="https://blog.keras.io/a-ten-minute-introduction-to-sequence-to-sequence-learning-in-keras.html">Keras</a>. I would suggest running the model on GPU. You can take advantage of <a href="https://colab.research.google.com/">Google Colab’s</a> free GPU feature.</p>
+<p>Go to <strong>Edit</strong>, then <strong>Notebook Settings</strong>, make changes, and save .</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b7523400-470b-4e34-9328-2fa977c206ab_3.html" /><figcaption aria-hidden="true">notebook settings</figcaption>
+</figure>
+<p>Mount your drive first:</p>
+<pre><code>1from google.colab import drive
+2drive.mount(&#39;/content/drive&#39;)</code></pre>
+<p>python</p>
+<p>Copy and paste the authentication code and press enter.</p>
+<p>Set up an environment, install the libraries, and define the parameters:</p>
+<pre><code>1import tensorflow as tf
+2from tensorflow import keras
+3from keras.layers import *
+4from keras.models import *
+5from keras.utils import *
+6from keras.initializers import *
+7from keras.optimizers import * </code></pre>
+<p>python</p>
+<p>Define the parameter and set up the path for the <span class="jsx-3120878690"><code>spa.txt</code></span> file you downloaded earlier on your drive. Define batch size, epochs to train for, LSTM latent dimensionality for the encoder, and the number of samples.</p>
+<pre><code>1batch_size = 64  
+2epochs = 100  
+3latent_dim = 256  
+4num_samples = 10000  
+5# set the data_path accordingly
+6data_path = &quot;/content/drive/My Drive/spa.txt&quot; </code></pre>
+<p>python</p>
+<p>Change the <span class="jsx-3120878690"><code>data_path</code></span> accordingly.</p>
+<h2 id="pre-processing">Pre-processing</h2>
+<p>You won’t be required to conduct in-depth text pre-processing steps. But if you want to know more about noises associated and text pre-processing, kindly refer to this <a href="importance-of-text-pre-processing.html">Importance of Text Processing</a> guide. You can use tokenization; its job is to convert the input sentence into a sequence of integers. To achieve this, pass your data by using Keras’s <span class="jsx-3120878690"><code>Tokenizer()</code></span> class.</p>
+<p>Next, vectorize the data. It will read each line and append a list to it. The top three lines are below .</p>
+<pre><code>1input_texts = []
+2target_texts = []
+3input_characters = set()
+4target_characters = set()
+5with open(data_path, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+6    lines = f.read().split(&quot;\n&quot;)</code></pre>
+<p>python</p>
+<p>This example sets the parameter to 10,000 samples. The first two lines of the code below will put the English text in the <span class="jsx-3120878690"><code>input_text</code></span> and Spanish text in <span class="jsx-3120878690"><code>target_text</code></span>.</p>
+<pre><code>1for line in lines[: min(num_samples, len(lines) - 1)]:
+2    input_text, target_text, _ = line.split(&quot;\t&quot;)
+3    ############### A ###############
+4    target_text = &quot;\t&quot; + target_text + &quot;\n&quot;
+5    input_texts.append(input_text)
+6    target_texts.append(target_text)
+7    ############### B ###############
+8    for char in input_text:
+9        if char not in input_characters:
+10            input_characters.add(char)
+11    for char in target_text:
+12        if char not in target_characters:
+13            target_characters.add(char)
+14print(input_characters)
+15print(target_characters)</code></pre>
+<p>python</p>
+<p>The next step is to define the start and the end of sequence character using tab ( <span class="jsx-3120878690"><code>\t</code></span> ) at the start of the character and <span class="jsx-3120878690"><code>\n</code></span> at the end of the character.</p>
+<p>Along with the English and Spanish text, you’ll also want a list of their unit characters. The corresponding list output is below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7638f39e-68ac-4086-a40e-4b9806b09cf8_7.html" /><figcaption aria-hidden="true">code output</figcaption>
+</figure>
+<p>Define the parameters. They are important while building the model and feature engineering.</p>
+<pre><code>1input_characters = sorted(list(input_characters))
+2target_characters = sorted(list(target_characters))
+3num_encoder_tokens = len(input_characters)
+4num_decoder_tokens = len(target_characters)
+5max_encoder_seq_length = max([len(txt) for txt in input_texts])
+6max_decoder_seq_length = max([len(txt) for txt in target_texts])
+7
+8print(&quot;No.of samples:&quot;, len(input_texts))
+9print(&quot;No.of unique input tokens:&quot;, num_encoder_tokens)
+10print(&quot;No.of unique output tokens:&quot;, num_decoder_tokens)
+11print(&quot;Maximum seq length for inputs:&quot;, max_encoder_seq_length)
+12print(&quot;Maximum seq length for outputs:&quot;, max_decoder_seq_length)</code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c5f38ce2-60fe-45db-8dfc-7ec9dd6893d2_5.html" /><figcaption aria-hidden="true">output summary</figcaption>
+</figure>
+<p>Now that you have a list of the characters, perform index mapping to input and target it.</p>
+<pre><code>1input_token_index = dict([(char, i) for i, char in enumerate(input_characters)])
+2target_token_index = dict([(char, i) for i, char in enumerate(target_characters)])
+3
+4print(input_token_index)
+5print(target_token_index)</code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cf301abd-d1bc-43a8-8c09-74c5d0b01e02_6.html" /><figcaption aria-hidden="true">output of the code</figcaption>
+</figure>
+<p>Notice that each character is now associated with an integer value.</p>
+<p>Refer the <a href="https://keras.io/examples/nlp/lstm_seq2seq/">Keras documentation</a> on pre-processing for more detail.</p>
+<h2 id="feature-engineering">Feature Engineering</h2>
+<p>To generate feature vectors, on-hot encoding is used. Turn 3D numpy arrays to store one-hot encoding. To generate the feature’s variables, <span class="jsx-3120878690"><code>encoder_input_data</code></span>, <span class="jsx-3120878690"><code>decoder_input_data</code></span>, <span class="jsx-3120878690"><code>decoder_target_data</code></span> are used. <span class="jsx-3120878690"><code>encoder_input_data</code></span> and <span class="jsx-3120878690"><code>decoder_input_data</code></span> contain one-hot vectorization of English and Spanish sentences, respectively.</p>
+<p>The first dimension, <span class="jsx-3120878690"><code>input_texts</code></span>, states the number of sample texts (10,000 in this case). The second dimension, <span class="jsx-3120878690"><code>max_encoder_seq_length</code></span> (English) and <span class="jsx-3120878690"><code>max_decoder_seq_length</code></span> (Spanish), is the longest encoder/decoder sequence length within the samples. The third dimension, <span class="jsx-3120878690"><code>num_encoder_tokens</code></span> (English) and <span class="jsx-3120878690"><code>num_decoder_tokens</code></span> (Spanish), contains unique characters in <span class="jsx-3120878690"><code>input_charaters</code></span> and <span class="jsx-3120878690"><code>output_characters</code></span>.</p>
+<p>The <span class="jsx-3120878690"><code>decoder_target_data</code></span> is like <span class="jsx-3120878690"><code>decoder_input_data</code></span>, the only difference is that the <span class="jsx-3120878690"><code>decoder_target_data</code></span> is offset by one timestamp. The <span class="jsx-3120878690"><code>decoder_target_data[:, t, :]</code></span> is the same as <span class="jsx-3120878690"><code>decoder_input_data[:, t + 1, :]</code></span> .</p>
+<p>Now that everything is set, build the model and put the above variables and feature vectors to their proper encoder-decoder model.</p>
+<pre><code>1encoder_input_data = np.zeros(
+2  (len(input_texts), max_encoder_seq_length, num_encoder_tokens), dtype=&quot;float32&quot;
+3)
+4
+5decoder_input_data = np.zeros(
+6  (len(input_texts), max_decoder_seq_length, num_decoder_tokens), dtype=&quot;float32&quot;
+7)
+8
+9decoder_target_data = np.zeros(
+10  (len(input_texts), max_decoder_seq_length, num_decoder_tokens), dtype=&quot;float32&quot;
+11)
+12
+13for i, (input_text, target_text) in enumerate(zip(input_texts, target_texts)):
+14    for t, char in enumerate(input_text):
+15        encoder_input_data[i, t, input_token_index[char]] = 1.0
+16    encoder_input_data[i, t + 1 :, input_token_index[&quot; &quot;]] = 1.0
+17    for t, char in enumerate(target_text):
+18        decoder_input_data[i, t, target_token_index[char]] = 1.0
+19        if t &gt; 0:
+20            decoder_target_data[i, t - 1, target_token_index[char]] = 1.0
+21    decoder_input_data[i, t + 1 :, target_token_index[&quot; &quot;]] = 1.0
+22    decoder_target_data[i, t:, target_token_index[&quot; &quot;]] = 1.0</code></pre>
+<p>python</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The fundamental idea of this guide was to give a brief understanding of the seq2seq model, encoder, and decoder. <a href="https://app.pluralsight.com/guides/nmt:-encoder-and-decoder-with-keras">This guide</a> will help you take this to the next level by teaching you how to build a model using LSTM RNN.</p>
+<p>You can now choose any language of your choice. Just download the language you want to translate and define a proper path of the data. Before moving further, make sure you understand LSTM well. Feel free to ask at <a href="https://codealphabet.com/contact">Codealphabet</a> if you have any queries regarding this guide.</p>
+<p>8</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>explore-r-libraries_-ggplot2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/default.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Nishant Kumar Singh</p>
+<h1 id="explore-r-libraries-ggplot2">Explore R Libraries: ggplot2</h1>
+<h3 id="nishant-kumar-singh">Nishant Kumar Singh</h3>
+<ul>
+<li><p>Oct 23, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>339 Views</p></li>
+<li><p>Oct 23, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>339 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">ggplot2</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Visualization</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-understandinglayersinggplot2" class="menu-link">Understanding Layers in ggplot2</a></li>
+<li><a href="#module-faceting" class="menu-link">Faceting</a></li>
+<li><a href="#module-coordinatesystem" class="menu-link">Coordinate System</a></li>
+<li><a href="#module-statisticaltransformation" class="menu-link">Statistical Transformation</a></li>
+<li><a href="#module-applyingalllayers" class="menu-link">Applying All Layers</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p><span class="jsx-3120878690"><code>ggplot2</code></span> is a package in the <span class="jsx-3120878690"><code>tidyverse</code></span> collection whose sole motive is to create graphics. It is a well-known library in R based on the concept of layered grammar of graphics. The grammar of graphics enables you to concisely describe the components of a chart, and the layered approach applies those components layer-wise, making it easy to read and understand the code. Apart from building graphs, it is widely used in exploratory data analysis since the best way to understand a dataset is to visualize it, which makes it easier to extract relations.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To install the <span class="jsx-3120878690"><code>ggplot2</code></span> package, run one of the following code snippets.</p>
+<pre><code>1#To install the entire tidyverse collection which includes ggplot2
+2install.packages(&quot;tidyverse&quot;)</code></pre>
+<p>html</p>
+<pre><code>1#To install ggplot2 alone
+2install.packages(&quot;ggplot2&quot;)</code></pre>
+<p>html</p>
+<h3 id="basic-components">Basic Components</h3>
+<p>There are a few basic components of <span class="jsx-3120878690"><code>ggplot2</code></span>:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>ggplot()</code></span>: This creates a new <span class="jsx-3120878690"><code>ggplot2</code></span> object.</li>
+<li><span class="jsx-3120878690"><code>aes()</code></span>: This creates the aesthetic mapping means describing how the variables in the data are mapped to visual properties.</li>
+<li><span class="jsx-3120878690"><code>+</code></span>: This allows you to add layers while creating any plot.</li>
+</ul>
+<h2 id="understanding-layers-in-ggplot2">Understanding Layers in ggplot2</h2>
+<p>If we talk about the layers concept in <span class="jsx-3120878690"><code>ggplot2</code></span>, there are four primary layers:</p>
+<ol type="1">
+<li>Data: Data or subset of a dataset that has been used to create plots.</li>
+<li>Aesthetics: The mappings of the variables in the plot.</li>
+<li>Geometrics: The geom function used to represent data points.</li>
+<li>Theme: Different visual styles for the plot.</li>
+</ol>
+<p>Let’s look at the basic graphing template and use it to create a few graphs.</p>
+<pre><code>1ggplot(data = &lt;DATA&gt;) + 
+2  &lt;GEOM_FUNCTION&gt;(mapping = aes(&lt;MAPPINGS&gt;))</code></pre>
+<p>html</p>
+<p><span class="jsx-3120878690"><code>ggplot(data = &lt;DATA&gt;)</code></span> is the first layer. Use the mpg dataset, which is included in the <span class="jsx-3120878690"><code>ggplot2</code></span> library and will be available when you load it. Below are the columns of the mpg dataset.</p>
+<pre><code>1data(mpg)
+2colnames(mpg)
+3
+4&quot;manufacturer&quot; &quot;model&quot;        &quot;displ&quot;        &quot;year&quot;         &quot;cyl&quot;          &quot;trans&quot;        &quot;drv&quot;         
+5&quot;cty&quot;          &quot;hwy&quot;          &quot;fl&quot;           &quot;class&quot;</code></pre>
+<p>html</p>
+<p>Let’s create a histogram on the column <span class="jsx-3120878690"><code>hwy</code></span>.</p>
+<pre><code>1#You can ignore theme_classic() function if you want, the resulting plot would be in the default theme.
+2ggplot(mpg, aes(hwy))+
+3geom_histogram(binwidth = 5)+
+4theme_classic()</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/95a4799d-3996-40b0-8694-e1d393e2773e_ggplot1.html" /><figcaption aria-hidden="true">This is a histogram plot of column “hwy” from “mpg” dataset.</figcaption>
+</figure>
+<p>The code above uses all four layers. Data and aesthetic are included in <span class="jsx-3120878690"><code>ggplot(mpg, aes(hwy))</code></span>, then the <span class="jsx-3120878690"><code>geom_histogram()</code></span> function added the geometrics of the histogram, and finally, <span class="jsx-3120878690"><code>theme_classic()</code></span> is optional.</p>
+<p>There are different types of geom functions available in <span class="jsx-3120878690"><code>ggplot2</code></span> that can be used in different situations to create different plots. A geom is a geometric object that uses a plot to represent data, for example, a bar chart will use the bar geom, a line chart will use the line geom, and so on. This is reflected in the names of the geom functions as they are named accordingly, such as <span class="jsx-3120878690"><code>geom_line()</code></span>, <span class="jsx-3120878690"><code>geom_bar()</code></span>, etc.</p>
+<p>In addition to primary layers, there are a few other useful features in <span class="jsx-3120878690"><code>ggplot2</code></span> such as coordinate system, faceting, and statistical transformation, which we will explore in the remainder of this guide.</p>
+<h2 id="faceting">Faceting</h2>
+<p>In faceting, you split a plot into multiple subplots using any categorical column or variable of the dataset. If you want to divide your plot using one variable, use the <span class="jsx-3120878690"><code>facet_wrap()</code></span> function, and if you want to divide it using two variables, then use the <span class="jsx-3120878690"><code>facet_grid()</code></span> function.</p>
+<p>Let’s apply both functions on the histogram you created earlier.</p>
+<pre><code>1# Saving histogram plot in a variable
+2a &lt;- ggplot(mpg, aes(hwy))+
+3geom_histogram(binwidth = 5)+
+4theme_classic()
+5
+6# Creating subplots using &quot;cyl&quot; column
+7a + facet_wrap(~cyl)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ed6ff8d6-c19d-4da0-b7c7-16a50568304e_ggplot2.html" /><figcaption aria-hidden="true">Facet example 1</figcaption>
+</figure>
+<p>As you can see, now we have four subplots, one for each unique value against the <span class="jsx-3120878690"><code>cyl</code></span> column.</p>
+<p>Now for the <span class="jsx-3120878690"><code>facet_grid() function</code></span>. In this function, you will use two categorical columns from the dataset.</p>
+<pre><code>1# You will use &#39;a&#39; variable storing the histogram again thus reducing code redundancy
+2
+3a + facet_grid(drv ~ cyl)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/36627d00-91bd-4783-9654-61335e3dc58c_ggplot3.html" /><figcaption aria-hidden="true">Facet example 2</figcaption>
+</figure>
+<h2 id="coordinate-system">Coordinate System</h2>
+<p>The default coordinate system in <span class="jsx-3120878690"><code>ggplot2</code></span> is a Cartesian coordinate system where the x and y positions are independent to locate a data point. There are different coordinate system functions in <span class="jsx-3120878690"><code>ggplot2</code></span> that is used on different occasions. The most famous ones are <span class="jsx-3120878690"><code>coord_flip()</code></span> and <span class="jsx-3120878690"><code>coor_polar()</code></span>.</p>
+<p>Let’s look at a few examples to understand the use of <span class="jsx-3120878690"><code>coord_flip()</code></span> and <span class="jsx-3120878690"><code>coord_polar()</code></span>.</p>
+<pre><code>1# First create a bar chart, try to find yourself the reason for using  fill, show.legend, and width arguments 
+2
+3bar &lt;- ggplot(data = mpg) + 
+4     geom_bar(
+5         aes(x = manufacturer, fill = manufacturer), 
+6         show.legend = FALSE,
+7         width = 1  ) 
+8
+9bar</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/94853b40-91ab-4735-b2fd-a2841cf6b48f_ggplot4.html" /><figcaption aria-hidden="true">Bar Chart</figcaption>
+</figure>
+<pre><code>1#lets use coord_flip()
+2
+3bar + coord_flip()</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/662dcb7c-86f8-4fda-bd5c-c0f6ac14e43c_ggplot5.html" /><figcaption aria-hidden="true">coord_flip()</figcaption>
+</figure>
+<p>As for <span class="jsx-3120878690"><code>coord_polar()</code></span>,let’s apply it to the same bar chart to use polar coordinates.</p>
+<pre><code>1bar + coord_polar()</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4c63ae02-0a8d-4e08-9b9d-466edf616472_ggplot6.html" /><figcaption aria-hidden="true">Polar chart</figcaption>
+</figure>
+<h2 id="statistical-transformation">Statistical Transformation</h2>
+<p>If you look at the bar chart we created previously, you can see it shows additional information, including the count of records against each manufacturer, but the count is not available in the dataset. Some graphs show raw values, while others calculate new values and add them to the plot. The algorithm used to calculate new values for a graph is called a statistical transformation, or stat.</p>
+<p>A bar graph can be created using the <span class="jsx-3120878690"><code>stat_count()</code></span> function instead of <span class="jsx-3120878690"><code>geom_bar()</code></span>. Every geom function has a default stat that can be overridden. See the example below.</p>
+<pre><code>1# Creating a dataset
+2library(dplyr)
+3a &lt;- mpg%&gt;% 
+4   group_by(manufacturer)%&gt;%
+5   summarise(Count = n())
+6
+7# Resetting the stat of geom_bar() from count to identity
+8
+9ggplot(data = a)+
+10     geom_bar(mapping = aes(x = manufacturer, y = Count), stat = &quot;identity&quot;)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/abd16502-5a61-43b4-9b6c-551cb9b42ac0_ggplot7.html" /><figcaption aria-hidden="true">Stat</figcaption>
+</figure>
+<h2 id="applying-all-layers">Applying All Layers</h2>
+<p>In the previous sections, you learned a foundation of creating a graph using <span class="jsx-3120878690"><code>ggplot2</code></span> along with facets, coordinate systems, and statistical transformation. Now let’s apply all of these using the template below.</p>
+<pre><code>1ggplot(data = &lt;DATA&gt;) + 
+2  &lt;GEOM_FUNCTION&gt;(
+3     mapping = aes(&lt;MAPPINGS&gt;),
+4     stat = &lt;STAT&gt;
+5  ) +
+6  &lt;COORDINATE_FUNCTION&gt; +
+7  &lt;FACET_FUNCTION&gt;
+8
+9  </code></pre>
+<p>html</p>
+<p>Keep <span class="jsx-3120878690"><code>stat = "count"</code></span>, which is a default, and use the mpg dataset only.</p>
+<pre><code>1ggplot(data = mpg)+
+2 geom_bar(mapping = aes(x = manufacturer, fill = manufacturer),
+3   stats = &quot;count&quot;, show.legend = FALSE,
+4         width = 1  )+
+5   coord_flip()+
+6   facet_wrap(~year)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/088ee9f9-13ee-41c2-8153-62fb583e6e63_ggplot8.html" /><figcaption aria-hidden="true">Final</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide explains the basics of creating a graph using <span class="jsx-3120878690"><code>ggplot2</code></span> in R. You can also use <span class="jsx-3120878690"><code>ggplot2</code></span> for your own data visualization requirements or in any data analysis project. There is a lot of flexibility when you are creating graphs with <span class="jsx-3120878690"><code>ggplot2</code></span>. Each function contains a set of arguments that is available to tweak the graph accordingly. As a part of open source development, new features are added continually. This guide gives you a push to explore more in <span class="jsx-3120878690"><code>ggplot2</code></span>.</p>
+<p>For more information, visit <a href="https://github.com/tidyverse/ggplot2/">this repo</a>.</p>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

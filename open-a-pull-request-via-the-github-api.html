@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>open-a-pull-request-via-the-github-api</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="open-a-pull-request-via-the-github-api">Open a Pull Request via the GitHub API</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Oct 2, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>6,019 Views</p></li>
+<li><p>Oct 2, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>6,019 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-apioverviewandsetup" class="menu-link">API Overview and Setup</a></li>
+<li><a href="#module-programmaticallycreatingapullrequest" class="menu-link">Programmatically Creating a Pull Request</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When working on new features or bug fixes within your app, using the GitHub UI to open pull requests can quickly become tedious. You have to navigate to the GitHub repo in question, select the branch you are trying to submit a pull request to, and then go through the further steps related to creating your pull request. The GitHub developer API aims to abstract all of this away into one simple HTTP call. This API can save you tons of time over the long term.</p>
+<p>This guide will demonstrate how you can use the GitHub API to create your pull request for you by creating your own command line or UI in order to take away a bunch of the manual steps needed in this process.</p>
+<p>Let’s dive in!</p>
+<h2 id="api-overview-and-setup">API Overview and Setup</h2>
+<p>The GitHub API is split into two big sections: REST and GraphQL. This guide will use the REST API, although the GraphQL API is a great alternative if you are used to working with GraphQL.</p>
+<p>The first thing you need to do is install the <span class="jsx-3120878690"><code>@octokit/core</code></span> NPM dependency. This is GitHub’s core developer toolkit, and is the NPM package this guide will use to interact with GitHub’s REST API. To install this dependency, navigate to your top-level project directory and run:</p>
+<pre><code>1npm install --save-dev @octokit/core</code></pre>
+<p>bash</p>
+<p>With this dependency installed, your next step will be to generate a personal access token so that your program can successfully authenticate with GitHub’s REST API. To do this, navigate to <a href="https://github.com/settings/tokens/new?scopes=repo">the token settings portion of your GitHub account</a> and follow the onscreen steps.</p>
+<p>With your dependencies downloaded and your personal access token ready to go, it’s time to start interacting with the GitHub API.</p>
+<h2 id="programmatically-creating-a-pull-request">Programmatically Creating a Pull Request</h2>
+<p>The GitHub API provides a number of options for creating a pull request. You can view these options and the available configuration <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/pulls#create-a-pull-request">here</a>.</p>
+<p>Now that you’r in your JavaScript code, it’s time to see what this API can do!</p>
+<blockquote>
+<p>Note: Don’t forget to keep your authorization token a secret! Don’t check your token into source control!</p>
+</blockquote>
+<pre><code>1import { Octokit } from &quot;@octokit/core&quot;;
+2
+3const octokit = new Octokit({ auth: &#39;your-token!&#39; }),
+4        owner = &#39;test-user&#39;,
+5         repo = &#39;test-repo&#39;,
+6        title = &#39;My Test Pull Request&#39;,
+7        body  = &#39;This pull request is a test!&#39;,
+8        head  = &#39;my-feature-branch&#39;,
+9        base  = &#39;develop-branch&#39;;
+10
+11const response = await octokit.request(
+12    `POST /repos/{owner}/{repo}/pulls`, { owner, repo, title, body, head, base }
+13);</code></pre>
+<p>javascript</p>
+<p>Wow, that was really simple! As you can see, first you need to import the <span class="jsx-3120878690"><code>Octokit</code></span> class from GitHub’s developer API project. Once you instantiate an instance of the <span class="jsx-3120878690"><code>Octokit</code></span> class with your personal access token, you can then use the <span class="jsx-3120878690"><code>request</code></span> method to open a new pull request. The above example uses a lot of the options that are available for this particular API request. The following list is a breakdown of the most common options to use:</p>
+<ul>
+<li>owner: A required option that specifies the username of the owner of the repo</li>
+<li>repo: A required option, this is the repo name in question</li>
+<li>head: A required option that gives the API the name of the branch that contains your changes</li>
+<li>base: A required option that gives the API the name of the branch that you are attempting to alter</li>
+<li>title: This option is not required. This is the title of your pull request.</li>
+<li>body: This option is not required. This is the pull request description.</li>
+</ul>
+<p>After running the above code, you can now navigate to the GitHub repo in your browser and see your submitted pull request!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The GitHub developer API provides a rich layer of capabilities for interacting programmatically with your GitHub codebase. There’s much more available to you then just simply creating a pull request too! I encourage you to check out <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference">the GitHub REST API documentation</a> to see the plethora of options you have available.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

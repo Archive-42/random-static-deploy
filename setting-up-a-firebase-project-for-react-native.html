@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>setting-up-a-firebase-project-for-react-native</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/d87e74d1-8e02-494a-9052-eb43fe48f3ac.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="setting-up-a-firebase-project-for-react-native">Setting Up a Firebase Project for React Native</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Oct 17, 2020</p></li>
+<li><p>12 Min read</p></li>
+<li><p>9,134 Views</p></li>
+<li><p>Oct 17, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">12 Min</span> read</p></li>
+<li><p>9,134 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>20</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-prerequisites" class="menu-link">Prerequisites</a></li>
+<li><a href="#module-createandrunareactnativeproject" class="menu-link">Create and Run a React Native Project</a></li>
+<li><a href="#module-addingfirebasedependencies" class="menu-link">Adding Firebase Dependencies</a></li>
+<li><a href="#module-creatingafirebaseproject" class="menu-link">Creating a Firebase Project</a></li>
+<li><a href="#module-addnativeprojectsinfirebaseproject" class="menu-link">Add Native Projects in Firebase Project</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Firebase is one of the most prominent cloud computing platforms to develop mobile and web apps. Firebase offers numerous <a href="https://en.wikipedia.org/wiki/Mobile_backend_as_a_service">MBaaS</a> services for mobile development, including a database (NoSQL and document), file storage, authentication, crash reporting, notifications (FCM), analytics, hosting, dynamic links, remote config, A/B testing, machine learning, and so on.</p>
+<p>Uploading images is a common feature in app development to process, store, and share images. Firebase provides a storage API service to store multimedia content. The best feature of the Firebase storage API is its robustness. It will automatically pause or resume the uploading task according to the network strength.</p>
+<p>Firebase services can also be integrated with React Native projects, but this requires platform-specific (Android and iOS) setup and configurations. To cover everything, the whole process has been broken down into three guides:</p>
+<ol type="1">
+<li><p>Setting Up a Firebase Project for React Native (this guide)</p></li>
+<li><p><a href="https://app.pluralsight.com/guides/integrate-firebase-storage-and-image-picker-in-react-native">Integrate Firebase Storage and Image Picker in React Native</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/upload-images-to-firebase-storage-in-react-native">Upload Images to Firebase Storage in React Native</a></p></li>
+</ol>
+<p>This guide explains the implementation details to create a project in Firebase console and configure a React Native project with Firebase. The complete optimized codebase is available on the <a href="https://github.com/Pavneet-Sing/RNFirebaseStorage">RNFirebaseStorage</a> repository.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>React Native follows the development structure and tools of React, so this guide assumes that you have basic knowledge of the following technologies and tools.</p>
+<h3 id="technologies">Technologies</h3>
+<ul>
+<li>Basics of JavaScript</li>
+<li>HTML, Objects, and EcmaScript 6 (ES6 classes and arrow functions, etc.)</li>
+</ul>
+<h3 id="installed-tools">Installed Tools</h3>
+<ul>
+<li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+<li>Command-line interface (CLI)</li>
+<li>XCode and <a href="https://cocoapods.org/">CocoaPods</a> (explained in next section)</li>
+</ul>
+<p>Follow the <a href="getting-started-with-reactnative-on-android.html">Getting Started with React Native on Android</a> guide to learn the basics of React Native development.</p>
+<h2 id="create-and-run-a-react-native-project">Create and Run a React Native Project</h2>
+<p>The first step is to create a React Native project and set up the runtime environment:</p>
+<ol type="1">
+<li><p>Create a React Native project:</p>
+<p>1npx react-native init RNFirebaseStorage</p></li>
+</ol>
+<p>bash</p>
+<ol type="1">
+<li><p>Follow the <a href="https://developer.android.com/studio/run/managing-avds">steps to create an android virtual device (AVD)</a></p></li>
+<li><p>Run the projects:</p>
+<p>1cd RNFirebaseStorage 2npx react-native run-android –verbose 3# or to run iOS app 4npx react-native run-iOS –verbose</p></li>
+</ol>
+<p>bash</p>
+<p>The above command process may ask to install <span class="jsx-3120878690"><code>CocoaPods</code></span>, which is a dependency manager for iOS projects and is required to run iOS apps.</p>
+<p>In the above command, <span class="jsx-3120878690"><code>--verbose</code></span> is optional but useful to view any potential issues, like below.</p>
+<p><strong>Note:</strong> Make sure to follow this guide’s <a href="getting-started-with-reactnative-on-android.html">Known Gradle Issues</a> section to learn about <span class="jsx-3120878690"><code>InvokerHelper</code></span> or build tool issues of <span class="jsx-3120878690"><code>gradle</code></span> in React Native.</p>
+<h2 id="adding-firebase-dependencies">Adding Firebase Dependencies</h2>
+<p>Firebase SDK modules allow the apps to directly communicate with the Firebase server app. The <a href="https://github.com/invertase/react-native-firebase/tree/master/packages/app">react-native-firebase</a> NPM module provides the basic functionality to integrate Firebase services with the React Native apps using JavaScript and native modules. Execute the below commands in the root folder of the React Native project to install the <span class="jsx-3120878690"><code>react-native-firebase</code></span> module:</p>
+<pre><code>1npm install @react-native-firebase/app
+2# or using yarn
+3# yarn add @react-native-firebase/app</code></pre>
+<p>bash</p>
+<h2 id="creating-a-firebase-project">Creating a Firebase Project</h2>
+<p>To create Firebase projects for Android and iOS, create an account on <a href="https://firebase.google.com/">Firebase Console</a>, then select the <strong>Go to console</strong> option for the next steps: <embed src="../../pluralsight2.imgix.net/guides/66805d33-707b-4508-b07b-fbee8cc9011f_1._go_to_console.html" /></p>
+<ol type="1">
+<li><p><strong>Create/Add a Firebase Project</strong>: The first time, Firebase will show a <strong>Create a project</strong> option to set up a project. If there is already an existing project in the current account, select the <strong>Add Project</strong> option to create a new project: <embed src="../../pluralsight2.imgix.net/guides/5c93159d-63dd-4b97-9ac2-cdddcb6ec7c9_add_project.html" /></p></li>
+<li><p><strong>Add Name</strong>: A project name can be anything but should be at least four characters long and should contain numbers, letters, spaces, and <span class="jsx-3120878690"><code>-!'"</code></span> special characters only. Provide a name and click <strong>continue</strong>: <embed src="../../pluralsight2.imgix.net/guides/9a6f3a66-5c69-4397-806f-5c57f25f7376_2._Add_project_name.html" /></p></li>
+</ol>
+<p>Project names can be duplicates, but always use a unique name to avoid possible configuration issues.</p>
+<ol type="1">
+<li><strong>Create Project</strong>: As of now, there is no need for any other Firebase service, so disable Google Analytics and select the <strong>Create project</strong> button: <embed src="../../pluralsight2.imgix.net/guides/7f7bb0de-3def-4df3-bd20-dfd6512d142c_3._analytics.html" /></li>
+</ol>
+<p>Select the default account for analytics: <embed src="../../pluralsight2.imgix.net/guides/e345d0d1-3933-4d11-9493-cc466f76b0d7_3.2_config_google_analytics.html" /></p>
+<p>It might take a couple of minutes to create a project. Press <strong>continue</strong> to go to the project screen after the successful project creation.</p>
+<h2 id="add-native-projects-in-firebase-project">Add Native Projects in Firebase Project</h2>
+<p>Firebase supports mobile and web apps, so the platform-specific apps need to be added under the Firebase project and the native (Android and iOS) project files need to be configured:</p>
+<h3 id="setting-up-an-android-firebase-project">Setting Up an Android Firebase Project</h3>
+<p>Select the Android app option in the Firebase project console and follow the steps to create and configure an Android project:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7bf8d55f-7f83-4636-96c9-3f9bab7364a1_4.0_create_android_project.html" /><figcaption aria-hidden="true">Create an android project</figcaption>
+</figure>
+<ol type="1">
+<li><p><strong>Add Package</strong>: A package name is required to create an Android project. It’s a unique identifier of an Android app. The package name is used to identify an app on the Play Store and device, so it must be a unique value. The package name is defined as a string value of <span class="jsx-3120878690"><code>applicationId</code></span> key in the <span class="jsx-3120878690"><code>RNFirebaseStorage/android/app/build.gradle</code></span> file:</p>
+<p>1applicationId “com.rnfirebasestorage”</p></li>
+</ol>
+<p>groovy</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d18943d9-5e6e-492b-9aeb-87b3e0da00e8_4.1_register_app.html" /><figcaption aria-hidden="true">Add Android package name</figcaption>
+</figure>
+<p>Add the package name in the <strong>Android package name</strong> field and provide a nickname to register the Android app.</p>
+<ol type="1">
+<li><strong>Add Configuration File</strong>: Download the <span class="jsx-3120878690"><code>google-services.json</code></span> file, then copy and paste the file in <span class="jsx-3120878690"><code>RNFirebaseStorage/android/app</code></span> folder.</li>
+</ol>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d98275c6-b23d-43a9-8494-9e10863dcad6_5._register_android_app.html" /><figcaption aria-hidden="true">Download package.json android</figcaption>
+</figure>
+<ol type="1">
+<li><p><strong>Configure Google Services</strong>: Firebase configurations requires <span class="jsx-3120878690"><code>google-services</code></span> plugins to build the project, so add the <span class="jsx-3120878690"><code>google-services</code></span> dependency in the <span class="jsx-3120878690"><code>RNFirebaseStorage/android/build.gradle</code></span> file:</p>
+<p>1buildscript { 2ext {//…} 3repositories {//…} 4dependencies { 5//… 6classpath ‘com.google.gms:google-services:4.3.3’ // add this 7} 8}</p></li>
+</ol>
+<p>groovy</p>
+<p>Add the <span class="jsx-3120878690"><code>google-services</code></span> plugin in the <span class="jsx-3120878690"><code>RNFirebaseStorage/android/app/build.gradle</code></span> file at the top:</p>
+<pre><code>1// apply plugin: &quot;com.android.application&quot;
+2apply plugin: &quot;com.google.gms.google-services&quot; // add this</code></pre>
+<p>groovy</p>
+<p>There is no need to add any other Firebase SDK dependency for Android. If you’ve opted for Google Analytics, it should also be added as an NPM module dependency, not as a <span class="jsx-3120878690"><code>gradle</code></span> dependency. 4. <strong>Verify App</strong>: Run the Android project to confirm the successful integration with Firebase:</p>
+<pre><code>1npx react-native run-android --verbose</code></pre>
+<p>bash</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/707a1de5-e578-4f5e-bd42-1bfd7654e4fa_Run_success.html" /><figcaption aria-hidden="true">Run to verify success</figcaption>
+</figure>
+<p><strong>Note</strong>: In case of any issue, make sure that the <span class="jsx-3120878690"><code>google-services.json</code></span> is correct, though there can be a slight delay to receive the update status. Alternately, run</p>
+<pre><code>1cd android &amp;&amp; ./gradlew clean &amp;&amp; cd ..</code></pre>
+<p>bash</p>
+<p>to clean the project and rerun the project.</p>
+<h3 id="setting-up-ios-firebase-project">Setting Up iOS Firebase Project</h3>
+<p>Select the iOS app option in the Firebase project console and follow the steps to configure the iOS project in the React Native project: <embed src="../../pluralsight2.imgix.net/guides/683bf3c0-9289-4a2e-9087-4c0848488929_9._add_ios.html" /></p>
+<ol type="1">
+<li><strong>Add Bundle ID</strong>: A bundle ID (like <span class="jsx-3120878690"><code>package-name</code></span>) is a unique identifier that is required to create an iOS project in the Firebase console. The best way to get the bundle ID is via using <span class="jsx-3120878690"><code>XCode</code></span>, since often it’s not available directly. The configurations files often use the value of globally defined variables. Open the <span class="jsx-3120878690"><code>RNFirebaseStorage.xcodeproj</code></span> (<span class="jsx-3120878690"><code>RNFirebaseStorage.workspace</code></span>) file with <span class="jsx-3120878690"><code>Xcode</code></span> and select the root folder of the project to view the value of <span class="jsx-3120878690"><code>Bundle identifier</code></span> in <span class="jsx-3120878690"><code>General</code></span> tab:</li>
+</ol>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c26e3eb1-f150-4092-8693-aa6773260870_10_bundle_identifier.html" /><figcaption aria-hidden="true">bundle identifier</figcaption>
+</figure>
+<p>Copy the identifier and paste it to the <strong>iOS bundle</strong> field: <embed src="../../pluralsight2.imgix.net/guides/5bfff3d6-7476-486b-9846-0782f41401d6_11_ios_reg_app.html" /></p>
+<ol type="1">
+<li><strong>Add Configuration File</strong>: Download the <span class="jsx-3120878690"><code>GoogleService-Info.plist</code></span> file from the Firebase iOS project screen: <embed src="../../pluralsight2.imgix.net/guides/ce054fb8-0220-4adf-9177-c85513820fca_11.1_download_plist.html" /></li>
+</ol>
+<p>Add the file in the React Native’s iOS project using Xcode:</p>
+<ul>
+<li><p>Right-click on the project and select the <strong>Add Files to RNFirebaseStorage</strong> option. <embed src="../../pluralsight2.imgix.net/guides/bdefe5b5-1edf-47ee-a90a-b2eebd9c1002_12_add_file.html" /></p></li>
+<li><p>Locate the <span class="jsx-3120878690"><code>GoogleService-Info.plist</code></span> file, then select <strong>Create groups</strong> and all the target projects: <embed src="../../pluralsight2.imgix.net/guides/49df28d0-c3ac-4d2a-9021-6a160ddcea20_12_add_plist.html" /></p></li>
+</ul>
+<ol type="1">
+<li><p><strong>Configure Firebase</strong>: The entry point of an iOS app execution is the <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">AppDelegate.m</a> file where the Firebase SDK initialization call needs to be added inside the <span class="jsx-3120878690"><code>didFinishLaunchingWithOptions</code></span> function:</p>
+<p>1@import Firebase; // add the import 2//… 3 4@implementation AppDelegate 5 6- (BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions 7{ 8// initialize Firebase SDK 9if ([FIRApp defaultApp] == nil) { 10[FIRApp configure]; 11} 12// … 13return YES; 14}</p></li>
+</ol>
+<p>objective-c</p>
+<p><strong>Note:</strong> As of Sep 2020, React native is using objective-c for iOS projects. Analytics dependency is required for an iOS project to verify the successful integration.</p>
+<p>Now update the <span class="jsx-3120878690"><code>pod</code></span> dependencies:</p>
+<pre><code>1npm install @react-native-firebase/analytics
+2# in the root folder
+3cd ios &amp;&amp; pod install --repo-update &amp;&amp; cd ..</code></pre>
+<p>bash</p>
+<p>Firebase analytics dependency is a must to verify successful Firebase integration with iOS.</p>
+<ol type="1">
+<li><p><strong>Verify App</strong>: Run the iOS project to confirm the successful integration of Firebase with the iOS project:</p>
+<p>1npx react-native run-ios –verbose</p></li>
+</ol>
+<p>bash</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/93560bc1-3b7d-4fc3-bc8a-bc8dd68d71ab_ios_success.html" /><figcaption aria-hidden="true">iOS success</figcaption>
+</figure>
+<p>The Firebase console may take time to confirm the successful integration of Firebase SDK with the iOS app.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>A React Native project can use Firebase services using the NPM <span class="jsx-3120878690"><code>react-native-firebase/app</code></span> module, but the native (Android &amp; iOS) apps need to be added to the Firebase project. The native projects need to be configured to set up Firebase dependencies and the Firebase SDK initialization (iOS only). Read the <a href="https://app.pluralsight.com/guides/integrate-firebase-storage-and-image-picker-in-react-native">next guide</a> to learn about adding Firebase storage service and implement the image picker feature in React Native code. Happy coding!</p>
+<p>20</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="react.js-and-inheritance">React.js and Inheritance</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 10, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>12,006 Views</p></li>
+<li><p>Nov 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>12,006 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>28</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatisinheritance" class="menu-link">What is Inheritance?</a></li>
+<li><a href="#module-implementinheritanceinreact" class="menu-link">Implement Inheritance in React</a></li>
+<li><a href="#module-usingcompositioninreact" class="menu-link">Using Composition in React</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Code reusability is an impactful aspect in any component-based library or a framework. React provides the composition and inheritance for code reusability. Inheritance is used to couple components and their properties, which allows an app to implement code sharing between the components.</p>
+<p>This guide provides an overview of how to implement inheritance and see the composition model usage.</p>
+<h2 id="what-is-inheritance">What is Inheritance?</h2>
+<p>Inheritance is a way to achieve code reusability when some objects have the same number of properties that can be shared across the app. Inheritance allows the app to do the coupling between the parent-child component and reuse properties such as state values and function in its child components.</p>
+<p>React does not use inheritance except in the initial component class, which extends from the <span class="jsx-3120878690"><code>react</code></span> package.</p>
+<h2 id="implement-inheritance-in-react">Implement Inheritance in React</h2>
+<p>Inheritance uses the keyword <span class="jsx-3120878690"><code>extends</code></span> to allow any component to use the properties and methods of another component connected with the parent. Using the <span class="jsx-3120878690"><code>extends</code></span> keyword, you can allow the current component to access all the component’s properties, including the function, and trigger it from the child component.</p>
+<p>This example creates one component called <strong>ParentClass.jsx</strong>.</p>
+<pre><code>1import React from &quot;react&quot;;
+2
+3class ParentClass extends React.Component {
+4  constructor(props) {
+5    super(props);
+6    this.callMe = this.callMe.bind(this);
+7  }
+8
+9  // ParentClass function
+10  callMe() {
+11    console.log(&quot;This is a method from parent class&quot;);
+12  }
+13
+14  render() {
+15    return false;
+16  }
+17}</code></pre>
+<p>jsx</p>
+<p><span class="jsx-3120878690"><code>ParentClass</code></span> extends the component from React as <span class="jsx-3120878690"><code>React.component</code></span>, which means the newly created component itself is using the inheritance. After creating parent class/component, create one child component, <strong>Example.jsx</strong>.</p>
+<pre><code>1export default class Example extends ParentClass {
+2  constructor() {
+3    super();
+4  }
+5  render() {
+6    this.callMe();
+7    return false;
+8  }
+9}</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>Example</code></span> class extends <span class="jsx-3120878690"><code>ParentClass</code></span> so the child class will access all the properties and methods created inside the parent component.</p>
+<pre><code>1render() {
+2  this.callMe();
+3  return false;
+4}</code></pre>
+<p>jsx</p>
+<p>Here in the child class, the <span class="jsx-3120878690"><code>this.callMe()</code></span> function is called the part of parent class implementation, so the parent component’s properties and its methods can be accessed by implementing inheritance in the child component.</p>
+<h2 id="using-composition-in-react">Using Composition in React</h2>
+<p>As per the official React <a href="https://reactjs.org/docs/composition-vs-inheritance.html">documentation</a>:</p>
+<blockquote>
+<p>React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components</p>
+</blockquote>
+<p>Compared to the inheritance, the composition model is much more robust and less coupled because it does inheritance but doesn’t extend the classes directly.</p>
+<p>The composition model uses the parent-child relationship by passing the state, props, and function to the child component as a prop’s value. The child component can access or trigger any changes to each other. For example, you have two-component <span class="jsx-3120878690"><code>ParentComponent</code></span> and a <span class="jsx-3120878690"><code>ChildComponent</code></span>, and the parent’s properties get consumed in the child component.</p>
+<p>Now create one file called <strong>ParentComponent.jsx</strong>.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import ChildComponent from &quot;./ChildComponent&quot;;
+3
+4class ParentComponent extends React.Component {
+5    constructor(props) {
+6        super(props);
+7        this.state = {
+8            message: &quot;This is a message from parent class&quot;
+9        };
+10    }
+11
+12    render() {
+13        return (
+14            &lt;div&gt;
+15                &lt;ChildComponent message={this.state.message} /&gt;
+16            &lt;/div&gt;
+17        );
+18    }
+19}
+20
+21export default ParentComponent;</code></pre>
+<p>jsx</p>
+<p>From the parent component, the value <span class="jsx-3120878690"><code>this.state.message</code></span> is passed to the child component without extending any component.</p>
+<p>Create one file called <strong>ChildComponent.jsx</strong>.</p>
+<pre><code>1import React from &quot;react&quot;;
+2
+3class ChildComponent extends React.Component {
+4    render() {
+5        const { message } = this.props;
+6        return (
+7            &lt;div&gt;
+8                &lt;p&gt;
+9                    Message from Parent component : &lt;b&gt;{message}&lt;/b&gt;
+10                &lt;/p&gt;
+11            &lt;/div&gt;
+12        );
+13    }
+14}
+15
+16export default ChildComponent;</code></pre>
+<p>jsx</p>
+<p>The child component accesses the parent component’s property called <span class="jsx-3120878690"><code>message</code></span> without extending the <span class="jsx-3120878690"><code>ParentComponent</code></span>.</p>
+<p>In the same way, any function can also be triggered by the child component .</p>
+<pre><code>1clickMe() {
+2    console.log(&quot;Action triggered from child component&quot;);
+3}</code></pre>
+<p>jsx</p>
+<p>And pass it to the child component.</p>
+<pre><code>1render() {
+2    return (
+3        &lt;div&gt;
+4            &lt;ChildComponent message={this.state.message} clickMe={this.clickMe} /&gt;
+5        &lt;/div&gt;
+6    );
+7}</code></pre>
+<p>jsx</p>
+<p>The function gets accessed as a prop from the child component and can also get triggered as below.</p>
+<pre><code>1import React from &quot;react&quot;;
+2
+3class ChildComponent extends React.Component {
+4    render() {
+5        const { message } = this.props;
+6        return (
+7            &lt;div&gt;
+8                &lt;p&gt;
+9                    Message from Parent component : &lt;b&gt;{message}&lt;/b&gt;
+10                &lt;/p&gt;
+11                &lt;button onClick={this.props.clickMe}&gt;Click Me&lt;/button&gt;
+12            &lt;/div&gt;
+13        );
+14    }
+15}
+16
+17export default ChildComponent;</code></pre>
+<p>jsx</p>
+<p>The function <span class="jsx-3120878690"><code>clickMe()</code></span> is triggered by the button click event, and the parent component will process the event.</p>
+<pre><code>1&lt;button onClick={this.props.clickMe}&gt;Click Me&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<p>The composition model allows you to restrict code overuse and decouple components, which can not be possible with inheritance because it needs all the components in sequence. It may lead to code overuse or decomposition at any given point in time.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>React uses inheritance to initialize class as a component. Apart from that, there is no use to suggest to implement component inheritance chaining.</p>
+<p>Instead, the composition model is used to manage the props and function communication and maintain code reusability. You can always use a composition pattern to avoid shared logic behavior.</p>
+<p>If you have any queries, feel free to ask at <a href="https://www.codealphabet.com/contact">Codealphabet</a>.</p>
+<p>28</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

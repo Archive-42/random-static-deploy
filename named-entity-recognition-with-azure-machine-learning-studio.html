@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>named-entity-recognition-with-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="named-entity-recognition-with-azure-machine-learning-studio">Named Entity Recognition with Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 1, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>830 Views</p></li>
+<li><p>Oct 1, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>830 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-namedentityrecognition" class="menu-link">Named Entity Recognition</a></li>
+<li><a href="#module-understandtheoutput" class="menu-link">Understand the Output</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Named entity recognition (NER) is a natural language processing task used to identify important named entities in text such as people, places, organizations, date, or any other category. It can be used alone or alongside topic identification and adds a lot of semantic knowledge to the content, enabling us to understand the subject of any given text.</p>
+<p>Named entity recognition is an import area in research and text mining. Some use cases are to identify places or people mentioned in a tweet, extract key parts from customer feedback, and compliment or assist in sentiment analysis. In this guide, you will learn how to perform named entity recognition in Azure Machine Learning Studio.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will use a dataset containing a column with two sets of text. The first set of text is about the movie <em>Avengers</em> and the second is about Pluralsight.</p>
+<p>First text: <em>Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. The movie features an ensemble cast including Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, and others.</em> (Source: Wikipedia).</p>
+<p>Second text: <em>Pluralsight, Inc. is an American publicly held online education company that offers a variety of video training courses for software developers, IT administrators, and creative professionals through its website. Founded in 2004 by Aaron Skonnard, Keith Brown, Fritz Onion, and Bill Williams, the company has its headquarters in Farmington, Utah. As of July 2018, it uses more than 1,400 subject-matter experts as authors, and offers more than 7,000 courses in its catalog.Since first moving its courses online in 2007, the company has expanded, developing a full enterprise platform, and adding skills assessment modules.</em> (Source: Wikipedia).</p>
+<p>Start by loading the data into the workspace.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click on the <strong>EXPERIMENTS</strong> option listed on the left sidebar, followed by the <strong>NEW</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f0015949-3bb8-44c3-a772-e636a667a3ab_r1.html" /><figcaption aria-hidden="true">n0</figcaption>
+</figure>
+<p>Next, click on the blank experiment and a new workspace will open. Give the name <span class="jsx-3120878690"><code>Named Entity Recognition</code></span> to the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/6e267676-3d05-4384-8beb-0a25393cb588_n1.html" /><figcaption aria-hidden="true">n1</figcaption>
+</figure>
+<p>Next, you will load the data into the workspace. Click <strong>NEW</strong>, and select the <strong>DATASET</strong> option shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/00afbd63-578d-4ee4-b5c7-47001c6f67ea_n2.html" /><figcaption aria-hidden="true">n2</figcaption>
+</figure>
+<p>The selection above will open a window shown below, which can be used to upload the dataset from the local system.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a63068f7-c0bf-4979-8d3a-4f688f42d58e_n3.html" /><figcaption aria-hidden="true">n3</figcaption>
+</figure>
+<p>Once the data is loaded, you can see it in the <strong>Saved Datasets</strong> option. The file name is <span class="jsx-3120878690"><code>ner.csv</code></span>. The next step is to drag it from the <strong>Saved Datasets</strong> list into the workspace. To explore this data, right-click and select the <strong>Visualize</strong> option as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a48eb08a-8a06-4508-901c-0495773205f2_n4.html" /><figcaption aria-hidden="true">n4</figcaption>
+</figure>
+<p>You can see there is a single column with rows containing the two texts highlighted above.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a9206f3b-ed05-4ed6-8c69-3e8ed9b853c5_n4visualnew.html" /><figcaption aria-hidden="true">n4vis</figcaption>
+</figure>
+<h2 id="named-entity-recognition">Named Entity Recognition</h2>
+<p>The <strong>Named Entity Recognition</strong> module is used to identify things such as names, organizational entities, places, etc. Start by typing “named entity” in the search bar to find the module, and then drag it into the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7519ad32-d50c-490a-80e9-da21ed3b90c9_n6.html" /><figcaption aria-hidden="true">n6</figcaption>
+</figure>
+<p>In the output above, you can see the <strong>Story</strong> port. This is the port to which you need to connect the text data, and from which to extract entities. Connect the data to this port as shown below. Run the experiment.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e18483c3-cf99-4656-bb0a-b0a4b2f80a31_n7.html" /><figcaption aria-hidden="true">n7</figcaption>
+</figure>
+<h2 id="understand-the-output">Understand the Output</h2>
+<p>Once the module run is complete, you can right click and select the <strong>Visualize</strong> option to look at the results.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e788410e-96a6-4573-9434-7f4bb81aa0d1_n8.html" /><figcaption aria-hidden="true">n8</figcaption>
+</figure>
+<p>The output below shows the result from the processing done in the <strong>Named Entity Recognition</strong> module. The output contains 14 rows and five columns. The <span class="jsx-3120878690"><code>Article</code></span> variable represents the text rows, one each for Avengers and Pluralsight text. The <span class="jsx-3120878690"><code>Mention</code></span> variable indicates the part of the sentence identified.</p>
+<p>Finally, the <span class="jsx-3120878690"><code>Type</code></span> variable contains the result of the entity. For example, <strong>Marvel Studios</strong> is recognized as <strong>ORG</strong>, which stands for organization. Similarly, <strong>Chris Evans</strong> is recognized as a person, donated as <strong>PER</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4c61e20e-0c85-465e-a491-5aa659de666b_n9result1.html" /><figcaption aria-hidden="true">n9</figcaption>
+</figure>
+<p>Scroll down to look at the output for second text corpus on Pluralsight. <strong>Pluralsight, Inc</strong> is recognized as <strong>ORG</strong>, while <strong>Aaron Skonnard</strong> is correctly identified as <strong>PER</strong>. Also, you’ll notice that the module has correctly recognized <strong>Farmington</strong> and <strong>Utah</strong> as locations, denoted as <strong>LOC</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2285033c-77ab-4250-9a12-8ef2cc6d15b1_n10result2.html" /><figcaption aria-hidden="true">n10</figcaption>
+</figure>
+<p>This simple data gave insight to the power of the <strong>Named Entity Recognition</strong> module to identify names, locations, and entities.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Named entity recognition is an advanced area of natural language processing, and businesses are using it to extract information about named entities from text data. Content recommendation, improvement in website interactivity, concept extraction, and text classification are some common applications of named entity recognition. You can learn more with <a href="https://app.pluralsight.com/guides/natural-language-processing-named-entity-recognition">this guide on Python</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+</ol>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

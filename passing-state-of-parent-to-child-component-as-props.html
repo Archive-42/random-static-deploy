@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>passing-state-of-parent-to-child-component-as-props</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/8ef6c218-9140-4529-8360-570dcb6f5e7a.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gabriel Cánepa</p>
+<h1 id="passing-state-of-parent-to-child-component-as-props">Passing State of Parent to Child Component as Props</h1>
+<h3 id="gabriel-cánepa">Gabriel Cánepa</h3>
+<ul>
+<li><p>Nov 24, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>43,249 Views</p></li>
+<li><p>Nov 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>43,249 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>50</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-settingupstateintheparentcomponent" class="menu-link">Setting up State in the Parent Component</a></li>
+<li><a href="#module-creatingthechildcomponent" class="menu-link">Creating the Child Component</a></li>
+<li><a href="#module-changingthestateoftheparentthroughthechildcomponent" class="menu-link">Changing the State of the Parent Through the Child Component</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React enables developers to write reusable code in the form of components. This modular approach makes it simple to develop robust apps by following a parent-child structure and adding those components in as many times as needed. To configure a component, you can use <em>props</em> (data you pass <em>to</em> the component) whereas <em>state</em> allows you to manage the data that may change <em>inside</em> of that specific component. In other words, with state you can control how it behaves and renders. This guide will demonstrate how to make a parent component aware of actions or changes in the child by passing state as props. Although we will use functional components, the same applies to class-based ones.</p>
+<p>To illustrate, we will store an array of basketball players as objects in the state of the main app component. Next, we will pass that piece of state to a child (<span class="jsx-3120878690"><code>Player</code></span>) component for visualization purposes. Finally, we will set up a function to remove players one by one and see how that impacts the state of the parent. The final code—including all the files—is available in <a href="https://codesandbox.io/s/players-8ehqt">Codesandbox</a> and <a href="https://github.com/gacanepa/pluralsight/tree/master/05%20-%20React">GitHub</a>.</p>
+<h2 id="setting-up-state-in-the-parent-component">Setting up State in the Parent Component</h2>
+<p>To begin, create the following App.js file:</p>
+<pre><code>1import React, { useState } from &quot;react&quot;;
+2import Player from &quot;./components/Player/Player&quot;;
+3import &quot;./styles.css&quot;;
+4
+5export default function App() {
+6  const [players, setPlayers] = useState([
+7    {
+8      name: &quot;LaMarcus Aldridge&quot;,
+9      yearsPro: 14,
+10      position: &quot;Center-Forward&quot;
+11    },
+12    {
+13      name: &quot;Marco Belinelli&quot;,
+14      yearsPro: 13,
+15      position: &quot;Guard&quot;
+16    },
+17    {
+18      name: &quot;DeMar DeRozan&quot;,
+19      yearsPro: 11,
+20      position: &quot;Guard-Forward&quot;
+21    }
+22  ]);
+23
+24  const playersList = players.map(({ name, yearsPro, position }) =&gt; (
+25    &lt;li key={name.replace(&quot; &quot;, &quot;&quot;).toLowerCase()}&gt;
+26      &lt;Player
+27        allPlayers={players}
+28        removePlayer={setPlayers}
+29        name={name}
+30        yearsPro={yearsPro}
+31        position={position}
+32      /&gt;
+33    &lt;/li&gt;
+34  ));
+35
+36  return (
+37    &lt;div className=&quot;App&quot;&gt;
+38      &lt;h1&gt;Team Members ({players.length})&lt;/h1&gt;
+39      &lt;ul className=&quot;List&quot;&gt;{playersList}&lt;/ul&gt;
+40    &lt;/div&gt;
+41  );
+42}</code></pre>
+<p>jsx</p>
+<p>Now, examine what you have so far step by step.</p>
+<ol type="1">
+<li><p>Three standard imports:</p>
+<p>1import React, { useState } from “react”; 2import Player from “./components/Player/Player”; 3import “./styles.css”;</p></li>
+</ol>
+<p>jsx</p>
+<ul>
+<li><p>React (as expected) and the <span class="jsx-3120878690"><code>useState</code></span> hook. The latter will allow you to access and manipulate the state of the current component.</p></li>
+<li><p>A <span class="jsx-3120878690"><code>Player</code></span> component (which you will add later)</p></li>
+<li><p>The CSS file used for styling</p></li>
+</ul>
+<ol start="2" type="1">
+<li><p>A list of basketball players. Through <span class="jsx-3120878690"><code>useState</code></span>, you initialize a piece of state in a variable named <span class="jsx-3120878690"><code>players</code></span> and a function (<span class="jsx-3120878690"><code>setPlayers</code></span>) to update it later</p>
+<p>1const [players, setPlayers] = useState([ 2 { 3 name: “LaMarcus Aldridge”, 4 yearsPro: 14, 5 position: “Center-Forward” 6 }, 7 { 8 name: “Marco Belinelli”, 9 yearsPro: 13, 10 position: “Guard” 11 }, 12 { 13 name: “DeMar DeRozan”, 14 yearsPro: 11, 15 position: “Guard-Forward” 16 } 17]);</p></li>
+</ol>
+<p>jsx</p>
+<ol start="3" type="1">
+<li><p>An array that consists of a series of children components. Here you will be passing the state (the <span class="jsx-3120878690"><code>players</code></span> variable and the <span class="jsx-3120878690"><code>setPlayers</code></span> function) as props to each instance of <span class="jsx-3120878690"><code>Player</code></span>. This will allow you to manipulate the parent’s state from each child.</p>
+<p>1 const playersList = players.map(({ name, yearsPro, position }) =&gt; ( 2 &lt;li key={name.replace(” “,”“).toLowerCase()}&gt; 3 &lt;Player 4 allPlayers={players} 5 removePlayer={setPlayers} 6 name={name} 7 yearsPro={yearsPro} 8 position={position} 9 /&gt; 10</p>
+</li>
+<p>11 ));</p></li>
+</ol>
+<p>jsx</p>
+<ol start="4" type="1">
+<li><p>The <span class="jsx-3120878690"><code>return</code></span> statement that will display the number and list of players (which you will modify via the state):</p>
+<p>1return ( 2</p>
+<div data-classname="App">
+3
+<h1>
+Team Members ({players.length})
+</h1>
+4
+<ul className="List">
+{playersList}
+</ul>
+5
+</div>
+<p>6);</p></li>
+</ol>
+<p>jsx</p>
+<p>Once you put the child component in place in the next section, you will observe how the number of players (<span class="jsx-3120878690"><code>players.length</code></span>) and therefore the list itself (<span class="jsx-3120878690"><code>playersList</code></span>) are impacted by actions that occur in it.</p>
+<h2 id="creating-the-child-component">Creating the Child Component</h2>
+<p>The <span class="jsx-3120878690"><code>Player</code></span> component consists of a <span class="jsx-3120878690"><code>span</code></span> element that displays the player’s name, position, and years of experience. In addition, the <span class="jsx-3120878690"><code>handleRemove</code></span> function will make it possible to remove each player from the parent’s state when you click on the corresponding item in the list. To accomplish this, insert the following lines in a file called <span class="jsx-3120878690"><code>Player.js</code></span>:</p>
+<pre><code>1import React from &quot;react&quot;;
+2import &quot;./Player.css&quot;;
+3
+4// Destructuring props in the function arguments.
+5const Player = ({ allPlayers, name, yearsPro, position, removePlayer }) =&gt; {
+6  const handleRemove = () =&gt; {
+7    const filteredPlayers = allPlayers.filter((player) =&gt; player.name !== name);
+8    removePlayer(filteredPlayers);
+9  };
+10
+11  return (
+12    &lt;span onClick={handleRemove}&gt;
+13      {name} ({position}) | Years pro: {yearsPro}
+14    &lt;/span&gt;
+15  );
+16};
+17
+18export default Player;</code></pre>
+<p>jsx</p>
+<p>At this point, you should see the following in the browser:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/21355613-1170-4311-ae61-75794683dbd6_state-as-props-1.html" /><figcaption aria-hidden="true">Displaying the list of players</figcaption>
+</figure>
+<p>Next up, see what happens when the <span class="jsx-3120878690"><code>handleRemove</code></span> function is triggered in a given <span class="jsx-3120878690"><code>Player</code></span> component.</p>
+<h2 id="changing-the-state-of-the-parent-through-the-child-component">Changing the State of the Parent Through the Child Component</h2>
+<p>Now that you have set up the state in the parent and passed it to the child as props, click on any of the players and see how it is removed from the list:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ea21dd40-b916-4afb-9adc-ab657f38115f_state-as-props-2.html" /><figcaption aria-hidden="true">Making changes in the state of the parent</figcaption>
+</figure>
+<p>As you can see, the number of players is now two. If you click on another player, it will decrease to one:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fb6a2ca9-c0da-4f84-82be-816c4e1c730e_state-as-props-3.html" /><figcaption aria-hidden="true">Displaying more changes in the parent</figcaption>
+</figure>
+<p>Thus, you can confirm that the actual list of players (which resides in <span class="jsx-3120878690"><code>App.js</code></span>) is modified when you manipulate the props in <span class="jsx-3120878690"><code>Player</code></span>.</p>
+<p>Alternatively, you can inspect the components using the React Developer Tools:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/950851a3-666b-4b85-b51c-99cbd458e5db_state-as-props-4.html" /><figcaption aria-hidden="true">Using the React Developer Tools to inspect components</figcaption>
+</figure>
+<p>First, click on <strong>App</strong> and observe its state under the <strong>Hooks</strong> section on the right pane. Second, click on a given player component and examine its props. Finally, click on any of the items in the page and see how the state and props of the parent and child components are updated, respectively.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>While the example in this guide is rather simple, you will find this same principle in all kinds of React-based apps. For example, you can think of a shopping cart with the total price as the parent component and each purchased item with its corresponding subtotal and individual quantity as a child.</p>
+<p>Passing state as props from parent to child components is a core concept of React. By keeping state in only a few components and passing it to as many children as needed in the form of props, you will be able to write code that is easier to maintain, and you will thank yourself down the road.</p>
+<p>50</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

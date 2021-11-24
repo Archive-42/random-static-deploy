@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uploading-files-with-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="uploading-files-with-react.js">Uploading Files with React.js</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Nov 15, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>108,454 Views</p></li>
+<li><p>Nov 15, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>108,454 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>222</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setupanapp" class="menu-link">Set Up an App</a></li>
+<li><a href="#module-addstate" class="menu-link">Add State</a></li>
+<li><a href="#module-uploadafilewithfetch" class="menu-link">Upload a File with Fetch</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>You may not have ever handled file uploads in React or any other technologies, but there is a high possibility you’ll encounter the need for it, whether tor update profile photos of users, CSV files, or PDFs, to mention but a few. In this guide, you’ll learn how to upload files in your React apps.</p>
+<h2 id="set-up-an-app">Set Up an App</h2>
+<p>To get started, run the following command in your terminal or visit <a href="https://react.new/">https://react.new</a> to get a fully configured React development environment via <a href="https://codesandbox.io/">https://codesandbox.io</a>.</p>
+<pre><code>1npx create-react-app &lt;YOUR_APP_NAME&gt;</code></pre>
+<p>jsx</p>
+<p><span class="jsx-3120878690"><code>&lt;YOUR_APP_NAME&gt;</code></span> refers to your preferred app name.</p>
+<p>Next, create a simple component that has a file input with an upload button.</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3function FileUploadPage(){
+4 return(
+5   &lt;div&gt;
+6            &lt;input type=&quot;file&quot; name=&quot;file&quot; onChange={changeHandler} /&gt;
+7            &lt;div&gt;
+8                &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+9            &lt;/div&gt;
+10       &lt;/div&gt;
+11    )
+12}</code></pre>
+<p>jsx</p>
+<h2 id="add-state">Add State</h2>
+<p>Now add some state to your app to contain information about the file selected by the user.</p>
+<pre><code>1import React, {useState} from &#39;react&#39;;
+2
+3function FileUploadPage(){
+4 const [selectedFile, setSelectedFile] = useState();
+5 const [isFilePicked, setIsFilePicked] = useState(false);
+6
+7    return(
+8   &lt;div&gt;
+9            &lt;input type=&quot;file&quot; name=&quot;file&quot; onChange={changeHandler} /&gt;
+10           &lt;div&gt;
+11               &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+12           &lt;/div&gt;
+13       &lt;/div&gt;
+14    )
+15}</code></pre>
+<p>jsx</p>
+<p><span class="jsx-3120878690"><code>selectedFile</code></span> contains information on the currently picked file.</p>
+<p><span class="jsx-3120878690"><code>isFilePicked</code></span> determines if a file has been picked or not.</p>
+<p>Now implement the <span class="jsx-3120878690"><code>handleSubmission</code></span> and <span class="jsx-3120878690"><code>changeHandler</code></span> event handlers, then add a conditional to display details of the currently selected file in state.</p>
+<pre><code>1import React, {useState} from &#39;react&#39;;
+2
+3function FileUploadPage(){
+4 const [selectedFile, setSelectedFile] = useState();
+5 const [isFilePicked, setIsFilePicked] = useState(false);
+6
+7    const changeHandler = (event) =&gt; {
+8     setSelectedFile(event.target.files[0]);
+9     setIsSelected(true);
+10    };
+11
+12   const handleSubmission = () =&gt; {
+13    };
+14
+15   return(
+16   &lt;div&gt;
+17           &lt;input type=&quot;file&quot; name=&quot;file&quot; onChange={changeHandler} /&gt;
+18           &lt;div&gt;
+19               &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+20           &lt;/div&gt;
+21       &lt;/div&gt;
+22    )
+23}</code></pre>
+<p>jsx</p>
+<p><span class="jsx-3120878690"><code>Event.target.files</code></span> is an object that contains the details of files selected to be uploaded in a form.</p>
+<p>The currently selected file object also looks as follows.</p>
+<pre><code>1{
+2     lastModified: 1588350162449
+3     lastModifiedDate: Fri May 01 2020 17:22:42 GMT+0100 (British Summer Time) {} // Date object
+4     name: &quot;Pluralsight_logo.png&quot;
+5     size: 68317
+6     type: &quot;image/png&quot;
+7     webkitRelativePath: &quot;&quot;
+8     __proto__: File
+9}</code></pre>
+<p>jsx</p>
+<p>Now add the conditional display logic to give the user details of the file.</p>
+<pre><code>1import React, {useState} from &#39;react&#39;;
+2
+3function FileUploadPage(){
+4 const [selectedFile, setSelectedFile] = useState();
+5 const [isFilePicked, setIsFilePicked] = useState(false);
+6
+7    const changeHandler = (event) =&gt; {
+8     setSelectedFile(event.target.files[0]);
+9     setIsSelected(true);
+10    };
+11
+12   const handleSubmission = () =&gt; {
+13    };
+14
+15   return(
+16   &lt;div&gt;
+17           &lt;input type=&quot;file&quot; name=&quot;file&quot; onChange={changeHandler} /&gt;
+18           {isSelected ? (
+19                &lt;div&gt;
+20                   &lt;p&gt;Filename: {selectedFile.name}&lt;/p&gt;
+21                   &lt;p&gt;Filetype: {selectedFile.type}&lt;/p&gt;
+22                   &lt;p&gt;Size in bytes: {selectedFile.size}&lt;/p&gt;
+23                   &lt;p&gt;
+24                       lastModifiedDate:{&#39; &#39;}
+25                       {selectedFile.lastModifiedDate.toLocaleDateString()}
+26                   &lt;/p&gt;
+27               &lt;/div&gt;
+28            ) : (
+29                &lt;p&gt;Select a file to show details&lt;/p&gt;
+30            )}
+31           &lt;div&gt;
+32               &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+33           &lt;/div&gt;
+34       &lt;/div&gt;
+35    )
+36}</code></pre>
+<p>jsx</p>
+<h2 id="upload-a-file-with-fetch">Upload a File with Fetch</h2>
+<p>The Fetch API can be used to implement file uploads, or you can also use a library such as Axios to implement the upload logic. Implement the <span class="jsx-3120878690"><code>onClick</code></span> handler, as shown below, to handle the file upload.</p>
+<p>There’s a free service that enables file uploads via their API, so go ahead and signup <a href="https://freeimage.host/page/api?lang=en">here</a> to obtain an API key.</p>
+<pre><code>1import React, {useState} from &#39;react&#39;;
+2
+3function FileUploadPage(){
+4 const [selectedFile, setSelectedFile] = useState();
+5 const [isFilePicked, setIsFilePicked] = useState(false);
+6
+7    const changeHandler = (event) =&gt; {
+8     setSelectedFile(event.target.files[0]);
+9     setIsSelected(true);
+10    };
+11
+12   const handleSubmission = () =&gt; {
+13        const formData = new FormData();
+14
+15       formData.append(&#39;File&#39;, selectedFile);
+16
+17       fetch(
+18            &#39;https://freeimage.host/api/1/upload?key=&lt;YOUR_API_KEY&gt;&#39;,
+19            {
+20                method: &#39;POST&#39;,
+21                body: formData,
+22            }
+23        )
+24            .then((response) =&gt; response.json())
+25            .then((result) =&gt; {
+26                console.log(&#39;Success:&#39;, result);
+27            })
+28            .catch((error) =&gt; {
+29                console.error(&#39;Error:&#39;, error);
+30            });
+31    };
+32    };
+33
+34   return(
+35   &lt;div&gt;
+36           &lt;input type=&quot;file&quot; name=&quot;file&quot; onChange={changeHandler} /&gt;
+37           {isSelected ? (
+38                &lt;div&gt;
+39                   &lt;p&gt;Filename: {selectedFile.name}&lt;/p&gt;
+40                   &lt;p&gt;Filetype: {selectedFile.type}&lt;/p&gt;
+41                   &lt;p&gt;Size in bytes: {selectedFile.size}&lt;/p&gt;
+42                   &lt;p&gt;
+43                       lastModifiedDate:{&#39; &#39;}
+44                       {selectedFile.lastModifiedDate.toLocaleDateString()}
+45                   &lt;/p&gt;
+46               &lt;/div&gt;
+47            ) : (
+48                &lt;p&gt;Select a file to show details&lt;/p&gt;
+49            )}
+50           &lt;div&gt;
+51               &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+52           &lt;/div&gt;
+53       &lt;/div&gt;
+54    )
+55}</code></pre>
+<p>jsx</p>
+<p>What happened here? You used the fetch API together with the <strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a></strong> native Javascript API to post the file to the fileserver.</p>
+<p>A successful post to the server should result in the following response.</p>
+<pre><code>1{
+2                         &quot;status_code&quot;: 200,
+3                         &quot;success&quot;: {
+4                             &quot;message&quot;: &quot;image uploaded&quot;,
+5                             &quot;code&quot;: 200
+6                         },
+7                         &quot;image&quot;: {
+8                             &quot;name&quot;: &quot;example&quot;,
+9                             &quot;extension&quot;: &quot;png&quot;,
+10                                &quot;size&quot;: 53237,
+11                                &quot;width&quot;: 1151,
+12                                &quot;height&quot;: 898,
+13                                &quot;date&quot;: &quot;2020-11-11 15:32:33&quot;,
+14                                &quot;date_gmt&quot;: &quot;2020-11-11 19:32:33&quot;,
+15                                &quot;storage_id&quot;: null,
+16                                &quot;description&quot;: null,
+17                                &quot;nsfw&quot;: &quot;0&quot;,
+18                                &quot;md5&quot;: &quot;d973298h0d722c956c3629870299735830&quot;,
+19                                &quot;storage&quot;: &quot;datefolder&quot;,
+20                                &quot;original_filename&quot;: &quot;pluralsight_logo.png&quot;,
+21                                &quot;original_exifdata&quot;: null,
+22                                &quot;views&quot;: &quot;0&quot;,
+23                                &quot;id_encoded&quot;: &quot;L&quot;,
+24                                &quot;filename&quot;: &quot;pluralsight_logo.png&quot;,
+25                                &quot;ratio&quot;: 1.2817371937639,
+26                                &quot;size_formatted&quot;: &quot;52 KB&quot;,
+27                                &quot;mime&quot;: &quot;image/png&quot;,
+28                                &quot;bits&quot;: 8,
+29                                &quot;channels&quot;: null,
+30                                &quot;url&quot;: &quot;http://freeimage.host/images/2020/11/11/pluralsight_logo.png&quot;,
+31                                &quot;url_viewer&quot;: &quot;http://freeimage.host/image/L&quot;,
+32                                &quot;thumb&quot;: {
+33                                    &quot;filename&quot;: &quot;example.th.png&quot;,
+34                                    &quot;name&quot;: &quot;example.th&quot;,
+35                                    &quot;width&quot;: 160,
+36                                    &quot;height&quot;: 160,
+37                                    &quot;ratio&quot;: 1,
+38                                    &quot;size&quot;: 17848,
+39                                    &quot;size_formatted&quot;: &quot;17.4 KB&quot;,
+40                                    &quot;mime&quot;: &quot;image/png&quot;,
+41                                    &quot;extension&quot;: &quot;png&quot;,
+42                                    &quot;bits&quot;: 8,
+43                                    &quot;channels&quot;: null,
+44                                    &quot;url&quot;: &quot;http://freeimage.host/images/2020/11/11/pluralsight_logo.th.png&quot;
+45                                },
+46                                &quot;medium&quot;: {
+47                                    &quot;filename&quot;: &quot;pluralsight_logo.md.png&quot;,
+48                                    &quot;name&quot;: &quot;pluralsight_logo.md&quot;,
+49                                    &quot;width&quot;: 500,
+50                                    &quot;height&quot;: 390,
+51                                    &quot;ratio&quot;: 1.2820512820513,
+52                                    &quot;size&quot;: 104448,
+53                                    &quot;size_formatted&quot;: &quot;102 KB&quot;,
+54                                    &quot;mime&quot;: &quot;image/png&quot;,
+55                                    &quot;extension&quot;: &quot;png&quot;,
+56                                    &quot;bits&quot;: 8,
+57                                    &quot;channels&quot;: null,
+58                                    &quot;url&quot;: &quot;http://freeimage.host/images/2020/11/11/pluralsight_logo.md.png&quot;
+59                                },
+60                                &quot;views_label&quot;: &quot;views&quot;,
+61                                &quot;display_url&quot;: &quot;http://freeimage.host/images/2020/11/11/pluralsight_logo.md.png&quot;,
+62                                &quot;how_long_ago&quot;: &quot;moments ago&quot;
+63                            },
+64                            &quot;status_txt&quot;: &quot;OK&quot;
+65                        }</code></pre>
+<p>json</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And that’s a wrap. In this guide, you learned how to upload a file with React and how to use the Fetch API to upload files. If you’d like to read more on the Fetch API and the formData API, the following resources will help:</p>
+<ol type="1">
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" class="uri">https://developer.mozilla.org/en-US/docs/Web/API/FormData</a></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" class="uri">https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch</a></p></li>
+<li><p><a href="using-fetch-with-github-api-v3.html">https://www.pluralsight.com/guides/using-fetch-with-github-api-v3</a></p></li>
+</ol>
+<p>222</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

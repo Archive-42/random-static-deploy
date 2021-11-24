@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>using-user-assigned-managed-identities-in-azure</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="using-user-assigned-managed-identities-in-azure">Using User-assigned Managed Identities in Azure</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 16, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>3,123 Views</p></li>
+<li><p>Oct 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>3,123 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-creatinguserassignedidentities" class="menu-link">Creating User-assigned Identities</a></li>
+<li><a href="#module-linkuserassignedidentitytoanazureresource" class="menu-link">Link User-assigned Identity to an Azure Resource</a></li>
+<li><a href="#module-updateyourcodeusingmanagedidentity" class="menu-link">Update Your Code Using Managed Identity</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Previous guides have covered using <a href="https://app.pluralsight.com/guides/how-to-use-managed-identity-with-azure-blob-and-queue-storage">system assigned managed identities with Azure Stroage Blobs</a> and <a href="https://app.pluralsight.com/guides/how-to-use-managed-identity-with-azure-sql-database">using system assigned managed Identity with Azure SQL Database</a>. However, Azure imposes a limit of 2,000 role assignments per Azure subscription. If you have a lot of Azure resources, each with their own individual system-assigned identity and granular role assignments, you can quickly run into this role assignment limit.</p>
+<p>In this guide, you will learn how to provision user-assigned managed identities, assign roles to them, and share them amongst various resources. This can reduce administration costs since you’ll have fewer service principals to manage.</p>
+<p>Make sure you have the latest version of the <a href="https://docs.microsoft.com/en-us/cli/azure/">Azure CLI</a> to get started.</p>
+<h2 id="creating-user-assigned-identities">Creating User-assigned Identities</h2>
+<p>An easy way to begin working with user-assigned Identities is by using the Azure CLI. It allows you to create several Azure resources in only a few lines of code. This guide uses the Azure CLI with PowerShell.</p>
+<pre><code>1$rg      = &quot;rg-pl-demo&quot;
+2$id      = &quot;id-blogging-app&quot;
+3$app     = &quot;app-blog&quot;
+4$storage = &quot;stblog&quot;
+5
+6az group create -l &quot;australiaeast&quot; -g $rg
+7$principalId = az identity create -g $rg -n $id -o tsv --query &quot;id&quot;</code></pre>
+<p>powershell</p>
+<p>To begin, start by creating a resource group and a managed identity inside it. Resource groups allow you to organize and manage several Azure resources together. This includes assigning permissions or deleting all the resources in a group together.</p>
+<p>A user-assigned identity is another resource that appears inside a resource group. This is convenient since the identity will automatically be deleted if you delete the resource group. In contrast, a service principal or app registration needs to be managed separately. The code above creates the user-assigned identity and saves the automatically generated <span class="jsx-3120878690"><code>principalId</code></span> to a variable so that you can use it later.</p>
+<h2 id="link-user-assigned-identity-to-an-azure-resource">Link User-assigned Identity to an Azure Resource</h2>
+<p>You can assign the identity you created to one or many resources. With the code snippet below you can create an Azure App Service Plan and App Service. Then, you use the identity you created above.</p>
+<pre><code>1# create an app service plan and app service
+2$plan = &quot;plan-blog&quot;
+3$app  = &quot;web-blog-pl&quot;
+4$runtime = &#39;dotnetcore&quot;|&quot;3.1&#39;
+5az appservice plan create -g $rg -n $plan --is-linux --sku F1
+6az webapp create -g $rg -p $plan -n $app -r $runtime
+7
+8# assign the id you created before
+9az webapp identity assign --identities $principalId -g $rg -n $app
+10
+11$storage = &quot;stblogpl&quot;
+12az storage account create -g $rg -n $storage -l &quot;australiaeast&quot; --sku &quot;Standard_LRS&quot;
+13
+14# assign roles
+15$principalId = az identity create -g $rg -n $id -o tsv --query &quot;principalId&quot;
+16az role assignment create --role &quot;Storage Blob Data Contributor&quot; --assignee $principalId</code></pre>
+<p>powershell</p>
+<p>An App Service can have multiple user-assigned identities. In the example above, you assign one identity to the App Service and give it the <span class="jsx-3120878690"><code>Storage Blob Data Contributor</code></span> role. When you assign this identity to another Azure resource, it will already have this role, thus reducing the total number of role assignments.</p>
+<h2 id="update-your-code-using-managed-identity">Update Your Code Using Managed Identity</h2>
+<p>As mentioned earlier, your App Service can have multiple identities assigned to it. In order for authentication to work correctly, you need to supply the <span class="jsx-3120878690"><code>clientId</code></span> of the managed identity you created.</p>
+<p>To do this, you can use Azure’s new <span class="jsx-3120878690"><code>Azure.Identity</code></span> nuget package.</p>
+<pre><code>1services.AddAzureClients(cfg =&gt;
+2{
+3    var managedIdentityClientId = Configuration[&quot;ManagedIdentityClientId&quot;];
+4    var options = new DefaultAzureCredentialOptions
+5    {
+6        ManagedIdentityClientId = managedIdentityClientId
+7    };
+8    var id = new Azure.Identity.DefaultAzureCredential(options);
+9    cfg.AddBlobServiceClient(Configuration.GetSection(&quot;Storage&quot;)).WithCredential(id);
+10});</code></pre>
+<p>csharp</p>
+<p>The code above reads the <span class="jsx-3120878690"><code>ManagedIdentityClientId</code></span> from configuration such as environment variable or <span class="jsx-3120878690"><code>AppSettings.json</code></span> file. It then uses it as a parameter for the <a href="https://docs.microsoft.com/en-us/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet">Azure.Identity.DefaultAzureCredential class</a>.</p>
+<p><span class="jsx-3120878690"><code>DefaultAzureCredential</code></span> is the simplest way to authenticate since it will iterate over the various authentication flows automatically. When you run this code on your development machine, it will use your Visual Studio or Azure CLI credentials. In the App Service environment it will use managed identity.</p>
+<blockquote>
+<p>Note: When you assign the identity and roles to it, it may take a few minutes to update. If you are having issues, try to redeploy the app and restart the App Service instance.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>User-assigned managed identities simplify security since you don’t need to manage credentials. Not all resources are supported at this time, however, they enable access to a growing list of Azure resources that support Azure AD authentication. You can learn more by reading about the services that support managed identities for Azure Resources in <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities">Microsoft’s documentation</a>.</p>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

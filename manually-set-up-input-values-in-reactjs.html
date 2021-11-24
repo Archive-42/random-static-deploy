@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>manually-set-up-input-values-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="manually-set-up-input-values-in-react.js">Manually Set Up Input Values in React.js</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Oct 17, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>1,665 Views</p></li>
+<li><p>Oct 17, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>1,665 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>1</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setupsampleapp" class="menu-link">Set Up Sample App</a></li>
+<li><a href="#module-initialsetup" class="menu-link">Initial Setup</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>During design and development of frontend interfaces in React.js, you will come across instances where you require user data. Working with user data is an essential skill for any React developer. Some scenarios require you to manually set input data before sending it to an API or a database.</p>
+<p>Consider a scenario where you, as a React developer, are designing a login form that requires a user to input their username and password. Before the user is logged into your application, your React app needs to display a captcha code that the user submits to verify that they aren’t a robot. This guide will show you how to manually generate and set up this captcha input.</p>
+<h2 id="set-up-sample-app">Set Up Sample App</h2>
+<p>Open your terminal and run these commands to create a basic React app.</p>
+<pre><code>1npx create-react-app react-manually_setInput
+2
+3cd react-manually_setInput
+4
+5npm start</code></pre>
+<p>bash</p>
+<p>Include React Bootstrap in your basic React app.</p>
+<pre><code>1npm install react-bootstrap bootstrap</code></pre>
+<p>bash</p>
+<p>In your <span class="jsx-3120878690"><code>app.js</code></span> file, include the stylesheet as well.</p>
+<pre><code>1import &#39;bootstrap/dist/css/bootstrap.min.css&#39;;</code></pre>
+<p>js</p>
+<h2 id="initial-setup">Initial Setup</h2>
+<p>Copy and paste the sample code below to create a simple login form with a username, password, and captcha inputs that you will manually generate.</p>
+<pre><code>1import React, {Component} from &#39;react&#39;;
+2import &#39;bootstrap/dist/css/bootstrap.min.css&#39;;
+3import {Button, Row, Col, Card, Form} from &#39;react-bootstrap&#39;;
+4
+5
+6class App extends Component{
+7  constructor(props) {
+8    super(props);
+9    this.state = ({
+10        display: false,
+11        btnDisplay: false,
+12        username: &quot;&quot;,
+13        password: &quot;&quot;,
+14    });
+15
+16    this.handleUsername = this.handleUsername.bind(this);
+17    this.handlePassword = this.handlePassword.bind(this);
+18    this.handleSubmit = this.handleSubmit.bind(this);
+19
+20  }
+21  handleUsername(e){
+22      let username = e.target.value;
+23      this.setState({
+24          username: username
+25      })
+26  }
+27
+28  handlePassword(e){
+29      let password = e.target.value;
+30      this.setState({
+31          password: password
+32      })
+33  }
+34
+35  handleSubmit(e) {
+36      e.preventDefault();
+37      if (!this.state.username &amp;&amp; !this.state.password)
+38          return;
+39      this.setState({
+40          display: true,
+41          btnDisplay:true
+42      })
+43  }
+44
+45  renderCaptcha(){
+46      return(
+47          &lt;div&gt;
+48              &lt;Form.Group as={Row} controlId=&quot;formPlaintextEmail&quot;&gt;
+49                  &lt;Form.Label column sm=&quot;4&quot;&gt;
+50                      Captcha
+51                  &lt;/Form.Label&gt;
+52                  &lt;Col&gt;
+53                      &lt;Form.Control type=&quot;text&quot; placeholder=&quot;Enter Captcha&quot;  /&gt;
+54                  &lt;/Col&gt;
+55              &lt;/Form.Group&gt;
+56
+57              &lt;Button variant=&quot;primary&quot; type=&quot;save&quot; disabled={this.state.btnDisplay}&gt;
+58                  Login
+59              &lt;/Button&gt;
+60
+61          &lt;/div&gt;
+62      )
+63  }
+64
+65  render() {
+66    return (
+67        &lt;Row&gt;
+68          &lt;Col&gt;
+69            &lt;Card style={{ width: &#39;20rem&#39; }}&gt;
+70                &lt;Card.Body&gt;
+71                    &lt;Form&gt;
+72                        &lt;Form.Group &gt;
+73                            &lt;Form.Label&gt;Username&lt;/Form.Label&gt;
+74                            &lt;Form.Control type=&quot;username&quot; placeholder=&quot;Enter username&quot;
+75                                          onChange={this.handleUsername}
+76                            /&gt;
+77                        &lt;/Form.Group&gt;
+78
+79                        &lt;Form.Group &gt;
+80                            &lt;Form.Label&gt;Password&lt;/Form.Label&gt;
+81                            &lt;Form.Control type=&quot;password&quot; placeholder=&quot;Password&quot;
+82                                          onChange={this.handlePassword}
+83                            /&gt;
+84                        &lt;/Form.Group&gt;
+85
+86                        &lt;Button variant=&quot;primary&quot; type=&quot;submit&quot;
+87                                onClick={this.handleSubmit}
+88                        &gt;
+89                            Submit
+90                        &lt;/Button&gt;
+91
+92                        {this.state.display? this.renderCaptcha():&quot;&quot;}
+93                    &lt;/Form&gt;
+94
+95                &lt;/Card.Body&gt;
+96            &lt;/Card&gt;
+97          &lt;/Col&gt;
+98        &lt;/Row&gt;
+99    );
+100  }
+101}
+102
+103export default App;</code></pre>
+<p>js</p>
+<p>In the sample code above, the captcha form will not be visible at first. The <span class="jsx-3120878690"><code>handleSubmit</code></span> function verifies that there are no null values and proceeds to set the display to true. This then triggers your captcha form to be visible and forces the user to enter captcha values that will be manually generated and displayed. The code also ensures that the user can’t log in without the captcha by disabling the login button.</p>
+<p>Once that’s done, the next step is to create captcha values at random, then display them to the user. Copy the sample code below.</p>
+<pre><code>1import React, {Component} from &#39;react&#39;;
+2import &#39;bootstrap/dist/css/bootstrap.min.css&#39;;
+3import {Button, Row, Col, Card, Form} from &#39;react-bootstrap&#39;;
+4
+5
+6class App extends Component{
+7  constructor(props) {
+8    super(props);
+9    this.state = ({
+10        display: false,
+11        btnDisplay: false,
+12        username: &quot;&quot;,
+13        password: &quot;&quot;,
+14        captcha: &quot;&quot;,
+15        userCaptcha: &quot;&quot;
+16    });
+17
+18    this.handleUsername = this.handleUsername.bind(this);
+19    this.handlePassword = this.handlePassword.bind(this);
+20    this.handleSubmit = this.handleSubmit.bind(this);
+21    this.handleCaptcha = this.handleCaptcha.bind(this);
+22
+23  }
+24  handleUsername(e){
+25      let username = e.target.value;
+26      this.setState({
+27          username: username
+28      })
+29  }
+30
+31  handlePassword(e){
+32      let password = e.target.value;
+33      this.setState({
+34          password: password
+35      })
+36  }
+37
+38  handleSubmit(e) {
+39      e.preventDefault();
+40      if (!this.state.username &amp;&amp; !this.state.password)
+41          return;
+42      this.setState({
+43          display: true,
+44          btnDisplay:true
+45      });
+46
+47      let random = Math.random().toString(36).substring(7);
+48      this.setState({
+49          captcha: random
+50      })
+51
+52  }
+53    handleCaptcha(e){
+54      let userCaptcha = e.target.value
+55      if(!userCaptcha)
+56          return;
+57      this.setState({
+58          btnDisplay: false
+59      })
+60
+61    }
+62
+63
+64  renderCaptcha(){
+65      return(
+66          &lt;div&gt;
+67              &lt;Form.Group as={Row} controlId=&quot;formPlaintextEmail&quot;&gt;
+68                  &lt;Form.Label column sm=&quot;4&quot;&gt;
+69                      {this.state.captcha}
+70                  &lt;/Form.Label&gt;
+71                  &lt;Col&gt;
+72                      &lt;Form.Control type=&quot;text&quot; placeholder=&quot;Enter Captcha&quot; onChange={this.handleCaptcha} /&gt;
+73                  &lt;/Col&gt;
+74              &lt;/Form.Group&gt;
+75
+76              &lt;Button variant=&quot;primary&quot; type=&quot;save&quot; disabled={this.state.btnDisplay} &gt;
+77                  Login
+78              &lt;/Button&gt;
+79
+80          &lt;/div&gt;
+81      )
+82  }
+83
+84  render() {
+85    return (
+86        &lt;Row&gt;
+87          &lt;Col&gt;
+88            &lt;Card style={{ width: &#39;20rem&#39; }}&gt;
+89                &lt;Card.Body&gt;
+90                    &lt;Form&gt;
+91                        &lt;Form.Group &gt;
+92                            &lt;Form.Label&gt;Username&lt;/Form.Label&gt;
+93                            &lt;Form.Control type=&quot;username&quot; placeholder=&quot;Enter username&quot;
+94                                          onChange={this.handleUsername}
+95                            /&gt;
+96                        &lt;/Form.Group&gt;
+97
+98                        &lt;Form.Group &gt;
+99                            &lt;Form.Label&gt;Password&lt;/Form.Label&gt;
+100                            &lt;Form.Control type=&quot;password&quot; placeholder=&quot;Password&quot;
+101                                          onChange={this.handlePassword}
+102                            /&gt;
+103                        &lt;/Form.Group&gt;
+104
+105                        &lt;Button variant=&quot;primary&quot; type=&quot;submit&quot;
+106                                onClick={this.handleSubmit}
+107                        &gt;
+108                            Submit
+109                        &lt;/Button&gt;
+110
+111                        {this.state.display? this.renderCaptcha():&quot;&quot;}
+112                    &lt;/Form&gt;
+113
+114                &lt;/Card.Body&gt;
+115            &lt;/Card&gt;
+116          &lt;/Col&gt;
+117        &lt;/Row&gt;
+118    );
+119  }
+120}
+121
+122export default App;</code></pre>
+<p>js</p>
+<p>In the sample code above, you have declared <span class="jsx-3120878690"><code>handleSubmit</code></span> and <span class="jsx-3120878690"><code>handleCaptcha</code></span>. Inside the <span class="jsx-3120878690"><code>handleSubmit</code></span> function, there’s a random code generator for the captcha. This sets the <span class="jsx-3120878690"><code>captcha</code></span> state and subsequently updates the captcha input label with the random code.</p>
+<p>The <span class="jsx-3120878690"><code>handleCaptcha</code></span> function checks if there’re any values in the captcha text input and enables the login button.</p>
+<p>So far, you have learned how to create and set input values manually. Let’s finish up by ensuring the captcha values the user enters correspond to the values given.</p>
+<p>Add a <span class="jsx-3120878690"><code>handleLogin</code></span> function, which will verify the values generated, and the user input.</p>
+<pre><code>1  handleLogin()
+2    {
+3      if(this.state.userCaptcha === this.state.captcha){
+4          alert(&quot;correct captcha&quot;)
+5      }
+6      else{
+7          alert(&quot;incorrect captcha!!&quot;)
+8      }
+9    }</code></pre>
+<p>js</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Manually setting input values in React.js gives you the ability to manipulate input forms and further design an app as you wish. This skill is mostly used by React and frontend developers who design and develop user interfaces.</p>
+<p>Build on this guide by learning how to create form inputs on the official <a href="https://reactjs.org/docs/forms.html">React.js site</a>.</p>
+<p>1</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

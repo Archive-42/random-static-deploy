@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>build-a-treemap-and-pie-chart-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="build-a-tree-map-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 10, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>1,506 Views</p></li>
+<li><p>Nov 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>1,506 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>7</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-piechart" class="menu-link">Pie Chart</a></li>
+<li><a href="#module-treemap" class="menu-link">Tree Map</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In business intelligence, you are often required to create pie charts and tree maps. A pie chart is a circular graph divided into slices to show the composition of the whole data in parts. Each constituent of a pie chart is represented in percentages, and the sum of all the parts is equal to hundred.</p>
+<p>Tree map is another technique used for displaying hierarchical data using nested figures, usually rectangles. The space in the visualization chart is divided into rectangles per the size and order of a numerical variable.</p>
+<p>This guide will demonstrate how to create a pie chart and a tree map in Power BI desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursal across years. The data contains 3,000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The major variables are described below:</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>Date</code></span>: Loan disbursal date.</p></li>
+<li><p><span class="jsx-3120878690"><code>Income</code></span>: Annual Income of the applicant (in US dollars).</p></li>
+<li><p><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</p></li>
+<li><p><span class="jsx-3120878690"><code>Age</code></span>: The applicant’s age in years.</p></li>
+<li><p><span class="jsx-3120878690"><code>Gender</code></span>: Whether the applicant is female (F) or male (M).</p></li>
+<li><p><span class="jsx-3120878690"><code>Interest_rate</code></span>: Annual interest rate, in percentage, charged for the disbursed loan.</p></li>
+<li><p><span class="jsx-3120878690"><code>Purpose</code></span>: Purpose for which loan was taken.</p></li>
+<li><p><span class="jsx-3120878690"><code>Month</code></span>: Month in which loan was disbursed.</p></li>
+</ol>
+<p>You will start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open your Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <span class="jsx-3120878690"><code>BIdata.xlsx</code></span>, and the sheet you will load is the <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="pie-chart">Pie Chart</h2>
+<p>The <strong>Visualization</strong> pane located on the right side of the Power BI desktop contains the list of possible visualization charts. The chart you will use is <strong>Pie chart</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8794ed99-b16b-4a27-b9a3-da06746a9f6d_pie1.html" /><figcaption aria-hidden="true">pie1</figcaption>
+</figure>
+<p>Click on the chart shown above, and it will create a chart box in the canvas. Nothing is displayed yet because you are yet to add the required visualization arguments. These are added in the options located under the <strong>Visualizations</strong> pane. Another thing you can do is collapse the <strong>Filters</strong> option in the pane with the arrow <strong>&gt;</strong> sign.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/59c21e17-2f92-4404-bc15-725970897617_pie2.html" /><figcaption aria-hidden="true">pie2</figcaption>
+</figure>
+<p>You will visualize the different categories of the <span class="jsx-3120878690"><code>Purpose</code></span> variable, and its contribution to <span class="jsx-3120878690"><code>Loan_disbursed</code></span>. Start by dragging the <span class="jsx-3120878690"><code>Loan_disbursed</code></span> variable into the <strong>Values</strong> options, and the <span class="jsx-3120878690"><code>Purpose</code></span> variable into the <strong>Legend</strong> field. This will generate the following plot.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c4e52d98-a5c7-4649-90ed-02d551ae588e_pie3.html" /><figcaption aria-hidden="true">pie3</figcaption>
+</figure>
+<p>Resize the chart as per your convenience. Hovering to a section of the pie chart displays the value of the component and the contribution to the total value. In the output below, the <span class="jsx-3120878690"><code>Purpose</code></span> category displayed is <strong>Personal</strong>. A total of $135.57 million was disbursed for this category, and it contributes 31.05 percent of total loan disbursed by the bank. In the same manner, you can examine the other components of the pie chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/17bacd0e-9164-46f4-be2c-8a3196e5f01a_pie4.html" /><figcaption aria-hidden="true">pie4</figcaption>
+</figure>
+<h3 id="formatting-pie-chart">Formatting Pie Chart</h3>
+<p>There are several options to perform formatting of choice. Click on the <strong>Format</strong> option displayed in the small box below, and you will see different options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/137df3af-92ea-4d38-b9e2-4318df71c768_pie5.html" /><figcaption aria-hidden="true">pie5</figcaption>
+</figure>
+<p>You will format the color and alignment of the chart title as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c3e2bb24-23df-4056-bc38-6b395c9a1621_pie6.html" /><figcaption aria-hidden="true">pie6</figcaption>
+</figure>
+<p>If you want to give border to the chart, you can select the <strong>Border</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7ecc653a-f900-4d11-92de-3f41d334aa2b_pie7.html" /><figcaption aria-hidden="true">pie7</figcaption>
+</figure>
+<h2 id="tree-map">Tree Map</h2>
+<p>In Power BI, you can locate the tree map chart option in the <strong>Visualizations</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9d0032d2-38dd-46d9-b0bd-9ac2011c2276_tm1.html" /><figcaption aria-hidden="true">tm1</figcaption>
+</figure>
+<p>Click on the tree map chart option and the following will be added to the canvas.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cced067d-54fc-4962-84ac-4f4fda9a5d3c_tm2.html" /><figcaption aria-hidden="true">tm2</figcaption>
+</figure>
+<p>Select the chart and you will have different options to fill. In this guide, you will build a tree map to visualize average loan disbursed across months. The objective is to see if there is any seasonality at month level on loan disbursal. Drag the <span class="jsx-3120878690"><code>Month</code></span> variable into the <strong>Group</strong> field, and <span class="jsx-3120878690"><code>Loan_disbursed</code></span> variable into <strong>Values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9669dfb0-92ab-40d3-b25c-1dfe0516e182_tm3.html" /><figcaption aria-hidden="true">tm3</figcaption>
+</figure>
+<p>From the above chart, you can infer that October, June and February are the months with highest loan disbursal. However, the plot is giving summary of loan disbursed by default, while what you’re looking for in this example is the average loan disbursed per month. To make this change, click on the down arrow next to <span class="jsx-3120878690"><code>Loan_disbursed</code></span> as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5afd3912-5c8d-413a-9641-c302d489fb3e_tm4.html" /><figcaption aria-hidden="true">tm4</figcaption>
+</figure>
+<p>The above step will open the option where you can select the <strong>Average</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cda92885-5ff8-4eda-905d-e5e855c9301f_tm5.html" /><figcaption aria-hidden="true">tm5</figcaption>
+</figure>
+<p>Now you can see that the variable in the <strong>Values</strong> field is changed to <span class="jsx-3120878690"><code>Average of Loan_disbursed</code></span>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/380d6fd1-ad59-4245-86a5-ad4ba113aff7_tm6.html" /><figcaption aria-hidden="true">tm6</figcaption>
+</figure>
+<p>The output above shows some changes from the previous tree map. October has the highest loan disbursal across years, but the highest average loan disbursed is for June. To get the values displayed in the chart, you can go to the format option, and select <strong>Data labels</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e66724fb-191f-4aab-a0da-a6bd20fd85a6_tm7.html" /><figcaption aria-hidden="true">tm7</figcaption>
+</figure>
+<p>From the above output, you can infer that the average loan disbursal was highest for month of June, while it was lowest for November.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both pie charts and tree maps are great tools for storytelling using visualization. When the qualitative variable has fewer labels, or categories, a pie chart is visually appealing. However, if the number of measures is large, such as twelve <span class="jsx-3120878690"><code>Months</code></span>, a tree map is a better alternative. Both of these charts are used across industries including manufacturing, utilities, ecommerce, retail, etc.</p>
+<p>These charts are also used in various functions of an organization. For example, the finance function may want to use a pie or tree map chart to understand the cost mix of its operating and fixed expenses.</p>
+<p>7</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

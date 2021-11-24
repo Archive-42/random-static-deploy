@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>estimate-correlation-coefficient-in-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="estimate-correlation-coefficient-in-azure-machine-learning-studio">Estimate Correlation Coefficient in Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 16, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>1,518 Views</p></li>
+<li><p>Oct 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>1,518 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-selectcolumns" class="menu-link">Select Columns</a></li>
+<li><a href="#module-correlationmatrix" class="menu-link">Correlation Matrix</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Many machine learning algorithms require that the continuous variables are not correlated with each other, a phenomenon called <em>multicollinearity</em>. This is because multicollinearity adversely impacts the model training process. Estimating relationships between the numerical variables is a common step to detect and treat multicollinearity. For numerical features, finding a correlation coefficient is a common statistical technique used to estimate the presence or absence of a linear relationship between variables. This guide will demonstrate how to compute a Pearson linear correlation coefficient in Azure Machine Learning Studio.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with the Pima Indian diabetes dataset available in Azure Machine Learning Studio. This data originally comes from the National Institute of Diabetes and Digestive and Kidney Diseases. The dataset consists of several variables, such as the number of pregnancies the patient has had, their BMI, insulin level, age, and so on. You can have a look at this data <a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database/">here</a>.</p>
+<p>The next step is to load and explore the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click on the <strong>EXPERIMENTS</strong> option, listed on the left sidebar, followed by the <strong>NEW</strong> button. Next, click on the blank experiment and give the name <span class="jsx-3120878690"><code>Correlation coefficient</code></span> to the workspace. The following screen will be displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a38c6fc9-546f-45e3-ba14-70d8e5bd260c_lc1.html" /><figcaption aria-hidden="true">lc1</figcaption>
+</figure>
+<p>Under the <strong>Saved Datasets</strong> option, drag the <strong>Pima Indians Diabetes</strong> dataset into the workspace. Right-click and select the <strong>Visualize</strong> option to explore the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4d20568c-ffec-46c1-b542-a8eecafafcfb_lc2.html" /><figcaption aria-hidden="true">lc2</figcaption>
+</figure>
+<p>The data contains 768 rows and 9 columns. Select the different variables to examine their basic statistics. For example, the image below displays the details for the <span class="jsx-3120878690"><code>Body mass index</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f682a934-66d6-49fa-b810-e9a7ecf7b894_lc3.html" /><figcaption aria-hidden="true">lc3</figcaption>
+</figure>
+<h2 id="select-columns">Select Columns</h2>
+<p>Multicollinearity, the presence of a linear relationship, is tested only for numerical variables. The correlation matrix is a technique to identify multicollinearity among numerical variables. To select the required variables in data, search and drag the <strong>Select Columns in Dataset</strong> module.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ba9732c6-8386-4f91-a21a-fdc8183a63c2_lc4.html" /><figcaption aria-hidden="true">lc4</figcaption>
+</figure>
+<p>The next step is to click <strong>Launch column selector</strong> and place the numerical variables you want to test for multicollinearity, into the selected columns box, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/6a2692eb-857e-4171-9653-d8504a62e895_lc5.html" /><figcaption aria-hidden="true">lc5</figcaption>
+</figure>
+<p>Run the experiment and <strong>Visualize</strong> the resulting output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dce9d99b-c5e9-4f7e-9c16-467503095304_lc6.html" /><figcaption aria-hidden="true">lc6</figcaption>
+</figure>
+<p>The output below shows that the resulting data has 768 rows and 4 numerical variables.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a43535e5-1e21-4a98-987e-11d08051c2cc_lc7.html" /><figcaption aria-hidden="true">lc7</figcaption>
+</figure>
+<p>You will compute linear correlation coefficients on these four variables.</p>
+<h2 id="correlation-matrix">Correlation Matrix</h2>
+<p>The <strong>Compute Linear Correlation</strong> module is used in Azure Machine Learning Studio to compute and create the correlation matrix. This module is used to compute a set of Pearson correlation coefficients for each possible pair of numerical variables. The coefficient indicate the direction and extent of linear relationship between the variables of interest.</p>
+<p>Search and drag the module into the workspace, and <strong>Run</strong> the experiment.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c3cd075b-6d98-41c4-813c-03b962b9d117_lc8.html" /><figcaption aria-hidden="true">lc8</figcaption>
+</figure>
+<p>Once the module run is completed, right-click and select <strong>Visualize</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e1b34331-44b9-4d60-9b39-d95503295827_lc9.html" /><figcaption aria-hidden="true">lc9</figcaption>
+</figure>
+<p>Completing the steps above will generate the following correlation matrix as output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/91e9a167-11af-417a-90b7-27a697f9e8f5_l10.html" /><figcaption aria-hidden="true">lc10</figcaption>
+</figure>
+<h3 id="interpreting-the-correlation-matrix">Interpreting the Correlation Matrix</h3>
+<p>The output shows the correlation between four numerical variables: <span class="jsx-3120878690"><code>Diastolic blood pressure</code></span>, <span class="jsx-3120878690"><code>Triceps skin fold thickness</code></span>, <span class="jsx-3120878690"><code>Body mass index</code></span>, and <span class="jsx-3120878690"><code>Age</code></span>.</p>
+<p>The linear correlation coefficient between <span class="jsx-3120878690"><code>Diastolic blood pressure</code></span> to itself is one, which is obvious, but that does not make any sense from a modeling perspective.</p>
+<p>The correlation coefficient between <span class="jsx-3120878690"><code>Diastolic blood pressure</code></span> and <span class="jsx-3120878690"><code>Triceps skin fold thickness</code></span> is 0.207371. This is not a significant correlation, so multicollinearity is ruled out between these two variables.</p>
+<p>Similarly, the linear correlation coefficient of <span class="jsx-3120878690"><code>Diastolic blood pressure</code></span> with <span class="jsx-3120878690"><code>Body mass index</code></span> and <span class="jsx-3120878690"><code>Age</code></span> is 0.281805 and 0.239528, respectively.</p>
+<p>You can similarly interpret the correlation coefficient between the four variables. For correlation to be significant, the rule of thumb is that the absolute value of the coefficient should be greater than 0.6. You can conclude that these four variables are not correlated with each other because the linear correlation coefficient is not significant.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Estimating a correlation coefficient is useful to treat multicollinearity. This often improves machine learning performance for both classification and regression tasks, which are widely used across applications such as marketing analytics, house price prediction, diabetes prediction, equipment failure breakdown, and many more.</p>
+<p>Linear correlation coefficient also finds application in inferential statistics, where you can use it to understand the relationship between explanatory and dependent variables.</p>
+<p>This guide covered how to compute a linear correlation coefficient and create correlation matrix in Azure Machine Learning Studio. You can learn more on this concept with guides on other technologies like <a href="finding-relationships-data-with-python/index.html">Python</a> and <a href="finding-relationships-data-with-r/index.html">R</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+<li><p><a href="named-entity-recognition-with-azure-machine-learning-studio/index.html">Named Entity Recognition with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-analytics-with-azure-machine-learning-studio/index.html">Text Analytics with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="extract-key-phrases-from-text-in-azure-machine-learning-studio/index.html">Extract Key Phrases from Text in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="visualizing-text-data-using-word-cloud-in-azure-machine-learning-studio/index.html">Visualizing Text Data using Word Cloud in Azure Machine Learning Studio</a></p></li>
+</ol>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

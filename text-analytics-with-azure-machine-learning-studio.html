@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>text-analytics-with-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="text-analytics-with-azure-machine-learning-studio">Text Analytics with Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Sep 25, 2020</p></li>
+<li><p>14 Min read</p></li>
+<li><p>2,629 Views</p></li>
+<li><p>Sep 25, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">14 Min</span> read</p></li>
+<li><p>2,629 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>10</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-convertdatatype" class="menu-link">Convert Data Type</a></li>
+<li><a href="#module-preprocesstext" class="menu-link">Preprocess Text</a></li>
+<li><a href="#module-featuregeneration" class="menu-link">Feature Generation</a></li>
+<li><a href="#module-selectcolumnsofinterest" class="menu-link">Select Columns of Interest</a></li>
+<li><a href="#module-modelbuilding" class="menu-link">Model Building</a></li>
+<li><a href="#module-crossvalidation" class="menu-link">Cross Validation</a></li>
+<li><a href="#module-modelevaluation" class="menu-link">Model Evaluation</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Natural Language Processing (or NLP) is ubiquitous and has multiple applications. A few use cases include email classification into spam and ham, chatbots, AI agents, social media analysis, and classifying customer or employee feedback into positive, negative, or neutral. This guide will demonstrate how to build a supervised machine learning model on text data with Azure Machine Learning Studio.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will take up the task of automating reviews in medicine. Medical literature is voluminous and rapidly changing, which increases the need for reviews. Often such reviews are done manually, which is tedious and time-consuming. You will try to address this problem by building a text classification model that will automate the process.</p>
+<p>The dataset you will use comes from a <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> search, and contains 1,748 observations and four variables, as described below.</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>title</code></span>: Variable that consists of the titles of papers retrieved</p></li>
+<li><p><span class="jsx-3120878690"><code>abstract</code></span>: Variable that contains the abstracts of papers retrieved</p></li>
+<li><p><span class="jsx-3120878690"><code>trial</code></span>: Variable indicating whether the paper is a clinical trial testing a drug therapy for cancer</p></li>
+<li><p><span class="jsx-3120878690"><code>class</code></span>: Target variable which indicates whether the paper is a clinical trial (Yes) or not (No)</p></li>
+</ol>
+<p>You will start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click on the <strong>EXPERIMENTS</strong> option, listed on the left sidebar, followed by the <strong>NEW</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9b08f555-3746-4f03-82e1-660a074bdd73_r1.html" /><figcaption aria-hidden="true">t0</figcaption>
+</figure>
+<p>Next, click on the blank experiment and a new workspace will open. Give the name “Text Analytics” to the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/abb7fe02-75a8-4a41-abe9-92bcd72905de_t1.html" /><figcaption aria-hidden="true">t1</figcaption>
+</figure>
+<p>Next you will load the data into the workspace. Click <strong>NEW</strong>, and select the <strong>DATASET</strong> option shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e4a24c5-f763-4a45-9199-f9208d104f9c_t2.html" /><figcaption aria-hidden="true">t2</figcaption>
+</figure>
+<p>The selection above will open a window shown below, which can be used to upload the dataset from the local system.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/badc6094-927e-4c4d-8bc8-673de89c9920_t3.html" /><figcaption aria-hidden="true">t3</figcaption>
+</figure>
+<p>Once the data is loaded, you can see it in the <strong>Saved Datasets</strong> option. The file name is <strong>nlpdata2.csv</strong>. The next step is to drag it from the <strong>Saved Datasets</strong> list into the workspace. To explore this data, right-click and select the <strong>Visualize</strong> option as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/6a0ae7ab-ccd4-462b-887a-e2f98b8a6c31_t4.html" /><figcaption aria-hidden="true">t4</figcaption>
+</figure>
+<p>Select the different variables to examine the basic statistics. For example, the image below displays the details for the target variable <span class="jsx-3120878690"><code>class</code></span>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/34e46b4b-1dcd-4004-8f27-9263b60929d0_t5.html" /><figcaption aria-hidden="true">t5</figcaption>
+</figure>
+<p>You will notice that the target variable takes two unique values. Also, it is displayed as string feature, which needs to be converted to a categorical feature.</p>
+<h2 id="convert-data-type">Convert Data Type</h2>
+<p>Start by typing “edit metadata” in the search bar to find the <strong>Edit Metadata</strong> module, and then drag it into the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f92a6d65-47fa-47db-bdb1-0aa23bf736c4_t7.html" /><figcaption aria-hidden="true">t7</figcaption>
+</figure>
+<p>The next step is to click on the <strong>Launch column selector</strong> option, and select the <span class="jsx-3120878690"><code>class</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/3bbe0720-92b5-4653-9f94-a435d4017e52_t8.html" /><figcaption aria-hidden="true">t8</figcaption>
+</figure>
+<p>Once you have made this selection, the selected column will be displayed in the workspace. Next, from the dropdown options under <strong>Categorical</strong>, select the <strong>Make categorical</strong> option. Next, run the experiment.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a51231c2-2ef7-4cab-8166-e7c55f31655e_t9.html" /><figcaption aria-hidden="true">t9</figcaption>
+</figure>
+<h2 id="preprocess-text">Preprocess Text</h2>
+<p>Now you are ready to build the text classifier. However, this is where things begin to get trickier in NLP. The data is in raw text format, which cannot be used as features. So, this requires text pre-processing.</p>
+<p>The common pre-processing steps are given below.</p>
+<ol type="1">
+<li>Remove punctuation: The rule of thumb is to remove everything that is not in the form x,y,z.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Remove stop words: These are unhelpful words like ‘the’, ‘is’, ‘at’. These are not helpful because the frequency of such stop words is high in the corpus, but they don’t help in differentiating the target classes. The removal of stop words also reduces the data size.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Conversion to lowercase: Words like ‘Clinical’ and ‘clinical’ need to be considered as one word. Hence, these are converted to lowercase.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Stemming: The goal of stemming is to reduce the number of inflectional forms of words appearing in the text. This causes words such as “argue,” “argued,” “arguing,” and “argues” to be reduced to their common stem, “argu”. This helps in decreasing the size of the vocabulary space.</li>
+</ol>
+<p>The <strong>Preprocess Text</strong> module is used to perform the above as well as other text cleaning steps. Search and drag the module into the workspace. Connect it to the output port of <strong>Edit Metadata</strong> module.<br />
+<embed src="../../pluralsight2.imgix.net/guides/f7c47631-c4fd-41f0-a69e-a90f5239d16a_t13.html" /></p>
+<p>You must specify the text variable to be preprocessed. To do this, click on the <strong>Launch column selector</strong> option, and select the <span class="jsx-3120878690"><code>abstract</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ebf60f08-340b-4a85-b3bc-79965737d47a_t14.html" /><figcaption aria-hidden="true">t14</figcaption>
+</figure>
+<p>There are several text cleaning options, and because this is clinical research data that may have a complex structure, you will select all the options. Run the experiment.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/380ec50a-f30c-41a6-976e-93edb704857d_t15.html" /><figcaption aria-hidden="true">t15</figcaption>
+</figure>
+<p>The next step is to explore the resulting pre-processed data. Right click and select <strong>Visualize</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dfa03b63-0ccf-4201-bbaa-cd6b1bdfefcc_t16.html" /><figcaption aria-hidden="true">t16</figcaption>
+</figure>
+<p>The output below shows that one more variable, <span class="jsx-3120878690"><code>Preprocessed abstract</code></span>, is added, which contains the changes made in the <strong>Preprocess Text</strong> module.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/abc452bf-89c9-434a-8e33-b97b7d8ff9d8_t17.html" /><figcaption aria-hidden="true">t17</figcaption>
+</figure>
+<p>Run the experiment.</p>
+<h2 id="feature-generation">Feature Generation</h2>
+<p>You have preprocessed the text, and the next step is to generate a set of features. This is done with the <strong>Feature Hashing</strong> module. How this works is that it takes the text variable and converts it into set of features represented as integers. Search and drag the <strong>Feature Hashing</strong> module into the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/756acddf-af77-4220-a480-8b5ed60ad061_t24.html" /><figcaption aria-hidden="true">t24</figcaption>
+</figure>
+<p>Click on the <strong>Launch column selector</strong> option, and select the <span class="jsx-3120878690"><code>Preprocessed abstract</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cea603cf-cca8-4732-9c2d-ef95a16f080f_t25.html" /><figcaption aria-hidden="true">t25</figcaption>
+</figure>
+<p>Next, use the <strong>Hashing bitsize</strong> parameter to specify the number of bits to use when creating the hash table. Keep the default option of ten. The next step is to provide the value to <strong>N-grams</strong> parameter. Set the value to two. This argument defines the length of the word sequence. Keeping the value to two will result in creation of two word sequences, along with unigrams. Run the experiment.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/df9ccc8b-a85d-4b13-8e7f-1b1f311830d2_t26.html" /><figcaption aria-hidden="true">t26</figcaption>
+</figure>
+<p>Once the experiment run is complete, right click and select the <strong>Visualize</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/355175c3-38f6-4a97-9f7e-eeb3755ff25c_t27.html" /><figcaption aria-hidden="true">t27</figcaption>
+</figure>
+<p>Completing the above step will result in the output below. You can see that new features have been added to the data, which now has 1748 observations and 37 columns.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/df6c42ba-c71e-493f-a52c-66524e9daf0a_t28.html" /><figcaption aria-hidden="true">t28</figcaption>
+</figure>
+<h2 id="select-columns-of-interest">Select Columns of Interest</h2>
+<p>You have created new features, and the next step is to select the variables of interest. The <strong>Select Columns in Dataset</strong> module performs this task. Drag it to the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a796b635-4417-4b6f-b374-2c104b676655_t32.html" /><figcaption aria-hidden="true">t32</figcaption>
+</figure>
+<p>Select the variables of interest with <strong>Launch column selector</strong>. The target variable, <span class="jsx-3120878690"><code>class</code></span>, and the preprocessed hashed features will be included in model building.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2dc1906a-37a7-4f7c-a42e-6b983bc2815c_t33.html" /><figcaption aria-hidden="true">t33</figcaption>
+</figure>
+<p>Run the experiment.</p>
+<h2 id="model-building">Model Building</h2>
+<p>You have converted the text data into a format of independent variables, and a target variable. The next step is to build the machine learning model. You will build the classifier with the <strong>Two Class Boosted Decision Tree</strong> module. Search and drag it in the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/06f45467-6cff-4f89-9cb8-2be324fdb9b8_t35.html" /><figcaption aria-hidden="true">t35</figcaption>
+</figure>
+<p>This module creates a binary classifier using boosted decision tree. This is based on the ensemble machine learning model, in which every tree builds upon the previous tree by correcting its error. For the data used in this guide, every single tree will make predictions on the target class of the dependent variable, <span class="jsx-3120878690"><code>class</code></span>. The final predictions are based on the entire ensemble of trees taken together.</p>
+<h3 id="configure-the-model">Configure the Model</h3>
+<p>The next step is to specify the parameters of the <strong>Two-Class Boosted Decision Tree</strong> module. To do this, click on the module and you will see several training parameters. For <strong>Create trainer mode</strong>, select the <strong>Single Parameter</strong> option that is used when you know how you want to configure the algorithm. The second parameter is <strong>Maximum number of leaves per tree</strong>, which indicates the maximum number of terminal nodes to be created in any tree. Set this value to 20. Fill the other options as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/06f45467-6cff-4f89-9cb8-2be324fdb9b8_t35.html" /><figcaption aria-hidden="true">t35</figcaption>
+</figure>
+<h2 id="cross-validation">Cross Validation</h2>
+<p>Model validation plays an integral part in building powerful and robust machine learning models. Model validation helps ensure that the model performs well on new data, and helps in selecting the best model, the parameters, and the accuracy metrics. The <strong>Cross Validate Model</strong> module performs this task in Azure Machine Learning Studio. Search and drag the <strong>Cross Validate Model</strong> module into the workspace, and create the connections as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1d324011-a7ab-433b-8116-3d6d63f3c238_t36.html" /><figcaption aria-hidden="true">t36</figcaption>
+</figure>
+<p>You can see the red flag in the <strong>Cross Validate Model</strong>, which needs to be corrected. Click on the <strong>Launch column selector</strong> option, and select the target variable, <span class="jsx-3120878690"><code>class</code></span>, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cf08ad6a-feb1-4e50-a80f-bff42c501757_t37.html" /><figcaption aria-hidden="true">t37</figcaption>
+</figure>
+<p>Run the experiment.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a92b8a0f-653f-4ccd-8660-2eee7aaf1ea6_t38.html" /><figcaption aria-hidden="true">t38</figcaption>
+</figure>
+<h2 id="model-evaluation">Model Evaluation</h2>
+<p>You have built the predictive model on text data, and the next step is to evaluate the model performance. The right output port contains the evaluation results by fold. Right click and select the <strong>Visualize</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/23ebf302-c85e-435b-90f8-1eb27a5722bb_t41eval.html" /><figcaption aria-hidden="true">t41</figcaption>
+</figure>
+<p>The following output will be displayed to show the evaluation results by folds. There are ten folds, zero through nine, and for every fold you have results across several metrics such as accuracy, precision, recall, and so on.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e49be971-848f-46e4-97b3-1cd734c3d319_t43eval2.html" /><figcaption aria-hidden="true">t43</figcaption>
+</figure>
+<p>If you scroll downwards, you will see the mean results across the ten folds.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7dbfcc20-dad3-4a05-98f0-f1ee4feed7d3_t44eval3.html" /><figcaption aria-hidden="true">t44</figcaption>
+</figure>
+<p>From the above output, you can infer that the mean accuracy, F-score, and AUC value for boosted tree model is 0.70, 0.64 and 0.75, respectively. These results indicate satisfactory model performance.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Natural language processing is an emerging area of data science and artificial intelligence. You can see the application areas of text classification when you open your Gmail account, where the emails are often classified into <strong>Primary</strong>, <strong>Social</strong>, and <strong>Promotions</strong>. Facebook and chatbots are another common application areas. Even traditional industries like banks and manufacturing have adopted text classification.</p>
+<p>In this guide, you learned how to build a supervised machine learning classification model on text data using Azure Machine Learning Studio. You can learn more on text classification with guides on other technologies like <a href="https://app.pluralsight.com/guides/nlp-machine-learning-text-data">Python</a> and <a href="https://app.pluralsight.com/guides/machine-learning-text-data-using-r">R</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+</ol>
+<p>10</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

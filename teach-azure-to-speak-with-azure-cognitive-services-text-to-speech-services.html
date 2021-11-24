@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>teach-azure-to-speak-with-azure-cognitive-services-text-to-speech-services</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/6455207a-ea14-4964-af40-b569f06f122e.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Douglas Starnes</p>
+<h1 id="teach-azure-to-speak-with-azure-cognitive-services-text-to-speech-services">Teach Azure to Speak with Azure Cognitive Services Text to Speech Services</h1>
+<h3 id="douglas-starnes">Douglas Starnes</h3>
+<ul>
+<li><p>Nov 24, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>1,832 Views</p></li>
+<li><p>Nov 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>1,832 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Cognitive Services</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-gettingthesdkready" class="menu-link">Getting the SDK Ready</a></li>
+<li><a href="#module-customizingthevoice" class="menu-link">Customizing the Voice</a></li>
+<li><a href="#module-usingssml" class="menu-link">Using SSML</a></li>
+<li><a href="#module-neuralvoices" class="menu-link">Neural Voices</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Modern user interfaces do not stop at the keyboard and mouse. Today we can interact with apps using vision, gestures, and even speech. It doesn’t make much sense to talk to a computer, unless it can talk back. This is referred to as <em>text to speech</em>. If this sounds like a hard problem to solve, it is. However, Microsoft Azure offers the Speech service to help teach computers to speak. This guide will discuss getting started with the Microsoft Azure Speech service using the C# programming language. Keep in mind that Azure Cognitive Services support SDKs for many languages including C#, Java, Python, and JavaScript, and there is even a REST API that you can call from any language.</p>
+<h2 id="setup">Setup</h2>
+<p>As with all Azure Cognitive Services, before you begin, provision an instance of the Speech service in the Azure Portal. The Speech service does much more than text to speech. It can also invert the concept and transcribe audio files. The same Speech service is used for both.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ceda1ef8-01bc-43b2-ada6-44a7462e1461_01.html" /><figcaption aria-hidden="true">speech service in azure</figcaption>
+</figure>
+<p>Create a new Speech service instance, choose an Azure subscription and data center location, and choose or create a new resource group. For the pricing tier, the free F0 option will suffice for experimentation.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/953e0e68-c822-4ef6-aa79-73d35802ccbb_02.html" /><figcaption aria-hidden="true">creating a speech instance</figcaption>
+</figure>
+<p>The free tier will allow you to process five million characters per month. There is also the option to generate speech using neural voices that sound more like human voices but are more computationally intensive. The free quota for neural voices is therefore lower, just 500 thousand characters per month. We’ll see the difference between standard and neural voices later in the guide. For more details on the quotas and pricing of the free and paid tiers, see the <a href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">Azure Speech service documentation</a>.</p>
+<p>After the instance is provisioned, you’ll see the API keys and endpoint you’ll use to access the service in the <strong>Keys and Endpoint</strong> menu on the left.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/38804706-170d-4a13-b82f-238f9714f7de_03.html" /><figcaption aria-hidden="true">api keys and endpoint</figcaption>
+</figure>
+<h2 id="getting-the-sdk-ready">Getting the SDK Ready</h2>
+<p>The SDK is distributed as a NuGet package. Add <span class="jsx-3120878690"><code>Microsoft.CognitiveServices.Speech</code></span> to a C# project to install the SDK using the <span class="jsx-3120878690"><code>dotnet</code></span> tool at the command line:</p>
+<pre><code>1dotnet add package Microsoft.CognitiveServices.Speech --version 1.14.0</code></pre>
+<p>The most current version, when this guide was created, was 1.14.0.</p>
+<p>To authenticate with the SDK, you’ll need to create an instance of <span class="jsx-3120878690"><code>SpeechConfig</code></span> found in the <span class="jsx-3120878690"><code>Microsoft.CognitiveServices.Speech</code></span> namespace.</p>
+<pre><code>1using Microsoft.CognitiveServices.Speech;</code></pre>
+<p>csharp</p>
+<p>Use the endpoint and one of the API keys from the Azure portal to create a new instance with the static <span class="jsx-3120878690"><code>FromEndpoint</code></span> method:</p>
+<pre><code>1var speechConfig = SpeechConfig.FromEndpoint(&quot;{endpoint}&quot;, &quot;{apikey}&quot;);</code></pre>
+<p>csharp</p>
+<p>You’ll also need an <span class="jsx-3120878690"><code>AudioConfig</code></span> instance from the <span class="jsx-3120878690"><code>Microsoft.CognitiveServices.Speech.Audio</code></span> namespace.</p>
+<pre><code>1using Microsoft.CognitiveServices.Speech.Audio;
+2
+3// ...
+4
+5var audioConfig = AudioConfig.FromWavFileOutput(&quot;demo.wav&quot;);</code></pre>
+<p>csharp</p>
+<p>There are several ways to create an <span class="jsx-3120878690"><code>AudioConfig</code></span> including a stream or directly to speaker. For this demo, the easiest will be to create a .wav file. The <span class="jsx-3120878690"><code>FromWavFileOutput</code></span> method accepts the path to the generated .wav file.</p>
+<p>To generate the speech file, create a <span class="jsx-3120878690"><code>SpeechSynthesizer</code></span> from the <span class="jsx-3120878690"><code>SpeechConfig</code></span> and <span class="jsx-3120878690"><code>AudioConfig</code></span>:</p>
+<pre><code>1var speechSynthesizer = new SpeechSynthesizer(speechConfig, audioConfig);</code></pre>
+<p>csharp</p>
+<p>Finally, call the <span class="jsx-3120878690"><code>SpeakTextAsync</code></span> method on the <span class="jsx-3120878690"><code>SpeechSynthesizer</code></span> and provide a string that will be used to generate a .wav file. This method needs to be awaited.</p>
+<pre><code>1await speechSynthesizer.SpeakTextAsync(&quot;Peter Piper picked a peck of pickled peppers.&quot;);</code></pre>
+<p>csharp</p>
+<p>You can listen to the generated .wav file on <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/demo-JessaRUS.wav">GitHub</a>.</p>
+<h2 id="customizing-the-voice">Customizing the Voice</h2>
+<p>By default, the <span class="jsx-3120878690"><code>SpeechConfig</code></span> uses a voice with a name <span class="jsx-3120878690"><code>en-US-JessaRUS</code></span>. This is a female voice. To get a male voice, set the <span class="jsx-3120878690"><code>SpeechSynthesisVoiceName</code></span> property of the <span class="jsx-3120878690"><code>SpeechConfig</code></span> to <span class="jsx-3120878690"><code>en-US-GuyRUS</code></span>.</p>
+<pre><code>1speechConfig.SpeechSynthesisVoiceName = &quot;en-US-GuyRUS&quot;;</code></pre>
+<p>csharp</p>
+<p>You can listen to this voice on <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/demo-GuyRUS.wav">GitHub</a>.</p>
+<p>There are more than 75 voice in over 45 languages available. A complete list can be found in the <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#standard-voices">Azure documentation</a>.</p>
+<h2 id="using-ssml">Using SSML</h2>
+<p>You can generate even more realistic voices using SSML, or Speech Synthesis Markup Language. This is an XML grammar that is not specific to the Speech service. It’s a standard that is used across Azure, AWS, Google Cloud and more. Here is a sample SSML document:</p>
+<pre><code>1&lt;speak version=&quot;1.0&quot; xmlns=&quot;https://www.w3.org/2001/10/synthesis&quot; xml:lang=&quot;en-US&quot;&gt;
+2  &lt;voice name=&quot;en-US-GuyRUS&quot;&gt;
+3    I live in the zip code 10203.
+4  &lt;/voice&gt;
+5&lt;/speak&gt;</code></pre>
+<p>xml</p>
+<p>The <span class="jsx-3120878690"><code>&lt;speak&gt;</code></span> and <span class="jsx-3120878690"><code>&lt;voice&gt;</code></span> elements are boilerplate for all SSML. The <span class="jsx-3120878690"><code>name</code></span> attribute is one of the supported voices from the previous section. The SSML is then parsed by the <span class="jsx-3120878690"><code>SpeakSsmlAsync</code></span> method.</p>
+<pre><code>1SpeechSynthesizer ssmlSynthesizer = new SpeechSynthesizer(speechConfig, null);
+2var ssmlResult = await ssmlSynthesizer.SpeakSsmlAsync(ssml);
+3var audioDataStream = AudioDataStream.FromResult(ssmlResult);
+4await audioDataStream.SaveToWaveFileAsync(&quot;ssmldemo.wav&quot;);</code></pre>
+<p>csharp</p>
+<p>Notice that the <span class="jsx-3120878690"><code>ssmlSynthesizer</code></span> does not need an <span class="jsx-3120878690"><code>AudioConfig</code></span>. Also, the results are retrieved from <span class="jsx-3120878690"><code>AudioDataStream</code></span>. You can hear the file on <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/guy-zipcode.wav">GitHub</a>.</p>
+<p>It also pronounces the zip correctly as “one zero two zero three” and not “ten thousand two hundred and three.” What happens if we use the same number, in a different context?</p>
+<pre><code>1&lt;speak version=&quot;1.0&quot; xmlns=&quot;https://www.w3.org/2001/10/synthesis&quot; xml:lang=&quot;en-US&quot;&gt;
+2  &lt;voice name=&quot;en-US-GuyRUS&quot;&gt;
+3    I won 10203 dollars in the sweepstakes!
+4  &lt;/voice&gt;
+5&lt;/speak&gt;</code></pre>
+<p>xml</p>
+<p>Listen to the file on <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/guy-wrong.wav">GitHub</a>. This time, we expect the same value to be pronounced as “ten thousand two hundred and three.” But by default, it is not. To get the correct speech, use the <span class="jsx-3120878690"><code>&lt;say-as&gt;</code></span> element and set the <span class="jsx-3120878690"><code>interpret-as</code></span> attribute to <span class="jsx-3120878690"><code>cardinal</code></span>.</p>
+<pre><code>1&lt;speak version=&quot;1.0&quot; xmlns=&quot;https://www.w3.org/2001/10/synthesis&quot; xml:lang=&quot;en-US&quot;&gt;
+2  &lt;voice name=&quot;en-US-GuyRUS&quot;&gt;
+3    I won &lt;say-as interpret-as=&quot;cardinal&quot;&gt;10203&lt;/say-as&gt; dollars in the sweepstakes!
+4  &lt;/voice&gt;
+5&lt;/speak&gt;</code></pre>
+<p>xml</p>
+<p>Now the number is pronounced the way we expect. Here is the correct .wav file on <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/guy-right.wav">GitHub</a>.</p>
+<p>There are times when you may want to introduce a pause. You might want a lengthy break after the first sentence in this sample before delivering the ‘punchline’.</p>
+<pre><code>1&lt;speak version=&quot;1.0&quot; xmlns=&quot;https://www.w3.org/2001/10/synthesis&quot; xml:lang=&quot;en-US&quot;&gt;
+2  &lt;voice name=&quot;en-US-GuyRUS&quot;&gt;
+3    I got the new XBox Series X for 1/2 off! &lt;break time=&quot;2500ms&quot; /&gt; Just kidding.
+4  &lt;/voice&gt;
+5&lt;/speak&gt;</code></pre>
+<p>xml</p>
+<p>Here is the generated .wav file on <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/guy-break.wav">GitHub</a>. The <span class="jsx-3120878690"><code>time</code></span> attribute of the <span class="jsx-3120878690"><code>&lt;break&gt;</code></span> element includes silence for 2,500 milliseconds. You can also use seconds for example <span class="jsx-3120878690"><code>4s</code></span>. Also, note in the .wav file that “1/2” is correctly pronounced as “one half.”</p>
+<h2 id="neural-voices">Neural Voices</h2>
+<p>It sounds okay, but it doesn’t sound realistic. This is where neural voices come in. Neural voices are generated using neural networks and it’s very tough to tell they are not actual humans. Since they are generated using neural networks, they are much more computationally intensive and thus cost a little more. But the results are worth it. Currently there are around 65 neural voice, and previews of more are coming soon.</p>
+<p>To use a neural voice, simply set the <span class="jsx-3120878690"><code>name</code></span> attribute of the <span class="jsx-3120878690"><code>&lt;voice&gt;</code></span> element in SSML to a neural voice.</p>
+<pre><code>1&lt;speak version=&quot;1.0&quot; xmlns=&quot;https://www.w3.org/2001/10/synthesis&quot; xml:lang=&quot;en-US&quot;&gt;
+2  &lt;voice name=&quot;en-US-AriaNeural&quot;&gt;
+3    Peter Piper picked a peck of pickled peppers.
+4  &lt;/voice&gt;
+5&lt;/speak&gt;</code></pre>
+<p>xml</p>
+<blockquote>
+<p>Note: If you generate a .wav file that is only a few bytes, check the location where you created the instance of the Speech service. The neural voices are only available in East US, South East Asia, and West Europe.</p>
+</blockquote>
+<p>Here is the .wav file generated on <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/arianeural.wav">GitHub</a>.</p>
+<p>There are more options for customizing the speaking style of a neural voice. For example with the <span class="jsx-3120878690"><code>&lt;mstts:express-as&gt;</code></span> element you can set the <span class="jsx-3120878690"><code>style</code></span> attribute to a relaxed tone for chatting, an excited tone, and even styles for newscasts and customer service. You’ll need to include the <span class="jsx-3120878690"><code>mstss</code></span> namespace in the markup.</p>
+<pre><code>1&lt;speak version=&quot;1.0&quot; 
+2       xmlns=&quot;https://www.w3.org/2001/10/synthesis&quot;
+3       xmlns:mstts=&quot;https://www.w3.org/2001/mstts&quot;
+4       xml:lang=&quot;en-US&quot;&gt;
+5  &lt;voice name=&quot;en-US-AriaNeural&quot;&gt;
+6    &lt;mstts:express-as style=&quot;chat&quot;&gt;
+7       Peter Piper picked a peck of pickled peppers.
+8    &lt;/mstts:express-as&gt;
+9  &lt;/voice&gt;
+10&lt;/speak&gt;</code></pre>
+<p>xml</p>
+<p>This is the <span class="jsx-3120878690"><code>chat</code></span> <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/arianeural-chat.wav">style</a> and the <span class="jsx-3120878690"><code>customerservice</code></span> <a href="https://github.com/douglasstarnes/ps-tts-wavs/blob/main/arianeural-customerservice.wav">style</a>. Styles are dependent upon the neural voice that you are using. Check the <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup?tabs=csharp#adjust-speaking-styles">Azure documentation</a> for the complete list.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>There are other options for working with the Speech service. It provides a special API for long texts such as books. You can submit custom lexicons and add prerecorded audio to the generated ones. Azure Cognitive choices should always be your first choice when generating speech for apps. It works with multiple languages. The cost is more affordable than generating voices yourself. Don’t forget the quality of the neural voices, especially the options for tuning them. And the service is accessible on any platform and any device, making it possible for any app to speak its mind.</p>
+<p>Thanks for reading!</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

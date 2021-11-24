@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>face-recognition-walkthrough-facenet</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/default.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Jenisha T</p>
+<h1 id="face-recognition-walkthroughfacenet">Face Recognition Walkthrough–FaceNet</h1>
+<h3 id="jenisha-t">Jenisha T</h3>
+<ul>
+<li><p>Nov 3, 2020</p></li>
+<li><p>10 Min read</p></li>
+<li><p>6,548 Views</p></li>
+<li><p>Nov 3, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">10 Min</span> read</p></li>
+<li><p>6,548 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Machine Learning</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Tensorflow</span></p>
+<p>Introduction</p>
+<p>17</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-facedetection" class="menu-link">Face Detection</a></li>
+<li><a href="#module-facealignment" class="menu-link">Face Alignment</a></li>
+<li><a href="#module-facerecognitionusingfacenetmodel" class="menu-link">Face Recognition Using FaceNet Model</a></li>
+<li><a href="#module-faceverification" class="menu-link">Face Verification</a></li>
+<li><a href="#module-faceclustering" class="menu-link">Face Clustering</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Face recognition is the task of identifying and verifying people based on face images. FaceNet is a face recognition system developed in 2015 by Google researchers Florian Schroff, Dmitry Kalenichenko, and James Philbin in a paper titled <em>FaceNet: A Unified Embedding for Face Recognition and Clustering</em>.</p>
+<p>To develop a face recognition system, the first step is to find the bounding box of the location of faces. Then find the spatial points of facial features such as length of eyes, length of mouth, the distance between eyes and nose, etc. Then transform the face into a frontal face, because an image of a person could be taken in different views. Create embeddings from facial features extracted and calculate the distance between two embeddings. The entire code can be found <a href="https://github.com/joyjeni/mlguides/tree/master/FaceNet">here</a>.</p>
+<h2 id="face-detection">Face Detection</h2>
+<p>Face detection is similar to object detection. It is the process of automatically detecting the location of faces and localizing by drawing a bounding box in the image. Top, left, bottom, and right coordinates of the face are returned by the face detection algorithm MTCNN (Multi-Task Cascaded Convolutional Neural Network) <embed src="../../i.imgur.com/8PvUcIp.html" /></p>
+<pre><code>1I found 1 face(s) in this photograph.A face is located at pixel location Top: 36, Left: 76, Bottom: 126, Right: 165</code></pre>
+<p>html</p>
+<h2 id="facial-landmark-detection">Facial Landmark Detection</h2>
+<p>Facial landmarks are the spatial points in a human face. The number of spatial points chosen may vary from five to 78 points depending on annotation. Facial landmarks are also referred to as <em>fiducial-points, facial key points,</em> or <em>face pose</em>.</p>
+<figure>
+<embed src="../../i.imgur.com/G2RyqCE.html" /><figcaption aria-hidden="true">face_landmarks</figcaption>
+</figure>
+<p>The output of the facial landmark detection algorithm for the above image is shown below.</p>
+<pre><code>1I found 1 face(s) in this photograph.The chin in this face has the following points: [(86, 78), (87, 87), (89, 95), (92, 103), (95, 110), (101, 117), (108, 123), (117, 128), (128, 129), (138, 126), (146, 119), (154, 112), (159, 104), (162, 95), (163, 86), (163, 76), (162, 66)]The left_eyebrow in this face has the following points: [(89, 69), (92, 64), (97, 63), (103, 63), (108, 65)]The right_eyebrow in this face has the following points: [(125, 61), (131, 57), (138, 55), (144, 56), (150, 59)]The nose_bridge in this face has the following points: [(118, 72), (118, 78), (119, 84), (119, 90)]The nose_tip in this face has the following points: [(114, 95), (117, 96), (121, 96), (124, 95), (128, 93)]The left_eye in this face has the following points: [(96, 76), (100, 73), (105, 72), (110, 76), (105, 77), (100, 78)]The right_eye in this face has the following points: [(129, 73), (133, 68), (139, 67), (143, 69), (140, 72), (135, 73)]The top_lip in this face has the following points: [(109, 106), (113, 104), (119, 103), (122, 103), (126, 102), (132, 102), (139, 102), (137, 103), (126, 106), (123, 107), (119, 108), (112, 107)]The bottom_lip in this face has the following points: [(139, 102), (134, 109), (128, 112), (124, 113), (120, 114), (114, 111), (109, 106), (112, 107), (119, 107), (123, 107), (127, 106), (137, 103)]</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../i.imgur.com/Ixel7i8.html" /><figcaption aria-hidden="true">face_lines</figcaption>
+</figure>
+<p>After identifying facial keypoints, the distance between these points is measured. This value is called facial features. These features are used to classify a face. <embed src="../../i.imgur.com/UkldIJ4.html" /></p>
+<h2 id="face-alignment">Face Alignment</h2>
+<p>The faces can be aligned using fiducial points. This is done to make face images clicked from different angle face straight forward. Then the features extracted are matched with a template. The aligned faces can be used for comparison. The aligned face is the output of MTCNN, and is given as input to FaceNet</p>
+<h2 id="face-recognition-using-facenet-model">Face Recognition Using FaceNet Model</h2>
+<p>Face recognition is the process of identifying a person from a digital image or a video. This is a 1:K matching problem. A use case for this could be marking employee attendance when an employee enters the building by looking up their face encodings in the database. The FaceNet model expects a 160x160x3 size face image as input, and it outputs a face embedding vector with a length of 128. This face embedding contains information that describes a face’s significant characteristics. Then, FaceNet finds the class label of the training face embedding that has the minimum L2 distance with the target face embedding. It is the shortest distance between two points in an N dimensional space also known as Euclidean space</p>
+<p>The Convolutional Neural Network model uses the Triplet Loss function. This function returns a smaller value for similar images and larger value for disimilar images. The components of a FaceNet network are described in the following sections.</p>
+<h3 id="input-images">Input Images</h3>
+<p>The training set consists of thumbnails of faces cropped to a 160x160 size from the images. Other than translation and scaling, no other alignments to the face crops are needed.</p>
+<figure>
+<embed src="../../i.imgur.com/Z37y7gf.html" /><figcaption aria-hidden="true">facecrop</figcaption>
+</figure>
+<h3 id="deep-cnn">Deep CNN</h3>
+<p>There are two different architectures described in the FaceNet paper:</p>
+<ol type="1">
+<li>Deep CNN Based on Zeiler and Fergus Network Architecture</li>
+<li>Inception Model Architecture Based on GoogLeNet</li>
+</ol>
+<p>The two architectures differ in the number of parameters used and the Floating Point Operations Per Second (FLOPS). FLOPS is a standard measure of computer performance that requires floating-point computations. The model accuracy is higher with larger FLOPS. A network with lower FLOPS runs faster and consumes less memory, but results in lower accuracy.</p>
+<h4 id="nn1-deep-cnn-based-on-zeiler-and-fergus-network-architecture">NN1: Deep CNN Based on Zeiler and Fergus Network Architecture</h4>
+<p>The Zeiler and Fergus CNN architecture consists of 22 layers and trains on 140 million parameters at 1.6 billion FLOPS per image. <embed src="../../i.imgur.com/yyQEgwc.html" /></p>
+<h4 id="nn2-inception-model-architecture-based-on-googlenet">NN2: Inception Model Architecture Based on GoogleNet</h4>
+<p>This model has 20× fewer parameters (around 6.6 million to 7.5 million) and 5× fewer FLOPS (around 500 million to 1.6 billion). <embed src="../../i.imgur.com/rD5QyDZ.html" /></p>
+<h4 id="nn3">NN3</h4>
+<p>It’s identical to NN2 except takes 160x160 input size.</p>
+<h3 id="nn4">NN4</h3>
+<p>This network has an input size of 96x96 and requires only 285 million FLOPS. It’s suitable for mobile devices. <embed src="../../i.imgur.com/3i9oznA.html" /></p>
+<h3 id="face-embedding">Face Embedding</h3>
+<p>The face embeddings of sizes 1×1×128 are generated from the L2 normalization layer of the deep CNN. This embedding is used in face verification and face clustering</p>
+<figure>
+<embed src="../../i.imgur.com/O3Spw9G.html" /><figcaption aria-hidden="true">face_embeddings</figcaption>
+</figure>
+<h3 id="the-triplet-loss">The Triplet Loss</h3>
+<p>The embeddings of the same faces are called positives, and the embeddings of different faces are called negatives. The face being analyzed is called the anchor. To calculate the loss, a triplet consisting of an anchor, a positive, and a negative embedding is formed, and their Euclidean distances are analyzed. The learning objective of FaceNet is to minimize the distance between an anchor and a positive, and maximize the distance between the anchor and a negative. A training triplet contains three samples: anchor, positive, and negative (A, P, N). Any triplet loss embedding network objective is to learn an embedding such that<br />
+<embed src="../../i.imgur.com/P30K1HN.html" /> <embed src="../../i.imgur.com/RRKOCal.html" /></p>
+<h3 id="triplet-selection">Triplet Selection</h3>
+<p>Choosing the correct image pairs is extremely important as there will be a lot of image pairs that will satisfy this condition. The model won’t learn much from them and will also converge slowly because of that. To ensure fast convergence, it is crucial to select triplets that violate the triplet constraint.</p>
+<figure>
+<embed src="../../i.imgur.com/gc5MvR5.html" /><figcaption aria-hidden="true">argmax</figcaption>
+</figure>
+<p>Eq(1) means that given an anchor image of person A, we want to find a positive image of A such that the distance between those two images is largest. Eq(2) means that given an anchor image A, we want to find a negative image such that the distance between those two images is smallest So, we are just selecting the hard positives and hard negatives here. This approach helps us in speeding convergence as our model learns useful representations.</p>
+<p>The inventors of FaceNet used mini-batches consisting of 40 positives and randomly selected negative embeddings. The minimum and maximum distances were calculated for each mini-batch to create triplets.</p>
+<h2 id="face-verification">Face Verification</h2>
+<p>Face verification compares the facial embeddings of all trained images with the given image to find matches. Finding whether two images belong to the same person is 1:1 mapping.</p>
+<figure>
+<embed src="../../i.imgur.com/0Jb6NAw.html" /><figcaption aria-hidden="true">attendance</figcaption>
+</figure>
+<h2 id="face-clustering">Face Clustering</h2>
+<p>Face clustering is the process of grouping images of the same person together for albums. It answers the question, “Are there similar faces?” The embeddings of faces can be extracted, and a clustering algorithm such as K-means can be used to group the faces of the same person together</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Face landmarks can be used for face alignment, to track faces in the video, and to measure emotions. They can also be helpful to diagnose medical conditions. MTCNN is used to crop a face and give it as input to FaceNet, which creates a 128-dimension vector for each cropped face image. The distance between these two vectors is used to find the similarity between images. FaceNet can recognize faces even if person is wearing surgical type face mask</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><a href="https://arxiv.org/abs/1604.02878">Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks</a>, Kaipeng Zhang, Zhanpeng Zhang, Zhifeng Li, and Yu Qiao, Aug 2018</li>
+<li>Deep Learning for Computer Vision, Rajalingappaa Shanmugamani, Packt Publishing, Jan 2018</li>
+<li><a href="https://github.com/davidsandberg/facenet">Face recognition using Tensorflow</a>, David Sandberg, 2018</li>
+<li><a href="https://arxiv.org/pdf/1503.03832.pdf">FaceNet: A Unified Embedding for Face Recognition and Clustering</a>, Florian Schroff, Dmitry Kalenichenko, and James Philbin, June 2015</li>
+<li><a href="https://www.kaggle.com/yhuan95/face-recognition-with-facenet">Face Recognition with FaceNet</a>, 2019</li>
+<li><a href="https://www.youtube.com/watch?v=d2XB5-tuCWU">Triplet Loss</a>, 2017</li>
+</ol>
+<p>17</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

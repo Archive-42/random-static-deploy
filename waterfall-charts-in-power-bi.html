@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>waterfall-charts-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="waterfall-charts-in-power-bi">Waterfall Charts in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 20, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>1,089 Views</p></li>
+<li><p>Nov 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>1,089 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>12</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-addingvisualization" class="menu-link">Adding Visualization</a></li>
+<li><a href="#module-formattingthechart" class="menu-link">Formatting the Chart</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Waterfall charts are an extension to normal visualization charts. They show the incremental journey of the values of a variable, and are useful to track changes in data over time. The waterfall chart is useful to understand how an initial value such as sales is affected by a sequence of positive and negative changes. This guide will demonstrate how to implement waterfall charts in Power BI desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious sales data of ten years. The data contains ten observations and three variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/waterfalldata.csv">here</a>. The variables to be used in this guide are described below:</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>Date</code></span>: Last day of every year.</p></li>
+<li><p><span class="jsx-3120878690"><code>Sales</code></span>: Annual Sales (in $ million) of the year.</p></li>
+<li><p><span class="jsx-3120878690"><code>SalesVar</code></span>: Incremental sales (in $ million) every year with respect to the previous year.</p></li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>To begin, open a new Power BI Desktop canvas and save it as <strong>PowerBI Visualization</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f4cfb057-404a-445e-999d-b0f2175b5e9d_wf1.html" /><figcaption aria-hidden="true">wf1</figcaption>
+</figure>
+<p>The next step is to load the data. Click on <strong>Get data</strong> option and select <strong>Text/CSV</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d7e7c2fe-9a96-465b-b7dd-9901fee8d428_wf2.html" /><figcaption aria-hidden="true">wf2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b06e46ff-b3ce-48f7-9396-0286bab46b77_wf3.html" /><figcaption aria-hidden="true">wf3</figcaption>
+</figure>
+<p>You have loaded the file, and the <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/096ebbe5-4aea-4619-8fc4-d612bfbb18a7_wf4.html" /><figcaption aria-hidden="true">wf4</figcaption>
+</figure>
+<h2 id="adding-visualization">Adding Visualization</h2>
+<p>You can locate the <strong>Waterfall chart</strong> in the <strong>Visualizations</strong> pane. Click on the chart and it will create a chart box in the canvas. Nothing is displayed because you haven’t yet added the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e6bbd93c-5f13-41df-8fed-557a43531b90_wf5.html" /><figcaption aria-hidden="true">wf5</figcaption>
+</figure>
+<p>You can resize the chart on the canvas, and the next step is to fill the visualization arguments. Drag the <span class="jsx-3120878690"><code>Date</code></span> variable into the <strong>Category</strong> field, and <span class="jsx-3120878690"><code>SalesVar</code></span> variable in the <strong>Values</strong> field. You will see that the chart is created in the canvas.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d572d7b4-16a4-40ee-b7de-74f468d70ad7_wf6.html" /><figcaption aria-hidden="true">wf6</figcaption>
+</figure>
+<p>From the chart you can infer that the sales growth was negative in the years 2014, 2015, and 2020. Further diagnostic analysis can be done on the data to understand the reasons behind the degrowth. For example, sales degrowth in 2020 could be because of COVID. This will help you decipher the data.</p>
+<h2 id="formatting-the-chart">Formatting the Chart</h2>
+<p>There are several formatting options available. To begin, you can go to the <strong>Format</strong> field, and turn on <strong>Data labels</strong> as shown below. This will display the values in the chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1dc2e882-6abd-465d-9f5e-0256ed74012e_wf7.html" /><figcaption aria-hidden="true">wf7</figcaption>
+</figure>
+<p>You can see that now the incremental value is displayed in the chart. This allows you to understand better the years when the sales growth was positive or negative.</p>
+<p>The other formatting option you can do is to change the <strong>Sentiment colors</strong> of the chart. Click on the option and you will see different colors to depict <strong>Increase</strong>, <strong>Decrease</strong>, and <strong>Total</strong>. You can change these colors as per your preference.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f8fcd4ef-93d8-45fa-9688-06e1b711d0a4_wf8.html" /><figcaption aria-hidden="true">wf8</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Waterfall charts can be a powerful tool to use if you want to track changes over a measure across time dimension. This will be useful for time series analysis across sectors such as retail, ecommerce, shipping and logistics, which applies time series forecasting to its operations. It can also be used across domains such as human resources to audit the headcount change across a time period. This is a common task and is sector agnostic in nature, which means it has applications across industries such as banking and financial services, manufacturing, utilities, ecommerce, retail, etc. This skill will improve your descriptive analytics and business intelligence capabilities.</p>
+<p>To learn more about building powerful visualization in Power BI desktop, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/build-a-treemap-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implement-clustering-in-powerbi">Implement Clustering in PowerBI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/filter-data-in-power-bi">Filter Data in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implementing-hierarchical-axis-and-concatenation-in-power-bi">Implementing Hierarchical Axis and Concatenation in Power BI</a></p></li>
+</ol>
+<p>12</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

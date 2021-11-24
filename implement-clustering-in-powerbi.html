@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>implement-clustering-in-powerbi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="implement-clustering-in-power-bi">Implement Clustering in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 16, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>7,936 Views</p></li>
+<li><p>Nov 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>7,936 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>35</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-bivariateclustering" class="menu-link">Bivariate Clustering</a></li>
+<li><a href="#module-multivariateclustering" class="menu-link">Multivariate Clustering</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Clustering is an unsupervised machine learning algorithm that looks for patterns in data by dividing it into clusters. These clusters are created such that the points are homogenous within the cluster and heterogenous across clusters. Clustering is commonly used in market segmentation and several areas of marketing analytics.</p>
+<p>In this guide, you will learn how to implement clustering in Power BI Desktop. You will implement two types of clustering: bivariate and multivariate.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursal across years. The data contains 3000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The major variables are described below:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>Date</code></span>: Loan disbursal date.</li>
+<li><span class="jsx-3120878690"><code>Income</code></span>: Annual Income of the applicant (in US dollars).</li>
+<li><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</li>
+<li><span class="jsx-3120878690"><code>Age</code></span>: The applicant’s age in years.</li>
+<li><span class="jsx-3120878690"><code>Gender</code></span>: Whether the applicant is female (F) or male (M).</li>
+<li><span class="jsx-3120878690"><code>Interest_rate</code></span>: Annual interest rate, in percentage, charged for the disbursed loan.</li>
+<li><span class="jsx-3120878690"><code>Purpose</code></span>: Purpose for which loan was taken.</li>
+<li><span class="jsx-3120878690"><code>Weeknum</code></span>: Week number of the year.</li>
+<li><span class="jsx-3120878690"><code>Outstanding_debt</code></span>: Outstanding debt (in US dollars) of the applicant prior to loan disbursal.</li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="bivariate-clustering">Bivariate Clustering</h2>
+<p>Bivariate clustering refers to the technique of finding clusters in the data when you have two quantitative variables. The two variables to be used for clustering are <span class="jsx-3120878690"><code>Income</code></span> and <span class="jsx-3120878690"><code>Loan_disbursed</code></span>. To implement bivariate clustering, a scatter chart is a powerful visualization plot. You can locate it in the <strong>Visualizations</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a7987813-674d-4b4e-bb45-ce6e2f2f5c4a_c1.html" /><figcaption aria-hidden="true">C1</figcaption>
+</figure>
+<p>Click on the chart shown above, and it will create a chart box on the canvas. Nothing is displayed yet because you are yet to add the required visualization arguments. These are added in the options located under the <strong>Visualizations</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/076912d1-4f54-46d5-81fb-d19e8ec87639_c2.html" /><figcaption aria-hidden="true">C2</figcaption>
+</figure>
+<p>You can resize the chart on the canvas. Another thing you can do is collapse the <strong>Filters</strong> option in the pane with the arrow <strong>&gt;</strong> sign.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c35b8ac7-ef14-47f8-849b-f6e79bc91133_c3.html" /><figcaption aria-hidden="true">C3</figcaption>
+</figure>
+<p>The next step is to fill the visualization arguments under the <strong>Fields</strong> option as shown below. Drag the variable <span class="jsx-3120878690"><code>Income</code></span> into the <strong>X Axis</strong> field and <span class="jsx-3120878690"><code>Loan_disbursed</code></span> into the <strong>Y Axis</strong> field. You also need to provide a variable in the <strong>Details</strong> field for displaying the scatter plot against that variable. Drag the <span class="jsx-3120878690"><code>Weeknum</code></span> variable into the <strong>Details</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dadf6073-3dde-4994-bb38-3f3d22665d35_c9splot.html" /><figcaption aria-hidden="true">C9</figcaption>
+</figure>
+<p>The scatter chart is created and the next step is to create clusters. Right-click on the three dots <strong>…</strong> shown below, and you will have the option to <strong>Automatically find clusters</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d025c716-8ee2-48aa-8d8f-745e16f7f1f2_c10.html" /><figcaption aria-hidden="true">C10</figcaption>
+</figure>
+<p>The step above will create an option to select the number of clusters. You also have the option of keeping it automatic, but in this case, you will set the number of clusters to four.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9a778c14-5d0b-4d4a-8d28-07ede9b4e9cc_c11.html" /><figcaption aria-hidden="true">C11</figcaption>
+</figure>
+<p>Click on <strong>OK</strong>, and Power BI will work in the background to create and add the four clusters to the bivariate scatter chart. You can see the distinction of the cluster points through the different cluster colors.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1c54e903-e92f-48e4-b864-84d8435564cb_c12.html" /><figcaption aria-hidden="true">C12</figcaption>
+</figure>
+<p>In the output above, you can see that Power BI has created a new variable, <span class="jsx-3120878690"><code>Weeknum (clusters)</code></span>, and placed it in the <strong>Legend</strong> field. This gives you the flexibility to use this new variable in the same manner as any other variable in the original dataset.</p>
+<h2 id="multivariate-clustering">Multivariate Clustering</h2>
+<p>In the above section, you implemented clustering on two variables. Quite often in business intelligence and analytics, you will want to consider multiple variables for clustering. In such cases, you can extend the above analysis and include multiple variables. To do this, start by resizing the scatter chart to make space for multivariate clustering, and click on <strong>Table</strong> under the <strong>Visualizations</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/71743df7-7e98-411a-8bc2-d3e054a1ea8f_c13.html" /><figcaption aria-hidden="true">C13</figcaption>
+</figure>
+<p>Click on the <strong>Table</strong> chart shown above, and it will create a table on the canvas. Nothing is displayed yet because you are yet to add the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8fbd1e43-ad7b-4ff2-9b09-528aca865242_c14.html" /><figcaption aria-hidden="true">C14</figcaption>
+</figure>
+<p>Under the <strong>Values</strong> field, as shown below, drag the variables <span class="jsx-3120878690"><code>Weeknum</code></span>, <span class="jsx-3120878690"><code>Income</code></span>, <span class="jsx-3120878690"><code>Loan_disbursed</code></span>, <span class="jsx-3120878690"><code>Interest_rate</code></span>, <span class="jsx-3120878690"><code>Age</code></span>, and <span class="jsx-3120878690"><code>Outstanding_debt</code></span>. This will generate the following table.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a587e014-43f9-4eda-9a93-50655b35fec7_c177.html" /><figcaption aria-hidden="true">C177</figcaption>
+</figure>
+<p>The next step is to create clusters. To do this, right-click on the three dots as before, and select <strong>Automatically find clusters</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c06c3620-dd0f-46b4-a11d-1c567e99a2dc_c178.html" /><figcaption aria-hidden="true">C178</figcaption>
+</figure>
+<p>In the option pane that will be generated, give the name <strong>Multivariate Clusters</strong>. Set the <strong>Number of clusters</strong> value to <strong>Auto</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8980d752-0c43-41a6-8e63-66703a02e863_c179.html" /><figcaption aria-hidden="true">C179</figcaption>
+</figure>
+<p>Clicking <strong>OK</strong> will create a <span class="jsx-3120878690"><code>Multivariate Clusters</code></span> variable and add it to the table. It will also add it to the <strong>Values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0ef71cfd-8681-4bbc-9ce0-ecde42496689_c180.html" /><figcaption aria-hidden="true">C180</figcaption>
+</figure>
+<p>You can analyze the clusters better in the same manner as any other variable of the original dataset. For example, you can click on the <strong>Table</strong> chart option, which will create a table in the canvas.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/372f401f-1907-4ceb-85bb-6771f5c9df5b_c181.html" /><figcaption aria-hidden="true">C181</figcaption>
+</figure>
+<p>Click on the chart, and under <strong>Values</strong>, drag the <span class="jsx-3120878690"><code>Multivariate Clusters</code></span> variable twice.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e8472c6a-8396-49d9-a6c8-9a5591485fe1_c182.html" /><figcaption aria-hidden="true">C182</figcaption>
+</figure>
+<p>Right-click on the second <span class="jsx-3120878690"><code>Multivariate Clusters</code></span> variable and select <strong>Count</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/795672a1-3fb1-49a4-8f7f-bd9a0f97020d_c183.html" /><figcaption aria-hidden="true">C183</figcaption>
+</figure>
+<p>Completing the above step will generate the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/adf0533c-b789-4d56-b7aa-0a266c301d4d_c184.html" /><figcaption aria-hidden="true">C184</figcaption>
+</figure>
+<p>The output above shows that three clusters were created. <strong>Cluster1</strong> has 905 records, while <strong>Cluster2</strong> and <strong>Cluster3</strong> have 72 and 2023 observations, respectively.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Clustering is an unsupervised machine learning technique with several application areas. A financial services company might want to create customer segments using clustering to enable them serve and target these customers better. In this guide, we looked at one such example, where clustering was applied on bank data for disbursing loans. Clustering is also used for predictive modelling, where you can create clusters and then predict the target variable. Marketing budgets are allocated in many organizations based on statistical segmentation, referred to as clustering.</p>
+<p>In this guide, you learned how to implement clustering in Power BI Desktop. This is a great skill set to add because clustering is a sector-agnostic discipline and is used across industries such as manufacturing, utilities, ecommerce, retail, and almost every other industry.</p>
+<p>To learn more about building powerful visualization in Power BI Desktop, please refer to the following guide:</p>
+<p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p>
+<p>35</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

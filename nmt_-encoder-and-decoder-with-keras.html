@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>nmt_-encoder-and-decoder-with-keras</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="nmt-encoder-and-decoder-with-keras">NMT: Encoder and Decoder with Keras</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 19, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>4,162 Views</p></li>
+<li><p>Nov 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>4,162 Views</p></li>
+</ul>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-buildingthemodel" class="menu-link">Building the Model</a></li>
+<li><a href="#module-trainingandsavingthemodel" class="menu-link">Training and Saving the Model</a></li>
+<li><a href="#module-decodethesentence" class="menu-link">Decode the Sentence</a></li>
+<li><a href="#module-learnspanish" class="menu-link">Learn Spanish</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This guide builds on skills covered in <a href="https://app.pluralsight.com/guides/encoders-and-decoders-for-neural-machine-translation">Encoders and Decoders for Neural Machine Translation</a>, which covers the different RNN models and the power of seq2seq modeling. It also covered the roles of encoder and decoder models in machine translation; they are two separate RNN models, combined to perform complex deep learning tasks.</p>
+<p>By the end of the previous guide, you will have the pre-processed data and have extracted the features you need to build the model.</p>
+<p>In this part of the guide, you will use that data and the concepts of LSTM, encoders, and decoders to build a network that gives optimum translation results. Finally, these results are further used to build a simple code to learn Spanish, which will give you random English sentences with their Spanish translations.</p>
+<p>Let’s start with building the model.</p>
+<h2 id="building-the-model">Building the Model</h2>
+<p>The first step is to define an input sequence for the encoder. Because it’s a character-level translation, it plugs the input into the encoder character by character. Now you need the encoder’s final output as an initial state/input to the decoder. So, for the encoder LSTM model, the <span class="jsx-3120878690"><code>return_state = True</code></span>. With this, you can get the hidden state representation of the encoder at the end of the input sequence. <span class="jsx-3120878690"><code>state_h</code></span> denotes a hidden state and <span class="jsx-3120878690"><code>state_c</code></span> denotes cell state.</p>
+<pre><code>1encoder_inputs = keras.Input(shape=(None, num_encoder_tokens))
+2encoder = keras.layers.LSTM(latent_dim, return_state=True)
+3encoder_outputs, state_h, state_c = encoder(encoder_inputs)
+4
+5encoder_states = [state_h, state_c]</code></pre>
+<p>python</p>
+<p>This sets the initial state for the decoder in <span class="jsx-3120878690"><code>decoder_inputs</code></span>. The first character got from one-hot encoding (<span class="jsx-3120878690"><code>decoder_input_data</code></span>), i.e., SOS or <span class="jsx-3120878690"><code>\t</code></span> is embedded with the final encoded state, to the decoder network to get the first target character.</p>
+<p>Again, the LSTM <span class="jsx-3120878690"><code>return_sequences</code></span> and <span class="jsx-3120878690"><code>return_state</code></span> are kept <span class="jsx-3120878690"><code>True</code></span> so that the network considers the decoder output and two decoder states at every time step. The model will run through each layer of the network, one step at a time, and add a <span class="jsx-3120878690"><code>softmax</code></span> activation function at the last layer’s output. This will give out your first output word. It feeds this word back and predicts the complete sentence.</p>
+<pre><code>1decoder_inputs = keras.Input(shape=(None, num_decoder_tokens))
+2decoder_lstm = keras.layers.LSTM(latent_dim, return_sequences=True, return_state=True)
+3decoder_outputs, _, _ = decoder_lstm(decoder_inputs, initial_state=encoder_states)
+4decoder_dense = keras.layers.Dense(num_decoder_tokens, activation=&quot;softmax&quot;)
+5decoder_outputs = decoder_dense(decoder_outputs)</code></pre>
+<p>python</p>
+<h2 id="training-and-saving-the-model">Training and Saving the Model</h2>
+<p>Now the aim is to train the basic LSTM-based seq2seq model and predict <span class="jsx-3120878690"><code>decoder_target_data</code></span> and compile the model by setting the optimizer and learning rate, decay, and beta values. It calculates the loss and validation loss. Accuracy is the performance matrices. Next, fit the model, and split the data into an 80-20 ratio. And finally, use <span class="jsx-3120878690"><code>save()</code></span> to save the model.</p>
+<pre><code>1model = keras.Model([encoder_inputs, decoder_inputs], decoder_outputs)
+2
+3model.compile(optimizer=Adam(lr=0.01, beta_1=0.9, beta_2=0.999, decay=0.001), loss=&#39;categorical_crossentropy&#39;, metrics=[&quot;accuracy&quot;])
+4
+5model.fit(
+6    [encoder_input_data, decoder_input_data],
+7    decoder_target_data,
+8    batch_size=batch_size,
+9    epochs=epochs,
+10    validation_split=0.2,
+11)
+12model.save(&quot;E2S&quot;)</code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c0e5ee00-243c-4b38-8d9e-6e0bd2f5927c_2.html" /><figcaption aria-hidden="true">model training</figcaption>
+</figure>
+<pre><code>1from keras.utils import plot_model
+2plot_model(model, to_file=&#39;modelsummary.png&#39;, show_shapes=True, show_layer_names=True)</code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0f25edc3-ac5a-4cb8-a853-dc9491857846_3.html" /><figcaption aria-hidden="true">model</figcaption>
+</figure>
+<pre><code>1print(&quot;shape encoder_input_data :&quot;,encoder_input_data.shape)
+2print(&quot;shape decoder_input_data :&quot;,decoder_input_data.shape)
+3print(&quot;shape decoder_target_data:&quot;,decoder_target_data.shape)</code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cddab535-d28f-4520-acb4-f3d6d1d6b8c4_4.html" /><figcaption aria-hidden="true">shape of encoder-decoder input and target</figcaption>
+</figure>
+<h2 id="decode-the-sentence">Decode the Sentence</h2>
+<p>Finally, create the model by using Keras <span class="jsx-3120878690"><code>model()</code></span> function for <span class="jsx-3120878690"><code>encoder_inputs</code></span> i.e., input tensor and encoder hidden states <span class="jsx-3120878690"><code>state_h_enc</code></span> and <span class="jsx-3120878690"><code>state_c_enc</code></span> as output tensor.</p>
+<pre><code>1encoder_inputs = model.input[0]  # input_1
+2encoder_outputs, state_h_enc, state_c_enc = model.layers[2].output  # lstm_1
+3encoder_states = [state_h_enc, state_c_enc]
+4encoder_model = keras.Model(encoder_inputs, encoder_states)</code></pre>
+<p>python</p>
+<p>Now build the model for the decoder.</p>
+<pre><code>1decoder_inputs = model.input[1]  # input_2
+2decoder_state_input_h = keras.Input(shape=(latent_dim,), name=&quot;input_3&quot;)
+3decoder_state_input_c = keras.Input(shape=(latent_dim,), name=&quot;input_4&quot;)
+4decoder_states_inputs = [decoder_state_input_h, decoder_state_input_c]
+5decoder_lstm = model.layers[3]
+6decoder_outputs, state_h_dec, state_c_dec = decoder_lstm(
+7    decoder_inputs, initial_state=decoder_states_inputs
+8)
+9decoder_states = [state_h_dec, state_c_dec]
+10decoder_dense = model.layers[4]
+11decoder_outputs = decoder_dense(decoder_outputs)
+12decoder_model = keras.Model(
+13    [decoder_inputs] + decoder_states_inputs, [decoder_outputs] + decoder_states
+14)</code></pre>
+<p>python</p>
+<p>Create two reverse-lookup token indexes to decode the sequence to make it readable.</p>
+<pre><code>1reverse_input_char_index = dict((i, char) for char, i in input_token_index.items())
+2reverse_target_char_index = dict((i, char) for char, i in target_token_index.items())</code></pre>
+<p>python</p>
+<p>Next, create a predict function named <span class="jsx-3120878690"><code>decode_sequence</code></span>. After generating the empty sequence of length <span class="jsx-3120878690"><code>1</code></span>, the model should know when to start and stop reading the text. To read the model will check out for <span class="jsx-3120878690"><code>\t</code></span> in this case. Keep two conditions, either when the max length of sentence is hit or find stop character <span class="jsx-3120878690"><code>\n</code></span>. Keep on updating the target sequence by one and update the states.</p>
+<pre><code>1def decode_sequence(input_seq):
+2    states_value = encoder_model.predict(input_seq)
+3
+4    target_seq = np.zeros((1, 1, num_decoder_tokens))
+5    target_seq[0, 0, target_token_index[&quot;\t&quot;]] = 1.0
+6
+7    stop_condition = False
+8    decoded_sentence = &quot;&quot;
+9    while not stop_condition:
+10        output_tokens, h, c = decoder_model.predict([target_seq] + states_value)
+11
+12        sampled_token_index = np.argmax(output_tokens[0, -1, :])
+13        sampled_char = reverse_target_char_index[sampled_token_index]
+14        decoded_sentence += sampled_char
+15
+16        if sampled_char == &quot;\n&quot; or len(decoded_sentence) &gt; max_decoder_seq_length:
+17            stop_condition = True
+18
+19        target_seq = np.zeros((1, 1, num_decoder_tokens))
+20        target_seq[0, 0, sampled_token_index] = 1.0
+21
+22        states_value = [h, c]
+23    return decoded_sentence</code></pre>
+<p>python</p>
+<h2 id="learn-spanish">Learn Spanish</h2>
+<p>A random sentence will appear when you run the cell. The sentences are basic. It’s always an add-on to your skills to learn a new foreign language. Also, it will be helpful when you visit Spain :)</p>
+<pre><code>1i = np.random.choice(len(input_texts))
+2input_seq = encoder_input_data[i:i+1]
+3translation = decode_sequence(input_seq)
+4print(&#39;-&#39;)
+5print(&#39;Input:&#39;, input_texts[i])
+6print(&#39;Translation:&#39;, translation)</code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2ffec91d-33a9-461e-ab84-f399056f66e5_5.html" /><figcaption aria-hidden="true">input and translation</figcaption>
+</figure>
+<p>Validate with google translator.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8d557f63-3e7f-4043-9a10-f93ebd695d79_1.html" /><figcaption aria-hidden="true">google translator</figcaption>
+</figure>
+<p>Perfecto!!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The character-by-character translation is accurate. Seq2seq models can deal with variable-length inputs. Encoders and decoders work together. Encoders’ LSTM weights are updated so they learn space representation of the text, whereas decoders’ LSTM weights give grammatically correct sentences. The performance of any project depends on the model you choose and the volume and pre-processing of the data. But hyper-parameters also play a major role in deep learning problems. You can improve the accuracy of this model as well by tuning the hyper-parameters or increasing the data.</p>
+<p>Machine translation can also be performed by using the GRU RNN model. It’s a cousin to LSTM with fewer states. I would recommend that you understand different RNN models. You can learn more about GRU <a href="lstm-versus-gru-units-in-rnn.html">here</a> and learn to understand the difference between the two RNNs and select the model that gives you the best results.</p>
+<p>If you have any queries regarding this guide, feel free to ask at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

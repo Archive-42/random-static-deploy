@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>deploy-a-react-app-on-a-server</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="deploy-a-react-app-on-a-server">Deploy a React App on a Server</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 7, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>77,382 Views</p></li>
+<li><p>Nov 7, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>77,382 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>89</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-creatingareactapp" class="menu-link">Creating a React App</a></li>
+<li><a href="#module-deployingreactapponnetlify" class="menu-link">Deploying React App on Netlify</a></li>
+<li><a href="#module-deployingreactapponfirebase" class="menu-link">Deploying React App on Firebase</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Once you’ve successfully built and tested your React app, the final step is hosting and deploying it on a server. This makes your React app public, allowing other users to see your app using a URL. There are numerous hosting and deployment services available online that can run your React app from a remote server with a few simple steps. This guide walks you through the entire process of deploying your React app on the web and running it from a remote server.</p>
+<h2 id="creating-a-react-app">Creating a React App</h2>
+<p>Create a simple <span class="jsx-3120878690"><code>hello-world-app</code></span> using Create-React-App.</p>
+<pre><code>1npx create-react-app hello-world-app</code></pre>
+<p>shell</p>
+<p>Modify the <span class="jsx-3120878690"><code>App.js</code></span> file as shown below.</p>
+<pre><code>1import &#39;./App.css&#39;;
+2
+3function App() {
+4  return (
+5    &lt;div className=&quot;App&quot;&gt;
+6      &lt;header className=&quot;App-header&quot;&gt;
+7        &lt;h1&gt;Hello world app&lt;/h1&gt;
+8      &lt;/header&gt;
+9    &lt;/div&gt;
+10  );
+11}
+12
+13export default App;</code></pre>
+<p>jsx</p>
+<p>See how your app runs on your local server by running the following command:</p>
+<pre><code>1npm start</code></pre>
+<p>shell</p>
+<p>On the local server (<a href="http://localhost:3000/">http://localhost:3000</a>) you can see a simple React app displaying a “hello world” message. The next step is to make this app production-ready for deployment. Inside the root directory run the following command:</p>
+<pre><code>1npm run build</code></pre>
+<p>shell</p>
+<p>This creates a <span class="jsx-3120878690"><code>build</code></span> directory inside the root directory, which bundles your React app and minifies it into simple HTML, CSS, and JavaScript files. This <span class="jsx-3120878690"><code>build</code></span> folder serves your app via a simple entry point, <span class="jsx-3120878690"><code>index.html</code></span>, where your entire React app resides. Running your app via a remote server means running this <span class="jsx-3120878690"><code>index.html</code></span> file on the server.</p>
+<h2 id="deploying-react-app-on-netlify">Deploying React App on Netlify</h2>
+<p><strong>Netlify</strong> is a cloud service that allows you to host and deploy your React app in minutes. It has a variety of features, the most common being deploying using <em>continuous integration via Git</em> or <em>static deployment</em>.</p>
+<h3 id="continuous-integration-via-git">Continuous Integration via Git</h3>
+<p>You can push your React project on any Git platform, such as <strong>GitLab</strong>, <strong>GitHub</strong>, <strong>Bitbucket</strong>, etc., and connect the repository to Netlify’s remote server for continuous integration. This auto-deploys your app whenever any changes are made to your default branch. You also have an option of <em>auto merging pull requests</em> from Github, Gitlab, etc.</p>
+<p>Create a simple repository on any Git provider of your choice (say, GitHub) and push the <span class="jsx-3120878690"><code>hello-world-app</code></span> on the repository. Ensure that you already have an account on Netlify. Go to the site’s section and click on the <strong>New site from Git</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d850b677-5682-49be-9f6d-c46b522c2012_f2FCvCu.html" /><figcaption aria-hidden="true">netlify import project from git</figcaption>
+</figure>
+<p>Select the Git provider (in this case, Github) and choose the repository.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/52a2b445-2aee-496b-83b0-48fe8fd34c75_0q9nlTU.html" /><figcaption aria-hidden="true">create new site on netlify</figcaption>
+</figure>
+<p>Configure the deploy settings. Select a default branch to deploy (you can choose the master branch or any other branch) and ensure that the build command is <span class="jsx-3120878690"><code>npm run build</code></span> and the publish directory is <span class="jsx-3120878690"><code>/build</code></span>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a1103613-62f9-4462-a482-6b34d2009069_is72UnF.html" /><figcaption aria-hidden="true">Deploy site on netlify</figcaption>
+</figure>
+<p>Click <strong>Deploy site</strong>, and your React app will be deployed on Netlify’s remote server. After the deployment is successful, you’ll get a public URL through which you can run your React app. Whenever you push any changes or merge any changes in the master branch, Netlify will automatically create a new build folder with updated files and deploy the changes on the remote server.</p>
+<h3 id="using-static-deployment">Using Static Deployment</h3>
+<p>The second method is to directly deploy the <span class="jsx-3120878690"><code>build</code></span> folder. Visit the Sites section, and below you will see a <strong>file uploader panel</strong>. Select your React app’s <span class="jsx-3120878690"><code>build</code></span> folder and drag and drop it on this area.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5a2a923b-5d7b-44f6-9c8a-800fb70a65a0_Q41YK5g.html" /><figcaption aria-hidden="true">Waiting for the live site</figcaption>
+</figure>
+<p>Click <strong>Deploy</strong> and wait while Netlify deploys your app to their remote server.</p>
+<h2 id="deploying-react-app-on-firebase">Deploying React App on Firebase</h2>
+<p>Firebase is Google’s cloud service, which offers various backend features as a service to create <em>server-less</em> apps. Firebase also allows you to host and deploy your web app on their remote servers. To deploy your app on Firebase remote server, visit <a href="firebase.google.html">firebase.google.com</a> and create an account. Click <strong>Go to console</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/41c09bbb-9fd3-4dfa-99e8-2fa05cbf691b_LPbrLXo.html" /><figcaption aria-hidden="true">Go to console</figcaption>
+</figure>
+<p>Create a new Firebase app for the web on the console.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/67323eb6-d1e5-4158-b3b7-df947a06d384_rLKuxH2.html" /><figcaption aria-hidden="true">Firebase screenshot</figcaption>
+</figure>
+<p>Follow the simple steps to create a new Firebase project. Now head back over to your React app and run the following command:</p>
+<pre><code>1npm i -g firebase</code></pre>
+<p>shell</p>
+<p>This installs firebase CLI to access various Firebase services via its command-line interface. Inside the root directory, run:</p>
+<pre><code>1firebase init</code></pre>
+<p>shell</p>
+<p>This creates a new Firebase project inside your React project. You may be prompted to log in first. Next, select the hosting feature.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/13cf4683-bc22-4874-accc-7b83697077d7_rmsbOD7.html" /><figcaption aria-hidden="true">Firebase configurations</figcaption>
+</figure>
+<p>Next, you’ll be asked whether you want to create a new Firebase project or use an existing one. Since you already created a new Firebase project on the Firebase console, select <strong>use existing project .</strong></p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dff1d768-cce1-4718-ad29-728e65e408a9_83iskiu.html" /><figcaption aria-hidden="true">project setup for firebase</figcaption>
+</figure>
+<p>Next, you’ll be asked a few configurational questions.</p>
+<pre><code>1? what do you want to use as your public directory? build</code></pre>
+<p>shell</p>
+<p>Since the production folder is the <span class="jsx-3120878690"><code>build</code></span> directory, in this step you tell Firebase that the <span class="jsx-3120878690"><code>build</code></span> directory should be served as the public directory for this project.</p>
+<pre><code>1? Configure as a single-page app (rewrite all urls to /index.html)? Yes</code></pre>
+<p>shell</p>
+<p>Select <strong>Yes</strong> to tell firebase that your entry point is <span class="jsx-3120878690"><code>index.html</code></span></p>
+<pre><code>1? File public/index.html already exists. Overwrite? No</code></pre>
+<p>shell</p>
+<p>Finally, you do not want to override your original <span class="jsx-3120878690"><code>index.html</code></span> with any other files, so select <strong>No</strong> here. All configurational steps are complete—now you only need to run the following command inside the root directory:</p>
+<pre><code>1firebase deploy </code></pre>
+<p>shell</p>
+<p>Firebase will now deploy your React app on its remote server and generate a URL for you, which you can use to run your React app from a remote server.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Besides Firebase and Netlify, you can also explore other platforms like Heroku or AWS for deploying your React app. These cloud service providers also offer features such as setting up <em>SSL</em> for your app, using a custom domain, etc. Another interesting domain you can explore is <a href="https://ngrok.com/">ngRok</a>, which gives you secure tunnels to your localhost that can run your ReactJS from a remote server without actually deploying the app.</p>
+<p>89</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

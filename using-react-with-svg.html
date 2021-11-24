@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>using-react-with-svg</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="using-react-with-svg">Using React with SVG</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Oct 31, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>3,408 Views</p></li>
+<li><p>Oct 31, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>3,408 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>12</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-understandingsvgsyntax" class="menu-link">Understanding SVG syntax</a></li>
+<li><a href="#module-drawingshapes" class="menu-link">Drawing Shapes</a></li>
+<li><a href="#module-setupandapp" class="menu-link">Set Up and App</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Scalable Vector Graphics (SVG) is an XML-like syntax used to display vector graphics or images in a browser. Vector graphics produced by SVG can be scaled or zoomed to the very maximum without being rasterized or losing quality. The most interesting aspect is that SVG is supported by all major browsers. In this guide, you’ll learn how to draw graphics (specifically the Mastercard Logo) and shapes with SVG and how to add SVG graphics to your React app.</p>
+<h2 id="understanding-svg-syntax">Understanding SVG syntax</h2>
+<p>If you’re familiar with HTML or XML, using SVG’s syntax should be pretty simple to grasp. Writing SVG elements is based on two strict guidelines:</p>
+<ol type="1">
+<li><p>All attributes must be placed in quotes regardless of the type of value (string or integer), as shown below</p>
+<p>1&lt;rect width=“100%” fill=“purple” …../&gt;</p></li>
+</ol>
+<p>jsx</p>
+<ol type="1">
+<li><p>SVG elements and attributes are all case-sensitive, hence, changing the case of an element or attribute is invalid SVG.</p>
+<p>1// Drawing a rectangle 2&lt;rect width=“100%” fill=“purple” …../&gt; 3 4// NOT 5 6&lt;RECT WIDTH=“100%” FILL=“ORANGE”../&gt;</p></li>
+</ol>
+<p>jsx</p>
+<h2 id="drawing-shapes">Drawing Shapes</h2>
+<p>As mentioned, you’ll learn how to draw the Mastercard logo with SVG. Every SVG element is wrapped around an <span class="jsx-3120878690"><code>&lt;svg/&gt;</code></span> tag with a version and the size of the drawing area.</p>
+<pre><code>1&lt;svg version=&quot;1.1&quot; baseProfile=&quot;full&quot; 
+2         width=&quot;400&quot; height=&quot;250&quot; 
+3         xlmns=&quot;http://www/w3/org/2000/svg&quot;&gt;
+4// Content Here
+5&lt;/svg&gt;</code></pre>
+<p>html</p>
+<p>Next, add a rectangle with a black background.</p>
+<pre><code>1&lt;svg version=&quot;1.1&quot; baseProfile=&quot;full&quot; 
+2         width=&quot;400&quot; height=&quot;250&quot; 
+3         xlmns=&quot;http://www/w3/org/2000/svg&quot;&gt;
+4&lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;black&quot;&gt;&lt;/rect&gt;
+5&lt;/svg&gt;</code></pre>
+<p>html</p>
+<p>Add the two circles that intersect .</p>
+<pre><code>1&lt;svg version=&quot;1.1&quot; baseProfile=&quot;full&quot; 
+2         width=&quot;400&quot; height=&quot;250&quot; 
+3         xlmns=&quot;http://www/w3/org/2000/svg&quot;&gt;
+4&lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;red&quot;&gt;&lt;/circle&gt;
+5&lt;circle cx=&quot;256&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;orange&quot;&gt;&lt;/circle&gt;
+6&lt;/svg&gt;</code></pre>
+<p>html</p>
+<p>The <span class="jsx-3120878690"><code>r</code></span> attribute refers to the radius of the circle.</p>
+<p><span class="jsx-3120878690"><code>cx</code></span> and <span class="jsx-3120878690"><code>cy</code></span> refer to the position of the element on the x and y coordinates of the circle.</p>
+<p>Finally, add some text to your logo.</p>
+<pre><code>1&lt;svg version=&quot;1.1&quot; baseProfile=&quot;full&quot; 
+2         width=&quot;400&quot; height=&quot;250&quot; 
+3         xlmns=&quot;http://www/w3/org/2000/svg&quot;&gt;
+4&lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;red&quot;&gt;&lt;/circle&gt;
+5&lt;circle cx=&quot;256&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;orange&quot;&gt;&lt;/circle&gt;
+6&lt;text x=&quot;200&quot; y=&quot;219&quot; font-size=&quot;20&quot; text-anchor=&quot;middle&quot; fill=&quot;white&quot;&gt;MasterCard&lt;/text&gt;
+7&lt;/svg&gt;</code></pre>
+<p>html</p>
+<p>To see how this looks, create an HTML file and open it up in your browser. You’re a genius! Try to tweak the attributes some more to gain more understanding of what they do.</p>
+<h2 id="set-up-and-app">Set Up and App</h2>
+<p>Now that you have a world-class SVG logo, set up your React app by entering the following in your terminal.</p>
+<pre><code>1npx create-react-app &lt;YOUR_APP_NAME&gt;</code></pre>
+<p>html</p>
+<p>You can also visit <a href="https://react.new/">https://react.new</a> to get a fully configured React environment on <a href="http://codesandbox.io/">codesandbox.io</a>.</p>
+<h3 id="add-svg-to-the-app">Add SVG to the App</h3>
+<p>Rendering an SVG element is very simple with Create React App. To do so, create an SVG file that contains the logo you’ve created and save it. In this guide, I’ll assume you saved it in <strong>svg/ .</strong></p>
+<p>Next, import it into your app, as shown below.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import { ReactComponent as MyLogo } from &#39;./assets/logo.svg&#39;;
+3
+4function App(){
+5 return(
+6     &lt;div&gt;
+7                &lt;MyLogo/&gt;
+8        &lt;/div&gt;
+9 );
+10}</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And voila! In this guide, you learned how to create an SVG element and add it to a React app. SVG goes far beyond creating basic shapes. You can do more stuff, including gradients and animations.</p>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">Mozilla developer network documentation</a> hasa very detailed explanation of Scalable Vector Graphics. Feel free to also reach out to me on Twitter <span class="citation" data-cites="DesmondNyamador">[@DesmondNyamador]</span>(https://twitter.com/DesmondNyamador).</p>
+<p>12</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

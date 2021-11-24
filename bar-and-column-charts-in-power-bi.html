@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>bar-and-column-charts-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="bar-and-column-charts-in-power-bi">Bar and Column Charts in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 24, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>13,319 Views</p></li>
+<li><p>Nov 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>13,319 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-columnchart" class="menu-link">Column Chart</a></li>
+<li><a href="#module-barchart" class="menu-link">Bar Chart</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Bar and column charts are some of the most widely used visualization charts in Power BI. They can be used for one or multiple categories. Both these chart types represent data with rectangular bars, where the size of the bar is proportional to the magnitude of data values.</p>
+<p>The difference between the two is that if the rectangles are stacked horizontally, it is called a bar chart. If the rectangles are vertically aligned, it is called a column chart. This guide will demonstrate how to build bar and column charts in Power BI Desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursal across years. The data contains 3,000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The major variables are described below:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>Date</code></span>: Loan disbursal date.</li>
+<li><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</li>
+<li><span class="jsx-3120878690"><code>Gender</code></span>: Whether the applicant is female (F) or male (M).</li>
+<li><span class="jsx-3120878690"><code>Purpose</code></span>: Purpose for which loan was taken.</li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open your Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> option and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="column-chart">Column Chart</h2>
+<p>To begin, click on the <em>Clustered column chart</em> located in the <strong>Visualizations</strong> pane. This creates a chart box in the canvas. Nothing is displayed because haven’t yet added the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a0c6e06e-a5d0-454a-aad6-15d739dcc1a8_bc1.html" /><figcaption aria-hidden="true">bc1</figcaption>
+</figure>
+<p>You can resize the chart on the canvas. The next step is to fill the visualization arguments under the <strong>Fields</strong> option as shown below. Drag the variable <span class="jsx-3120878690"><code>Purpose</code></span> into the <strong>Axis</strong> field, and <span class="jsx-3120878690"><code>Loan_disbursed</code></span> in the <strong>Values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4b019bb1-9699-4bcc-920a-5e73e3312e5e_bc2.html" /><figcaption aria-hidden="true">bc2</figcaption>
+</figure>
+<p>The output above shows the <strong>Loan_disbursed by Purpose</strong> chart. You can format the chart under the <strong>Format</strong> tab. For example, if you want to add values to the chart, turn on the <strong>Data labels</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f839687e-0e04-425a-b69f-8687cb70bf05_bc3.html" /><figcaption aria-hidden="true">bc3</figcaption>
+</figure>
+<p>You can also increase the size of the <strong>X axis</strong> labels. Set the <strong>Text size</strong> to 12.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/db9c2a5e-8894-46e1-a803-405e29faae6b_bc4.html" /><figcaption aria-hidden="true">bc4</figcaption>
+</figure>
+<p>You can also adjust the title of the chart. Go to <strong>Title</strong>, and change the <strong>Font color</strong>, <strong>Alignment</strong>, and <strong>Text size</strong> arguments as shown below or as per your preference.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f96f26e4-4007-4175-8b70-caeac04bb957_bc5.html" /><figcaption aria-hidden="true">bc5</figcaption>
+</figure>
+<p>After making these changes, you will have the following column chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/453ea4b1-1a29-4824-bde9-c36e9a00b6eb_bc6.html" /><figcaption aria-hidden="true">bc6</figcaption>
+</figure>
+<h3 id="clustered-column-chart">Clustered Column Chart</h3>
+<p>A clustered column charts is a type of column chart in which you compare two values side by side. In this case, you will compare the <span class="jsx-3120878690"><code>Loan_disbursed</code></span> values against two categories, <span class="jsx-3120878690"><code>Purpose</code></span> and <span class="jsx-3120878690"><code>Gender</code></span>.</p>
+<p>It is easy to make a clustered column chart by adding <span class="jsx-3120878690"><code>Gender</code></span> in the <strong>Legend</strong> position of the previous column chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/61860090-84e8-408d-8319-56f3e03a204a_bc7variant1.html" /><figcaption aria-hidden="true">bc7</figcaption>
+</figure>
+<h2 id="bar-chart">Bar Chart</h2>
+<p>If you have the column chart in the canvas, it is easy to convert it into a bar chart. Below is the <strong>Loan_disbursed by Purpose</strong> chart you created above.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dac4eabe-a548-4329-af1e-dc10b1666a69_bc9.html" /><figcaption aria-hidden="true">bc9</figcaption>
+</figure>
+<p>Locate the <strong>Clustered bar chart</strong> option in the <strong>Visualizations</strong> pane as shown above, and click on it. This will convert the column chart into a bar chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/23e6154f-ddaa-4d78-8c26-0e7d9ea2fabb_bc10.html" /><figcaption aria-hidden="true">bc10</figcaption>
+</figure>
+<h3 id="clustered-bar-chart">Clustered Bar Chart</h3>
+<p>To create a clustered bar chart, drag the <span class="jsx-3120878690"><code>Gender</code></span> variable into the <strong>Legend</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/131ee59f-f821-4db2-992f-6a25f24f25a0_bc11variant1.html" /><figcaption aria-hidden="true">bc11</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Bar and column charts are used regularly in visualization to compare two or more values. In business intelligence, you will be required to build these charts for a variety of areas, such as finance, sales, marketing, production planning, geographical coverage, time series analysis, and many more. This is a great skill set to add because you will be using it regularly across sectors and organizational functions.</p>
+<p>To learn more about building powerful visualization in Power BI desktop, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/build-a-treemap-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implement-clustering-in-powerbi">Implement Clustering in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/filter-data-in-power-bi">Filter Data in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implementing-hierarchical-axis-and-concatenation-in-power-bi">Implementing Hierarchical Axis and Concatenation in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/adding-slicers-to-a-power-bi-report">Adding Slicers to a Power BI Report</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/explore-the-analytics-pane-in-power-bi">Explore the Analytics Pane in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/waterfall-charts-in-power-bi">Waterfall Charts in Power BI</a></p></li>
+</ol>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

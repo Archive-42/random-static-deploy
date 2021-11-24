@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-use-managed-identity-with-azure-service-bus</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="how-to-use-managed-identities-with-azure-service-bus">How to Use Managed Identities with Azure Service Bus</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 16, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>5,909 Views</p></li>
+<li><p>Oct 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>5,909 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p>Introduction</p>
+<p>16</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setupmanagedidentitieswithroles" class="menu-link">Set up Managed Identities with Roles</a></li>
+<li><a href="#module-installthenetsdkforazureservicebus" class="menu-link">Install the .NET SDK for Azure Service Bus</a></li>
+<li><a href="#module-updateyourcode" class="menu-link">Update Your Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Many cloud applications rely on asynchronous messaging to improve reliability and decouple different parts of a solution. You can use Azure Service Bus as a cloud messaging service to achieve these goals. One big advantage of Azure Service Bus is that it supports managed identities, a Microsoft Azure feature that allows your applications to authenticate or authorize themselves with Azure Service Bus. The appeal is that secrets such as connection strings are not required to be copied onto developers’ machines or checked into source control.</p>
+<p>Microsoft has recently updated their Azure Service Bus .NET SDKs to make working with managed identities easier. In this guide, you will learn how to use managed identities to connect a .NET App Service to Azure Service Bus.</p>
+<h2 id="set-up-managed-identities-with-roles">Set up Managed Identities with Roles</h2>
+<p>To get started working with App Service managed identities and Service Bus, you need to create a few resources.</p>
+<p>You can do this easily using the Azure CLI:</p>
+<pre><code>1rg=my-resource-group
+2webapp=my-app-name
+3erviceplan=my-sp
+4servicebus=demo-pl-service-bus
+5
+6# create app service plan and app service
+7az appservice plan create --is-linux --sku f1 -g $rg -n $serviceplan
+8az webapp create -g $rg -p $serviceplan -n $webapp -r &quot;dotnetcore|3.1&quot;
+9az webapp identity assign -g $rg -n $webapp
+10APP_IDENTITY=$(az webapp identity show -n $webapp -g $rg --query &quot;{principalId:principalId}&quot; -o tsv)
+11
+12# create service bus and queue
+13az servicebus namespace create --sku standard -g $rg -n $servicebus
+14queue_id=$(az servicebus queue create -n test --namespace-name $servicebus -g $rg -o tsv --query &quot;{id:id}&quot;)
+15
+16# assign roles to listen and send messages to the queue
+17az role assignment create --role &quot;Azure Service Bus Data Receiver&quot; --assignee $APP_IDENTITY --scope $queue_id
+18az role assignment create --role &quot;Azure Service Bus Data Sender&quot; --assignee $APP_IDENTITY --scope $queue_id</code></pre>
+<p>sh</p>
+<p>These commands do three things: 1. Create an app service plan and Azure App Service with a system-assigned identity 2. Create a Service Bus namespace and a queue 3. Use Role-based Access Control (RBAC) to grant the newly created app service’s managed identity to receive and send messages to the <span class="jsx-3120878690"><code>test</code></span> queue</p>
+<h2 id="install-the-.net-sdk-for-azure-service-bus">Install the .NET SDK for Azure Service Bus</h2>
+<p>Microsoft has several .NET SDKs for interacting with Azure Service Bus. The latest at the time of writing is called the Service Bus Track 2 Library and it has a NuGet package named <span class="jsx-3120878690"><code>Azure.Messaging.ServiceBus</code></span>.</p>
+<p>This package is currently in pre-release, and it is the easiest to integrate with managed identities.</p>
+<p>To start using this package in an ASP.NET Core application, run the following commands from your project:</p>
+<pre><code>1dotnet add package Azure.Identity
+2dotnet add package Microsoft.Extensions.Azure
+3dotnet add package Azure.Messaging.ServiceBus --version 7.0.0-preview.8</code></pre>
+<p>sh</p>
+<h2 id="update-your-code">Update Your Code</h2>
+<p>With all the resources created and roles assigned, you need to update your code to get everything working.</p>
+<p>Start by updating your <span class="jsx-3120878690"><code>Startup.cs</code></span> method and register a new <span class="jsx-3120878690"><code>HostedService</code></span> to listen to messages and register the <span class="jsx-3120878690"><code>ServiceBusClient</code></span>.</p>
+<pre><code>1services.AddHostedService&lt;ServiceBusHostedService&gt;();
+2services.AddAzureClients(cfg =&gt;
+3{
+4  cfg.AddServiceBusClient(Configuration.GetSection(&quot;ServiceBus&quot;)).WithCredential(new Azure.Identity.DefaultAzureCredential());
+5});</code></pre>
+<p>csharp</p>
+<p>This code reads the Service Bus location from a configuration such as <span class="jsx-3120878690"><code>AppSettings.json</code></span>. This is ideal especially if you have multiple environments and use different Service Bus namespaces staging and production.</p>
+<p>Add the following configuration to your <span class="jsx-3120878690"><code>AppSettings.json</code></span>.</p>
+<pre><code>1{
+2  &quot;ServiceBus&quot;: {
+3    &quot;FullyQualifiedNamespace&quot;: &quot;xxxxxxxx.servicebus.windows.net&quot;
+4  }
+5}</code></pre>
+<p>json</p>
+<p>To actually listen to messages, create the class <span class="jsx-3120878690"><code>ServiceBusHostedService</code></span> and add the following code:</p>
+<pre><code>1public class ServiceBusHostedService : IHostedService
+2{
+3    private readonly ServiceBusClient _serviceBusClient;
+4    private ServiceBusProcessor _processor;
+5
+6    public ServiceBusHostedService(ServiceBusClient serviceBusClient)
+7    {
+8        _serviceBusClient = serviceBusClient;
+9    }
+10
+11    public async Task StartAsync(CancellationToken cancellationToken)
+12    {
+13        _processor = _serviceBusClient.CreateProcessor(&quot;test&quot;);
+14
+15        _processor.ProcessMessageAsync += ProcessMessageAsync;
+16        _processor.ProcessErrorAsync += ProcessErrorAsync;
+17
+18        await _processor.StartProcessingAsync(cancellationToken);
+19    }
+20
+21    private Task ProcessErrorAsync(ProcessErrorEventArgs arg)
+22    {
+23        return Task.CompletedTask;
+24    }
+25
+26    private Task ProcessMessageAsync(ProcessMessageEventArgs arg)
+27    {
+28        // perform your business logic to process messages
+29
+30        return Task.CompletedTask;
+31    }
+32
+33    public Task StopAsync(CancellationToken cancellationToken)
+34    {
+35        return _processor.CloseAsync(cancellationToken: cancellationToken);
+36    }
+37}</code></pre>
+<p>csharp</p>
+<p>Your code is now listening for new Service Bus messages in the background <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-3.1&amp;tabs=visual-studio">using IHostedService in ASP.NET Core</a>.</p>
+<p>To send messages, inject the <span class="jsx-3120878690"><code>ServiceBusClient</code></span> class and call the <span class="jsx-3120878690"><code>CreateSender()</code></span> method.</p>
+<pre><code>1public ServiceBusSender _serviceBusSender { get; private set; }
+2
+3public HomeController(
+4    ILogger&lt;HomeController&gt; logger,
+5    ServiceBusClient serviceBusClient)
+6{
+7    _logger = logger;
+8    _serviceBusSender = serviceBusClient.CreateSender(&quot;test&quot;);
+9}
+10
+11[HttpPost(&quot;post-message&quot;)]
+12public async Task&lt;IActionResult&gt; Message(MyModel model)
+13{
+14    var message = new ServiceBusMessage(Azure.BinaryData.FromObjectAsync(model)));
+15    await _serviceBusSender.SendMessageAsync(message);
+16    return Accepted();
+17}</code></pre>
+<p>csharp</p>
+<p>Notice that in all the code samples, no connection string or client secret was required. This authorization is handled for you. When you are working on your local development machine, you use your Azure CLI credentials or Visual Studio credentials to authorize against these protected resources. When the app is running the Azure App Service, it uses managed identities for authentication.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Azure Service Bus provides reliable cloud messaging as a service. If you learn to use the newer SDKs, you can make your application more secure and develop features faster. To learn more about the latest developments in Azure Service Bus’ .NET SDK, read <a href="https://github.com/Azure/azure-sdk-for-net/labels/Service%20Bus">Microsoft’s GitHub Repository’s Service Bus issues</a>.</p>
+<p>16</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

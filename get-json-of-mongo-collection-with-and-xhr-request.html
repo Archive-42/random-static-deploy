@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>get-json-of-mongo-collection-with-and-xhr-request</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="get-a-json-of-a-mongo-collection-with-an-xhr-request-in-react">Get a JSON of a Mongo Collection with an XHR Request in React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 2, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>4,135 Views</p></li>
+<li><p>Oct 2, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>4,135 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>13</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-settingupthebackend" class="menu-link">Setting up the Backend</a></li>
+<li><a href="#module-creatingthefrontend" class="menu-link">Creating the Frontend</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When you are working in a <em>MERN (MongoDB, Express, React, and Node)</em> stack app, you are often required to fetch a JSON of a Mongo collection and use that data on the frontend. With the popularity of <em>NoSQL</em> databases, it’s really simple to fetch data from a Mongo collection via a React app through an express server.</p>
+<p>This guide walks you through the essentials of making an <em>XHR request</em> to an endpoint on an express server to get JSON of a Mongo collection in your MongoDB database.</p>
+<h2 id="setting-up-the-backend">Setting up the Backend</h2>
+<p>If you already have an express server with an endpoint where you can fetch your Mongo collection, you can skip this step. If you don’t, you can easily set up an express server using NodeJS using the following steps.</p>
+<p>First, create a new <span class="jsx-3120878690"><code>npm</code></span> project using the following command:</p>
+<pre><code>1npm init -y </code></pre>
+<p>shell</p>
+<p>Install mongoose, body-parser, and express.</p>
+<pre><code>1npm i mongoose express body-parser </code></pre>
+<p>shell</p>
+<h3 id="creating-a-schema">Creating a Schema</h3>
+<p>Create a schema called <span class="jsx-3120878690"><code>todoSchema</code></span> for your Mongo collection and a model called <span class="jsx-3120878690"><code>Todo</code></span>, as shown below, and export it using <span class="jsx-3120878690"><code>module.exports</code></span>.</p>
+<pre><code>1const mongoose=require(&#39;mongoose&#39;); 
+2 
+3const todoSchema=mongoose.Schema({ 
+4 name:{ 
+5 type:String, 
+6 required:true 
+7 }, 
+8 status:{ 
+9 type:String, 
+10 required:true 
+11 } 
+12},{timestamps:true}) 
+13 
+14const Todo=mongoose.model(&#39;Todo&#39;,todoSchema); 
+15module.exports=Todo; </code></pre>
+<p>javascript</p>
+<h3 id="creating-a-controller">Creating a Controller</h3>
+<p>Create a controller for fetching all the to-do’s from your Mongo collection using the <span class="jsx-3120878690"><code>find()</code></span> method on your model and export it at the end.</p>
+<pre><code>1const Todo=require(&#39;./../models/Todo&#39;); 
+2 
+3 
+4const getTodos=(req,res)=&gt;{ 
+5 
+6 Todo.find() 
+7 .then(result=&gt;{ 
+8 console.log(&#39;result: &#39;,result) 
+9 res.send(result.length&gt;0?result:&#39;No Todos&#39;); 
+10 }) 
+11 .catch(err=&gt;{ 
+12 console.log(err); 
+13 }) 
+14} 
+15 
+16module.exports={ 
+17 getTodos 
+18} </code></pre>
+<p>javascript</p>
+<h3 id="setting-up-an-express-router">Setting up an Express Router</h3>
+<p>Create a router instance of the express by invoking the <span class="jsx-3120878690"><code>Router()</code></span> method on it. Next, create a route that will act as an API endpoint to get all the to-do’s from your Mongo collection by calling the <span class="jsx-3120878690"><code>get()</code></span> method and passing the route as the first parameter and your controller function as the second parameter.</p>
+<pre><code>1const express=require(&#39;express&#39;); 
+2const todoController=require(&#39;./controllers/todoConroller&#39;); 
+3 
+4const router=express.Router(); 
+5 
+6module.exports=router.get(&#39;/todos&#39;,todoController.getTodos); </code></pre>
+<p>javascript</p>
+<p>Finally, put it all together by creating an express app and connecting your MongoDB database. This example uses MongoDB Atlas to create and connect to the cloud database using a <span class="jsx-3120878690"><code>dbURI</code></span> string.</p>
+<pre><code>1const express=require(&#39;express&#39;); 
+2const mongoose=require(&#39;mongoose&#39;); 
+3const bodyParser=require(&#39;body-parser&#39;); 
+4const routes=require(&#39;./routes&#39;); 
+5 
+6const PORT=5000; 
+7 
+8const dbURI=&lt;Add your MongoDB atlas dbURI here&gt; 
+9 
+10const app=express(); 
+11 
+12mongoose.connect(dbURI,{useNewUrlParser:true,useUnifiedTopology:true}) 
+13 .then(()=&gt;{ 
+14 app.listen(PORT,(req,res)=&gt;{ 
+15 console.log(`connected to db`); 
+16 }) 
+17 }) 
+18 .catch(err=&gt;{ 
+19 console.log(err); 
+20 }) 
+21 
+22 
+23app.use(bodyParser.json()) 
+24app.use(routes) 
+25 </code></pre>
+<p>javascript</p>
+<p>You can now access your mongo collection using the endpoint <a href="http://localhost:5000/todos" class="uri">http://localhost:5000/todos</a> after running the <span class="jsx-3120878690"><code>node app</code></span> in the terminal.</p>
+<h2 id="creating-the-frontend">Creating the Frontend</h2>
+<p>The Mongo collection you will consume looks like this:</p>
+<pre><code>1[ 
+2 { 
+3 &quot;_id&quot;: &quot;5f709a7fe510821d48eaf3cc&quot;, 
+4 &quot;name&quot;: &quot;Paint a picture&quot;, 
+5 &quot;status&quot;: &quot;Incomplete&quot;, 
+6 &quot;createdAt&quot;: &quot;2020-09-27T13:58:23.023Z&quot;, 
+7 &quot;updatedAt&quot;: &quot;2020-09-27T14:01:32.580Z&quot;, 
+8 &quot;__v&quot;: 0 
+9 }, 
+10 { 
+11 &quot;_id&quot;: &quot;5f71dcf907cf490004e07d80&quot;, 
+12 &quot;name&quot;: &quot;Walk the Dog&quot;, 
+13 &quot;status&quot;: &quot;Incomplete&quot;, 
+14 &quot;createdAt&quot;: &quot;2020-09-28T12:54:17.877Z&quot;, 
+15 &quot;updatedAt&quot;: &quot;2020-09-28T12:54:17.877Z&quot;, 
+16 &quot;__v&quot;: 0 
+17 }, 
+18 { 
+19 &quot;_id&quot;: &quot;5f71dd1207cf490004e07d81&quot;, 
+20 &quot;name&quot;: &quot;Cook Dinner&quot;, 
+21 &quot;status&quot;: &quot;In Progress&quot;, 
+22 &quot;createdAt&quot;: &quot;2020-09-28T12:54:42.340Z&quot;, 
+23 &quot;updatedAt&quot;: &quot;2020-09-28T12:54:42.340Z&quot;, 
+24 &quot;__v&quot;: 0 
+25 } 
+26] </code></pre>
+<p>json</p>
+<p>This JSON collection is returned from the endpoint created in the previous section after adding data manually to the database. If you want to use your collection, use the API created in the previous section or use the above collection inside a local text file as an <em>API mockup</em>. The method of making XHR requests in all three cases is the same.</p>
+<h3 id="making-an-xhr-request">Making an XHR Request</h3>
+<p>Inside your React app, import <span class="jsx-3120878690"><code>useState</code></span> and <span class="jsx-3120878690"><code>useEffect</code></span>. The <span class="jsx-3120878690"><code>useState</code></span> hook is used to create a state where the JSON object from the endpoint is stored. Make an XHR request inside the <span class="jsx-3120878690"><code>useEffect</code></span> lifecycle hook’s callback function using the <span class="jsx-3120878690"><code>XMLHttpRequest</code></span> object. Have a look at the following code:</p>
+<pre><code>1import React,{useState, useEffect} from &#39;react&#39;; 
+2import &#39;./App.css&#39;; 
+3 
+4function App() { 
+5 const [todos,setTodos]=useState() 
+6 useEffect(()=&gt;{ 
+7 var request = new XMLHttpRequest(); 
+8 request.onreadystatechange = function() { 
+9 if (request.readyState == 4 &amp;&amp; request.status == 200) { 
+10 const response=JSON.parse(request.response) 
+11 setTodos(response) 
+12 } 
+13 }; 
+14 request.open(&#39;GET&#39;, &#39;http://localhost:5000/todos&#39;, true); 
+15 request.send(); 
+16 },[]) 
+17 
+18 useEffect(()=&gt;{ 
+19 console.log(todos) 
+20 },[todos]) 
+21 return ( 
+22 &lt;div className=&quot;App&quot;&gt; 
+23 &lt;/div&gt; 
+24 ); 
+25} 
+26 
+27export default App; 
+28 </code></pre>
+<p>jsx</p>
+<p>Inside the <span class="jsx-3120878690"><code>useEffect()'</code></span>s callback function, create a new instance of the <span class="jsx-3120878690"><code>XMLHttpRequest</code></span> object. Then call the endpoint with the request method type (which is GET in this example) to create a gateway to that request. This step is essential as it tells the browser that you are now open for making requests to an endpoint to get some resources back. By calling the <span class="jsx-3120878690"><code>send()</code></span> method, you invoke the function fired by the <span class="jsx-3120878690"><code>onreadystatechange</code></span> event inside which you check the <span class="jsx-3120878690"><code>readyState</code></span> and <span class="jsx-3120878690"><code>status</code></span> of the request. The <span class="jsx-3120878690"><code>readyState</code></span> <span class="jsx-3120878690"><code>4</code></span> indicates that the request is ready to be processed and <span class="jsx-3120878690"><code>status 200</code></span> is received from the endpoint, indicating everything is okay. Inside the <span class="jsx-3120878690"><code>if</code></span> block, parse the <span class="jsx-3120878690"><code>response</code></span> object from the request to a JSON to get the JSON of your Mongo collection and assign it to your state variable. This is how you make an XHR request to get JSON of your Mongo collection and store it inside a local state of your component. As a final step, you can render this collection’s details on the DOM by looping through the state.</p>
+<pre><code>1 ... 
+2 &lt;div className=&quot;App&quot;&gt; 
+3 {todos &amp;&amp; todos.map(todo=&gt;&lt;p&gt;{todo.name}&lt;/p&gt;)} 
+4 &lt;/div&gt; 
+5 ... </code></pre>
+<p>jsx</p>
+<p>Now you can see the to-do’s from your Mongo collection on the page.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Although making XHR requests is the most primitive method of making AJAX requests, you should always go for modern approaches like the fetch API or Axios to make API calls. They are easy to use, have a shallow learning curve, and can handle multiple and bulky requests using advanced features such as <em>promise chaining.</em> The same example used in this guide can be coded in a cleaner manner using Axios or Fetch API. Try that out as an exercise.</p>
+<p>13</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

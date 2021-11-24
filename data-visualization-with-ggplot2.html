@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>data-visualization-with-ggplot2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/default.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Nishant Kumar Singh</p>
+<h1 id="data-visualization-with-ggplot2">Data Visualization with ggplot2</h1>
+<h3 id="nishant-kumar-singh">Nishant Kumar Singh</h3>
+<ul>
+<li><p>Oct 27, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>447 Views</p></li>
+<li><p>Oct 27, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>447 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">ggplot2</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Visualization</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-plottingchartswithggplot2" class="menu-link">Plotting Charts with ggplot2</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>R is an amazing open source platform for data visualization. It is capable of creating any type of chart. But before creating any type of chart you should have an idea that what you want to show and select the chart from there. Suppose you have a dataset that shows stock value fluctuations of a company over a period of time, then we would like to use a graph that shows a comparison of values over time. Based on the dataset and thought of representing data, charts can be divided into four types:</p>
+<ol type="1">
+<li>Comparison Charts</li>
+<li>Distribution Charts</li>
+<li>Composition Charts</li>
+<li>Relationship Charts</li>
+</ol>
+<h3 id="comparison-charts">Comparison Charts</h3>
+<p>These types of charts would compare the data among the categories or over time. For comparing over categories you could use a bar chart or column chart. For data points that need to be compared over time you can use a line chart or circular area chart.</p>
+<h3 id="distribution-charts">Distribution Charts</h3>
+<p>These types of charts would show the distribution of data over one or more variables. For the distribution of one variable, you can use a histogram or density plot. The distribution of two variables can be plotted with a scatter plot.</p>
+<h3 id="composition-charts">Composition Charts</h3>
+<p>These types of charts show changes in composition over time or static composition. For showing the change in composition over time you can use a stacked column chart or stacked area chart. The static composition can be shown through a pie chart or waterfall chart.</p>
+<h3 id="relationship-charts">Relationship Charts</h3>
+<p>These types of charts are used to show the relationship between two or more variables. For showing the relationship between two variables you can use a scatter plot. If you want to show the relationship between three variables you can use a bubble chart.</p>
+<h2 id="plotting-charts-with-ggplot2">Plotting Charts with ggplot2</h2>
+<p>In this section you will plot different types of charts using ggplot2 in R. Below are the prerequisites for using ggplot2. You can get more information about this package <a href="https://ggplot2.tidyverse.org/reference/index.html">here</a>.</p>
+<pre><code>1# Install ggplot2 in Rstudio
+2install.packages(&quot;ggplot2&quot;)
+3
+4# Loading ggplot2
+5library(ggplot2) </code></pre>
+<p>html</p>
+<h3 id="creating-comparison-charts">Creating Comparison Charts</h3>
+<pre><code>1# Creating a dataframe 
+2df &lt;- data.frame(trt = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), outcome = c(2.3, 1.9, 3.2))
+3
+4# Plotting a bar plot
+5ggplot(df, aes(trt, outcome)) +
+6geom_bar(stat = &quot;identity&quot;)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1925e954-4ccd-4128-8ca1-b5f2456d3f24_bar.html" /><figcaption aria-hidden="true">BarPlot</figcaption>
+</figure>
+<pre><code>1# Creating dataframe for line plot
+2x &lt;- seq(0.01, .99, length.out = 100)
+3df &lt;- data.frame(
+4  x = rep(x, 2),
+5  y = c(qlogis(x), 2 * qlogis(x)),
+6  group = rep(c(&quot;a&quot;,&quot;b&quot;),
+7  each = 100)
+8)
+9
+10# Creating aline plot
+11ggplot(df, aes(x=x, y=y, group=group))+
+12geom_line()</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ee914cac-2654-4740-94ca-689d99825f2f_Line.html" /><figcaption aria-hidden="true">LinePlot</figcaption>
+</figure>
+<h3 id="creating-distribution-charts">Creating Distribution Charts</h3>
+<pre><code>1# Using diamonds dataset fro creating a density plot
+2ggplot(diamonds, aes(carat)) +
+3  geom_density()</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/99c60625-01a9-4ece-b315-71ca26d2ecb8_Density.html" /><figcaption aria-hidden="true">DensityPlot</figcaption>
+</figure>
+<p>In the density plot, there are no bins defined. This kind of plot is used when there is a huge number of data points. When the data points are low you can use a histogram.</p>
+<pre><code>1# geom_point() is used to plot a scatter plot
+2ggplot(mtcars, aes(wt, mpg))+ 
+3geom_point()</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a9cebfa5-6ea1-4989-89fb-77936d0240e5_Point.html" /><figcaption aria-hidden="true">PointPlot</figcaption>
+</figure>
+<p>The scatter plot is used to show the distribution of two variables at a time.</p>
+<h3 id="creating-a-composition-charts">Creating a Composition Charts</h3>
+<p>There is no geom function available to create a pie chart. However, the bar chart can be converted into a pie chart using the <span class="jsx-3120878690"><code>coord_polar()</code></span> function.</p>
+<pre><code>1# Creating a dataframe 
+2df &lt;- data.frame(trt = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), outcome = c(2.3, 1.9, 3.2))
+3# Plotting a pie plot
+4ggplot(df, aes(x =&quot;&quot;, y = outcome, fill = trt)) +
+5geom_bar(width = 1,stat = &quot;identity&quot;)+
+6coord_polar(&quot;y&quot;, start = 0) </code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c07368e2-eb79-4395-bffc-46f628bdbe19_pie.html" /><figcaption aria-hidden="true">Pie</figcaption>
+</figure>
+<h3 id="creating-a-relationship-chart">Creating a Relationship Chart</h3>
+<p>The bubble chart is an extension of a scatter plot. In a scatter plot, you can show the relationship between two variables. In the bubble chart, you can show the relationship between three variables at a time.</p>
+<pre><code>1# Creating a Bubble chart
+2ggplot(mtcars, aes(x=wt, y=mpg)) + 
+3  geom_point(aes(size=qsec)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5cd8592e-cb0a-4fda-9bae-5522e0518c0e_Bubble.html" /><figcaption aria-hidden="true">Bubble</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>There are a huge number of graphs available, each with a specific quality and used to show certain factors that are hidden in data. You don’t need to learn each and every graph, but a few are very important if you want to do data analysis. Data visualization is a huge topic and there are a number of packages developed for visualization purposes. If you want to learn in more detail please visit <a href="https://rkabacoff.github.io/datavis/">here</a>.</p>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

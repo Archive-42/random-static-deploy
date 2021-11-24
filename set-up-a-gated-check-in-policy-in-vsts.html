@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>set-up-a-gated-check-in-policy-in-vsts</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/de010b7e-a850-4e30-8f2b-54aa24abdece.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Yashita Shah</p>
+<h1 id="set-up-a-gated-check-in-policy-using-azure-devops-services">Set Up a Gated Check-in Policy Using Azure DevOps Services</h1>
+<h3 id="yashita-shah">Yashita Shah</h3>
+<ul>
+<li><p>Nov 9, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>5,712 Views</p></li>
+<li><p>Nov 9, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>5,712 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Security</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Secure Coding</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Application Security</span></p>
+<p>Introduction</p>
+<p>24</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-protectyourbranches" class="menu-link">Protect Your Branches</a></li>
+<li><a href="#module-configurebranchpolicies" class="menu-link">Configure Branch Policies</a></li>
+<li><a href="#module-setupminimumnumberofreviewers" class="menu-link">Set Up Minimum Number of Reviewers</a></li>
+<li><a href="#module-setupcheckforassociatedworkitems" class="menu-link">Set Up Check for Associated Work Items</a></li>
+<li><a href="#module-enforcecommentresolution" class="menu-link">Enforce Comment Resolution</a></li>
+<li><a href="#module-setupbuildvalidation" class="menu-link">Set Up Build Validation</a></li>
+<li><a href="#module-automaticallyincludecodereviewers" class="menu-link">Automatically Include Code Reviewers</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>A <em>gated check-in</em> is a process that restricts developers from merging a broken code into the source control system—something every software company wants to establish. As they do so, organizations need to ask several questions:</p>
+<ul>
+<li>How does one set up a gated check-in policy?</li>
+<li>What are the best practices to follow while setting up this policy?</li>
+<li>What are the benefits to an organization if this policy is well established?</li>
+<li>What are the features that can be configured?</li>
+</ul>
+<p>This guide will clarify these questions and shed light on how to set up different policies that can be configured for a gated checked-in process using Azure DevOps Services (formerly known as VSTS).</p>
+<p>Let’s start by learning about branch policies and related features.</p>
+<h2 id="protect-your-branches">Protect Your Branches</h2>
+<p>Azure DevOps has a feature called <em>branch policies</em> used to set up a gated check-in process. Branch policies help teams to protect their important branches of development. Policies are enforced on the team for better code quality and help improve managing code standards.</p>
+<p>In a nutshell, you can set up the following policies:</p>
+<ul>
+<li>Configure branch policies</li>
+<li>Require a minimum number of reviewers</li>
+<li>Check for linked work items</li>
+<li>Check for comment resolution</li>
+<li>Build validation</li>
+<li>Automatically include code reviewers</li>
+</ul>
+<p>Now it’s time to deep dive into each policy and leverage the power of the branch policies feature for a gated check-in process. The following sections will explain each policy in detail and give tips for configuring branch policies.</p>
+<h2 id="configure-branch-policies">Configure Branch Policies</h2>
+<p>To set up branch policies, navigate to <strong>Repos &gt; Branches</strong>, as shown in the figure below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/57130173-0202-4e81-b099-1290e170e8cc_Branches_-_Image_1.html" /><figcaption aria-hidden="true">Branches menu navigation</figcaption>
+</figure>
+<p>Once you click on the <strong>Branches</strong> option, it launches the <strong>Branches</strong> page in the web portal, as shown in the figure below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/87e5f4fa-8638-4a27-8e87-73b2174805a1_master_Branch_-_Image_2.html" /><figcaption aria-hidden="true">Branches web portal page</figcaption>
+</figure>
+<p>Select the <strong>…</strong> button, then select <strong>Branch Policies</strong> from the context menu.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c34b4e83-dcd5-4619-8bdb-afa980c5f470_Branch_Policies_-_Image_3.html" /><figcaption aria-hidden="true">Branch context menu</figcaption>
+</figure>
+<p>Now you can configure various policies on the setting page. See the rest of the guide for the description of each policy type.</p>
+<h2 id="set-up-minimum-number-of-reviewers">Set Up Minimum Number of Reviewers</h2>
+<p>The <em>require a minimum number of reviewers’</em> policy helps most software development projects. Code review is a best practice to follow and the recommended way to ensure code quality improvement.</p>
+<p>To require teams to review their changes before completing a pull request, select the <strong>Require a minimum number of reviewers</strong> option. It is recommended to set a minimum of two reviewers as best practice.</p>
+<p>This policy also helps all the software industries before the developer’s code gets merged to the master branch. It provides various options to configure policy along with a minimum number of reviewers. Let’s explore these options in detail.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/866bcbec-8569-4b79-b41c-b0a146c721f6_Require_a_min_number_of_reviewers.html" /><figcaption aria-hidden="true">Required minimum number of two reviewers</figcaption>
+</figure>
+<h3 id="allow-requestors-to-approve-their-own-changes">Allow requestors to approve their own changes</h3>
+<p>If this option is selected, the creator of the pull request can vote on its approval. If not, then their vote won’t count toward the <em>minimum number of reviewers</em>. It is recommended that the creator of the pull request not be able to vote on their own request.</p>
+<h3 id="prohibit-the-most-recent-pusher-from-approving-their-own-changes">Prohibit the most recent pusher from approving their own changes</h3>
+<p>If you enable this option, enforced segregation of duties happens. It means that the most recent push automatically makes the pusher’s vote not count.</p>
+<h3 id="allow-completion-even-if-some-reviewers-vote-to-wait-or-reject">Allow completion even if some reviewers vote to wait or reject</h3>
+<p>If this option is not enabled, the pull of request code will not be merged to the master branch if some reviewers vote to reject it. It is recommended to not enable this option unless it is needed.</p>
+<h3 id="reset-code-reviewer-votes-when-there-are-new-changes">Reset code reviewer votes when there are new changes</h3>
+<p>This option gives you the capability to reset code reviewers’ votes if the creator of the pull request submits new changes to the same PR. This way, reviewers are well of aware new changes and can decide to approve the PR or not.</p>
+<h2 id="set-up-check-for-associated-work-items">Set Up Check for Associated Work Items</h2>
+<p>This policy provides you the ability to set up an association between a pull request and a work item to ensure that upcoming changes to your branch have proper traceability.</p>
+<p>You can set up this policy as <strong>required</strong> or <strong>optional</strong> to check for associated work items in the pull request. It is recommended to set up this option as required, which means blocking the pull request from being completed unless the user has at least one linked work item.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/3d736da4-5037-4939-97fd-b3a420f9a4fd_Check_for_linked_work_items.html" /><figcaption aria-hidden="true">Check for linked work items</figcaption>
+</figure>
+<h2 id="enforce-comment-resolution">Enforce Comment Resolution</h2>
+<p>Similarly, branch policies provide you an ability to block pull requests from being completed while any comments are active.</p>
+<p>Azure DevOps provides two options: <strong>required</strong> and <strong>optional</strong>. It is recommended to set up this option as required so the user won’t be able to complete their PR unless all comments are resolved.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/138d64b0-f4c8-47ae-b55a-1cdd140c0626_Check_for_comment_resolution.html" /><figcaption aria-hidden="true">Check for comment resolution</figcaption>
+</figure>
+<h2 id="set-up-build-validation">Set Up Build Validation</h2>
+<p>Setting up build validation is a crucial part of the gated check-in process. This option gives you more control over code quality, protecting code using various processes, such as requiring that all unit or integration tests are passed, SonarQube code quality gate is approved, build succeeded, etc.</p>
+<p>Build policy reduces breaks and keeps your test result passing. It can be very well integrated with Continuous Integration (CI) on your development branches to catch issues early.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9a6f09e1-0203-4186-843b-42f1f11d74ed_Build_Validation.html" /><figcaption aria-hidden="true">Build validation</figcaption>
+</figure>
+<p>It is a prerequisite to have a build pipeline up and running before setting up this policy. Build policy needs a pipeline that is triggered when the source branch is updated. This policy gives you options during setup:</p>
+<p><strong>1. Trigger options</strong></p>
+<ul>
+<li>Automatic (Recommended): Triggers build automatically when the source branch is updated</li>
+<li>Manual: User needs to trigger build manually as needed</li>
+</ul>
+<p><strong>2. Policy requirement</strong></p>
+<ul>
+<li>Required (Recommended): Build must succeed to complete the pull request</li>
+<li>Optional: Build failure will not block the completion of the pull request</li>
+</ul>
+<p><strong>3. Build expiration</strong></p>
+<ul>
+<li>Immediate: when the main branch is updated</li>
+<li>Duration (Recommended): After N number of hours if the main branch has been updated</li>
+<li>Never: Build never expires</li>
+</ul>
+<h2 id="automatically-include-code-reviewers">Automatically Include Code Reviewers</h2>
+<p>This filter provides you the capability to include code reviewers automatically when a new pull request is submitted. To configure this policy, a team needs to decide the reviewer’s name and policy requirements, as shown in the figure below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/514122b6-1d83-4b21-93fb-f417cd0e4f73_Add_new_reviewer_policy.html" /><figcaption aria-hidden="true">Automatically include code reviewers</figcaption>
+</figure>
+<ul>
+<li>If you select <strong>Required</strong>, then a pull request can’t be completed until every user added as a reviewer has approved changes.</li>
+</ul>
+<!-- -->
+<ul>
+<li>If you select <strong>Optional</strong>, then a pull request doesn’t require their approval to complete the pull request.</li>
+</ul>
+<!-- -->
+<ul>
+<li>You can set up <strong>Allow requestors to approve their own changes</strong>.</li>
+</ul>
+<!-- -->
+<ul>
+<li>When all the above conditions are met then a pull request can be completed.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you have learned about configuring a gated check-in process in Azure DevOps using the branch policies feature. Overall, this helps a team to set up better processes, improve code quality, and focus on business problems.</p>
+<p>To further build on this guide, you can set up other options like path filters, bypass branch policies, status checks, and so on. Azure DevOps provides you a branch permissions (security) feature to implement them. Thank you for reading.</p>
+<p>24</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

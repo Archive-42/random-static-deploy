@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-define-azure-rbac-part-two</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="how-to-define-azure-role-based-access-control-rbac-part-two">How to Define Azure Role-based Access Control (RBAC), Part Two</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 26, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>1,074 Views</p></li>
+<li><p>Oct 26, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>1,074 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-usingforeachtoiterateoveridentities" class="menu-link">Using ForEach to Iterate Over Identities</a></li>
+<li><a href="#module-skippingroleassignmentsforcertainresources" class="menu-link">Skipping Role Assignments for Certain Resources</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When your cloud infrastructure is large with dozens of apps and hundreds of users, managing all these permissions becomes difficult to maintain in a reproducible and transparent way. A previous guide, <a href="https://app.pluralsight.com/guides/how-to-define-azure-rbac">How to Define Azure Role-based Access Control (RBAC)</a>, covered the basic usage of role definition and assignment using the Azure CLI.</p>
+<p>In this guide, you will build on those skills to learn how to combine role assignment and resource tagging in conjunction with Powershell control flow to make hundreds of changes in a few lines of code.</p>
+<h2 id="using-foreach-to-iterate-over-identities">Using ForEach to Iterate Over Identities</h2>
+<p>Azure provides resource groups to help you manage and secure your apps and other protected resources. This allows you to group related resources together. One common pattern is to place all the resources in a single micro-service together. This may include an Azure App Service and the Storage account it uses to save its data.</p>
+<p>In this pattern, each Azure App Service should only have permission to access the storage account within its resource group. To do this in Powershell, use the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7">ForEach-Object Cmdlet</a> to iterate over all your resource groups and the apps inside them.</p>
+<pre><code>1# get all resource groups
+2$groups = az group list -o json | ConvertFrom-Json
+3
+4# iterate over all resource groups
+5$groups | foreach {
+6    $rg=$_.name
+7    $rgid = $_.id
+8
+9    # get all apps inside a resource group and iterate over them
+10    $apps=az webapp list -g $rg -o tsv --query &quot;[].name&quot;
+11    $apps | foreach {
+12        $app=$_
+13        $id = az webapp identity assign -g $rg -n $app -o tsv --query &quot;principalId&quot;
+14        az role assignment create --role &quot;Storage Blob Data Contributor&quot; --assignee $id --scope $rgid
+15        # get the deployment slots if any
+16        $slots = az webapp deployment slot list -g $rg -n $app -o tsv --query &quot;[].name&quot;
+17        # make sure an managed identity is assigned
+18        $slots | foreach {
+19            $id = az webapp identity assign -g $rg -s $_ -n $app -o tsv --query &quot;principalId&quot;
+20            az role assignment create --role &quot;Storage Blob Data Contributor&quot; --assignee $id --scope $rgid
+21        }
+22    }
+23}</code></pre>
+<p>powershell</p>
+<p>The snippet above demonstrates how to use the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7">ForEach-Object cmdlet</a> to assign the <span class="jsx-3120878690"><code>Storage Blob Data Contributor</code></span> roles to each app service. Note that the applications are only authorized to access storage accounts in their own resource groups. The cmdlet has an alias, <span class="jsx-3120878690"><code>foreach</code></span>, which makes the code slightly more terse. The advantage of this code is that it is re-entrant; when you run it the first time, it will create the system-assigned managed identities and roles. If you rerun the code and these objects have already been created, it won’t throw errors.</p>
+<p>If you are applying many of the same role assignments to different apps, you may want to create a custom role definition that combines several roles together. Custom role definitions are demonstrated in Part One of this guide, <a href="https://app.pluralsight.com/guides/how-to-define-azure-rbac">How to Define Azure Role-based Access Control (RBAC)</a>. This may be required since there is a hard limit of 2000 role assignments per Azure subscription.</p>
+<h2 id="skipping-role-assignments-for-certain-resources">Skipping Role Assignments for Certain Resources</h2>
+<p>Another useful organization feature of Azure is the ability to tag resource groups and resources. This can help with your security infrastructure since you can establish conventions and patterns that make it easier for your organization to make widespread changes. To take advantage of tags for the purpose of RBAC role assignments, write a <span class="jsx-3120878690"><code>JMESQuery</code></span> to filter out resources. This allows you to skip role assignments for certain resources or groups.</p>
+<p>The following code snippet demonstrates how to do this for resource groups and Azure App Services.</p>
+<pre><code>1# filter out resource groups have the tag &quot;sec:sensitive&quot;
+2az group list -o json --query &quot;[?tags.sec!=&#39;sensitive&#39;]&quot; | ConvertFrom-Json
+3
+4# filter out app services have that the tag &quot;sec:sensitive&quot;
+5az webapp list -g rg-pl-demo --query &quot;[?tags.sec!=&#39;sensitive&#39;].name&quot;</code></pre>
+<p>powershell</p>
+<p>By tagging your resources correctly, you can set up different resource groups with differing security requirements. These tags can then be read by your automation scripts to consistently apply your organization’s security policy.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Naming and tagging is important for scaling your cloud infrastructure. You have used tags to define security policies, but they can be also be used in different ways, such as cost monitoring and asset organization. Learn more by reading <a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging">Microsoft’s recommended best practices on naming and tagging</a>.</p>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

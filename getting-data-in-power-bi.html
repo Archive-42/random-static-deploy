@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>getting-data-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="getting-data-in-power-bi">Getting Data in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 24, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>2,866 Views</p></li>
+<li><p>Nov 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>2,866 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>45</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-loadexceldatatopowerbi" class="menu-link">Load Excel Data to Power BI</a></li>
+<li><a href="#module-loadtextorcsvdatatopowerbi" class="menu-link">Load Text or CSV Data to Power BI</a></li>
+<li><a href="#module-getdatafromtheweb" class="menu-link">Get Data from the Web</a></li>
+<li><a href="#module-otheroptionstoloaddata" class="menu-link">Other Options to Load Data</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Power BI supports several visualization charts. However, before building these visualizations, you will be required to get the data. Organizations have data stored in different formats and in different places. This guide will demonstrate how to get and load data in Power BI Desktop from different sources.</p>
+<h2 id="load-excel-data-to-power-bi">Load Excel Data to Power BI</h2>
+<p>To start, open the Power BI Desktop and save it as <strong>PowerBI Visualization</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/07560e08-9b83-4311-81a3-5cedb701aa7e_gd1.html" /><figcaption aria-hidden="true">gd1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> option and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the Excel file in the canvas, and the <strong>Fields</strong> pane contains the variables of the data. This is a fictitious data set of bank loan disbursal across years. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="load-text-or-csv-data-to-power-bi">Load Text or CSV Data to Power BI</h2>
+<p>Comma separated or CSV files are a common file format in data science and machine learning. You can import this file type by clicking on <strong>Get data</strong> option and select <strong>Text/CSV</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a986942f-43f2-47f4-81fe-2ca3a96138ec_gd5.html" /><figcaption aria-hidden="true">gd5</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>. The file name is <strong>funnelchartdata</strong>, which is a fictitious sales conversion data. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/funnelchartdata.csv">here</a>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8a6d54b9-ab35-4acc-9e9b-726545b7bfe3_gd6.html" /><figcaption aria-hidden="true">gd6</figcaption>
+</figure>
+<p>You have loaded the file, and the data is now available in the canvas.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/21bfed48-9b55-4fd0-bf74-ff5bd5e9b773_gd7.html" /><figcaption aria-hidden="true">gd7</figcaption>
+</figure>
+<h2 id="get-data-from-the-web">Get Data from the Web</h2>
+<p>Sometimes you are required to load data directly from the web. Power BI provides the option to get data from the web. To begin, click on <strong>Get data</strong> option and select <strong>Web</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2736343b-aa11-4f1e-95ed-b459911ea315_gd8.html" /><figcaption aria-hidden="true">gd8</figcaption>
+</figure>
+<p>This will open a tab where you can enter the web link as shown below. The data comes from Wikipedia, and you can visit the link <a href="https://en.wikipedia.org/wiki/COVID-19_pandemic_by_country_and_territory#Total_cases_and_death_rates_by_country">here</a>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0faefaac-a4a2-47e7-be19-dbc53022880b_gd20.html" /><figcaption aria-hidden="true">gd20</figcaption>
+</figure>
+<p>Click <strong>OK</strong> to open a new window.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9b8827f4-da79-46a0-9916-f8b10538376b_gd21.html" /><figcaption aria-hidden="true">gd21</figcaption>
+</figure>
+<p>Click <strong>Connect</strong> to open a page that previews the data. Click <strong>Load</strong> to load the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8f542061-4ba1-4929-bdb7-89bcbe5f1931_gd22.html" /><figcaption aria-hidden="true">gd22</figcaption>
+</figure>
+<p>You have loaded the web file in the canvas, and the <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/26692619-c437-4313-a546-f18263eb37a0_gd23.html" /><figcaption aria-hidden="true">gd23</figcaption>
+</figure>
+<h2 id="other-options-to-load-data">Other Options to Load Data</h2>
+<p>Apart from the common options to get data in Power BI Desktop, there are a variety of other options also available in Power BI. To view these options, click on <strong>Get data</strong> option and select <strong>More</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a7df2465-0cdc-4e3c-b502-e86ed173d410_gd12.html" /><figcaption aria-hidden="true">gd12</figcaption>
+</figure>
+<p>A new window is opened, where on the left side it shows a category of all available data sources.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/20d74242-80ba-4923-a8eb-21b1df024e78_gd13.html" /><figcaption aria-hidden="true">gd13</figcaption>
+</figure>
+<p>If the data you want to load is in a database, select the <strong>Database</strong> option, and then you can import data from the relevant database.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d775fc0d-2a61-433e-8473-46fb52fae591_gd14.html" /><figcaption aria-hidden="true">gd14</figcaption>
+</figure>
+<p>Many organizations are moving their data to cloud providers like Azure. You can click on <strong>Azure</strong> and <strong>Connect</strong> to the relevant storage path to get the required data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5e27004d-ae56-49af-a910-e7ba0a8b82ea_gd15.html" /><figcaption aria-hidden="true">gd15</figcaption>
+</figure>
+<p>You also have a lot of other options to load data from online services. You can have a look at these options with the <strong>Online Services</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d2c82535-3474-49d7-b87e-2ffbee971a19_gd16.html" /><figcaption aria-hidden="true">gd16</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Organizations are storing data in different avenues. As analytics and business intelligence professionals, you will be required to possess the skill to acquire data from different sources, and then translate it into dashboards and reports. Adding this knowledge into your tool kit will improve your business intelligence and reporting capabilities.</p>
+<p>To learn more about building powerful visualization in Power BI desktop, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/build-a-treemap-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implement-clustering-in-powerbi">Implement Clustering in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/filter-data-in-power-bi">Filter Data in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implementing-hierarchical-axis-and-concatenation-in-power-bi">Implementing Hierarchical Axis and Concatenation in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/adding-slicers-to-a-power-bi-report">Adding Slicers to a Power BI Report</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/explore-the-analytics-pane-in-power-bi">Explore the Analytics Pane in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/waterfall-charts-in-power-bi">Waterfall Charts in Power BI</a></p></li>
+</ol>
+<p>45</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

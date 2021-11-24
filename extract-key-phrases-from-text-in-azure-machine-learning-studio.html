@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>extract-key-phrases-from-text-in-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="extract-key-phrases-from-text-in-azure-machine-learning-studio">Extract Key Phrases from Text in Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 8, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>1,479 Views</p></li>
+<li><p>Oct 8, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>1,479 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>1</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-problemstatementanddata" class="menu-link">Problem Statement and Data</a></li>
+<li><a href="#module-loaddata" class="menu-link">Load Data</a></li>
+<li><a href="#module-preparetext" class="menu-link">Prepare Text</a></li>
+<li><a href="#module-extractkeyphrases" class="menu-link">Extract Key Phrases</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>One of the key areas of natural language processing (NLP) is extracting one or more meaningful phrases from a corpus of text. There are several situations, mostly in the consumer space, where key phrase extraction is imperative. In this guide, you will learn how to use the module in Azure Machine Learning Studio to extract the key phrases from a text corpus.</p>
+<h2 id="problem-statement-and-data">Problem Statement and Data</h2>
+<p>In this guide, you will take up the task of automating reviews in medicine. Medical literature is voluminous and rapidly changing, which increases the need for reviews. Often such reviews are done manually, which is tedious and time-consuming. You will try to extract key phrases from the input variable, <span class="jsx-3120878690"><code>abstract</code></span>.</p>
+<p>The dataset you will use comes from a <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> search, and contains 1,748 observations and four variables, as described below.</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>title</code></span>: Variable that consists of the titles of papers retrieved</p></li>
+<li><p><span class="jsx-3120878690"><code>abstract</code></span>: Variable that contains the abstracts of papers retrieved</p></li>
+<li><p><span class="jsx-3120878690"><code>trial</code></span>: Variable indicating whether the paper is a clinical trial testing a drug therapy for cancer</p></li>
+<li><p><span class="jsx-3120878690"><code>class</code></span>: Target variable which indicates whether the paper is a clinical trial (Yes) or not (No)</p></li>
+</ol>
+<p>Start by loading the data into the workspace.</p>
+<h2 id="load-data">Load Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click the <strong>EXPERIMENTS</strong> option, listed on the left sidebar, followed by the <strong>NEW</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8bcf6ad3-ae87-49bf-a3ce-b6ffdc7138df_k0.html" /><figcaption aria-hidden="true">k0</figcaption>
+</figure>
+<p>Next, click the blank experiment and a new workspace will open. Give the name <strong>Azure ML Experiment</strong> to the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/76161d01-ee78-47be-bdc6-72ff97402108_k1.html" /><figcaption aria-hidden="true">k1</figcaption>
+</figure>
+<p>Next, load the data into the workspace. Click <strong>NEW</strong>, and select the <strong>DATASET</strong> option shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bde04ae3-621a-40bd-ae41-3f75e5f91605_k2.html" /><figcaption aria-hidden="true">k2</figcaption>
+</figure>
+<p>The selection above will open a window, as shown below, which can be used to upload the dataset from the local system.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/766ecf96-3e6d-4612-a4cb-6e5f4209dbb4_k3.html" /><figcaption aria-hidden="true">k3</figcaption>
+</figure>
+<p>Once the data is loaded, you can see it in the <strong>Saved Datasets</strong> option. The file name is <strong>nlpdata2.csv</strong>. The next step is to drag it from the <strong>Saved Datasets</strong> list into the workspace. To explore this data, right-click and select the <strong>Visualize</strong> option, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4dcc0a8e-060c-4974-82f4-ed59bfdc34e0_k4.html" /><figcaption aria-hidden="true">k4</figcaption>
+</figure>
+<p>You can see there are 1748 rows and four columns.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/959ab02c-2842-4728-887f-9b5383663428_k5.html" /><figcaption aria-hidden="true">k5</figcaption>
+</figure>
+<h2 id="prepare-text">Prepare Text</h2>
+<p>It is important to pre-process text before you run the module to extract key phrases from the corpus. Common pre-processing steps include:</p>
+<ol type="1">
+<li>Remove punctuation: The rule of thumb is to remove everything that is not in the form x,y,z.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Remove stop words: These are unhelpful words such as ‘the’, ‘is’, or ‘at’. These are not helpful because the frequency of such stop words is high in the corpus, but they don’t help in differentiating the target classes. The removal of stop words also reduces the data size.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Conversion to lowercase: Words like ‘Clinical’ and ‘clinical’ need to be considered as one word. Hence, words with a capital letter are converted to lowercase.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Stemming: The goal of stemming is to reduce the number of inflectional forms of words appearing in the text. This causes words such as “argue,” “argued,” “arguing,” and “argues” to be reduced to their common stem, “argu”. This helps in decreasing the size of the vocabulary space.</li>
+</ol>
+<p>The <strong>Preprocess Text</strong> module is used to perform these steps as well as other text cleaning steps. Search and drag the module into the workspace. Connect it to the data as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ff5075a1-d19a-409e-aaf4-6545b8711080_k6.html" /><figcaption aria-hidden="true">k6</figcaption>
+</figure>
+<p>You must specify the text variable to be preprocessed. To do this, click on the <strong>Launch column selector</strong> option, and select the <span class="jsx-3120878690"><code>abstract</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9f998bc4-be04-41ec-b144-d3384c1b887a_k7.html" /><figcaption aria-hidden="true">k7</figcaption>
+</figure>
+<p>Run the experiment and click on <strong>Visualize</strong> to see the result.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d73d29a8-fc50-45df-b46e-29eed073c89e_k8.html" /><figcaption aria-hidden="true">k8</figcaption>
+</figure>
+<p>You can look at the result below. The <span class="jsx-3120878690"><code>Preprocessed abstract</code></span> variable contains the processed text. If you compare it with the <span class="jsx-3120878690"><code>abstract</code></span> variable, you can see the difference between pre- and post-text preprocessing.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/059e2b37-0ef8-43df-830b-0341b491449d_k9.html" /><figcaption aria-hidden="true">k9</figcaption>
+</figure>
+<h2 id="extract-key-phrases">Extract Key Phrases</h2>
+<p>You have performed the pre-processing step, and the corpus is ready to extract key phrases. In Azure Machine Learning Studio, the <strong>Extract Key Phrases from Text</strong> module performs this task. Search and drag the module into the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5d627b59-b687-41bc-bb31-841689399c5c_k10.html" /><figcaption aria-hidden="true">k10</figcaption>
+</figure>
+<p>This module builds upon the natural language processing APIs for key phrase extraction. The module captures the context of the sentence in form of phrases. To specify the text variable, click the module. Next, click the <strong>Launch column selector</strong> option, and select the <span class="jsx-3120878690"><code>Preprocessed abstract</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b5623f05-fbde-499b-b811-d48cc14c68e9_k11.html" /><figcaption aria-hidden="true">k11</figcaption>
+</figure>
+<p>Run the module and once the run is completed, right-click and select the <strong>Visualize</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0f8fc5fc-cdc9-491c-a00a-4bae8215874c_k12.html" /><figcaption aria-hidden="true">k12</figcaption>
+</figure>
+<p>The above command will produce the following output. You can see how a long text corpus is converted into more meaningful key phrases or words. The key phrases from the first records are <em>day day</em>, <em>patient tetracosactrin</em>, and <em>mg tetracosactrin</em>, and so on.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/479bbd9b-ca9c-4dc0-b584-46f3aa3e4b2e_k13.html" /><figcaption aria-hidden="true">k13</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you learned how to perform key phrase extraction with Azure Machine Learning Studio. There are several application areas, such as monitoring social media and brand sentiment analysis. Some media houses use keyword extraction to understand trending topics, which they use in content production. Research companies use keyword extraction to identify the most representative words in survey responses. Another prominent application is in Search Engine Optimization (SEO), where the main objective is to extract strategic keywords for targeted marketing. You can learn more about this concept <a href="http://ceur-ws.org/Vol-706/poster13.pdf">here</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+<li><p><a href="named-entity-recognition-with-azure-machine-learning-studio/index.html">Named Entity Recognition with Azure Machine Learning Studio</a></p></li>
+</ol>
+<p>1</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>create-a-global-promise-rejection-handler</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="create-a-global-promise-rejection-handler">Create a Global Promise Rejection Handler</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Nov 4, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>2,495 Views</p></li>
+<li><p>Nov 4, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>2,495 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-theonunhandledrejectioneventhandler" class="menu-link">The ‘onunhandledrejection’ Event Handler</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Promises changed the game when it came to modeling asynchronous tasks within a JavaScript program. They can allow you to refactor huge swathes of code that are mired inside of “callback hell,” a term coined to describe code bases that relied upon callbacks in order to model asynchronous actions. Callbacks allowed for a lot of nested code, and they weren’t that great when it came to handling errors either. The error-handling convention with callbacks was that you would ensure that the first parameter within your callback function would house a potential error. You would then have to check if that parameter existed in order to ensure that you handled it correctly. Promises built on this with the <span class="jsx-3120878690"><code>catch</code></span> method for handling errors. The <span class="jsx-3120878690"><code>catch</code></span> method ensures that any upstream errors will be handled.</p>
+<p>This guide will demonstrate how to take this a step further and add a global promise rejection handler so that you can capture every single instance of a rejected promise at runtime within your program.</p>
+<p>Let’s get started.</p>
+<h2 id="the-onunhandledrejection-event-handler">The ‘onunhandledrejection’ Event Handler</h2>
+<p>Circa 2016, browsers provided developers a new, globally available property that an event handler could be assigned to. The <span class="jsx-3120878690"><code>onunhandledrejection</code></span> event occurs every time that a promise rejection is not handled. In the below code, you can see an example of a rejected promise that goes unhandled.</p>
+<pre><code>1const myPromise = new Promise((resolve, reject) =&gt; {
+2    reject(&#39;Ouch&#39;);
+3});
+4
+5myPromise.then(() =&gt; {
+6    console.log(&#39;Hello world&#39;);
+7});
+8
+9// An Unhandled Promise Rejection Error will occur ^^</code></pre>
+<p>javascript</p>
+<p>The simple code example above creates a promise that will always be rejected. When an attempt to resolve the promise is made, an error will occur because there was no <span class="jsx-3120878690"><code>catch</code></span> method used to handle any potential errors. This caused an uncaught error to bubble up within the app!</p>
+<p><span class="jsx-3120878690"><code>onunhandledrejection</code></span> event handler to the rescue! With the <span class="jsx-3120878690"><code>onunhandledrejection</code></span> event handler, you can provide a global failsafe that will catch all rejected promises that go unhandled.</p>
+<p>The code below has been updated to provide our global promise rejection handler.</p>
+<pre><code>1// This function handles any unhandled promise rejections
+2const globalPromiseRejectionHandler = (event) =&gt; {
+3    console.log(&#39;Unhandled promise rejection reason: &#39;, event.reason);
+4}
+5
+6// Here we assign our handler to the corresponding global, window property
+7window.onunhandledrejection = globalPromiseRejectionHandler;
+8
+9const myPromise = new Promise((resolve, reject) =&gt; {
+10    reject(&#39;Ouch&#39;);
+11});
+12
+13myPromise.then(() =&gt; {
+14    console.log(&#39;Hello world&#39;);
+15});</code></pre>
+<p>javascript</p>
+<p>And voila! No more uncaught errors. When you use the code directly above, you should see a message in the console that reads, <span class="jsx-3120878690"><code>Unhandled promise rejection reason:                                       Ouch</code></span>. Simply by creating a function event handler and assigning it to the <span class="jsx-3120878690"><code>onunhandledrejection</code></span> property on the globally available window object, you have created a safe means of catching any unhandled promise rejections within your app. This technique is very useful for logging purposes but also allows you a safe fallback any time that a <span class="jsx-3120878690"><code>catch</code></span> method is not used when it should be.</p>
+<blockquote>
+<p>Note: Where possible, attempt to always use the <span class="jsx-3120878690"><code>catch</code></span> method in order to handle promise rejections close to where they occur.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>Promises are a huge improvement to the JavaScript ecosystem both in terms of modeling asynchronous actions and when it comes to handling errors.</p>
+<p>By using the globally available <span class="jsx-3120878690"><code>onunhandledrejection</code></span> property, you can easily create an event handler that will catch any errors at runtime. This can prevent a lot of undefined behavior from happening in your app at runtime. And that’s always a good thing for the user!</p>
+<p>For more information about the <span class="jsx-3120878690"><code>onunhandledrejection</code></span> property, check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection">documentation</a>.</p>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

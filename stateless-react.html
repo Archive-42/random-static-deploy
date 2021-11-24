@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>stateless-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="create-a-stateless-component-for-an-array-of-json-objects-in-react">Create a Stateless Component for an Array of JSON Objects in React</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Sep 25, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>6,620 Views</p></li>
+<li><p>Sep 25, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>6,620 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>3</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-populatingthetable" class="menu-link">Populating the Table</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-loadingvalues" class="menu-link">Loading Values</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Binding an array to a set of DOM elements (JSX) in React.js is a common task in app development. Often, you need to list a set of objects and their corresponding attributes, such as those found in product catalogs, member records, or lists of transactions. In this guide, we will take a look at some considerations when binding a list of objects in a React.js component’s interface.</p>
+<h2 id="setup">Setup</h2>
+<p>Suppose that you are creating a React.js component that lists a set of products a customer can buy in a grocery store. Each product has an <span class="jsx-3120878690"><code>id</code></span>, <span class="jsx-3120878690"><code>name</code></span>, and <span class="jsx-3120878690"><code>price</code></span>. Data might come from anywhere, such as an API or another component. In any case, you can expect that an array of items will look like the following:</p>
+<pre><code>1[
+2  { id: 1, name: &quot;Apple&quot;, price: 25.00 },
+3  { id: 2, name: &quot;Oranges&quot;, price: 20.00 },
+4  { id: 3, name: &quot;Grapes&quot;, price: 22.00 }
+5]</code></pre>
+<p>JSON</p>
+<p>This type of data will be passed as a <span class="jsx-3120878690"><code>props</code></span> attribute called <span class="jsx-3120878690"><code>items</code></span> within your component.</p>
+<p>First, create a component that looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class ItemsList extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {}
+8  }
+9
+10  render() {
+11    return (
+12      &lt;table&gt;
+13        &lt;thead&gt;
+14          &lt;th&gt;
+15            Item
+16          &lt;/th&gt;
+17          &lt;th&gt;
+18            Price
+19          &lt;/th&gt;
+20        &lt;/thead&gt;
+21        &lt;tbody&gt;
+22        &lt;/tbody&gt;
+23      &lt;/table&gt;
+24    );
+25  }
+26}</code></pre>
+<p>javascript</p>
+<p>Notice that you don’t have any state to maintain and that this component returns a single element in the form of a <span class="jsx-3120878690"><code>&lt;table&gt;</code></span>. Everything will be read from <span class="jsx-3120878690"><code>props</code></span> instead of <span class="jsx-3120878690"><code>state</code></span>. Within the <span class="jsx-3120878690"><code>&lt;table&gt;</code></span>, React.js requires that you include a <span class="jsx-3120878690"><code>&lt;tbody&gt;</code></span> before inserting rows in it. Otherwise, it will complain that <span class="jsx-3120878690"><code>&lt;tr&gt;</code></span> is not a valid child element of <span class="jsx-3120878690"><code>&lt;table&gt;</code></span>.</p>
+<h2 id="populating-the-table">Populating the Table</h2>
+<p>Instead of rendering the array of items directly to <span class="jsx-3120878690"><code>render()</code></span>, create a separate function to handle the building of DOM elements:</p>
+<pre><code>1renderRows() {
+2  return  this.props.items.map(function(o) {
+3            return  &lt;tr key={&quot;item-&quot; + o.id}&gt;
+4                      &lt;td&gt;{o.name}&lt;/td&gt;
+5                      &lt;td&gt;{o.price}&lt;/td&gt;
+6                    &lt;/tr&gt;
+7          });
+8}</code></pre>
+<p>javascript</p>
+<p>Notice first that the code references <span class="jsx-3120878690"><code>this.props</code></span> and assumes that it will have an attribute <span class="jsx-3120878690"><code>items</code></span>. Since it’s calling from <span class="jsx-3120878690"><code>this.props</code></span>, it expects that this data will be passed from an external component. Second, the code uses the <span class="jsx-3120878690"><code>map</code></span> function of a JavaScript array to iterate through <span class="jsx-3120878690"><code>this.props.items</code></span>, which accepts a function that returns a <span class="jsx-3120878690"><code>&lt;tr&gt;</code></span> element. Finally, the <span class="jsx-3120878690"><code>&lt;tr&gt;</code></span> element will contain a <span class="jsx-3120878690"><code>key</code></span> attribute. This is a requirement for React.js wherein each child element of a parent element that is dynamically generated has to be assigned a key unique within the parent element. Since it is assumed that each item will contain an <span class="jsx-3120878690"><code>id</code></span> unique to it, the code uses that information to generate the <span class="jsx-3120878690"><code>key</code></span> value of <span class="jsx-3120878690"><code>item-someItemId</code></span>.</p>
+<p>Invoke the function within the component’s <span class="jsx-3120878690"><code>render()</code></span> inside the <span class="jsx-3120878690"><code>&lt;tbody&gt;</code></span> tag:</p>
+<pre><code>1&lt;tbody&gt;
+2  {this.renderRows()}
+3&lt;/tbody&gt;</code></pre>
+<p>jsx</p>
+<p>These items will change if a component calling <span class="jsx-3120878690"><code>ItemsList</code></span> passes a new set of values for <span class="jsx-3120878690"><code>items</code></span> via <span class="jsx-3120878690"><code>props</code></span>.</p>
+<h2 id="overall-code">Overall Code</h2>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class ItemsList extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {}
+8  }
+9
+10  renderRows() {
+11    return  this.props.items.map(function(o) {
+12              return  &lt;tr key={&quot;item-&quot; + o.id}&gt;
+13                        &lt;td&gt;{o.name}&lt;/td&gt;
+14                        &lt;td&gt;{o.price}&lt;/td&gt;
+15                      &lt;/tr&gt;
+16            });
+17  }
+18
+19  render() {
+20    return (
+21      &lt;table&gt;
+22        &lt;thead&gt;
+23          &lt;th&gt;
+24            Item
+25          &lt;/th&gt;
+26          &lt;th&gt;
+27            Price
+28          &lt;/th&gt;
+29        &lt;/thead&gt;
+30        &lt;tbody&gt;
+31          {this.renderRows()}
+32        &lt;/tbody&gt;
+33      &lt;/table&gt;
+34    );
+35  }
+36}</code></pre>
+<p>javascript</p>
+<h2 id="loading-values">Loading Values</h2>
+<p>Suppose that you want to test it out. From an external JavaScript section in your app, invoke <span class="jsx-3120878690"><code>ItemsList</code></span> with some data in a DOM element <span class="jsx-3120878690"><code>react-root-div</code></span>:</p>
+<pre><code>1var items = [
+2  { id: 1, name: &quot;Apple&quot;, price: 25.00 },
+3  { id: 2, name: &quot;Oranges&quot;, price: 20.00 },
+4  { id: 3, name: &quot;Grapes&quot;, price: 22.00 }
+5];
+6
+7ReactDOM.render(
+8  &lt;ItemsList items={items} /&gt;,
+9  document.getElementById(&quot;react-root-div&quot;)
+10);</code></pre>
+<p>javascript</p>
+<p>You should see the table render with the name of the item in the first column and its price in the second column. To add more rows to the table, add more objects to <span class="jsx-3120878690"><code>items</code></span>, making sure that each object has an <span class="jsx-3120878690"><code>id</code></span> different from the existing objects in the array.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you’ve created a component that has no state but populates a list of JavaScript objects often derived from a JSON object. The component renders these items dynamically, and each child element rendered should have a unique key within its parent element. Because it is a stateless component, you can easily plug this component in other parts of your React.js app that need a list rendered of items.</p>
+<p>For an extra challenge, see if you can integrate this in your own React.js app where data is coming from an external API instead of being hardcoded.</p>
+<p>3</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>use-plain-javascript-events-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="use-plain-javascript-events-in-react">Use Plain JavaScript Events in React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 18, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>4,877 Views</p></li>
+<li><p>Nov 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>4,877 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>7</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-eventlistenerandtheeventfunction" class="menu-link">Event Listener and the Event Function</a></li>
+<li><a href="#module-implementingjavascriptclickevent" class="menu-link">Implementing JavaScript <code>click</code> Event</a></li>
+<li><a href="#module-implementingjavascriptchangeevent" class="menu-link">Implementing JavaScript <code>change</code> Event</a></li>
+<li><a href="#module-removetheeventlistenerandassignedeventfunction" class="menu-link">Remove the Event Listener and Assigned Event Function</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React supports events that are supported in JavaScript, and it works similarly, but the significant difference is its way of using the events. There are two significant differences:</p>
+<ul>
+<li>To use JavaScript events in React, you need to name it in camel case such as <span class="jsx-3120878690"><code>eventName()</code></span>.</li>
+<li>If you use JSX with React, then you need to pass the event as a string with the event handler.</li>
+</ul>
+<p>JavaScript events are used to perform various operations based on events such as click, touch, up, and down. All the events, called <em>synthetic events</em>, can be used in React. This guide will demonstrate how to use plain JavaScript events within React components.</p>
+<h2 id="event-listener-and-the-event-function">Event Listener and the Event Function</h2>
+<p>Unlike JavaScript, React does not allow you to use event names as you do with JavaScript, like <span class="jsx-3120878690"><code>onclick()</code></span>; hence you need to follow the event name as <span class="jsx-3120878690"><code>onClick()</code></span>.</p>
+<p>You can still use plain JavaScript events using the <span class="jsx-3120878690"><code>window</code></span> object used to represent the DOM document opened in the current browser window.</p>
+<h2 id="implementing-javascript-click-event">Implementing JavaScript `click` Event</h2>
+<p>A click event is the most common event used to trigger a function based on the click event on the elements such as button, label, span, link, etc. To add the click event in React using plain JavaScript, you need to use <span class="jsx-3120878690"><code>addEventListener()</code></span> to assign the click event to an element.</p>
+<p>Create one <span class="jsx-3120878690"><code>&lt;button&gt;</code></span> element as <span class="jsx-3120878690"><code>ref</code></span> props so that it can be accessed to trigger the click event.</p>
+<pre><code>1render() {
+2    return (
+3      &lt;&gt;
+4        &lt;button ref={mybutton =&gt; (this.btn = mybutton)}&gt;Click me&lt;/button&gt;
+5      &lt;/&gt;
+6    );
+7}</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>&lt;button&gt;</code></span> element has additional props called <span class="jsx-3120878690"><code>ref</code></span> that are used to find the element from the DOM. To assign the JavaScript click event handler, you can implement it as demonstrated below.</p>
+<pre><code>1componentDidMount() {
+2    this.btn.addEventListener(&quot;click&quot;, this.onButtonClick);
+3}</code></pre>
+<p>jsx</p>
+<p><span class="jsx-3120878690"><code>addEventListener()</code></span> assigns the event handler and the event name to do an activity once the button gets clicked.</p>
+<pre><code>1onButtonClick() {
+2    alert(&quot;Clicked on Button&quot;);
+3}</code></pre>
+<p>jsx</p>
+<p>Once you click the button, it will show the alert box that the click event is triggered.</p>
+<h2 id="implementing-javascript-change-event">Implementing JavaScript `change` Event</h2>
+<p>The change event triggers the event based on the existing value and processes changes based on the changed value. Using the <span class="jsx-3120878690"><code>addEventListener()</code></span>, you can assign <span class="jsx-3120878690"><code>change</code></span> as the event handler followed by the event handler function as given below.</p>
+<pre><code>1componentDidMount() {
+2    this.input.addEventListener(&quot;change&quot;, e =&gt; this.onChange(e));
+3}</code></pre>
+<p>jsx</p>
+<p>Then, you can implement the event handler function to process the updated values.</p>
+<pre><code>1onChange(e) {
+2    console.log(&quot;Updated values is :-&quot;, e.target.value);
+3}</code></pre>
+<p>jsx</p>
+<p>Alternatively, you can remove the listener using <span class="jsx-3120878690"><code>document.getElementByID()</code></span> along with the <span class="jsx-3120878690"><code>addEventListener()</code></span> as given below.</p>
+<pre><code>1document.getElementById(&quot;#your_id&quot;).addEventListener(&quot;change&quot;, this.onChange);</code></pre>
+<p>jsx</p>
+<h2 id="remove-the-event-listener-and-assigned-event-function">Remove the Event Listener and Assigned Event Function</h2>
+<p>So far, this guide has shown how to define the JavaScript event handler and associated event handler function. But you should remove the listener once the current component gets unmounted from the DOM.</p>
+<p>To remove the event listener, you can use <span class="jsx-3120878690"><code>removeEventListener()</code></span> along with the event type and the event handler function.</p>
+<pre><code>1componentWillUnmount() {
+2    this.btn.removeEventListener(&quot;click&quot;, this.onButtonClick);
+3    this.input.removeEventListener(&quot;change&quot;, e =&gt; this.onChange(e));
+4}</code></pre>
+<p>jsx</p>
+<p>As you can see in the above code, the <span class="jsx-3120878690"><code>componentWillUnmount()</code></span> function is implemented for anything that needs to get removed, such as promises and events.</p>
+<p>Inside the function, two events removed are from the DOM, <span class="jsx-3120878690"><code>click</code></span> and <span class="jsx-3120878690"><code>change</code></span>, followed by the event handler function, so you can use the <span class="jsx-3120878690"><code>removeEventListener()</code></span> to remove the attached events from the component.</p>
+<p>Alternatively, you can remove the listener using <span class="jsx-3120878690"><code>document.getElementByID()</code></span> along with <span class="jsx-3120878690"><code>removeEventListener()</code></span>.</p>
+<pre><code>1document.getElementById(&quot;#your_id&quot;).removeEventListener(&quot;change&quot;, this.onChange);</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>React supports most of the JavaScript events but with a different version of the naming convention; hence, you should only use the React-based naming convention and not the plain JavaScript events with the React elements.</p>
+<p>Events handle the element’s response based on actions such as click, touch, drag, up, down, etc. To perform specific events, you can use various React synthetic events to trigger any actions.</p>
+<p>7</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

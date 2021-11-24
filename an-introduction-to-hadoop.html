@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>an-introduction-to-hadoop</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="an-introduction-to-hadoop">An Introduction to Hadoop</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Dec 18, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>10,794 Views</p></li>
+<li><p>Dec 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>10,794 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Hadoop</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Big Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>141</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-usecasesandapplicationareas" class="menu-link">Use Cases and Application Areas</a></li>
+<li><a href="#module-downloadandsetup" class="menu-link">Download and Setup</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>With the advent of big data and cloud computing, the need to efficiently store and process large datasets is constantly increasing. Using a single resource for storage and processing is unviable due to the cost, the sheer amount of data being generated, and the risk of failure with probable loss of valuable data.</p>
+<p>This is the situation that gave rise to <a href="https://hadoop.apache.org/">Hadoop</a>, an open-source platform for distributed storage and processing of large datasets in compute clusters. For distributed computing, Hadoop utilizes <a href="https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html#Overview">MapReduce</a>, and for distributed storage, it utilizes the Hadoop Distributed File System<a href="https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html">(HDFS)</a>.</p>
+<h2 id="use-cases-and-application-areas">Use Cases and Application Areas</h2>
+<p>Hadoop is mainly applied in areas where there is a large amount of data that requires processing and storage. Since Hadoop employs <a href="https://acadgild.com/blog/horizontal-vs-vertical-scaling-hadoop">horizontal scaling</a>, it is able to quickly scale and perform parallel processing.</p>
+<p>Common business use cases and applications of this technology include:</p>
+<ol type="1">
+<li>Commerce and Finance: The Hadoop ecosystem can be applied to store and process the data generated by commerce and trading activities for analysis and derivation of value.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Cyber Security and Fraud Detection: Hadoop can be employed in distributed processing of network data to identify potential threats to enterprise or large government networks in real time.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Healthcare: Healthcare data is sensitive, and it can be stored in a distributed fashion using Hadoop, which also provides fail-safes in case of failure.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Marketing Analysis and Targeting: Hadoop is being deployed to capture and analyze clickstream and multimedia data generated by social media users, which can then be further processed for purposes of marketing.</li>
+</ol>
+<p>More real-world applications can be found <a href="https://www.educba.com/uses-of-hadoop/">here</a>.</p>
+<h2 id="download-and-setup">Download and Setup</h2>
+<p>A prerequisite for this process is to have openssh-server, Java and JDK installed on your machine.</p>
+<p>This guide explores installing on <em>Ubuntu</em>. To install on Windows, follow this <a href="https://www.datasciencecentral.com/profiles/blogs/how-to-install-and-run-hadoop-on-windows-for-beginners">guide</a>. Mac users can follow <a href="https://towardsdatascience.com/installing-hadoop-on-a-mac-ec01c67b003c">this guide</a>.</p>
+<p>Below are the steps to follow when installing Hadoop:</p>
+<p>Create a <em>hadoop</em> user and group <em>hadoop</em>.</p>
+<pre><code>1sudo addgroup hadoop
+2sudo adduser --ingroup hadoop hadoop</code></pre>
+<p>bash</p>
+<p>Switch user to the newly created hadoop user.</p>
+<pre><code>1sudo su- hadoop</code></pre>
+<p>bash</p>
+<p>Set up and test passwordless SSH Keys since Hadoop requires SSH access for node management.</p>
+<pre><code>1ssh-keygen -t rsa -P &quot;&quot;
+2cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+3ssh localhost</code></pre>
+<p>bash</p>
+<p>Download Hadoop from the official Apache <a href="https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.3.0/hadoop-3.3.0-src.tar.gz">site</a>. Then navigate to your downloaded file, extract it, and move it to the appropriate <span class="jsx-3120878690"><code>usr/local</code></span> folder.</p>
+<pre><code>1tar -xzvf   hadoop-3.3.0
+2sudo mv hadoop-3.3.0 /usr/local/hadoop</code></pre>
+<p>bash</p>
+<p>Grant ownership of the folder to the hadoop user you created.</p>
+<pre><code>1sudo chown -R hadoop:hadoop usr/local/hadoop</code></pre>
+<p>bash</p>
+<p><em>Note: The folder <span class="jsx-3120878690"><code>hadoop-3.3.0</code></span> depends on the version you download. It is not fixed.</em></p>
+<p>To configure your system for Hadoop, open up the <span class="jsx-3120878690"><code>~/.bashrc</code></span> file using the command <span class="jsx-3120878690"><code>cat ~/.bashrc</code></span> and add the following lines at the end. Once done, save and close the file</p>
+<pre><code>1export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+2export HADOOP_HOME=/usr/local/hadoop
+3export PATH=$PATH:$HADOOP_HOME/bin
+4export PATH=$PATH:$HADOOP_HOME/sbin
+5export HADOOP_MAPRED_HOME=$HADOOP_HOME
+6export HADOOP_COMMON_HOME=$HADOOP_HOME
+7export HADOOP_HDFS_HOME=$HADOOP_HOME
+8export YARN_HOME=$HADOOP_HOME
+9export HADOOP_OPTS=&quot;-Djava.library.path=$HADOOP_HOME/native&quot;</code></pre>
+<p>Run the <span class="jsx-3120878690"><code>~/.bashrc</code></span> file using the command <span class="jsx-3120878690"><code>source ~/.bashrc</code></span>. At this point, Hadoop is installed.</p>
+<p>Configure Hadoop’s <span class="jsx-3120878690"><code>hadoop-env.sh</code></span> file to set the <em>JAVA_HOME</em> variable. To open the file, run the command:</p>
+<pre><code>1sudo nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh</code></pre>
+<p>bash</p>
+<p>Add the line <span class="jsx-3120878690"><code>export                                       JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/</code></span>. This is typically the root directory for the Java installation.</p>
+<p>Configure Hadoop’s <span class="jsx-3120878690"><code>core-site.xml</code></span> by adding the following lines:</p>
+<pre><code>1&lt;configuration&gt;
+2&lt;property&gt;
+3&lt;name&gt;fs.defaultFS&lt;/name&gt;
+4&lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+5&lt;/property&gt;
+6&lt;property&gt;
+7&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+8&lt;value&gt;/home/hdadmin/hdata&lt;/value&gt;
+9&lt;/property&gt;
+10&lt;/configuration&gt;</code></pre>
+<p>xml</p>
+<p>To open the core-site.xml file, run the command:</p>
+<pre><code>1sudo nano /usr/local/hadoop/etc/hadoop/core-site.xml</code></pre>
+<p>bash</p>
+<p>Configure Hadoop’s <span class="jsx-3120878690"><code>hdfs-site.xml</code></span> by adding the following lines:</p>
+<pre><code>1&lt;configuration&gt;
+2&lt;property&gt;
+3&lt;name&gt;dfs.replication&lt;/name&gt;
+4&lt;value&gt;1&lt;/value&gt;
+5&lt;/property&gt;
+6&lt;/configuration&gt;</code></pre>
+<p>xml</p>
+<p>To open the <span class="jsx-3120878690"><code>hdfs-site.xml</code></span> file, run the command:</p>
+<pre><code>1sudo nano /usr/local/hadoop/etc/hadoop/hdfs-site.xml</code></pre>
+<p>bash</p>
+<p>Configure Hadoop’s <span class="jsx-3120878690"><code>mapred-site.xml</code></span> by copying the existing template <span class="jsx-3120878690"><code>mapred-site.xml.template</code></span> and adding the following lines:</p>
+<pre><code>1&lt;configuration&gt;
+2&lt;property&gt;
+3&lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+4&lt;value&gt;yarn&lt;/value&gt;
+5&lt;/property&gt;
+6&lt;/configuration&gt;</code></pre>
+<p>xml</p>
+<p>To copy the template file into a new one and edit it, run the commands:</p>
+<pre><code>1cp /usr/local/hadoop/etc/hadoop/mapred-site.xml.template /usr/local/hadoop/etc/hadoop/mapred-site.xml
+2sudo nano /usr/local/hadoop/etc/hadoop/mapred-site.xml</code></pre>
+<p>bash</p>
+<p>Configure Hadoop’s <span class="jsx-3120878690"><code>yarn-site.xml</code></span> by adding the following lines</p>
+<pre><code>1&lt;configuration&gt;
+2&lt;property&gt;
+3&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+4&lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+5&lt;/property&gt;
+6&lt;property&gt;
+7&lt;name&gt;yarn.nodemanager.aux-services.mapreduce.shuffle.class&lt;/name&gt;
+8&lt;value&gt;org.apache.hadoop.mapred.ShuffleHandler&lt;/value&gt;
+9&lt;/property&gt;</code></pre>
+<p>xml</p>
+<p>To open the <span class="jsx-3120878690"><code>yarn-site.xml</code></span> file, run the command</p>
+<pre><code>1sudo nano /usr/local/hadoop/etc/hadoop/yarn-site.xml</code></pre>
+<p>bash</p>
+<h3 id="starting-hadoop-services">Starting Hadoop Services</h3>
+<p>To start the Hadoop cluster and format the namenode, run the command:</p>
+<pre><code>1hdfs namenode -format</code></pre>
+<p>bash</p>
+<p>To start the HDFS service:</p>
+<pre><code>1start-dfs.sh</code></pre>
+<p>bash</p>
+<p>To start the YARN service:</p>
+<pre><code>1start-yarn.sh</code></pre>
+<p>bash</p>
+<p>To verify all services are running, run the command <span class="jsx-3120878690"><code>jps</code></span> and visit the Hadoop web interface at <a href="#">http://localhost:50070</a>. The resource manager interface can be found at <a href="#">http://localhost:8088</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide gives you a good initial feel of what Hadoop is all about and its use cases. As big data becomes more and more ubiquitous, the need for technologies like Hadoop and for big data engineers is growing at a fast rate. To build on the knowledge acquired in this guide, you can further explore other technologies in the ecosystem such as <a href="https://ambari.apache.org/">Apache Ambari</a>, <a href="https://hive.apache.org/">Hive</a>, <a href="https://pig.apache.org/">Pig</a>, and <a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">YARN</a>, among others.</p>
+<p>141</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>forecasting-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="forecasting-in-power-bi">Forecasting in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 24, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>4,919 Views</p></li>
+<li><p>Nov 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>4,919 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>47</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-creatinglinechart" class="menu-link">Creating Line Chart</a></li>
+<li><a href="#module-forecastinginpowerbi" class="menu-link">Forecasting in Power BI</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Forecasting is one of the most important areas for any business. You can forecast any metric like revenues, expenses, unit sales, demand, prices, and many more. This guide will demonstrate the important skill of forecasting using inbuilt capabilities in Power BI Desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursal across years. The data contains 3,000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The variables to be used are described below:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>Date</code></span>: Loan disbursal date.</li>
+<li><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open the Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> option and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="creating-line-chart">Creating Line Chart</h2>
+<p>Time series forecasting is visually represented with a line chart. So, to begin, you will add a line chart to the canvas. You can locate it in the <strong>Visualizations</strong> pane. Click on the <strong>Line chart</strong> and it will create a chart box in the canvas. Nothing is displayed because you are yet to add the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b2f8b6e4-9611-424f-bf65-3a8363ed2922_ff1.html" /><figcaption aria-hidden="true">ff1</figcaption>
+</figure>
+<p>You can resize the chart on the canvas, and the next step is to fill the visualization arguments. Drag the <span class="jsx-3120878690"><code>Date</code></span> variable to the <strong>Axis</strong> field, and the <span class="jsx-3120878690"><code>Loan_disbursed</code></span> variable into the <strong>Values</strong> field. This will create the following chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/85e014ae-14ca-4861-86bb-21bd36584998_ff2.html" /><figcaption aria-hidden="true">ff2</figcaption>
+</figure>
+<p>You have created the time series chart named <strong>Loan_disbursed by Year</strong>. The next step is to generate the forecast of future loan disbursal.</p>
+<h2 id="forecasting-in-power-bi-1">Forecasting in Power BI</h2>
+<p>The <strong>Forecast</strong> capability in Power BI is in the <strong>Analytics</strong> tab.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a5df91ac-055c-4134-919a-d9c53c2f8b61_ff3.html" /><figcaption aria-hidden="true">ff3</figcaption>
+</figure>
+<p>To add a forecast to the data, click on <strong>Add</strong> under <strong>Forecast</strong></p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0555157b-4e1e-49a3-afe3-78da2b9937fc_ff4.html" /><figcaption aria-hidden="true">ff4</figcaption>
+</figure>
+<p>You are required to enter the arguments. <strong>Forecast length</strong> specifies the length of the forecasting horizon. The <strong>Confidence interval</strong> specifies the confidence level that the forecast value will fall under the lower and upper bound. The following chart is generated, where the shaded grey region indicates the forecast.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8954cce5-68d1-4b7b-a955-43927b375202_ff6.html" /><figcaption aria-hidden="true">ff6</figcaption>
+</figure>
+<p>Hover around the shaded region to see the forecasted value. In the chart below, you can see the forecast value for the year 2021, and the lower and upper bound of the forecast at 95 percent confidence interval.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e797a58c-56ed-4127-9bcb-c6c7ef3f0ab8_ff7.html" /><figcaption aria-hidden="true">ff7</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Forecasting is a ubiquitous requirement for every organization, small or big. Business activities require forecasting ranging from sales forecasting to generating price forecasts. It is used in time series forecasting, stock price prediction, inventory forecasting, manpower planning, budgeting, and financial valuation areas. The knowledge of using the forecast capabilities in Power BI will add lots of strength to your analytics and business intelligence capabilities.</p>
+<p>To learn more about building powerful visualization in Power BI desktop, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/build-a-treemap-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implement-clustering-in-powerbi">Implement Clustering in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/filter-data-in-power-bi">Filter Data in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implementing-hierarchical-axis-and-concatenation-in-power-bi">Implementing Hierarchical Axis and Concatenation in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/adding-slicers-to-a-power-bi-report">Adding Slicers to a Power BI Report</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/explore-the-analytics-pane-in-power-bi">Explore the Analytics Pane in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/waterfall-charts-in-power-bi">Waterfall Charts in Power BI</a></p></li>
+</ol>
+<p>47</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

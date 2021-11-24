@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>pass-props-through-a-component's-render-function</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="pass-props-through-a-components-render-function">Pass Props through a Component’s Render Function</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Nov 9, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>1,117 Views</p></li>
+<li><p>Nov 9, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>1,117 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-passingprops" class="menu-link">Passing Props</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The tree structure is closely linked to any programming that happens within the browser. The document object model, or DOM for short, contains all of the HTML elements to be displayed on a page and is a large tree structure itself. So, it naturally follows that the React component hierarchy will be modeled in the same fashion, albeit with JavaScript as opposed to raw HTML.</p>
+<p>React components contain child components that can contain more children and so on. This parent-child relational structuring of components means that when you write code in React, you often need to pass data down from parent to child. One of the main ways to achieve this is through the passing of component props.</p>
+<p>In this guide, you will learn about one of the primary mechanisms for passing data to child components: passing props to children inside of the <span class="jsx-3120878690"><code>render</code></span> function.</p>
+<p>Let’s get started!</p>
+<h2 id="passing-props">Passing Props</h2>
+<p>Passing props through to child components from a parent component is very straightforward. First, ensure you have a parent component. In the example below, a root-level React component named <span class="jsx-3120878690"><code>MyApp</code></span> serves as the parent component.</p>
+<p>From here, you can create the child components that you need. In the example below, there are three child components: <span class="jsx-3120878690"><code>TitleBar</code></span>, <span class="jsx-3120878690"><code>NavBar</code></span>, and <span class="jsx-3120878690"><code>DataView</code></span>. These three components expect their data to come via props passed in from a parent component. You can achieve this by passing these props through to the child components when they are declared inside of the parent component <span class="jsx-3120878690"><code>render</code></span> function. The code below displays this possibility.</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3class MyApp extends React.Component {
+4    dataPoints = [ 1, 2, 3, 4, 5 ];
+5    title = &quot;Welcome To My App!&quot;;
+6    navStructure = [
+7        {
+8            text: &quot;Home&quot;,
+9            url: &quot;/home&quot;
+10        },
+11        {
+12            text: &quot;About&quot;,
+13            url: &quot;/about&quot;
+14        },
+15        {
+16            text: &quot;Contact Us&quot;,
+17            url: &quot;/contact-us&quot;
+18        }
+19    ];
+20
+21
+22
+23    render() {
+24        const { title, navStructure, dataPoints } = this.props;
+25
+26        return (
+27            &lt;div&gt;
+28                &lt;TitleBar title={ title } /&gt;
+29                &lt;NavBar navStructure={ navStructure }&gt;
+30                &lt;DataView data={ dataPoints }&gt;
+31            &lt;/div&gt;
+32        )
+33    }
+34
+35}</code></pre>
+<p>jsx</p>
+<p>As you can see, the parent component <span class="jsx-3120878690"><code>MyApp</code></span> declares three properties when it is instantiated. These properties are <span class="jsx-3120878690"><code>dataPoints</code></span>, <span class="jsx-3120878690"><code>title</code></span>, and <span class="jsx-3120878690"><code>navStructure</code></span>. Next, looking closely at the <span class="jsx-3120878690"><code>render</code></span> function, you can see that our aforementioned child components are declared within it. Furthermore, each one of the declared component properties is passed through to the correct child component. The syntax above is the syntax that is needed in order to facilitate this specific type of data transfer within React.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Passing data by way of props from parent components to child components is a crucial part of how React apps are structured from a data transfer perspective. React largely adheres to a top-down approach when it comes to passing data through from parent to child components. A component’s <span class="jsx-3120878690"><code>render</code></span> function is the place where this transfer of data happens.</p>
+<p>But this isn’t the only way to pass data by any means! You can pass component state from parent to child as well. Not only this, but the new context API along with React portals can allow you to transfer data in a variety of other ways that can potentially better suit your app needs.</p>
+<p>For more information regarding React and the different ways that you can transfer data within your app, please check out the React <a href="https://reactjs.org/docs/components-and-props.html">documentation</a>.</p>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

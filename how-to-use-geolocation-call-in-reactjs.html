@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-use-geolocation-call-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="how-to-use-geolocation-call-in-reactjs">How to Use Geolocation Call in ReactJS</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 12, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>100,815 Views</p></li>
+<li><p>Nov 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>100,815 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Client-side Framework</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>241</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-accessgeolocation" class="menu-link">Access Geolocation</a></li>
+<li><a href="#module-getcurrentposition" class="menu-link">Get Current Position</a></li>
+<li><a href="#module-watchusermovements" class="menu-link">Watch User Movements</a></li>
+<li><a href="#module-showmapaftergettinglocation" class="menu-link">Show Map after Getting Location</a></li>
+<li><a href="#module-otherinterfaces" class="menu-link">Other Interfaces</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Sometimes an app may require a user’s current location properties, such as latitude and longitude, in order to enable location-related functionalities.</p>
+<p>Location properties allow you to access a current user’s <em>geolocation</em>, or location at a given moment, and provide specific services based on their particular area.</p>
+<p>With geolocation, you can access user details including:</p>
+<ul>
+<li>Current position</li>
+<li>Altitude</li>
+<li>Velocity speed</li>
+<li>Direction of movement</li>
+<li>Speed accuracy</li>
+<li>Timestamp</li>
+</ul>
+<p>In this guide, you’ll learn to show and update a user’s geolocation on a map.</p>
+<h2 id="access-geolocation">Access Geolocation</h2>
+<p>You can access a user’s geolocation using the JavaScript API <span class="jsx-3120878690"><code>navigator.geolocation</code></span>, which allows you to ask for location permission. If the user gives permission, location properties can be accessed.</p>
+<p>There are two methods available to get the location of the user.:</p>
+<ul>
+<li>geolocation.getCurrentPosition()</li>
+<li>geolocation.watchPosition()</li>
+</ul>
+<p>The first step is finding out if a user’s geolocation is available or not.</p>
+<pre><code>1componentDidMount() {
+2    if (&quot;geolocation&quot; in navigator) {
+3      console.log(&quot;Available&quot;);
+4    } else {
+5      console.log(&quot;Not Available&quot;);
+6    }
+7  }</code></pre>
+<p>jsx</p>
+<p>If the code above returns <span class="jsx-3120878690"><code>true</code></span>, then you can access various geolocation properties. If not, then the user has disabled the location access.</p>
+<h2 id="get-current-position">Get Current Position</h2>
+<p>Get the current position of the user using the <span class="jsx-3120878690"><code>navigator.getCurrentPosition()</code></span> method.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { render } from &quot;react-dom&quot;;
+3
+4class App extends Component {
+5  constructor(props) {
+6    super(props);
+7    this.state = {
+8    };
+9  }
+10
+11  componentDidMount() {
+12    navigator.geolocation.getCurrentPosition(function(position) {
+13      console.log(&quot;Latitude is :&quot;, position.coords.latitude);
+14      console.log(&quot;Longitude is :&quot;, position.coords.longitude);
+15    });
+16  }
+17
+18  render() {
+19    return (
+20      &lt;div&gt;
+21        &lt;h4&gt;Using geolocation JavaScript API in React&lt;/h4&gt;
+22      &lt;/div&gt;
+23    );
+24  }
+25}
+26
+27render(&lt;App /&gt;, document.getElementById(&quot;root&quot;));</code></pre>
+<p>jsx</p>
+<p>Open the console, and the output should look like this.</p>
+<pre><code>1Latitude is : xx.xxxxxx
+2Longitude is : xx.xxxxxx</code></pre>
+<p>The xxx can be any number based on the location.</p>
+<p>Try the following code to get the complete position of the user.</p>
+<pre><code>1componentDidMount() {
+2    navigator.geolocation.getCurrentPosition(function(position) {
+3      console.log(position)
+4    });
+5  }</code></pre>
+<p>jsx</p>
+<p>The output in the console will look like this.</p>
+<pre><code>1GeolocationPosition {
+2    coords: GeolocationCoordinates, 
+3    timestamp: 1583849180132
+4    }
+5    coords: { 
+6        GeolocationCoordinateslatitude: 19.xxxxxxx
+7        longitude: 73.xxxxxx
+8        altitude: 
+9            nullaccuracy: 1158
+10            altitudeAccuracy: null
+11            heading: null
+12            speed: null
+13            __proto__: GeolocationCoordinates
+14        timestamp: 1583849180132
+15    }
+16__proto__: GeolocationPosition</code></pre>
+<p><span class="jsx-3120878690"><code>getCurrentPosition</code></span> returns the success object as a position property, but along with the success callback, you also have the error callback. It can be implemented with the following code.</p>
+<pre><code>1componentDidMount() {
+2    navigator.geolocation.getCurrentPosition(
+3      function(position) {
+4        console.log(position);
+5      },
+6      function(error) {
+7        console.error(&quot;Error Code = &quot; + error.code + &quot; - &quot; + error.message);
+8      }
+9    );
+10  }</code></pre>
+<p>jsx</p>
+<p>Error callback is used to get the error related to position such as disallow the location and so on. When you open the console and disallow the location,you will get an error that looks like this.</p>
+<p><span class="jsx-3120878690"><code>Error Code = 1 - Geolocation has been                                       disabled in this document by Feature                                       Policy</code></span></p>
+<h2 id="watch-user-movements">Watch User Movements</h2>
+<p><span class="jsx-3120878690"><code>getCurrentPosition</code></span>, allows you to access the current position, but what if the user changes their location? <span class="jsx-3120878690"><code>watchPosition</code></span> attaches the handler function and executes itself as soon as the user changes their current location, returning the updated location properties for the user’s new position.</p>
+<p>The following code will get the basic location properties.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { render } from &quot;react-dom&quot;;
+3
+4class App extends Component {
+5  constructor(props) {
+6    super(props);
+7    this.state = {};
+8  }
+9
+10  componentDidMount() {
+11    if (navigator.geolocation) {
+12      navigator.geolocation.watchPosition(function(position) {
+13        console.log(&quot;Latitude is :&quot;, position.coords.latitude);
+14        console.log(&quot;Longitude is :&quot;, position.coords.longitude);
+15      });
+16    }
+17  }
+18
+19  render() {
+20    return (
+21      &lt;div&gt;
+22        &lt;h4&gt;Using geolocation JavaScript API in React&lt;/h4&gt;
+23      &lt;/div&gt;
+24    );
+25  }
+26}
+27
+28render(&lt;App /&gt;, document.getElementById(&quot;root&quot;));</code></pre>
+<p>jsx</p>
+<p>Open the console, and you will see that the new position properties are updated as soon as user changes their location.</p>
+<h2 id="show-map-after-getting-location">Show Map after Getting Location</h2>
+<p>Maps are a primary way to show a user’s current position. You’ll need some location parameters, such as latitude and longitude, to render the current location.</p>
+<p><strong>Note</strong>: Before using a map, you should have a Google Map API key. Otherwise, the map will not work and will show an error.</p>
+<p>Install this map library, which will allow you to get started with a map quickly.</p>
+<pre><code>1npm install google-maps-react</code></pre>
+<p>shell</p>
+<p>Using this library, you can pass the location data, and based on that data, the specific location of the user will be highlighted on the map.</p>
+<p>Open the new component and write the following code snippet.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { Map, GoogleApiWrapper, Marker  } from &#39;google-maps-react&#39;;
+3
+4const mapStyles = {
+5  width: &#39;100%&#39;,
+6  height: &#39;100%&#39;
+7};
+8
+9class Demo1 extends Component {
+10  constructor() {
+11    super();
+12    this.state = {
+13      name: &quot;React&quot;
+14    };
+15  }
+16
+17  render() {
+18    return (
+19      &lt;div&gt;
+20        &lt;Map
+21          google={this.props.google}
+22          zoom={14}
+23          style={mapStyles}
+24          initialCenter={{
+25            lat: YOUR_LATITUDE,
+26            lng: YOUR_LONGITUDE
+27          }}
+28        &gt;
+29         &lt;Marker
+30          onClick={this.onMarkerClick}
+31          name={&#39;This is test name&#39;}
+32        /&gt;
+33        &lt;/Map&gt;
+34      &lt;/div&gt;
+35    );
+36  }
+37}
+38
+39export default GoogleApiWrapper({
+40  apiKey: &#39;API_KEY&#39;
+41})(Demo1);</code></pre>
+<p>jsx</p>
+<p><strong>Note</strong>: You’ll need to replace your google maps API key with <span class="jsx-3120878690"><code>API_KEY</code></span>. Otherwise, the map won’t be able to render the location-related properties.</p>
+<p>Based on the latitude and longitude, a map will be able to load the exact location. The location will be identified as a marker on the map.</p>
+<h2 id="other-interfaces">Other Interfaces</h2>
+<p>JavaScript provides a number of other interfaces that work closely with location properties based on different functional requirements.</p>
+<ul>
+<li>Geolocation</li>
+<li>GeolocationCoordinates</li>
+<li>GeolocationPosition</li>
+<li>Navigator.geolocation</li>
+<li>GeolocationPositionError</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you learned how to use JavaScript’s Geolocation APIs to work with user locations and related properties. You can try out all the inbuilt APIs that allow you to read user locations and process them accordingly. If you have any queries, feel free to reach out at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>241</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

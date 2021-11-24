@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>develop-a-microservice-api-with-django-rest-framework-(drf)</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="develop-a-microservice-api-with-django-rest-framework-drf">Develop a Microservice API with Django Rest Framework (DRF)</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Oct 19, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>29,488 Views</p></li>
+<li><p>Oct 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>29,488 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>150</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-aboutdrf" class="menu-link">About DRF</a></li>
+<li><a href="#module-createasampleapp" class="menu-link">Create a Sample App</a></li>
+<li><a href="#module-runtheapp" class="menu-link">Run the App</a></li>
+<li><a href="#module-apiscreen" class="menu-link">API Screen</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Decoupling the development of an application into the frontend and the backend is a common architectural implementation in modern app development. With the frontend and backend decoupled, there needs to be a communication middleware that will allow data exchange between these components. This is where application programming interfaces (APIs) come in.</p>
+<p>This guide explores API development in REST using Django, which already has a package for REST API development called <a href="https://www.django-rest-framework.org/">Django Rest Framework</a> (DRF). The guide assumes you have a basic understanding of APIs and Django web framework and at least intermediate-level proficiency in Python.</p>
+<p>An introductory guide on Django can be found <a href="introduction-to-web-development-in-python-and-django.html">here</a>.</p>
+<h2 id="about-drf">About DRF</h2>
+<p>The <a href="https://www.django-rest-framework.org/">Django Rest Framework</a> is a third-party package that empowers a Django app with REST API capabilities.</p>
+<p>To install the package, run the command:</p>
+<pre><code>1pip install django-rest-framework</code></pre>
+<p>bash</p>
+<h2 id="create-a-sample-app">Create a Sample App</h2>
+<p>This will be a Django app that displays data from the default Sqlite3 database. The data is a list of countries and their currency names.</p>
+<p>Fire up a new Django project by running this command.</p>
+<pre><code>1django-admin startproject countries</code></pre>
+<p>bash</p>
+<p>Next, create an app and name it currency_country using this command.</p>
+<pre><code>1python3 manage.py startapp currency_country</code></pre>
+<p>python</p>
+<p>The app is now set up. What remains is to develop the country model, the DRF API resources, and provide URLs to the API resources. The code block below shows the model and what fields make up the database table. Copy the code block into the <span class="jsx-3120878690"><code>models.py</code></span> file.</p>
+<pre><code>1from django.db import models
+2
+3class Country(models.Model):
+4   country_name = models.CharField(max_length=20)
+5   local_currency = models.CharField(max_length=20)
+6   added_on = models.DateTimeField(auto_now_add=True)
+7   
+8   def __str__(self):
+9       return self.country_name</code></pre>
+<p>python</p>
+<p>The model needs data. To add the data, access the admin panel that requires superuser access. The next step is to create a superuser account using the following command.</p>
+<pre><code>1python manage.py createsuperuser</code></pre>
+<p>python</p>
+<p>This will be an interactive process where you will give essential details and register your user.</p>
+<p>For the app and model to be visible, they need to be registered with the Django project and <span class="jsx-3120878690"><code>admin.py</code></span>. To register the app and rest framework, a third-party app, add their names to the list of installed apps in <span class="jsx-3120878690"><code>settings.py</code></span>.</p>
+<p>Copy the list below to your <span class="jsx-3120878690"><code>settings.py</code></span> and replace the existing list.</p>
+<pre><code>1INSTALLED_APPS = [
+2    &#39;django.contrib.admin&#39;,
+3    &#39;django.contrib.auth&#39;,
+4    &#39;django.contrib.contenttypes&#39;,
+5    &#39;django.contrib.sessions&#39;,
+6    &#39;django.contrib.messages&#39;,
+7    &#39;django.contrib.staticfiles&#39;,
+8    &#39;currency_country&#39;,
+9    &quot;rest_framework&quot;,
+10]</code></pre>
+<p>python</p>
+<p>To ensure the <span class="jsx-3120878690"><code>Country</code></span> model is visible on the admin panel, register it in the <span class="jsx-3120878690"><code>admin.py</code></span> file.</p>
+<p>Add the code block below to your <span class="jsx-3120878690"><code>admin.py</code></span> file.</p>
+<pre><code>1from django.contrib import admin
+2from .models import Country
+3admin.site.register(Country)</code></pre>
+<p>python</p>
+<h3 id="drf-serializers">DRF Serializers</h3>
+<p>DRF <a href="https://www.django-rest-framework.org/api-guide/serializers/">serializers</a> convert Django data types, such as querysets, into a format that can be rendered into JSON or XML. For this app, you only need to create the <span class="jsx-3120878690"><code>Country</code></span> serializer. In the currency_country app, create a file named <span class="jsx-3120878690"><code>serializers.py</code></span> and add the code block below.</p>
+<pre><code>1from rest_framework import serializers
+2from .models import Country
+3
+4
+5class CountrySerializer(serializers.ModelSerializer):
+6    class Meta:
+7        model = Country # this is the model that is being serialized
+8        fields = (&#39;country_name&#39;, &#39;local_currency&#39;)</code></pre>
+<p>python</p>
+<h3 id="api-requests">API Requests</h3>
+<p>To service a <span class="jsx-3120878690"><code>GET</code></span> or <span class="jsx-3120878690"><code>POST</code></span> request, you need a view that will return all countries in a serialized fashion. To achieve this, create a view within the <span class="jsx-3120878690"><code>views.py</code></span> file and add the view that will return all countries, serialized.</p>
+<pre><code>1from rest_framework import status
+2from rest_framework.decorators import api_view
+3from rest_framework.response import Response
+4from .models import Country
+5from .serializers import CountrySerializer
+6
+7
+8@api_view([&#39;GET&#39;, &#39;POST&#39;])
+9def country(request):
+10    
+11    if request.method == &#39;GET&#39;: # user requesting data 
+12        snippets = Country.objects.all()
+13        serializer = CountrySerializer(snippets, many=True)
+14        return Response(serializer.data)
+15
+16    elif request.method == &#39;POST&#39;: # user posting data
+17        serializer = CountrySerializer(data=request.data)
+18        if serializer.is_valid():
+19            serializer.save() # save to db
+20            return Response(serializer.data, status=status.HTTP_201_CREATED)
+21        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)</code></pre>
+<p>python</p>
+<h3 id="url-configuration">URL Configuration</h3>
+<p>To configure the URL, configure the main project’s <span class="jsx-3120878690"><code>urls.py</code></span> file to direct any traffic to the currency_country app using the <span class="jsx-3120878690"><code>path</code></span> function, as in the codeblock below.</p>
+<pre><code>1from django.urls import path, include
+2from django.contrib import admin
+3urlpatterns = [
+4    path(&#39;admin/&#39;, admin.site.urls),
+5    path(&#39;&#39;, include(&#39;currency_country.urls&#39;)),
+6
+7]</code></pre>
+<p>python</p>
+<p>Next, create a <span class="jsx-3120878690"><code>urls.py</code></span> file and, using the <span class="jsx-3120878690"><code>path</code></span>, direct the traffic to your view function.</p>
+<pre><code>1from django.urls import path
+2from .views import country
+3
+4
+5urlpatterns = [
+6    path(&#39;country/&#39;, country, name=&quot;countries&quot;)
+7]</code></pre>
+<p>python</p>
+<h2 id="run-the-app">Run the App</h2>
+<p>When all has been set up, the final step is migrating the changes and running the server. To make migrations, run the command:</p>
+<pre><code>1python manage.py makemigrations</code></pre>
+<p>bash</p>
+<p>To migrate the model changes into the default database, run the command:</p>
+<pre><code>1python manage.py migrate</code></pre>
+<p>bash</p>
+<p>To start the server and run the app, run the command:</p>
+<pre><code>1python manage.py runserver</code></pre>
+<p>bash</p>
+<h2 id="api-screen">API Screen</h2>
+<p><embed src="../../pluralsight2.imgix.net/guides/ef1ce2e7-f5a9-4b1a-8c4e-4c57a7e6ca26_Screenshot_from_2020-10-16_15-42-06.html" />DRF</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Because Django is a popular web development framework and the current architecture of most applications is decoupled, API development in Django is a paramount skill. It can be applied in job positions such as backend developer, API/middleware developer, and full-stack developer.</p>
+<p>To further build on your knowledge of Django Rest Framework, explore API concepts such as:</p>
+<ol type="1">
+<li><p><a href="https://www.django-rest-framework.org/api-guide/authentication/">Authentication</a></p></li>
+<li><p><a href="https://medium.com/@yerkebulan199/django-rest-framework-drf-token-authentication-with-expires-in-a05c1d2b7e05">DRF token expiration</a></p></li>
+<li><p><a href="https://www.django-rest-framework.org/api-guide/pagination/">Pagination</a></p></li>
+<li><p><a href="https://www.django-rest-framework.org/api-guide/parsers/">Parsers</a></p></li>
+</ol>
+<p>150</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>developing-an-analytics-engine-with-azure-synapse-analytics</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/e48df678-e704-4229-8313-60851e34f68e.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Néstor Campos</p>
+<h1 id="understanding-azure-synapse-analytics">Understanding Azure Synapse Analytics</h1>
+<h3 id="néstor-campos">Néstor Campos</h3>
+<ul>
+<li><p>Nov 9, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>8,204 Views</p></li>
+<li><p>Nov 9, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>8,204 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Platforms</span></p>
+<p>Introduction</p>
+<p>149</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-allinone" class="menu-link">All in One</a></li>
+<li><a href="#module-sqlpool" class="menu-link">SQL Pool</a></li>
+<li><a href="#module-sparkpool" class="menu-link">Spark Pool</a></li>
+<li><a href="#module-serverless" class="menu-link">Serverless</a></li>
+<li><a href="#module-connectionwithotherservices" class="menu-link">Connection with Other Services</a></li>
+<li><a href="#module-courses" class="menu-link">Courses</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Azure Synapse Analytics, formerly known as Azure Data Warehouse, is a new analytics engine developed by Microsoft. But the new service represents not only a name change, but also an evolution of the way of doing analytics within Azure. We’ll look into the details in this guide.</p>
+<h2 id="all-in-one">All in One</h2>
+<p>Azure Synapse Analytics is a powerful, multi-functional engine in any modern data management environment. The advantage of this engine is that it is all in one, that is, it offers several ways of working and technologies in a single service, which streamlines and unifies processes for data development and management in an innovative and moderate way.</p>
+<p>The functionalities it offers include:</p>
+<ul>
+<li>Data Warehouse: The already popular Azure Data Warehouse technology for storing and managing data for analysis and decision making, now through SQL pools.</li>
+<li>Big Data engine: With Spark pools, engineers can now run scalable analytics with Spark languages to do Big Data processing with them .</li>
+<li>Serverless engine: Query Data Lakes directly using SQL statements in a simple way.</li>
+<li>Data flows: To Develop ETL flows that consume or receive data in your Data Warehouse or Data Lake with the same engine used with Azure Data Factory.</li>
+</ul>
+<h2 id="sql-pool">SQL Pool</h2>
+<p>In Synapse Analytics, the Data Warehouse can be consumed through SQL pools, which allow you to query databases through clusters that are scalable both in number of machines and in their size.</p>
+<p>In addition to the advantages of pool scaling, you can assign a level of processing and pool resources according to roles and types of queries. You can add security at the row and column level so that only the corresponding users have certain access.</p>
+<p>Finally, you can do everything you already did with Azure Data Warehouse, but in a way that is much more in line with the modernity of current technologies.</p>
+<h2 id="spark-pool">Spark Pool</h2>
+<p>If, in addition to the SQL queries on the data in your Data Warehouse, you need to execute other types of queries and data transformations, you can take advantage of the Spark engine to create processes in notebooks, similar to how you would do it in other technologies, such as Databricks.</p>
+<p>The Spark pool allows you to use Python, SQL and even C# (.NET) to process data in a Big Data environment, which you can configure and scale according to your requirements. (Decide how many machines you need or if it should automatically scale according to the necessary processing at a certain time.)</p>
+<p>You can create as many pools as you require, for example, one for production processes and another for your engineers and data scientists to explore the Data Warehouse or Data Lakes.</p>
+<h2 id="serverless">Serverless</h2>
+<p>In addition to the pools, you can also make queries directly to Data Lakes (with Azure Data Lake Gen2), which will help you execute SQL statements on files and directories in a simple way, paying only for the consumption generated by that query without having a cluster on for adh-hoc queries—that is, in a serverless environment.</p>
+<p>In each Synapse Analytics environment, the serverless mode is already available, and to use it, your only job is to connect Synapse with the Azure Data Lake Gen2 repository for its use (and of course, have adequate governance over that repository to take advantage of all the potentiality of the serverless engine).</p>
+<h2 id="connection-with-other-services">Connection with Other Services</h2>
+<ul>
+<li>PowerBI: Connect your data directly to PowerBI datasets to expose and develop your reports and dashboards in an optimal and simple way.</li>
+<li>Data Factory: Take advantage of Synapse Analytics Data flows with Azure Data Factory advantages for your most robust ETL processes.</li>
+<li>Machine Learning: Take advantage of your Spark processes to develop models and expose them through Azure Machine Learning to have your analytical processes interconnected, scalable, and highly available.</li>
+</ul>
+<h2 id="courses">Courses</h2>
+<p>If you want to learn more about Synapse, Pluralsight has several courses dedicated to this great technology. Here are some of them:</p>
+<ul>
+<li>Implementing a Cloud Data Warehouse in Microsoft Azure Synapse Analytics: <a href="https://www.pluralsight.com/courses/microsoft-azure-implementing-cloud-data-warehouses" class="uri">https://www.pluralsight.com/courses/microsoft-azure-implementing-cloud-data-warehouses</a></li>
+</ul>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/608c963d-074a-4360-bde0-f44f33889888_1.html" /><figcaption aria-hidden="true">Implementing a Cloud Data Warehouse</figcaption>
+</figure>
+<ul>
+<li>Deploying Microsoft Azure Synapse Analytics and Azure SQL Database: <a href="https://www.pluralsight.com/courses/microsoft-azure-sql-data-warehouse-sql-database-deploying" class="uri">https://www.pluralsight.com/courses/microsoft-azure-sql-data-warehouse-sql-database-deploying</a></li>
+</ul>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dd094f5a-c643-46c8-b7d4-2dbe3e60c4c5_2.html" /><figcaption aria-hidden="true">Deploying</figcaption>
+</figure>
+<p>149</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

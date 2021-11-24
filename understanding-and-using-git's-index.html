@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>understanding-and-using-git's-index</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="understanding-and-using-gits-index.lock-file">Understanding and Using Git’s index.lock File</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Oct 21, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>14,721 Views</p></li>
+<li><p>Oct 21, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>14,721 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>20</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatistheindexlockfile" class="menu-link">What is the Index.Lock File?</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Git is the de facto standard when it comes to source control. Boasting a powerful API, git is simple enough for most users and yet has a rich set of commands to help manage complex workflows. If you have been a user of git, you have probably seen an error message that looks something like this:</p>
+<pre><code>1fatal: Unable to create &#39;.git/index.lock&#39;: File exists.</code></pre>
+<p>This error alludes to the creation of an <span class="jsx-3120878690"><code>index.lock</code></span> file within your hidden <span class="jsx-3120878690"><code>.git</code></span> directory. In this guide, you will learn about the <span class="jsx-3120878690"><code>index.lock</code></span> file, the purpose that it serves, and how you can resolve the error above.</p>
+<p>Let’s dive in!</p>
+<blockquote>
+<p>Note: This guide assumes you have a basic working knowledge of git and that you already have git installed on your machine.</p>
+</blockquote>
+<h2 id="what-is-the-index.lock-file">What is the Index.Lock File?</h2>
+<p>On your local machine, the working internals of a git repository live inside of a hidden <span class="jsx-3120878690"><code>.git</code></span> directory. Inside this directory lives all sorts of information that the git command-line tool interfaces with when you use it. Branch, commit, and sub-module information are just a few of the things that live within this repo.</p>
+<p>Here’s an example of what a <span class="jsx-3120878690"><code>.git</code></span> directory might look like:</p>
+<pre><code>1.git/
+2    hooks/
+3    info/
+4    logs/
+5    objects/
+6    refs/
+7    HEAD
+8    config
+9    description
+10    index
+11    packed-refs</code></pre>
+<p>A little known fact is that whenever you run a git process, git creates an <span class="jsx-3120878690"><code>index.lock</code></span> file within the <span class="jsx-3120878690"><code>.git</code></span> directory. For example, if you run the command <span class="jsx-3120878690"><code>git add .</code></span> to stage all local changes within your current repository, git will create this <span class="jsx-3120878690"><code>index.lock</code></span> file while the <span class="jsx-3120878690"><code>git add</code></span> command is running:</p>
+<pre><code>1.git/
+2    ...
+3    index.lock</code></pre>
+<p>Upon successful completion of the <span class="jsx-3120878690"><code>git add</code></span> process, the <span class="jsx-3120878690"><code>index.lock</code></span> file is removed. What this does is ensure that simultaneous changes to your local git repo do not occur, as this would cause your git repo to be in an indeterminate state. The <span class="jsx-3120878690"><code>index.lock</code></span> file prevents changes to your local repository from happening from outside of the currently running git process so as to ensure multiple git processes are not altering or changing the same repository internals at the same time.</p>
+<pre><code>1fatal: Unable to create &#39;.git/index.lock&#39;: File exists.</code></pre>
+<p>So it makes sense that the error above is essentially telling you, “Hey, a git process is running in this git repo—you will have to wait to run the command you are attempting to run.” However, it may be that there is no git process running! Sometimes, for whatever reason, a git process will not end gracefully. There are a number of reasons why this would happen. In this case, you can resolve the problem simply by removing the <span class="jsx-3120878690"><code>index.lock</code></span> file manually via this command or a similar command on your operating system: <span class="jsx-3120878690"><code>rm .git/index.lock</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Git is a ubiquitous tool for source control and contains many powerful mechanisms for helping to facilitate developer workflows. Git uses the <span class="jsx-3120878690"><code>index.lock</code></span> file to ensure transactional transparency within local repositories. By creating an <span class="jsx-3120878690"><code>index.lock</code></span> file when a git process starts and failing the process if this file already exists, git can ensure that multiple git processes are not altering/reading the same internal repository information at the same time. This leads to a great safety guarantee when using git!</p>
+<p>One more thing to think about is that you may find a use for creating an <span class="jsx-3120878690"><code>index.lock</code></span> file yourself. If you have your own CLI tooling around your source code, it may make sense to lock down the internals within a local git repository.</p>
+<p>For more information, check out the git <a href="https://git-scm.com/doc">documentation</a>.</p>
+<p>20</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

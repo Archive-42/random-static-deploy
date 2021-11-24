@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-render-_a_-with-optional-href-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="how-to-render-a-with-optional-href-in-react">How to Render &lt;a&gt; with Optional href in React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 12, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>153,180 Views</p></li>
+<li><p>Nov 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>153,180 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Client-side Framework</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>90</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-overviewoftheatag" class="menu-link">Overview of the &lt;a&gt; Tag</a></li>
+<li><a href="#module-optionalrenderingusecaseandsolution" class="menu-link">Optional Rendering: Use Case and Solution</a></li>
+<li><a href="#module-creatinganewproject" class="menu-link">Creating a New Project</a></li>
+<li><a href="#module-cleaningupthetemplate" class="menu-link">Cleaning up the Template</a></li>
+<li><a href="#module-settingstatefortogglingcondition" class="menu-link">Setting State for Toggling Condition</a></li>
+<li><a href="#module-optionallyrenderinganelement" class="menu-link">Optionally Rendering an Element</a></li>
+<li><a href="#module-usinganifstatement" class="menu-link">Using an If Statement</a></li>
+<li><a href="#module-usingtheternaryoperator" class="menu-link">Using the Ternary Operator</a></li>
+<li><a href="#module-usingtheoperator" class="menu-link">Using the &amp;&amp; Operator</a></li>
+<li><a href="#module-meetingtheneedsofyourapp" class="menu-link">Meeting the Needs of Your App</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When you’re developing an app to cater to all types of end users, <em>conditional rendering</em> allows you to automate your code to handle all predefined and dynamic cases without hardcoding solutions. Apart from keeping the code clean, short, and readable, it also manages a large number of possibilities with some simple structural logic.</p>
+<p>In this guide, you’ll learn how to render an anchor element in your React app with optional <span class="jsx-3120878690"><code>href</code></span> based on specific conditions.</p>
+<h2 id="overview-of-the-a-tag">Overview of the &lt;a&gt; Tag</h2>
+<p>The anchor tag in HTML is used to navigate to different web pages using an href attribute. This href attribute contains the URL or path to the destination page. It may be a relative URL or an absolute URL. In React, relative URLs should always be handled by the link tag provided by the React Router, and pure anchor tags should only be used for absolute paths. You can also think of relative URLs as in-app navigation, for example navigating to a particular route of the app and absolute paths as external links. The prevailing logic behind rendering optional <span class="jsx-3120878690"><code>href</code></span> can be conveniently extended to the <span class="jsx-3120878690"><code>&lt; link&gt;</code></span> as well, and in fact, any other JSX element or component.</p>
+<h2 id="optional-rendering-use-case-and-solution">Optional Rendering: Use Case and Solution</h2>
+<p>Consider a simple use case where you are maintaining a database of all the people who have applied for jobs through your app. On the frontend, you get the data that you want to output in the following format.</p>
+<pre><code>1user={
+2    name: &#39;&#39;,
+3    email:&#39;&#39;,
+4    sector:&#39;&#39;,
+5    linkedinHandle:&#39;&#39;,
+6    ...
+7}</code></pre>
+<p>javascript</p>
+<p>Your form asked users to enter their LinkedIn handles, but it wasn’t a mandatory field, so there’s a strong possibility that some people left it blank. While outputting the data, you do something like this:</p>
+<pre><code>1&lt;a href={user.linkedninHandle}&gt;&lt;/a&gt;</code></pre>
+<p>jsx</p>
+<p>If the backend returned an empty string, your <span class="jsx-3120878690"><code>href</code></span> would be rendered as an empty string too, but that’s not an optimal solution. If <span class="jsx-3120878690"><code>linkedinHandle</code></span> doesn’t exist for a user, the <span class="jsx-3120878690"><code>&lt;a&gt;</code></span> shouldn’t be visible at all, but the empty link is still clickable even though it points nowhere. Additionally, this could throw errors in cases when the property is returned as null or undefined. The accurate solution is using conditional rendering on the <span class="jsx-3120878690"><code>&lt;a&gt;</code></span> itself so either it is rendered along with the appropriate link or the other JSX element is rendered.</p>
+<h2 id="creating-a-new-project">Creating a New Project</h2>
+<p>Make sure you have Nodejs and npm installed in your machine (at least version 8 or higher) along with a code editor and a web browser (preferably Chrome or Firefox).</p>
+<p>Create a new project using create-react-application:</p>
+<pre><code>1npx create-react-app optional-href-rendering</code></pre>
+<p>shell</p>
+<h2 id="cleaning-up-the-template">Cleaning up the Template</h2>
+<p>Ideally, you could have a separate component handling this kind of logic in your app, but for brevity, let’s put all the code inside <span class="jsx-3120878690"><code>App.js</code></span>. Remove the logo, <span class="jsx-3120878690"><code>App.css</code></span>, and all their imports from <span class="jsx-3120878690"><code>App.js</code></span>. Clean out the starter template inside the <span class="jsx-3120878690"><code>App</code></span> component. Your <span class="jsx-3120878690"><code>App.js</code></span> should look like this:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3
+4function App() {
+5  return (
+6    &lt;div className=&quot;App&quot;&gt;
+7      
+8    &lt;/div&gt;
+9  );
+10}
+11
+12export default App;</code></pre>
+<p>jsx</p>
+<h2 id="setting-state-for-toggling-condition">Setting State for Toggling Condition</h2>
+<p>The condition is usually based on the type of data you receive from the backend, but a good practice is to use a toggling state to understand the rendering more dynamically. Consider data received from the backend, and based on that, a toggling state is set to either true or false. If it’s true, the <span class="jsx-3120878690"><code>href</code></span> will be rendered, and if false, it will not be rendered.</p>
+<pre><code>1import React,{useState} from &#39;react&#39;;
+2
+3
+4function App() {
+5  const [state,setState]=useState(false);
+6  let url=&quot;&quot;;
+7  return (
+8    &lt;div className=&quot;App&quot;&gt;
+9     &lt;a href={url}&gt;LinkedIn handle&lt;/a&gt;
+10    &lt;/div&gt;
+11  );
+12}
+13
+14export default App;</code></pre>
+<p>jsx</p>
+<p>This renders a simple <span class="jsx-3120878690"><code>&lt;a&gt;</code></span> with an empty <span class="jsx-3120878690"><code>href</code></span>, but it’s still a clickable link. Let’s add conditional rendering to it.</p>
+<h2 id="optionally-rendering-an-element">Optionally Rendering an Element</h2>
+<p>If the <span class="jsx-3120878690"><code>href</code></span> attribute for the user exists, the state is set to true and the <span class="jsx-3120878690"><code>&lt;a&gt;</code></span> tag is shown, otherwise a message is displayed. Wrap the message to be shown in a JSX element and assign that element to a variable that can be conditionally outputted.</p>
+<pre><code>1  let element=&lt;p&gt;No handle exists for this user!&lt;/p&gt;;</code></pre>
+<p>jsx</p>
+<h2 id="using-an-if-statement">Using an If Statement</h2>
+<p>Before rendering anything, simply check if the state is true and assign <span class="jsx-3120878690"><code>&lt;a&gt;</code></span> to that element, otherwise let the whole component render as it is.</p>
+<pre><code>1import React,{useState} from &#39;react&#39;;
+2
+3
+4function App() {
+5  const [state,setState]=useState(false);
+6  let url=&quot;&quot;;
+7  let element=&lt;p&gt;No handle exists for this user!&lt;/p&gt;;
+8  if(state) element=&lt;a href={url}&gt;LinkedIn handle&lt;/a&gt;;
+9  return(
+10    &lt;div className=&quot;App&quot;&gt;
+11     {element}
+12    &lt;/div&gt;
+13  );
+14}
+15
+16export default App;</code></pre>
+<p>jsx</p>
+<p>Since the state is initially false, the message is displayed. Setting it to true will render the link as it is.</p>
+<pre><code>1 ...
+2     const [state,setState]=useState(true);
+3 ...</code></pre>
+<p>jsx</p>
+<h2 id="using-the-ternary-operator">Using the Ternary Operator</h2>
+<p>The same check can be performed using a <em>ternary operator</em> to keep the code more readable.</p>
+<pre><code>1...
+2let element= state? &lt;a href={url}&gt;LinkedIn handle&lt;/a&gt;
+3                  : &lt;p&gt;No handle exists for this user!&lt;/p&gt;;
+4...</code></pre>
+<p>jsx</p>
+<h2 id="using-the-operator">Using the &amp;&amp; Operator</h2>
+<p>In case you don’t want to display an element at all for the false state value, the <span class="jsx-3120878690"><code>&amp;&amp;</code></span> operator can be conveniently used.</p>
+<pre><code>1import React,{useState} from &#39;react&#39;;
+2
+3
+4function App() {
+5  const [state,setState]=useState(false);
+6  let url=&quot;&quot;;
+7  let element=&lt;a href={url}&gt;LinkedIn handle&lt;/a&gt;;
+8  return(
+9    &lt;div className=&quot;App&quot;&gt;
+10     {state &amp;&amp; element}
+11    &lt;/div&gt;
+12  );
+13}
+14
+15export default App;</code></pre>
+<p>jsx</p>
+<p>Since the state is evaluated first, the element is not rendered since it’s false. Changing it to true renders the empty parent div.</p>
+<h2 id="meeting-the-needs-of-your-app">Meeting the Needs of Your App</h2>
+<p>When implementing your solution to meet the need of your app, remember that toggling the state using <span class="jsx-3120878690"><code>setState</code></span> should be done in a function performing the relevant check with the data received from the backend. The initial value of the state is arbitrarily chosen here, but you should initialize the state to a legal value depending on your code. If the evaluation of the condition is more dynamic in nature or it is not known beforehand, use relevant <em>lifecycle hooks</em> to ensure your code remains intact. Finally, it is not mandatory to use a state variable for evaluating your condition. In some cases, even a simple JavaScript variable will do, provided its scope is well defined and doesn’t crash your code anywhere.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Optionally rendering an attribute is never an optimal solution to conditionally display content on your app. The emphasis should always be more on the element itself, as attributes do not affect its physical appearance entirely. Also, when conditionally rendering an element or even a component, all scenarios should be well thought through. Avoid rendering empty tags, elements, or strings and focus on giving feedback to the user by rendering something else in their place.</p>
+<p>If you have any queries, feel free to reach out at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>90</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

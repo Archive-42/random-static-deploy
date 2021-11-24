@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>make-d3js-charts-responsive-in-react-apps</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="make-d3.js-charts-responsive-in-react-apps">Make D3.js Charts Responsive in React Apps</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 8, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>3,419 Views</p></li>
+<li><p>Oct 8, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>3,419 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-theviewboxsvgproperty" class="menu-link">The ViewBox SVG Property</a></li>
+<li><a href="#module-updatebarcharttouseviewbox" class="menu-link">Update Bar Chart to Use ViewBox</a></li>
+<li><a href="#module-testtheresponsiveness" class="menu-link">Test the Responsiveness</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Responsive web design is an approach that suggests that design and development should cater to the user experience of accessing a webpage on different screen sizes and orientations. Normally, you would achieve this with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">CSS media queries</a>. However, when using D3.js with SVG, there are some additional considerations.</p>
+<p>In this guide, you will learn how to use ViewBox to scale SVG to be responsive to different screen layouts. This guide builds on a previous guide, <a href="https://app.pluralsight.com/guides/using-d3.js-inside-a-react-app">Using D3.js Inside a React App</a>, that covered how to set up a simple bar chart in D3.js using static in-memory data. Here you will extend that bar chart to change its size and layout based on screen size.</p>
+<h2 id="the-viewbox-svg-property">The ViewBox SVG Property</h2>
+<p>In the previous guide, <a href="https://app.pluralsight.com/guides/using-d3.js-inside-a-react-app">Using D3.js Inside a React App</a>, you manually defined the height and width and of the bar chart to 500 pixels. When you resize the screen, the size of the chart doesn’t change.</p>
+<p>SVG was designed to render images in a scalable, resizable way. To achieve this, it offers a property called <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox">ViewBox</a> to facilitate defining “user space,” and all child elements are positioned relative inside this <span class="jsx-3120878690"><code>ViewBox</code></span>. The <span class="jsx-3120878690"><code>ViewBox</code></span> property has four properties, but the last two are the most relevant for charts—width and height. When you specify the <span class="jsx-3120878690"><code>ViewBox</code></span> it causes the SVG element to fill the size of its parent.</p>
+<h2 id="update-bar-chart-to-use-viewbox">Update Bar Chart to Use ViewBox</h2>
+<p>There are very few changes required to make your <span class="jsx-3120878690"><code>&lt;BarChart /&gt;</code></span> component use <span class="jsx-3120878690"><code>ViewBox</code></span>. The code to do this is demonstrated below:</p>
+<pre><code>1import { useD3 } from &quot;./hooks/useD3&quot;;
+2import React from &quot;react&quot;;
+3import * as d3 from &quot;d3&quot;;
+4
+5const height = 500;
+6const width = 500;
+7function BarChart({ data }) {
+8  const ref = useD3(
+9    (svg) =&gt; {
+10      const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+11
+12      const x = d3
+13        .scaleBand()
+14        .domain(data.map((d) =&gt; d.year))
+15        .rangeRound([margin.left, width - margin.right])
+16        .padding(0.1);
+17
+18      const y1 = d3
+19        .scaleLinear()
+20        .domain([0, d3.max(data, (d) =&gt; d.sales)])
+21        .rangeRound([height - margin.bottom, margin.top]);
+22
+23      const xAxis = (g) =&gt;
+24        g.attr(&quot;transform&quot;, `translate(0,${height - margin.bottom})`).call(
+25          d3
+26            .axisBottom(x)
+27            .tickValues(
+28              d3
+29                .ticks(...d3.extent(x.domain()), width / 40)
+30                .filter((v) =&gt; x(v) !== undefined)
+31            )
+32            .tickSizeOuter(0)
+33        );
+34
+35      const y1Axis = (g) =&gt;
+36        g
+37          .attr(&quot;transform&quot;, `translate(${margin.left},0)`)
+38          .style(&quot;color&quot;, &quot;steelblue&quot;)
+39          .call(d3.axisLeft(y1).ticks(null, &quot;s&quot;))
+40          .call((g) =&gt; g.select(&quot;.domain&quot;).remove())
+41          .call((g) =&gt;
+42            g
+43              .append(&quot;text&quot;)
+44              .attr(&quot;x&quot;, -margin.left)
+45              .attr(&quot;y&quot;, 10)
+46              .attr(&quot;fill&quot;, &quot;currentColor&quot;)
+47              .attr(&quot;text-anchor&quot;, &quot;start&quot;)
+48              .text(data.y1)
+49          );
+50
+51      svg.select(&quot;.x-axis&quot;).call(xAxis);
+52      svg.select(&quot;.y-axis&quot;).call(y1Axis);
+53
+54      var tooltip = d3.select(&#39;.tooltip-area&#39;)
+55        .style(&#39;opacity&#39;, 0);
+56
+57      svg
+58        .select(&quot;.plot-area&quot;)
+59        .attr(&quot;fill&quot;, &quot;steelblue&quot;)
+60        .selectAll(&quot;.bar&quot;)
+61        .data(data)
+62        .join(&quot;rect&quot;)
+63        .attr(&quot;class&quot;, &quot;bar&quot;)
+64        .attr(&quot;x&quot;, (d) =&gt; x(d.year))
+65        .attr(&quot;width&quot;, x.bandwidth())
+66        .attr(&quot;y&quot;, (d) =&gt; y1(d.sales))
+67        .attr(&quot;height&quot;, (d) =&gt; y1(0) - y1(d.sales))
+68        .append(&#39;title&#39;)
+69        .text((d) =&gt; `Sales were ${d.sales} in ${d.year}`);
+70    },
+71    [data.length]
+72  );
+73
+74  return (
+75    &lt;&gt;
+76      &lt;svg
+77        ref={ref}
+78        viewBox={`0 0 ${height} ${width}`}
+79        style={{
+80          height: &quot;100%&quot;,
+81          marginRight: &quot;0px&quot;,
+82          marginLeft: &quot;0px&quot;,
+83        }}
+84      &gt;
+85        &lt;g className=&quot;plot-area&quot; /&gt;
+86        &lt;g className=&quot;x-axis&quot; /&gt;
+87        &lt;g className=&quot;y-axis&quot; /&gt;
+88        &lt;g className=&quot;tooltip-area&quot;&gt;
+89          &lt;text className=&quot;tooltip-area__text&quot;&gt;aas&lt;/text&gt;
+90        &lt;/g&gt;
+91      &lt;/svg&gt;
+92    &lt;/&gt;
+93  );
+94}
+95
+96export default BarChart;</code></pre>
+<p>javascript</p>
+<p>The width and heigh property has been removed from the <span class="jsx-3120878690"><code>&lt;svg /&gt;</code></span>. It has been replaced with <span class="jsx-3120878690"><code>ViewBox="0 0 500 500"</code></span>. This means we have set the user space height and width to 500. Note that these values do not represent pixels. If something is drawn at coordinates 250, 250, it will be drawn in the middle of the <span class="jsx-3120878690"><code>&lt;svg /&gt;</code></span>, which is dependent on its parent.</p>
+<h2 id="test-the-responsiveness">Test the Responsiveness</h2>
+<p>To change the layout of your chart, you can experiment by creating multiple charts and repositioning with Flexbox.</p>
+<p>To do this, update <span class="jsx-3120878690"><code>App.js</code></span> to create several charts and reposition them with CSS based on screen size.</p>
+<pre><code>1&lt;div className=&quot;App&quot;&gt;
+2      &lt;header className=&quot;App-header&quot;&gt;
+3        &lt;button onClick={() =&gt; setData([...data, {year: 2011, sales: 1, efficiency: 100}])}&gt;test&lt;/button&gt;
+4        {loading &amp;&amp; &lt;div&gt;loading&lt;/div&gt;}
+5        &lt;div className=&quot;chart-container&quot;&gt;
+6          {!loading &amp;&amp; &lt;BarChart data={data} /&gt;}
+7          {!loading &amp;&amp; &lt;BarChart data={data} /&gt;}
+8        &lt;/div&gt;
+9      &lt;/header&gt;
+10    &lt;/div&gt;</code></pre>
+<p>jsx</p>
+<p>The snippet above creates two <span class="jsx-3120878690"><code>&lt;BarChart /&gt;</code></span> components to make it easier to understand how they can be positioned in different screen layouts.</p>
+<p>On mobile, you may want to stack them on top of each other. However, on a desktop, you may want to place them side by side.</p>
+<pre><code>1.chart-container {
+2  display: flex;
+3  flex-direction: column;
+4}
+5
+6@media (min-width: 900px) {
+7  .chart-container {
+8    flex-direction: row;
+9  }
+10}</code></pre>
+<p>css</p>
+<p>The CSS above uses a media query to change the <span class="jsx-3120878690"><code>flex-direction</code></span>, allowing you to position the charts.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>D3.js provides a rich set of capabilities for visualizing data. Combining these skills with CSS is essential for building an experience that caters to different platforms and screen sizes. You can learn more about building responsive web apps by reading this article: <a href="https://medium.com/prospa-engineering/why-mobile-first-8141d8103443">Why Mobile First</a>.</p>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

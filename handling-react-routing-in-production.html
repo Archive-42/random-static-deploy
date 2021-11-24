@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>handling-react-routing-in-production</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="handling-react-routing-in-production">Handling React Routing in Production</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Oct 6, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>14,137 Views</p></li>
+<li><p>Oct 6, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>14,137 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>24</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-buildingasampleapp" class="menu-link">Building a Sample App</a></li>
+<li><a href="#module-addingroutes" class="menu-link">Adding Routes</a></li>
+<li><a href="#module-deployyourapp" class="menu-link">Deploy Your App</a></li>
+<li><a href="#module-fixingtheissue" class="menu-link">Fixing the Issue</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>If you’re reading this, there is a high probability that you’ve deployed your first React app that uses React Router or the HTML5 history API, and routes entered into the browser directly return a page not found error. In this guide, you’ll gain understanding of what the cause of this problem is and how to solve it.</p>
+<h2 id="building-a-sample-app">Building a Sample App</h2>
+<p>To replicate the problem, you’ll build and deploy a simple React app with two pages. First, create your React development environment with Create React App by entering the following command in your terminal.</p>
+<pre><code>1npx create-react-app [YOUR_APP_NAME]</code></pre>
+<p>bash</p>
+<p>Next add react-router-dom as a dependency</p>
+<pre><code>1yarn add react-router-dom</code></pre>
+<p>bash</p>
+<h2 id="adding-routes">Adding Routes</h2>
+<p>Create a Routes.js file and add the following to create the home and about page routes.</p>
+<pre><code>1import React from &#39;react&#39;
+2import { Route,Switch, BrowserRouter as Router } from &#39;react-router-dom&#39;
+3import { Home, About } from &#39;./app.js&#39;;
+4
+5const Routes = () =&gt; { 
+6    return (
+7     &lt;Router&gt;
+8                &lt;Switch&gt;
+9                        &lt;Route exact path=&#39;/&#39; component={Home}/&gt;
+10                       &lt;Route exact path=&#39;/about&#39; component={About}/&gt;
+11               &lt;Switch/&gt;
+12        &lt;/Router&gt;
+13       );
+14};
+15
+16export default Routes;</code></pre>
+<p>jsx</p>
+<p>Now create the components for the Home and About pages using the code below.</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3const Home = () =&gt; {
+4 return(
+5     &lt;p&gt;Homepage&lt;/p&gt;
+6 );
+7}
+8
+9const About = () =&gt; {
+10    return(
+11        &lt;p&gt;About&lt;/p&gt;
+12    );
+13}
+14
+15export default {Home , About}</code></pre>
+<p>jsx</p>
+<p>Don’t forget to add the <span class="jsx-3120878690"><code>routes</code></span> component to your <span class="jsx-3120878690"><code>index.js</code></span> page</p>
+<pre><code>1import React from &quot;react&quot;;
+2import ReactDOM from &quot;react-dom&quot;;
+3import Routes from &quot;./Routes&quot;;
+4
+5ReactDOM.render(
+6    &lt;React.StrictMode&gt;
+7            &lt;Routes /&gt;
+8    &lt;/React.StrictMode&gt;,
+9    document.getElementById(&quot;root&quot;)
+10);</code></pre>
+<p>jsx</p>
+<h2 id="deploy-your-app">Deploy Your App</h2>
+<p>There are a lot of ways to deploy your React app. In this guide you’ll use <a href="https://render.com/">render.com</a>. But before deployment, run your build script and push your production build to a GitHub repository. Next, visit render.com and create an account if you don’t have one.</p>
+<p>Follow these steps to deploy your app:</p>
+<ol type="1">
+<li>Add a new web service on your <a href="https://render.com/">render.com</a> dashboard.</li>
+<li>Connect your repo to the web service you just created.</li>
+<li>Deploy your app</li>
+</ol>
+<p>Visit the About page. It doesn’t work because in production the server looks for the file <span class="jsx-3120878690"><code>/about</code></span>, which literally doesn’t exist.</p>
+<h2 id="fixing-the-issue">Fixing the Issue</h2>
+<p>To fix this issue, the server needs to be configured such that requests to any route would be served the <span class="jsx-3120878690"><code>index.html</code></span> file in your production build. If you use <span class="jsx-3120878690"><code>express.js</code></span> it can be done as follows.</p>
+<pre><code>1app.use(express.static(path.join(__dirname, &#39;build&#39;)));
+2
+3app.get(&#39;/*&#39;, function(req,res) {
+4     res.sendFile(path.join(__dirname, &#39;build&#39;, &#39;index.html&#39;));
+5});</code></pre>
+<p>jsx</p>
+<p>In your case <a href="https://render.com/">render.com</a> has a simple solution for that. On the dashboard for your app, click the Redirects/Rewrites tab and add the following:</p>
+<pre><code>1# Source: /*
+2# Destination: /index.html
+3# Action: Rewrite</code></pre>
+<p>jsx</p>
+<p>Now save the changes and deploy your app again just to be sure. Your routes should work perfectly now.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Voila! You’re a React guru now. If you’d like to read more on routing for Create React App in production, visit the <a href="https://create-react-app.dev/docs/deployment">official documentation</a>. Ping me on Twitter if you’d like to chat more at @<a href="https://twitter.com/@DesmondNyamador">DesmondNyamador</a>.</p>
+<p>24</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

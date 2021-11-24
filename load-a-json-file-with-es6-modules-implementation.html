@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>load-a-json-file-with-es6-modules-implementation</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="load-a-json-file-with-es6-modules-implementation">Load a JSON File with ES6 Modules Implementation</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Sep 29, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>16,534 Views</p></li>
+<li><p>Sep 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>16,534 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>8</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-importjsonfileusingnpmpackage" class="menu-link">Import JSON File Using NPM Package</a></li>
+<li><a href="#module-importjsonfileusingwebpackconfig" class="menu-link">Import JSON File Using Webpack Config</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>ES6 is a common standard for JavaScript; it’s also called <em>ECMAScript 2015</em>, with the first version released in 2011. ES6 adds extensive features to make JavaScript app development more accessible. Most JavaScript-based frameworks, libraries, and the vanilla JavaScript app follow the ECMAScript standard. During web development, accessing JSON files is an ordinary operation, and consuming JSON files is allowed using ES6 implementation.</p>
+<p>In this guide, you will learn how to access or consume any JSON file by implementing the ES6 standard.</p>
+<h2 id="import-json-file-using-npm-package">Import JSON File Using NPM Package</h2>
+<p>JSON files contain a key-value pair, and there is a parent key that represents the parent node of the JSON file.</p>
+<p>In React, if you want to load the JSON file without using the existing webpack settings, can make use of a third-party NPM package. One popular package is <span class="jsx-3120878690"><code>json-loader</code></span>.</p>
+<pre><code>1npm install json-loader</code></pre>
+<p>shell</p>
+<p>In this guide, we will be using sample JSON data stored in the <span class="jsx-3120878690"><code>Data.json</code></span> file.</p>
+<pre><code>1{
+2  &quot;data&quot;: {
+3    &quot;category1&quot;: {
+4      &quot;name&quot;: &quot;test123&quot;,
+5      &quot;title&quot;: &quot;this is category 123&quot;
+6    },
+7    &quot;category2&quot;: {
+8      &quot;name&quot;: &quot;test456&quot;,
+9      &quot;title&quot;: &quot;this is category 456&quot;
+10    },
+11    &quot;category3&quot;: {
+12      &quot;name&quot;: &quot;test789&quot;,
+13      &quot;title&quot;: &quot;this is category 789&quot;
+14    }
+15  }
+16}</code></pre>
+<p>json</p>
+<p>After the above JSON file is created, it will be available to import and use into existing React components.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2// Custom JSON file
+3import Data from &quot;./data&quot;;
+4
+5export class ImportJsonFile extends Component {
+6    render() {
+7        console.log(Data) // will print the JSON file content
+8        return (
+9            &lt;&gt;
+10                &lt;div&gt;
+11                    // Use JSON data here
+12                &lt;/div&gt;
+13            &lt;/&gt;
+14        );
+15    }
+16}
+17
+18export default ImportJsonFile;</code></pre>
+<p>jsx</p>
+<p>Notice the ES6 import statement that imports the local JSON file, which you created previously. Using the ES6 import statement along with the <span class="jsx-3120878690"><code>json-loader</code></span>, any JSON file can be consumed into the React app.</p>
+<h2 id="import-json-file-using-webpack-config">Import JSON File Using Webpack Config</h2>
+<p>The basic webpack config rule with the <span class="jsx-3120878690"><code>json5-loader</code></span> is configured as defined below.</p>
+<p>If your React app uses a webpack config version &gt; 2.0.0, then there is no need to install <span class="jsx-3120878690"><code>json-loader</code></span> because webpack uses <span class="jsx-3120878690"><code>json5-loader</code></span> by default when its configured with the React app.</p>
+<p><strong>Note:</strong> webpack.config.js is sourced from <a href="https://webpack.js.org/loaders/json5-loader/">here</a> .</p>
+<pre><code>1module.exports = {
+2  module: {
+3    rules: [
+4      {
+5        test: /\.json5$/i,
+6        loader: &#39;json5-loader&#39;,
+7        type: &#39;javascript/auto&#39;,
+8      },
+9    ],
+10  },
+11};</code></pre>
+<p>js</p>
+<p>In the webpack config file, the <span class="jsx-3120878690"><code>loader</code></span> rule accepts the NPM package to load any of the JSON files in your app. One package used is called <span class="jsx-3120878690"><code>json5-loader</code></span>.</p>
+<p>Along with the <span class="jsx-3120878690"><code>loader</code></span> rule, there are two other rules, one of which is <span class="jsx-3120878690"><code>test</code></span>.</p>
+<pre><code>1test: /\.json5$/i,</code></pre>
+<p>js</p>
+<p>That identifies the file format of the JSON or gives a warning at the time of compilation.</p>
+<p>There is an additional Boolean option available called <span class="jsx-3120878690"><code>esModule</code></span>, which is used to define whether the module should be ECMAScript-supported or not.</p>
+<p>The basic setting for <span class="jsx-3120878690"><code>esModule</code></span> is shown below.</p>
+<pre><code>1module.exports = {
+2  module: {
+3    rules: [
+4      {
+5        test: /\.json5$/i,
+6        loader: &#39;json5-loader&#39;,
+7        options: {
+8          esModule: true,
+9        },
+10        type: &#39;javascript/auto&#39;,
+11      },
+12    ],
+13  },
+14}</code></pre>
+<p>js</p>
+<p>By maintaining the rules with a webpack, the React app is configured to access the JSON file from the physical app location by verifying its file extension and the default JSON loading library.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>React app uses various ES6 features, such as <span class="jsx-3120878690"><code>let</code></span>, <span class="jsx-3120878690"><code>const</code></span>, spread operator, arrow function, class, and literals, so your app should be well configured to support the JSON file format.</p>
+<p>Webpack configuration is the right approach to allow JSON files to be imported into a React app with ES6 implementation Try configuring webpack on your own to access the JSON files.</p>
+<p>8</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>process-an-api-response-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="process-an-api-response-in-react">Process an API Response in React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 17, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>17,263 Views</p></li>
+<li><p>Nov 17, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>17,263 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>39</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-initialsetup" class="menu-link">Initial Setup</a></li>
+<li><a href="#module-creatingstatetostoreresponse" class="menu-link">Creating State to Store Response</a></li>
+<li><a href="#module-callingapiandprocessingresponse" class="menu-link">Calling API and Processing Response</a></li>
+<li><a href="#module-outputtingresponseonthedom" class="menu-link">Outputting Response on the DOM</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Working with backend services such as a <em>REST API</em> is one of the most common tasks of a frontend developer. No matter what React app you’re building, at some point, you’ll probably want to make a request to a database server or an <em>endpoint</em> and grab some data to display to the user. For instance, if you’re building a social media app and you want to display comments on a certain post to the user, you need to make a request to a dedicated API to fetch all the comments and then process it further in your app.</p>
+<p>In this guide, you’ll learn how to call an API to fetch its response in your React app.</p>
+<h2 id="initial-setup">Initial Setup</h2>
+<p>Let’s run through an example to get a better understanding of how you can call the API response. Create an empty React app by running:</p>
+<pre><code>1npx create-react-app react-api-response</code></pre>
+<p>shell</p>
+<p>Next, install the Axios library. Axios is a library that simplifies the process of interacting with APIs.</p>
+<pre><code>1npm i axios</code></pre>
+<p>shell</p>
+<p>The endpoint you’re going to use in this example is <a href="https://jsonplaceholder.typicode.com/comments" class="uri">https://jsonplaceholder.typicode.com/comments</a>. It’s a free REST API endpoint that returns some dummy data you can play around with. You can choose any other such API or use your own API as well.</p>
+<h2 id="creating-state-to-store-response">Creating State to Store Response</h2>
+<p>Whatever response you get from an API, you need to store it locally within that component so you can process it further. Import the <span class="jsx-3120878690"><code>useState</code></span> hook from React to create a piece of <span class="jsx-3120878690"><code>state</code></span> to store the response.</p>
+<pre><code>1import React,{useState} from &#39;react&#39;; </code></pre>
+<p>javascript</p>
+<p>Create a state variable <span class="jsx-3120878690"><code>comments</code></span> and a hook to set the value of this state variable <span class="jsx-3120878690"><code>setComments</code></span> using the <span class="jsx-3120878690"><code>useState</code></span> hook.</p>
+<pre><code>1const [comments,setComments]=useState([])</code></pre>
+<p>javascript</p>
+<p>Since the comments returned will be an array of objects with each object representing a single comment, the initial value of <span class="jsx-3120878690"><code>comments</code></span> is an empty array.</p>
+<h2 id="calling-api-and-processing-response">Calling API and Processing Response</h2>
+<p>Usually, you want to fetch data inside a component when its entire DOM loads. In other words, when your <span class="jsx-3120878690"><code>App</code></span> component first mounts on the DOM, you need to make a request to the API. In React, this can be carried out via a <em>component lifecycle method</em> called <span class="jsx-3120878690"><code>componentDidMount()</code></span>, which is fired when the component first loads on the DOM. A simple hooks implementation can be carried out by firing an <em>asynchronous</em> function using the <span class="jsx-3120878690"><code>async</code></span> keyword inside <span class="jsx-3120878690"><code>useEffect()</code></span> and passing an empty array as a parameter, as shown below.</p>
+<pre><code>1useEffect(() =&gt; {
+2 fetchComments();
+3}, [])</code></pre>
+<p>javascript</p>
+<p>Create the <span class="jsx-3120878690"><code>fetchComments()</code></span> method, as shown below.</p>
+<pre><code>1const fetchComments=async()=&gt;{
+2    const response=await Axios(&#39;https://jsonplaceholder.typicode.com/comments&#39;);
+3    setComments(response.data)    
+4}</code></pre>
+<p>javascript</p>
+<p>Inside <span class="jsx-3120878690"><code>fetchComments()</code></span>, call the API by passing the endpoint to Axios and store the response in a variable using the <span class="jsx-3120878690"><code>await</code></span> keyword. All the comments from the endpoint can be referred to by calling the <span class="jsx-3120878690"><code>data</code></span> property on the <span class="jsx-3120878690"><code>response object</code></span> to set the <span class="jsx-3120878690"><code>state</code></span>. You can check if you correctly appended comments to your <span class="jsx-3120878690"><code>state</code></span> using the following piece of code:</p>
+<pre><code>1useEffect(() =&gt; {
+2    console.log(comments)
+3}, [comments])</code></pre>
+<p>javascript</p>
+<h2 id="outputting-response-on-the-dom">Outputting Response on the DOM</h2>
+<p>So far in this guide, you have called the API response and stored it inside your <span class="jsx-3120878690"><code>state</code></span>. You can process it further using the <span class="jsx-3120878690"><code>state</code></span>. For instance, you can cycle through the <span class="jsx-3120878690"><code>comments</code></span> and render each <span class="jsx-3120878690"><code>comment</code></span> on the DOM, as shown below.</p>
+<pre><code>1 return (
+2    &lt;div className=&quot;App&quot;&gt;
+3      {
+4        comments &amp;&amp; comments.map(comment=&gt;{
+5          return(
+6            &lt;div key={comment.id} style={{alignItems:&#39;center&#39;,margin:&#39;20px 60px&#39;}}&gt;
+7            &lt;h4&gt;{comment.name}&lt;/h4&gt;
+8            &lt;p&gt;{comment.email}&lt;/p&gt;
+9          &lt;/div&gt;
+10          )
+11
+12        })
+13      }
+14     
+15    &lt;/div&gt;
+16  );</code></pre>
+<p>jsx</p>
+<p>Have a look at the entire <span class="jsx-3120878690"><code>App</code></span> component, which calls the API on mounting, sets the response to the component’s <span class="jsx-3120878690"><code>state</code></span>, and outputs it on the DOM.</p>
+<pre><code>1import &#39;./App.css&#39;;
+2import Axios from &#39;axios&#39;
+3import React,{useState,useEffect} from &#39;react&#39;;
+4
+5function App() {
+6  const [comments,setComments]=useState([])
+7  useEffect(() =&gt; {
+8    fetchComments();
+9  }, [])
+10  useEffect(() =&gt; {
+11    console.log(comments)
+12  }, [comments])
+13  const fetchComments=async()=&gt;{
+14    const response=await Axios(&#39;https://jsonplaceholder.typicode.com/comments&#39;);
+15    setComments(response.data)    
+16  }
+17  return (
+18    &lt;div className=&quot;App&quot;&gt;
+19      {
+20        comments &amp;&amp; comments.map(comment=&gt;{
+21          return(
+22            &lt;div key={comment.id} style={{alignItems:&#39;center&#39;,margin:&#39;20px 60px&#39;}}&gt;
+23            &lt;h4&gt;{comment.name}&lt;/h4&gt;
+24            &lt;p&gt;{comment.email}&lt;/p&gt;
+25          &lt;/div&gt;
+26          )
+27
+28        })
+29      }
+30    &lt;/div&gt;
+31  );
+32}
+33
+34export default App;</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>You can interact with an API in different ways by making different kinds of requests from your app. For instance, you can make a <span class="jsx-3120878690"><code>POST</code></span> request to add a new comment by storing it in the database. However, to process any dynamic data from a server on loading a component, you should make requests in <span class="jsx-3120878690"><code>componentDidMount()</code></span> and store them inside your <span class="jsx-3120878690"><code>state</code></span>, as demonstrated. Instead of simply outputting this data, you can explore more options, such as filtering or sorting data, adding pagination, etc.</p>
+<p>39</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

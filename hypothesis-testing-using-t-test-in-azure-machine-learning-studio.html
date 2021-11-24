@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hypothesis-testing-using-t-test-in-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="hypothesis-testing-using-t-test-in-azure-machine-learning-studio">Hypothesis Testing using T-test in Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 21, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>789 Views</p></li>
+<li><p>Oct 21, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>789 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-keyterms" class="menu-link">Key Terms</a></li>
+<li><a href="#module-onesamplettest" class="menu-link">One-Sample T-test</a></li>
+<li><a href="#module-pairedsamplettest" class="menu-link">Paired-Sample T-test</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Data science and machine learning often require formulating hypotheses and testing them with statistical tests. One such common hypothesis testing process is performing a t-test to compare whether two groups have different means. In this guide, you will learn how to compute and analyze t-test statistics with Azure Machine Learning Studio.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious dataset of loan applicants that includes 600 observations and nine variables, as described below.</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>Is_graduate</code></span>: Whether the applicant is a graduate or not.</p></li>
+<li><p><span class="jsx-3120878690"><code>Income</code></span>: Annual Income of the applicant (in US dollars).</p></li>
+<li><p><span class="jsx-3120878690"><code>Loan_amount</code></span>: Loan amount (in US dollars) for which the application was submitted.</p></li>
+<li><p><span class="jsx-3120878690"><code>Credit_score</code></span>: Whether the applicant’s credit score was good (“Satisfactory”) or not (“Not_satisfactory”).</p></li>
+<li><p><span class="jsx-3120878690"><code>Age</code></span>: The applicant’s age in years.</p></li>
+<li><p><span class="jsx-3120878690"><code>approval_status</code></span>: Whether the loan application was approved (“Yes”) or not (“No”). This is the dependent variable.</p></li>
+<li><p><span class="jsx-3120878690"><code>Sex</code></span>: Gender of the applicant.</p></li>
+<li><p><span class="jsx-3120878690"><code>Investment</code></span>: Investment amount (in US dollars) in stocks and mutual funds, as declared by the applicant.</p></li>
+<li><p><span class="jsx-3120878690"><code>Purpose</code></span>: Purpose for applying for the loan.</p></li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click on the <strong>EXPERIMENTS</strong> option, listed on the left sidebar, followed by the <strong>NEW</strong> button. Next, click on the blank experiment and give the name <strong>T-test</strong> to the workspace. The following screen will be displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fe760fde-92dd-4e8a-8b5a-92a11d8615a3_t1.html" /><figcaption aria-hidden="true">t1</figcaption>
+</figure>
+<p>Next, load the data into the workspace. Click <strong>NEW</strong>, and select the <strong>DATASET</strong> option shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9c2cad76-9206-4082-b8e7-99f23cca3945_t2.html" /><figcaption aria-hidden="true">t2</figcaption>
+</figure>
+<p>The selection above will open a window, shown below, which can be used to upload the dataset from the local system.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8d8f4f69-6212-416f-848f-8c883e250e5a_t3.html" /><figcaption aria-hidden="true">t3</figcaption>
+</figure>
+<p>Once the data is loaded, you can see it in the <strong>Saved Datasets</strong> option. The file name is <strong>ttestdata.csv</strong>. The next step is to drag it from the <strong>Saved Datasets</strong> list into the workspace. To explore this data, right-click and select the <strong>Visualize</strong> option as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/168c2420-b0d6-40e5-84fb-758b54bb5b26_t4.html" /><figcaption aria-hidden="true">t4</figcaption>
+</figure>
+<p>The data contains 600 rows and nine columns. Selecting any variable will display its statistics, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/07e5ad9e-1ed5-4a60-9907-ad6fc0a61455_t6.html" /><figcaption aria-hidden="true">t6</figcaption>
+</figure>
+<p>The data is loaded into the workspace and ready for statistical tests.</p>
+<h2 id="key-terms">Key Terms</h2>
+<p>Before moving ahead to the statistical tests, you should understand a few important terms.</p>
+<ol type="1">
+<li>Mean: Mean represents the arithmetic average of the data. It is calculated by taking the sum of the values and dividing by the number of observations.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Null and Alternative Hypotheses : The statistical tests rely on testing a null hypothesis, which is specific for each case. The null hypothesis assumes the absence of a relationship between two or more variables. For example, for two groups, the null hypothesis assumes that there is no correlation or association between the two variables. The alternative hypothesis is simply the opposite of the null hypothesis.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>t-test: In general, a t-test helps you compare whether two groups have the same or different means. It is also used to test if a single group mean is comparable to a hypothesized mean.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>P-value: For any statistical test, the p-value is a statistic used to decide whether to reject or fail to reject the null hypothesis. The decision rule is that if the p-value for the test is less than 0.05, we reject the null hypothesis. If the p-value is greater than or equal to 0.05, we fail to reject the null hypothesis.</li>
+</ol>
+<p>The following sections outline the implementation of a t-test in Azure Machine Learning Studio.</p>
+<h2 id="one-sample-t-test">One-Sample T-test</h2>
+<p>The idea behind the one-sample t-test is to compare the mean of a vector against a theoretical mean. In our data, you will consider the <span class="jsx-3120878690"><code>Income</code></span> variable and test the null hypothesis that the mean income of the applicants is USD $72,500. This can be any number based on your research.</p>
+<p>Drag and drop the <strong>Test Hypothesis using t-Test</strong> module into the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/946d22fc-9c2b-46d4-9153-dd9349a59596_t7.html" /><figcaption aria-hidden="true">t7</figcaption>
+</figure>
+<p>Click on the <strong>Launch column selector</strong> option and select the <span class="jsx-3120878690"><code>Income</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a24e9129-e1f6-4d9f-83d9-2931da957b21_t8.html" /><figcaption aria-hidden="true">t8</figcaption>
+</figure>
+<p>Next, complete the other arguments to configure the module. For <strong>t-Test type</strong>, select <strong>SingleSampleSet</strong> because you are considering one variable. For the option <strong>Null hypothesized µ</strong>, type the value of 72500. This specifies the expected mean income value against which the variable mean will be tested. Next, under <strong>Hypothesis type</strong>, select the default option of <strong>TwoTail</strong>. This is the most common type of test that assumes the distribution to be symmetric around zero. Alpha value, denoted by <strong>α</strong>, specifies the confidence factor. Set this value to 0.95.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1d2c6ffb-c2ef-4744-b032-6eb46805f4ee_t9.html" /><figcaption aria-hidden="true">t9</figcaption>
+</figure>
+<p>Run the experiment. Once the module run is complete, the left output port of <strong>Test Hypothesis using t-Test</strong> module gives the probability score.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/30742078-7a1a-433a-a381-81ac6ecc7bd8_t10.html" /><figcaption aria-hidden="true">t10</figcaption>
+</figure>
+<p>Right-click and select <strong>Visualize</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/57ae691c-baaf-4efe-b898-57ff158eeef3_t12.html" /><figcaption aria-hidden="true">t12</figcaption>
+</figure>
+<p>The output shows that the p-value is lower than 0.05, which means that the null hypothesis is rejected.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/647a3dba-ab1b-49fb-b9e7-40ede29fb61d_t13.html" /><figcaption aria-hidden="true">t13</figcaption>
+</figure>
+<p>You can confirm this with the right output port of <strong>Test Hypothesis using t-Test</strong> module. Right-click and select <strong>Visualize</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1f710784-53f7-4b31-9ae2-36b6633d32c4_t14.html" /><figcaption aria-hidden="true">t14</figcaption>
+</figure>
+<p>The output below shows that null hypothesis is to be rejected.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4788d536-3a1b-4092-b4c6-1dc3c4c01fd6_t15.html" /><figcaption aria-hidden="true">t15</figcaption>
+</figure>
+<p>Based on the results of t-Test, you reject the null hypothesis that the mean income of the applicants is USD $72,500.</p>
+<h2 id="paired-sample-t-test">Paired-Sample T-test</h2>
+<p>The idea behind the paired-sample t-test is to compare the mean of two sets of samples from the same population. In this data, you will consider the variables <span class="jsx-3120878690"><code>Income</code></span> and <span class="jsx-3120878690"><code>Loan_amount</code></span>. The null hypothesis to be tested is that the difference between the expected means of the two variables is zero.</p>
+<p>Drag and drop the <strong>Test Hypothesis using t-Test</strong> module into the workspace. To configure the module, click on the <strong>Launch column selector</strong> option and select the <span class="jsx-3120878690"><code>Income</code></span> and <span class="jsx-3120878690"><code>Loan_amount</code></span> variables.</p>
+<p>Next, complete the other arguments. For <strong>t-Test type</strong>, select <strong>PairedSamples</strong> because you are considering two variables. For the option, <strong>Null hypothesized µ</strong>, type the value of zero. This specifies that the expected difference in the means of the two variables is zero. Set the other option as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a24d7e96-c3b8-4d1b-bbbf-92d19ed3bf03_t18.html" /><figcaption aria-hidden="true">t18</figcaption>
+</figure>
+<p>Run the experiment, and right-click on the left-input port to select <strong>Visualize</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/33f6cf98-b1c4-48a1-b3bb-26d39ebfdf80_t19.html" /><figcaption aria-hidden="true">t19</figcaption>
+</figure>
+<p>The output shows that the p-value is lower than 0.05, which means that the null hypothesis is rejected.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7d3e1ac8-be46-4c31-80c6-0b287e7f8909_t20.html" /><figcaption aria-hidden="true">t20</figcaption>
+</figure>
+<p>Next, right-click on the right-input port of the <strong>Test Hypothesis using t-Test</strong> module, and select <strong>Visualize</strong>. The output shows that the null hypothesis is to be rejected.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/df7937ad-111f-4a13-9419-f9e11e99ef2e_t21.html" /><figcaption aria-hidden="true">t21</figcaption>
+</figure>
+<p>Based on the results of the t-test, you can reject the null hypothesis that the difference between the expected means of the variables <span class="jsx-3120878690"><code>Income</code></span> and <span class="jsx-3120878690"><code>Loan_amount</code></span> is zero.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Hypothesis testing has several applications in the areas of market research, quality testing, and inferential statistics. It is used in the pharmaceutical industry in new drug discovery. It is also used in the manufacturing industry to compare two processes or machines. Hypothesis testing using t-tests is also used in diagnostic analytics, an important area of machine learning.</p>
+<p>In this guide, you learned how to perform hypothesis testing using t-tests in Azure Machine Learning Studio. You can learn more about this concept with <a href="hypothesis-testing-interpreting-data-statistical-models/index.html">this guide on R</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+<li><p><a href="named-entity-recognition-with-azure-machine-learning-studio/index.html">Named Entity Recognition with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-analytics-with-azure-machine-learning-studio/index.html">Text Analytics with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="extract-key-phrases-from-text-in-azure-machine-learning-studio/index.html">Extract Key Phrases from Text in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="visualizing-text-data-using-word-cloud-in-azure-machine-learning-studio/index.html">Visualizing Text Data using Word Cloud in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-preprocessing-in-azure-machine-learning-studio/index.html">Text Preprocessing in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="estimate-correlation-coefficient-in-azure-machine-learning-studio/index.html">Estimate Correlation Coefficient in Azure Machine Learning Studio</a></p></li>
+</ol>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

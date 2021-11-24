@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>configure-app-insights-sdk-for-.net-for-graphql</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="configure-azure-application-insights-sdk-for-.net-for-graphql.net-servers">Configure Azure Application Insights SDK for .NET for GraphQL.NET Servers</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 19, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>1,753 Views</p></li>
+<li><p>Oct 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>1,753 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Platforms</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-applicationinsightsdatamodel" class="menu-link">Application Insights Data Model</a></li>
+<li><a href="#module-logginggraphqloperationswithrequesttelemetry" class="menu-link">Logging GraphQL Operations with Request Telemetry</a></li>
+<li><a href="#module-addingcustomdimensiontotherequesttelemetry" class="menu-link">Adding Custom Dimension to the Request Telemetry</a></li>
+<li><a href="#module-registeringyourgraphqlexecutor" class="menu-link">Registering your GraphQLExecutor</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>GraphQL is becoming an increasingly important technology. Many large companies such as GitHub, Coursea, and of course Facebook (GraphQL’s creator) have adopted it. However, since GraphQL is designed to be transport agnostic, it does not rely on HTTP status codes to communicate errors to the client. This means that you will need to update your monitoring and logging code to cater to GraphQL. In this guide, you will learn how to configure a <a href="https://github.com/graphql-dotnet/server">GraphQL.NET Server</a> with Azure Application Insights to correctly report error codes and failed requests.</p>
+<h2 id="application-insights-data-model">Application Insights Data Model</h2>
+<p>Application Insights offers a programming language agnostic data model for storing and sending telemetry data from your applications. Understanding the basics of the data model is important to properly communicate failures to the Application Insights UI in the Azure Portal.</p>
+<p>For a GraphQL Server, there are three important types of telemetry:</p>
+<ul>
+<li><strong>Request Telemetry</strong>: An incoming request to your GraphQL Server. This could be a GraphQL query, mutation, or subscription.</li>
+<li><strong>Exception Telemetry</strong>: Errors that occur that may cause a request to fail</li>
+<li><strong>Dependency Telemetry</strong>: Your server may rely on third-party systems such as other REST APIs or databases. Dependency telemetry can record information like whether these dependencies succeeded or failed and how long they took to execute.</li>
+</ul>
+<p>The telemetry described above can be grouped into an operation. For a GraphQL Server, this operation will begin as a client makes a mutation, query, or subscription request. Therefore, the root of operation will be a request telemetry that may contain nested telemetry or even operations inside it. This grouping makes it easy to find related logs in a request and understand failures, such as timeouts.</p>
+<h2 id="logging-graphql-operations-with-request-telemetry">Logging GraphQL Operations with Request Telemetry</h2>
+<p>If you are using GraphQL.NET inside an ASP.NET Core Servers, the default middleware packaged in <span class="jsx-3120878690"><code>Microsoft.ApplicationInsights.AspetNetCore</code></span> won’t be sufficient to correctly report failed GraphQL operations. Further, this middleware is endpoint-based. This means all your requests will be grouped under <span class="jsx-3120878690"><code>/graphql</code></span>, which makes it more difficult to understand the usage patterns of your GraphQL server.</p>
+<p>One simple way to fix this is to subclass <span class="jsx-3120878690"><code>GraphQL.Server.Internal.DefaultGraphQLExecuter&lt;TSchema&gt;</code></span> and map the GraphQL query and <span class="jsx-3120878690"><code>ExecutionResult</code></span> to the Application Insights data model. The following code snippet demonstrates how to do this.</p>
+<pre><code>1public class GraphQLExecutorWithDiagnostics&lt;TSchema&gt; : DefaultGraphQLExecuter&lt;TSchema&gt;
+2        where TSchema : GraphQL.Types.ISchema
+3    {
+4        private readonly TelemetryClient _telemetryClient;
+5
+6        public GraphQLExecutorWithDiagnostics(
+7            TSchema schema,
+8            IDocumentExecuter documentExecuter,
+9            IOptions&lt;GraphQLOptions&gt; options,
+10            IEnumerable&lt;IDocumentExecutionListener&gt; listeners,
+11            IEnumerable&lt;IValidationRule&gt; validationRules,
+12            TelemetryClient telemetryClient)
+13            : base(schema, documentExecuter, options, listeners, validationRules)
+14        {
+15            _telemetryClient = telemetryClient;
+16        }
+17
+18        public override async Task&lt;ExecutionResult&gt; ExecuteAsync(
+19            string operationName,
+20            string query,
+21            Inputs variables,
+22            IDictionary&lt;string, object&gt; context,
+23            CancellationToken cancellationToken = default)
+24        {
+25            using var operationHolder = _telemetryClient.StartOperation&lt;RequestTelemetry&gt;(&quot;GRAPHQL &quot; + operationName);
+26            var telemetry = operationHolder.Telemetry;
+27            telemetry.Context.Operation.Name = operationHolder.Telemetry.Name;
+28            telemetry.Properties[&quot;Type&quot;] = &quot;GRAPHQL&quot;;
+29
+30            var result = await base.ExecuteAsync(operationName, query, variables, context, cancellationToken);
+31
+32            if (result.Errors?.Any() ?? false)
+33            {
+34                telemetry.Success = false;
+35                telemetry.ResponseCode = result.Errors.First().Code ?? &quot;Faulted&quot;;
+36            }
+37
+38            if (result.Extensions?.ContainsKey(&quot;tracing&quot;) == true)
+39            {
+40                foreach (var perf in result.Perf)
+41                {
+42                    if (perf.Subject is string perfMetricSubject)
+43                    {
+44                        operationHolder.Telemetry.Metrics[perfMetricSubject] = perf.Duration;
+45                    }
+46                }
+47            }
+48
+49            return result;
+50        }
+51    }</code></pre>
+<p>csharp</p>
+<p>You have created the <span class="jsx-3120878690"><code>GraphQLExecutorWithDiagnostics&lt;TSchema&gt;</code></span> class to create a request telemetry. This class has the following responsibilities:</p>
+<ul>
+<li>Update the request telemetry to <span class="jsx-3120878690"><code>success = false</code></span> if an error is found in the execution result.</li>
+<li>Log the operation name that is sent from the client. This is useful for differentiating types of GraphQL queries. In the Application Insights UI in the Azure Portal, you will be able to filter, group, and sort by operation name.</li>
+<li>Set the response code on the request telemetry if a GraphQL operation fails. Normally this is the HTTP status code for the server. However, in the case of GraphQL, you need to manually set it to the GraphQL error.</li>
+<li>The <span class="jsx-3120878690"><code>operationHolder</code></span> automatically creates a stopwatch to measure how long your request took to execute.</li>
+</ul>
+<h2 id="adding-custom-dimension-to-the-request-telemetry">Adding Custom Dimension to the Request Telemetry</h2>
+<p>So far, you have logged some basic details about a GraphQL operation, such as whether it has succeeded and any error state. You can extend this by adding custom dimensions and logging the entire GraphQL query text and error message details.</p>
+<p>To do this, update the <span class="jsx-3120878690"><code>GraphQLExecutor</code></span> you created earlier by adding:</p>
+<pre><code>1if (result.Errors?.Any() ?? false)
+2{
+3    telemetry.Success = false;
+4    telemetry.ResponseCode = result.Errors.First().Code ?? &quot;Faulted&quot;;
+5    telemetry.Properties[&quot;GraphQLQuery&quot;] = result.Query;
+6    Telemetry.Properties[&quot;GraphErrorData&quot;] = JsonSerializer.Serialize(result.Errors.First().Data);</code></pre>
+<p>csharp</p>
+<blockquote>
+<p><strong>Note</strong>: There is a size limit on custom dimensions, so if it is too large it may be truncated or removed by the Application Insights SDK.</p>
+</blockquote>
+<h2 id="registering-your-graphqlexecutor">Registering your GraphQLExecutor</h2>
+<p>Finally, to use your enhanced <span class="jsx-3120878690"><code>GraphQLExecutor</code></span>, add a few lines in your <span class="jsx-3120878690"><code>Startup.cs</code></span> to tell your IoC container how to construct your service.</p>
+<pre><code>1services.AddApplicationInsightsTelemetry();
+2services.AddGraphQL(_ =&gt;
+3{
+4    _.ExposeExceptions = false;
+5})
+6.AddSystemTextJson(deserializerSettings =&gt; { }, serializerSettings =&gt; { })
+7.AddDataLoader();
+8
+9services.RemoveAll(typeof(IGraphQLExecuter&lt;&gt;));
+10services.AddTransient(typeof(IGraphQLExecuter&lt;&gt;), typeof(GraphQLExecutorWithDiagnostics&lt;&gt;));</code></pre>
+<p>csharp</p>
+<p>You have replaced the <span class="jsx-3120878690"><code>DefaultGraphQLExecuter</code></span> with your own <span class="jsx-3120878690"><code>GraphQLExecutorWithDiagnostics</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Application Insights provides a rich set of capabilities for monitoring, diagnostics, and logging. In order to benefit from these features, you need to make sure your application sends useful telemetry. By understanding the basics of the Application Insights data model, you can get better observability into your application.</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

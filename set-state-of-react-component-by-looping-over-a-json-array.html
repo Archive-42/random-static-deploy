@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>set-state-of-react-component-by-looping-over-a-json-array</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="set-state-of-react-component-by-looping-over-a-json-array">Set State of React Component by Looping Over a JSON Array</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Nov 1, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>9,484 Views</p></li>
+<li><p>Nov 1, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>9,484 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-requestingjsondata" class="menu-link">Requesting JSON Data</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>JSON, HTTP, and React go hand in hand. Odds are, you will need to interact with a JSON array of data at some point while building your React app.</p>
+<p>In this guide, you will learn how to use the Axios HTTP client to request JSON data from an API. Then, you will learn how to receive a JSON response, loop over the data this response contains, and set the state of your React component based on this data</p>
+<p>Let’s get started!</p>
+<blockquote>
+<p><strong>Note:</strong> This guide assumes that you are working within a React app that has been created using <span class="jsx-3120878690"><code>create-react-app</code></span>.</p>
+</blockquote>
+<h2 id="requesting-json-data">Requesting JSON Data</h2>
+<p>The first part of looping over a JSON array involves actually requesting the data! To request data from an API, we must start by using an HTTP client. In this guide, we have chosen Axios as our HTTP client library of choice. There are many alternatives! Fetch is a great, native client that you can use if you are trying to restrict the number of dependencies you are using in your app.</p>
+<p>To download Axios, navigate to your root project directory where your <span class="jsx-3120878690"><code>package.json</code></span> file is located, and run the command: <span class="jsx-3120878690"><code>npm install --save axios</code></span>. Now you have Axios installed inside of your React project and can start using it!</p>
+<p>In the code below, you will see the basic shell of a <span class="jsx-3120878690"><code>SolarSystem</code></span> component. This component’s job is to request a list of planets from the server via HTTP and then render a list of <span class="jsx-3120878690"><code>Planet</code></span> components based on the response. The number of gas giants will also need to be counted by looping over the JSON array contained within the response.</p>
+<pre><code>1class SolarSystem Extends React.Component {
+2    constructor(props) {
+3        super(props);
+4
+5        this.state = {
+6            planets: [],
+7            gasGiantsCount: 0
+8        }
+9    }
+10
+11    componentDidMount() {
+12        ...
+13    }
+14
+15    render() {
+16        ...
+17    }
+18}</code></pre>
+<p>jsx</p>
+<p>First, you will need to set the <span class="jsx-3120878690"><code>planets</code></span> state of the component based on a list of planets requested within the <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method. The <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method will ensure that the planet’s data is only requested after the initial render of the <span class="jsx-3120878690"><code>SolarSystem</code></span> component. This is helpful because you can display a simple loading screen while you wait for the request to complete.</p>
+<p>Below is the updated code that shows how to use Axios to make a request to the private planets API.</p>
+<pre><code>1import axios from &#39;axios&#39;;
+2
+3class SolarSystem Extends React.Component {
+4    constructor(props) {
+5        super(props);
+6
+7        this.state = {
+8            planets: [],
+9            gasGiantsCount: 0
+10        }
+11    }
+12
+13    async componentDidMount() {
+14        const { data: planets }  = await axios.get(this.props.planetApiUrl),
+15                  gasGiantsCount = planets.filter(planet =&gt; planet.isGasGiant).length;
+16
+17        this.setState({ planets, gasGiantsCount });
+18    }
+19
+20    render() {
+21        ...
+22    }
+23}</code></pre>
+<p>jsx</p>
+<p>Wow, that was easy! In the above code, you first imported the Axios HTTP client library. Then, you marked <span class="jsx-3120878690"><code>componentDidMount</code></span> as an <span class="jsx-3120878690"><code>async</code></span> function. This enables the use of the<span class="jsx-3120878690"><code>await</code></span> keyword in order to resolve the <span class="jsx-3120878690"><code>Promise</code></span> returned from the call to <span class="jsx-3120878690"><code>axios.get</code></span>.</p>
+<p>Once the response successfully loaded, you then had access to an Axios response object. One of the nice things about Axios is that it automatically parses the JSON for you! You can access this JSON on the <span class="jsx-3120878690"><code>data</code></span> field of the response object. In the above code, we make use of JavaScript’s object destructuring capabilities to grab the <span class="jsx-3120878690"><code>data</code></span> field off of the response object and rename it to <span class="jsx-3120878690"><code>planets</code></span>. In this case, the <span class="jsx-3120878690"><code>data</code></span> field comprises our already-parsed JSON array.</p>
+<p>With access to the JSON array you need, you then looped over it using one of JavaScript’s Array prototype functions. In this case, you can see that your code loops over the planets and counts the number of gas giants in the solar system.</p>
+<p>Finally, you then used the <span class="jsx-3120878690"><code>setState</code></span> function in order to set the <span class="jsx-3120878690"><code>planets</code></span> and <span class="jsx-3120878690"><code>gasGiantsCount</code></span> state of the component.</p>
+<p>With your data requested, now it’s time to load your view. Remember, this component simply wants to display a list of <span class="jsx-3120878690"><code>Planet</code></span> components. This can be achieved by implementing the following <span class="jsx-3120878690"><code>render</code></span> function.</p>
+<pre><code>1    ...
+2
+3    render() {
+4        const { planets, gasGiantsCount } = this.state;
+5
+6        const planetComponents = planets.map(planet =&gt; &lt;Planet name={planet.name} type={planet.type} /&gt;);
+7
+8        return (
+9            &lt;div&gt;
+10                &lt;h2&gt;{gasGiantsCount}&lt;/h2&gt;
+11                &lt;ul&gt;{planetComponents}&lt;/ul&gt;
+12            &lt;/div&gt;
+13        )
+14    }
+15}</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Working with JSON arrays is a crucial skill when creating any web app. In React, you can make working with JSON arrays easy by using an HTTP client like Axios to help you with things like the automatic parsing of JSON. Tools like Axios will help make your job easier by letting you write less code!</p>
+<p>Of course, requesting JSON isn’t the only thing Axios can help you out with. Eventually, you will want to send JSON arrays within your React app as well! For more information regarding Axios please check out the Axios <a href="https://github.com/axios/axios/blob/master/README.md">documentation</a>.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

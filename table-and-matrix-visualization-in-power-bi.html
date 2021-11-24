@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>table-and-matrix-visualization-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 10, 2020</p></li>
+<li><p>10 Min read</p></li>
+<li><p>10,005 Views</p></li>
+<li><p>Nov 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">10 Min</span> read</p></li>
+<li><p>10,005 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>22</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-tablevisualization" class="menu-link">Table Visualization</a></li>
+<li><a href="#module-matrixvisualization" class="menu-link">Matrix Visualization</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Power BI has brilliant plotting capabilities, but it also provides lots of depth for tabular visualizations. This is especially important for a textural set of data or for analyzing a text category in your report. The table and matrix visualization charts in Power BI provide the option to display categorical variables with text labels in the report.</p>
+<p>The main difference between table and matrix visualizations is that tables are two-dimensional. This means they display data only in two dimensions. On the other hand, matrix visualization gives you the option to specify multiple variables in rows and columns. It also gives you the opportunity to take advantage of Power BI’s drill-down functionality.</p>
+<p>In this guide, you will learn how to perform table and matrix visualization in Power BI Desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursals across years. The data contains 3000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The major variables are described below:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>Date</code></span>: Loan disbursal date.</li>
+<li><span class="jsx-3120878690"><code>Income</code></span>: Annual Income of the applicant (in US dollars).</li>
+<li><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</li>
+<li><span class="jsx-3120878690"><code>Age</code></span>: The applicant’s age in years.</li>
+<li><span class="jsx-3120878690"><code>Gender</code></span>: Whether the applicant is female (F) or male (M).</li>
+<li><span class="jsx-3120878690"><code>Interest_rate</code></span>: Annual interest rate, in percentage, charged for the disbursed loan.</li>
+<li><span class="jsx-3120878690"><code>Purpose</code></span>: Purpose for which loan was approved.</li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open the Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="table-visualization">Table Visualization</h2>
+<p>You can locate the table chart in the <strong>Visualizations</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c1860602-599b-4100-a919-2dc8b8ed6e28_t1.html" /><figcaption aria-hidden="true">t1</figcaption>
+</figure>
+<p>Click on the chart shown above, and it will create a default table in the canvas. Nothing is displayed yet because you have yet to add the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5174b088-8494-4656-9326-67de27846c37_t2.html" /><figcaption aria-hidden="true">t2</figcaption>
+</figure>
+<p>The next step is to fill the arguments under the <strong>Values</strong> option. The variables to be used are <span class="jsx-3120878690"><code>Purpose</code></span>, <span class="jsx-3120878690"><code>Interest_rate</code></span>, <span class="jsx-3120878690"><code>Month</code></span>, and <span class="jsx-3120878690"><code>Loan_disbursed</code></span>. Drag these variables into <strong>Values</strong>, which will create a table as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b75ff0c9-0e05-4a2d-97e2-180ae913cf75_t3.html" /><figcaption aria-hidden="true">t3</figcaption>
+</figure>
+<p>Two of the variables—<span class="jsx-3120878690"><code>Purpose</code></span> and <span class="jsx-3120878690"><code>Month</code></span>—are categorical variables that contain text labels. Table visualization becomes useful when you have many labels in a category as it is difficult to visualize them otherwise. You can see that total of the variable <span class="jsx-3120878690"><code>Interest_rate</code></span> is displayed. This is because the default aggregation type is the sum. This is incorrect as you are interested in the average interest rate and not the sum of rates.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0fa31e95-f52b-449e-8e22-3046722d9299_t4.html" /><figcaption aria-hidden="true">t4</figcaption>
+</figure>
+<p>To change this, right-click and select the <strong>Average</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/69a9c706-f535-4003-9e04-7231c3eb5209_t5.html" /><figcaption aria-hidden="true">t5</figcaption>
+</figure>
+<p>The correct interest rate value is now displayed as an average.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/979f535c-5383-45ae-8df0-60cb4781fbbe_t6.html" /><figcaption aria-hidden="true">t6</figcaption>
+</figure>
+<h3 id="formatting-options">Formatting Options</h3>
+<p>The above table is ready, but it requires formatting. There are several formatting options in PowerBI, and you can explore some of these. Start with the <strong>Column headers</strong> under the <strong>Format</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/72c27b1b-94ff-4bfe-bb84-b21d607164e8_t7.html" /><figcaption aria-hidden="true">t7</figcaption>
+</figure>
+<p>Increase the font size of the table headers. You can do that by setting the <strong>Text size</strong> to 14. This will increase the text size of column headers in the table.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e3bcd33a-6a3e-4c8a-856d-5d0a6d134596_t8.html" /><figcaption aria-hidden="true">t8</figcaption>
+</figure>
+<p>Next, change the size of the values in the table. You can find this below the <strong>Column headers</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a7fc0dbc-458e-4611-82a0-010fe2de8815_t9.html" /><figcaption aria-hidden="true">t9</figcaption>
+</figure>
+<p>Set the <strong>Text size</strong> of 12. This will increase the font size of values inside the table. Now you can see that the table is properly visible.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/01d3c21c-9a84-4868-845c-d6fbe1fab05d_t10.html" /><figcaption aria-hidden="true">t10</figcaption>
+</figure>
+<p>You can also scroll up and down the table with the hover tool, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/716d253d-45f2-4357-a260-cff25d461f89_t11.html" /><figcaption aria-hidden="true">t11</figcaption>
+</figure>
+<h2 id="matrix-visualization">Matrix Visualization</h2>
+<p>Sometimes table visualization is not sufficient, and you want to add more granularity to your chart. This is where matrix chart visualization becomes helpful. You can find the <strong>Matrix</strong> chart under the <strong>Visualizations</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/469fdd98-0985-4493-ad09-f981b1368c5e_m1.html" /><figcaption aria-hidden="true">m1</figcaption>
+</figure>
+<p>Click on the <strong>Matrix</strong> chart shown above, and it will create a chart in the canvas. Nothing is displayed yet because you have yet to add the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/47673237-9ce1-4986-966f-3aa6d3604ef6_m2.html" /><figcaption aria-hidden="true">m2</figcaption>
+</figure>
+<p>Under the <strong>Fields</strong> pane, drag <span class="jsx-3120878690"><code>Purpose</code></span> into <strong>Rows</strong> and <span class="jsx-3120878690"><code>Date</code></span> into the <strong>Columns</strong> pane. For <span class="jsx-3120878690"><code>Date</code></span>, you will see a hierarchy of <strong>Year</strong>, <strong>Quarter</strong>, <strong>Month</strong>, and <strong>Day</strong>. This gives you the flexibility to select the <span class="jsx-3120878690"><code>Date</code></span> hierarchy of your choice. For this guide, keep it at the <strong>Year</strong> level. For <strong>Values</strong>, drag the <span class="jsx-3120878690"><code>Loan_disbursed</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/38ca59c7-7326-4b0b-9ae5-b46019fba47b_m3.html" /><figcaption aria-hidden="true">m3</figcaption>
+</figure>
+<h3 id="formatting-options-1">Formatting Options</h3>
+<p>The next step is to format the matrix chart. Start with the <strong>Column headers</strong> under the <strong>Format</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/df131e0d-81f2-481d-925c-03578c1b687b_m4.html" /><figcaption aria-hidden="true">m4</figcaption>
+</figure>
+<p>Increase the font size and alignment of the headers. Set <strong>Text size</strong> to 13 and <strong>Alignment</strong> to <strong>Center</strong>. This will increase the text size and alignment of column headers.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9b26288e-ee6a-410f-ae5a-568f6ba78f03_m5.html" /><figcaption aria-hidden="true">m5</figcaption>
+</figure>
+<p>Next, change the size of the <strong>Row headers</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/86dacd3d-770e-472c-8635-4c1ae5bf2135_m6.html" /><figcaption aria-hidden="true">m6</figcaption>
+</figure>
+<p>Under <strong>Row headers</strong>, set the <strong>Text size</strong> to 13 and keep the <strong>Alignment</strong> at <strong>Auto</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/867796bb-2ff1-4414-a053-43bc680be420_m7.html" /><figcaption aria-hidden="true">m7</figcaption>
+</figure>
+<p>You have formatted the column and row headers, but the same also needs to be done for the values. Use the <strong>Values</strong> option to make this change.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/520ba1ac-77cd-4231-a241-d2a5d8b8e8c6_m8.html" /><figcaption aria-hidden="true">m8</figcaption>
+</figure>
+<p>Set the <strong>Text size</strong> to 12.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b2a29b6f-bde4-4089-9de4-1bb93126b7f9_m9.html" /><figcaption aria-hidden="true">m9</figcaption>
+</figure>
+<p>The output above shows that you have made the formatting changes in the matrix chart.</p>
+<h3 id="adding-more-variables-to-the-chart">Adding More Variables to the Chart</h3>
+<p>You can also add an additional variable to the chart. Drag and place the <span class="jsx-3120878690"><code>Interest_rate</code></span> variable below <span class="jsx-3120878690"><code>Loan_disbursed</code></span> in the <strong>Values</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bb34ca03-1d38-4e68-a7ee-256e5b580ade_m10.html" /><figcaption aria-hidden="true">m10</figcaption>
+</figure>
+<p>The interest rate aggregation needs to be converted to <strong>Average</strong>. You can do this by right-clicking on the variable and selecting <strong>Average</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/14674dd5-651e-4256-b28b-b3dd47ed1e8f_m11.html" /><figcaption aria-hidden="true">m11</figcaption>
+</figure>
+<p>Completing the above step will create the desired chart. You can see that the total of loans disbursed was $10.8 million in 2011, and the average interest rate charged by the bank was 19.15 percent.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/382bcf7f-9314-41b0-9da4-46d821af59b7_m12.html" /><figcaption aria-hidden="true">m12</figcaption>
+</figure>
+<p>You can also scroll left and right in the matrix chart with by hovering, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/484c0ecd-2be0-4f48-ad88-beea19691c44_m13.html" /><figcaption aria-hidden="true">m13</figcaption>
+</figure>
+<p>You can see that the total of loans disbursed was $57.3 million in 2019, and the average interest rate charged by the bank was 15.51 percent.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Multivariate reporting is a common requirement in business intelligence. You will often be asked to present data from different dimensions. If the variables are textual in nature, table and matrix visualization is a good option to explore. This type of visualization is used across industries and is therefore a great skill to have.</p>
+<p>In this guide, you learned how to implement table and matrix visualization in Power BI desktop. This will help you in descriptive and diagnostic analytics tasks, in addition to enriching your Power BI visualization capabilities.</p>
+<p>To learn more about building powerful visualizations in Power BI Desktop, please refer to the following guide:</p>
+<p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p>
+<p>22</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

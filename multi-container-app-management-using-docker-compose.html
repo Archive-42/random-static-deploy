@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>multi-container-app-management-using-docker-compose</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="multi-container-app-management-using-docker-compose">Multi-Container App Management Using Docker-Compose</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Sep 30, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>6,548 Views</p></li>
+<li><p>Sep 30, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>6,548 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">IT Infrastructure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Container Management</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Docker</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Containers</span></p>
+<p>Introduction</p>
+<p>29</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-dockercompose" class="menu-link">Docker Compose</a></li>
+<li><a href="#module-samplescript" class="menu-link">Sample Script</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Containerization of apps with Docker is a fast-growing practice within the DevOps community. As apps get more complex, it requires more skill and robustness to manage them.</p>
+<p>An easy management paradigm is separation of concerns. This is where the designer of a system creates logical layers that are separate but interdependent. With Docker, this is possible with the ability to separate an app into several containers.</p>
+<p>This guide will explore multi-container apps and how you can use <a href="https://docs.docker.com/compose/">Docker Compose</a> to manage the running of these containers.</p>
+<p>It is assumed that you have at least beginner knowledge of Django apps and Docker. A guide that introduces Docker can be found <a href="getting-started-with-docker.html">here</a>.</p>
+<h2 id="docker-compose">Docker Compose</h2>
+<p>Docker Compose is a tool for defining and running multi-container apps of any kind. To get started, Docker Compose needs to be installed. To install, run the command</p>
+<pre><code>1pip install docker-compose</code></pre>
+<p>bash</p>
+<p>Docker Compose directives are written in YAML format and are hosted in a file commonly named <span class="jsx-3120878690"><code>docker-compose.yml</code></span>. Common Docker Compose commands include:</p>
+<ul>
+<li><p><span class="jsx-3120878690"><code>docker-compose up --build</code></span> builds the images for every service defined in the <span class="jsx-3120878690"><code>docker-compose.yml</code></span> file and run the containers in the predefined order.</p></li>
+<li><p><span class="jsx-3120878690"><code>docker-compose down                                               --volumes</code></span> removes all the containers built by your compose script as well as any storage volumes.</p></li>
+<li><p><span class="jsx-3120878690"><code>docker-compose ps</code></span> lists all currently active containers.</p></li>
+<li><p><span class="jsx-3120878690"><code>docker-compose stop</code></span> halts the running of the currently active containers.</p>
+<p>To further explore more Docker Compose commands, follow <a href="https://docs.docker.com/compose/reference/">this guide</a>.</p></li>
+</ul>
+<h2 id="sample-script">Sample Script</h2>
+<p>For this sample script, suppose you are designing a Docker Compose file for a Django microservice app that is to be deployed to production and managed using Docker.</p>
+<p>The setup involves three containers: an app container that runs the Django app, a Postgres container that runs the database, and an <a href="https://www.nginx.com/">NGINX</a> container that serves the app.</p>
+<p>There are also static storage volumes where data and static files are stored. Since there are several containers at play, there should be an order in which they start up. Docker Compose addresses this with the <span class="jsx-3120878690"><code>depends_on</code></span> directive. The directive informs Docker Compose which containers should start running before others can be executed.</p>
+<p>In the sample script below, the common Docker Compose directives that have been discussed previously are put into practice.</p>
+<pre><code>1version: &#39;3.7&#39;
+2
+3services:
+4  nginx: # service name
+5    build: ./nginx # location of the dockerfile to build the image for this service
+6    ports: # host:container- Bind the container port(80) to the host port(1339) Any traffic from the host via port 1339 will go to the docker container via port 80 
+7      - 1339:80 
+8    volumes: # define location where static files will live
+9      - static_volume:/home/app/microservice/static
+10    depends_on:
+11      - web # web should be up and running for nginx to start
+12    restart: &quot;on-failure&quot; # restart nginx container if it fails
+13  web:
+14    build: . #build the image for the web service from the dockerfile in parent directory
+15    # issue commands to the application n the container
+16    command: sh -c &quot;python manage.py makemigrations &amp;&amp;
+17                    python manage.py migrate &amp;&amp;
+18                    python manage.py collectstatic &amp;&amp;
+19                    gunicorn django_microservice.wsgi:application --bind 0.0.0.0:${APP_PORT}&quot;
+20    volumes:
+21      - .:/microservice:rw # map data and files from parent directory in host to microservice directory in docker containe
+22      - static_volume:/home/app/microservice/static
+23    env_file: # set the location and name of the env file to use when building the containers
+24      - .env
+25    image: django_microservice # image name
+26
+27    expose:
+28      - ${APP_PORT} # internally expose the given port to other containers within the docker network
+29    restart: &quot;on-failure&quot;
+30    depends_on:
+31      - db # web will only start if db is up and running
+32  db: # service name
+33    image: postgres:11-alpine # base image from dockerhub
+34    volumes:
+35      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+36      - postgres_data:/var/lib/postgresql/data/ # define where the postgres data will live within the postgres container
+37    environment: # set environment variables from the .env file set using the env_file directive
+38      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+39      - POSTGRES_DB=${DB_NAME}
+40      - PGPORT=${DB_PORT}
+41      - POSTGRES_USER=${POSTGRES_USER}
+42    restart: &quot;on-failure&quot; # restart db service if it fails
+43
+44
+45volumes:
+46  postgres_data: # setup storage volume for data held by the Postgres db
+47  static_volume: # setup storage volume for static files such as css files and images.</code></pre>
+<p>dockerfile</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The skills covered in this guide are vital for DevOps and full stack developer positions in any organization. The next level above multi-container single app management within the Docker ecosystem is multi-app or microservice management with technologies like <a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a> and <a href="https://kubernetes.io/">Kubernetes</a>.</p>
+<p>These are referred to as <em>container orchestration</em> tools. They are used to manage the lifecycle and running of large apps designed as several individual containerized components referred to as <a href="https://microservices.io/">microservices</a>. To learn more about how container orchestration tools are used to manage microservice-based apps, follow <a href="https://blog.newrelic.com/engineering/container-orchestration-explained/">this guide</a>.</p>
+<p>29</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

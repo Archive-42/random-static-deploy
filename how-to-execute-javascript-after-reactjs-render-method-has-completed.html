@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-execute-javascript-after-reactjs-render-method-has-completed</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="rendering-and-updating-data-using-component-lifecycle-methods-in-react">Rendering and Updating Data using Component Lifecycle Methods In React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 2, 2020</p></li>
+<li><p>13 Min read</p></li>
+<li><p>90,443 Views</p></li>
+<li><p>Nov 2, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">13 Min</span> read</p></li>
+<li><p>90,443 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>124</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-componentlifecyclehooks" class="menu-link">Component Lifecycle Hooks</a></li>
+<li><a href="#module-renderjavascriptwithinitialrender" class="menu-link">Render JavaScript with Initial Render</a></li>
+<li><a href="#module-renderjavascriptwithupdatingphase" class="menu-link">Render JavaScript with Updating Phase</a></li>
+<li><a href="#module-usingreacthooktofetchthedata" class="menu-link">Using React Hook to Fetch the Data</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React is the most popular JavaScript-based library for using component-based architecture to create applications that share user interface content.</p>
+<p>React allows us to define the function or class-based component that provides a specific feature for an application; hence, each component in React application contains the set of lifecycle hooks.</p>
+<p>There are several lifecycle methods, which we can override and run based on a particular timestamp, such as mounting the component, updating the state of a component, orunmounting the component.</p>
+<p>In this guide, we will learn several approaches to execute JavaScript after the <span class="jsx-3120878690"><code>render()</code></span> method, including using initial render to fetch the data, using <span class="jsx-3120878690"><code>componentDidUpdate()</code></span>, and so on.</p>
+<h2 id="component-lifecycle-hooks">Component Lifecycle Hooks</h2>
+<p>Each lifecycle hook represents a specific state of an application. The primary stages of the lifecycle of a component are mounting, updating, unmounting, and error handling.</p>
+<h3 id="mounting">Mounting</h3>
+<p>This phase of the component lifecycle is used to call the method when the instance of the component can be created. It is also called while inserting the component into the HTML DOM.</p>
+<p>There are a few methods used in the mounting phase:</p>
+<ul>
+<li>constructor()</li>
+<li>render()</li>
+<li>componentDidMount()</li>
+<li>static getDerivedStateFromProps()</li>
+</ul>
+<h3 id="updating">Updating</h3>
+<p>This phase of the component lifecycle is triggered as soon as any changes are found in terms of state or props that allow the DOM to be re-rendered again and again to update the DOM elements.</p>
+<p>The updating phase includes several lifecycle hooks:</p>
+<ul>
+<li>render()</li>
+<li>componentDidUpdate()</li>
+<li>shouldComponentUpdate()</li>
+<li>static getDerivedStateFromProps()</li>
+<li>getSnapshotBeforeUpdate()</li>
+</ul>
+<h3 id="unmounting">Unmounting</h3>
+<p>The unmounting phase begins when an existing component is removed from the DOM.</p>
+<p>It includes a single and important lifecycle hook, componentWillUnmount().</p>
+<h3 id="error-handling">Error Handling</h3>
+<p>One of the crucial phases of the component, error handling is used to trigger an action in case of an error during the component rendering.</p>
+<p>Two methods are used to manage the errors in the existing component:</p>
+<ul>
+<li>componentDidCatch()</li>
+<li>static getDerivedStateFromError()</li>
+</ul>
+<p>This is a complete list of lifecycle phases and component lifecycle hooks, which trigger based on each phase and component behavior. We can choose any of them to trigger actions that are reflected into the DOM.</p>
+<p>Let’s look at a use case that shows how to render something when the component is added into the rendering phase. We’ll use an HTTP call to render the list using different lifecycle hooks.</p>
+<h2 id="render-javascript-with-initial-render">Render JavaScript with Initial Render</h2>
+<p>A React component can be created using a function or a class-based component, and the class-based component can use different lifecycle hooks.</p>
+<p>But quite often, we need to load data from the server to render the same data into the DOM. To do that, we can use a widely used lifecycle hook called <span class="jsx-3120878690"><code>componentDidMount</code></span>.</p>
+<p>The <span class="jsx-3120878690"><code>componentDidMount()</code></span> method will be triggered as soon as the component is mounted or inserted into the DOM.</p>
+<p>The basic syntax to use <span class="jsx-3120878690"><code>componentDidMount()</code></span> is looks like this.</p>
+<pre><code>1componentDidMount() {
+2    // your source code to load initial data
+3}</code></pre>
+<p>jsx</p>
+<p>This method used widely by developers because it loads immediately once the component is mounted. Hence, it’s quite handy when we need to get data from a remote endpoint.</p>
+<p>This hook is also used to apply or configure the subscription with the initial render, but we need to unsubscribe it using another hook called <span class="jsx-3120878690"><code>componentWillUnmount()</code></span>.</p>
+<p>Let’s look at an example of fetching data from a remote endpoint and using the same data into <span class="jsx-3120878690"><code>render()</code></span> to render it into the DOM.</p>
+<p>We call the API using Axios, and the method should look like this.</p>
+<pre><code>1async getTodos() {
+2    let data = await axios
+3      .get(&quot;https://jsonplaceholder.typicode.com/todos?_limit=10&quot;)
+4      .then(function(response) {
+5        return response;
+6      })
+7      .catch(function(error) {
+8        console.log(error);
+9      });
+10    this.setState({ todos: data.data });
+11  }</code></pre>
+<p>jsx</p>
+<p><strong>Note</strong>: We have used the free API endpoint <span class="jsx-3120878690"><code>json-placeholder</code></span>, which provides the dummy data for the demo purpose.</p>
+<p>In the above method, we have used Axios as the HTTP promise-based client, which uses <span class="jsx-3120878690"><code>XMLHttpRequests</code></span> to request data from the browser.</p>
+<p>Now let’s call the method <span class="jsx-3120878690"><code>getTodos()</code></span> from the <span class="jsx-3120878690"><code>componentDidMount()</code></span> hook, like this.</p>
+<pre><code>1  componentDidMount() {
+2    this.getTodos();
+3  }</code></pre>
+<p>jsx</p>
+<p>By calling this method, we will be able to call the remote endpoint once the current component is mounted and added into the DOM tree.</p>
+<p>Finally, we will use the response data coming from the API in the <span class="jsx-3120878690"><code>render()</code></span>, like this.</p>
+<pre><code>1  render() {
+2    const { todos } = this.state;
+3    return (
+4      &lt;div&gt;
+5        &lt;h3&gt;Using componentDidMount for initial data render&lt;/h3&gt;
+6        &lt;hr /&gt;
+7        {todos &amp;&amp;
+8          todos.map(todo =&gt; {
+9            return (
+10              &lt;table&gt;
+11                &lt;tr&gt;
+12                  &lt;td&gt;{todo.id}&lt;/td&gt;
+13                  &lt;td&gt;
+14                    &lt;p key={todo.id}&gt;{todo.title}&lt;/p&gt;
+15                  &lt;/td&gt;
+16                &lt;/tr&gt;
+17              &lt;/table&gt;
+18            );
+19          })}
+20      &lt;/div&gt;
+21    );
+22  }</code></pre>
+<p>jsx</p>
+<p>Here in the <span class="jsx-3120878690"><code>render()</code></span> method, we have used a <span class="jsx-3120878690"><code>map()</code></span> in order to iterate the items of the <span class="jsx-3120878690"><code>todos</code></span> that are stored in the state object.</p>
+<p>The complete component code should look like this.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { render } from &quot;react-dom&quot;;
+3import axios from &quot;axios&quot;;
+4
+5class Usingdidmount extends Component {
+6  constructor() {
+7    super();
+8    this.state = {
+9      name: &quot;React&quot;
+10    };
+11    this.getTodos = this.getTodos.bind(this);
+12  }
+13
+14  componentDidMount() {
+15    this.getTodos();
+16  }
+17
+18  async getTodos() {
+19    let data = await axios
+20      .get(&quot;https://jsonplaceholder.typicode.com/todos?_limit=10&quot;)
+21      .then(function(response) {
+22        return response;
+23      })
+24      .catch(function(error) {
+25        console.log(error);
+26      });
+27    this.setState({ todos: data.data });
+28  }
+29
+30  render() {
+31    const { todos } = this.state;
+32    return (
+33      &lt;div&gt;
+34        &lt;h3&gt;Using componentDidMount for initial data render&lt;/h3&gt;
+35        &lt;hr /&gt;
+36        {todos &amp;&amp;
+37          todos.map(todo =&gt; {
+38            return (
+39              &lt;table&gt;
+40                &lt;tr&gt;
+41                  &lt;td&gt;{todo.id}&lt;/td&gt;
+42                  &lt;td&gt;
+43                    &lt;p key={todo.id}&gt;{todo.title}&lt;/p&gt;
+44                  &lt;/td&gt;
+45                &lt;/tr&gt;
+46              &lt;/table&gt;
+47            );
+48          })}
+49      &lt;/div&gt;
+50    );
+51  }
+52}
+53
+54export default Usingdidmount;</code></pre>
+<p>jsx</p>
+<p>In this example, we have implemented:</p>
+<ul>
+<li>The <span class="jsx-3120878690"><code>componentDidMount()</code></span> hook that calls the <span class="jsx-3120878690"><code>getTodos()</code></span> method in order to fetch data from the API using AXIOS client</li>
+<li>The <span class="jsx-3120878690"><code>getTodos()</code></span> method, where we have implemented an actual AXIOS snippet to get the response</li>
+<li>The <span class="jsx-3120878690"><code>render()</code></span> method, where we rendered the data using the <span class="jsx-3120878690"><code>map()</code></span> into the actual DOM tree.</li>
+</ul>
+<p>This is one of the basic approaches that developers use in order to work with a remote endpoint to get data after a component is mounted. There are also other ways to do the same thing.</p>
+<h2 id="render-javascript-with-updating-phase">Render JavaScript with Updating Phase</h2>
+<p>Sometimes we have to call the remote endpoint as soon as we have changes in the state or the props; at times like these, we can use another lifecycle hook called <span class="jsx-3120878690"><code>componentDidUpdate()</code></span>.</p>
+<p>The <span class="jsx-3120878690"><code>componentDidUpdate()</code></span> hook is used to trigger an action once we find an update in the component, but make sure this hook method does not get called at the time of the initial render of the component.</p>
+<p>We can use the <span class="jsx-3120878690"><code>componentDidUpdate()</code></span> hook like this.</p>
+<pre><code>1componentDidUpdate(prevProps, prevState, snapshot) {
+2    // Do something if any updates
+3}</code></pre>
+<p>jsx</p>
+<p><strong>Note</strong>: Before using the <span class="jsx-3120878690"><code>componentDidUpdate()</code></span> hook, we have to wrap it with the condition; otherwise, it will create an infinite loop for the component.</p>
+<p>We can use the <span class="jsx-3120878690"><code>componentDidUpdate()</code></span> hook along with the condition and the Axios client like this.</p>
+<pre><code>1componentDidUpdate(prevProps) {
+2    if (this.props.id !== prevProps.id) {
+3      let data = await axios
+4      .get(&quot;https://jsonplaceholder.typicode.com/todos/&quot; + this.props.id)
+5      .then(function(response) {
+6        return response;
+7      })
+8      .catch(function(error) {
+9        console.log(error);
+10      });
+11      this.setState({ todo: data.data });
+12    }
+13  }</code></pre>
+<p>jsx</p>
+<p>As you can see in the above example, we have the condition wrapped before we access the remote endpoint, which we do like this.</p>
+<pre><code>1componentDidUpdate(prevProps) {
+2    if (this.props.id !== prevProps.id) {
+3      
+4    }
+5  }</code></pre>
+<p>jsx</p>
+<p>The condition makes sure we don’t re-render the component unless we find the updates in the data. By using the condition along with the hook, we can maintain application performance by restricting the re-render of the component.</p>
+<h2 id="using-react-hook-to-fetch-the-data">Using React Hook to Fetch the Data</h2>
+<p>We have seen two different examples by which we can make an HTTP call using the HTTP-based client Axios. But sometimes we have to work with the hook function as well.</p>
+<p>React provides a different set of hooks that we can use in a functional component. One is called <span class="jsx-3120878690"><code>useEffect()</code></span>, which is pretty similar to <span class="jsx-3120878690"><code>componentDidMount()</code></span> and which that we can use to work with a remote endpoint.</p>
+<p>The primary syntax of the <span class="jsx-3120878690"><code>useEffect()</code></span> hook looks like this.</p>
+<pre><code>1useEffect(() =&gt; {
+2    // Make HTTP call or other code
+3  });</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>useEffect</code></span> hook is a combination of three different lifecycle hooks:</p>
+<ul>
+<li>componentDidMount()</li>
+<li>componentDidUpdate()</li>
+<li>componentWillUnmount()</li>
+</ul>
+<p>As you can see, the <span class="jsx-3120878690"><code>useEffect</code></span> hook can be used for the three different purposes, including during the mounting state, updating state, and unmounting phase.</p>
+<p>Now let’s jump to the function implementation, where we will make an HTTP call to get the data from the remote endpoint.</p>
+<pre><code>1import React, { useState, useEffect } from &quot;react&quot;;
+2import axios from &quot;axios&quot;;
+3
+4export default function Gettododata(props) {
+5  const [data, setData] = useState({ todos: [] });
+6
+7  return (
+8    &lt;div&gt;
+9     
+10    &lt;/div&gt;
+11  );
+12}</code></pre>
+<p>jsx</p>
+<p>Here, we have created the functional component along with <span class="jsx-3120878690"><code>useState</code></span>, which is also a hook in React.</p>
+<p>Now let’s implement the <span class="jsx-3120878690"><code>useEffect</code></span> hook into the existing function.</p>
+<pre><code>1useEffect(async () =&gt; {
+2    const data = await axios
+3      .get(&quot;https://jsonplaceholder.typicode.com/todos?_limit=10&quot;)
+4      .then(function(response) {
+5        return response;
+6      })
+7      .catch(function(error) {
+8        console.log(error);
+9      });
+10    setTodos(data.data);
+11  }, []);</code></pre>
+<p>jsx</p>
+<p>In this example, the HTTP get request call is implemented using the Axios as client inside the <span class="jsx-3120878690"><code>useEffect</code></span> hook function. Notice that along with the <span class="jsx-3120878690"><code>useEffect</code></span> hook, an additional argument, <span class="jsx-3120878690"><code>[]</code></span>, is provided which means the function will be triggered once as we have not included a count.</p>
+<p>If we provide a value within the brackets, then the <span class="jsx-3120878690"><code>useEffect</code></span> hook will be triggered repeatedly. For example, if we give 5 as a value, then the code will look like this.</p>
+<pre><code>1  useEffect(async () =&gt; {
+2    const data = await axios
+3      .get(&quot;https://jsonplaceholder.typicode.com/todos?_limit=10&quot;)
+4      .then(function(response) {
+5        return response;
+6      })
+7      .catch(function(error) {
+8        console.log(error);
+9      });
+10    setTodos(data.data);
+11  }, [5]);</code></pre>
+<p>jsx</p>
+<p>Now we have given 5 as a value, the <span class="jsx-3120878690"><code>useEffect</code></span> hook will be triggered five times repeatedly and will execute its content.</p>
+<p>The complete example of the functional component with a hook should look like this.</p>
+<pre><code>1import React, { useState, useEffect } from &quot;react&quot;;
+2import axios from &quot;axios&quot;;
+3
+4export default function Gettododata(props) {
+5  const [data, setData] = useState({ todos: [] });
+6
+7  useEffect(async () =&gt; {
+8    const data = await axios
+9      .get(&quot;https://jsonplaceholder.typicode.com/todos?_limit=10&quot;)
+10      .then(function(response) {
+11        return response;
+12      })
+13      .catch(function(error) {
+14        console.log(error);
+15      });
+16    setTodos(data.data);
+17  }, []);
+18
+19  return (
+20    &lt;div&gt;
+21      {data.todos.map(item =&gt; (
+22        &lt;div key={item.id}&gt;
+23          &lt;p&gt;{item.title}&lt;/p&gt;
+24        &lt;/div&gt;
+25      ))}
+26    &lt;/div&gt;
+27  );
+28}</code></pre>
+<p>jsx</p>
+<p>This is how we can use the <span class="jsx-3120878690"><code>useEffect</code></span> hook to make HTTP calls..</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this advanced guide, we learned how to execute JavaScript after a component ia added into the DOM tree, and we have used the lifecycle hook <span class="jsx-3120878690"><code>componentDidMount()</code></span> to make HTTP calls along with the class-based component.</p>
+<p>Finally, we have seen how to make HTTP calls using the <span class="jsx-3120878690"><code>useEffect()</code></span> hook. I hope this guide helped you understand when and how to execute JavaScript after rendering the component. Stay tuned for more upcoming guides.</p>
+<p>124</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

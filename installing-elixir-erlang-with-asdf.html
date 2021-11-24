@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>installing-elixir-erlang-with-asdf</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/610746aa-87de-4de6-a275-4e28abe042ed.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>AJ Foster</p>
+<h1 id="installing-elixir-and-erlang-with-asdf">Installing Elixir and Erlang With ASDF</h1>
+<h3 id="aj-foster">AJ Foster</h3>
+<ul>
+<li><p>Apr 19, 2021</p></li>
+<li><p>5 Min read</p></li>
+<li><p>8,227 Views</p></li>
+<li><p>Apr 19, 2021</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>8,227 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Programming Languages</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Elixir</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Software Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages, Frameworks, and Tools</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p>Introduction</p>
+<p>39</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-installasdf" class="menu-link">Install ASDF</a></li>
+<li><a href="#module-installplugins" class="menu-link">Install Plugins</a></li>
+<li><a href="#module-installerlangotp" class="menu-link">Install Erlang/OTP</a></li>
+<li><a href="#module-installelixir" class="menu-link">Install Elixir</a></li>
+<li><a href="#module-setversions" class="menu-link">Set Versions</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Many programming languages regularly release new versions that add or deprecate features, fix bugs, and introduce breaking changes. To help developers switch between versions easily, several language communities have version managers (like NVM for Node.js or Rbenv for Ruby). When you need to switch versions of multiple languages at once, however, the ASDF version manager ensures each project has the environment it needs.</p>
+<p>This is especially important in Elixir projects, which require the Erlang runtime. In this guide, you’ll learn how to install specific versions of Elixir and Erlang/OTP using the ASDF version manager on macOS or Linux.</p>
+<h2 id="install-asdf">Install ASDF</h2>
+<p>The <a href="https://github.com/asdf-vm/asdf">ASDF version manager</a> is a command-line tool that is available on GitHub. It uses <span class="jsx-3120878690"><code>curl</code></span> and <span class="jsx-3120878690"><code>git</code></span> to install various languages.</p>
+<h3 id="install-prerequisites">Install Prerequisites</h3>
+<p>To install the <span class="jsx-3120878690"><code>curl</code></span> and <span class="jsx-3120878690"><code>git</code></span> utilities, run:</p>
+<pre><code>1brew install coreutils curl git  # on macOS with Homebrew
+2sudo apt install curl git        # on Linux</code></pre>
+<p>shell</p>
+<p>You can learn more about Homebrew on macOS <a href="https://brew.sh/">here</a>.</p>
+<h3 id="clone-asdf">Clone ASDF</h3>
+<p>With the prerequisites installed, now clone the ASDF project:</p>
+<pre><code>1git clone https://github.com/asdf-vm/asdf.git ~/.asdf</code></pre>
+<p>shell</p>
+<p>If you ever wish to remove ASDF, you can do so by removing <span class="jsx-3120878690"><code>.asdf</code></span> from your home directory and undo the configuration changes described below.</p>
+<h3 id="configure-your-shell">Configure Your Shell</h3>
+<p>Finally, include ASDF in your shell’s configuration. For <span class="jsx-3120878690"><code>zsh</code></span>, add the following to <span class="jsx-3120878690"><code>~/.zshrc</code></span>:</p>
+<pre><code>1. $HOME/.asdf/asdf.sh</code></pre>
+<p>shell</p>
+<p>Alternatively, if you use <span class="jsx-3120878690"><code>oh-my-zsh</code></span>, add <span class="jsx-3120878690"><code>asdf</code></span> to your plugin configuration. To include ASDF in your configuration when using a different shell, consult the <a href="https://asdf-vm.com/#/core-manage-asdf?id=install">documentation</a>.</p>
+<h2 id="install-plugins">Install Plugins</h2>
+<p>ASDF uses a plugin system to support multiple languages. For a typical Elixir project, you will need the Elixir and Erlang plugins:</p>
+<pre><code>1asdf plugin add erlang
+2asdf plugin add elixir</code></pre>
+<p>shell</p>
+<p>If your project requires Node.js, you can also install the <span class="jsx-3120878690"><code>nodejs</code></span> plugin.</p>
+<h2 id="install-erlangotp">Install Erlang/OTP</h2>
+<p>With ASDF and its plugins installed, you can now install Elixir and Erlang. If your project has a <span class="jsx-3120878690"><code>.tool-versions</code></span> file with entries for <span class="jsx-3120878690"><code>elixir</code></span> and <span class="jsx-3120878690"><code>erlang</code></span>, you can install the correct versions by running the following from inside the project:</p>
+<pre><code>1asdf install</code></pre>
+<p>shell</p>
+<p>The <span class="jsx-3120878690"><code>.tool-versions</code></span> file is much like <span class="jsx-3120878690"><code>.nvmrc</code></span> and <span class="jsx-3120878690"><code>.ruby-version</code></span> files, except that it lists the names and versions of multiple languages. In general, the names in this file should match the names of the language’s plugin (e.g. <span class="jsx-3120878690"><code>nodejs</code></span> for Node.js).</p>
+<p>If you do not yet have a <span class="jsx-3120878690"><code>.tool-versions</code></span> file, or want to install Elixir and Erlang globally, use the following to see a list of all available Erlang/OTP versions:</p>
+<pre><code>1asdf list-all erlang
+2# ...
+323.2
+423.2.1
+523.2.2
+6# ...</code></pre>
+<p>shell</p>
+<p>Unlike other version managers, ASDF requires you to specify a precise version of the language to install. To install version <span class="jsx-3120878690"><code>23.2.1</code></span> of Erlang, run:</p>
+<pre><code>1asdf install erlang 23.2.1</code></pre>
+<p>shell</p>
+<p><strong>Warning</strong>: This installation will take some time while it compiles Erlang from source.</p>
+<p>Erlang will compile modules based on the available libraries from your system. For example, some features (such as the built-in observer) require <span class="jsx-3120878690"><code>wx</code></span> libraries. You may see messages during the installation about omitted modules, which will not affect the rest of the runtime.</p>
+<h2 id="install-elixir">Install Elixir</h2>
+<p>Once the Erlang runtime is installed, you are ready to install Elixir. To see a list of all available versions, run:</p>
+<pre><code>1asdf list-all elixir
+2# ...
+31.11.2
+41.11.2-otp-21
+51.11.2-otp-22
+61.11.2-otp-23
+7# ...</code></pre>
+<p>shell</p>
+<p>Notice that each Elixir release has multiple versions compiled with different major versions of Erlang/OTP. To maximize compatibility between Elixir and the Erlang runtime, choose a <span class="jsx-3120878690"><code>-otp-XY</code></span> version that matches the major version of the runtime you installed in the previous step. For example:</p>
+<pre><code>1asdf install elixir 1.11.2-otp-23</code></pre>
+<p>shell</p>
+<p>Installing Elixir takes significantly less time than installing Erlang/OTP.</p>
+<h2 id="set-versions">Set Versions</h2>
+<p>Now that you have Elixir and Erlang/OTP installed, you can save your chosen versions in a project. From the root of the project, run:</p>
+<pre><code>1asdf local erlang 23.2.1
+2asdf local elixir 1.11.2-otp-23</code></pre>
+<p>shell</p>
+<p>Replace the versions above with those you used during installation. This will create a <span class="jsx-3120878690"><code>.tool-versions</code></span> file in your project, which will instruct ASDF which versions to use. If you’d like to set a global, or default, version, run:</p>
+<pre><code>1asdf global erlang 23.2.1
+2asdf global elixir 1.11.2-otp-23</code></pre>
+<p>shell</p>
+<p>This will create a <span class="jsx-3120878690"><code>.tool-versions</code></span> file in your home directory. ASDF will use these versions whenever a project doesn’t specify versions of its own.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>ASDF is a popular version manager for Elixir projects because it manages both Elixir and Erlang versions. Include a <span class="jsx-3120878690"><code>.tool-versions</code></span> file in your projects to help contributors get up-and-running quickly, and don’t forget to leverage the <span class="jsx-3120878690"><code>-otp-XY</code></span> versions of Elixir for the best compatibility.</p>
+<p>If you’d like to learn more about Elixir and what it can do for your next project, check out <a href="https://app.pluralsight.com/library/courses/elixir-big-picture/">Elixir: The Big Picture</a> here on Pluralsight.</p>
+<p>39</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

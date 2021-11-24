@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>use-sass-less-or-css-within-your-angular-component-template</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="use-sass-less-or-css-within-an-angular-component-template">Use Sass, Less, or CSS Within an Angular Component Template</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Oct 20, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>11,406 Views</p></li>
+<li><p>Oct 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>11,406 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Angular</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p>Introduction</p>
+<p>32</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-choosingdefaultstylesforangulartemplates" class="menu-link">Choosing Default Styles For Angular Templates</a></li>
+<li><a href="#module-usingcss" class="menu-link">Using CSS</a></li>
+<li><a href="#module-usingsass" class="menu-link">Using Sass</a></li>
+<li><a href="#module-usingless" class="menu-link">Using Less</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Often it can be a pain integrating a CSS preprocessor into your web app. If you are using Webpack or another JavaScript bundler directly, you have to manually install plugins and set up the necessary configuration to facilitate the CSS preprocessor that you choose. The Angular framework handles all of this for you via the Angular CLI—one of the most powerful features of the Angular framework. When it comes to choosing a CSS preprocessor, the Angular CLI has you covered!</p>
+<p>In this guide, you will learn how to both set up and use the Sass and Less preprocessors within your Angular app. Let’s get started!</p>
+<h2 id="choosing-default-styles-for-angular-templates">Choosing Default Styles For Angular Templates</h2>
+<p>The Angular CLI can be downloaded onto your machine by running the following command using NPM:</p>
+<pre><code>1npm install -g @angular/cli</code></pre>
+<p>bash</p>
+<p>You can now use the <span class="jsx-3120878690"><code>ng</code></span> command to access the CLI. To see a full listing of available commands, run <span class="jsx-3120878690"><code>ng -h</code></span>. First, we need to bootstrap a new Angular project. This is as simple as running:</p>
+<pre><code>1ng new my-app</code></pre>
+<p>bash</p>
+<p>After running the command above, you will be prompted by the Angular CLI to choose a CSS preprocessor. Your choices are:</p>
+<ul>
+<li>CSS (no preprocessor)</li>
+<li>Scss</li>
+<li>Sass</li>
+<li>Less</li>
+<li>Stylus</li>
+</ul>
+<p>In the following sections, you will learn what it looks like to use CSS, Sass, or Less in your component templates.</p>
+<h2 id="using-css">Using CSS</h2>
+<p>When you choose CSS, you are not using any CSS preprocessor. This means you are missing out on a lot of the incredibly useful features that preprocessors provide. Some of these include:</p>
+<ul>
+<li>Built-in functions</li>
+<li>Variables</li>
+<li>Nesting/Parent Selectors</li>
+<li>Mixins</li>
+</ul>
+<p>… and more! However, using CSS means that you have one less dependency in your code. That’s always a good thing!</p>
+<p>Getting into CSS syntax is beyond the scope of this guide, however, you should know that when you use CSS or any of the other preprocessors with your Angular component template, your styles are encapsulated. This is incredibly powerful! Normally, when you write CSS code, the style declarations are applied application-wide in a cascading fashion. This means that you might accidentally write some styles in one part of your app and these styles might unknowingly bleed over into a totally unrelated portion of your app. Uh oh! Angular’s ingenious way around this is to use view encapsulation via the Shadow DOM such that any styles you define within a component style file are guaranteed to only be applied to that portion of the DOM’s subtree. This makes your life <em>much</em> easier when it comes to applying and debugging styles in your app.</p>
+<h2 id="using-sass">Using Sass</h2>
+<p>Sass stands for “Syntactically Awesome Style Sheets” and it is a fitting name! Sass removes many of the syntax requirements from CSS, like blocks and semicolons, and adds on a ton of new features for you to use. As you’ll find with any preprocessor, probably the most useful feature of using Sass is variable creation. Variables in your Sass code allow you to remove a lot of duplicated code from your style sheets. In Sass, you declare a variable like this:</p>
+<pre><code>1$my-gray: #888888</code></pre>
+<p>scss</p>
+<p>You then can use it like this:</p>
+<pre><code>1.navbar
+2    background-color: $my-gray</code></pre>
+<p>scss</p>
+<p>Notice that in the Sass code above, indentation is used instead of blocks and semicolons. These are not required in Sass. This can be a good thing because it means less code for you to write, but it can be hard to get used to if you have been writing CSS for a long time.</p>
+<p>Apart from variables, Sass allows you to nest style declarations. This makes your style much easier to read and can further reduce duplicated style sheet code.</p>
+<pre><code>1.navbar
+2  background-color: $my-gray
+3
+4    ul
+5      list-style: none
+6
+7      li
+8        font-size: 12px</code></pre>
+<p>scss</p>
+<p>This nesting can be incredibly powerful for your Stylesheet code!</p>
+<p>When it comes to view encapsulation, the same rules apply for Sass as for CSS or any of the other CSS preprocessors that you choose. If you have view encapsulation turned on for your component, component styles will not bleed into other component styles.</p>
+<p>There’s so much more to Sass than what has been covered here. For more info, check out the Sass <a href="https://sass-lang.com/documentation">documentation</a>.</p>
+<h2 id="using-less">Using Less</h2>
+<p>Less stands for “Leaner Style Sheets” and is another CSS preprocessor that the Angular CLI lets you use inside of your Angular component templates. When you choose this option, all of your generated component style files will end with the <span class="jsx-3120878690"><code>.less</code></span> extension. Less is unique from Sass in that all valid CSS code is also valid Less code. This makes writing Less very easy to pick up if you already know CSS. In this section, you’ll learn about some of the most powerful features of the Less preprocessor.</p>
+<p>Arguably the most useful feature found in Less is variables. In a <span class="jsx-3120878690"><code>.less</code></span> file, you define a variable like this:</p>
+<pre><code>1@my-gray: #888888;</code></pre>
+<p>less</p>
+<p>You can then use this variable throughout your stylesheet like this:</p>
+<pre><code>1.navbar {
+2    background-color: @my-gray;
+3}</code></pre>
+<p>less</p>
+<p>Apart from variables, Less also lets you define your own mixins, like Sass, and comes complete with a lot of built-in functions for you to use. For a full list of these built-in functions check out the <a href="http://lesscss.org/functions/#functions-overview">Less function list</a>.</p>
+<p>As far as view encapsulation goes, Less works in the same way as Sass or CSS. As long as you are using the default component view encapsulation in the corresponding Angular component, your Less styles will only apply to the component they have been defined for.</p>
+<p>There’s so much more than what was briefly touched on above! To check out all of the features of the Less language, please visit the Less <a href="http://lesscss.org/features/">documentation</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Working with CSS, Less, or Sass in your Angular app is easier than in most other frameworks. With help from the CLI, Angular allows you to componentize your styles via its default view encapsulation.</p>
+<p>As you may have noticed, the Angular CLI makes more preprocessors available to you than are covered in this guide. <a href="https://stylus-lang.com/">Stylus</a> and <a href="https://sass-lang.com/documentation/syntax">Scss</a> are two of these options. Scss is a great preprocessor to get started with if you already know CSS because all valid CSS is valid Scss as well. This makes it easy to write CSS and slowly add on features that you need.</p>
+<p>32</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

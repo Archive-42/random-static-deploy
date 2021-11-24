@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>understanding-links-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="understanding-links-in-react.js">Understanding Links in React.js</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Oct 8, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>47,472 Views</p></li>
+<li><p>Oct 8, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>47,472 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>83</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-linksinreact" class="menu-link">Links in React</a></li>
+<li><a href="#module-buildingasampleapp" class="menu-link">Building a Sample App</a></li>
+<li><a href="#module-cleaninguptoavoidunecessaryrendering" class="menu-link">Cleaning Up to Avoid Unecessary Rendering</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Links are everywhere on the web. They are vital in locating resources such as web pages, images, and videos—not to speak of their importance in SEO. Routing helps determine which code should run when a URL is visited. In this guide, you will learn more about how routing works in React.</p>
+<h2 id="links-in-react">Links in React</h2>
+<p>In regular apps without a library like React, links are created with an anchor tag, as shown below.</p>
+<pre><code>1&lt;a href=&quot;https://pluralsight.com&quot;&gt;Visit Pluralsight&lt;/a&gt;</code></pre>
+<p>html</p>
+<p>Bear in mind that this also works in React. This method of routing causes a full page refresh, when in reality the only thing that changed on the new route might be just an image and some text. In some cases, a full page refresh is useful, but in most cases, it’s not needed. React is a component-oriented library and implements a neat algorithm by keeping track of your elements as a tree and figuring out which components need re-rendering. Libraries such as React Router take advantage of this to help your app render components that need re-rendering based on a specified route. Very efficient, isn’t it?</p>
+<p>In short, if your app uses the same header and footer for all pages, you can ensure that only the body of your pages re-render while the header and footer remain intact.</p>
+<h2 id="building-a-sample-app">Building a Sample App</h2>
+<p>Setup a React app by entering the following command or entering <a href="https://react.new/">react.new</a> in your browser to set up a React development environment on <a href="http://codesandox.io/">codesandox.io</a>.</p>
+<pre><code>1npx create-react-app [YOUR_APP_NAME] &amp;&amp; yarn add react-router-dom</code></pre>
+<p>bash</p>
+<p>Add the following code block to your <em>index.js file.</em></p>
+<pre><code>1import React from &#39;react&#39;;
+2import ReactDOM from &#39;react-dom&#39;;
+3import { BrowserRouter as Router, Switch, Route } from &#39;react-router-dom&#39;;
+4import {Homepage, Aboutpage } from &#39;./App&#39;;
+5
+6ReactDOM.render(
+7    &lt;Router&gt;
+8       &lt;Switch&gt;
+9              &lt;Route exact path=&quot;/&quot; component={Homepage}/&gt;
+10               &lt;Route exact path=&quot;/about&quot; component={Aboutpage }/&gt;
+11       &lt;/Switch&gt;
+12    &lt;/Router&gt;,
+13    document.getElementById(&#39;root&#39;)
+14);</code></pre>
+<p>jsx</p>
+<p>Now add the following code snippet to your <em>App.js</em> file to create the components for the pages.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import { Link } from &#39;react-router-dom&#39;;
+3
+4const Header = () =&gt; {
+5 return (
+6     &lt;div&gt;
+7                &lt;p&gt;Header&lt;/p&gt;
+8        &lt;/div&gt;
+9 )
+10};
+11
+12const Homepage = () =&gt; {
+13    return (
+14        &lt;div&gt;
+15               &lt;Header/&gt;
+16               &lt;h1&gt;Homepage &lt;/h1&gt;
+17               &lt;Link to=&#39;/about&#39;&gt;Go to Aboutpage&lt;/Link&gt;
+18       &lt;/div&gt;
+19    )
+20};
+21
+22const Aboutpage = () =&gt; {
+23    return (
+24        &lt;div&gt;
+25               &lt;Header/&gt;
+26               &lt;h1&gt;Aboutpage&lt;/h1&gt;
+27               &lt;Link to=&#39;/&#39;&gt;Go to Aboutpage&lt;/Link&gt;
+28       &lt;/div&gt;
+29    )
+30};
+31export {Homepage, Aboutpage } ;</code></pre>
+<p>jsx</p>
+<p>Run your development server and open your app in the browser. Notice how changing routes does not cause a full page reload.</p>
+<h2 id="cleaning-up-to-avoid-unecessary-rendering">Cleaning Up to Avoid Unecessary Rendering</h2>
+<p>You’ve made use of routes to render specific components for each route. But there’s a problem somewhere 🤔. The <span class="jsx-3120878690"><code>&lt;/Header&gt;</code></span> component has to render every time a route changes, but its content doesn’t change. Edit your <em>App.js</em> and <em>index.js</em> files, respectively, as shown below.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import ReactDOM from &#39;react-dom&#39;;
+3import { BrowserRouter as Router, Switch, Route } from &#39;react-router-dom&#39;;
+4import {Homepage, Aboutpage, Header } from &#39;./App&#39;; //new
+5
+6ReactDOM.render(
+7    &lt;Router&gt;
+8       &lt;Switch&gt;
+9                    &lt;Header/&gt; //new
+10             &lt;Route exact path=&quot;/&quot; component={Homepage}/&gt;
+11               &lt;Route exact path=&quot;/about&quot; component={Aboutpage }/&gt;
+12       &lt;/Switch&gt;
+13    &lt;/Router&gt;,
+14    document.getElementById(&#39;root&#39;)
+15);</code></pre>
+<p>jsx</p>
+<pre><code>1import React from &#39;react&#39;;
+2import { Link } from &#39;react-router-dom&#39;;
+3
+4const Header = () =&gt; {
+5 return (
+6     &lt;div&gt;
+7                &lt;p&gt;Header&lt;/p&gt;
+8        &lt;/div&gt;
+9 )
+10};
+11
+12const Homepage = () =&gt; {
+13    return (
+14        &lt;div&gt;
+15               &lt;h1&gt;Homepage &lt;/h1&gt;
+16               &lt;Link to=&#39;/about&#39;&gt;Go to Aboutpage&lt;/Link&gt;
+17       &lt;/div&gt;
+18    )
+19};
+20
+21const Aboutpage = () =&gt; {
+22    return (
+23        &lt;div&gt;
+24               &lt;h1&gt;Aboutpage&lt;/h1&gt;
+25               &lt;Link to=&#39;/&#39;&gt;Go to Aboutpage&lt;/Link&gt;
+26       &lt;/div&gt;
+27    )
+28};
+29export {Homepage, Aboutpage , Header } ; //new</code></pre>
+<p>jsx</p>
+<p>What you’ve done is you’ve made sure that when a new route is visited, it only renders the respective page and not the header, as it seldom changes state.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Whew! That’s it. You should now get the concept of links in React and how to handle routing effectively.</p>
+<p>Feel free to ping me on twitter <span class="citation" data-cites="DesmondNyamador">[@DesmondNyamador]</span>(https://twitter.com/DesmondNyamador) if you want chat more on this topic.</p>
+<p>83</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

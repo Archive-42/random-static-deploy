@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>using-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="using-react.js-with-docker">Using React.js with Docker</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Nov 7, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>32,901 Views</p></li>
+<li><p>Nov 7, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>32,901 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>80</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatisdocker" class="menu-link">What is Docker?</a></li>
+<li><a href="#module-setupdocker" class="menu-link">Set Up Docker</a></li>
+<li><a href="#module-setupareactapp" class="menu-link">Set Up a React App</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In modern software development, apps are developed with multiple frameworks, languages, and technologies. Managing updates, CI/CD, and deployments with a monolithic app can cause you so much trouble. Enter containers! In this guide, you’ll learn about Docker and how to use it with your React app.</p>
+<h2 id="what-is-docker">What is Docker?</h2>
+<p><a href="https://docker.com/">Docker</a> was introduced in 2013 by Docker Inc. It enables applications to run in an isolated state using <em>containers</em>. Doing this enables your app to be packaged with only the libraries and dependencies it needs. Unlike virtual machines, which provide hardware virtualization, a container provides OS-level virtualization by isolating the software from its environment, ensuring that it works uniformly despite differences, and solving the “it works on my machine” problem. Multiple containers can run on one host machine or over multiple machines using an orchestration tool like Docker-swarm or Kubernetes.</p>
+<h2 id="set-up-docker">Set Up Docker</h2>
+<p>To install Docker, visit this <a href="https://docs.docker.com/get-docker/">URL</a> and download the setup that suits your machine type. Docker uses a layered filesystem to build your container with the specifications of the container runtime provided by you in a file named <strong>Dockerfile.</strong> After installing Docker, run the following command in your terminal to verify Docker has been installed.</p>
+<pre><code>1$ docker --version
+2Docker version 19.03.8, build afacb8b</code></pre>
+<p>bash</p>
+<h2 id="set-up-a-react-app">Set Up a React App</h2>
+<p>Next, pick any React app of your choice or set up another from scratch by running the command below.</p>
+<pre><code>1$ npx create-react-app &lt;your_app_name&gt;
+2
+3#&lt;your_app_name&gt; - preferred name of your app</code></pre>
+<p>bash</p>
+<p>Now create a file called <strong>Dockerfile</strong> at the root of your project and add the following.</p>
+<pre><code>1# pull the base image
+2FROM node:alpine
+3
+4# set the working direction
+5WORKDIR /app
+6
+7# add `/app/node_modules/.bin` to $PATH
+8ENV PATH /app/node_modules/.bin:$PATH
+9
+10# install app dependencies
+11COPY package.json ./
+12
+13COPY package-lock.json ./
+14
+15RUN npm install
+16
+17# add app
+18COPY . ./
+19
+20# start app
+21CMD [&quot;npm&quot;, &quot;start&quot;]</code></pre>
+<p>docker</p>
+<p>What’s happening here 🤔?</p>
+<p>You first instructed Docker to pull the official Node image, set a working directory for your app, and install all your dependencies.</p>
+<p>To ensure you don’t end up with a bloated container, add a <strong>.dockerignore</strong> file to avoid copying unnecessary files into the container. Inside your <strong>.dockerignore</strong> file, add the following.</p>
+<pre><code>1node_modules
+2npm-debug.log
+3build
+4.dockerignore
+5**/.git
+6**/.DS_Store
+7**/node_modules</code></pre>
+<p>docker</p>
+<p>To get your container up, run the following command in your terminal to build an image upon which your container will be built.</p>
+<pre><code>1$ docker build -t ps-container:dev .</code></pre>
+<p>docker</p>
+<p>Your output should look similar to the following :</p>
+<pre><code>1Sending build context to Docker daemon  630.3kB
+2Step 1/8 : FROM node:alpine
+3 ---&gt; 89234s7298ds
+4Step 2/8 : WORKDIR /app
+5 ---&gt; Using cache
+6 ---&gt; 8da38hd8a9848
+7Step 3/8 : ENV PATH /app/node_modules/.bin:$PATH
+8 ---&gt; Using cache
+9 ---&gt; e930973d8h383
+10Step 4/8 : COPY package.json ./
+11 ---&gt; Using cache
+12 ---&gt; jnd3898398h8r
+13Step 5/8 : COPY package-lock.json ./
+14 ---&gt; 390jf983h8hf8
+15Step 6/8 : RUN npm install
+16 ---&gt; Running in 23uf2983f98
+17 ...
+18Step 7/8 : COPY . ./
+19 ---&gt; ca58e0ca87b9
+20Step 8/8 : CMD [&quot;npm&quot;, &quot;start&quot;]
+21 ---&gt; Running in cdcb3617af0c
+22Removing intermediate container cdcb3617af0c
+23 ---&gt; d89b7bb5b6fa
+24Successfully built d89b7bb5b6fa
+25Successfully tagged ps-container:dev
+26
+27$ docker image ls
+28REPOSITORY              TAG                 IMAGE ID            CREATED              SIZE
+29ps-container             dev                3894y8h893hd        About a minute ago   392MB</code></pre>
+<p>bash</p>
+<p>Now run the following command to create and run your container.</p>
+<pre><code>1$ docker run -it --rm \
+2-v ${PWD}:/app \
+3-v /app/node_modules \
+4-p 3001:3000 \
+5-e CHOKIDAR_USEPOLLING=true \
+6ps-container:dev</code></pre>
+<p>bash</p>
+<p>Notice what the code is doing: 1. <span class="jsx-3120878690"><code>it</code></span> starts the container in interactive mode. 2. <span class="jsx-3120878690"><code>-rm</code></span> removes the container and volumes after the container exits. 3. <span class="jsx-3120878690"><code>v ${PWD}:/app</code></span> mounts the code into the container at <span class="jsx-3120878690"><code>/app</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you learned how to use Docker with React, build an image, and create a Docker container from that image. Visit the official documentation to learn more at <a href="https://docs.docker.com/">https://docs.docker.com</a>. Feel free to ping me on Twitter if you’d like to chat more at <span class="citation" data-cites="DesmondNyamador">[@DesmondNyamador]</span>(https://twitter.com/DesmondNyamador).</p>
+<p>80</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

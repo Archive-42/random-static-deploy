@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>sql-on-mapreduce-with-hive</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/98bf39ab-eb2b-4e8d-abe5-e48d02fba40c.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Miguel Saavedra</p>
+<h1 id="sql-on-mapreduce-with-hive">SQL on MapReduce with Hive</h1>
+<h3 id="miguel-saavedra">Miguel Saavedra</h3>
+<ul>
+<li><p>Oct 5, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>4,002 Views</p></li>
+<li><p>Oct 5, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>4,002 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">MapReduce</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Big Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>16</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-hivearchitecture" class="menu-link">Hive Architecture</a></li>
+<li><a href="#module-runningahivejob" class="menu-link">Running a Hive Job</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Hive is the most popular and the most prevalent member of the <a href="https://app.pluralsight.com/guides/an-introduction-to-hadoop">Hadoop</a> ecosystem today.</p>
+<p>With the increasing popularity of big data applications, <a href="https://app.pluralsight.com/guides/getting-started-with-hadoop-mapreduce">MapReduce</a> has become the standard for performing batch processing on commodity hardware. However, MapReduce code can be quite challenging to write for developers, let alone data scientists and administrators.</p>
+<p>Hive is a data warehousing framework that runs on top of Hadoop and provides an SQL abstraction for MapReduce apps. Data analysts and business intelligence officers need not learn another complex programming language for writing MapReduce apps. Hive will automatically interpret any SQL query into a series of MapReduce jobs.</p>
+<h2 id="hive-architecture">Hive Architecture</h2>
+<p><embed src="../../cwiki.apache.org/confluence/download/attachments/27362072/system_architecture1c70.html?version=1&amp;modificationDate=1414560669000&amp;api=v2" /> Source: <a href="https://cwiki.apache.org/confluence/display/Hive/Design">Apache Software Foundation</a></p>
+<p>The diagram above showcases the important components of the Hive architecture. An SQL query gets converted into a MapReduce app by going through the following process:</p>
+<ol type="1">
+<li>The Hive client or <strong>UI</strong> submits a query to the <strong>driver</strong>.</li>
+<li>The driver then submits the query to the Hive <strong>compiler</strong>, which generates a query plan and converts the SQL into MapReduce tasks.</li>
+<li>The compiler communicates with the Hive <strong>metastore</strong> which contains the schema for the data. Any DDL tasks are also performed by connecting to the metastore.</li>
+<li>The <strong>execution engine</strong> then submits the job to Hadoop for processing.</li>
+<li>Hadoop uses a Hive <strong>SerDe</strong>, or serializer/deserializer, to covert the input format to and from Hive row objects.</li>
+<li>Finally, the results are retrieved by the UI.</li>
+</ol>
+<h2 id="running-a-hive-job">Running a Hive Job</h2>
+<p>Running a Hive query requires some SQL experience as HiveQL queries are almost indistinguishable from SQL queries.</p>
+<p>To connect to a Hive session, run the following command:</p>
+<pre><code>1beeline -u jdbc:hive2://&lt;ip&gt;:10000/ -n &lt;username&gt;</code></pre>
+<p>bash</p>
+<p>The default Hive CLI client is called <span class="jsx-3120878690"><code>beeline</code></span>. It connects to a JDBC URL using a specific user that uses the users defined in HDFS and in the operating system to manage permissions.</p>
+<p>From the beeline session, you can then run SQL scripts that connect to HDFS locations, or any other location supported by Hive. The following code block is an example of a DDL statement taken from the <a href="https://s3.amazonaws.com/amazon-reviews-pds/readme.html">Amazon Customer Reviews Open Dataset</a>, which connects to Amazon S3.</p>
+<pre><code>1CREATE EXTERNAL TABLE amazon_reviews_parquet(
+2  marketplace string, 
+3  customer_id string, 
+4  review_id string, 
+5  product_id string, 
+6  product_parent string, 
+7  product_title string, 
+8  star_rating int, 
+9  helpful_votes int, 
+10  total_votes int, 
+11  vine string, 
+12  verified_purchase string, 
+13  review_headline string, 
+14  review_body string, 
+15  review_date bigint, 
+16  year int)
+17PARTITIONED BY (product_category string)
+18ROW FORMAT SERDE 
+19  &#39;org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe&#39; 
+20STORED AS INPUTFORMAT 
+21  &#39;org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat&#39; 
+22OUTPUTFORMAT 
+23  &#39;org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat&#39;
+24LOCATION
+25  &#39;s3://amazon-reviews-pds/parquet/&#39;</code></pre>
+<p>sql</p>
+<p>The <span class="jsx-3120878690"><code>EXTERNAL TABLE</code></span> keyword specifies that the table will not be managed by the built-in HDFS <span class="jsx-3120878690"><code>hive</code></span> user. An external table is necessary when storing data outside of the cluster Hive is running on, or even on a directory not owned by the <span class="jsx-3120878690"><code>hive</code></span> user.</p>
+<p>Although there is a schema definition written, writes to the location will not be checked by Hive. This is because Hive follows the <em>schema on read</em> principle. The schema is applied as Hive reads the data from the source, and not while data is being inserted. This allows for the reading of more complex file types such as the Parquet file type used in this example. Hive can also be used to read CSV files through the CSV SerDe, complex text files through the RegEx SerDe, and even binary files through custom SerDes and <span class="jsx-3120878690"><code>InputFormats</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Simple SQL aggregations, joins, and windowing functions can give invaluable insights when run in a larger scale. Hive is one of many members of the Hadoop ecosystem. It is a very simple yet powerful tool to run analytics on petabytes of data using a familiar language. Since Hive is one of the most commonly deployed members of the Hadoop ecosystem, it is essential for data engineers and data analysts to understand these basic concepts.</p>
+<p>16</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

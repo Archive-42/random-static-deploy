@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>wrap-a-custom-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="wrap-a-custom-react.js-component-for-an-html-button">Wrap a Custom React.js Component for an HTML Button</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 22, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>6,042 Views</p></li>
+<li><p>Oct 22, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>6,042 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-changingcolortoredorgreen" class="menu-link">Changing Color to Red or Green</a></li>
+<li><a href="#module-dealingwithtext" class="menu-link">Dealing with Text</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React.js allows developers to extend the default functionality of an HTML input element by creating a component around it. This gives the input element more custom functionality, behavior, and even values that it can maintain on its own. In this guide, we’ll be taking a look at creating a custom component for an HTML button and extending its functionality other than attaching an event handler for its <span class="jsx-3120878690"><code>onClick</code></span> attribute.</p>
+<h2 id="setup">Setup</h2>
+<p>Suppose that you want to create a button that does the following:</p>
+<ol type="1">
+<li>Changes the color to red if it’s unclickable</li>
+<li>Changes the color to green if it’s clickable</li>
+<li>Changes the text of the button to “Loading…” if it’s unclickable</li>
+</ol>
+<p>This would be quite tedious if it were done manually. You’d probably have several JavaScript routines that would modify its behavior or several CSS files that might change how it looks depending on the classes added or removed by JavaScript. This is all good if you’re doing it for a single button. However, if you expand to something like an array of buttons generated by a backend process, it tends to get messy to maintain.</p>
+<p>To solve this, create a component representing that button, which you can call <span class="jsx-3120878690"><code>MyCustomButton</code></span>:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class MyCustomButton extends React.Component {
+4  constructor(props) {
+5    this.state = {
+6      text: &quot;Click Me&quot;
+7    }
+8  }
+9
+10  render() {
+11    return (
+12      &lt;button&gt;
+13        {this.state.text}
+14      &lt;/button&gt;
+15    );
+16  }
+17}</code></pre>
+<p>javascript</p>
+<p>Nothing special here. You start off by creating a component that maintains a <span class="jsx-3120878690"><code>text</code></span> value in its state and renders the actual HTML button. The value of <span class="jsx-3120878690"><code>text</code></span> becomes the actual text rendered for the button as called by <span class="jsx-3120878690"><code>this.state.text</code></span>.</p>
+<h2 id="changing-color-to-red-or-green">Changing Color to Red or Green</h2>
+<p>Next, you’d want to indicate if the button is clickable or not by changing its background color to red in the case of it being unclickable. This means that the <span class="jsx-3120878690"><code>disabled</code></span> state of the button is set to <span class="jsx-3120878690"><code>true</code></span>. When solving this type of problem in React.js, always remember to have everything managed by the component and just have values trigger the properties of that component via <span class="jsx-3120878690"><code>props</code></span>, which is initially passed to the constructor. You can assume that <span class="jsx-3120878690"><code>props</code></span> can have a property called <span class="jsx-3120878690"><code>disabled</code></span> that can optionally be passed by an external component calling this <span class="jsx-3120878690"><code>MyCustomButton</code></span> component. However, since it is optional, you want to have a default value for it. To do this, create a temporary variable called <span class="jsx-3120878690"><code>disabled</code></span> that accesses <span class="jsx-3120878690"><code>this.props.disabled</code></span> from within <span class="jsx-3120878690"><code>render()</code></span>:</p>
+<pre><code>1var disabled = this.props.disabled || false;</code></pre>
+<p>javascript</p>
+<p>The <span class="jsx-3120878690"><code>||</code></span> indicates that if <span class="jsx-3120878690"><code>this.props.disabled</code></span> is null, then it takes an initial value of <span class="jsx-3120878690"><code>false</code></span>. Hook the value up to the actual <span class="jsx-3120878690"><code>disabled</code></span> property of the HTML button:</p>
+<pre><code>1&lt;button disabled={disabled}&gt;
+2  {this.state.text}
+3&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<p>Next, you can style the button by passing an object to its <span class="jsx-3120878690"><code>style</code></span> attribute. Just like <span class="jsx-3120878690"><code>disabled</code></span>, you can temporarily declare another variable to change the <span class="jsx-3120878690"><code>backgroundColor</code></span> property of the object to <span class="jsx-3120878690"><code>red</code></span>:</p>
+<pre><code>1var style = { backgroundColor: &#39;red&#39; };</code></pre>
+<p>javascript</p>
+<p>However, if <span class="jsx-3120878690"><code>disabled</code></span> is <span class="jsx-3120878690"><code>false</code></span>, then the <span class="jsx-3120878690"><code>backgroundColor</code></span> should be green:</p>
+<pre><code>1if(disabled == false) {
+2  style = { backgroundColor: &#39;green&#39; }
+3}</code></pre>
+<p>javascript</p>
+<p>Hook the variable <span class="jsx-3120878690"><code>style</code></span> to the attribute <span class="jsx-3120878690"><code>style</code></span> of the rendered HTML button:</p>
+<pre><code>1&lt;button disabled={disabled} style={style}&gt;
+2  {this.state.text}
+3&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<h2 id="dealing-with-text">Dealing with Text</h2>
+<p>To change the text of the button to “Loading…”, you can use the same technique as in the previous section. Create a temporary variable <span class="jsx-3120878690"><code>text</code></span> and set it to “Loading…” depending on the value of <span class="jsx-3120878690"><code>disabled</code></span>:</p>
+<pre><code>1var text = this.state.text;
+2
+3if(disabled) {
+4  text = &quot;Loading...&quot;;
+5}</code></pre>
+<p>javascript</p>
+<p>Replace the original rendered <span class="jsx-3120878690"><code>this.state.text</code></span> to simply <span class="jsx-3120878690"><code>text</code></span> within the <span class="jsx-3120878690"><code>jsx</code></span>. Your rendered button should now look like the following:</p>
+<pre><code>1&lt;button disabled={disabled} style={style}&gt;
+2  {text}
+3&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>Your overall code should now look like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class MyCustomButton extends React.Component {
+4  constructor(props) {
+5    this.state = {
+6      text: &quot;Click Me&quot;
+7    }
+8  }
+9
+10  render() {
+11    var style = { backgroundColor: &#39;red&#39; };
+12
+13    if(disabled == false) {
+14      style = { backgroundColor: &#39;green&#39; }
+15    }
+16
+17    var text = this.state.text;
+18
+19    if(disabled) {
+20      text = &quot;Loading...&quot;;
+21    }
+22
+23    return (
+24      &lt;button disabled={disabled} style={style}&gt;
+25        {text}
+26      &lt;/button&gt;
+27    );
+28  }
+29}</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Instead of using a normal HTML button and having to maintain all sorts of behavior through external code, you can create a custom React.js component as a wrapper for that element with additional functionality. This is especially useful if you want to share common behavior for a dynamically generated set of UI components that are rendered by your app’s own logic. Using React.js’ passing of values to <span class="jsx-3120878690"><code>props</code></span>, you can control the behavior of the custom component accordingly and even set default values for it so as not to burden external code to put in initial values.</p>
+<p>As an extra step, try to see if you can make the “Click Me” text a default value if an external component fails to pass a value for the <span class="jsx-3120878690"><code>props</code></span> property called <span class="jsx-3120878690"><code>buttonText</code></span> (Hint: Is <span class="jsx-3120878690"><code>state</code></span> a good place to store <span class="jsx-3120878690"><code>text</code></span> in this scenario, or can you get away with simply using <span class="jsx-3120878690"><code>props</code></span>)?</p>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

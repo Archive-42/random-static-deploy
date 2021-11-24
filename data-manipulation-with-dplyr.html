@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>data-manipulation-with-dplyr</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/default.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Nishant Kumar Singh</p>
+<h1 id="data-manipulation-with-dplyr">Data Manipulation with Dplyr</h1>
+<h3 id="nishant-kumar-singh">Nishant Kumar Singh</h3>
+<ul>
+<li><p>Oct 23, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>385 Views</p></li>
+<li><p>Oct 23, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>385 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Dplyr</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Query Languages</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Development</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-overviewofdplyr" class="menu-link">Overview of dplyr</a></li>
+<li><a href="#module-manipulatingdata" class="menu-link">Manipulating Data</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When working with data, it’s important to know what you want to do with the substantial amount of information you have. To figure out the facts from the data, some level of manipulation is necessary, as it is rare to get the data in exactly the right form.</p>
+<p>For performing manipulations in R, the dplyr package comes to the rescue. It provides a set of functions for data manipulation activities.</p>
+<pre><code>1# The easiest way to install dplyr is to install the whole tidyverse
+2install.packages(&quot;tidyverse&quot;)
+3
+4# Alternate way to install only dplyr
+5install.packages(&quot;dplyr&quot;)</code></pre>
+<p>html</p>
+<h2 id="overview-of-dplyr">Overview of dplyr</h2>
+<p>dplyr provides a consistent set of functions to solve data manipulation problems. Some of these include:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>filter()</code></span>: to select records based on their values</li>
+<li><span class="jsx-3120878690"><code>arrange()</code></span>: to reorder</li>
+<li><span class="jsx-3120878690"><code>select()</code></span>: to select variables from the dataset</li>
+<li><span class="jsx-3120878690"><code>mutate()</code></span>: to add new variables</li>
+<li><span class="jsx-3120878690"><code>summarize()</code></span>: to condense multiple values into one</li>
+<li><span class="jsx-3120878690"><code>group_by()</code></span>: to break down the dataset into specified groups of rows</li>
+</ol>
+<h3 id="piping-operator">Piping Operator</h3>
+<p>Every data manipulation activity would not simple that will use one or two functions. To make the code easy to read, dplyr uses <span class="jsx-3120878690"><code>%&gt;%</code></span> (the piping operator) from magrittr, which turns <span class="jsx-3120878690"><code>x%&gt;%f(x)</code></span> into <span class="jsx-3120878690"><code>f(x, y)</code></span>. We’ll be using this operator to help explain dplyr.</p>
+<h2 id="manipulating-data">Manipulating Data</h2>
+<p>To explore the functions of dplyr, we need a dataset. We will use the flights dataset from the nycflights13 package, which contains several useful datasets.</p>
+<pre><code>1# Installing nycflights13 package
+2install.packages(&quot;nycflights13&quot;)
+3library(nycflights13)
+4data(flights)
+5# looking into sample data
+6head(flights)
+7# A tibble: 6 x 19
+8   year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay carrier flight tailnum origin dest 
+9  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;
+101  2013     1     1      517            515         2      830            819        11 UA        1545 N14228  EWR    IAH  
+112  2013     1     1      533            529         4      850            830        20 UA        1714 N24211  LGA    IAH  
+123  2013     1     1      542            540         2      923            850        33 AA        1141 N619AA  JFK    MIA  
+134  2013     1     1      544            545        -1     1004           1022       -18 B6         725 N804JB  JFK    BQN  
+145  2013     1     1      554            600        -6      812            837       -25 DL         461 N668DN  LGA    ATL  
+156  2013     1     1      554            558        -4      740            728        12 UA        1696 N39463  EWR    ORD  
+16# ... with 5 more variables: air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>html</p>
+<h3 id="filtering-rows">Filtering rows</h3>
+<p>To get a subset of rows from the main dataset, use the <span class="jsx-3120878690"><code>filter()</code></span> function. This function takes <span class="jsx-3120878690"><code>dataframe</code></span> as the first argument, and subsequent arguments are the expression that filters the dataframe.</p>
+<pre><code>1# loading dplyr library
+2library(dplyr)
+3
+4# filtering flights dataframe on year 
+5filter(flights, year ==2013)
+6# adding more expression for year and month
+7filter(flights, year = 2013, month = 1)</code></pre>
+<p>html</p>
+<p>The filter expressions are applied as an <span class="jsx-3120878690"><code>AND</code></span> operation.</p>
+<h3 id="arranging-rows">Arranging Rows</h3>
+<p>The <span class="jsx-3120878690"><code>arrange()</code></span> function works similarly to <span class="jsx-3120878690"><code>filter()</code></span> except it arranges the rows of the dataframe. The first argument of the function is the dataframe name and the subsequent arguments are the column names.</p>
+<pre><code>1# arranging the flights dataframe on year
+2arrange(flights, year)
+3
+4# arranging dataframe on multiple columns 
+5arrange(flights, year, month, day)
+6
+7# The default order of arrange() function is ascending if we want, we can arrange in descending order
+8arrange(flights, desc(year))</code></pre>
+<p>html</p>
+<p>When providing multiple columns, each column breaks the arrangement of the rows of the preceding one.</p>
+<h3 id="selecting-columns">Selecting Columns</h3>
+<p>If you are interested only in a few columns of the dataset, pull them using the <span class="jsx-3120878690"><code>select()</code></span> function. The first argument ise the name of the dataframe and subsequent arguments are the names of the columns or expressions.</p>
+<pre><code>1# selecting columns through their names
+2select(flights, year, month, day)
+3
+4# selecting columns with expressions
+5select(flights, starts_with(&quot;arr&quot;))</code></pre>
+<p>html</p>
+<h3 id="adding-new-columns">Adding New Columns</h3>
+<p>To add a new column that is a function of the existing columns in the dataframe, use the <span class="jsx-3120878690"><code>mutate()</code></span> function. The first argument of the mutate function is the name of the dataframe and the subsequent arguments are the formula for the new columns.</p>
+<pre><code>1# The flights dataset has distance and air_time, so we will add speed in the dataframe
+2mutate(flights, speed = distance/air_time)</code></pre>
+<p>html</p>
+<p>This will create a new column, <span class="jsx-3120878690"><code>speed</code></span>, in the flights dataframe.</p>
+<h3 id="summarizing-values">Summarizing Values</h3>
+<p>Summarized data helps make decisions that are difficult to decide properly going through a huge amount of information. The summarize function helps in this scenario.</p>
+<pre><code>1# lets get mean of the delay time in arrival from flights dataframe.
+2summarize(flights, delay = mean(arr_delay, na.rm = TRUE)</code></pre>
+<p>html</p>
+<p>The <span class="jsx-3120878690"><code>summarize()</code></span> function is used a lot with the <span class="jsx-3120878690"><code>group_by()</code></span> function as it gives more detailed information when used along with <span class="jsx-3120878690"><code>group_by()</code></span>.</p>
+<h3 id="grouped-operations">Grouped Operations</h3>
+<p>In grouped operations, the dataset breaks down into specified groups of rows. In dplyr, this is done with the <span class="jsx-3120878690"><code>group_by()</code></span> function. The first argument of the function is the data frame name and subsequent arguments are those columns that take part in grouping the rows. We generally use the <span class="jsx-3120878690"><code>group_by()</code></span> function along with some aggregate functions.</p>
+<pre><code>1# Grouping dataset in years
+2group_by(flights, year)
+3# Using along with summarize() function
+4summarize(group_by(flight, year), delay = mean(arr_delay, na.rm = TRUE)</code></pre>
+<p>html</p>
+<p>When used in the <span class="jsx-3120878690"><code>summarize()</code></span> function, the result is the mean of <span class="jsx-3120878690"><code>arr_delay</code></span> for each year.</p>
+<h3 id="piping">Piping</h3>
+<p>So far, we have applyied the data manipulation function alone, but in this section, we will take on a task in which we have to use multiple functions and club them with the help of the <span class="jsx-3120878690"><code>piping(%&gt;%)</code></span> operator.</p>
+<p>Say you need to calculate the mean delay in arrival and departure for every month of the year 2013 from the flights dataset. If you read the statement, it looks complicated. So you will break it in the code section.</p>
+<pre><code>1# Using functions along with %&gt;% operator
+2
+3flight%&gt;%
+4 filter(year = 2013)%&gt;%                                        # First filter the required rows
+5 select(year, month, arr_delay, dep_delay)%&gt;%                  # Second selecting the necessary columns
+6 group_by(year, month)%&gt;%                                      # Third grouping the rows
+7 summarise( arrival = mean(arr_delay, na.rm = TRUE),
+8            departure = mean(dep_delay, na.rm = TRUE))         # Fourth now calculating the columns</code></pre>
+<p>html</p>
+<p>The code above uses the <span class="jsx-3120878690"><code>%&gt;%</code></span> operator to give you a better understanding of the code.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Whenever we are working with data, we need to do some manipulations to get the most valuable information. In real-life scenarios, datasets are more complicated and contain a lot of errors, so we have to write code that can manipulates data efficiently and tackles the errors.</p>
+<p>Also, the volume of data in real-life cases is much higher. We can handle this if we understand the task and break it into small functions.</p>
+<p>You can get more information about dplyr functions <a href="https://dplyr.tidyverse.org/reference/index.html">here</a>.</p>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

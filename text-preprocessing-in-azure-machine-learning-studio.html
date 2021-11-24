@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>text-preprocessing-in-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="text-preprocessing-in-azure-machine-learning-studio">Text Preprocessing in Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 17, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>847 Views</p></li>
+<li><p>Oct 17, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>847 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-problemstatementanddata" class="menu-link">Problem Statement and Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-preparetext" class="menu-link">Prepare Text</a></li>
+<li><a href="#module-preprocesstextmodule" class="menu-link">Preprocess Text Module</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Natural Language Processing (NLP) is ubiquitous and has multiple applications. For example, a few use cases include email classification into spam and ham, chatbots, AI agents, social media analysis, and classifying customer or employee feedback as positive, negative, or neutral.</p>
+<p>Despite these many applications of NLP, implementation remains difficult because text data is different from tabular transactional data. Cleaning text data is also difficult because you deal with natural language. This is where text processing is helpful to clean the text corpus and make it ready for further operation. In this guide, you will learn how to preprocess text data in Azure Machine Learning Studio.</p>
+<h2 id="problem-statement-and-data">Problem Statement and Data</h2>
+<p>In this guide, you will take up the task of automating reviews in medicine. Medical literature is voluminous and rapidly changing, which increases the need for reviews. Often such reviews are done manually, which is tedious and time-consuming. You will try to address this problem by building a text classification model that will automate the process.</p>
+<p>The dataset you will use comes from a <a href="https://pubmed.ncbi.nlm.nih.gov/">Pubmed</a> search, and contains 1,748 observations and four variables, as described below.</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>title</code></span>: Variable that consists of the titles of papers retrieved.</p></li>
+<li><p><span class="jsx-3120878690"><code>abstract</code></span>: Variable that contains the abstracts of papers retrieved.</p></li>
+<li><p><span class="jsx-3120878690"><code>trial</code></span>: Variable indicating whether the paper is a clinical trial testing a drug therapy for cancer.</p></li>
+<li><p><span class="jsx-3120878690"><code>class</code></span>: Target variable that indicates whether the paper is a clinical trial (Yes) or not (No)</p></li>
+</ol>
+<p>Start by loading the data into the workspace.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click on the <strong>EXPERIMENTS</strong> option, listed on the left sidebar, followed by the <strong>NEW</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c0ba5d6c-1862-412a-b7ca-2ec5f87a7bfe_tp0.html" /><figcaption aria-hidden="true">tp0</figcaption>
+</figure>
+<p>Next, click on the blank experiment and a new workspace will open. Give the name <strong>Text preprocessing</strong> to the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/da0242cd-4fc0-4052-9961-f249edaed2f0_tp1.html" /><figcaption aria-hidden="true">tp1</figcaption>
+</figure>
+<p>Next, load the data into the workspace. Click <strong>NEW</strong>, and select the <strong>DATASET</strong> option shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b3522746-d051-4f78-bcf7-6ccbcf746a8a_tp2.html" /><figcaption aria-hidden="true">tp2</figcaption>
+</figure>
+<p>The selection above will open the window shown below, which can be used to upload the dataset from the local system.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/12e536f9-3ef0-4a97-9f60-1974c7ecf76b_tp3.html" /><figcaption aria-hidden="true">tp3</figcaption>
+</figure>
+<p>Once the data is loaded, you can see it in the <strong>Saved Datasets</strong> option. The file name is <strong>nlpdata2.csv</strong>. The next step is to drag it from the <strong>Saved Datasets</strong> list into the workspace. To explore this data, right-click and select the <strong>Visualize</strong> option as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5f964f12-2ead-4849-b816-3c6a80f8e71e_tp4.html" /><figcaption aria-hidden="true">tp4</figcaption>
+</figure>
+<p>You can see there are 1748 rows and four columns.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c25d5eb0-dc19-49f0-b072-7a1f8437cfb1_tp5.html" /><figcaption aria-hidden="true">tp5</figcaption>
+</figure>
+<h2 id="prepare-text">Prepare Text</h2>
+<p>It is important to pre-process text before you run the module to extract key phrases from the corpus. The most common pre-processing steps are:</p>
+<ol type="1">
+<li>Remove stop words: These are unhelpful words like ‘the’, ‘is’, ‘at’. They are not helpful because the frequency of such stop words is high in the corpus, but they don’t help in differentiating the target classes. The removal of stop words also reduces the data size.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Detect Sentences: This inserts a sentence boundary mark while performing analysis. The sentence terminator is represented by three pipe characters: <strong>|||</strong>.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Remove punctuation: The rule of thumb is to remove everything that is not in the form of x,y,z.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Normalize case to lowercase: Words like ‘Clinical’ and ‘clinical’ need to be considered as one word, so they are converted to lowercase.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Remove special characters: Non-alphanumeric special characters are replaced with the pipe <strong>|</strong> character.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Expand verb contractions: This is an important feature applied to verb contractions. For example, selecting this option will replace the phrase “wouldn’t buy this product” with “would not buy this product”.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Stemming: The goal of stemming is to reduce the number of inflectional forms of words appearing in the text. This causes words such as “argue,” “argued,” “arguing,” and “argues” to be reduced to their common stem, “argu”. This helps decrease the size of the vocabulary space.</li>
+</ol>
+<p>The <strong>Preprocess Text</strong> module is used to perform the above as well as other text cleaning steps.</p>
+<h2 id="preprocess-text-module">Preprocess Text Module</h2>
+<p>Search and drag the module into the workspace. Connect it to the data as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9e567510-27c9-4534-bbf2-3eefcd2b7397_tp6copy.html" /><figcaption aria-hidden="true">tpcopy</figcaption>
+</figure>
+<p>You must specify the text variable to be preprocessed. To do this, click on the <strong>Launch column selector</strong> option, and select the <span class="jsx-3120878690"><code>abstract</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/20ed4c3e-5076-42e2-8de3-e713d9c41c0c_tp7.html" /><figcaption aria-hidden="true">tp7</figcaption>
+</figure>
+<p>After you have selected the column, you can create the preprocessing plan. Select the options you want to keep in the text preprocessing module. In this case, you can keep all the options, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/3ff7a04f-fcc5-4662-8fbb-0e2181c0a6d5_tp8.html" /><figcaption aria-hidden="true">tp8</figcaption>
+</figure>
+<p>Run the experiment and click on <strong>Visualize</strong> to see the result.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/180d2860-4dd7-43c0-8da9-a9c89177fd05_tp9.html" /><figcaption aria-hidden="true">tp9</figcaption>
+</figure>
+<p>You can look at the result below. The <span class="jsx-3120878690"><code>Preprocessed abstract</code></span> variable contains the processed text. If you compare it with the <span class="jsx-3120878690"><code>abstract</code></span> variable, you can see the difference pre- and post-text preprocessing.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9030ecff-fc0e-4087-ab91-c3884906f0e4_tp10.html" /><figcaption aria-hidden="true">tp10</figcaption>
+</figure>
+<p>Sometimes, it may be more convenient to download and explore the changes in detail. Search and drag the <strong>Convert to CSV</strong> module into the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/3c84317a-4388-4c98-bf9b-e12820e18be2_tp11.html" /><figcaption aria-hidden="true">tp11</figcaption>
+</figure>
+<p>Run the experiment and click the <strong>Download</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ccc48e94-23c5-48b9-97d7-25c3c1b2203e_tp12.html" /><figcaption aria-hidden="true">tp12</figcaption>
+</figure>
+<p>This will download the resulting data into your system. The file name is <strong>Text preprocessing</strong>. This is highlighted in the blue box below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/533f4831-9a90-46cb-9375-6bb6288bf593_tp13copy.html" /><figcaption aria-hidden="true">tp13</figcaption>
+</figure>
+<p>Open the file and click on any cell in the original <span class="jsx-3120878690"><code>abstract</code></span> variable. This is the text before running the preprocessing module.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/361de363-5f0b-42e2-b2cc-4393554f9cd3_tp16.html" /><figcaption aria-hidden="true">tp16</figcaption>
+</figure>
+<p>The text highlighted in the above image is given below for better visibility.</p>
+<blockquote>
+<p>104 nonrandomized patients suffering from metastatic breast cancer were treated with monthly cycles of cyclophosphamide, methotrexate and 5-fluorouracil (CMF). One group (group A, 44 patients) received low-dose CMF and another one (group B, 60 patients) received standard doses. In both cases, therapy was cycled every 29 days. Group A patients had a response rate of 50.7%, including 5 complete remissions. The median duration of response was 8.2 months. For group B patients, the response rate was of 68.1%, including 10 complete remissions. The median duration of response was 10.6 months. Toxicity was greater in group B patients, the main side effects being nausea, vomiting, leukopenia, thrombocytopenia, alopecia and stomatitis.</p>
+</blockquote>
+<p>Now, click on the corresponding cell of the new <span class="jsx-3120878690"><code>Preprocessed abstract</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d79c27ef-b7b2-470e-a40e-bd5c6f971dcf_tp17copy.html" /><figcaption aria-hidden="true">tp17</figcaption>
+</figure>
+<p>Again, the text highlighted in the above image is given below for better visibility.</p>
+<blockquote>
+<p>nonrandomized patient suffer metastatic breast cancer treat monthly cycle cyclophosphamide | methotrexate | fluorouracil | cmf ||| group | group | patient | receive low | dose cmf | group b | patient | receive standard dose ||| case | therapy cycle day ||| group patient response rate | include complete remission ||| median duration response month ||| group b patient | response rate | include complete remission ||| median duration response month ||| toxicity great group b patient ||| main effect nausea | vomit | leukopenia | thrombocytopenia | alopecia stomatitis.</p>
+</blockquote>
+<p>You can see the difference between the <span class="jsx-3120878690"><code>abstract</code></span> and <span class="jsx-3120878690"><code>Preprocessed abstract</code></span> variables. The new variable is more compact, concise, has sentence boundaries, and is more comprehensible.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Text cleaning is one of the most challenging areas of natural language processing. In every application of text analytics, such as email classification, sentiment analysis, key phrase extraction, or visualizing text data, you will be required to perform text cleaning.</p>
+<p>In this guide, you learned how to perform text preprocessing in Azure Machine Learning Studio. You can learn more on this concept with guides on other technologies like <a href="nlp-machine-learning-text-data/index.html">Python</a> and <a href="machine-learning-text-data-using-r/index.html">R</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+<li><p><a href="named-entity-recognition-with-azure-machine-learning-studio/index.html">Named Entity Recognition with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-analytics-with-azure-machine-learning-studio/index.html">Text Analytics with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="extract-key-phrases-from-text-in-azure-machine-learning-studio/index.html">Extract Key Phrases from Text in Azure Machine Learning Studio</a></p></li>
+</ol>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

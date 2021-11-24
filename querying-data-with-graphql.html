@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>querying-data-with-graphql</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="querying-data-with-graphql">Querying Data with GraphQL</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 5, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>5,079 Views</p></li>
+<li><p>Oct 5, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>5,079 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">GraphQL</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Query Languages</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Development</span></p>
+<p>Introduction</p>
+<p>56</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-performingabasicqueryingraphiql" class="menu-link">Performing a Basic Query in GraphiQL</a></li>
+<li><a href="#module-sendingargumentstographqlfields" class="menu-link">Sending Arguments to GraphQL Fields</a></li>
+<li><a href="#module-usinggraphqlfragment" class="menu-link">Using GraphQL Fragment</a></li>
+<li><a href="#module-usinggraphqldirectives" class="menu-link">Using GraphQL Directives</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>GraphQL is a query language for accessing object graphs. It is designed to be type safe and give clients the ability to request only the data they need.</p>
+<p>In this guide, you will learn how to construct GraphQL queries. Then we will explore some unique features of GraphQL, including fragments, sending variables and GraphQL directives. Throughout this guide, you will use the <a href="https://github.com/graphql/swapi-graphql">GraphQL implementation of the Star Wars API</a> to test the querying capabilities of GraphQL.</p>
+<h2 id="performing-a-basic-query-in-graphiql">Performing a Basic Query in GraphiQL</h2>
+<p><a href="https://github.com/graphql/graphiql">GraphiQL</a> is a simple UI tool that allows you to query GraphQL endpoints with the convenience of auto-complete and syntax highlighting.</p>
+<p>To get started writing your first GraphQL query, navigate to the <a href="https://graphql.org/swapi-graphql">Star Wars GraphiQL page</a>. From this page, you can look at the documentation for the GraphQL endpoint, submit queries and see the output.</p>
+<p>Submit the following query in the top left pane of GraphiQL.</p>
+<pre><code>1query GetAllFilms {
+2  allFilms {
+3    films {
+4      title
+5      episodeID
+6      openingCrawl
+7      director
+8      producers
+9      releaseDate
+10    }
+11  }
+12}</code></pre>
+<p>graphql</p>
+<p>This query consists of three components:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>GetallFilms</code></span> is the operation name that clients can set. This can be useful for debugging issues.</li>
+<li><span class="jsx-3120878690"><code>allFilms</code></span> is field exposed endpoint on the root node. It is a complex types of <span class="jsx-3120878690"><code>Film</code></span> that combines several scalar values into a single unit.</li>
+<li><span class="jsx-3120878690"><code>title</code></span>, <span class="jsx-3120878690"><code>episodeID</code></span>, <span class="jsx-3120878690"><code>director</code></span>, etc. are fields. These are units of data that you are requesting to appear in the response data. <span class="jsx-3120878690"><code>allFilms</code></span> is also a field that combines the fields nested inside it.</li>
+</ul>
+<p>These are the fundamental building blocks of a GraphQL query. In the following sections, you will use these building blocks to perform more advanced queries.</p>
+<h2 id="sending-arguments-to-graphql-fields">Sending Arguments to GraphQL Fields</h2>
+<p>You have just queried all films. However, sometimes you only need a subset of this data. With the Star Wars GraphQL endpoint, you can send arguments to the <span class="jsx-3120878690"><code>allFilms</code></span> field to filter the data.</p>
+<p>There are two ways to send arguments. The first is inline:</p>
+<pre><code>1query GetAllFilms {
+2  allFilms(first: 3) {
+3    films {
+4      title
+5      episodeID
+6      openingCrawl
+7      director
+8      producers
+9      releaseDate
+10    }
+11  }
+12}</code></pre>
+<p>graphql</p>
+<p>You modified the <span class="jsx-3120878690"><code>allFilms</code></span> field in the query to <span class="jsx-3120878690"><code>allFilms(first: 3)</code></span>. This approach is appropriate when you don’t need to change the value of your argument(s). If your argument values change frequently, it is better to define an input variable.</p>
+<p>To do this, update your query to the following:</p>
+<pre><code>1query GetAllFilms($firstFilms: Int) {
+2  allFilms(first: $firstFilms) {
+3    films {
+4      title
+5      episodeID
+6      openingCrawl
+7      director
+8      producers
+9      releaseDate
+10    }
+11  }
+12}</code></pre>
+<p>graphql</p>
+<p>You will also need to set the variables. In GraphiQL, this is configured at the bottom left of the screen. Insert the following JSON to set the variables in the query operation defined above.</p>
+<pre><code>1{&quot;firstFilms&quot;: 3}</code></pre>
+<p>json</p>
+<h2 id="using-graphql-fragment">Using GraphQL Fragment</h2>
+<p>As you use GraphQL to query a number of resources, your query can become quite large. One way to manage this is to split your query into small, reusable pieces called fragments. Fragments are a selection set on a specific GraphQL type and can be reused in different query operations.</p>
+<p>The snippet below demonstrates reusing a snippet fragment on the <span class="jsx-3120878690"><code>Film</code></span> type within the same query operation.</p>
+<pre><code>1query GetAllFilms {
+2  allFilms {
+3    films {
+4      title
+5      episodeID
+6      openingCrawl
+7      director
+8      producers
+9      releaseDate
+10      id
+11    }
+12  }
+13
+14  film(id:&quot;ZmlsbXM6MQ==&quot;) {
+15    ...FilmFragment
+16  }
+17}
+18
+19fragment FilmFragment on Film {
+20  title
+21  episodeID
+22  openingCrawl
+23  director
+24  producers
+25  releaseDate
+26  id
+27}</code></pre>
+<p>graphql</p>
+<h2 id="using-graphql-directives">Using GraphQL Directives</h2>
+<p>A powerful feature that makes GraphQL extensible is the inclusion of directives. These are declarations that are prefixed with <span class="jsx-3120878690"><code>@</code></span>, which allows extra logic to be executed on either the server or the client.</p>
+<p>There are two directives that are built into the Star Wars Schema: <span class="jsx-3120878690"><code>@include</code></span> and <span class="jsx-3120878690"><code>@skip</code></span>. Usage of <span class="jsx-3120878690"><code>@include</code></span> of is demonstrated in the code snippet below:</p>
+<pre><code>1query GetAllFilms($includeFilm: Boolean!) {
+2  allFilms {
+3    films {
+4      title
+5      episodeID
+6      openingCrawl
+7      director
+8      producers
+9      releaseDate
+10      id
+11    }
+12  }
+13
+14  film(id:&quot;ZmlsbXM6MQ==&quot;) @include(if: $includeFilm) {
+15    ...FilmFragment
+16  }
+17}
+18
+19fragment FilmFragment on Film {
+20  title
+21  episodeID
+22  openingCrawl
+23  director
+24  producers
+25  releaseDate
+26  id
+27}</code></pre>
+<p>graphql</p>
+<p>The <span class="jsx-3120878690"><code>film</code></span> field is appended with <span class="jsx-3120878690"><code>@include(if: $includeFilm)</code></span>. Adding this allows clients to conditionally request the film field when the <span class="jsx-3120878690"><code>$includeFilm</code></span> variable is set to <span class="jsx-3120878690"><code>true</code></span>, and not return this field when it is set to <span class="jsx-3120878690"><code>false</code></span>. This approach makes it possible to retrieve different resources without modifying your query.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>GraphQL is becoming an increasingly important technology. It was developed by Facebook, and other large organizations like GitHub, Pinterest, and Coursera have adopted it. Web and integration developers will need to learn this query language to access the next generation of APIs. As a next step, you may want to explore <a href="https://app.pluralsight.com/guides/how-to-set-up-graphql-in-a-react-app">How to Set Up GraphQL in a React App</a>.</p>
+<p>56</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>installing-and-using-chakra-ui-with-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/330d16ca-90a4-4029-89e6-bf3ff9456993.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Ashutosh Singh</p>
+<h1 id="installing-and-using-chakra-ui-with-react">Installing and Using Chakra UI with React</h1>
+<h3 id="ashutosh-singh">Ashutosh Singh</h3>
+<ul>
+<li><p>Oct 30, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>4,630 Views</p></li>
+<li><p>Oct 30, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>4,630 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>15</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-installation" class="menu-link">Installation</a></li>
+<li><a href="#module-importingboxcomponent" class="menu-link">Importing Box Component</a></li>
+<li><a href="#module-stylingboxcomponent" class="menu-link">Styling Box Component</a></li>
+<li><a href="#module-addingimagetobox" class="menu-link">Adding Image to Box</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Compared to other React UI libraries like React Bootstrap, Material UI, etc., <a href="https://chakra-ui.com/">Chakra UI</a> gives you much more power to style and customize components.</p>
+<p>If you are a fan of Tailwind CSS, you will love Chakra UI since it follows the same minimalistic and modular approach as Tailwind CSS.</p>
+<p>In this guide, we will discuss how to install, import, and use components from Chakra UI. We will use Chakra UI version 0.8 since version 1.0 is yet to be released <a href="https://github.com/chakra-ui/chakra-ui#looking-for-the-documentation-">officially</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>To install <span class="jsx-3120878690"><code>chakra-ui</code></span>, run the following command in your project’s root directory.</p>
+<pre><code>1npm install @chakra-ui/core @emotion/core @emotion/styled emotion-theming</code></pre>
+<p>bash</p>
+<p>Chakra UI uses <a href="https://emotion.sh/docs/introduction">Emotion</a> for handling component styles. As you can see, you have to install peer dependencies yourself as they do not come with <span class="jsx-3120878690"><code>chakra-ui</code></span> by default.</p>
+<p>Next, wrap your React app in a <span class="jsx-3120878690"><code>ThemeProvider</code></span>. Modify your <span class="jsx-3120878690"><code>index.js</code></span> like this.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import ReactDOM from &quot;react-dom&quot;;
+3import App from &quot;./App&quot;;
+4import { ThemeProvider } from &quot;@chakra-ui/core&quot;;
+5
+6ReactDOM.render(
+7  &lt;ThemeProvider&gt;
+8    &lt;App /&gt;
+9  &lt;/ThemeProvider&gt;,
+10  document.getElementById(&quot;root&quot;)
+11);</code></pre>
+<p>JSX</p>
+<h2 id="importing-box-component">Importing Box Component</h2>
+<p>In this section, we will import the <span class="jsx-3120878690"><code>Box</code></span> component from <span class="jsx-3120878690"><code>chakra-ui</code></span>.</p>
+<p>One of the coolest features of <span class="jsx-3120878690"><code>chakra-ui</code></span> is that you can use shorthand for props. For example, instead of <span class="jsx-3120878690"><code>width</code></span>, you can use <span class="jsx-3120878690"><code>w</code></span>, which will work the same.</p>
+<p>First, import <span class="jsx-3120878690"><code>Box</code></span> from <span class="jsx-3120878690"><code>chakra-ui</code></span> in <span class="jsx-3120878690"><code>App.js</code></span> and use it inside the <span class="jsx-3120878690"><code>App()</code></span> function.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { Box } from &quot;@chakra-ui/core&quot;;
+3
+4export default function App() {
+5  return (
+6    &lt;div&gt;
+7      &lt;Box w=&quot;400px&quot; h=&quot;400px&quot;&gt;
+8        Hello World!
+9      &lt;/Box&gt;
+10    &lt;/div&gt;
+11  );
+12}</code></pre>
+<p>JSX</p>
+<p>In the above code, <span class="jsx-3120878690"><code>w</code></span> and <span class="jsx-3120878690"><code>h</code></span> are shorthand for <span class="jsx-3120878690"><code>width</code></span> and <span class="jsx-3120878690"><code>height</code></span> respectively.</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/034e3aab-b5a8-49f0-98ec-421259c003ba_Screenshot_2020-10-13_React_App.html" /><figcaption aria-hidden="true">initial box</figcaption>
+</figure>
+<h2 id="styling-box-component">Styling Box Component</h2>
+<p>The <span class="jsx-3120878690"><code>Box</code></span> component in the above example doesn’t look like a box, just some text in some corner of the app. Add some background color using <span class="jsx-3120878690"><code>bg</code></span> shorthand prop.</p>
+<pre><code>1&lt;Box bg=&quot;lavender&quot; w=&quot;400px&quot; h=&quot;400px&quot;&gt;
+2  Hello World!
+3&lt;/Box&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/889666ce-e674-4161-87c9-a5131e7d11fe_Screenshot_2020-10-13_React_App(2).html" /><figcaption aria-hidden="true">lavender backgorund</figcaption>
+</figure>
+<p>You can now differentiate the 400x400 box from the background. Next, style the text and horizontally align it in the center of the box.</p>
+<pre><code>1&lt;Box
+2  bg=&quot;lavender&quot;
+3  color=&quot;#2d383c&quot;
+4  fontSize=&quot;2rem&quot;
+5  textAlign=&quot;center&quot;
+6  fontFamily=&quot;Consolas&quot;
+7  w=&quot;400px&quot;
+8  h=&quot;400px&quot;
+9&gt;
+10  Hello World!
+11&lt;/Box&gt;</code></pre>
+<p>JSX</p>
+<p>You passed <span class="jsx-3120878690"><code>color</code></span>, <span class="jsx-3120878690"><code>textAlign</code></span>, <span class="jsx-3120878690"><code>fontSize</code></span> and <span class="jsx-3120878690"><code>fontFamily</code></span> prop to style the text inside the box. Here <span class="jsx-3120878690"><code>1rem</code></span> is equal to <span class="jsx-3120878690"><code>16px</code></span>.</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/46d03daf-ec83-4372-999f-3c3936a205f1_Screenshot_2020-10-13_React_App(3).html" /><figcaption aria-hidden="true">styled text</figcaption>
+</figure>
+<p>Now, add a border to the box using the <span class="jsx-3120878690"><code>border</code></span> prop.</p>
+<pre><code>1&lt;Box
+2  border=&quot;1px&quot;
+3  rounded=&quot;10px&quot;
+4  borderColor=&quot;gray.300&quot;
+5  boxShadow=&quot;md&quot;
+6  bg=&quot;lavender&quot;
+7  color=&quot;#2d383c&quot;
+8  fontSize=&quot;2rem&quot;
+9  textAlign=&quot;center&quot;
+10  fontFamily=&quot;Consolas&quot;
+11  w=&quot;400px&quot;
+12  h=&quot;400px&quot;
+13&gt;
+14  Hello World!
+15&lt;/Box&gt;</code></pre>
+<p>JSX</p>
+<p>Here <span class="jsx-3120878690"><code>rounded</code></span> is shorthand for <span class="jsx-3120878690"><code>border-radius</code></span>, and <span class="jsx-3120878690"><code>boxSahdow</code></span> is shorthand for <span class="jsx-3120878690"><code>box-shadow</code></span>. You have used <span class="jsx-3120878690"><code>md</code></span> as the value of <span class="jsx-3120878690"><code>boxShadow</code></span> prop, which is equivalent to <span class="jsx-3120878690"><code>16px</code></span>.</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cdf6e8f4-baa6-4382-9bcc-d14f06781001_Screenshot_2020-10-13_React_App(4).html" /><figcaption aria-hidden="true">border</figcaption>
+</figure>
+<p>To add some <span class="jsx-3120878690"><code>margin</code></span> and <span class="jsx-3120878690"><code>padding</code></span>, use the shorthand prop <span class="jsx-3120878690"><code>p</code></span> and <span class="jsx-3120878690"><code>m</code></span>. You can also use <span class="jsx-3120878690"><code>px</code></span> and <span class="jsx-3120878690"><code>py</code></span> where <span class="jsx-3120878690"><code>px</code></span> sets the padding for <span class="jsx-3120878690"><code>left</code></span> and <span class="jsx-3120878690"><code>right</code></span>. Similarly, <span class="jsx-3120878690"><code>py</code></span> sets it for <span class="jsx-3120878690"><code>top</code></span> and <span class="jsx-3120878690"><code>bottom</code></span>.</p>
+<p>Also, change the text <span class="jsx-3120878690"><code>Hello World!</code></span> to <span class="jsx-3120878690"><code>Lorem Ipsum</code></span>.</p>
+<pre><code>1&lt;Box
+2  m=&quot;8px&quot;
+3  p=&quot;8px&quot;
+4  border=&quot;1px&quot;
+5  rounded=&quot;10px&quot;
+6  borderColor=&quot;gray.300&quot;
+7  boxShadow=&quot;md&quot;
+8  bg=&quot;lavender&quot;
+9  color=&quot;#2d383c&quot;
+10  fontSize=&quot;2rem&quot;
+11  textAlign=&quot;center&quot;
+12  fontFamily=&quot;Consolas&quot;
+13  w=&quot;400px&quot;
+14  h=&quot;400px&quot;
+15&gt;
+16  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aperiam
+17  doloremque exercitationem saepe, sed modi odit officia illum iste vel? Rerum
+18  dignissimos pariatur, odit impedit iste aperiam facere atque iure!{&quot; &quot;}
+19&lt;/Box&gt;</code></pre>
+<p>JSX</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4a95771d-4469-48cd-a003-ebe38bdeee74_Screenshot_2020-10-13_React_App(5).html" /><figcaption aria-hidden="true">Lorem Ipsum</figcaption>
+</figure>
+<p>As you can see, the text is overflowing the <span class="jsx-3120878690"><code>Box</code></span> component; you can fix this by passing <span class="jsx-3120878690"><code>overflow="hidden"</code></span> prop to <span class="jsx-3120878690"><code>Box</code></span>.</p>
+<pre><code>1&lt;Box
+2  m=&quot;8px&quot;
+3  p=&quot;8px&quot;
+4  border=&quot;1px&quot;
+5  rounded=&quot;10px&quot;
+6  borderColor=&quot;gray.300&quot;
+7  boxShadow=&quot;md&quot;
+8  bg=&quot;lavender&quot;
+9  color=&quot;#2d383c&quot;
+10  fontSize=&quot;2rem&quot;
+11  textAlign=&quot;center&quot;
+12  fontFamily=&quot;Consolas&quot;
+13  w=&quot;400px&quot;
+14  h=&quot;400px&quot;
+15  overflow=&quot;hidden&quot;
+16&gt;
+17  Lorem ipsum...
+18&lt;/Box&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look. <embed src="../../pluralsight2.imgix.net/guides/8cbc8592-a5f7-4047-a41a-a87b1b937f5e_Screenshot_2020-10-13_React_App(6).html" /></p>
+<p><span class="jsx-3120878690"><code>isTruncated</code></span> is another cool prop you can pass to truncate long texts.</p>
+<pre><code>1&lt;Box
+2  m=&quot;8px&quot;
+3  p=&quot;8px&quot;
+4  border=&quot;1px&quot;
+5  rounded=&quot;10px&quot;
+6  borderColor=&quot;gray.300&quot;
+7  boxShadow=&quot;md&quot;
+8  bg=&quot;lavender&quot;
+9  color=&quot;#2d383c&quot;
+10  fontSize=&quot;2rem&quot;
+11  textAlign=&quot;center&quot;
+12  fontFamily=&quot;Consolas&quot;
+13  w=&quot;400px&quot;
+14  h=&quot;400px&quot;
+15  isTruncated
+16&gt;
+17  Lorem ipsum ....
+18&lt;/Box&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look. <embed src="../../pluralsight2.imgix.net/guides/0b83c816-f0ba-462c-8386-c2c481b81168_Screenshot_2020-10-13_React_App(7).html" /></p>
+<h2 id="adding-image-to-box">Adding Image to Box</h2>
+<p>In this section, you will add an image to the <span class="jsx-3120878690"><code>Box</code></span> component in the above example. For this, you will use the <span class="jsx-3120878690"><code>Image</code></span> and <span class="jsx-3120878690"><code>Text</code></span> components.</p>
+<p>Import <span class="jsx-3120878690"><code>Image</code></span> and <span class="jsx-3120878690"><code>Text</code></span> in your <span class="jsx-3120878690"><code>App.js</code></span>.</p>
+<pre><code>1import { Box, Image, Text } from &quot;@chakra-ui/core&quot;;</code></pre>
+<p>JSX</p>
+<p>Now add these components inside the <span class="jsx-3120878690"><code>Box</code></span> component.</p>
+<pre><code>1&lt;Box
+2  m=&quot;8px&quot;
+3  p=&quot;8px&quot;
+4  border=&quot;1px&quot;
+5  rounded=&quot;10px&quot;
+6  borderColor=&quot;gray.300&quot;
+7  boxShadow=&quot;md&quot;
+8  bg=&quot;lavender&quot;
+9  color=&quot;#2d383c&quot;
+10  fontSize=&quot;2rem&quot;
+11  textAlign=&quot;center&quot;
+12  fontFamily=&quot;Consolas&quot;
+13  w=&quot;400px&quot;
+14  h=&quot;400px&quot;
+15&gt;
+16  &lt;Image
+17    rounded=&quot;0.5rem&quot;
+18    src=&quot;https://finalspaceapi.com/img/gary_goodspeed.webp&quot;
+19    alt=&quot;Gary Goodspeed&quot;
+20  /&gt;
+21  &lt;Text&gt;Gary Goodspeed&lt;/Text&gt;
+22&lt;/Box&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look. <embed src="../../pluralsight2.imgix.net/guides/bd4c25ea-d1a6-4c75-a512-4b6a986ef596_Screenshot_2020-10-13_React_App(1).html" /></p>
+<p>What if there are multiple boxes one after another?</p>
+<p>Copy and paste this box multiple times.</p>
+<pre><code>1&lt;div&gt;
+2  &lt;Box&gt;
+3    &lt;Image
+4      rounded=&quot;0.5rem&quot;
+5      src=&quot;https://finalspaceapi.com/img/gary_goodspeed.webp&quot;
+6      alt=&quot;Gary Goodspeed&quot;
+7    /&gt;
+8    &lt;Text&gt;Gary Goodspeed&lt;/Text&gt;
+9  &lt;/Box&gt;
+10
+11  &lt;Box&gt;
+12    &lt;Image
+13      rounded=&quot;0.5rem&quot;
+14      src=&quot;https://finalspaceapi.com/img/gary_goodspeed.webp&quot;
+15      alt=&quot;Gary Goodspeed&quot;
+16    /&gt;
+17    &lt;Text&gt;Gary Goodspeed&lt;/Text&gt;
+18  &lt;/Box&gt;
+19
+20  &lt;Box&gt;
+21    &lt;Image
+22      rounded=&quot;0.5rem&quot;
+23      src=&quot;https://finalspaceapi.com/img/gary_goodspeed.webp&quot;
+24      alt=&quot;Gary Goodspeed&quot;
+25    /&gt;
+26    &lt;Text&gt;Gary Goodspeed&lt;/Text&gt;
+27  &lt;/Box&gt;
+28&lt;/div&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7840d51f-5155-4aa3-82db-1314bb0dc7b0_Screenshot_2020-10-13_React_App.html" /><figcaption aria-hidden="true">multiple boxes</figcaption>
+</figure>
+<p>You can make the layout of this card system responsive by using the <span class="jsx-3120878690"><code>SimpleGrid</code></span> component. First, import the <span class="jsx-3120878690"><code>SimpleGrid</code></span> component in your <span class="jsx-3120878690"><code>App.js</code></span>.</p>
+<pre><code>1import { Box, Image, Text, SimpleGrid } from &quot;@chakra-ui/core&quot;;</code></pre>
+<p>JSX</p>
+<p>Now wrap all the <span class="jsx-3120878690"><code>Box</code></span> components inside this <span class="jsx-3120878690"><code>SimpleGrid</code></span> component.</p>
+<p>Pass the <span class="jsx-3120878690"><code>minChildWidth</code></span> prop to this <span class="jsx-3120878690"><code>SimpleGrid</code></span> component, which will adjust the arrangement of the boxes according to <span class="jsx-3120878690"><code>minChildWidth</code></span>.</p>
+<p>Here the boxes are of 400x400px dimension, so you can pass <span class="jsx-3120878690"><code>410px</code></span> as <span class="jsx-3120878690"><code>minChildWidth</code></span>.</p>
+<pre><code>1&lt;SimpleGrid minChildWidth=&quot;410px&quot;&gt;
+2  &lt;Box&gt; ...&lt;/Box&gt;
+3  &lt;Box&gt; ...&lt;/Box&gt;
+4  &lt;Box&gt; ...&lt;/Box&gt;
+5  &lt;Box&gt; ...&lt;/Box&gt;
+6  &lt;Box&gt; ...&lt;/Box&gt;
+7  &lt;Box&gt; ...&lt;/Box&gt;
+8  &lt;Box&gt; ...&lt;/Box&gt;
+9  &lt;Box&gt; ...&lt;/Box&gt;
+10  &lt;Box&gt; ...&lt;/Box&gt;
+11&lt;/SimpleGrid&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a682f12b-a8aa-45a2-9298-8d0fee71cb1f_ezgif.com-optimize.html" /><figcaption aria-hidden="true">simple grid</figcaption>
+</figure>
+<p>There is still so much more that you can do to customize and style components in Chakra UI.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, we discussed how to install <span class="jsx-3120878690"><code>chakra-ui</code></span> in a React app. We also covered how to import and customize different components from <span class="jsx-3120878690"><code>chakra-ui</code></span>.</p>
+<p>Chakra UI is the perfect choice for your React app when you want to customize components and want your app to have a unique look, which is difficult to achieve in other React UI libraries like React Bootstrap, Material UI, etc.</p>
+<p>Here are some additional resources that can be helpful.</p>
+<ul>
+<li><a href="https://chakra-ui.com/">Chakra UI Docs</a></li>
+<li><a href="https://github.com/chakra-ui/chakra-ui">Chakra UI GitHub</a></li>
+</ul>
+<p>Happy coding!</p>
+<p>15</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

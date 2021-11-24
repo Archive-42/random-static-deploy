@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>use-arm-to-deploy-azure-log-alerts</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="use-azure-resource-manager-arm-to-deploy-azure-log-alerts">Use Azure Resource Manager (ARM) to Deploy Azure Log Alerts</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 27, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>2,328 Views</p></li>
+<li><p>Oct 27, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>2,328 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Platforms</span></p>
+<p>Introduction</p>
+<p>7</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-azureresourcemanagertemplates" class="menu-link">Azure Resource Manager Templates</a></li>
+<li><a href="#module-actiongroups" class="menu-link">Action Groups</a></li>
+<li><a href="#module-logbasedqueries" class="menu-link">Log-based Queries</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Azure Monitor captures telemetry, diagnostics, activity, and metric data about your Azure resources. This data can be very useful in determining the health of your Azure environment. However, it is only useful when the data is surfaced to administrators and users. You want to be notified so you can fix any service outages or critical bugs in your apps as soon as possible.</p>
+<p>In this guide, you will learn how to write log queries to detect issues in your environment and deploy alert rules to notify your team of failures. This guide will use Azure Resource Manager (ARM) templates.</p>
+<h2 id="azure-resource-manager-templates">Azure Resource Manager Templates</h2>
+<p><a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview">ARM templates</a> are a set of JSON files you can create to define different aspects of your Azure infrastructure, including action rules, alert rules, and other resources. They are useful since you can easily replicate rules and make widespread changes by changing a few items in the JSON configuration.</p>
+<p>A common scenario is to replicate Azure resources by creating a staging environment for testing and a more stable production environment. With ARM templates, you can define your infrastructure once, easily keep your staging and production environments sychronized.</p>
+<h2 id="action-groups">Action Groups</h2>
+<p>One of the prerequisites of defining a log-based alert rule is creating an action group. An action group is a combination of zero or more of the following events that will be triggered by an Azure alert:</p>
+<ul>
+<li>Sending an email or an SMS to a user</li>
+<li>Triggering an automation runbook</li>
+<li>Triggering an Azure function</li>
+<li>Triggering a logic app</li>
+<li>Triggering a webhook</li>
+<li>Triggering an IT service management tool such as ServiceNow</li>
+</ul>
+<p>The webhook trigger provides the most flexible integration with third-party systems. You can use it to integrate with services like Slack and Opsgenie. If your Azure environment is complex and uptime is critical, then using the webhook action and integrating with a tool like <a href="https://docs.opsgenie.com/docs/microsoft-azure-integration">Opsgenie</a> will give you the most flexibility. Azure Monitor can manage querying of telemetry and activity data, while Opsgenie allows you to create more sophisticated workflows such as on-call schedules, escalations, and notifications.</p>
+<p>To define an Action Group that alerts to Opsgenie using ARM, create a <span class="jsx-3120878690"><code>azuredeploy.json</code></span>, demonstrated below:</p>
+<pre><code>1{
+2  &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#&quot;,
+3  &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
+4  &quot;parameters&quot;: {
+5    &quot;actionGroupName&quot;: {
+6      &quot;type&quot;: &quot;string&quot;
+7    },
+8    &quot;actionGroupShortName&quot;: {
+9      &quot;type&quot;: &quot;string&quot;
+10    },
+11    &quot;webhookUrl&quot;: {
+12      &quot;type&quot;: &quot;string&quot;
+13    }
+14  },
+15  &quot;resources&quot;: [
+16    {
+17      &quot;name&quot;: &quot;[parameters(&#39;actionGroupName&#39;)]&quot;,
+18      &quot;type&quot;: &quot;microsoft.insights/actionGroups&quot;,
+19      &quot;apiVersion&quot;: &quot;2019-06-01&quot;,
+20      &quot;location&quot;: &quot;Global&quot;,
+21      &quot;tags&quot;: {
+22      },
+23      &quot;properties&quot;: {
+24        &quot;groupShortName&quot;: &quot;[parameters(&#39;actionGroupShortName&#39;)]&quot;,
+25        &quot;enabled&quot;: true,
+26        &quot;webhookReceivers&quot;: [
+27          {
+28            &quot;name&quot;: &quot;opsgenie&quot;,
+29            &quot;serviceUri&quot;: &quot;[parameters(&#39;webhookUrl&#39;)]&quot;,
+30            &quot;useCommonAlertSchema&quot;: true
+31          }
+32        ]
+33      }
+34    }
+35  ]
+36}</code></pre>
+<p>json</p>
+<p>The ARM template above consists of two sections:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>resources</code></span>: The action group that has an Opsgenie webhook. Note that it is an array and you can add more.</li>
+<li><span class="jsx-3120878690"><code>parameters</code></span>: Allows you to customize your template. This is useful for creating the same resource types with different names. You may want to add environment prefixes to your resources, such as <span class="jsx-3120878690"><code>staging-</code></span> and <span class="jsx-3120878690"><code>prod-</code></span>.</li>
+</ul>
+<p>To deploy this ARM template you can use the Azure CLI:</p>
+<pre><code>1rg=rg-alerts-pl
+2az group create -n $rg -l australiaeast
+3az group deployment create -g $rg --template-file Azuredeploy.json</code></pre>
+<p>bash</p>
+<p>These commands use the bash shell to create a resource group and deploy the action group into that resource group. When you run these commands, you will be prompted to supply the values for the parameters. You can obtain the webhookUrl from <a href="https://prospa.app.opsgenie.com/settings/integration/add/Azure/">Opsgenie’s Azure integration page</a>.</p>
+<p>You can also supply the parameters by supplying a <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/parameter-files">parameters file described in Microsoft’s documentation</a>.</p>
+<h2 id="log-based-queries">Log-based Queries</h2>
+<p>Now that you have set up integration with Opsgenie via an action group, you can start creating a log-based query. To do this, create an Application Insights instance and create a <span class="jsx-3120878690"><code>scheduledQuery</code></span> against it.</p>
+<pre><code>1rg=rg-alerts-pl
+2az extension add --name application-insights
+3az monitor app-insights create -a demo-insights-pl -l australiaeast -g $rg</code></pre>
+<p>bash</p>
+<p>Then, extend the ARM template file you created earlier with a <span class="jsx-3120878690"><code>scheduledquery</code></span> resource and a few extra parameters to customize it.</p>
+<pre><code>1{
+2  &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#&quot;,
+3  &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
+4  &quot;parameters&quot;: {
+5    &quot;actionGroupName&quot;: {
+6      &quot;type&quot;: &quot;string&quot;,
+7      &quot;defaultValue&quot;: &quot;demo-ag-group&quot;
+8    },
+9    &quot;actionGroupShortName&quot;: {
+10      &quot;type&quot;: &quot;string&quot;,
+11      &quot;defaultValue&quot;: &quot;aaa&quot;
+12    },
+13    &quot;webhookUrl&quot;: {
+14      &quot;type&quot;: &quot;string&quot;,
+15      &quot;defaultValue&quot;: &quot;https://api.opsgenie.com/v1/json/azure?apiKey=xxxxxxxxxxxxxxxxxxxxxxxxx&quot;
+16    },
+17    &quot;alertRules&quot;: {
+18      &quot;type&quot;: &quot;array&quot;,
+19      &quot;defaultValue&quot;: [{
+20        &quot;alertRuleName&quot;: &quot;demo-ar-exceptions&quot;,
+21        &quot;alertDescription&quot;: &quot;new exception occured in demo-insights-pl&quot;,
+22        &quot;resourceName&quot;: &quot;demo-insights-pl&quot;,
+23        &quot;resourceGroup&quot;: &quot;rg-alerts-pl&quot;,
+24        &quot;query&quot;: &quot;exceptions | union (traces | where (severityLevel &gt; 2))&quot;
+25      }]
+26    }
+27  },
+28  &quot;resources&quot;: [
+29    {
+30      &quot;name&quot;: &quot;[parameters(&#39;actionGroupName&#39;)]&quot;,
+31      &quot;type&quot;: &quot;microsoft.insights/actionGroups&quot;,
+32      &quot;apiVersion&quot;: &quot;2019-06-01&quot;,
+33      &quot;location&quot;: &quot;Global&quot;,
+34      &quot;tags&quot;: {
+35      },
+36      &quot;properties&quot;: {
+37        &quot;groupShortName&quot;: &quot;[parameters(&#39;actionGroupShortName&#39;)]&quot;,
+38        &quot;enabled&quot;: true,
+39        &quot;webhookReceivers&quot;: [
+40          {
+41            &quot;name&quot;: &quot;opsgenie&quot;,
+42            &quot;serviceUri&quot;: &quot;[parameters(&#39;webhookUrl&#39;)]&quot;,
+43            &quot;useCommonAlertSchema&quot;: true
+44          }
+45        ]
+46      }
+47    },
+48    {
+49      &quot;name&quot;: &quot;[parameters(&#39;alertRules&#39;)[copyIndex()].alertRuleName]&quot;,
+50      &quot;type&quot;: &quot;microsoft.insights/scheduledqueryrules&quot;,
+51      &quot;location&quot;: &quot;[resourceGroup().location]&quot;,
+52      &quot;apiVersion&quot;: &quot;2018-04-16&quot;,
+53      &quot;dependsOn&quot;: [
+54        &quot;[resourceId(&#39;microsoft.insights/actionGroups&#39;, parameters(&#39;actionGroupName&#39;))]&quot;
+55      ],
+56      &quot;tags&quot;: {
+57      },
+58      &quot;copy&quot;: {
+59        &quot;name&quot;: &quot;alertscopy&quot;,
+60        &quot;count&quot;: &quot;[length(parameters(&#39;alertRules&#39;))]&quot;
+61      },
+62      &quot;properties&quot;: {
+63        &quot;description&quot;: &quot;[parameters(&#39;alertRules&#39;)[copyIndex()].alertDescription]&quot;,
+64        &quot;enabled&quot;: &quot;true&quot;,
+65        &quot;source&quot;: {
+66          &quot;query&quot;: &quot;[parameters(&#39;alertRules&#39;)[copyIndex()].query]&quot;,
+67          &quot;authorizedResources&quot;: [
+68          ],
+69          &quot;dataSourceId&quot;: &quot;[resourceId(parameters(&#39;alertRules&#39;)[copyIndex()].resourceGroup, &#39;microsoft.insights/components&#39;, parameters(&#39;alertRules&#39;)[copyIndex()].resourceName)]&quot;,
+70          &quot;queryType&quot;: &quot;ResultCount&quot;
+71        },
+72        &quot;schedule&quot;: {
+73          &quot;frequencyInMinutes&quot;: 5,
+74          &quot;timeWindowInMinutes&quot;: 5
+75        },
+76        &quot;action&quot;: {
+77          &quot;severity&quot;: &quot;3&quot;,
+78          &quot;aznsAction&quot;: {
+79            &quot;actionGroup&quot;: [
+80              &quot;[resourceId(&#39;microsoft.insights/actionGroups&#39;, parameters(&#39;actionGroupName&#39;))]&quot;
+81            ]
+82          },
+83          &quot;throttlingInMin&quot;: 60,
+84          &quot;throttleConsecutiveWindowCount&quot;: 0,
+85          &quot;trigger&quot;: {
+86            &quot;thresholdOperator&quot;: &quot;GreaterThan&quot;,
+87            &quot;threshold&quot;: 1
+88          },
+89          &quot;odata.type&quot;: &quot;Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction&quot;
+90        }
+91      }
+92    }
+93  ]
+94}</code></pre>
+<p>json</p>
+<p>There are a few interesting aspects to this code:</p>
+<ul>
+<li>You added the <span class="jsx-3120878690"><code>alertRules</code></span> parameter, which is an array. This allows you create multiple alert rules that are connected to the same action group.</li>
+<li><span class="jsx-3120878690"><code>scheduledQuery</code></span> uses the <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-numeric#copyindex">copyIndex()</a> function to create multiple resources based on the <span class="jsx-3120878690"><code>alertRules</code></span> array. This makes it easy to add, modify, or remove alert rules.</li>
+<li>Different aspects of the alert rules are configurable. For example, you can configure the alert to only trigger if more than five exceptions have been observed or configure an alert to only trigger once every 24 hours to prevent spamming your alerting system.</li>
+<li><span class="jsx-3120878690"><code>defaultValue</code></span> has been added to the parameters for brevity. You may prefer to omit this and keep the parameters in a separate file.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Alerting is a powerful tool for keeping up to date on changes on status changes for your system. To learn more about how to set up and best configure these with your Opsgenie integration, read <a href="https://medium.com/opsgenie/best-practices-for-incident-management-on-slack-with-opsgenie-f5bd3d261742">Best Practices for Incident Management on Slack with OpsGenie</a>.</p>
+<p>7</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

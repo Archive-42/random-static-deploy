@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>write-a-mapreduce-app-with-hadoop-streaming</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/98bf39ab-eb2b-4e8d-abe5-e48d02fba40c.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Miguel Saavedra</p>
+<h1 id="write-a-mapreduce-app-with-hadoop-streaming">Write a MapReduce App with Hadoop Streaming</h1>
+<h3 id="miguel-saavedra">Miguel Saavedra</h3>
+<ul>
+<li><p>Oct 8, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>1,018 Views</p></li>
+<li><p>Oct 8, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>1,018 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Hadoop</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Big Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-reviewofmapreduce" class="menu-link">Review of MapReduce</a></li>
+<li><a href="#module-mapreducecode" class="menu-link">MapReduce Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Hadoop Common (originally Hadoop Core) is a collection of the core components of any Hadoop ecosystem. These common libraries and services support other members of the Hadoop ecosystem. There are two components that make up basic Hadoop functionality: a distributed storage known as HDFS and a distributed compute known as MapReduce.</p>
+<p>This guide will show you how to utilize Hadoop’s core MapReduce functionality using the Hadoop streaming tool. This will allow you to write a MapReduce application in any programming language, so long as it has a mapper and reducer function.</p>
+<h2 id="review-of-mapreduce">Review of MapReduce</h2>
+<p>The <a href="https://app.pluralsight.com/guides/getting-started-with-hadoop-mapreduce">MapReduce</a> framework is the basis for the majority of data-intensive frameworks today. The following diagram illustrates a basic MapReduce wordcount process.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d554b590-3337-4f1f-9a0d-d42be91eaad8_BtZ5H4kC_o.html" /><figcaption aria-hidden="true">MapReduce Wordcount</figcaption>
+</figure>
+<p>The corpus of text is first separated into the initial <span class="jsx-3120878690"><code>&lt;key,value&gt;</code></span> pair. With text as the input, the initial <span class="jsx-3120878690"><code>&lt;key,value&gt;</code></span> pair is the line and the contents of the line. Afterwards, the mapper function divides those initial <span class="jsx-3120878690"><code>&lt;key,value&gt;</code></span> pairs into intermediate key value pairs. In this case, each instance of a word is mapped to the value 1. The shuffle phase then sorts each of the <span class="jsx-3120878690"><code>&lt;key,value&gt;</code></span> pairs by key, so that the <span class="jsx-3120878690"><code>reducer</code></span> can take care of aggregating the pairs for the final result.</p>
+<h2 id="mapreduce-code">MapReduce Code</h2>
+<p>The <a href="https://hadoop.apache.org/docs/r1.2.1/streaming.html">Hadoop Streaming</a> utility allows you to submit an executable in any language, so long as it follows the MapReduce standard. This will allow you to write raw MapReduce code without an abstraction layer.</p>
+<p>The following is an example of a mapper function called <span class="jsx-3120878690"><code>wordSplitter.py</code></span>, which separates each word in a line into a <span class="jsx-3120878690"><code>&lt;key,value&gt;</code></span> pair. The code loops through every word in a given line and returns a tab-separated word and number pair. The keyword <span class="jsx-3120878690"><code>LongValueSum</code></span> signals to Hadoop’s built-in <span class="jsx-3120878690"><code>aggregate</code></span> reducer that the values in the pair need to be totaled.</p>
+<pre><code>1#!/usr/bin/python
+2import sys 
+3import re 
+4
+5def main(argv): 
+6    pattern = re.compile(&quot;[a-zA-Z][a-zA-Z0-9]*&quot;) 
+7    for line in sys.stdin: 
+8        for word in pattern.findall(line): 
+9            print(&quot;LongValueSum:&quot; + word.lower() + &quot;\t&quot; + &quot;1&quot; )
+10
+11if __name__ == &quot;__main__&quot;: 
+12    main(sys.argv) </code></pre>
+<p>python</p>
+<p>Below is an example of a <span class="jsx-3120878690"><code>reducer.py</code></span> function. What this function does is maintain a running total per key. Since all the data is sorted by key, the aggregation is considered complete once the function reaches the last instance of a particular key. After it reaches that last key, Hadoop Streaming can then call the reducer function for the next key, and so on.</p>
+<pre><code>1#!/usr/bin/env python
+2 
+3import sys
+4 
+5last_key = None
+6running_total = 0
+7 
+8for input_line in sys.stdin:
+9   input_line = input_line.strip()
+10   this_key, value = input_line.split(&quot;\t&quot;, 1)
+11   value = int(value)
+12 
+13   if last_key == this_key:
+14       running_total += value
+15   else:
+16       if last_key:
+17           print( &quot;%s\t%d&quot; % (last_key, running_total) )
+18       running_total = value
+19       last_key = this_key
+20 
+21if last_key == this_key:
+22   print( &quot;%s\t%d&quot; % (last_key, running_total) )</code></pre>
+<p>python</p>
+<p>However, for simple aggregations like <span class="jsx-3120878690"><code>wordcount</code></span> or simply totalling values, Hadoop has a built-in reducer called <span class="jsx-3120878690"><code>aggregate</code></span>. The following is an example of a script that runs a Hadoop Streaming job using a custom mapper but built-in aggregate reducer.</p>
+<pre><code>1hadoop-streaming -mapper wordSplitter.py \
+2-reducer aggregate \
+3-input &lt;input location&gt; \
+4-output &lt;output location&gt; \
+5-file myPythonScript.py # Location of the script in HDFS, S3, or other storage</code></pre>
+<p>bash</p>
+<p>The <span class="jsx-3120878690"><code>wordSplitter.py</code></span> file should be stored in your distributed storage, normally HDFS or Amazon S3. The location of the file should then be passed as an argument to <span class="jsx-3120878690"><code>hadoop-streamin</code></span>. If you’re using a custom reducer, you will also need to pass in the custom reducer script.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Hadoop Streaming is one of the first things aspiring Hadoop developers learn. It provides a simple interface to write MapReduce code, however, it takes away the abstraction layer of Hive or Pig by forcing the developer to write raw MapReduce code. It is one of Hadoop’s core components and should be present in any and all Hadoop deployments and distributions.</p>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

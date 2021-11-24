@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>this.props.dispatch-versus-store</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="using-this.props.dispatch-vs.-store.dispatch-directly-in-redux">Using this.props.dispatch vs. store.dispatch Directly in Redux</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 27, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>8,256 Views</p></li>
+<li><p>Oct 27, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>8,256 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>13</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-dispatchingactionsinredux" class="menu-link">Dispatching Actions in Redux</a></li>
+<li><a href="#module-storedispatchvsthispropsdispatch" class="menu-link">store.dispatch() vs this.props.dispatch()</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Dispatching <span class="jsx-3120878690"><code>actions</code></span> in Redux is the fundamental method of updating a Redux store’s <span class="jsx-3120878690"><code>state</code></span>. Actions are used to store relevant information for the <span class="jsx-3120878690"><code>state</code></span>, and they reach the store through the <span class="jsx-3120878690"><code>dispatch()</code></span> method available on the <span class="jsx-3120878690"><code>store</code></span> object. You can use either <span class="jsx-3120878690"><code>store.dispatch()</code></span> directly or <span class="jsx-3120878690"><code>this.props.dispatch()</code></span> for dispatching these actions. This guide walks you through the comparison between the two methods to help you understand which method is better and why.</p>
+<h2 id="dispatching-actions-in-redux">Dispatching Actions in Redux</h2>
+<p>Actions hold or store information that needs to be passed to the Redux <span class="jsx-3120878690"><code>store</code></span>, and this information is grabbed from the component where the <span class="jsx-3120878690"><code>action</code></span> is dispatched. This means that while your store may hold information pertaining to a number of components, it can be considered an <em>independent module</em> in your system. Your components need not know what <span class="jsx-3120878690"><code>state</code></span> they’re updating—their prime concern should be dispatching the necessary <span class="jsx-3120878690"><code>action</code></span>. The remaining computation is handled by the <span class="jsx-3120878690"><code>reducer</code></span> and the <span class="jsx-3120878690"><code>store</code></span> itself.</p>
+<p>For instance, if you have a <span class="jsx-3120878690"><code>Profile</code></span> component that displays the details of your profile and a <span class="jsx-3120878690"><code>Navbar</code></span> component that opens a popup where you can edit your profile information, the component definition isn’t sufficient to figure out that the <span class="jsx-3120878690"><code>Navbar</code></span> component would interact with your store containing the profile details. Your <span class="jsx-3120878690"><code>store</code></span> sits at the top level of your app’s hierarchy with the components sitting at the lower level, making it redundant to import it as a lower-level module inside each component.</p>
+<h2 id="store.dispatch-vs-this.props.dispatch">store.dispatch() vs this.props.dispatch()</h2>
+<p>Consider the following code where you have a <span class="jsx-3120878690"><code>store</code></span> and and a <span class="jsx-3120878690"><code>reducer</code></span> that dispatches a default action of type <span class="jsx-3120878690"><code>ADD_USER</code></span>. Here, the <span class="jsx-3120878690"><code>store</code></span> directly uses the <span class="jsx-3120878690"><code>store.dispatch()</code></span> method to dispatch an action.</p>
+<pre><code>1import { createStore } from &#39;redux&#39;
+2const store = createStore(users, null)
+3
+4const addUser=(user)=&gt; {
+5  return {
+6    type: &#39;ADD_USER&#39;,
+7    user: user
+8  }
+9}
+10
+11store.dispatch(addUser(user))</code></pre>
+<p>javascript</p>
+<p>Now consider a use case where a component in your app needs to dispatch the same action. In this case, your component is unaware of the store it’s interacting with, but its direct parent component connects to the store and dispatches an action for the child component using <span class="jsx-3120878690"><code>this.props.dispatch()</code></span>.</p>
+<pre><code>1@connect(store =&gt; ({ myStore: store.myStore }))
+2class UsersContainer extends Component {
+3  AddUser = (newUser) =&gt; {
+4    this.props.dispatch(type:&#39;ADD_USER&#39;, newUser);
+5  }
+6
+7  render() {
+8    return (
+9      &lt;UsersComponent
+10        onAddUser={this.AddUser}
+11      /&gt;
+12  }
+13}</code></pre>
+<p>javascript</p>
+<p><span class="jsx-3120878690"><code>UsersComponent</code></span> simply fires a function, and its parent component, <span class="jsx-3120878690"><code>UsersContainer</code></span>, dispatches the <span class="jsx-3120878690"><code>ADD_USER</code></span> action using <span class="jsx-3120878690"><code>this.props.dispatch()</code></span>. <span class="jsx-3120878690"><code>UsersContainer</code></span> connects with the <span class="jsx-3120878690"><code>store</code></span>, hence it knows which store it’s interacting with. In a practical app, you would have a component tree where deeply nested components would need to interact with a high-level store. Every time you dispatch an action, it’s possible that you might want to interact with a different store.</p>
+<pre><code>1@connect(store =&gt; ({ myStore: store.myStore }))</code></pre>
+<p>javascript</p>
+<p>Thus, using the <span class="jsx-3120878690"><code>connect()</code></span> function as shown, <span class="jsx-3120878690"><code>dispatch()</code></span> is passed as a <span class="jsx-3120878690"><code>prop</code></span> to its child components from where the necessary action is dispatched.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>It is evident now that <span class="jsx-3120878690"><code>this.props.dispatch()</code></span> is a more logical and better approach to dispatching actions in Redux than using <span class="jsx-3120878690"><code>store.dispatch()</code></span> directly, as it makes sure that your Redux store does not become a <em>singleton module</em>. Most of the time, <span class="jsx-3120878690"><code>dispatch()</code></span> is called from within the <em>store consuming components</em> and, similar to <span class="jsx-3120878690"><code>this.props.dispatch()</code></span>, you can also dispatch actions by mapping it with props using the <span class="jsx-3120878690"><code>mapDispatchToProps()</code></span> method and passing it to the <span class="jsx-3120878690"><code>connect()</code></span> function for a cleaner syntax. Alternatively, you can explore libraries like Redux Saga and learn more about dispatching <em>Async actions</em> in its official documentation.</p>
+<p>13</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

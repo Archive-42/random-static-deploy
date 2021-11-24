@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>use-graphql-subscriptions-in-a-react-app</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="use-graphql-subscriptions-in-a-react-app">Use GraphQL Subscriptions in a React App</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Nov 16, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>4,276 Views</p></li>
+<li><p>Nov 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>4,276 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">GraphQL</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Query Languages</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Development</span></p>
+<p>Introduction</p>
+<p>10</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-understandhowsubscriptionsaredefinedintheschema" class="menu-link">Understand How Subscriptions Are Defined in the Schema</a></li>
+<li><a href="#module-enablewebsocketsupportinyourreactclient" class="menu-link">Enable Web Socket Support in Your React Client</a></li>
+<li><a href="#module-subscribetoupdates" class="menu-link">Subscribe To Updates</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Modern applications are increasingly becoming real time. Some examples of real-time updates in web apps include notification updates, chat messaging applications, and financial market updates. GraphQL makes creating apps with low latency, real-time updates easy with a feature called <em>subscriptions</em>.</p>
+<p>In this guide, you will learn how to subscribe to real-time updates from a GraphQL server using subscriptions. A previous guide, <a href="https://app.pluralsight.com/guides/how-to-set-up-graphql-in-a-react-app">How to Set Up GraphQL in a React App</a>, covered how to set up a new React Project with GraphQL using Apollo Client. This guide builds on what you learned there. Here, you will learn how to keep your client in sync with the backend by setting up a connection to allow your server to proactively push updates as they occur.</p>
+<h2 id="understand-how-subscriptions-are-defined-in-the-schema">Understand How Subscriptions Are Defined in the Schema</h2>
+<p>One of the advantages of GraphQL is its strongly typed schema. This means you can see at a glance what resources are queryable and mutable. If the GraphQL backend supports it, this schema also includes information about subscriptions, which are a separate root type. If you imagined <a href="https://48p1r2roz4.sse.codesandbox.io/">Apollo’s GraphQL ExchangeRate sandbox</a> with subscription support, then the schema would look like the snippet below:</p>
+<pre><code>1type ExchangeRate {
+2  currency: String
+3  rate: String
+4  name: String
+5}
+6
+7type Query {
+8  rates(currency: String!): [ExchangeRate]
+9}
+10
+11type Subscription {
+12  ratesUpdated(currency: String!): ExchangeRate
+13}</code></pre>
+<p>graphql</p>
+<p>A root type called <span class="jsx-3120878690"><code>Subscription</code></span> is present. This is a special optional type. It can have one or many fields. In this case, <span class="jsx-3120878690"><code>ratesUpdated</code></span> is a field that clients can subscribe to by passing in a currency; every time that currency is updated on the server, a message is pushed to clients that are listening.</p>
+<h2 id="enable-web-socket-support-in-your-react-client">Enable Web Socket Support in Your React Client</h2>
+<p>To subscribe to updates, use web-sockets rather than HTTP. <a href="https://tools.ietf.org/html/rfc6455#section-1.1">The IETF Standards Documentation</a> describes the motivation for using web sockets over HTTP. The advantage of web sockets is a lower overhead transport protocol compared to HTTP. This is useful when your server has frequent small updates.</p>
+<p>In order to support web-sockets in your React application using GraphQL, you need to install a package:</p>
+<pre><code>1yarn add subscriptions-transport-ws</code></pre>
+<p>Then update your <span class="jsx-3120878690"><code>src/ApolloClient/client.js</code></span> file to:</p>
+<pre><code>1import { ApolloClient, ApolloLink, InMemoryCache, split } from &quot;@apollo/client&quot;;
+2import { HttpLink } from &quot;apollo-link-http&quot;;
+3import { WebSocketLink } from &#39;@apollo/client/link/ws&#39;;
+4
+5const httpLink = new HttpLink({
+6  uri: &quot;https://48p1r2roz4.sse.codesandbox.io&quot;,
+7});
+8
+9const wsLink = new WebSocketLink({
+10  uri: &quot;ws://48p1r2roz4.sse.codesandbox.io&quot;,
+11  options: {
+12    reconnect: true
+13  }
+14});
+15
+16const splitLink = split(
+17  ({ query }) =&gt; {
+18    const definition = getMainDefinition(query);
+19    return (
+20      definition.kind === &#39;OperationDefinition&#39; &amp;&amp;
+21      definition.operation === &#39;subscription&#39;
+22    );
+23  },
+24  wsLink,
+25  httpLink,
+26);
+27
+28export const client = new ApolloClient({
+29  cache: new InMemoryCache(),
+30  link: ApolloLink.from([splitLink]),
+31});</code></pre>
+<p>javascript</p>
+<p>You have updated the <span class="jsx-3120878690"><code>link</code></span> option, which customizes the flow of data from your graphQL operations to your backend. In this case, use the split operation to combine two links. When a mutation or query is made, then HTTP is used as the transport method. If a subscription operation is requested, you instruct <span class="jsx-3120878690"><code>ApolloClient</code></span> to use web-sockets instead.</p>
+<h2 id="subscribe-to-updates">Subscribe To Updates</h2>
+<p>Now that you have the right packages and <span class="jsx-3120878690"><code>link</code></span> configured correctly, you can start subscribing to data updates in your backend.</p>
+<p>The below code snippet demonstrates a simple React component subscribing to currency rate changes.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { useQuery, gql, useSubscription } from &quot;@apollo/client&quot;;
+3
+4const RATES_UPDATED = gql`
+5  subscription OnRatesUpdated($currency: string!) {
+6    ratesUpdated(postID: $currency) {
+7      currency
+8      rate
+9      name
+10    }
+11  }
+12`;
+13
+14const LatestRates = ({ currency }) =&gt; {
+15  const { data: { ratesUpdated }, loading } = useSubscription(
+16    RATES_UPDATED,
+17    { variables: { currency } }
+18  );
+19  return &lt;h4&gt;New rates: {!loading &amp;&amp; ratesUpdated.rate}&lt;/h4&gt;;
+20};
+21
+22export default LatestRates;</code></pre>
+<p>javascript</p>
+<p>Notice that the code is very similar to a component with a graphQL query. There are only minor differences:</p>
+<ul>
+<li>Instead of using the <span class="jsx-3120878690"><code>useQuery</code></span> hook, you used the <span class="jsx-3120878690"><code>useSubscription</code></span> hook.</li>
+<li>The hook still returns <span class="jsx-3120878690"><code>loading</code></span>, <span class="jsx-3120878690"><code>data</code></span>, and <span class="jsx-3120878690"><code>error</code></span> in the same way the <span class="jsx-3120878690"><code>useQuery</code></span> hook does.</li>
+<li>The subscription also starts when the component is created for the first time.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Subscriptions are an extra tool that make your app respond in real time to backend data changes. This guide has demonstrated how to using graphQL subscriptions in a React app. You can further build on these skills by reading about the <a href="https://www.apollographql.com/docs/react/data/subscriptions/#usesubscription-api-reference">subscribeToMore function</a>. This function= allows you to combine making an initial query and using a subscription to listen for incremental updates.</p>
+<p>10</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

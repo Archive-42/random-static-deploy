@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>use-bootstrap-accordion-with-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="use-bootstrap-accordion-with-react">Use Bootstrap Accordion with React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 19, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>15,697 Views</p></li>
+<li><p>Nov 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>15,697 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>31</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-gettingstartedwithreactbootstrapaccordion" class="menu-link">Getting Started with react-bootstrap Accordion</a></li>
+<li><a href="#module-integratingaccordioninreactcomponent" class="menu-link">Integrating Accordion in React Component</a></li>
+<li><a href="#module-howtoopenanyaccordionbydefault" class="menu-link">How to Open Any Accordion by Default</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Accordions can be used to create tabbed elements and hide/show content based on collapsible tabs, followed by their child content elements. React does not have its own set of elements to integrate into the React component. Hence, you need to use some popular and frequently used libraries such as <span class="jsx-3120878690"><code>react-bootstrap</code></span> that provide bootstrap elements for the React app.</p>
+<p>Using <span class="jsx-3120878690"><code>react-bootstrap</code></span>, there is an element called <span class="jsx-3120878690"><code>&lt;Accordion&gt;</code></span> that allows you to toggle content based on a click event. This guide will cover the implementation.</p>
+<h2 id="getting-started-with-react-bootstrap-accordion">Getting Started with react-bootstrap Accordion</h2>
+<p>React-Bootstrap contains various bootstrap components that can be plugged and played for a React app. The same applies to the accordion; a part of the library can be imported from the library and used in the component.</p>
+<p>Before using any of the components, you need to install it using the below NPM command.</p>
+<pre><code>1npm install react-bootstrap
+2npm install bootstrap</code></pre>
+<p>shell</p>
+<p>After installing both of the above libraries, the next step is to import the bootstrap CSS into the root file of the React app, i.e. <span class="jsx-3120878690"><code>index.js</code></span>.</p>
+<pre><code>1import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;</code></pre>
+<p>js</p>
+<p>Now you can use any of the <span class="jsx-3120878690"><code>react-bootstrap</code></span> components into your React app.</p>
+<h2 id="integrating-accordion-in-react-component">Integrating Accordion in React Component</h2>
+<p>After the <span class="jsx-3120878690"><code>react-bootstrap</code></span> configuration, the next step is to extract the accordion component and configure it. You can import the accordion component like this:</p>
+<pre><code>1import { Accordion } from &quot;react-bootstrap&quot;;</code></pre>
+<p>jsx</p>
+<p>The accordion component works on two different elements: toggle elements and collapsible elements.</p>
+<h3 id="toggle-element">Toggle Element</h3>
+<p>To enable the expand operation, you need to have an element to be clicked by the user, and based on the toggle effect, the respective child content will be visible.</p>
+<p>For that, there is one element that gets used to implement the toggle below.</p>
+<pre><code>1&lt;Accordion.Toggle as={Card.Header} eventKey=&quot;0&quot;&gt;
+2    TAB 1
+3&lt;/Accordion.Toggle&gt;</code></pre>
+<p>jsx</p>
+<p>Where <span class="jsx-3120878690"><code>as</code></span> represents the toggle element’s behavior can be anything such as a button, link, or card header.</p>
+<p><span class="jsx-3120878690"><code>eventKey</code></span> identifies each toggle element to expand the respective elements once the user clicks on the header.</p>
+<h3 id="collapsible-element">Collapsible Element</h3>
+<p>Once the user clicks on the <span class="jsx-3120878690"><code>&lt;Accordion.Toggle&gt;</code></span> element, respective child content should be expanded and visible into the DOM; hence there is an additional configuration.</p>
+<p>To expand, you have used <span class="jsx-3120878690"><code>&lt;Accordion.Toggle&gt;</code></span>. To collapse the same way, there is another element called <span class="jsx-3120878690"><code>&lt;Accordion.Collapse&gt;</code></span>.</p>
+<pre><code>1&lt;Accordion.Collapse eventKey=&quot;0&quot;&gt;
+2    &lt;Card.Body&gt;This is first tab body&lt;/Card.Body&gt;
+3&lt;/Accordion.Collapse&gt;</code></pre>
+<p>jsx</p>
+<p>One prop attached, <span class="jsx-3120878690"><code>eventKey</code></span> is used to find the DOM’s specific component and render the associated child element content with each collapsible element.</p>
+<p>Below is the completed code, which shows the complete implementation of the Accordion.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { Accordion, Card } from &quot;react-bootstrap&quot;;
+3import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;
+4
+5export class Example1 extends Component {
+6    render() {
+7        return (
+8            &lt;&gt;
+9                &lt;div&gt;
+10                    &lt;Accordion&gt;
+11                        &lt;Card&gt;
+12                            &lt;Accordion.Toggle as={Card.Header} eventKey=&quot;0&quot;&gt;
+13                                TAB 1
+14                            &lt;/Accordion.Toggle&gt;
+15
+16                            &lt;Accordion.Collapse eventKey=&quot;0&quot;&gt;
+17                                &lt;Card.Body&gt;This is first tab body&lt;/Card.Body&gt;
+18                            &lt;/Accordion.Collapse&gt;
+19                        &lt;/Card&gt;
+20
+21                        &lt;Card&gt;
+22                            &lt;Accordion.Toggle as={Card.Header} eventKey=&quot;1&quot;&gt;
+23                                TAB 2
+24                            &lt;/Accordion.Toggle&gt;
+25
+26                            &lt;Accordion.Collapse eventKey=&quot;1&quot;&gt;
+27                                &lt;Card.Body&gt;This is second tab body&lt;/Card.Body&gt;
+28                            &lt;/Accordion.Collapse&gt;
+29                        &lt;/Card&gt;
+30                    &lt;/Accordion&gt;
+31                &lt;/div&gt;
+32            &lt;/&gt;
+33        );
+34    }
+35}
+36
+37export default Example1;</code></pre>
+<p>jsx</p>
+<p>In the above example, two collapsible accordions get used and wrapped by the parent element <span class="jsx-3120878690"><code>&lt;Accordion&gt;</code></span>. One collapsible accordion is <span class="jsx-3120878690"><code>eventkey=”0”</code></span> and another is <span class="jsx-3120878690"><code>eventkey=”1”</code></span>. Once any of the accordions get clicked, the matching event key will be identified, and its child content will be visible to the user.</p>
+<p>You can configure multiple accordions based on your requirement and set the prop <span class="jsx-3120878690"><code>eventKey</code></span>, which is used to identify the respective collapsible content.</p>
+<h2 id="how-to-open-any-accordion-by-default">How to Open Any Accordion by Default</h2>
+<p>It may be possible that you need to open any of the accordions by default once the page renders, so there is an additional property called <span class="jsx-3120878690"><code>defaultActiveKey</code></span>.</p>
+<p>You can define the default key of the desired collapsible accordion to be visible, as given below.</p>
+<pre><code>1&lt;Accordion defaultActiveKey=&quot;2&quot;&gt;
+2    ...
+3&lt;/Accordion&gt;</code></pre>
+<p>jsx</p>
+<p>Using the above configuration, the third accordion will be expanded by default because you have defined the default active key to <span class="jsx-3120878690"><code>2</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The accordion is the best choice when the user interface should be collapsed and able to utilize the web page space to expand the content when required.</p>
+<p>Apart from <span class="jsx-3120878690"><code>react-bootstrap</code></span>, you can try accordion from other third-party libraries such as <span class="jsx-3120878690"><code>material-ui</code></span> based on the UI specification and requirement to effectively show the required content.</p>
+<p>31</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

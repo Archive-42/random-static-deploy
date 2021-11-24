@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>allow-access-control-origin-in-create-react-app</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="allow-access-control-origin-in-create-react-app">Allow Access Control Origin in Create React App</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Sep 25, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>106,479 Views</p></li>
+<li><p>Sep 25, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>106,479 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>69</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-understandingcors" class="menu-link">Understanding CORS</a></li>
+<li><a href="#module-corsincreatereactapp" class="menu-link">CORS in Create-React-App</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In web apps, browsers work with a <em>SameSite</em> policy that prevents a cross-domain XMLHttpRequest or Fetch request from being made. In simple terms, making a request from <a href="https://main.pluralsight.com/">https://main.pluralsight.com</a> to <a href="https://api.pluralsight.com/">https://api.pluralsight.com</a> is not allowed by default.</p>
+<p>In this guide, you will learn about cross-origin resource sharing (CORS) and the role of the “Allow Access Control Origin” header. With the knowledge gained in this guide, you will find it easy to resolve issues relating to CORS.</p>
+<h2 id="understanding-cors">Understanding CORS</h2>
+<p>Since making requests from different domains is not allowed by default, in this guide we will stick with <a href="https://main.pluralsight.com/">https://main.pluralsight.com</a> and <a href="https://api.pluralsight.com/">https://api.pluralsight.com</a> as domains A and B respectively. With the introduction of CORS, domains A and B can now share resources with each other without being blocked by the browser.</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Wikipedia</a>, “Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.”</p>
+<p>There are two methods used by the browser to verify the ability to share resources between two domains.</p>
+<p><strong>1. Simple Requests</strong></p>
+<p>In a simple request, the browser sends a GET request with an <span class="jsx-3120878690"><code>Origin</code></span> header with the value of the requester’s domain as shown below.</p>
+<pre><code>1Origin: https://main.pluralsight.com</code></pre>
+<p>bash</p>
+<p>The server then responds with an <span class="jsx-3120878690"><code>Access-Control-Allow-Origin</code></span> header that includes a domain from which requests are allowed. This may also be a wildcard character denoted by an asterisk (*).</p>
+<pre><code>1Access-Control-Allow-Origin: http://main.pluralsight.com
+2
+3                                      OR a wildcard
+4
+5Access-Control-Allow-Origin: *</code></pre>
+<p>bash</p>
+<p><strong>2. Preflighted Requests</strong></p>
+<p>In this method, the browser first sends a request with the <span class="jsx-3120878690"><code>OPTIONS</code></span> method to the server—in this case, Server B, <a href="#">https://api.pluralsight.com</a>(<a href="https://api.pluralsight.xn--comto-6u3b/">https://api.pluralsight.com—to</a> find out if it’s allowed to send a request, hence the name <em>preflight</em> request.</p>
+<p><strong>Request</strong></p>
+<pre><code>1OPTIONS /
+2Host: api.pluralsight.com
+3Origin: https://main.example.com</code></pre>
+<p>bash</p>
+<p><strong>Response</strong></p>
+<pre><code>1Access-Control-Allow-Origin: http://main.pluralsight.com
+2Access-Control-Allow-Methods: PUT, DELETE</code></pre>
+<p>bash</p>
+<p>After a response is received and server A (<a href="https://main.pluralsight.com/">https://main.pluralsight.com</a>) has the necessary permission to “talk” to server B (<a href="https://api.pluralsight.com/">https://api.pluralsight.com</a>), then the main request is sent to server A. (Kind of a bouncer at a party 😉).</p>
+<h2 id="cors-in-create-react-app">CORS in Create-React-App</h2>
+<p>You understand CORS now, but how does this come together in Create-React-App? Well, as always, Create-React-App comes with a simple way to handle this: add a proxy field to your package.json file as shown below. In this case, a request is made from server A to server B (<a href="https://api.pluralsight.com/">https://api.pluralsight.com</a>).</p>
+<pre><code>1&quot;proxy&quot;: &quot;https://api.pluralsight.com:8000&quot;,</code></pre>
+<p>json</p>
+<p>Any route that Create-React-App does not recognize will now automatically be proxied to the URL provided.</p>
+<p>If you don’t do this, you may end up with an error:</p>
+<pre><code>1Fetch API cannot load http://localhost:4000/api/todos. No &#39;Access-Control-Allow-Origin&#39; 
+2header is present on the requested resource. Origin &#39;http://localhost:3000&#39; is therefore 
+3not allowed access. If an opaque response serves your needs, set the request&#39;s mode to 
+4&#39;no-cors&#39; to fetch the resource with CORS disabled.</code></pre>
+<p>bash</p>
+<p>Note that Create-React-App will only proxy requests that do not have a content type of <span class="jsx-3120878690"><code>text/html</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And that’s it! In this guide, you got to understand what cross-origin resource sharing is and how browsers handle cross-origin requests. To read more on how to handle this in Create-React-App, visit the <a href="https://create-react-app.dev/docs/proxying-api-requests-in-development/">Official Documentation</a> to learn more.</p>
+<p>69</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

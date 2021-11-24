@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>deploying-a-django-app-on-python-anywhere</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="deploying-a-django-app-on-pythonanywhere">Deploying A Django App on PythonAnywhere</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Oct 7, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>3,255 Views</p></li>
+<li><p>Oct 7, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>3,255 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>17</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-deployingadjangoapp" class="menu-link">Deploying a Django App</a></li>
+<li><a href="#module-pythonanywherewalkthrough" class="menu-link">PythonAnywhere Walkthrough</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Deployment is a critical stage in web development. It is at this point that the application is tested in an environment where the user will be using it. Any sensitive information should be packaged in a manner that does not compromise the app.</p>
+<p>With Django, it is no different. There are some changes that are made to prepare the application for production level status. These include handling <span class="jsx-3120878690"><code>staticfiles</code></span>, setting the <span class="jsx-3120878690"><code>DEBUG</code></span> mode to FALSE, and more. A wonderful, beginner-friendly resource for practicing Django deployment is <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>. The platform is tailored and optimized for Python projects and does not provide an empty Ubuntu/Linux server like most cloud service providers, such as AWS, GCP, and Digital Ocean, among others.</p>
+<p>This guide assumes you have at least <em>intermediate</em> level skills in Python and navigating Linux <span class="jsx-3120878690"><code>bash</code></span>, and that you have at least <em>beginner</em> level understanding of Django and have developed a <span class="jsx-3120878690"><code>Hello World</code></span> application in the said framework.</p>
+<h2 id="deploying-a-django-app">Deploying a Django App</h2>
+<p>To get a Django app production-ready, some settings need to be configured in preparation for the live environment. These include:</p>
+<ul>
+<li><p>Setting the <span class="jsx-3120878690"><code>DEBUG</code></span> boolean to FALSE</p></li>
+<li><p>Setting the <span class="jsx-3120878690"><code>ALLOWED_HOSTS</code></span> list to a list of the actual live domains</p></li>
+<li><p>Setting a path to the static files and serving them separately since Django does not serve static files in production</p></li>
+<li><p>Hiding sensitive variables, such as the <span class="jsx-3120878690"><code>SECRET_KEY</code></span>, using techniques such as config files and environment variables</p></li>
+</ul>
+<p>This creates a checklist. In Django, there is a management command, <span class="jsx-3120878690"><code>check --deploy</code></span>, which goes through the checklist to determine whether the app is production-ready and whether there are any vulnerabilities that might affect the app. More on this command can be found in <a href="https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/">this</a> resource.</p>
+<h2 id="pythonanywhere-walkthrough">PythonAnywhere Walkthrough</h2>
+<p>To get started with PythonAnywhere, sign up for a free account. It may be limited, but it is good enough to get the job done in terms of hosting a basic Django app. Visit the signup page <a href="https://www.pythonanywhere.com/registration/register/beginner/">here</a>.</p>
+<p>Create an account with a username that can also work as part of your domain name. This is what the landing page looks like once logged in. <embed src="../../pluralsight2.imgix.net/guides/c8f6c84a-8fae-47e5-bfee-a95b3906eedb_Screenshot_from_2020-10-02_14-58-26.html" /></p>
+<p>The first step is to set up a web app. In the main dashboard, navigate to the <strong>Web</strong> tab and add a new web app. Since this is a free account, skip the domain configurations.</p>
+<p>The next step is to select the web framework. Select Django and the Python version you based your project on. A safe option is Python 3.5.</p>
+<p>At this point, if you navigate to your URL—which is yourusername.pythonanywhere.com—you should see the Django default welcome screen. <embed src="../../pluralsight2.imgix.net/guides/377b5a2b-a4b6-4791-b92a-419f3bb568be_Screenshot_from_2020-10-02_15-13-36.html" /></p>
+<p>You have successfully installed a basic boilerplate Django application.</p>
+<p>If you wish to customize your app further, access the files using the files tab. This will allow you to view files and give you access to an online editor where you can write and save your code.</p>
+<p>Within the files tab, there is a link called <em>Open Bash console here</em>. This gives you access to a Linux bash within that location in the file system were you can run commands such as <span class="jsx-3120878690"><code>python manage.py startapp myapp</code></span> and create an app.</p>
+<p>Your challenge now is to tinker with the existing Django project you have just created, using the online editor and bash console provided by PythonAnywhere, and develop a hello_world app in Django similar to <a href="https://github.com/KimaruThagna/django_hello_world">this</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The PythonAnywhere resource is beginner-friendly and custom-tailored to Python web applications, such as Django and Flask. It also offers managed services, such as scheduled tasks and managed databases. These are, however, for paid accounts.</p>
+<p>The skill of deploying a Django app to a live server is essential for roles such as Python/Django developer, backend developer, and full stack developer.</p>
+<p>To further build on this guide, learn more about media management with PythonAnywhere <a href="https://www.pythonanywhere.com/forums/topic/2812/">here</a>.</p>
+<p>17</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

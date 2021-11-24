@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-implement-infinite-scrolling-with-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="how-to-implement-infinite-scrolling-with-react.js">How to Implement Infinite Scrolling with React.js</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 12, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>128,702 Views</p></li>
+<li><p>Nov 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>128,702 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>291</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatisinfinitescroll" class="menu-link">What is Infinite Scroll?</a></li>
+<li><a href="#module-implementcustominfinitescroll" class="menu-link">Implement Custom Infinite Scroll</a></li>
+<li><a href="#module-infinitescrollusingthirdpartylibraries" class="menu-link">Infinite Scroll Using Third-Party Libraries</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Any application, whether it’s a web, desktop, or mobile app, has tons of records in terms of data. A user may want to access this data in one place for any number of reasons related to the product, items, flights, trains, homes, and so on.</p>
+<p>For such functionality, it is difficult to load all records at once due to overall performance issues, so we need an alternative. One alternative is called an <em>infinite scroll</em>.</p>
+<h2 id="what-is-infinite-scroll">What is Infinite Scroll?</h2>
+<p>Infinite scroll is a mechanism that shows data based on an endless scroll event and loads data only as needed to avoid critical performance issues.</p>
+<p>Basically, the infinite scroll method is pretty handy compared to pagination, where a user must click on the page number every time they want to load the next page’s data.</p>
+<p>The infinite scrolling mechanism is only advisable when we want to continuously load data that belongs to the same level of the hierarchy. Otherwise, we can opt for other alternatives.</p>
+<p>The infinite scrolling feature may seem like an elegant replacement for pagination. However, it is not the answer for all websites. Infinite scrolling is probably not for you if site visitors want to achieve specific types of goal-oriented activities, such as when they need to backtrack or find specific information quickly without struggling too much.</p>
+<p>In this guide, we will implement an infinite scroll using custom logic. Let’s jump into an example.</p>
+<h2 id="implement-custom-infinite-scroll">Implement Custom Infinite Scroll</h2>
+<p>In React, we have two choices to develop an infinite scroll.</p>
+<ul>
+<li>Using a third party library</li>
+<li>Using a custom infinite scroll mechanism</li>
+</ul>
+<p>Here in this guide, we will develop a simple custom infinite scrolling mechanism that helps us to load data based on a scroll event.</p>
+<p>Before getting started, we need data to load continuously, so for that, we will use a dummy/mock API platform that provides us the fake data using their official API. The URL we are going to use is given below.</p>
+<p><span class="jsx-3120878690"><code>https://jsonplaceholder.typicode.com/photos</code></span></p>
+<p>To call the API, we should have Axios installed in our app, which is used to make an HTTP request to fetch or save the data from our application. It is a third-party library, so we can install it using the below <span class="jsx-3120878690"><code>npm</code></span> command.</p>
+<pre><code>1npm install axios</code></pre>
+<p>shell</p>
+<p>Let’s create a new child component called <span class="jsx-3120878690"><code>ScrollComponent.jsx</code></span> and create a state object like this.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import axios from &quot;axios&quot;;
+3
+4class ScrollComponent extends Component {
+5  constructor() {
+6    super();
+7    this.state = {
+8      photos: [],
+9      loading: false,
+10      page: 0,
+11      prevY: 0
+12    };
+13  }
+14
+15  render() {
+16    return (
+17      &lt;div className=&quot;container&quot;&gt;
+18      &lt;/div&gt;
+19    );
+20  }
+21}
+22
+23export default ScrollComponent;</code></pre>
+<p>jsx</p>
+<p>In our scroll component, we have created a few state values to store the photos from the API response and other state values to manage page properties and loading behavior.</p>
+<p>Now, we have to create one function that contains the source code used to get the API data from the fake API using the Axios package. Let’s create a reusable function like this.</p>
+<pre><code>1  getPhotos(page) {
+2    this.setState({ loading: true });
+3    axios
+4      .get(
+5        `https://jsonplaceholder.typicode.com/photos?_page=${page}&amp;_limit=10`
+6      )
+7      .then(res =&gt; {
+8        this.setState({ photos: [...this.state.photos, ...res.data] });
+9        this.setState({ loading: false });
+10      });
+11  }</code></pre>
+<p>jsx</p>
+<p>In this function, we have set the loading state value to <span class="jsx-3120878690"><code>true</code></span>, which denotes the data is being loaded from the API. We have used Axios along with the API URL, which fetches the data from the server.</p>
+<p>After getting the response based on the request, we need to store the data into a separate array called <span class="jsx-3120878690"><code>photos</code></span> that we have created earlier in this component.</p>
+<p>If you notice, we have combined the previous and current data, just because we will call this function continuously based on the scroll event, and it will append the response into the photos array.</p>
+<p>After creating the function, we have to call it once the component has loaded, hence we can call it from the <span class="jsx-3120878690"><code>componentDidMount ()</code></span> function like this.</p>
+<pre><code>1  componentDidMount() {
+2    this.getPhotos(this.state.page);
+3  }</code></pre>
+<p>jsx</p>
+<p>We have configured the basic API function from where we will call the API. We have also called the <span class="jsx-3120878690"><code>getPhotos()</code></span> function from the <span class="jsx-3120878690"><code>componentDidMount()</code></span> lifecycle hook, but it will be enough to develop the infinite scroll.</p>
+<p>Now, we have to listen to each scroll event behavior, and based on the scroll event, the page number will be updated in order to fetch the new data from the API.</p>
+<p>We will use the <span class="jsx-3120878690"><code>intersection observer</code></span>, which does two things:</p>
+<ul>
+<li>It describes the API used to get the position of the DOM element from the target element .</li>
+<li>It gets the pre-loading and deferred status of the element from the DOM content .</li>
+</ul>
+<p>Let’s update the <span class="jsx-3120878690"><code>componentDidMount()</code></span> hooks like this.</p>
+<pre><code>1componentDidMount() {
+2    this.getPhotos(this.state.page);
+3
+4    var options = {
+5      root: null,
+6      rootMargin: &quot;0px&quot;,
+7      threshold: 1.0
+8    };
+9    
+10    this.observer = new IntersectionObserver(
+11      this.handleObserver.bind(this),
+12      options
+13    );
+14    this.observer.observe(this.loadingRef);
+15  }</code></pre>
+<p>jsx</p>
+<p>In this hook function, we have created a few options:</p>
+<ul>
+<li><strong>root</strong> : This is the root to use for the intersection.</li>
+<li><strong>rootMargin</strong> : Just like a margin property, which is used to provide the margin value to the root either in pixel or in percent (%) .</li>
+<li><strong>threshold</strong> : The number which is used to trigger the callback once the intersection’s area changes to be greater than or equal to the value we have provided in this example .</li>
+</ul>
+<p>Apart from these three options, we have an actual intersection observer function, which contains two different parameters:</p>
+<ul>
+<li>The observer callback function name</li>
+<li>The additional options, such as root and threshold</li>
+</ul>
+<p>By using the intersection observer, we can listen for any changes from the target element, and if there are any changes, then the callback function will be triggered.</p>
+<p>Now let’s implement the callback trigger function, which looks like this.</p>
+<pre><code>1handleObserver(entities, observer) {
+2    const y = entities[0].boundingClientRect.y;
+3    if (this.state.prevY &gt; y) {
+4      const lastPhoto = this.state.photos[this.state.photos.length - 1];
+5      const curPage = lastPhoto.albumId;
+6      this.getPhotos(curPage);
+7      this.setState({ page: curPage });
+8    }
+9    this.setState({ prevY: y });
+10  }</code></pre>
+<p>jsx</p>
+<p>In this function, we will configure the page number based on the target element being scrolled. We will hold the last page being scrolled, and based on the current page, the fetch API comes into the picture and fetches the latest data from the server.</p>
+<p>As soon as we scroll the data, the current page will be updated into the state along with the previous page number.</p>
+<p>This is what we wanted to develop so far in this guide, but it’s not the end at all. We left out a critical step to show the photos and render them into the DOM.</p>
+<p>Replace the <span class="jsx-3120878690"><code>render()</code></span> function with the given source code.</p>
+<pre><code>1render() {
+2
+3    // Additional css
+4    const loadingCSS = {
+5      height: &quot;100px&quot;,
+6      margin: &quot;30px&quot;
+7    };
+8
+9    // To change the loading icon behavior
+10    const loadingTextCSS = { display: this.state.loading ? &quot;block&quot; : &quot;none&quot; };
+11
+12    return (
+13      &lt;div className=&quot;container&quot;&gt;
+14        &lt;div style={{ minHeight: &quot;800px&quot; }}&gt;
+15          {this.state.photos.map(user =&gt; (
+16            &lt;img src={user.url} height=&quot;100px&quot; width=&quot;200px&quot; /&gt;
+17          ))}
+18        &lt;/div&gt;
+19        &lt;div
+20          ref={loadingRef =&gt; (this.loadingRef = loadingRef)}
+21          style={loadingCSS}
+22        &gt;
+23          &lt;span style={loadingTextCSS}&gt;Loading...&lt;/span&gt;
+24        &lt;/div&gt;
+25      &lt;/div&gt;
+26    );
+27  }</code></pre>
+<p>jsx</p>
+<p>The render function contains a different configuration, which is explained below.</p>
+<p>Create some additional styles for the icon that displays while loading the content like this.</p>
+<pre><code>1const loadingCSS = { 
+2    height: &quot;100px&quot;, 
+3    margin: &quot;30px&quot; 
+4};</code></pre>
+<p>jsx</p>
+<p>Another CSS style used to change the class property for the loading icon is called <span class="jsx-3120878690"><code>loadingTextCSS</code></span> and looks like this.</p>
+<pre><code>1const loadingTextCSS = { display: this.state.loading ? &quot;block&quot; : &quot;none&quot; };</code></pre>
+<p>jsx</p>
+<p>At last, into the return function, we have used our state array, called <span class="jsx-3120878690"><code>photos</code></span>, which contains the list of photos coming from the API response.</p>
+<pre><code>1&lt;div style={{ minHeight: &quot;800px&quot; }}&gt;
+2          {this.state.photos.map(user =&gt; (
+3            &lt;img src={user.url} height=&quot;100px&quot; width=&quot;200px&quot; /&gt;
+4          ))}
+5&lt;/div&gt;</code></pre>
+<p>jsx</p>
+<p>Along with the photos list, we have configured the loading icon based on the loading reference so that as soon as we scroll down to the target element, it shows the loading icon. When the loading process is completed, the loading icon will disappear.</p>
+<pre><code>1&lt;div
+2    ref={loadingRef =&gt; (this.loadingRef = loadingRef)}
+3    style={loadingCSS}
+4&gt;
+5    &lt;span style={loadingTextCSS}&gt;Loading...&lt;/span&gt;
+6&lt;/div&gt;</code></pre>
+<p>jsx</p>
+<p>We are done with our HTML content. Now if we run this example, we will get the initial 10 records per page because we have configured the additional parameters with the API like this.</p>
+<p><span class="jsx-3120878690"><code>https://jsonplaceholder.typicode.com/photos?_page=${page}&amp;_limit=10</code></span></p>
+<p>So when the user scrolls down the page, the page number will be updated frequently; but the page limit stays as it is, so 10 records at a time will be added into the array and render into the DOM.</p>
+<p>This is the complete process for using an intersection observer to get the position of the target element and return the movement into the DOM.</p>
+<h2 id="infinite-scroll-using-third-party-libraries">Infinite Scroll Using Third-Party Libraries</h2>
+<p>In this guide, we have developed an infinite scroll using custom implementation, but we could also use third-party libraries. A few of them include:</p>
+<ul>
+<li>react-infinite-scroller</li>
+<li>react-infinite-scroll-component</li>
+<li>react-infinite-scroll</li>
+<li>react-loading-infinite-scroller</li>
+<li>react-infinite-scroll-hook</li>
+</ul>
+<p>Many more packages are available, so choose wisely based on your project requirements.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Infinite scrolling is becoming a popular way to load data based on a scroll event that loads data continuously whenever the user reaches the bottom of the page.</p>
+<p>In this guide, we have learned a custom approach for implementing infinite scroll in ReactJS, but we can also use several third-party libraries to achieve the same result. I hope this guide will be helpful to you someday. If you have any queries, feel free to reach out at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>291</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

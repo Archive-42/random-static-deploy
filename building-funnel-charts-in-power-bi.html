@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>building-funnel-charts-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="building-funnel-charts-in-power-bi">Building Funnel Charts in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 23, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>1,777 Views</p></li>
+<li><p>Nov 23, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>1,777 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-addingvisualization" class="menu-link">Adding Visualization</a></li>
+<li><a href="#module-formattingthechart" class="menu-link">Formatting the Chart</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Funnel charts are typically used to show changes over a sequential process that leads into a result. In marketing, the funnel chart will show the stages or steps that transform a lead into a customer. This type of chart is also used to identify weak links in the marketing or sales processes. In this guide, you will learn how to build funnel charts in Power BI Desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious sales conversion data of two variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/funnelchartdata.csv">here</a>. The variables to be used in this guide are described below:</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>Stage</code></span>: Represents the various stages of a sales process leading to conversion.</p></li>
+<li><p><span class="jsx-3120878690"><code>Details</code></span>: Represents the details corresponding to the various stages in a quarter.</p></li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>To begin, open a new Power BI Desktop canvas and save it as <strong>PowerBI Visualization</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/04cabd40-b16b-47be-8d55-2a7f32ecdc92_wf1.html" /><figcaption aria-hidden="true">fc1</figcaption>
+</figure>
+<p>The next step is to load the data. Click on <strong>Get data</strong> option and select <strong>Text/CSV</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d51493f8-2c70-434d-a951-61620f9ea621_wf2.html" /><figcaption aria-hidden="true">fc2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0d823267-c740-4341-9530-7529d5db9b8d_fc3.html" /><figcaption aria-hidden="true">fc3</figcaption>
+</figure>
+<p>You have loaded the file, and the <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/afc5cd41-6156-46e3-80a2-ce8ac7d2c5c3_fc5.html" /><figcaption aria-hidden="true">fc5</figcaption>
+</figure>
+<h2 id="adding-visualization">Adding Visualization</h2>
+<p>You can locate the <strong>Funnel</strong> chart in the <strong>Visualizations</strong> pane. Click on the chart and it will create a chart box in the canvas. Nothing is displayed because you haven’t yet added the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fee9674c-632a-431e-8a59-b90fbefae6e9_fc6.html" /><figcaption aria-hidden="true">fc6</figcaption>
+</figure>
+<p>You can resize the chart on the canvas, and the next step is to fill the visualization arguments. Drag the <span class="jsx-3120878690"><code>Stage</code></span> variable into the <strong>Group</strong> field, and <span class="jsx-3120878690"><code>Details</code></span> variable in the <strong>Values</strong> field. You will see that the chart is created in the canvas.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/db77abbe-26e6-4a01-92c1-c3d2d95edbb0_fc7.html" /><figcaption aria-hidden="true">fc7</figcaption>
+</figure>
+<h3 id="interpreting-the-funnel-chart">Interpreting the Funnel Chart</h3>
+<p>A typical customer conversion process starts with inquiry from the customer. There were 350 inquiries made in the time period considered in the example in this guide. Out of these 350 inquiries, the sales team reached out to them and classified 160 as qualified leads. This means the other inquiries were not worth pursuing. Out of these 160 qualified leads, the sales team had meetings with 120 leads. 90 of these leads went on to fill the proposal form, out of which 60 eventually ended up becoming customers. This meant a 17.1 percent conversion rate with respect to total number of inquiries.</p>
+<h2 id="formatting-the-chart">Formatting the Chart</h2>
+<p>There are several formatting options available. To begin, you can go to the format field, and change the color and text size of the chart. This is shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d4541124-b995-4355-9bc3-fbb675308535_fc8.html" /><figcaption aria-hidden="true">fc8</figcaption>
+</figure>
+<p>The other formatting option you can do is to change the <strong>Data colors</strong> of the chart. Click on the option and you will see different colors to depict the various stages.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5b759e14-1c5a-441c-a126-1ae9a0751a00_fc9.html" /><figcaption aria-hidden="true">fc9</figcaption>
+</figure>
+<p>Select the color as shown below or as per your preference.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cc61e7e4-90bc-4174-bf22-a583f848e941_fc10.html" /><figcaption aria-hidden="true">fc10</figcaption>
+</figure>
+<p>The other formatting you can do is change the color and text size of conversion parameter. This can be done by turning on the <strong>Conversion</strong> option, and changing the <strong>Color</strong> and <strong>Text size</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9d900f29-26b3-436f-a8b1-4fee11193953_fc11.html" /><figcaption aria-hidden="true">fc11</figcaption>
+</figure>
+<p>You now have the funnel chart that is well formatted and gives you the picture of different stages of sales cycle.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Funnel charts are a simple but extremely powerful tool to use if the data is sequential and moves through various stages. This is extensively used in sales and marketing companies. It is also used in e-commerce websites to identify abandonment rate. Creating funnel charts is a common task for any organization that has a sales or marketing function. This skill will improve your marketing analytics capabilities.</p>
+<p>To learn more about building powerful visualization in Power BI Desktop, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/build-a-treemap-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implement-clustering-in-powerbi">Implement Clustering in PowerBI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/filter-data-in-power-bi">Filter Data in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implementing-hierarchical-axis-and-concatenation-in-power-bi">Implementing Hierarchical Axis and Concatenation in Power BI</a></p></li>
+</ol>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

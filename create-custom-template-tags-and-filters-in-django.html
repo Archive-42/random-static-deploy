@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>create-custom-template-tags-and-filters-in-django</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="create-custom-template-tags-and-filters-in-django">Create Custom Template Tags and Filters in Django</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 24, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>13,961 Views</p></li>
+<li><p>Nov 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>13,961 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>50</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-gettingstarted" class="menu-link">Getting Started</a></li>
+<li><a href="#module-writingcustomtemplatefilters" class="menu-link">Writing Custom Template Filters</a></li>
+<li><a href="#module-writingcustomtemplatetags" class="menu-link">Writing Custom Template Tags</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The Django template language offers a wide range of built-in tags and filters for designing the presentation layer of your Django app. However, your app may need a functionality that is not included in the core set of template primitive language. Django allows you to create your own set of custom tags and filters using Python, and make them available in the Django templates.</p>
+<p>This guide will demonstrate how to create custom template tags and filters, and how to load them in templates.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Inside your Django app directory, create a module called <span class="jsx-3120878690"><code>templatetags</code></span> and add an empty <span class="jsx-3120878690"><code>__init__.py</code></span> file as shown in the below directory structure.</p>
+<blockquote>
+<p>Note: Make sure that you have included your app in <span class="jsx-3120878690"><code>INSTALLED_APPS</code></span> available in <span class="jsx-3120878690"><code>settings.py</code></span> .</p>
+</blockquote>
+<pre><code>1my_app/
+2├── __init__.py
+3├── admin.py
+4├── models.py
+5├── templatetags/
+6│   ├── __init__.py
+7│   └── custom_tags.py
+8└── views.py</code></pre>
+<p>Next, open the <span class="jsx-3120878690"><code>custom_tags.py</code></span> file and add these two lines to get started with custom template tags and filters.</p>
+<pre><code>1from django import template
+2
+3register = template.Library()</code></pre>
+<p>python</p>
+<p>Make <span class="jsx-3120878690"><code>custom_tags</code></span> available by loading it in templates.</p>
+<pre><code>1{% load custom_tags %}</code></pre>
+<p>django</p>
+<h2 id="writing-custom-template-filters">Writing Custom Template Filters</h2>
+<p>Filters are nothing but a Python function, which takes one or two arguments. For instance, in the filter <span class="jsx-3120878690"><code>{{var|filter_f:arg}}</code></span> , the filter <span class="jsx-3120878690"><code>filter_f</code></span> would be passed to the variable <span class="jsx-3120878690"><code>var</code></span> and argument as <span class="jsx-3120878690"><code>arg</code></span>.</p>
+<p>For demonstration, create a filter to modify a string based on the argument. Create a simple view in <span class="jsx-3120878690"><code>views.py</code></span>, that renders a string as follows:</p>
+<pre><code>1def my_view(request):
+2    context = {
+3        &quot;author&quot;: &quot;gaurav singhal&quot;,
+4    }
+5    return render(request, &quot;index.html&quot;, context)</code></pre>
+<p>python</p>
+<p>After creating views, create a simple template filter named <span class="jsx-3120878690"><code>modify_name</code></span> in <span class="jsx-3120878690"><code>custom_tags.py</code></span>.</p>
+<pre><code>1from django import template
+2
+3register = template.Library()
+4
+5def modify_name(value, arg):
+6    # if arg is first_name: return the first string before space
+7    if arg == &quot;first_name&quot;:
+8        return value.split(&quot; &quot;)[0]
+9    # if arg is last_name: return the last string before space
+10    if arg == &quot;last_name&quot;:
+11        return value.split(&quot; &quot;)[-1]
+12    # if arg is title_case: return the title case of the string
+13    if arg == &quot;title_case&quot;:
+14        return value.title()
+15    return value
+16    
+17register.filter(&#39;modify_name&#39;, modify_name)</code></pre>
+<p>python</p>
+<p>You can now use the <span class="jsx-3120878690"><code>modify_name</code></span> filter in your templates.</p>
+<pre><code>1{% comment %} index.html {% endcomment %}
+2
+3{% load custom_tags %}
+4
+5{{ author | modify_name:&quot;first_name&quot;}}&lt;br&gt;
+6{{ author | modify_name:&quot;last_name&quot;}}&lt;br&gt;
+7{{ author | modify_name:&quot;title_case&quot;}}&lt;br&gt;
+8{{ author | modify_name:&quot;first_name&quot; | modify_name:&quot;title_case&quot;}}&lt;br&gt;</code></pre>
+<p>django</p>
+<p>This will give the output as follows:</p>
+<pre><code>1gaurav
+2singhal
+3Gaurav Singhal
+4Gaurav</code></pre>
+<p>Likewise, you can create your template filters, and then you can use them in your templates.</p>
+<h2 id="writing-custom-template-tags">Writing Custom Template Tags</h2>
+<p>Template tags are more powerful and more complex than filters. Django supports several shortcuts for making most of them easier.</p>
+<h3 id="simple_tag">simple_tag</h3>
+<p>simple_tag takes several arguments and returns a result after doing some processing. Below is a simple example to display the current date and time in the template</p>
+<pre><code>1# custom_tags.py
+2from django import template
+3register = template.Library()
+4
+5import datetime
+6
+7@register.simple_tag
+8def current_time(format_string):
+9    return datetime.datetime.now().strftime(format_string)</code></pre>
+<p>python</p>
+<p>Next, use the above custom template tag into your template as follows:</p>
+<pre><code>1{% comment %} index.html {% endcomment %}
+2
+3{% load custom_tags %}
+4
+5{% current_time &quot;%d/%m/%Y %H:%M:%S %p&quot; %}</code></pre>
+<p>django</p>
+<p>This will give you the current date and time when you run the Django server.</p>
+<pre><code>117/11/2020 14:15:59 PM</code></pre>
+<h3 id="inclusion_tag">inclusion_tag:</h3>
+<p>inclusion_tag is a common type of template tag, and helps in displaying data by rendering <em>another</em> template. This tag is useful in scenarios when you want to render data that is common in several pages.</p>
+<p>In the example below, the <span class="jsx-3120878690"><code>Users</code></span> table is rendered by creating a new template named <span class="jsx-3120878690"><code>users.html</code></span> using the <span class="jsx-3120878690"><code>show_users_table</code></span> template tag. The <span class="jsx-3120878690"><code>custom_tag.py</code></span> is modified as given below:</p>
+<pre><code>1# custom_tags.py
+2from django.contrib.auth import get_user_model
+3from django.template.loader import get_template
+4
+5from django import template
+6register = template.Library()
+7
+8User = get_user_model()
+9
+10def show_users_table():
+11    users = User.objects.all()
+12    return {&#39;users&#39;: users}
+13
+14users_template = get_template(&#39;users.html&#39;)
+15register.inclusion_tag(users_template)(show_users_table)</code></pre>
+<p>python</p>
+<p>Next, create a new template named <span class="jsx-3120878690"><code>users.html</code></span> and render the users in a tabular format.</p>
+<pre><code>1{% comment %} users.html {% endcomment %}
+2
+3{% load custom_tags %}
+4
+5&lt;table&gt;
+6    &lt;thead&gt;
+7        &lt;tr&gt;
+8        &lt;td&gt;Username&lt;/td&gt;
+9        &lt;td&gt;First name&lt;/td&gt;
+10        &lt;td&gt;Last name&lt;/td&gt;
+11        &lt;td&gt;email&lt;/td&gt;
+12        &lt;/tr&gt;
+13    &lt;/thead&gt;
+14    &lt;tbody&gt;
+15        {% for user in users %}
+16        &lt;tr&gt;
+17            &lt;td&gt;{{user.username}}&lt;/td&gt;
+18            &lt;td&gt;{{user.first_name}}&lt;/td&gt;
+19            &lt;td&gt;{{user.last_name}}&lt;/td&gt;
+20            &lt;td&gt;{{user.email}}&lt;/td&gt;
+21        &lt;/tr&gt;
+22        {% endfor %}
+23    &lt;/tbody&gt;
+24&lt;/table&gt;</code></pre>
+<p>django</p>
+<p>Now, you can use the above inclusion tag in any other template (say <span class="jsx-3120878690"><code>index.html</code></span>) as shown below.</p>
+<pre><code>1{% comment %} index.html {% endcomment %}
+2
+3{% load custom_tags %}
+4
+5{% show_users_table %}</code></pre>
+<p>django</p>
+<p>This will render the user in a tabular manner as shown below.</p>
+<pre><code>1Username        First name  Last name   email
+2gaurav_singhal Gaurav      Singhal     [email protected]</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Django custom template tags and filters are the best way to create tags and filters that you may need in your Django app. If you are new to Django templates, read <a href="introduction-to-django-templates.html">this guide</a>. You can refer to the <a href="https://docs.djangoproject.com/en/3.1/howto/custom-template-tags/#custom-template-tags-and-filters">Django documentation on custom template tags and filters</a> for more understanding. If you have any queries, feel free to reach out at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>50</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

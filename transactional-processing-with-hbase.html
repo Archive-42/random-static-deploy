@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>transactional-processing-with-hbase</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/98bf39ab-eb2b-4e8d-abe5-e48d02fba40c.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Miguel Saavedra</p>
+<h1 id="transactional-processing-with-hbase">Transactional Processing with HBase</h1>
+<h3 id="miguel-saavedra">Miguel Saavedra</h3>
+<ul>
+<li><p>Oct 7, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>822 Views</p></li>
+<li><p>Oct 7, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>822 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Big Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Apache HBase</span></p>
+<p>Introduction</p>
+<p>8</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-hbaseschema" class="menu-link">HBase Schema</a></li>
+<li><a href="#module-hbasearchitecture" class="menu-link">HBase Architecture</a></li>
+<li><a href="#module-insertingdataintohbase" class="menu-link">Inserting Data into HBase</a></li>
+<li><a href="#module-readingdatafromhbase" class="menu-link">Reading Data from HBase</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Hadoop and the members of the Hadoop ecosystem have been known as primarily tools for big data analytics and durable storage. Although they can analyze Terrabytes and even Petabytes of data efficiently, the original Hadoop applications were not meant to efficiently handle transactions, particularly writes to HDFS.</p>
+<p>HBase (Hadoop Database) is an open source project that attempts to give Hadoop the ability to make fast, transactional writes to its filesystem. It takes advantage of Hadoop’s distributed computing environment to build a durable, consistent, yet high-performing database.</p>
+<h2 id="hbase-schema">HBase Schema</h2>
+<p>HBase is a wide column key-value store adapted from Google’s <a href="https://www.usenix.org/legacy/event/osdi06/tech/chang/chang.pdf">Big Table</a>. Each row has a specific key known as a <em>rowkey</em>. The data in your HBase cluster is stored lexicographically by that rowkey. The data in the row are represented by <em>columns</em>, which are grouped together into <em>column families</em>. Columns within a column family are stored physically close to each other to take advantage of data locality and minimize communication across nodes.</p>
+<p>The following is an example of a table schema in HBase. <embed src="../../images2.imgbox.com/1d/04/OqU6rhts_o.html" /> Schema adapted from <a href="https://aws.amazon.com/blogs/big-data/combine-nosql-and-massively-parallel-analytics-using-apache-hbase-and-apache-hive-on-amazon-emr/">AWS Blog Post</a></p>
+<p>The key in this case is a concatenation of last name, first name, and customer identification number (e.g., <span class="jsx-3120878690"><code>armstrong_alice_8570365786</code></span>). There are three column families: <span class="jsx-3120878690"><code>address</code></span>, <span class="jsx-3120878690"><code>cc</code></span>, and <span class="jsx-3120878690"><code>contact</code></span>. This means that all of a specific customer’s address information is stored together on the same physical machine. Their credit card information, since it all belongs to one column family, is also stored together on the same machine, though it may not be on the same machine as the other column families.</p>
+<p>Assuming you have Hadoop and HBase installed in your cluster, you can create a table by first running an HBase shell:</p>
+<pre><code>1hbase shell</code></pre>
+<p>bash</p>
+<p>Then run the <span class="jsx-3120878690"><code>create</code></span> command. The general syntax of the create command is:</p>
+<pre><code>1create &#39;&lt;table_name&gt;&#39;, &#39;&lt;column_family_1&gt;&#39;, &#39;&lt;column_family_2&gt;&#39;, &#39;&lt;column_family_3&gt;&#39;, . . . &#39;&lt;column_family_n&gt;&#39;</code></pre>
+<p>bash</p>
+<p>To create the table illustrated by the schema above, run the following command:</p>
+<pre><code>1create &#39;customer&#39;, &#39;address&#39;, &#39;cc&#39;, &#39;contact&#39;</code></pre>
+<p>bash</p>
+<h2 id="hbase-architecture">HBase Architecture</h2>
+<p><embed src="../../images2.imgbox.com/6b/0e/12LaVA2W_o.html" /> Source: <a href="https://hbase.apache.org/book.html#arch.overview">HBase Architecture</a></p>
+<h3 id="overview">Overview</h3>
+<p>HBase consist of several services that coordinate with each other through <em>Zookeeper</em>, a distributed service discovery and configuration management server. A certain range of rows is stored in <span class="jsx-3120878690"><code>HRegions</code></span> and served by an <span class="jsx-3120878690"><code>HRegionServer</code></span>. An <span class="jsx-3120878690"><code>HRegionServer</code></span> may serve one or many <span class="jsx-3120878690"><code>HRegions</code></span>. The <span class="jsx-3120878690"><code>HMaster</code></span> determines what <span class="jsx-3120878690"><code>HRegion</code></span> each row is stored in, assigns the <span class="jsx-3120878690"><code>store</code></span> each column family is stored in, and updates the state of the cluster on Zookeeper.</p>
+<p>The HBase <em>client</em> communicates with the <span class="jsx-3120878690"><code>HMaster</code></span> for DDL statements, but mostly interfaces with the <span class="jsx-3120878690"><code>HRegionServer</code></span> directly to query table data. The client relies on Zookeeper to identify what rows are stored in a particualr region.</p>
+<h3 id="stores">Stores</h3>
+<p>Each store on HBase consists of a <span class="jsx-3120878690"><code>MemStore</code></span> and zero or more <span class="jsx-3120878690"><code>StoreFiles</code></span>. The <span class="jsx-3120878690"><code>MemStore</code></span> stores all recent writes to HBase in memory for faster data retreival. When the <span class="jsx-3120878690"><code>MemStore</code></span> reaches the limit specified in the <span class="jsx-3120878690"><code>hbase.hregion.memstore.flush.size</code></span> configuration property, the data in the <span class="jsx-3120878690"><code>MemStore</code></span> is flushed to <a href="https://app.pluralsight.com/guides/understanding-hadoop&#39;s-distributed-file-system">HDFS</a> in the form of <span class="jsx-3120878690"><code>StoreFiles</code></span>. A <span class="jsx-3120878690"><code>StoreFile</code></span> contains an <span class="jsx-3120878690"><code>HFile</code></span> where the HBase data actually resides. Technically speaking, <span class="jsx-3120878690"><code>HFiles</code></span> and <span class="jsx-3120878690"><code>StoreFiles</code></span> are separate entities, but they are used interchangeably in practice.</p>
+<p>High availability may be an issue if data is not flushed to HDFS. If there is some sort of cluster failure, all data stored in memory, and therefore all the data in the <span class="jsx-3120878690"><code>MemStore</code></span>, is erased. To recover from such failures, HBase maintains a Write Ahead Log, or <em>WAL</em>, to store all recent changes made to the table on HDFS. This allows HBase to replay these changes should there be any node failure in the cluster.</p>
+<h2 id="inserting-data-into-hbase">Inserting Data into HBase</h2>
+<p>Now that you understand the basic schema and architecture of HBase, you can begin inserting data into HBase. The general syntax for data inserts using the HBase shell is as follows:</p>
+<pre><code>1put &#39;&lt;table_name&gt;&#39;,&#39;&lt;rowkey&gt;&#39;,&#39;&lt;column_family&gt;:&lt;column&gt;&#39;,&#39;&lt;value&gt;&#39;</code></pre>
+<p>hbase</p>
+<p>You can insert only one value in one column per <span class="jsx-3120878690"><code>put</code></span> command. The following code block inserts information for two customers in your customer table.</p>
+<pre><code>1put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;address:city&#39;,&#39;Claraport&#39;
+2put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;address:state&#39;,&#39;NH&#39;
+3put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;address:street&#39;,&#39;Melany Gateway&#39;
+4put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;address:zip&#39;,&#39;53522&#39;
+5put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;cc:number&#39;,&#39;1212-1221-1121-1234&#39;
+6put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;cc:expire&#39;,&#39;2024-04-12&#39;
+7put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;cc:type&#39;,&#39;visa&#39;
+8put &#39;customer&#39;,&#39;armstrong_alice_8570365786&#39;,&#39;contact:phone&#39;,&#39;1-871-480-5984&#39;
+9
+10put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;address:city&#39;,&#39;Graysonfurt&#39;
+11put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;address:state&#39;,&#39;NV&#39;
+12put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;address:street&#39;,&#39;Hodkiewicz Glens&#39;
+13put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;address:zip&#39;,&#39;45250&#39;
+14put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;cc:number&#39;,&#39;1228-1221-1221-1431&#39;
+15put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;cc:expire&#39;,&#39;2024-06-12&#39;
+16put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;cc:type&#39;,&#39;mastercard&#39;
+17put &#39;customer&#39;,&#39;bailey_bob_7073092045&#39;,&#39;contact:phone&#39;,&#39;1-828-193-0549&#39;</code></pre>
+<p>hbase</p>
+<h2 id="reading-data-from-hbase">Reading Data from HBase</h2>
+<p>There are two operations you can perform to read data from HBase: <span class="jsx-3120878690"><code>get</code></span> and <span class="jsx-3120878690"><code>scan</code></span>.</p>
+<p>The <span class="jsx-3120878690"><code>get</code></span> operation allows you to get information from a specific <span class="jsx-3120878690"><code>rowkey</code></span>. The general syntax of a <span class="jsx-3120878690"><code>get</code></span> operation is as follows:</p>
+<pre><code>1get ‘&lt;table_name’&gt;, ‘&lt;rowkey&gt;’, ‘&lt;information&gt;’</code></pre>
+<p>hbase</p>
+<p>For example, the following query returns the credit card type of Alice Armstrong.</p>
+<pre><code>1get &#39;customer&#39;, &#39;armstrong_alice_8570365786&#39;, &#39;cc:type&#39;</code></pre>
+<p>hbase</p>
+<p>You can also get all the information in a given column family.</p>
+<pre><code>1get &#39;customer&#39;, &#39;armstrong_alice_8570365786&#39;, {COLUMN =&gt; &#39;address&#39;}</code></pre>
+<p>hbase</p>
+<p>If you omit the information field, you can also get all the information of a specific key across all column families.</p>
+<pre><code>1get &#39;customer&#39;, &#39;armstrong_alice_8570365786&#39;</code></pre>
+<p>hbase</p>
+<p>It is important to note, however, that the get operation only returns information about a single rowkey. To look for information across row keys, you will need to perform a scan operation. For example, the following query looks for all cities whose rowkey begins with <span class="jsx-3120878690"><code>armstrong</code></span>.</p>
+<pre><code>1scan &#39;customer&#39;, {STARTROW =&gt; &#39;armstrong_&#39;, ENDROW =&gt; &#39;armstronh&#39;, COLUMN =&gt; &#39;address:city&#39;}</code></pre>
+<p>hbase</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>HBase is a fast and durable database based on Google Big Table and built on top of the Hadoop ecosystem. It gives users full control over where their data is stored and how the system stores and groups together that data. The architecture takes advantage of HDFS’ durable and fault-tolerant file system while also utilizing cluster memory to speed up queries.</p>
+<p>8</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

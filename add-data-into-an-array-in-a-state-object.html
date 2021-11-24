@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>add-data-into-an-array-in-a-state-object</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/d87e74d1-8e02-494a-9052-eb43fe48f3ac.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="add-data-into-an-array-in-a-state-object">Add Data into an Array in a State Object</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Nov 18, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>85,015 Views</p></li>
+<li><p>Nov 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>85,015 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>76</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-displayarraydatainacomponent" class="menu-link">Display Array Data in a Component</a></li>
+<li><a href="#module-displayupdatedarraydata" class="menu-link">Display Updated Array Data</a></li>
+<li><a href="#module-handleasynchronouschangesinthestate" class="menu-link">Handle Asynchronous Changes in the State</a></li>
+<li><a href="#module-tips" class="menu-link">Tips</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>State management is a vital concept to understand to develop a dynamic UI component. A React component can be categorized as either stateful or stateless. A class component uses a state object to update the UI by using a <span class="jsx-3120878690"><code>setstate</code></span> function that can take updated values or a function to trigger a rendering cycle with the updated data. On the other hand, functional components use React hooks to track data changes of UI updates.</p>
+<p>Arrays are often used as a data source to create complex UI elements such as tables, lists, or grids. A state object can store arrays that can be updated with a response from an API or users. React tracks the changes in a state object using a shallow comparison that does not compare attributes of objects while comparing objects.</p>
+<p>This guide explains the steps to modify the state of a component using an array.</p>
+<h2 id="display-array-data-in-a-component">Display Array Data in a Component</h2>
+<p>An array can be traversed using a conventional <span class="jsx-3120878690"><code>for</code></span> loop or <span class="jsx-3120878690"><code>map</code></span> function. The content of an array can be traversed and transformed into UI elements using the <span class="jsx-3120878690"><code>map</code></span> function, which will apply the passed transformer function to each array element and return a list of elements. This can also be done directly in a JSX scope (‘{}’) to directly render elements on a component. Follow the below example to implement a list of users with an add button to display input value in the list:</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import &quot;./style.css&quot;;
+3
+4export default class App extends Component {
+5  state = {
+6    cart: [&quot;Corn&quot;, &quot;Potato&quot;],
+7  };
+8
+9  saveInput = (e) =&gt; {
+10    this.setState({ input: e.target.value });
+11  };
+12
+13  addNewItem = () =&gt; {
+14    let { cart, input } = this.state;
+15    cart.push(input);
+16    // this.state.cart.push(this.state.input); // same as above, though bad practice 
+17  };
+18
+19  render() {
+20    return (
+21      &lt;div&gt;
+22        &lt;input
+23          type=&quot;text&quot;
+24          onChange={this.saveInput}
+25        /&gt;
+26        &lt;button onClick={this.addNewItem}&gt; Add Item &lt;/button&gt;
+27        &lt;ol&gt;
+28          {this.state.cart.map((subItems, sIndex) =&gt; {
+29            return &lt;li key={sIndex}&gt; {subItems}&lt;/li&gt;
+30          })}
+31        &lt;/ol&gt;
+32      &lt;/div&gt;
+33    );
+34  }
+35}</code></pre>
+<p>JSX</p>
+<p>The <span class="jsx-3120878690"><code>state</code></span> object contains a <span class="jsx-3120878690"><code>cart</code></span> array with two values. The <span class="jsx-3120878690"><code>saveInput</code></span> method saves the input from the user in the state object with an <span class="jsx-3120878690"><code>input</code></span> key label. On button click event, the <span class="jsx-3120878690"><code>cart</code></span> and the <span class="jsx-3120878690"><code>input</code></span> value are retrieved using the destructuring syntax, and the input value is added in the cart array. This is a bad approach because React will never know about the changes in the state unless the <span class="jsx-3120878690"><code>setState</code></span> method is used.</p>
+<blockquote>
+<p><strong>Note:</strong> In the above example, the list is updated as soon as you start typing because <span class="jsx-3120878690"><code>onChange</code></span> updates the <span class="jsx-3120878690"><code>state</code></span> that re-renders the <span class="jsx-3120878690"><code>App</code></span> component.</p>
+</blockquote>
+<h2 id="display-updated-array-data">Display Updated Array Data</h2>
+<p>In order to update the array in the state object, a new array object must be supplied to the <span class="jsx-3120878690"><code>input</code></span> key using the <span class="jsx-3120878690"><code>setState</code></span> method:</p>
+<pre><code>1addNewItem = () =&gt; {
+2  let { cart, input } = this.state;
+3  cart.push(input);
+4  this.setState({cart: cart});
+5};</code></pre>
+<p>JSX</p>
+<p>The <span class="jsx-3120878690"><code>setState</code></span> method will replace the existing array with the updated array, though this can also be achieved with a shorter syntax using the spread (<span class="jsx-3120878690"><code>...</code></span>) operator:</p>
+<pre><code>1addNewItem = () =&gt; {
+2  this.setState({cart: [...this.state.cart, this.state.input]});
+3};</code></pre>
+<p>JSX</p>
+<p>Or it can also be done using the <span class="jsx-3120878690"><code>concat</code></span> method:</p>
+<pre><code>1addNewItem = () =&gt; {
+2  this.setState({cart: this.state.cart.concat(this.state.input)});
+3};</code></pre>
+<p>JSX</p>
+<p>The <span class="jsx-3120878690"><code>concat</code></span> method creates and returns a new array by combining the <span class="jsx-3120878690"><code>cart</code></span> array and the <span class="jsx-3120878690"><code>input</code></span> value.</p>
+<h2 id="handle-asynchronous-changes-in-the-state">Handle Asynchronous Changes in the State</h2>
+<p>It is critical to assure the integrity of the state when handing bulky or complex objects. The <span class="jsx-3120878690"><code>setState</code></span> method is asynchronous, which means the data in the <span class="jsx-3120878690"><code>state</code></span> object will not be updated instantly, and React can combine multiple state change calls for performance gain. The data can also be updated anytime, so to avoid possible side effects of asynchronous behavior, it is recommended to use the snapshot of the previous state to create a new state:</p>
+<pre><code>1addNewItem = () =&gt; {
+2  this.setState((prevState, props) =&gt; ({
+3    cart: [...prevState.cart, prevState.input],
+4  }));
+5};</code></pre>
+<p>JSX</p>
+<p>And the <span class="jsx-3120878690"><code>props</code></span> can also be skipped to only use <span class="jsx-3120878690"><code>prevState</code></span>:</p>
+<pre><code>1addNewItem = () =&gt; {
+2  this.setState(prevState =&gt; ({
+3    cart: [...prevState.cart, prevState.input],
+4  }));
+5};</code></pre>
+<p>JSX</p>
+<h2 id="tips">Tips</h2>
+<p>• React uses a key to track changes in the dynamic elements (<span class="jsx-3120878690"><code>li</code></span>) so the <span class="jsx-3120878690"><code>index</code></span> and element data can be used to make a unique key:</p>
+<pre><code>1{
+2  this.state.cart.map((subItems, sIndex) =&gt; {
+3  return &lt;li key={`${subItems}${sIndex}`}&gt; {subItems}&lt;/li&gt;;
+4  })
+5}</code></pre>
+<p>JSX</p>
+<p>• Avoid using consecutive <span class="jsx-3120878690"><code>setState</code></span> calls. Instead, update values in one go with <span class="jsx-3120878690"><code>setState({ foo: value1, bar: value                                       });</code></span>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Immutability is an important principle in React to assure data integrity and consistency in an app. Use the spread operator and previous state to generate a new state and ensure the updated value in the state object. The complete optimized code of <span class="jsx-3120878690"><code>App.js</code></span> is available in this <a href="../../gist.githubusercontent.com/Pavneet-Sing/3259b10769d056e19864099d8a7d45a5/raw/81af51c9f1b3524f233896565bbfcef2d85bcc01/App.html">Github gist file</a>. Happy coding!</p>
+<p>76</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

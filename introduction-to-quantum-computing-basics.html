@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>introduction-to-quantum-computing-basics</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/2fc6e7af-c83f-44b3-a657-76ef40d36783.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Ara Medina</p>
+<h1 id="introduction-to-quantum-computing-basics">Introduction to Quantum Computing Basics</h1>
+<h3 id="ara-medina">Ara Medina</h3>
+<ul>
+<li><p>Nov 17, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>2,407 Views</p></li>
+<li><p>Nov 17, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>2,407 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages, Frameworks, and Tools</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Application Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Quantum Computing</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">General Quantum Computing Principles</span></p>
+<p>Introduction</p>
+<p>90</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-history" class="menu-link">History</a></li>
+<li><a href="#module-superposition" class="menu-link">Superposition</a></li>
+<li><a href="#module-entanglement" class="menu-link">Entanglement</a></li>
+<li><a href="#module-potentialfutureusecases" class="menu-link">Potential Future Use Cases</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Companies like Microsoft, Google, IBM, and Amazon are investing heavily in quantum computing research and even starting to build out public cloud services that offer access to quantum hardware. Given all the hype, you may be wondering what it’s all about and whether you should be paying attention.</p>
+<p>This guide will cover the basic premise of quantum computing, as well as where it came from and where it is headed. This guide will also point you in the direction of next steps to take if you decide that quantum computing is something you want to explore further.</p>
+<h2 id="history">History</h2>
+<p>The idea for quantum computers began to take form in the late 1970s and early 1980s. The physicist Richard Feynman is often cited as one of the early conceptualizers, although there were others talking about similar ideas around the same time. At this point, researchers were starting to realize that if you want to accurately model the vast intricacies of nature, especially of very small and complex things like molecules, you would be better off using a quantum simulation to do so. This is because nature itself is not fundamentally classical—it is built on top of quantum mechanics, which behaves in radically different ways.</p>
+<p>Soon, scientists began identifying algorithms that could theoretically run faster on a quantum computer than a classical one, and they found several candidates. Then, in the mid to late 1990s, researchers started to make breakthroughs on the other side of quantum computing: the physical hardware. Today, experts in the field are trying to bring these two sides together to build out quantum computers that can actually solve certain problems faster than their classical counterparts.</p>
+<p>Now that you have some background context, let’s take a look at some foundational concepts of quantum mechanics.</p>
+<h2 id="superposition">Superposition</h2>
+<p><em>Superposition</em> is one of the core characteristics of quantum mechanics. In classical computing, bits exist in discrete states of either 0 or 1, which are considered <em>deterministic</em> because they are not subject to probability or randomness. <a href="https://sandramedina.me/blog/2020/7/24/characteristics-of-qubits-and-quantum-processing">Qubits</a>, however, can exist in a combination of the two states simultaneously. An <a href="https://www.ibm.com/quantum-computing/what-is-quantum-computing">analogy</a> for this would be if you played a high note and a low note on a musical instrument at the same time. The sound emitted is neither one note nor the other, but a superposition of the two.</p>
+<p>There is a catch though—in a quantum system, you can’t directly observe superposition. If you try to observe or measure a state of superposition, still considered <em>indeterminate</em> at this point, it will collapse into a determinate state.</p>
+<p>Consider the musical note analogy and for a moment pretend that quantum mechanics are applicable to the sound emitted. In this scenario it would be like if, as soon as you tried to listen in on the sound, you only heard one note playing, even though you are sure the instrument played two notes.</p>
+<p>This happens because states of superposition are extraordinarily delicate. Your presence in the environment, which moves air particles around and is generally disruptive, is enough to destroy the state. It is as though your act of listening forces the quantum system to “choose” a note.</p>
+<h3 id="probabilities">Probabilities</h3>
+<p>What are the odds that you would hear the high note versus the low note? In some cases, called <em>uniform superposition</em>, it would be 50/50. However, it could also be any weighted distribution of probabilities based on the quantum state you’ve put the system into, as long as the probabilities of all the states add up to 100%.</p>
+<p>While qubits are in their delicate state of probabilistic superposition, it’s possible to do all kinds of calculations and processing with them that you wouldn’t be able to do with deterministic states, and that is part of what makes quantum computers so powerful.</p>
+<h2 id="entanglement">Entanglement</h2>
+<p>Another fundamental principle of quantum mechanics is <em>entanglement</em>. To understand this, consider another <a href="https://www.youtube.com/watch?v=C-UxlEQj13w">analogy</a>, this one adapted from theoretical cosmologist Janna Levin. Imagine a scenario where you are playing the wishbone game with a friend, but the rules of quantum mechanics and entanglement are in effect. You each pull on one side of the wishbone to break it apart, but you don’t look at which piece you’re left with.</p>
+<p>In the quantum world, as soon as you and your friend break the wishbone, <em>both</em> of the following are true: you have the big piece while your friend has the little piece, <em>and</em> you have the little piece while your friend has the big piece. It is as though the wishbone pieces themselves have not yet “decided” whether they are the big piece or the small piece. Each wishbone piece is in superposition, and their states are indeterminate. It’s not just that you and your friend don’t know what pieces you have, it’s more than that: the states of the pieces have not yet been actualized in reality.</p>
+<p>Still without looking at the wishbone in your hand, you put it in your pocket, get in a spaceship and fly to the Moon. You then get out of your spaceship and look at the wishbone. You can think of that moment of seeing whether you have the big piece or the small piece as the moment of measurement, the moment your piece’s state becomes determined.</p>
+<p>Because the two pieces are entangled, as soon as you see which piece you have, your friend’s piece on Earth is automatically compelled into the complementary piece. This means that if you see that you have the big piece in your hand, their piece immediately loses its superposition and “decides” to become the small piece, and vice versa. By changing the state of your piece, you actually also changed the state of your friend’s piece and this happens instantaneously, faster than the speed of light.</p>
+<p>Qubits are considered <a href="https://quantum-computing.ibm.com/docs/glossary/#term-entanglement">entangled</a> if you can’t describe the state of one qubit without describing the state of another—their states cannot be separated. You need at least two qubits for entanglement, but it is also possible to have more than that.</p>
+<h2 id="potential-future-use-cases">Potential Future Use Cases</h2>
+<p>These features of quantum computing and mechanics are certainly interesting, but what are they useful for?</p>
+<p>While there is significant disagreement amongst experts about what the timeline is for highly practical quantum computers, the players in the quantum computing field are all racing toward a quantum advantage. This is because the applications that it could have are potentially far-reaching. Let’s consider a few.</p>
+<h3 id="nitrogen-fixation">Nitrogen Fixation</h3>
+<p><a href="https://digitalcommons.dartmouth.edu/cgi/viewcontent.cgi?article=1031&amp;context=dujs">The synthesis of ammonia</a> in soil happens through a process called nitrogen fixation. We rely heavily on ammonia for fertilizers, but the current method of artificially generating it in large quantities is quite inefficient and requires intense heat and pressure. This process consumes approximately 2% of the world’s overall energy production.</p>
+<p>Nitrogenase is the enzyme in soil that enables nitrogen fixation to occur naturally, and it does this without having the same heat and pressure requirements. If quantum computers can simulate how this takes places at a molecular scale, we might eventually be able to introduce a similar mechanism into our own production lines. Not only would this mean less energy is expended creating fertilizer, but since fertilizer is used in food production, this could also help drive the global cost of food down significantly.</p>
+<h3 id="theoretical-chemistry-and-material-design">Theoretical Chemistry and Material Design</h3>
+<p>Polymers, which are used in many common materials like some plastics, are composed of molecules that join together in certain patterns. Modeling how the components of polymers break and come together can lead to <a href="https://www.designnews.com/materials-assembly/how-quantum-computing-will-transform-materials-science">the discovery of new types of theoretical materials</a>. Since it takes a great deal of computing power to make these simulations, current classical computers aren’t able to do so efficiently. However, since the electrons in polymers are actually quantum objects, it makes sense that to model them effectively, we would potentially be able to use quantum computers which are themselves quantum systems.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>An important final note on quantum computing is that under the hood it can really be understood as conducting an experiment with quantum objects and observing the results of how they behave. Since you are working with probabilistic states, you need to run the experiment many times in order to get an accurate distribution of outcomes.</p>
+<p>This is quite different from how classical systems compute answers, but it is still considered a computation nonetheless. When the problem you are trying to solve has a quantum facet to it, it is most likely going to be faster to model that with a real quantum experiment than by trying to compute it classically.</p>
+<p>If you’re ready to move from theory to actually coding quantum circuits, check out my Pluralsight <a href="https://app.pluralsight.com/guides/programming-your-first-quantum-circuit-with-ibm-quantum-experience">guide</a> on how to get started with IBM Quantum and Qiskit.</p>
+<p>90</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

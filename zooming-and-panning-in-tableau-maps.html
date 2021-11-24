@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>zooming-and-panning-in-tableau-maps</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/a90da03f-c20c-41af-a9a3-c39cb62d7065.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="zooming-and-panning-in-tableau-maps">Zooming and Panning in Tableau Maps</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Sep 24, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>1,330 Views</p></li>
+<li><p>Sep 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>1,330 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Tableau</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-showingorhidingtheviewtoolbar" class="menu-link">Showing or Hiding the View Toolbar</a></li>
+<li><a href="#module-usingzoomintableaumaps" class="menu-link">Using Zoom in Tableau Maps</a></li>
+<li><a href="#module-usingpanintableaumaps" class="menu-link">Using Pan in Tableau Maps</a></li>
+<li><a href="#module-demo" class="menu-link">Demo</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>There are extensive capabilities in Tableau for plotting data points on maps and enabling data exploration features for end-users. Being able to configure and use the zoom and pan capabilities in map-based visuals is an essential skill for Tableau developers and users. In this guide, you will learn how to explore the data points on map-based visuals using pan and zoom and how to switch these features on and off.</p>
+<h2 id="showing-or-hiding-the-view-toolbar">Showing or Hiding the View Toolbar</h2>
+<p>For all map-based visuals, the view menu and search functionality are turned on by default in Tableau. They can be accessed by hovering on the map visual as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8560bdf7-94b0-4c97-8c28-4a1c87ac5a2a_1.html" /><figcaption aria-hidden="true">View menu</figcaption>
+</figure>
+<p>If you want to turn the view toolbar on or off, click on <strong>Map</strong> in the top toolbar and then click on <strong>Map Options</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/14cf80a4-d355-413e-940a-ee3d7fcb7374_2.html" /><figcaption aria-hidden="true">Map Options Menu</figcaption>
+</figure>
+<p>A Map Options popup will appear with multiple check-boxes that can be used to turn on or off relevant features for the map as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2f523a5c-2045-4c5a-a175-9b11bf0eeacd_3.html" /><figcaption aria-hidden="true">Map Options menu</figcaption>
+</figure>
+<h2 id="using-zoom-in-tableau-maps">Using Zoom in Tableau Maps</h2>
+<p>There are three different ways to zoom in or out from a map visual in Tableau:</p>
+<h3 id="buttons-in-view-menu">Buttons in View Menu</h3>
+<p>The (+) and (-) buttons on the view toolbar can be used to zoom in or out in the map visual.</p>
+<h3 id="mouse-based-zoom">Mouse-based Zoom</h3>
+<p>To use mouse-based scrolling for zooming in and out, hover over the map, hold the shift key and use your mouse scroll wheel to adjust the zoom.</p>
+<p><strong>Note:</strong>: Even though the view toolbar has zoom in (+) and zoom out (-) buttons, the zoom functionality can also be used through mouse-wheel scrolling even if the view toolbar is turned off.</p>
+<h3 id="zoom-area-option">Zoom Area Option</h3>
+<p>There is another option available in the view menu to zoom into specific areas on the map.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b28890f9-2206-4915-9423-1ba79beba484_4.html" /><figcaption aria-hidden="true">Zoom area button</figcaption>
+</figure>
+<p>It can be accessed by hovering over the filled arrow on the bottom of the view menu and clicking on the icon as shown above.</p>
+<h2 id="using-pan-in-tableau-maps">Using Pan in Tableau Maps</h2>
+<p>There are two different ways to pan in a map-based visual in Tableau:</p>
+<h3 id="pan-option-in-the-view-menu">Pan Option in the View Menu</h3>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/47857f5c-075a-4a96-8b0f-bb40e9eb01cd_5.html" /><figcaption aria-hidden="true">Pan Button</figcaption>
+</figure>
+<p>As shown above, the pan button on the view menu can be used to pan across the map.</p>
+<h3 id="mouse-based-pan">Mouse-based Pan</h3>
+<p>To use mouse-based pan, hover over the map, hold the shift key, click and hold the left mouse key, and drag your mouse to pan across the map.</p>
+<p><strong>Note</strong>: Even though the view toolbar has a pan button, the pan functionality can still be used through the mouse even if the view toolbar is turned off.</p>
+<h2 id="demo">Demo</h2>
+<p>To understand the zoom and pan functionalities better, consider the map below, which reflects the profit ratio for each city in the USA through data points. It can be observed that there are regions where the density of data points is higher, and the end-user may want to explore a specific region further.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ece94a66-eb04-426b-8ca4-2ccaaf08835c_6.html" /><figcaption aria-hidden="true">Demo - Zoom and Pan</figcaption>
+</figure>
+<p>In this case, we can use the zoom area functionality to zoom in to a specific area of interest on the map as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fdc57048-ba42-4b1a-a688-d09f144e1a87_7.html" /><figcaption aria-hidden="true">zoom area</figcaption>
+</figure>
+<p>Zooming in to the southern area reveals that Ormond Beach had a profit ratio of -70%, which was not visible in the standard view of the map earlier as it was covered up by surrounding data points.</p>
+<p>Furthermore, using pan, a user can explore the rest of the map in the zoomed-in view and get more insights that were not visible in the standard view earlier.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fc907eda-0488-46df-a56b-78a9b544d7a2_8.html" /><figcaption aria-hidden="true">pan demo</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you learned about the zoom and pan capabilities in map-based visuals in Tableau. Apart from zoom and pan, there are other interactive features available on the view toolbar, such as rectangular, radial, and lasso select. To learn more about mapping capabilities in Tableau, <a href="https://pluralsight.pxf.io/4Qkqo">check out this amazing course</a>.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

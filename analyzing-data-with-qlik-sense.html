@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>analyzing-data-with-qlik-sense</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/ce501f54-fed2-4c77-a499-71e5d2c571d4.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Chhaya Wagmi</p>
+<h1 id="analyzing-data-with-qlik-sense">Analyzing Data with Qlik Sense</h1>
+<h3 id="chhaya-wagmi">Chhaya Wagmi</h3>
+<ul>
+<li><p>Nov 9, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>1,092 Views</p></li>
+<li><p>Nov 9, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>1,092 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Qlik Sense</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Visualization</span></p>
+<p>Introduction</p>
+<p>20</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-gettingyourappanddataready" class="menu-link">Getting Your App and Data Ready</a></li>
+<li><a href="#module-oneclickinsights" class="menu-link">One-Click Insights</a></li>
+<li><a href="#module-applyingnlptothedatatogenerateinsights" class="menu-link">Applying NLP to the Data to Generate Insights</a></li>
+<li><a href="#module-selectingfeaturesmanually" class="menu-link">Selecting Features Manually</a></li>
+<li><a href="#module-derivinginsightsfromthesheet" class="menu-link">Deriving Insights from the Sheet</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Qlik Sense is a product offered by the company Qlik. You can use it to perform faster data analytics compared with other analytics packages available in Python, R, and Julia. Qlik Sense generates insights automatically based on all important features. Plus, you can also rely on its NLP search engine to create custom visualizations.</p>
+<p>In this guide, you will learn how to create a new app, upload your data, analyze it, and finally present your insights.</p>
+<h2 id="getting-your-app-and-data-ready">Getting Your App and Data Ready</h2>
+<p>Download the <a href="https://archive.ics.uci.edu/ml/datasets/Adult">adult</a> dataset from the UCI Machine Learning Repository, add headers to the data, and save the complete file with the name <strong>income.csv</strong>.</p>
+<p>Next, head to your Qlik Sense account and click on the <strong>New analytics app</strong> button to initiate the creation of a new app:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0acb18a5-4f40-4b7b-99d5-d7bd03c6efa2_1.html" /><figcaption aria-hidden="true">Creating a new app</figcaption>
+</figure>
+<p>After giving a name to your app, click the <strong>Create</strong> button and open the app. Once the app is opened, you will be asked to upload the dataset. Click the <strong>Add data from files and other sources</strong> tab and upload the <strong>income.csv</strong> file. Once the file is uploaded, note that each column has a header beginning with the <strong><span class="citation" data-cites="*">@*</span>* sign. To replace the custom headers with the original ones, select </strong>Embedded filed names** from the <strong>Field names</strong> drop-down list and click the <strong>Add data</strong> button. <embed src="../../pluralsight2.imgix.net/guides/4a2ed0b9-6637-4294-979e-9e6bda189c38_2.html" /></p>
+<p>The above action will take you to a blank sheet, but you need to reach for the Insights dashboard to create visualizations. To do so, click <strong>Insights</strong> under the <strong>Analyze</strong> tab available at the top and center of the webpage.</p>
+<h2 id="one-click-insights">One-Click Insights</h2>
+<p>On the Insights dashboard, you will see a search box and a <strong>Generate insights</strong> button. <embed src="../../pluralsight2.imgix.net/guides/d81c2c2c-c7e2-49e0-ab55-31f496ede43c_3.html" /></p>
+<p>Qlik Sense will automatically produce visualizations by analyzing the important features after you click on the <strong>Generate insights</strong> button. For this dataset, it revealed the following nine insights: <embed src="../../pluralsight2.imgix.net/guides/2cec5f7b-0126-4832-99a1-3e5faa32c512_9e1d7077-b7ee-4ab8-9c8c-9869ac3535eb_4.html" /></p>
+<p>You can add any or all of these insights into your sheet for future storytelling. Right now, only the first result, <strong>avg(age)</strong>, and the ninth result, <strong>countDistinct(native-country)</strong>, will be added to the sheet. You can check the results added to your sheet by clicking the <strong>Sheet</strong> button from the <strong>Analyze</strong> tab. <embed src="../../pluralsight2.imgix.net/guides/d2b9bc4c-b13d-4e43-b939-7d495332d8c9_1.html" /></p>
+<h2 id="applying-nlp-to-the-data-to-generate-insights">Applying NLP to the Data to Generate Insights</h2>
+<p>SQL is considered a higher-level language because you can write codes that are almost like writing a sentence in the English language. However, Qlik Sense goes to the next level by giving you the freedom to write an actual English sentence, and it uses natural language processing (NLP) to generate requested custom visualizations.</p>
+<p>For instance, input the following sentence in the search box in the center of the Insights dashboard: “Show me the income by education, and capital gain.” This will result in an exact matching result. <embed src="../../pluralsight2.imgix.net/guides/c519185a-1b38-42f9-bd9d-3ce3fb9d5a08_3.html" /></p>
+<p>The bar chart shows a wonderful relationship among the three features. You can select this chart and add it to the sheet with the two other previously added charts. Notice that the dataset already has <strong>income</strong> and <strong>education</strong> column names, so filtering out those two columns is easy based on the passed query. However, the dataset is using the term <strong>capital-gain</strong> not <strong>capital gain</strong>, and yet Qlik Sense’s NLP algorithms are able to correlate these two terms.</p>
+<p>The updated sheet has now three charts, as shown: <embed src="../../pluralsight2.imgix.net/guides/eccfdd79-5ed2-4668-9b80-30db032b0350_4.html" /></p>
+<h2 id="selecting-features-manually">Selecting Features Manually</h2>
+<p>If you don’t want to rely on the automatically generated insights or the NLP search engine’s insights, you can always pick up features manually to build custom visualizations. To do so, check the boxes in front of the desired fields.</p>
+<p>Consider a case where you want to find out the hierarchy of occupation roles based on the number of hours worked per week and the working class (private, local government, self-employed, etc) they belong to.</p>
+<p>To create the relationship among these three fields or features, select <strong>hours-per-week</strong>, <strong>workclass</strong>, and <strong>occupation</strong> from the <strong>Fields</strong> section on the left-hand side of the Insights dashboard. This will result in a treemap along with four other results. Add the treemap as the fourth chart to your sheet. <embed src="../../pluralsight2.imgix.net/guides/6bd7afae-9ea1-48b0-9eda-8284316928ba_5.html" /></p>
+<h2 id="deriving-insights-from-the-sheet">Deriving Insights from the Sheet</h2>
+<p>Your current sheet has four charts, as shown: <embed src="../../pluralsight2.imgix.net/guides/7f8e2712-d76f-421b-b4e7-d7b51b55436c_6.html" /></p>
+<p>Here are the main insights you can deliver using these charts:</p>
+<ul>
+<li>Chart 1: The average age of the employees is 38.58 years (approximately 39 years).</li>
+<li>Chart 2: The total number of distinct native countries is 42.</li>
+<li>Chart 3: People with bachelor’s degrees have the highest capital gain, earning more than USD $50,000, followed by high-school graduates.</li>
+<li>Chart 4: Here’s the list of job roles that have the highest number of working hours:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>
+Workclass
+</th>
+<th>
+Job Role
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+Private
+</td>
+<td>
+Craft-repairmen
+</td>
+</tr>
+<tr class="even">
+<td>
+Unincorporated self-employed
+</td>
+<td>
+Craft-repairmen
+</td>
+</tr>
+<tr class="odd">
+<td>
+Incorporated self-employed
+</td>
+<td>
+Executive manager
+</td>
+</tr>
+<tr class="even">
+<td>
+Federal government
+</td>
+<td>
+Administration clerk
+</td>
+</tr>
+<tr class="odd">
+<td>
+State government
+</td>
+<td>
+Professional specialty
+</td>
+</tr>
+<tr class="even">
+<td>
+Local government
+</td>
+<td>
+Professional specialty
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>Qlik Sense provides you an advanced visualization platform just like Tableau. You can generate quick insights with a click of a button as well as use its NLP-powered search engine to interpret the meaning of an English query. You can publish multiple sheets and stories for storytelling. For further learning, you can refer to the <a href="https://pluralsight.com/paths/skills/qlik-sense-for-analysts">Qlik Sense for Analysts</a> learning path provided by Pluralsight, which consists of multiple courses to teach you the ins and outs of Qlik Sense.</p>
+<p>20</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

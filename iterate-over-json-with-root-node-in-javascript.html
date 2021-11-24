@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>iterate-over-json-with-root-node-in-javascript</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="iterate-over-json-with-root-node-in-javascript">Iterate over JSON with Root Node in JavaScript</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Sep 29, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>3,373 Views</p></li>
+<li><p>Sep 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>3,373 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-jsonwithrootnode" class="menu-link">JSON With Root Node</a></li>
+<li><a href="#module-iteratingoverjsonwithrootnode" class="menu-link">Iterating Over JSON With Root Node</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>A large portion of a frontend developer’s work includes working with JSON responses when integrating backend APIs in an app. JSON responses are often complex and difficult to comprehend in one go. However, their complex structure is justified in terms of demystifying the data returned to the frontend. Thus, you may receive a JSON response with a <em>root node</em> indicating what the corresponding object is about.</p>
+<p>In this guide, you’ll learn how to identify and understand JSON responses with root nodes and eventually iterate over them using JavaScript in React.</p>
+<h2 id="json-with-root-node">JSON With Root Node</h2>
+<p>Consider the following JSON file. You can find it at the dummy-json API <a href="https://www.npmjs.com/package/dummy-json">documentation</a>.</p>
+<p>The below JSON file contains four nodes or properties: <span class="jsx-3120878690"><code>users</code></span>, <span class="jsx-3120878690"><code>images</code></span>, <span class="jsx-3120878690"><code>coordinates</code></span>, and <span class="jsx-3120878690"><code>price</code></span>. All the nodes are at the same level in the node tree, and you can verify this by accessing these properties. For instance, if you store this response in an object called <span class="jsx-3120878690"><code>resp</code></span>, you can access the <span class="jsx-3120878690"><code>users</code></span> and <span class="jsx-3120878690"><code>image</code></span> properties like <span class="jsx-3120878690"><code>resp.users</code></span> and <span class="jsx-3120878690"><code>resp.images</code></span>. Hence, the given JSON does not contain a root node.</p>
+<pre><code>1{
+2  &quot;users&quot;: [
+3    {
+4      &quot;id&quot;: 0,
+5      &quot;name&quot;: &quot;Adam Carter&quot;,
+6      &quot;work&quot;: &quot;Unilogic&quot;,
+7      &quot;email&quot;: &quot;[email protected]&quot;,
+8      &quot;dob&quot;: &quot;1978&quot;,
+9      &quot;address&quot;: &quot;83 Warner Street&quot;,
+10      &quot;city&quot;: &quot;Boston&quot;,
+11      &quot;optedin&quot;: true
+12    },
+13    {
+14      &quot;id&quot;: 1,
+15      &quot;name&quot;: &quot;Leanne Brier&quot;,
+16      &quot;work&quot;: &quot;Connic&quot;,
+17      &quot;email&quot;: &quot;[email protected]&quot;,
+18      &quot;dob&quot;: &quot;1987&quot;,
+19      &quot;address&quot;: &quot;9 Coleman Avenue&quot;,
+20      &quot;city&quot;: &quot;Toronto&quot;,
+21      &quot;optedin&quot;: false
+22    }
+23  ],
+24  &quot;images&quot;: [
+25    &quot;img0.png&quot;,
+26    &quot;img1.png&quot;,
+27    &quot;img2.png&quot;
+28  ],
+29  &quot;coordinates&quot;: {
+30    &quot;x&quot;: 35.12,
+31    &quot;y&quot;: -21.49
+32  },
+33  &quot;price&quot;: &quot;$59,395&quot;
+34}</code></pre>
+<p>json</p>
+<p>Let’s modify the above JSON response so that it contains a root node. This means that to access these properties, you’ll have to go a level down from how you were accessing it before.</p>
+<pre><code>1&quot;data&quot;:{
+2    &quot;users&quot;: [
+3        {
+4          &quot;id&quot;: 0,
+5          &quot;name&quot;: &quot;Adam Carter&quot;,
+6          &quot;work&quot;: &quot;Unilogic&quot;,
+7          &quot;email&quot;: &quot;[email protected]&quot;,
+8          &quot;dob&quot;: &quot;1978&quot;,
+9          &quot;address&quot;: &quot;83 Warner Street&quot;,
+10          &quot;city&quot;: &quot;Boston&quot;,
+11          &quot;optedin&quot;: true
+12        },
+13        {
+14          &quot;id&quot;: 1,
+15          &quot;name&quot;: &quot;Leanne Brier&quot;,
+16          &quot;work&quot;: &quot;Connic&quot;,
+17          &quot;email&quot;: &quot;[email protected]&quot;,
+18          &quot;dob&quot;: &quot;1987&quot;,
+19          &quot;address&quot;: &quot;9 Coleman Avenue&quot;,
+20          &quot;city&quot;: &quot;Toronto&quot;,
+21          &quot;optedin&quot;: false
+22        }
+23      ],
+24      &quot;images&quot;: [
+25        &quot;img0.png&quot;,
+26        &quot;img1.png&quot;,
+27        &quot;img2.png&quot;
+28      ],
+29      &quot;coordinates&quot;: {
+30        &quot;x&quot;: 35.12,
+31        &quot;y&quot;: -21.49
+32      },
+33      &quot;price&quot;: &quot;$59,395&quot;
+34 }</code></pre>
+<p>json</p>
+<p>Now your JSON response has a root node called <span class="jsx-3120878690"><code>data</code></span>, and your properties will be accessed as <span class="jsx-3120878690"><code>resp.data.users,</code></span> <span class="jsx-3120878690"><code>resp.data.images</code></span>, and so on. The need for structuring JSON responses in this way is to understand what the entire object corresponds to. In a real-life scenario, you can imagine this response corresponding to sellers who are selling their products on an e-commerce website. The root node can then be <span class="jsx-3120878690"><code>sellers_product_1355</code></span>, giving an idea of what the data is about. Now that you know all about JSON with root nodes, let’s look at how you can iterate over it using JavaScript in React .</p>
+<h2 id="iterating-over-json-with-root-node">Iterating Over JSON With Root Node</h2>
+<p>Inside your React app, create a <span class="jsx-3120878690"><code>data.js</code></span> file and export the above response as an object.</p>
+<pre><code>1export default {
+2&quot;data&quot;:{
+3    ...
+4  }
+5}</code></pre>
+<p>js</p>
+<p>Now you can import this object as a regular JavaScript object as if you were getting it from a backend API. Any JSON property will be accessed by first accessing the root node. Have a look a the following console logs to understand how these properties can be accessed</p>
+<pre><code>1import React from &#39;react&#39;;
+2import response from &#39;./data&#39;;
+3
+4function App() {
+5  console.log(&#39;users: &#39;,response.data.users);
+6  console.log(&#39;images: &#39;,response.data.images);
+7  console.log(&#39;images: &#39;,response.data.coordinates);
+8  console.log(&#39;price: &#39;,response.data.price);
+9  return (
+10    &lt;div className=&quot;App&quot;&gt;
+11 
+12    &lt;/div&gt;
+13  );
+14}
+15
+16export default App;</code></pre>
+<p>jsx</p>
+<p>Note that both <span class="jsx-3120878690"><code>images</code></span> and <span class="jsx-3120878690"><code>users</code></span> are arrays, so you can use the <span class="jsx-3120878690"><code>map()</code></span> method in JSX to iterate over them as shown below. You can also use regular for loops.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import logo from &#39;./logo.svg&#39;;
+3import &#39;./App.css&#39;;
+4import response from &#39;./data&#39;;
+5
+6function App() {
+7  console.log(&#39;users: &#39;,response.data.users);
+8  console.log(&#39;images: &#39;,response.data.images);
+9  console.log(&#39;images: &#39;,response.data.coordinates);
+10  console.log(&#39;images: &#39;,response.data.price);
+11  return (
+12    &lt;div className=&quot;App&quot;&gt;
+13    {
+14      response.data.users.map(user=&gt;&lt;&gt;&lt;h1 key={user.id}&gt;{user.name}&lt;/h1&gt;&lt;/&gt;)
+15    }    
+16    {
+17      response.data.images.map(img=&gt;&lt;&gt;&lt;h1&gt;{img}&lt;/h1&gt;&lt;/&gt;)
+18    }    
+19    &lt;/div&gt;
+20  );
+21}
+22
+23export default App;</code></pre>
+<p>jsx</p>
+<p>For the remaining properties, separately render them based on their data types, as shown below</p>
+<pre><code>1...
+2   &lt;p&gt;{response.data.coordinates.x } {response.data.coordinates.y }&lt;/p&gt;     
+3   &lt;p&gt;&lt;strong&gt;{response.data.price}&lt;/strong&gt;&lt;/p&gt;
+4...</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Root nodes in JSON give you a better understanding of the response object. In cases where JSON responses contain similar data types, you can combine them into one and iterate through all of them together, but it largely depends on how your database is set up. The generalized approach is to access them through the root node individually and iterate over only those properties that can be iterated over (such as arrays and strings), as shown in this guide.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

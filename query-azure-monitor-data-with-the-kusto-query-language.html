@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>query-azure-monitor-data-with-the-kusto-query-language</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="query-azure-monitor-data-with-the-kusto-query-language">Query Azure Monitor Data with the Kusto Query Language</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 20, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>4,862 Views</p></li>
+<li><p>Oct 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>4,862 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Platforms</span></p>
+<p>Introduction</p>
+<p>20</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatdataisqueryable" class="menu-link">What Data is Queryable?</a></li>
+<li><a href="#module-queryingazureactivitydata" class="menu-link">Querying Azure Activity Data</a></li>
+<li><a href="#module-queryingdiagnosticlogtelemetry" class="menu-link">Querying Diagnostic Log Telemetry</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Azure Monitor data is queried using the Kusto Query Language (KQL). KQL is designed to be easy to author, read, and automate. With KQL, you can analyze large volumes of data for your diagnostics, monitoring, and reporting needs. In this guide, you will learn how to perform some common queries in KQL, including how to query telemetry in structured and semi-structured data.</p>
+<h2 id="what-data-is-queryable">What Data is Queryable?</h2>
+<p>Broadly, Azure Monitor captures three types of data from your Azure Resources. These include:</p>
+<ul>
+<li><strong>Azure Diagnostics Logs</strong> provide a history of the operations performed on specific resources. Not all Azure resources support diagnostic logs and they need to be turned on separately for each resource. If configured, you can capture failed task scheduler events for Azure Virtual Machines or authenticated requests for Azure Storage accounts.</li>
+<li><strong>Azure Activity</strong> stores Azure administrative logs about changes to your Azure resources by who and when. You can use this to see a history of what resources were created or all the resources that were created or deleted by a specific user.</li>
+<li><strong>Azure Metrics</strong> provides aggregated time series data for the health, usage, and capacity of Azure resources.</li>
+</ul>
+<p>To start querying this data from the Azure Portal, navigate to the <a href="https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring/AzureMonitoringBrowseBlade/logs">Azure Monitor resource and click on the Logs blade</a>. Once open, select a scope for your query. You can choose between querying the Azure Monitor logs for your entire subscription, a resource group, or a specific resource.</p>
+<h2 id="querying-azure-activity-data">Querying Azure Activity Data</h2>
+<p>Azure Activity provides details on management activities and includes information on who, what, and when resources have changed. With the Logs blade open, you can start querying data.</p>
+<p>Access the data through the <span class="jsx-3120878690"><code>AzureActivity</code></span> table. Filter the results by appending <span class="jsx-3120878690"><code>| where</code></span>.</p>
+<p>The following code snippets show some examples of how to query this table and filter the results:</p>
+<pre><code>1// filter azure activity by a specific user
+2AzureActivity
+3| where Caller == &quot;[email protected]&quot;
+4
+5// filter azure activity by resource type
+6AzureActivity
+7| where ResourceProviderValue == &quot;Microsoft.Web&quot;
+8
+9// check if any app service plan scaled to 5 instances or more
+10AzureActivity
+11| where OperationName == &quot;Autoscale scale up initiated&quot;
+12| where parse_json(Properties).NewInstancesCount &gt;= 5</code></pre>
+<p>kusto</p>
+<h2 id="querying-diagnostic-log-telemetry">Querying Diagnostic Log Telemetry</h2>
+<p>Some Azure services can log diagnostic telemetry that is unique to the service. Microsoft’s documentation on <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/monitor-reference">What is monitored by Azure Monitor?</a> provides details on which services are supported. These diagnostic logs also need to be enabled separately.</p>
+<p>This section will use an Azure SQL database to demonstrate some of the information you can query from Azure Monitor.</p>
+<p>You can run the following query to get an overview of the diagnostic logs available in your own workspace.</p>
+<pre><code>1AzureDiagnostics
+2| summarize count() by ResourceType, OperationName</code></pre>
+<p>kusto</p>
+<p>Output:</p>
+<pre><code>1| ResourceType      | OperationName                        | Count |
+2| SERVERS/DATABASES | QueryStoreWaitStatisticsEvent        | 100   |
+3| SERVERS/DATABASES | DatabaseWaitStatistcsEvent           | 110   |
+4| SERVERS/DATABASES | QueryStoreRuntimeStatisticsEvent     | 1000  |
+5| SERVERS/DATABASES | AutomaticTuningSettingsSnapshotEvent | 100   |
+6| SERVERS/DATABASES | ErrorEvent                           | 100   |</code></pre>
+<p>Microsoft’s documentation on <a href="https://docs.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal#diagnostic-telemetry-for-export">Azure SQL Database Diagnostic telemetry for export</a> provides more details on what each of these events represent.</p>
+<p>From here, you can narrow to a specific operation type and service.</p>
+<pre><code>1AzureDiagnostics
+2| where OperationName == &#39;ErrorEvent&#39;
+3| summarize count() by Message, DatabaseName_s, LogicalServerName_s</code></pre>
+<p>kusto</p>
+<p>This query summarizes the number of errors by database. You can also change the time range to drill down to a specific event.</p>
+<p>Note that some properties end with <span class="jsx-3120878690"><code>_s</code></span>, <span class="jsx-3120878690"><code>_d</code></span>, and <span class="jsx-3120878690"><code>_t</code></span>. This tells you the type of data stored in that column where <span class="jsx-3120878690"><code>_s</code></span> is string, <span class="jsx-3120878690"><code>_d</code></span> is double, and <span class="jsx-3120878690"><code>_t</code></span> is timestamp.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Azure Monitor provides a rich set of capabilities for capturing, querying, alerting, and monitoring your Azure resources. The queries you write will depend on what Azure resources you are currently using. You can read more in the Microsoft documentation about <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/monitor-reference">What is Monitored by Azure Monitor</a> and the <a href="https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/">Kusto Query Language</a> to get more insights into how your Azure subscription is operating.</p>
+<p>20</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

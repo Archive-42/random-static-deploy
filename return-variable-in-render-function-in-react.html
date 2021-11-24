@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>return-variable-in-render-function-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="return-a-variable-in-the-render-function-in-react">Return a Variable in the Render Function in React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 10, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>36,625 Views</p></li>
+<li><p>Nov 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>36,625 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>23</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-returnstaticjsxcontenttoavariable" class="menu-link">Return Static JSX Content to a Variable</a></li>
+<li><a href="#module-conditionallyrenderingjsx" class="menu-link">Conditionally Rendering JSX</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>JSX stands for JavaScript XML, a coding standard that allows you to use JavaScript expressions and other HTML features inline. Using JSX, you can create a function and return a set of JSX elements to a variable, and that variable used is to render the elements inside the <span class="jsx-3120878690"><code>render()</code></span> function in React.</p>
+<p>This guide will help you learn how to return JSX to a variable and render JSX markups to the DOM.</p>
+<h2 id="return-static-jsx-content-to-a-variable">Return Static JSX Content to a Variable</h2>
+<p>JSX is used along with React to remove loosely coupled parts of a component, like HTML, CSS, and JavaScript, and get them to work together in a single file called a component. Its syntax can be easy to write and visually compelling. Thus, the JSX elements can also get returned to the variable, and that variable can be used for rendering.</p>
+<p>For an example demonstration, let’s create a static table within a function and return it to the variable. We’ll also create one static <span class="jsx-3120878690"><code>&lt;table&gt;</code></span> inside the function.</p>
+<pre><code>1getTable() {
+2    return (
+3      &lt;div&gt;
+4        &lt;table border=&quot;2&quot;&gt;
+5          &lt;tr&gt;
+6            &lt;td&gt;Row 1 Col 1&lt;/td&gt;
+7            &lt;td&gt;Row 1 Col 2&lt;/td&gt;
+8          &lt;/tr&gt;
+9          &lt;tr&gt;
+10            &lt;td&gt;Row 2 Col 1&lt;/td&gt;
+11            &lt;td&gt;Row 2 Col 2&lt;/td&gt;
+12          &lt;/tr&gt;
+13          &lt;tr&gt;
+14            &lt;td&gt;Row 3 Col 1&lt;/td&gt;
+15            &lt;td&gt;Row 3 Col 2&lt;/td&gt;
+16          &lt;/tr&gt;
+17        &lt;/table&gt;
+18      &lt;/div&gt;
+19    );
+20}</code></pre>
+<p>jsx</p>
+<p>The table is created within the function and returns the set of JSX markups to the function. So once you access the function, respective JSX markups of the table will be replaced.</p>
+<p>The next step is to call the function and assign it to the variable, as shown below.</p>
+<pre><code>1render() {
+2    // Calling function and assigned it to the variable
+3    const mytable = this.getTable();
+4
+5    return (
+6      &lt;&gt;
+7        {/* rendered the JSX */}
+8        &lt;div&gt;{mytable}&lt;/div&gt; 
+9      &lt;/&gt;
+10    );
+11}</code></pre>
+<p>jsx</p>
+<p>The function<span class="jsx-3120878690"><code>this.getTable()</code></span> is called and it returns the complete <span class="jsx-3120878690"><code>&lt;table&gt;</code></span> element, so once you place it inside the <span class="jsx-3120878690"><code>return()</code></span>, the element will be created into the DOM.</p>
+<h2 id="conditionally-rendering-jsx">Conditionally Rendering JSX</h2>
+<p>Both static and dynamic content can be served to the DOM. Hence, you can render dynamic content based on individual conditional operators such as the ternary operator. For example, if you want to show active or inactive logged-in user status, the status color or label may change based on the condition, such as changing to green or red.</p>
+<p>For clearer understanding, create two functions showing the <span class="jsx-3120878690"><code>active</code></span> status label and the <span class="jsx-3120878690"><code>inactive</code></span> status label.</p>
+<pre><code>1activeContent() {
+2   return &lt;label&gt;Active&lt;/label&gt;;
+3}
+4
+5inActiveContent() {
+6   return &lt;label&gt;In-active&lt;/label&gt;;
+7}</code></pre>
+<p>jsx</p>
+<p>Each of the above functions returns the specific JSX element as a JSX <span class="jsx-3120878690"><code>&lt;label&gt;</code></span> element, however, you should have some identifiers or conditions to dynamically show the status.</p>
+<p>Create the key into the state object, as shown below.</p>
+<pre><code>1constructor(props) {
+2    super(props);
+3    this.state = {
+4      isActive: false
+5    };
+6}</code></pre>
+<p>jsx</p>
+<p>Observe that there is a key named <span class="jsx-3120878690"><code>isActive</code></span> in the component, and the same variable can be used as a condition that either can be true or false.</p>
+<p>Now, let’s call the above two functions and put their result in additional variables.</p>
+<pre><code>1const activeVariable = this.activeContent();
+2const inactiveVariable = this.inActiveContent();</code></pre>
+<p>jsx</p>
+<p><span class="jsx-3120878690"><code>activeVariable</code></span> is used to hold the active label status, and <span class="jsx-3120878690"><code>inactiveVariable</code></span> holds the inactive status label. Both can be interchangeable using the ternary operator, as shown below.</p>
+<pre><code>1render() {
+2    const activeVariable = this.activeContent();
+3    const inactiveVariable = this.inActiveContent();
+4
+5    return (
+6      &lt;&gt;
+7        {this.state.isActive ? activeVariable : inactiveVariable}
+8      &lt;/&gt;
+9    );
+10}</code></pre>
+<p>jsx</p>
+<p>The above ternary condition uses <span class="jsx-3120878690"><code>this.state.isActive</code></span>, and based on its value (true or false), the respective label will be rendered into the DOM. Using a variable in <span class="jsx-3120878690"><code>render()</code></span> is a common approach. Most React developera use them to manage dynamic content from the function implementation, and they are easy to operate throughout the component.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>JSX with React is not a required approach, but it can be effectively used to use JavaScript-based expressions and other features inline with HTML markup.</p>
+<p>Returning a variable in the render function is the easiest way to manage the JSX markup, whether the content is static or dynamic. Give it a try and dig into JSX!</p>
+<p>23</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

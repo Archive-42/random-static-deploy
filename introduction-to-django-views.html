@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>introduction-to-django-views</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="introduction-to-django-views">Introduction to Django Views</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Oct 28, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>1,399 Views</p></li>
+<li><p>Oct 28, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>1,399 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>14</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-sampleapp" class="menu-link">Sample App</a></li>
+<li><a href="#module-classbasedviewsgeneric" class="menu-link">Class-based Views (Generic)</a></li>
+<li><a href="#module-functionbasedviews" class="menu-link">Function-based Views</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In the model view controller (MVC) architecture, the view component deals with how data is presented to users for consumption and viewing. In the Django framework, <a href="https://docs.djangoproject.com/en/3.1/topics/http/views/">views</a> are Python functions or classes that receive a web request and return a web response. The response can be a simple HTTP response, an HTML template response, or an HTTP redirect response that redirects a user to another page. Views hold the logic that is required to return information as a response in whatever form to the user. As a matter of best practice, the logic that deals with views is held in the <span class="jsx-3120878690"><code>views.py</code></span> file in a Django app.</p>
+<p>This guide will explore how to use views in Django as a data display and viewing tool. It will also explore the two major types of views: class-based and function-based views. It assumes that you have at least beginner level knowledge of Django and a general understanding of the Django MVC. An introductory guide to Django can be found <a href="introduction-to-web-development-in-python-and-django.html">here</a>.</p>
+<h2 id="sample-app">Sample App</h2>
+<p>To better understand views, consider a Django app for a sports inventory. The model has details about the sports items being stored. Below is a snippet for the model.</p>
+<pre><code>1from django.db import models
+2
+3class Inventory(models.Model):
+4    item = models.CharField(max_length=20)
+5    item_code = models.IntegerField()
+6    item_condition = models.CharField(max_length=50)
+7    def __str__(self):
+8        return self.item</code></pre>
+<p>python</p>
+<h2 id="class-based-views-generic">Class-based Views (Generic)</h2>
+<p>Class-based views allow you to create views from inherited classes, thus making coding the views much easier. Generally, there are five types of common class-based views (generic) that perform the CRUD (create, retrieve, update, delete) operations for any common web app. All of these views involve operating on data via a model instance. At all times, a model instance is provided.</p>
+<h3 id="list-view">List View</h3>
+<p>As the name suggests, the list view generates a list of items in the model from the database. Here is a sample list view class for the sports inventory app.</p>
+<pre><code>1from django.views.generic import ListView
+2from . models import Inventory
+3class SportsItemListView(ListView):
+4    model = Inventory
+5    # a html file that will display a list of all the items in inventory model
+6    template_name = &#39;sports/items.html&#39; 
+7    context_object_name = &#39;items&#39; # how the list will be referred to in the html template</code></pre>
+<p>python</p>
+<h3 id="detailview">DetailView</h3>
+<p>The <span class="jsx-3120878690"><code>detailview</code></span> command is used to display the data for a single record from the database. Here is sample code for a detail view to display a single record from the <span class="jsx-3120878690"><code>Inventory</code></span> table in your app.</p>
+<pre><code>1from django.views.generic import DetailView
+2from . models import Inventory
+3
+4class SportsItemDetailView(DetailView):
+5    model = Inventory
+6    template_name = &#39;book/detail.html&#39;
+7    context_object_name = &#39;item&#39;</code></pre>
+<p>python</p>
+<h3 id="createview">CreateView</h3>
+<p><span class="jsx-3120878690"><code>createview</code></span> creates a new record in the database using the model instance.</p>
+<pre><code>1from django.views.generic import CreateView
+2from . models import Inventory
+3from django.urls import reverse_lazy
+4
+5class ItemCreateView(CreateView):
+6    model = Inventory
+7    template_name = &#39;sports/create_item.html&#39;
+8    fields = (&#39;item&#39;, &#39;item_code&#39;, &#39;item_condition&#39;, )
+9    success_url = reverse_lazy(&#39;sports-list&#39;)</code></pre>
+<p>python</p>
+<h3 id="updateview">UpdateView</h3>
+<p>The <span class="jsx-3120878690"><code>updateview</code></span> command performs an update operation to an existing record in the database.</p>
+<pre><code>1from django.views.generic import UpdateView
+2from . models import Inventory
+3from django.urls import reverse_lazy
+4
+5class ItemUpdateView(UpdateView):
+6
+7    model = Inventory
+8    template_name = &#39;sports/update.html&#39;
+9    context_object_name = &#39;item&#39;
+10    fields = (&#39;item&#39;, &#39;item_code&#39;, &#39;item_condition&#39;, )
+11
+12    def get_success_url(self):
+13        return reverse_lazy(&#39;item-detail&#39;, kwargs={&#39;pk&#39;: self.object.id})</code></pre>
+<p>python</p>
+<h3 id="delete-view">Delete View</h3>
+<p><span class="jsx-3120878690"><code>deleteview</code></span> is used to perform a delete operation on a single record in the database via the specified model.</p>
+<pre><code>1from django.views.generic import DeleteView
+2from . models import Inventory
+3from django.urls import reverse_lazy
+4
+5class ItemDeleteView(DeleteView):
+6    model = Inventory
+7    template_name = &#39;sports/delete.html&#39;
+8    success_url = reverse_lazy(&#39;item-list&#39;)</code></pre>
+<p>python</p>
+<h2 id="function-based-views">Function-based Views</h2>
+<p>Function-based views are functions that return an HTTP response after executing the required business logic of a certain view.</p>
+<h3 id="simple-http-response">Simple HTTP Response</h3>
+<p>This is used in cases where the message is very simple—maybe just short text—important, and the presentation does not matter. The code snippet below demonstrates a function-based view returning a simple HTTP response.</p>
+<pre><code>1from django.http import HttpResponse
+2
+3def simple_http_response(request):
+4    # perform business logic
+5    return HttpResponse(&quot;Hello world from Django !&quot;)</code></pre>
+<p>python</p>
+<h3 id="http-response-redirect">HTTP Response Redirect</h3>
+<p>This redirect is used when the logic requires that after execution, the user is redirected to another view. An example would be after deleting a record in a detail view, the page redirects to the home page.</p>
+<pre><code>1from django.http import HttpResponseRedirect
+2from django.urls import reverse
+3
+4def delete_item(request, id):
+5    #perform delete operation successfully
+6    return HttpResponseRedirect(reverse(&#39;url_name_of_homepage&#39;))</code></pre>
+<p>python</p>
+<h3 id="template-response">Template Response</h3>
+<p>A template response is used when the response is complex and may require further processing on the HTML side, such as displaying multiple records via looping. This use case also requires proper presentation, so it allows rendering of a HTML file.</p>
+<pre><code>1from django.shortcuts import render
+2def simple_template(request):
+3    # perform business logic
+4    return render(request, &quot;sports/simple_template.html&quot;, {})</code></pre>
+<p>python</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Mastering views is an important aspect of web development, especially using MVC frameworks like Django. This vital skill is beneficial for Python developers holding the role of Django developer, backend engineer, or full-stack engineer in their places of work.</p>
+<p>To further build on this guide, research more about the views used in APIs. This will likely involve research on the <a href="https://www.django-rest-framework.org/">Django Rest Framework (DRF)</a>—more specifically, the <span class="jsx-3120878690"><code>APIView</code></span> class.</p>
+<p>As a challenge, finish up the above app for a sports inventory business. Add appropriate URLs to all the views created and design simple HTML pages for displaying the data. <a href="https://medium.com/all-about-django/class-based-views-in-django-89108c1f51fb">This</a> guide will give you a good idea of how to navigate this task.</p>
+<p>14</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

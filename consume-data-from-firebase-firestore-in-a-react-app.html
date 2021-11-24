@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>consume-data-from-firebase-firestore-in-a-react-app</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="consume-data-from-firebase-firestore-in-a-react-app">Consume Data from Firebase Firestore in a React App</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 16, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>34,903 Views</p></li>
+<li><p>Nov 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>34,903 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>115</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-initialsetup" class="menu-link">Initial Setup</a></li>
+<li><a href="#module-consumingdatafromfirestore" class="menu-link">Consuming Data from Firestore</a></li>
+<li><a href="#module-finalcode" class="menu-link">Final Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Firebase allows you to build <em>serverless</em> web apps easily by giving you numerous features right out of the box. It serves as an entire backend as a service by providing authentication, cloud functions, real-time database, Cloud Firestore, and more.</p>
+<p>In this guide, you’ll learn how to consume data from Firebase Cloud Firestore in your React app.</p>
+<h2 id="initial-setup">Initial Setup</h2>
+<p>Ensure that you have an account on <a href="https://firebase.google.com/">firebase.google.com</a> and create a new Firebase project. Click on <strong>Add Firebase to Your Web App</strong> and follow the steps. Head over to the Cloud Firestore section and create a new collection called <span class="jsx-3120878690"><code>Blogs</code></span>. Add a document as shown below.</p>
+<pre><code>1body: &quot;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&quot;
+2created_at: November 11, 2020 at 12:00:00 AM UTC+5:30
+3posted_by: &quot;Sam&quot;
+4title: &quot;New Egg Recipe&quot;</code></pre>
+<p>json</p>
+<p>Now head over to your React app and install Firebase.</p>
+<pre><code>1npm i firebase</code></pre>
+<p>shell</p>
+<p>Create a new file called <span class="jsx-3120878690"><code>firebase.config.js</code></span> to store all configurational details required to connect to your Firebase project. Head over to your project settings and copy the <span class="jsx-3120878690"><code>firebaseConfig</code></span> and paste it inside the <span class="jsx-3120878690"><code>firebase.config.js</code></span> file.</p>
+<pre><code>1import firebase from &#39;firebase&#39;
+2var firebaseConfig = {
+3    apiKey: &quot;xxxxxxxxxxxxxxxx&quot;,
+4    authDomain: &quot;xxxxxxxxxxxxxxxx&quot;,
+5    databaseURL: &quot;xxxxxxxxxxxxxxxx&quot;,
+6    projectId: &quot;xxxxxxxxxxxxxxxx&quot;,
+7    storageBucket: &quot;xxxxxxxxxxxxxxxx&quot;,
+8    messagingSenderId: &quot;xxxxxxxxxxxxxxxx&quot;,
+9    appId: &quot;xxxxxxxxxxxxxxxx&quot;,
+10    measurementId: &quot;xxxxxxxxxxxxxxxx&quot;
+11  };
+12  
+13const firebaseApp=firebase.initializeApp(firebaseConfig);
+14const db=firebase.firestore();
+15
+16export default db;</code></pre>
+<p>javascript</p>
+<p>Make sure you have correctly added your own Firebase project’s <span class="jsx-3120878690"><code>firebaseConfig</code></span>. Initialize the Firebase app by passing in the <span class="jsx-3120878690"><code>firebaseConfig</code></span> to <span class="jsx-3120878690"><code>firebase.initializeApp()</code></span> method and get a reference to the database by calling the <span class="jsx-3120878690"><code>firestore()</code></span> method on the Firebase object and storing it in a variable.</p>
+<h2 id="consuming-data-from-firestore">Consuming Data from Firestore</h2>
+<p>Consuming data from Firestore is similar to consuming JSON data from a REST API. First, import <span class="jsx-3120878690"><code>db</code></span> from the config file along with <span class="jsx-3120878690"><code>useState</code></span> and <span class="jsx-3120878690"><code>useEffect</code></span> to create <span class="jsx-3120878690"><code>state</code></span>, and fire the request to fetch data.</p>
+<pre><code>1import db from &#39;./firebase.config&#39;;
+2import React,{useState,useEffect} from &#39;react&#39;;</code></pre>
+<p>javascript</p>
+<p>Create a piece of <span class="jsx-3120878690"><code>state</code></span> to store your data.</p>
+<pre><code>1const [blogs,setBlogs]=useState([])</code></pre>
+<p>javascript</p>
+<p>Create an <span class="jsx-3120878690"><code>async</code></span> function to fetch data from Firestore and call it inside <span class="jsx-3120878690"><code>useEffect</code></span>, as shown below.</p>
+<pre><code>1  useEffect(() =&gt; {
+2    fetchBlogs();
+3  }, [])</code></pre>
+<p>javascript</p>
+<p>Inside the <span class="jsx-3120878690"><code>fetchBlogs()</code></span> method, get a reference to your database by calling the <span class="jsx-3120878690"><code>collection()</code></span> method on the <span class="jsx-3120878690"><code>db</code></span> object and passing in the name of the collection as a parameter.</p>
+<pre><code>1const fetchBlogs=async()=&gt;{
+2    const response=db.collection(&#39;Blogs&#39;);
+3}</code></pre>
+<p>javascript</p>
+<p>In order to get the data from this <span class="jsx-3120878690"><code>response</code></span> object, using the <span class="jsx-3120878690"><code>await</code></span> keyword, call the <span class="jsx-3120878690"><code>get()</code></span> method on the <span class="jsx-3120878690"><code>response</code></span> object and store it inside a variable <span class="jsx-3120878690"><code>data</code></span>.</p>
+<pre><code>1const fetchBlogs=async()=&gt;{
+2    const response=db.collection(&#39;Blogs&#39;);
+3    const data=await response.get();
+4}</code></pre>
+<p>javascript</p>
+<p>The <span class="jsx-3120878690"><code>data</code></span> object contains a property called <span class="jsx-3120878690"><code>docs</code></span> that contains information about each individual document in the collection. Thus each document could contain information about an individual blog. Iterate over <span class="jsx-3120878690"><code>data.docs</code></span> to get an individual item and call the <span class="jsx-3120878690"><code>data()</code></span> method on each item to get the data inside it.</p>
+<pre><code>1const fetchBlogs=async()=&gt;{
+2    const response=db.collection(&#39;Blogs&#39;);
+3    const data=await response.get();
+4    data.docs.forEach(item=&gt;{
+5     setBlogs([...blogs,item.data()])
+6    })
+7}</code></pre>
+<p>javascript</p>
+<p>You can add the data to your state as shown above inside the loop. Since the <span class="jsx-3120878690"><code>Blogs</code></span> collection consists of a single document, your <span class="jsx-3120878690"><code>state</code></span> will also contain a single item. Finally, cycle through your <span class="jsx-3120878690"><code>state</code></span> and render the data on the DOM.</p>
+<pre><code>1return (
+2    &lt;div className=&quot;App&quot;&gt;
+3      {
+4        blogs &amp;&amp; blogs.map(blog=&gt;{
+5          return(
+6            &lt;div className=&quot;blog-container&quot;&gt;
+7              &lt;h4&gt;{blog.title}&lt;/h4&gt;
+8              &lt;p&gt;{blog.body}&lt;/p&gt;
+9            &lt;/div&gt;
+10          )
+11        })
+12      }
+13    &lt;/div&gt;
+14  );</code></pre>
+<p>jsx</p>
+<h2 id="final-code">Final Code</h2>
+<p>Have a look at the entire code that consumes data from a Firestore collection below.</p>
+<pre><code>1import &#39;./App.css&#39;;
+2import db from &#39;./firebase.config&#39;;
+3import React,{useState,useEffect} from &#39;react&#39;;
+4
+5function App() {
+6  const [blogs,setBlogs]=useState([])
+7  const fetchBlogs=async()=&gt;{
+8    const response=db.collection(&#39;Blogs&#39;);
+9    const data=await response.get();
+10    data.docs.forEach(item=&gt;{
+11     setBlogs([...blogs,item.data()])
+12    })
+13  }
+14  useEffect(() =&gt; {
+15    fetchBlogs();
+16  }, [])
+17  return (
+18    &lt;div className=&quot;App&quot;&gt;
+19      {
+20        blogs &amp;&amp; blogs.map(blog=&gt;{
+21          return(
+22            &lt;div className=&quot;blog-container&quot;&gt;
+23              &lt;h4&gt;{blog.title}&lt;/h4&gt;
+24              &lt;p&gt;{blog.body}&lt;/p&gt;
+25            &lt;/div&gt;
+26          )
+27        })
+28      }
+29    &lt;/div&gt;
+30  );
+31}
+32
+33export default App;</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>You can not only consume data but also add data to Firebase collections. You can also make complex structures by nesting collections depending on the complexity of the database you want to have. Using React with Firebase can help you develop both prototypes as well as production-based apps in no time without any complicated server setup. You can explore more features of Firebase by reading the <a href="https://firebase.google.com/docs">official documentation</a>.</p>
+<p>If you have any questions, feel free to reach out to me at <a href="https://codealphabet.com/contact">Codealphabet</a> .</p>
+<p>115</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-define-azure-rbac</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="how-to-define-azure-role-based-access-control-rbac">How to Define Azure Role-based Access Control (RBAC)</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 12, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>2,365 Views</p></li>
+<li><p>Oct 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>2,365 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-roledefinitionandassignments" class="menu-link">Role Definition and Assignments</a></li>
+<li><a href="#module-createroleassignmentsintheazurecli" class="menu-link">Create Role Assignments in the Azure CLI</a></li>
+<li><a href="#module-createroledefinitionsinazurecli" class="menu-link">Create Role Definitions in Azure CLI</a></li>
+<li><a href="#module-workwithmanagedidentities" class="menu-link">Work with Managed Identities</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Azure allows cloud administrators to manage access to their resources using role-based access control (RBAC). This allows specific permissions to be granted to users, groups, and apps. When implemented correctly, this enhances security by applying the principle of least privilege. However, when your cloud infrastructure is large with dozens of apps and hundreds of users, managing all these permissions becomes difficult to maintain in a reproducible and transparent way.</p>
+<p>In this guide, you will learn about defining roles and assigning them using the Azure CLI. This allows you to use code to script RBAC role assignments to simplify deployment and maintenance. A basic understanding of bash is assumed knowledge for this guide.</p>
+<h2 id="role-definition-and-assignments">Role Definition and Assignments</h2>
+<p>In the Azure CLI, there are two components to manage:</p>
+<ul>
+<li><strong>Role definitions</strong> define a set of permissions. These permissions include which data and actions an assignee is granted or denied access to.</li>
+<li>A <strong>role assignment</strong> is a mapping between a role definition, a scope, and an assignee. An assignee could be a user in your active directory domain, a service principal that represents your app, or a security group that contains one or many users. A scope is a property that allows administrators to limit a role definition to a subscription, resource group, or specific Azure resource.</li>
+</ul>
+<p>To clarify, your Azure subscription has a set of <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#identity">built-in role definitions</a> already. For example, you can create a role assignment where you assign the role <span class="jsx-3120878690"><code>reader</code></span> to the security group <span class="jsx-3120878690"><code>developers</code></span> at the scope of your <span class="jsx-3120878690"><code>my-web-app</code></span> resource group. This allows all the members of the <span class="jsx-3120878690"><code>developers</code></span> security group to view resources contained in the <span class="jsx-3120878690"><code>my-web-app</code></span> resource group but not make any changes.</p>
+<h2 id="create-role-assignments-in-the-azure-cli">Create Role Assignments in the Azure CLI</h2>
+<p>To assign roles, you need three components:</p>
+<ul>
+<li>The role definition</li>
+<li>The assignee</li>
+<li>The scope of the assignment. If you don’t provide a scope, it will default to the entire subscription.</li>
+</ul>
+<p>To assign the <span class="jsx-3120878690"><code>reader</code></span> scope to the <span class="jsx-3120878690"><code>developers</code></span> security group, run the following commands:</p>
+<pre><code>1# get a list of all roles definitions
+2az role definition list --query &quot;sort_by([],&amp;roleName)[].{name:name,roleType:roleType,roleName:roleName}&quot; -o tsv
+3
+4# save security group object&#39;s id to a variable
+5developers_security_group=$(az ad group list --query &quot;[?displayName==&#39;developers&#39;].{objectId:objectId}&quot; -o tsv)
+6
+7# assign the role by omitting the scope. This defaults to entire subscription.
+8az role assignment create --role &quot;Reader&quot; --assignee $developers_security_group
+9
+10# assign the role and specify a resource group scope.
+11az role assignment create --role &quot;Reader&quot; --assignee $developers_security_group --scope /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/my-web-app</code></pre>
+<p>bash</p>
+<h2 id="create-role-definitions-in-azure-cli">Create Role Definitions in Azure CLI</h2>
+<p>You can also create your own role definitions. This is useful when you have a standard set of permissions you want to give to apps at different scopes. For instance, say you have 100 resource groups, and each resource group has two apps inside it. Each app is allowed permission to read data from a storage account and Cosmos DB database inside its own resource group only. If you stick to the built-in roles, you will need to separately assign the <span class="jsx-3120878690"><code>Cosmos DB Account Reader Role</code></span>, <span class="jsx-3120878690"><code>Storage Blob Data Reader</code></span>, and <span class="jsx-3120878690"><code>Storage Queue Data Message                                       Processor</code></span> permissions separately to each app.</p>
+<p>To define your own role called <span class="jsx-3120878690"><code>Custom Data Reader</code></span>, run the following commands:</p>
+<pre><code>1az role definition create --role-definition &#39;{
+2        &quot;Name&quot;: &quot;Custom Data Reader&quot;,
+3        &quot;Description&quot;: &quot;Read data from storage accounts and cosmos DB Databases.&quot;,
+4        &quot;Actions&quot;: [
+5          &quot;Microsoft.DocumentDB/*/read&quot;,
+6          &quot;Microsoft.Storage/storageAccounts/blobServices/containers/read&quot;,
+7          &quot;Microsoft.Storage/storageAccounts/queueServices/queues/delete&quot;,
+8          &quot;Microsoft.Storage/storageAccounts/queueServices/queues/read&quot;,
+9          &quot;Microsoft.Storage/storageAccounts/queueServices/queues/write&quot;
+10        ],
+11        &quot;DataActions&quot;: [
+12          &quot;Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read&quot;,
+13          &quot;Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete&quot;,
+14          &quot;Microsoft.Storage/storageAccounts/queueServices/queues/messages/read&quot;,
+15          &quot;Microsoft.Storage/storageAccounts/queueServices/queues/messages/write&quot;
+16        ],
+17        &quot;NotDataActions&quot;: [
+18        ],
+19        &quot;AssignableScopes&quot;: [&quot;/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx&quot;]
+20    }&#39;
+21
+22
+23# assign the new custom role to an app or group
+24az role assignment create --role &quot;Custom Data Reader&quot; --assignee $developers_security_group</code></pre>
+<p>bash</p>
+<h2 id="work-with-managed-identities">Work with Managed Identities</h2>
+<p>So far you have assigned roles to security groups. This is useful since it allows you to manage permissions for multiple users at a time.</p>
+<p>However, in a micro-services environment, you may have hundreds of apps, but individual apps need only a subset of the roles a user may have. In this case, you want to separately identify the app and assign only the roles that it needs.</p>
+<p>Microsoft has a set of <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities">services that support managed identities</a>. These identities make it easy to manage permissions since you don’t need to manage secrets like passwords or client credentials yourself. Like users, they can also have roles assigned to them.</p>
+<p>To assign a role, first query the identity and then create a role assignment at the appropriate scope.</p>
+<pre><code>1# query the principalId of a webapp
+2APP_IDENTITY=$(az webapp identity show -n my-web-app -g my-web-app --query &quot;{principalId:principalId}&quot; -o tsv)
+3
+4# assign a role to that webapp
+5az role assignment create --role &quot;Custom Data Reader&quot; --assignee $developers_security_group --scope /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/my-web-app</code></pre>
+<p>bash</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>RBAC provides a rich set of capabilities that allow you to control access within your organization. By scripting role definitions and assignments, managing a large set of roles is simplified; you can make a widespread change in a predictable way. This also allows you to audit and review changes through source control. To further build on these skills, read more about <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/">Azure AD Managed Identities</a>.</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

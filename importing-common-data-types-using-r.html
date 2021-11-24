@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>importing-common-data-types-using-r</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="importing-common-data-types-in-r">Importing Common Data Types In R</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Sep 24, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>160 Views</p></li>
+<li><p>Sep 24, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>160 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages and Libraries</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">R</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-importingcsvfiles" class="menu-link">Importing CSV Files</a></li>
+<li><a href="#module-importingjsondata" class="menu-link">Importing JSON Data</a></li>
+<li><a href="#module-importingxmldata" class="menu-link">Importing XML Data</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In order to begin a data analysis or modelling project, you first need to fetch and import data into your tool of choice.</p>
+<p>In this guide, you will learn to use basic functions in R to work with JSON, CSV, and XML data. This will use data from the <a href="https://www.bts.gov/content/average-fuel-efficiency-us-light-duty-vehicles">Bureau of Transportation Statistics</a> to illustrate the use of these functions. A basic understanding of the R programming language is assumed knowledge for this guide. You can watch a course on <a href="https://app.pluralsight.com/library/courses/r-programming-fundamentals/table-of-contents">Programming with R</a> if you need a refresher.</p>
+<h2 id="importing-csv-files">Importing CSV Files</h2>
+<p>Comma-separated values (CSV) is a common format for sharing data as it is simple and easy to understand. Generally, each row in the data file represents a new observation. Within each row, different attributes are separated by commas.</p>
+<p>The <span class="jsx-3120878690"><code>read.csv</code></span> function is built into the <span class="jsx-3120878690"><code>utils</code></span> package. This means no third-party packages are required to read CSV files in R.</p>
+<p>Create the following <span class="jsx-3120878690"><code>data.csv</code></span> in your current working directory.</p>
+<pre><code>1year,efficiency,sales
+21980,24.3,8949000
+31985,27.6,10979000
+41990,28,9303000
+51991,28.4,8185000
+61992,27.9,8213000
+71993,28.4,8518000
+81994,28.3,8991000
+91995,28.6,8620000
+101996,28.5,8479000
+111997,28.7,8217000
+121998,28.8,8085000
+131999,28.3,8638000
+142000,28.5,8778000
+152001,28.8,8352000
+162002,29,8042000
+172003,29.5,7556000
+182004,29.5,7483000
+192005,30.3,7660000
+202006,30.1,7762000
+212007,31.2,7562000
+222008,31.5,6769000
+232009,32.9,5402000
+242010,33.9,5636000
+252011,33.1,6093000
+262012,35.3,7245000
+272013,36.4,7586000
+282014,36.5,7708000
+292015,37.2,7517000
+302016,37.7,6873000
+312017,39.4,6081000</code></pre>
+<p>csv</p>
+<p>From your R IDE, you can run the following code to import it:</p>
+<pre><code>1csv &lt;- read.csv(&#39;data.csv&#39;, header = TRUE)
+2csv
+3
+4typeof(csv)</code></pre>
+<p>r</p>
+<p>Output:</p>
+<pre><code>1&gt; csv &lt;- read.csv(&#39;data.csv&#39;, header = TRUE)
+2&gt; csv
+3   year efficiency    sales
+41  1980       24.3  8949000
+52  1985       27.6 10979000
+63  1990       28.0  9303000
+74  1991       28.4  8185000
+85  1992       27.9  8213000
+96  1993       28.4  8518000
+107  1994       28.3  8991000
+118  1995       28.6  8620000
+129  1996       28.5  8479000
+1310 1997       28.7  8217000
+1411 1998       28.8  8085000
+1512 1999       28.3  8638000
+1613 2000       28.5  8778000
+1714 2001       28.8  8352000
+1815 2002       29.0  8042000
+1916 2003       29.5  7556000
+2017 2004       29.5  7483000
+2118 2005       30.3  7660000
+2219 2006       30.1  7762000
+2320 2007       31.2  7562000
+2421 2008       31.5  6769000
+2522 2009       32.9  5402000
+2623 2010       33.9  5636000
+2724 2011       33.1  6093000
+2825 2012       35.3  7245000
+2926 2013       36.4  7586000
+3027 2014       36.5  7708000
+3128 2015       37.2  7517000
+3229 2016       37.7  6873000
+3330 2017       39.4  6081000
+34&gt; typeof(csv)
+35[1] &quot;list&quot;</code></pre>
+<h2 id="importing-json-data">Importing JSON Data</h2>
+<p>JSON is another popular format for sharing data. It allows hierarchical data types but is more verbose than CSV.</p>
+<p>To import JSON, create the <span class="jsx-3120878690"><code>data.json</code></span> file in your working directory:</p>
+<pre><code>1[
+2    {&quot;year&quot;: 1980, &quot;efficiency&quot;: 24.3, &quot;sales&quot;: 8949000},
+3    {&quot;year&quot;: 1985, &quot;efficiency&quot;: 27.6, &quot;sales&quot;: 10979000},
+4    {&quot;year&quot;: 1990, &quot;efficiency&quot;: 28, &quot;sales&quot;: 9303000},
+5    {&quot;year&quot;: 1991, &quot;efficiency&quot;: 28.4, &quot;sales&quot;: 8185000},
+6    {&quot;year&quot;: 1992, &quot;efficiency&quot;: 27.9, &quot;sales&quot;: 8213000},
+7    {&quot;year&quot;: 1993, &quot;efficiency&quot;: 28.4, &quot;sales&quot;: 8518000},
+8    {&quot;year&quot;: 1994, &quot;efficiency&quot;: 28.3, &quot;sales&quot;: 8991000},
+9    {&quot;year&quot;: 1995, &quot;efficiency&quot;: 28.6, &quot;sales&quot;: 8620000},
+10    {&quot;year&quot;: 1996, &quot;efficiency&quot;: 28.5, &quot;sales&quot;: 8479000},
+11    {&quot;year&quot;: 1997, &quot;efficiency&quot;: 28.7, &quot;sales&quot;: 8217000},
+12    {&quot;year&quot;: 1998, &quot;efficiency&quot;: 28.8, &quot;sales&quot;: 8085000},
+13    {&quot;year&quot;: 1999, &quot;efficiency&quot;: 28.3, &quot;sales&quot;: 8638000},
+14    {&quot;year&quot;: 2000, &quot;efficiency&quot;: 28.5, &quot;sales&quot;: 8778000},
+15    {&quot;year&quot;: 2001, &quot;efficiency&quot;: 28.8, &quot;sales&quot;: 8352000},
+16    {&quot;year&quot;: 2002, &quot;efficiency&quot;: 29, &quot;sales&quot;: 8042000},
+17    {&quot;year&quot;: 2003, &quot;efficiency&quot;: 29.5, &quot;sales&quot;: 7556000},
+18    {&quot;year&quot;: 2004, &quot;efficiency&quot;: 29.5, &quot;sales&quot;: 7483000},
+19    {&quot;year&quot;: 2005, &quot;efficiency&quot;: 30.3, &quot;sales&quot;: 7660000},
+20    {&quot;year&quot;: 2006, &quot;efficiency&quot;: 30.1, &quot;sales&quot;: 7762000},
+21    {&quot;year&quot;: 2007, &quot;efficiency&quot;: 31.2, &quot;sales&quot;: 7562000},
+22    {&quot;year&quot;: 2008, &quot;efficiency&quot;: 31.5, &quot;sales&quot;: 6769000},
+23    {&quot;year&quot;: 2009, &quot;efficiency&quot;: 32.9, &quot;sales&quot;: 5402000},
+24    {&quot;year&quot;: 2010, &quot;efficiency&quot;: 33.9, &quot;sales&quot;: 5636000},
+25    {&quot;year&quot;: 2011, &quot;efficiency&quot;: 33.1, &quot;sales&quot;: 6093000},
+26    {&quot;year&quot;: 2012, &quot;efficiency&quot;: 35.3, &quot;sales&quot;: 7245000},
+27    {&quot;year&quot;: 2013, &quot;efficiency&quot;: 36.4, &quot;sales&quot;: 7586000},
+28    {&quot;year&quot;: 2014, &quot;efficiency&quot;: 36.5, &quot;sales&quot;: 7708000},
+29    {&quot;year&quot;: 2015, &quot;efficiency&quot;: 37.2, &quot;sales&quot;: 7517000},
+30    {&quot;year&quot;: 2016, &quot;efficiency&quot;: 37.7, &quot;sales&quot;: 6873000},
+31    {&quot;year&quot;: 2017, &quot;efficiency&quot;: 39.4, &quot;sales&quot;: 6081000}
+32  ]</code></pre>
+<p>json</p>
+<p>There is no built-in method for parsing JSON in R. However, you can install <a href="https://cran.r-project.org/web/packages/jsonlite/index.html">jsonlite</a>, a popular library for converting R data types to and from JSON.</p>
+<p>The code below demonstrates how to install this package and use it to import a JSON file into your R environment.</p>
+<pre><code>1install.packages(&#39;jsonlite&#39;)
+2
+3json &lt;- jsonlite$fromJSON(&#39;data.json&#39;)
+4json</code></pre>
+<p>r</p>
+<p>The output will be the same as the CSV sample, since the input data is the same.</p>
+<h2 id="importing-xml-data">Importing XML Data</h2>
+<p>Another common data format is XML. This can be more verbose and therefore lead to larger file sizes. However, if you are working with legacy systems, they may output XML and you will have no ability to change it.</p>
+<p>Create the following xml file <span class="jsx-3120878690"><code>data.xml</code></span>:</p>
+<pre><code>1&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+2&lt;root&gt;
+3   &lt;element&gt;
+4      &lt;efficiency&gt;24.3&lt;/efficiency&gt;
+5      &lt;sales&gt;8949000&lt;/sales&gt;
+6      &lt;year&gt;1980&lt;/year&gt;
+7   &lt;/element&gt;
+8   &lt;element&gt;
+9      &lt;efficiency&gt;27.6&lt;/efficiency&gt;
+10      &lt;sales&gt;10979000&lt;/sales&gt;
+11      &lt;year&gt;1985&lt;/year&gt;
+12   &lt;/element&gt;
+13   &lt;element&gt;
+14      &lt;efficiency&gt;28&lt;/efficiency&gt;
+15      &lt;sales&gt;9303000&lt;/sales&gt;
+16      &lt;year&gt;1990&lt;/year&gt;
+17   &lt;/element&gt;
+18   &lt;element&gt;
+19      &lt;efficiency&gt;28.4&lt;/efficiency&gt;
+20      &lt;sales&gt;8185000&lt;/sales&gt;
+21      &lt;year&gt;1991&lt;/year&gt;
+22   &lt;/element&gt;
+23   &lt;element&gt;
+24      &lt;efficiency&gt;27.9&lt;/efficiency&gt;
+25      &lt;sales&gt;8213000&lt;/sales&gt;
+26      &lt;year&gt;1992&lt;/year&gt;
+27   &lt;/element&gt;
+28   &lt;element&gt;
+29      &lt;efficiency&gt;28.4&lt;/efficiency&gt;
+30      &lt;sales&gt;8518000&lt;/sales&gt;
+31      &lt;year&gt;1993&lt;/year&gt;
+32   &lt;/element&gt;
+33   &lt;element&gt;
+34      &lt;efficiency&gt;28.3&lt;/efficiency&gt;
+35      &lt;sales&gt;8991000&lt;/sales&gt;
+36      &lt;year&gt;1994&lt;/year&gt;
+37   &lt;/element&gt;
+38   &lt;element&gt;
+39      &lt;efficiency&gt;28.6&lt;/efficiency&gt;
+40      &lt;sales&gt;8620000&lt;/sales&gt;
+41      &lt;year&gt;1995&lt;/year&gt;
+42   &lt;/element&gt;
+43   &lt;element&gt;
+44      &lt;efficiency&gt;28.5&lt;/efficiency&gt;
+45      &lt;sales&gt;8479000&lt;/sales&gt;
+46      &lt;year&gt;1996&lt;/year&gt;
+47   &lt;/element&gt;
+48   &lt;element&gt;
+49      &lt;efficiency&gt;28.7&lt;/efficiency&gt;
+50      &lt;sales&gt;8217000&lt;/sales&gt;
+51      &lt;year&gt;1997&lt;/year&gt;
+52   &lt;/element&gt;
+53   &lt;element&gt;
+54      &lt;efficiency&gt;28.8&lt;/efficiency&gt;
+55      &lt;sales&gt;8085000&lt;/sales&gt;
+56      &lt;year&gt;1998&lt;/year&gt;
+57   &lt;/element&gt;
+58   &lt;element&gt;
+59      &lt;efficiency&gt;28.3&lt;/efficiency&gt;
+60      &lt;sales&gt;8638000&lt;/sales&gt;
+61      &lt;year&gt;1999&lt;/year&gt;
+62   &lt;/element&gt;
+63   &lt;element&gt;
+64      &lt;efficiency&gt;28.5&lt;/efficiency&gt;
+65      &lt;sales&gt;8778000&lt;/sales&gt;
+66      &lt;year&gt;2000&lt;/year&gt;
+67   &lt;/element&gt;
+68   &lt;element&gt;
+69      &lt;efficiency&gt;28.8&lt;/efficiency&gt;
+70      &lt;sales&gt;8352000&lt;/sales&gt;
+71      &lt;year&gt;2001&lt;/year&gt;
+72   &lt;/element&gt;
+73   &lt;element&gt;
+74      &lt;efficiency&gt;29&lt;/efficiency&gt;
+75      &lt;sales&gt;8042000&lt;/sales&gt;
+76      &lt;year&gt;2002&lt;/year&gt;
+77   &lt;/element&gt;
+78   &lt;element&gt;
+79      &lt;efficiency&gt;29.5&lt;/efficiency&gt;
+80      &lt;sales&gt;7556000&lt;/sales&gt;
+81      &lt;year&gt;2003&lt;/year&gt;
+82   &lt;/element&gt;
+83   &lt;element&gt;
+84      &lt;efficiency&gt;29.5&lt;/efficiency&gt;
+85      &lt;sales&gt;7483000&lt;/sales&gt;
+86      &lt;year&gt;2004&lt;/year&gt;
+87   &lt;/element&gt;
+88   &lt;element&gt;
+89      &lt;efficiency&gt;30.3&lt;/efficiency&gt;
+90      &lt;sales&gt;7660000&lt;/sales&gt;
+91      &lt;year&gt;2005&lt;/year&gt;
+92   &lt;/element&gt;
+93   &lt;element&gt;
+94      &lt;efficiency&gt;30.1&lt;/efficiency&gt;
+95      &lt;sales&gt;7762000&lt;/sales&gt;
+96      &lt;year&gt;2006&lt;/year&gt;
+97   &lt;/element&gt;
+98   &lt;element&gt;
+99      &lt;efficiency&gt;31.2&lt;/efficiency&gt;
+100      &lt;sales&gt;7562000&lt;/sales&gt;
+101      &lt;year&gt;2007&lt;/year&gt;
+102   &lt;/element&gt;
+103   &lt;element&gt;
+104      &lt;efficiency&gt;31.5&lt;/efficiency&gt;
+105      &lt;sales&gt;6769000&lt;/sales&gt;
+106      &lt;year&gt;2008&lt;/year&gt;
+107   &lt;/element&gt;
+108   &lt;element&gt;
+109      &lt;efficiency&gt;32.9&lt;/efficiency&gt;
+110      &lt;sales&gt;5402000&lt;/sales&gt;
+111      &lt;year&gt;2009&lt;/year&gt;
+112   &lt;/element&gt;
+113   &lt;element&gt;
+114      &lt;efficiency&gt;33.9&lt;/efficiency&gt;
+115      &lt;sales&gt;5636000&lt;/sales&gt;
+116      &lt;year&gt;2010&lt;/year&gt;
+117   &lt;/element&gt;
+118   &lt;element&gt;
+119      &lt;efficiency&gt;33.1&lt;/efficiency&gt;
+120      &lt;sales&gt;6093000&lt;/sales&gt;
+121      &lt;year&gt;2011&lt;/year&gt;
+122   &lt;/element&gt;
+123   &lt;element&gt;
+124      &lt;efficiency&gt;35.3&lt;/efficiency&gt;
+125      &lt;sales&gt;7245000&lt;/sales&gt;
+126      &lt;year&gt;2012&lt;/year&gt;
+127   &lt;/element&gt;
+128   &lt;element&gt;
+129      &lt;efficiency&gt;36.4&lt;/efficiency&gt;
+130      &lt;sales&gt;7586000&lt;/sales&gt;
+131      &lt;year&gt;2013&lt;/year&gt;
+132   &lt;/element&gt;
+133   &lt;element&gt;
+134      &lt;efficiency&gt;36.5&lt;/efficiency&gt;
+135      &lt;sales&gt;7708000&lt;/sales&gt;
+136      &lt;year&gt;2014&lt;/year&gt;
+137   &lt;/element&gt;
+138   &lt;element&gt;
+139      &lt;efficiency&gt;37.2&lt;/efficiency&gt;
+140      &lt;sales&gt;7517000&lt;/sales&gt;
+141      &lt;year&gt;2015&lt;/year&gt;
+142   &lt;/element&gt;
+143   &lt;element&gt;
+144      &lt;efficiency&gt;37.7&lt;/efficiency&gt;
+145      &lt;sales&gt;6873000&lt;/sales&gt;
+146      &lt;year&gt;2016&lt;/year&gt;
+147   &lt;/element&gt;
+148   &lt;element&gt;
+149      &lt;efficiency&gt;39.4&lt;/efficiency&gt;
+150      &lt;sales&gt;6081000&lt;/sales&gt;
+151      &lt;year&gt;2017&lt;/year&gt;
+152   &lt;/element&gt;
+153&lt;/root&gt;</code></pre>
+<p>xml</p>
+<p>There are a few different ways to work with XML. The <a href="https://cran.r-project.org/web/packages/XML/index.html">XML package</a> is built in, but some versions of R have memory leaks. Further, using this package can lead to quite verbose code.</p>
+<p>A simpler solution is using <a href="https://cran.r-project.org/web/packages/xml2/index.html">XML2</a>, which is more focused on extracting values out of XML documents.</p>
+<p>The code below demonstrates how to extract XML values using the XML2 package into a data structure we can analyze in R.</p>
+<pre><code>1install.packages(&#39;xml2&#39;)
+2
+3parse_xml &lt;- function (file) {
+4  doc &lt;- xml2::read_xml(file)
+5  efficiency &lt;- xml2::xml_double(xml2::xml_find_all(doc, &quot;//root/element/efficiency&quot;))
+6  sales &lt;- xml2::xml_double(xml2::xml_find_all(doc, &quot;//root/element/sales&quot;))
+7  year &lt;- xml2::xml_double(xml2::xml_find_all(doc, &quot;//root/element/year&quot;))
+8  cbind(efficiency, sales, year)
+9}
+10
+11data &lt;- parse_xml(&#39;data.xml&#39;)
+12data</code></pre>
+<p>r</p>
+<p>The code snippet above creates a function to extract the sales, efficiency, and year columns. Then <span class="jsx-3120878690"><code>cbind</code></span> is used to combine all these columns together, producing a table. This code uses xpath queries to search for the given values. If your XML document is complex, it can take a bit of trial and error to query the values you want. For this reason, the XML data format is typically not the preferred way to share data.</p>
+<p>This parsing logic is encapsulated in the <span class="jsx-3120878690"><code>parse_xml</code></span> function. This is also helpful for keeping the global environment clean of temporary variables.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Data analysts need to be comfortable importing different data formats to effectively undertake data modelling and analysis projects. This guide has shown you how to import three common formats: XML, JSON and CSV. To further build on these skills, you can watch this course on <a href="https://app.pluralsight.com/library/courses/querying-converting-data-types-r/table-of-contents">Querying and Converting Data Types in R</a>.</p>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

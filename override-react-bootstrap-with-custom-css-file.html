@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>override-react-bootstrap-with-custom-css-file</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="override-react-bootstrap-with-custom-css-file">Override react-bootstrap with Custom CSS File</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 18, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>28,912 Views</p></li>
+<li><p>Nov 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>28,912 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>27</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-overridereactbootstraptablecss" class="menu-link">Override <code>react-bootstrap</code> Table CSS</a></li>
+<li><a href="#module-overridereactbootstrapformcontrolssuchasbutton" class="menu-link">Override <code>react-bootstrap</code> Form Controls Such as Button</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The user interface is a crucial part of an app, and impacts the first impression when the end user starts interacting with various pages or functionalities. Generally, the developer uses various UI frameworks with React, such as <span class="jsx-3120878690"><code>material-ui</code></span>, <span class="jsx-3120878690"><code>reactstrap</code></span>, and <span class="jsx-3120878690"><code>react-bootstrap</code></span> to design the multiple components. Still, it may be possible that they need to modify the styles of those components.</p>
+<p><span class="jsx-3120878690"><code>react-bootstrap</code></span> contains a set of UI components, and comes with better usability to modify the existing stylesheets. In this guide, you will learn how to override the <span class="jsx-3120878690"><code>react-bootstrap</code></span> component CSS by applying the custom CSS styles to the elements.</p>
+<h2 id="override-react-bootstrap-table-css">Override `react-bootstrap` Table CSS</h2>
+<p>Table component/elements are one of the primary elements used by most apps where users can see a list of records and edit, paginate, and search over the records. The table element comes with a different variant like simple, striped, expandable, editable, bordered, responsive, etc.</p>
+<p>With <span class="jsx-3120878690"><code>react-bootstrap</code></span>, the table element can be overridden using the custom CSS classes, but before using the table, you need to import it.</p>
+<pre><code>1import { Table } from &quot;react-bootstrap&quot;;
+2import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;</code></pre>
+<p>jsx</p>
+<p>After importing the table element and bootstrap CSS, create the basic table.</p>
+<pre><code>1render() {
+2    return (
+3      &lt;&gt;
+4        &lt;Table striped bordered hover&gt;
+5          &lt;thead&gt;
+6            &lt;tr&gt;
+7              &lt;th&gt;#&lt;/th&gt;
+8              &lt;th&gt;Name&lt;/th&gt;
+9              &lt;th&gt;Email&lt;/th&gt;
+10              &lt;th&gt;Contact&lt;/th&gt;
+11            &lt;/tr&gt;
+12          &lt;/thead&gt;
+13          &lt;tbody&gt;
+14            &lt;tr&gt;
+15              &lt;td&gt;1&lt;/td&gt;
+16              &lt;td&gt;TEST 123&lt;/td&gt;
+17              &lt;td&gt;[email protected]&lt;/td&gt;
+18              &lt;td&gt;1122334455&lt;/td&gt;
+19            &lt;/tr&gt;
+20            &lt;tr&gt;
+21              &lt;td&gt;2&lt;/td&gt;
+22              &lt;td&gt;TEST 456&lt;/td&gt;
+23              &lt;td&gt;[email protected]&lt;/td&gt;
+24              &lt;td&gt;6677889910&lt;/td&gt;
+25            &lt;/tr&gt;
+26            &lt;tr&gt;
+27              &lt;td&gt;3&lt;/td&gt;
+28              &lt;td&gt;TEST 789&lt;/td&gt;
+29              &lt;td&gt;[email protected]&lt;/td&gt;
+30              &lt;td&gt;6677889911&lt;/td&gt;
+31            &lt;/tr&gt;
+32          &lt;/tbody&gt;
+33        &lt;/Table&gt;
+34      &lt;/&gt;
+35    );
+36}</code></pre>
+<p>jsx</p>
+<p>In the above <span class="jsx-3120878690"><code>render()</code></span> function, <span class="jsx-3120878690"><code>&lt;Table&gt;</code></span> elements uses the header and body section along with the combination of rows and columns.</p>
+<p>For example, if you want to change the table border, then create the below CSS class.</p>
+<pre><code>1.table-bordered {
+2  border: 5px double orange !important;
+3}</code></pre>
+<p>css</p>
+<p><span class="jsx-3120878690"><code>table-bordered</code></span> is an official class for the table implemented in the bootstrap, but if you want to override it then you need to define custom CSS with the same name along with the custom values.</p>
+<p>Once you run the example, you can see that the table border is changed to orange as per the custom styles defined. Next, you can modify the row hover color.</p>
+<pre><code>1.table-hover tbody tr:hover {
+2    color: yellow !important;
+3    background-color: brown;
+4}</code></pre>
+<p>css</p>
+<p>Once you apply the above style, you will hover the rows with the updated color combination.</p>
+<p>Below is the complete code of the table implementation.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { Table } from &quot;react-bootstrap&quot;;
+3import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;
+4
+5export class Example1 extends Component {
+6  render() {
+7    return (
+8      &lt;&gt;
+9        &lt;Table striped bordered hover&gt;
+10          &lt;thead&gt;
+11            &lt;tr&gt;
+12              &lt;th&gt;#&lt;/th&gt;
+13              &lt;th&gt;Name&lt;/th&gt;
+14              &lt;th&gt;Email&lt;/th&gt;
+15              &lt;th&gt;Contact&lt;/th&gt;
+16            &lt;/tr&gt;
+17          &lt;/thead&gt;
+18          &lt;tbody&gt;
+19            &lt;tr&gt;
+20              &lt;td&gt;1&lt;/td&gt;
+21              &lt;td&gt;TEST 123&lt;/td&gt;
+22              &lt;td&gt;[email protected]&lt;/td&gt;
+23              &lt;td&gt;1122334455&lt;/td&gt;
+24            &lt;/tr&gt;
+25            &lt;tr&gt;
+26              &lt;td&gt;2&lt;/td&gt;
+27              &lt;td&gt;TEST 456&lt;/td&gt;
+28              &lt;td&gt;[email protected]&lt;/td&gt;
+29              &lt;td&gt;6677889910&lt;/td&gt;
+30            &lt;/tr&gt;
+31            &lt;tr&gt;
+32              &lt;td&gt;3&lt;/td&gt;
+33              &lt;td&gt;TEST 789&lt;/td&gt;
+34              &lt;td&gt;[email protected]&lt;/td&gt;
+35              &lt;td&gt;6677889911&lt;/td&gt;
+36            &lt;/tr&gt;
+37          &lt;/tbody&gt;
+38        &lt;/Table&gt;
+39      &lt;/&gt;
+40    );
+41  }
+42}
+43
+44export default Example1;</code></pre>
+<p>jsx</p>
+<p>After adding all the custom CSS, you can see that the custom styles get applied, and the previous CSS behavior is entirely different.</p>
+<h2 id="override-react-bootstrap-form-controls-such-as-button">Override `react-bootstrap` Form Controls Such as Button</h2>
+<p>You have seen the example of the <span class="jsx-3120878690"><code>&lt;Table&gt;</code></span> element where the existing CSS gets updated with the custom styles, and in the same way, any form of controls can be overridden.</p>
+<p>Form controls may contain various input elements such as input, button, dropdown, radio button, checkbox, file upload, etc.</p>
+<p>You will see one example of modifying the CSS of the <span class="jsx-3120878690"><code>&lt;Button&gt;</code></span> element.</p>
+<p>Import the button controls from <span class="jsx-3120878690"><code>react-bootstrap</code></span>, as given below.</p>
+<pre><code>1import { Button } from &quot;react-bootstrap&quot;;
+2import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;</code></pre>
+<p>jsx</p>
+<p>Use the button component into the <span class="jsx-3120878690"><code>render()</code></span> function as a primary variant.</p>
+<pre><code>1render() {
+2    return (
+3      &lt;&gt;
+4        &lt;Button variant=&quot;primary&quot;&gt;
+5          Primary
+6        &lt;/Button&gt;
+7      &lt;/&gt;
+8    );
+9}</code></pre>
+<p>jsx</p>
+<p>The button color will show primary color because the <span class="jsx-3120878690"><code>variant</code></span> props have value as <span class="jsx-3120878690"><code>primary</code></span>, but you need to change the color according to the customer requirement.</p>
+<p>You can create the custom class and related CSS, as given below.</p>
+<pre><code>1.custom-btn {
+2  background-color: blueviolet !important;
+3  border: #fff !important;
+4}</code></pre>
+<p>css</p>
+<p>As you can see in the above custom class, the button’s background color and its border are defined. But if you want to apply those custom CSS, you can use <span class="jsx-3120878690"><code>className</code></span> props as given below.</p>
+<pre><code>1render() {
+2    return (
+3      &lt;&gt;
+4        &lt;Button variant=&quot;primary&quot; className=&quot;custom-btn&quot;&gt;
+5          Primary
+6        &lt;/Button&gt;
+7      &lt;/&gt;
+8    );
+9}</code></pre>
+<p>jsx</p>
+<p>Below is the complete example of additional props added along with the <span class="jsx-3120878690"><code>&lt;Button&gt;</code></span> element, which uses the custom CSS styles.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { Button } from &quot;react-bootstrap&quot;;
+3import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;
+4
+5export class Example2 extends Component {
+6  constructor(props) {
+7    super(props);
+8  }
+9
+10  render() {
+11    return (
+12      &lt;&gt;
+13        &lt;Button variant=&quot;primary&quot; className=&quot;custom-btn&quot;&gt;
+14          Primary
+15        &lt;/Button&gt;
+16      &lt;/&gt;
+17    );
+18  }
+19}
+20
+21export default Example2;</code></pre>
+<p>jsx</p>
+<p>Once you run the above example, you can see that the custom CSS styles replace the existing color combination to override any current styles and classes using <span class="jsx-3120878690"><code>className</code></span> props of the element.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Every UI framework contains components that should be able to be redesigned or that have capabilities to override existing CSS styles. These skills also apply to <span class="jsx-3120878690"><code>react-bootstrap</code></span>, which provides the ability to modify the current styles to some extent.</p>
+<p>It’s always handy to override CSS because components may need to be modified based on the project requirements.</p>
+<p>27</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

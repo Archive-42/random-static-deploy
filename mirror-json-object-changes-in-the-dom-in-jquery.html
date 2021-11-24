@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>mirror-json-object-changes-in-the-dom-in-jquery</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="mirror-json-object-changes-in-the-dom-in-jquery">Mirror JSON Object Changes in the DOM in jQuery</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 14, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>599 Views</p></li>
+<li><p>Oct 14, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>599 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>1</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-storingjsoninstate" class="menu-link">Storing JSON in State</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Creating user interfaces for web apps in React is a breeze. React gives developers flexibility and promotes reusability for maximum reuse of common UI elements such as buttons, text inputs, navigation, and so on. When it comes to development in React, you need not worry about how DOM changes happen as React does all the heavy-duty optimization for you.</p>
+<p>State in React is used to keep track of how data changes over time in an app, and props are data that can be passed between different components. In this guide, you will learn how to mirror changes to a JSON object in the DOM.</p>
+<h2 id="storing-json-in-state">Storing JSON in State</h2>
+<p>For the purposes of this guide, create a basic component with a user’s info in state, as shown below. The user state is a JSON object that has name, age, and salary as properties.</p>
+<pre><code>1state = {
+2  user: {
+3    name: &quot;John Doe&quot;,
+4    age: 21,
+5    salary: 2000,
+6  },
+7};</code></pre>
+<p>js</p>
+<p>In the render method, display the JSON object using the <span class="jsx-3120878690"><code>JSON.stringify()</code></span> method. Below that, add three inputs, which will change the values of name, age, and salary respectively.</p>
+<pre><code>1&lt;div className=&quot;app&quot;&gt;
+2  &lt;pre&gt;{JSON.stringify(user, null, 2)}&lt;/pre&gt;
+3  &lt;div&gt;
+4    &lt;input
+5      onChange={this.handleChange}
+6      name=&quot;name&quot;
+7      placeholder=&quot;Name&quot;
+8      value={user.name}
+9    /&gt;
+10    &lt;input
+11      onChange={this.handleChange}
+12      name=&quot;age&quot;
+13      placeholder=&quot;Age&quot;
+14      value={user.age}
+15    /&gt;
+16
+17    &lt;input
+18      onChange={this.handleChange}
+19      name=&quot;salary&quot;
+20      placeholder=&quot;Salary&quot;
+21      value={user.salary}
+22    /&gt;
+23  &lt;/div&gt;
+24&lt;/div&gt;</code></pre>
+<p>jsx</p>
+<p>Now, write a <span class="jsx-3120878690"><code>handleChange</code></span> method that will change the user state value based on the value from the inputs. Make sure that the name of the inputs match the property names in the user state.</p>
+<pre><code>1handleChange(e) {
+2    this.setState({
+3      user: {
+4        ...this.state.user,
+5        [e.target.name]: e.target.value,
+6      },
+7    });
+8  }</code></pre>
+<p>jsx</p>
+<p>Putting all the above snippets together, your final component should look as follows.</p>
+<pre><code>1import React from &quot;react&quot;;
+2
+3class App extends React.Component {
+4  constructor(props) {
+5    super(props);
+6    this.state = {
+7      user: {
+8        name: &quot;John Doe&quot;,
+9        age: 21,
+10        salary: 2000,
+11      },
+12    };
+13
+14    this.handleChange = this.handleChange.bind(this);
+15  }
+16
+17  handleChange(e) {
+18    this.setState({
+19      user: {
+20        ...this.state.user,
+21        [e.target.name]: e.target.value,
+22      },
+23    });
+24  }
+25
+26  render() {
+27    const { user } = this.state;
+28    return (
+29      &lt;div className=&quot;app&quot;&gt;
+30        &lt;pre&gt;{JSON.stringify(user, null, 2)}&lt;/pre&gt;
+31        &lt;div&gt;
+32          &lt;input
+33            onChange={this.handleChange}
+34            name=&quot;name&quot;
+35            placeholder=&quot;Name&quot;
+36            value={user.name}
+37          /&gt;
+38          &lt;input
+39            onChange={this.handleChange}
+40            name=&quot;age&quot;
+41            placeholder=&quot;Age&quot;
+42            value={user.age}
+43          /&gt;
+44
+45          &lt;input
+46            onChange={this.handleChange}
+47            name=&quot;salary&quot;
+48            placeholder=&quot;Salary&quot;
+49            value={user.salary}
+50          /&gt;
+51        &lt;/div&gt;
+52      &lt;/div&gt;
+53    );
+54  }
+55}</code></pre>
+<p>jsx</p>
+<p>If you check out the results, you will notice that as you change the value in the textbox, the user JSON object also changes instantly.</p>
+<p>In React, data is bound to an input using the value prop of an input element, which makes the input controlled. A controlled input takes the value from the state and triggers an <span class="jsx-3120878690"><code>onChange</code></span> event when the value in the input changes. The component entirely controls the value of the inputs, and the inputs do not have direct access to the component’s state. Hence, it is called <em>one-way</em> data binding.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>If you are beginning with React, you must understand how one-way data binding works in React. It’s ideal if you understand various strategies of passing data between components using props or context. Controlled components keep your UI in sync with the component state, making it predictable and easy to debug.</p>
+<p>So that’s it from this guide. To learn more about data binding in React, check out this <a href="https://medium.com/madhash/two-way-binding-in-react-a-concise-what-why-and-how-guide-22e76d4551d5">article</a>.</p>
+<p>1</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

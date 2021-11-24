@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>form-submission-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="form-submission-in-react.js">Form Submission in React.js</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 20, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>58,681 Views</p></li>
+<li><p>Oct 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>58,681 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>63</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-normalhtmlformsubmission" class="menu-link">Normal HTML Form Submission</a></li>
+<li><a href="#module-programmaticformsubmission" class="menu-link">Programmatic Form Submission</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>HTML form submission works differently when implementing it within a React.js component. Normally, the browser would render the HTML and, depending on the <span class="jsx-3120878690"><code>action</code></span>, automatically submit the data of the form based on each element’s <span class="jsx-3120878690"><code>name</code></span> attribute. Although this default behavior still works in React.js, it is highly advised to programmatically submit a form by supplying your own custom controls on how data is processed by a component.</p>
+<h2 id="normal-html-form-submission">Normal HTML Form Submission</h2>
+<p>A React.js component can render HTML back to the browser where all rules still apply. To illustrate this, create the following component:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class FormSubmission extends React.Component {
+4  constructor(props) {
+5    super(props);
+6  }
+7
+8  render() {
+9    return  (
+10      &lt;div&gt;
+11        &lt;form action=&quot;https://www.youtube.com/results&quot; method=&quot;GET&quot;&gt;
+12          &lt;input type=&quot;text&quot; name=&quot;search_query&quot; /&gt;
+13          &lt;button type=&quot;submit&quot;&gt;
+14            Submit
+15          &lt;/button&gt;
+16        &lt;/form&gt;
+17      &lt;/div&gt;
+18    );
+19  }
+20}</code></pre>
+<p>javascript</p>
+<p>Running this code as-is will make a submission to Youtube’s <a href="https://www.youtube.com/results" class="uri">https://www.youtube.com/results</a> endpoint that expects a <span class="jsx-3120878690"><code>search_query</code></span> value parameter, which is already defined as the name of the input element:</p>
+<pre><code>1&lt;input type=&quot;text&quot; name=&quot;search_query&quot; /&gt;</code></pre>
+<p>html</p>
+<p>All HTML rules still apply, and the user will be able to search for Youtube’s videos. React.js simply renders HTML.</p>
+<h2 id="programmatic-form-submission">Programmatic Form Submission</h2>
+<p>The React.js way, however, allows you to be in full control of what data is being submitted. This also means that your code will not be reliant on HTML attributes but on whatever was programmed within your component’s logic. To illustrate this, modify the component to look like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class FormSubmission extends React.Component {
+4  constructor(props) {
+5    super(props);
+6  }
+7
+8  render() {
+9    return  (
+10      &lt;div&gt;
+11        &lt;input type=&quot;text&quot; /&gt;
+12        &lt;button&gt;
+13          Submit
+14        &lt;/button&gt;
+15      &lt;/div&gt;
+16    );
+17  }
+18}</code></pre>
+<p>javascript</p>
+<p>There are key differences that you can observe here.</p>
+<ol type="1">
+<li>The <span class="jsx-3120878690"><code>name</code></span> attribute for the input element was dropped</li>
+<li>The entire form is no longer enclosed in a <span class="jsx-3120878690"><code>form</code></span> tag</li>
+</ol>
+<p>The key idea here is to create event handlers that deal with changes or react to changes every time a user interacts with the form elements. Specifically, these would be changing text in the input element and clicking the submit button.</p>
+<h3 id="event-handling-for-input">Event Handling for Input</h3>
+<p>To create an event handler for the input element, first declare a state value called <span class="jsx-3120878690"><code>searchQuery</code></span> to be maintained by the component. State values are initially set in the constructor:</p>
+<pre><code>1constructor(props) {
+2  super(props);
+3
+4  this.state = {
+5    searchQuery: &quot;&quot;
+6  }
+7}</code></pre>
+<p>javascript</p>
+<p>Next, create a method called <span class="jsx-3120878690"><code>handleInputChanged</code></span>:</p>
+<pre><code>1handleInputChanged(event) {
+2  this.setState({
+3    searchQuery: event.target.value
+4  });
+5}</code></pre>
+<p>javascript</p>
+<p>Attach the event handler function to the <span class="jsx-3120878690"><code>onChange</code></span> attribute of the input element:</p>
+<pre><code>1&lt;input type=&quot;text&quot; value={this.state.searchQuery} onChange={this.handleInputChanged.bind(this)}/&gt;</code></pre>
+<p>jsx</p>
+<p>The value of the input is always bound to <span class="jsx-3120878690"><code>this.state.searchQuery</code></span>. Every time the value in the state is updated, it will automatically reflect as the value of the input.</p>
+<p>The <span class="jsx-3120878690"><code>bind(this)</code></span> function is added in order to pass <span class="jsx-3120878690"><code>this</code></span> and retain its value as the instance of the component within the <span class="jsx-3120878690"><code>handleInputChanged</code></span> function. This will allow you to call <span class="jsx-3120878690"><code>setState</code></span> which updates the state value of <span class="jsx-3120878690"><code>searchQuery</code></span> to <span class="jsx-3120878690"><code>event.target.value</code></span>, which is the current value of the input element when the call was made. This approach also applies to other input elements of HTML and not only for text inputs.</p>
+<h3 id="event-handling-for-button">Event Handling for Button</h3>
+<p>HTML buttons would normally have the <span class="jsx-3120878690"><code>onClick</code></span> attribute set to them in order to supply logic whenever the button is clicked. Similar to <span class="jsx-3120878690"><code>input</code></span>, first declare a function for button clicks:</p>
+<pre><code>1handleButtonClicked() {
+2  var searchQuery = this.state.searchQuery;
+3
+4  window.location.href = &quot;https://youtube.com/results?search_query&quot; + searchQuery;
+5}</code></pre>
+<p>javascript</p>
+<p>Since you’ll be submitting the data to Youtube’s endpoint, the logic of the function first takes the current value of <span class="jsx-3120878690"><code>searchQuery</code></span> from the component’s <span class="jsx-3120878690"><code>state</code></span>. Any Javascript logic can be applied for form submission in this part, but for simplicity the code simply redirects to Youtube’s endpoint with the <span class="jsx-3120878690"><code>search_query</code></span> parameter as part of the URL. This simulates a <span class="jsx-3120878690"><code>GET</code></span> request similar to the basic example earlier, only now you have more control of what values are being passed and how those values are extracted.</p>
+<p>Finally, attach the event handler to the button’s <span class="jsx-3120878690"><code>onClick</code></span> attribute:</p>
+<pre><code>1&lt;button onClick={this.handleButtonClicked.bind(this)}&gt;
+2  Submit
+3&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>The final code should look like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class FormSubmission extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      searchQuery: &quot;&quot;
+9    }
+10  }
+11
+12  handleInputChanged(event) {
+13    this.setState({
+14      searchQuery: event.target.value
+15    });
+16  }
+17
+18  handleButtonClicked() {
+19    var searchQuery = this.state.searchQuery;
+20
+21    window.location.href = &quot;https://youtube.com/results?search_query&quot; + searchQuery;
+22  }
+23
+24  render() {
+25    return  (
+26      &lt;div&gt;
+27        &lt;input type=&quot;text&quot; value={this.state.searchQuery} onChange={this.handleInputChanged.bind(this)}/&gt;
+28        &lt;button onClick={this.handleButtonClicked.bind(this)}&gt;
+29          Submit
+30        &lt;/button&gt;
+31      &lt;/div&gt;
+32    );
+33  }
+34}</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Form submission in React.js is quite different from usual form submissions in HTML. React.js gives you full control of the values you are passing to the next actionable item, allowing you to format more complex data structures. All values are maintained by the <span class="jsx-3120878690"><code>state</code></span> object of a component and are propagated throughout the elements that are rendered, such as those of an input. Event handlers are also needed in order to tell the app how to <em>react</em> to certain changes, such as modifying an input or clicking a button.</p>
+<p>Moving forward, you can try to apply the concept of programmatically defining how to handle each input element of your component. Given another type of input element aside from <span class="jsx-3120878690"><code>text</code></span> (i.e. <span class="jsx-3120878690"><code>select</code></span>, <span class="jsx-3120878690"><code>checkbox</code></span>, <span class="jsx-3120878690"><code>radio</code></span> and <span class="jsx-3120878690"><code>textarea</code></span>), create another state variable for it and program a corresponding event handler function bound to that input element. The logic of the function should be able to reference the input element, get its current value, and update its corresponding state variable accordingly.</p>
+<p>For any questions/concerns, or if you simply want to chat about programming in general, hit me up <span class="citation" data-cites="happyalampay">[@happyalampay]</span>(https://twitter.com/happyalampay)!</p>
+<p>63</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

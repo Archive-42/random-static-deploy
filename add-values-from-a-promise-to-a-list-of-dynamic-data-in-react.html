@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>add-values-from-a-promise-to-a-list-of-dynamic-data-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="add-values-from-a-promise-to-a-list-of-dynamic-data-in-react">Add Values from a Promise to a List of Dynamic Data in React</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Nov 5, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>2,971 Views</p></li>
+<li><p>Nov 5, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>2,971 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>3</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-updatingstatedynamicallyusingpromises" class="menu-link">Updating State Dynamically Using Promises</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In order to build real-time, dynamic apps using React, you will inevitably need to update a list/array of data within a component based on data coming into your system via an external API.</p>
+<p>This guide will demonstrate how to fetch data from a remote API and then update a component’s state using the <span class="jsx-3120878690"><code>setState</code></span> function.</p>
+<p>Let’s dive in!</p>
+<h2 id="updating-state-dynamically-using-promises">Updating State Dynamically Using Promises</h2>
+<p>Promises are used to model asynchronous actions in your JavaScript code. In this example, you will see how promises are used with the built-in JavaScript Fetch API in order to create our HTTP requests.</p>
+<p>The <span class="jsx-3120878690"><code>setState</code></span> function that React provides on components allows you to asynchronously set the state of your component. React will then trigger a new render of your component’s view, if applicable.</p>
+<p>Below, you will see some example code that implements polling in a React component. The code requests a new data point from an external API every five seconds and then stops polling when the component is unmounted.</p>
+<pre><code>1class DynamicArrayComponent Extends React.Component {
+2    constructor(props) {
+3        super(props);
+4        this.interval;
+5
+6        this.state = {
+7            dataPoints: this.props.dataPoints || [] // Set the initial state
+8        }
+9    }
+10
+11
+12    componentWillMount() {
+13        // Make the first request and then start polling.
+14        this.requestLatest();
+15        this.startPolling();
+16    }
+17
+18    componentWillUnmount() {
+19        this.stopPolling();
+20    }
+21
+22    requestLatest = () =&gt; {
+23        fetch(this.props.API_URL)
+24            .then(response =&gt; response.json())
+25            .then(dataPoint =&gt;
+26                this.setState({
+27                    dataPoints: this.state.dataPoints.concat(dataPoint)
+28                })
+29            );
+30    }
+31
+32    startPolling = () =&gt; this.interval = setInterval(this.requestLatest, 5000)
+33
+34    stopPolling = () =&gt; {
+35        if (this.interval) {
+36            clearInterval(this.interval);
+37        }
+38    }
+39
+40    // ....
+41}</code></pre>
+<p>jsx</p>
+<p>The first part of the code above, within the <span class="jsx-3120878690"><code>constructor</code></span>, sets up the initial <span class="jsx-3120878690"><code>dataPoints</code></span> state and creates an internal component property for keeping track of the interval that is to be created.</p>
+<p>The <span class="jsx-3120878690"><code>componentWillMount</code></span> component lifecycle method uses the <span class="jsx-3120878690"><code>requestLatest</code></span> and <span class="jsx-3120878690"><code>startPolling</code></span> methods to make an initial request for data and then start polling. This is necessary because when you use <span class="jsx-3120878690"><code>setInterval</code></span> in JavaScript, it will not immediately call the function that you pass it.</p>
+<p>Let’s take a closer look at the <span class="jsx-3120878690"><code>requestLatest</code></span> method:</p>
+<pre><code>1requestLatest = () =&gt; {
+2    fetch(this.props.API_URL)
+3        .then(response =&gt; response.json())
+4        .then(dataPoint =&gt;
+5            this.setState({
+6                dataPoints: this.state.dataPoints.concat(dataPoint)
+7            })
+8        );
+9}</code></pre>
+<p>jsx</p>
+<p>Assuming that the external API is set up to dish out a new data point every five seconds, the code above fetches that new data and then uses the <span class="jsx-3120878690"><code>setState</code></span> and <span class="jsx-3120878690"><code>Array.concat</code></span> methods to add the data point to the component state. Note that when writing React code and using state, it is important that you use immutable data structures. The <span class="jsx-3120878690"><code>Array.concat</code></span> method is a good choice here because it will return a new array. This ensures that, at a shallow level, you are dealing with an immutable component state.</p>
+<p>From here, the <span class="jsx-3120878690"><code>componentWillUnmount</code></span> component lifecycle method is used to call the <span class="jsx-3120878690"><code>stopPolling</code></span> method, which uses the global <span class="jsx-3120878690"><code>clearInterval</code></span> function to stop polling by clearing the created interval.</p>
+<p>There you have it—just like that, you have added values from a promise to a list of dynamic data in React!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <span class="jsx-3120878690"><code>setState</code></span> function in conjunction with promises is all you need to dynamically add values to an array. The asynchronous nature of <span class="jsx-3120878690"><code>setState</code></span> and the way that React uses a virtual DOM will ensure that your component is updated only when it needs to be updated.</p>
+<p>For more information about <span class="jsx-3120878690"><code>setState</code></span> and the possibilities there, please check out the React <a href="https://reactjs.org/docs/react-component.html#setstate">documentation</a>.</p>
+<p>3</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

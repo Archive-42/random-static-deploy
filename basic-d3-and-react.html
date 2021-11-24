@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>basic-d3-and-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="basic-d3-and-react.js-integration">Basic D3 and React.js Integration</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 22, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>2,544 Views</p></li>
+<li><p>Oct 22, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>2,544 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>7</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-targetingthevirtualdom" class="menu-link">Targeting the Virtual DOM</a></li>
+<li><a href="#module-drawingthedatawithd3js" class="menu-link">Drawing the Data with D3.js</a></li>
+<li><a href="#module-creatingadrawfunction" class="menu-link">Creating a Draw Function</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>D3.js is an excellent tool for taking in data and manipulating the DOM based on that data. However, with React.js, the framework uses what’s called the virtual DOM to represent HTML elements. This can be quite confusing for developers who are familiar with D3.js but want to integrate it within the context of a React.js app. This guide will show you the basics of calling D3.js from within a React.js component.</p>
+<h2 id="setup">Setup</h2>
+<p>Start off by creating a basic component that will house your D3.js widget called <span class="jsx-3120878690"><code>MyD3Component</code></span>:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import * as d3 from &quot;d3&quot;;
+3
+4export default class MyD3Component extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.myReference = React.createRef();
+9  }
+10
+11  render() {
+12    return (
+13      &lt;div ref={this.myReference}&gt;
+14      &lt;/div&gt;
+15    );
+16  }
+17}</code></pre>
+<p>javascript</p>
+<p>The only odd thing here besides the inclusion of the D3.js library (<span class="jsx-3120878690"><code>import * as d3 from "d3"</code></span>), is the creation of a reference in the line <span class="jsx-3120878690"><code>this.myReference =                                       React.createRef()</code></span>. This value will serve as a reference anchor to the virtual DOM, which can be accessed by D3.js instead of using an id or class attribute since we don’t really have the HTML rendered yet. The integration of this reference is done by adding it as a value for the <span class="jsx-3120878690"><code>ref</code></span> attribute of the main element that this component renders.</p>
+<p>Next, create another React.js component that serves as your “app” and call it <span class="jsx-3120878690"><code>D3Example</code></span>:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import MyD3Component from &#39;./MyD3Component&#39;;
+3
+4export default class D3Example extends React.Component {
+5  constructor(props) {
+6    super(props);
+7  }
+8
+9  render() {
+10    var data = [10, 20, 30];
+11
+12    return (
+13      &lt;div&gt;
+14        &lt;h1&gt;D3 Example&lt;/h1&gt;
+15        &lt;MyD3Component
+16          data={data}
+17        /&gt;
+18      &lt;/div&gt;
+19    );
+20  }
+21}</code></pre>
+<p>javascript</p>
+<p>The only thing this component initially does is have some dummy data with three integer elements in it. You pass this data as a property of <span class="jsx-3120878690"><code>MyD3Component</code></span>, which can be accessed by its <span class="jsx-3120878690"><code>props</code></span> as <span class="jsx-3120878690"><code>props.data</code></span>.</p>
+<h2 id="targeting-the-virtual-dom">Targeting the Virtual DOM</h2>
+<p>To interact with the virtual DOM, D3.js has to first perform a <span class="jsx-3120878690"><code>select()</code></span> against a target using the reference object <span class="jsx-3120878690"><code>this.myReference</code></span>. To do this, you can create a variable that represents this targeted element as follows:</p>
+<pre><code>1var container = d3.select(this.myReference.current);</code></pre>
+<p>javascript</p>
+<h2 id="drawing-the-data-with-d3.js">Drawing the Data with D3.js</h2>
+<p>Using <span class="jsx-3120878690"><code>container</code></span>, you can now begin to take advantage of the various D3.js library calls to visualize your data. Start with something simple by appending a <span class="jsx-3120878690"><code>p</code></span> tag for each element in the <span class="jsx-3120878690"><code>props.data</code></span> attribute passed by <span class="jsx-3120878690"><code>D3Example</code></span>. This can be done with the following code:</p>
+<pre><code>1container
+2  .selectAll(&quot;p&quot;)
+3  .data(this.props.data)
+4  .enter()
+5  .append(&quot;p&quot;)
+6  .text(function(d) {
+7    return &quot;Value is &quot; + d;
+8  });</code></pre>
+<p>javascript</p>
+<p>The first thing the code does is to select all the <span class="jsx-3120878690"><code>p</code></span> tags found within the container. It then inserts data using the <span class="jsx-3120878690"><code>.data(this.props.data)</code></span> call before calling <span class="jsx-3120878690"><code>enter()</code></span>. The next call in the chain will tell D3.js to append a <span class="jsx-3120878690"><code>p</code></span> tag for every element found within <span class="jsx-3120878690"><code>this.props.data</code></span>. Afterwards, the <span class="jsx-3120878690"><code>.text()</code></span> call tells D3.js to add text to each data element extracted. The way the text is presented is logically programmed by a function passed to <span class="jsx-3120878690"><code>.text()</code></span> that returns the text “Value is” plus the actual data element per iteration represented by the variable <span class="jsx-3120878690"><code>d</code></span>.</p>
+<h2 id="creating-a-draw-function">Creating a Draw Function</h2>
+<p>Finally, you’ll want to wrap everything up within a function defined inside the <span class="jsx-3120878690"><code>MyD3Component</code></span> component called <span class="jsx-3120878690"><code>update</code></span>:</p>
+<pre><code>1update() {
+2  var container = d3.select(this.myReference.current);
+3
+4  container
+5    .selectAll(&quot;p&quot;)
+6    .data(this.props.data)
+7    .enter()
+8    .append(&quot;p&quot;)
+9    .text(function(d) {
+10      return &quot;Value is &quot; + d;
+11    });
+12}</code></pre>
+<p>javascript</p>
+<p>Call <span class="jsx-3120878690"><code>update()</code></span> as the component is loaded by invoking it within the <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method:</p>
+<pre><code>1componentDidMount() {
+2  this.update();
+3}</code></pre>
+<p>javascript</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>Your final code should look like the following:</p>
+<h3 id="d3example">D3Example</h3>
+<pre><code>1import React from &#39;react&#39;;
+2import MyD3Component from &#39;./MyD3Component&#39;;
+3
+4export default class D3Example extends React.Component {
+5  constructor(props) {
+6    super(props);
+7  }
+8
+9  render() {
+10    var data = [10, 20, 30];
+11
+12    return (
+13      &lt;div&gt;
+14        &lt;h1&gt;D3 Example&lt;/h1&gt;
+15        &lt;MyD3Component
+16          data={data}
+17        /&gt;
+18      &lt;/div&gt;
+19    );
+20  }
+21}</code></pre>
+<p>javascript</p>
+<h3 id="myd3component">MyD3Component</h3>
+<pre><code>1import React from &#39;react&#39;;
+2import * as d3 from &quot;d3&quot;;
+3
+4export default class MyD3Component extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.myReference = React.createRef();
+9  }
+10
+11  componentDidMount() {
+12    this.update();
+13  }
+14
+15  update() {
+16    var container = d3.select(this.myReference.current);
+17
+18    container
+19      .selectAll(&quot;p&quot;)
+20      .data(this.props.data)
+21      .enter()
+22      .append(&quot;p&quot;)
+23      .text(function(d) {
+24        return &quot;Value is &quot; + d;
+25      });
+26  }
+27
+28  render() {
+29    return (
+30      &lt;div ref={this.myReference}&gt;
+31      &lt;/div&gt;
+32    );
+33  }
+34}</code></pre>
+<p>javascript</p>
+<p>Once mounted to your HTML document, the output of the code should look like the following:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/29e92590-44fb-4286-9e40-3aad3c31f90a_Screenshot_from_2020-10-20_00-54-27.html" /><figcaption aria-hidden="true">output-for-d3-example-component</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>D3.js invoked within React.js takes a little getting used to due to the use of the virtual DOM from React.js. It can be quite confusing at first, but the trick is to follow these simple steps:</p>
+<ol type="1">
+<li>Create a reference object using <span class="jsx-3120878690"><code>React.createRef()</code></span> and attach it as a value to the target element via the <span class="jsx-3120878690"><code>ref</code></span> attribute.</li>
+<li>Use the <span class="jsx-3120878690"><code>this.myReference.current</code></span> property of the reference and pass it to D3.js’ <span class="jsx-3120878690"><code>select</code></span> call to create a container.</li>
+<li>Invoke your D3.js code within the referenced container.</li>
+<li>In a React.js approach, have your D3.js logic wrapped in a utility function so it can be easily called when a component has to be updated with new data.</li>
+</ol>
+<p>Try it out yourself by extending the example to make a call to D3.js’ <span class="jsx-3120878690"><code>attr()</code></span> function to define the size of the area where you would draw your D3.js visualization and draw a border around it using D3.js’ <span class="jsx-3120878690"><code>style()</code></span> call.</p>
+<p>7</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

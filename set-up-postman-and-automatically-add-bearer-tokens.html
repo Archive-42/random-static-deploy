@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>set-up-postman-and-automatically-add-bearer-tokens</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="setting-up-postman-and-automatically-adding-bearer-tokens">Setting Up Postman and Automatically Adding Bearer Tokens</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 2, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>62,585 Views</p></li>
+<li><p>Oct 2, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>62,585 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Postman</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages, Frameworks, and Tools</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Developer Testing Tools/Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Developer Tools</span></p>
+<p>Introduction</p>
+<p>104</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-understandinghowtoorganizerequestsinpostman" class="menu-link">Understanding How to Organize Requests in Postman</a></li>
+<li><a href="#module-attachscriptstothecollections" class="menu-link">Attach Scripts to the Collections</a></li>
+<li><a href="#module-handledifferentenvironments" class="menu-link">Handle Different Environments</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When implementing a distributed system, you will often find that you are working across dozens of apps and services. Moreover, these services typically expose their functionality over REST APIs, protected in different ways. Postman is a tool that developers use to mock, organize, and test REST APIs. It also offers many scripting capabilities that you may not be fully utilizing.</p>
+<p>In this guide, you will learn how to use pre-request scripts to fetch and attach bearer tokens to make testing your REST APIs easier. The guide will use oauth2 client credential flow as a motivating example since it is a common type of REST API authentication.</p>
+<h2 id="understanding-how-to-organize-requests-in-postman">Understanding How to Organize Requests in Postman</h2>
+<p>Postman allows you to organize your requests into three levels of hierarchy:</p>
+<p>Workspaces are at the root of the organizational hierarchy of postman. They are shared contexts that allow team members to collaborate, set up different environments, and attach variables to these environments. 2. Collections sit inside a workspace and can be executed by firing all its child requests and hold variables, as well as pre- and post-request scripts. 3. Folders sit inside collections and can also have their own pre- and post-request scripts.</p>
+<p>This hierarchy has two main benefits: 1. It helps you organize your requests 2. It can help you share common functionality, such as acquiring ouath2 access tokens between requests</p>
+<p>For the purpose of this guide, you are interested in the second benefit. Since collections, folders, and requests can all have pre-request scripts configured, organizing your requests appropriately can help you reduce code duplication.</p>
+<p>For this reason, you may want to organize your requests as demonstrated below:</p>
+<pre><code>1orders-collection
+2 - GET v1/orders
+3 - POST v1/orders
+4
+5products-collection
+6 - GET v1/products</code></pre>
+<p>You’ve created a collection for each API. Within each collection, save a Postman request for each endpoint that API has. Each collection can have a separate pre-request script to attach authorization headers. This is useful if each API requires different credentials. Any additional endpoints that are added under each component will automatically inherit the settings of its parent collection.</p>
+<p><strong>Note</strong>: If the APIs you want to interact with have OpenAPI documentation, this can be automatically generated by using <a href="https://learning.postman.com/docs/integrations/available-integrations/working-with-openAPI/">Postman’s official OpenAPI integration</a>.</p>
+<h2 id="attach-scripts-to-the-collections">Attach Scripts to the Collections</h2>
+<p>Once your requests have been organized appropriately, you can start attaching a pre-request script. You will want to attach your script to the collection so that the requests inside the collection can automatically execute the script in any configuration.</p>
+<p>To fetch an oauth2 token using client_credentials, you will use this script:</p>
+<pre><code>1const tokenUrl = &#39;https://authority.com/connect/token&#39;;
+2
+3const clientId = &#39;xxxxxx&#39;;
+4const clientSecret = &#39;xxxxxx&#39;;
+5
+6const getTokenRequest = {
+7  method: &#39;POST&#39;,
+8  url: tokenUrl,
+9  body: {
+10      mode: &#39;formdata&#39;,
+11      formdata: [
+12          { key: &#39;grant_type&#39;, value: &#39;client_credentials&#39; },
+13          { key: &#39;client_id&#39;, value: clientId },
+14          { key: &#39;client_secret&#39;, value: clientSecret }
+15      ]
+16  }
+17};
+18
+19pm.sendRequest(getTokenRequest, (err, response) =&gt; {
+20  const jsonResponse = response.json();
+21  const newAccessToken = jsonResponse.access_token;
+22
+23  pm.variables.set(&#39;access_token&#39;, newAccessToken);
+24});</code></pre>
+<p>javascript</p>
+<p>The above script makes a request to your identity provider to fetch the bearer token. Then it reads the response and saves it to a variable called <span class="jsx-3120878690"><code>access_token</code></span>.</p>
+<p>Then, you need to configure the collection to set the bearer token. To do this, go to the authorization tab on the collection, then set the type to Bearer Token and value to {{access_token}}. <embed src="../../pluralsight2.imgix.net/guides/196006bd-c7b4-4285-8d4b-716d5484d5d3_Screenshot_2020-10-01_220405.html" /></p>
+<p>Make sure the authorization details for each endpoint are configured to “inherit auth from parent” and saved in the correct location.</p>
+<p><strong>Note</strong>: depending on how your identity provider is configured, you may need to pass extra parameters. For example, some providers may require you to explicitly specify requested scopes.</p>
+<h2 id="handle-different-environments">Handle Different Environments</h2>
+<p>You may want to access different environments with the same collection. Postman has this ability. It allows you to store a set of variables and switch the context of your requests. You can also use this feature to change credentials and identity providers based on environments. To do this, modify your script as demonstrated below:</p>
+<pre><code>1let tokenUrl;
+2let clientId;
+3let clientSecret;
+4
+5if (pm.environment.name === &#39;development&#39;) {
+6  const tokenUrl = &#39;https://development-authority.com/connect/token&#39;;
+7  const clientId = &#39;xxxxxx&#39;;
+8  const clientSecret = &#39;xxxxxx&#39;;
+9else if (pm.environment.name === &#39;staging&#39;) {
+10  const tokenUrl = &#39;https://staging-authority.com/connect/token&#39;;
+11  const clientId = &#39;yyyyyy&#39;;
+12  const clientSecret = &#39;yyyyyy&#39;;
+13}
+14
+15
+16const getTokenRequest = {
+17  method: &#39;POST&#39;,
+18  url: tokenUrl,
+19  body: {
+20      mode: &#39;formdata&#39;,
+21      formdata: [
+22          { key: &#39;grant_type&#39;, value: &#39;client_credentials&#39; },
+23          { key: &#39;client_id&#39;, value: clientId },
+24          { key: &#39;client_secret&#39;, value: clientSecret }
+25      ]
+26  }
+27};
+28
+29pm.sendRequest(getTokenRequest, (err, response) =&gt; {
+30  const jsonResponse = response.json();
+31  const newAccessToken = jsonResponse.access_token;
+32
+33  pm.variables.set(&#39;access_token&#39;, newAccessToken);
+34});</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Testing your APIs is an important part of the development cycle. By using tools like Postman to set up scripts to automate menial tasks, you make your work more enjoyable. As a next step, you may want to try writing scripts to automate authentication with cloud services, such as Amazon Web Services or Microsoft Azure.</p>
+<p>104</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

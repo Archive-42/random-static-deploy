@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>import-statements-to-use-with-redux-promise</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="import-statements-to-use-with-redux-promise">Import Statements to Use with Redux-Promise</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 19, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>987 Views</p></li>
+<li><p>Oct 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>987 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatismiddlewareinredux" class="menu-link">What Is Middleware in Redux?</a></li>
+<li><a href="#module-usingreduxpromiseinreactapp" class="menu-link">Using Redux-Promise in React App</a></li>
+<li><a href="#module-applyingreduxpromisemiddlewaretostore" class="menu-link">Applying Redux-Promise Middleware to Store</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React uses Redux as a state management library that creates the global state object using the store, and any component can access the global state by subscribing to the store value in the component. Redux allows you to create the global state using a store that can get accessed from any of the components across the app, but if you want to log or trigger an action between action dispatch, you need to use <em>middleware.</em></p>
+<p>You can use a promise to evaluate the action and define success or failure. Thus, each action in Redux should return a response. You’ll learn more about using Redux Promise in this guide.</p>
+<h2 id="what-is-middleware-in-redux">What Is Middleware in Redux?</h2>
+<p>Middleware in Redux evaluates the action; in other words, you can say that middleware is just a piece of code that triggers between the request to the server.</p>
+<p>You can use middleware to see the triggered action, the request payload, the response coming from the server, response status, and other middleware, such as <span class="jsx-3120878690"><code>redux-logger</code></span> to log the request.</p>
+<h2 id="using-redux-promise-in-react-app">Using Redux-Promise in React App</h2>
+<p>You can use a promise to represent a value based on the request data, either the resolved value or why the request is unresolved.</p>
+<p>JavaScript uses promises subscribed by a function, and the same function knows how to request status and resolve or reject the promise.</p>
+<p>RR The <span class="jsx-3120878690"><code>redux-promise</code></span> is an npm package that acts as a middleware for Redux and returns the object if it gets resolved. But it won’t return anything if rejected.</p>
+<p>To use <span class="jsx-3120878690"><code>redux-promise</code></span>, install it using the below command.</p>
+<pre><code>1npm install redux-promise</code></pre>
+<p>shell</p>
+<p>After installing <span class="jsx-3120878690"><code>redux-promise</code></span>, the next step is to import the library.</p>
+<pre><code>1import promiseMiddleware from &quot;redux-promise&quot;;</code></pre>
+<p>jsx</p>
+<p>The import syntax is pretty simple to use from the package. You need to import by its name, such as <span class="jsx-3120878690"><code>promiseMiddleware</code></span> or any other custom name, and you are good to go.</p>
+<h2 id="applying-redux-promise-middleware-to-store">Applying Redux-Promise Middleware to Store</h2>
+<p>To make <span class="jsx-3120878690"><code>redux-promise</code></span> work, configure it with the store so that once the app hits the server endpoint, the promise will start triggering the actions.</p>
+<p>Before applying the middleware, the Redux store needs to be created, as shown below.</p>
+<pre><code>1import { createStore, combineReducers, applyMiddleware } from &quot;redux&quot;;
+2// Primary reducer
+3import { contacts } from &quot;../reducer&quot;;
+4// Importing redux-promise with custom name
+5import promiseMiddleware from &quot;redux-promise&quot;;
+6
+7export default () =&gt; {
+8  const rootReducer = combineReducers({
+9    contacts
+10  });
+11
+12  // Applied middleware using &#39;applyMiddleware&#39;
+13  return createStore(rootReducer, applyMiddleware(promiseMiddleware));
+14};</code></pre>
+<p>js</p>
+<p>There are two import statements: import the reducer and import the <span class="jsx-3120878690"><code>redux-promise</code></span> package. You can create the store using the function <span class="jsx-3120878690"><code>createStore</code></span>, which accepts two different arguments:</p>
+<ul>
+<li>Root reducer</li>
+<li>Middleware function</li>
+</ul>
+<p>The middleware function also expects the number of middleware functions in custom middleware implementation, or the package’s name is used.</p>
+<p>In the above example, the <span class="jsx-3120878690"><code>redux-promise</code></span> package used is a middleware; hence, it is applied to the store using the <span class="jsx-3120878690"><code>applyMiddleware</code></span> function. You will receive a payload that includes two arguments after applying the <span class="jsx-3120878690"><code>redux-promise</code></span>:</p>
+<ul>
+<li>Payload status as success to true if the promise gets resolved.</li>
+<li>Payload status as success to false if the promise gets rejected.</li>
+</ul>
+<p>You can configure the dispatch action as given below.</p>
+<pre><code>1store.dispatch({
+2    type: &#39;ADD_CONTACT&#39;,
+3    resolvesWith: [&#39;CONTACT_ADDED&#39;],
+4    rejectsWith: [&#39;CONTACT_FAILED&#39;],
+5    payload: {
+6        name: &quot;This is first contact&quot;
+7    }
+8})</code></pre>
+<p>js</p>
+<p><span class="jsx-3120878690"><code>resolvesWith</code></span> and <span class="jsx-3120878690"><code>rejectsWith</code></span> define the type of action if contact is added or failed due to inevitable results. Hence, the respected action is dispatched based on the promise status.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Redux middleware is the utility to help maintain the request and response triggered by a dispatch from a React component. It is widely used because of its straightforward configuration and the ability to resolve or reject the library’s requests, such as <span class="jsx-3120878690"><code>redux-promise</code></span>. I hope this sustainable solution will drive you to configure the best possible promise configuration with the Redux app.</p>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

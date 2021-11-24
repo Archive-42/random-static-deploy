@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>getting-started-with-bigml</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/ce501f54-fed2-4c77-a499-71e5d2c571d4.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Chhaya Wagmi</p>
+<h1 id="getting-started-with-bigml">Getting Started with BigML</h1>
+<h3 id="chhaya-wagmi">Chhaya Wagmi</h3>
+<ul>
+<li><p>Oct 16, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>696 Views</p></li>
+<li><p>Oct 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>696 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning</span></p>
+<p>Introduction</p>
+<p>3</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-importingthetimeseriesdataset" class="menu-link">Importing the Time Series Dataset</a></li>
+<li><a href="#module-datapreprocessing" class="menu-link">Data Preprocessing</a></li>
+<li><a href="#module-buildingamachinelearningmodel" class="menu-link">Building a Machine Learning Model</a></li>
+<li><a href="#module-applyingthemodelonthetestdataset" class="menu-link">Applying the Model on the Test Dataset</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>BigML is a machine learning software hosted on <a href="https://bigml.com/">BigML.com</a>. You can use this platform to perform basic data preprocessing and visualization, and build machine learning models even without coding experience. Both supervised models (linear regression, logistic regression, deepnets, etc.) and unsupervised models (clusters, anomalies, associations, etc.) can be trained and tested on this platform.</p>
+<p>For beginners, BigML provides flexibility to build models on a dataset with a maximum size of 10KB free of cost. This guide will demonstrate how to create an end-to-end project on time series data forecasting to give you a clear idea of how you can initiate your own BigML project. The major steps involved in this project are:</p>
+<ul>
+<li>Importing the time series dataset</li>
+<li>Data preprocessing</li>
+<li>Building a machine learning model</li>
+<li>Applying the model on the test dataset</li>
+</ul>
+<h2 id="importing-the-time-series-dataset">Importing the Time Series Dataset</h2>
+<p>Export the AirPassengers dataset from R or download it from <a href="https://www.kaggle.com/limkongkong/airpassengers">Kaggle</a> as a CSV file. This dataset has two columns, <strong>Month</strong> and <strong>#Passengers</strong> . None of the features have any missing or invalid value. The data format of the <strong>Month</strong> column is <span class="jsx-3120878690"><code>YYYY-MM</code></span>. Here’s a sneak peek of the data:</p>
+<table>
+<thead>
+<tr class="header">
+<th>
+Month
+</th>
+<th>
+#Passengers
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+1949-01
+</td>
+<td>
+112
+</td>
+</tr>
+<tr class="even">
+<td>
+1949-02
+</td>
+<td>
+118
+</td>
+</tr>
+<tr class="odd">
+<td>
+1949-03
+</td>
+<td>
+132
+</td>
+</tr>
+<tr class="even">
+<td>
+1949-04
+</td>
+<td>
+129
+</td>
+</tr>
+<tr class="odd">
+<td>
+1949-05
+</td>
+<td>
+121
+</td>
+</tr>
+</tbody>
+</table>
+<p>To upload the dataset in your BigML dashboard, start by creating a new project and name it <span class="jsx-3120878690"><code>Time Series Forecast</code></span>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9c83564f-8910-4b56-9914-45a4fbccd196_1.html" /><figcaption aria-hidden="true">Creating a new project</figcaption>
+</figure>
+<p>As you can observe in the above image, there are currently no available sources in your project. To bring the dataset inside <strong>Sources</strong>, click on the extreme right icon and upload the <span class="jsx-3120878690"><code>Airpassengers.csv</code></span> file. This will open a green bar pop-up.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/15daef9d-7794-4a01-bc1b-983cfa462cc3_4.html" /><figcaption aria-hidden="true">Data uploaded</figcaption>
+</figure>
+<p>The dataset has a size of only 1.7KB and therefore you can proceed ahead for data preprocessing.</p>
+<h2 id="data-preprocessing">Data Preprocessing</h2>
+<p>Click on the dataset and you should see the following screen, which consists of four features:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8aa1ed90-3e9a-4632-82ac-9087ec5b606f_5.html" /><figcaption aria-hidden="true">First view of the dataset</figcaption>
+</figure>
+<p>You only had two features at the start but now BigML has broken the first feature, <strong>Month</strong>, into <strong>Month.year</strong> and <strong>Month.month</strong>. To keep only the first two features, click on the <strong>Configure source</strong> button and change the data type of <strong>Month</strong> from <strong>Datetime</strong> to <strong>Numeric</strong>. Once the data type is set, click <strong>Update</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e3f409f8-d45c-4ccf-9026-50c4180295a5_6.html" /><figcaption aria-hidden="true">Changing the data type of Month</figcaption>
+</figure>
+<p>Have you noticed that you are still working in <strong>Sources</strong>? To create a dataset of the given two features, click on <strong>1-CLICK DATASET</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1208596b-96c3-41b3-8261-4e64894c023c_7.html" /><figcaption aria-hidden="true">Creating a BigML dataset</figcaption>
+</figure>
+<p>This will migrate you from <strong>Sources</strong> to <strong>Datasets</strong> tab. Next, you need to split the complete dataset into two separate datasets, one for training the model and another for testing the model. Since you are currently working on a time series dataset, you should only perform a linear split (strict no to random split). To do so, click on the <strong>LINEAR SPLIT</strong> button, which will initiate the splitting process. After the split, the training data receives 80% of the total observations (115 out of 144).</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4598699f-1f1f-46ab-baed-b4d5677bbe47_8.html" /><figcaption aria-hidden="true">Splitting data linearly</figcaption>
+</figure>
+<h2 id="building-a-machine-learning-model">Building a Machine Learning Model</h2>
+<p>If you have ever worked on forecasting a time series data in R then you must be familiar with the <span class="jsx-3120878690"><code>auto.arima()</code></span> function, which presents the best fit model out of various models. BigML also creates multiple forecasting models on a dataset and initially chooses the one that has the best metrics. You can also compare the best fit model with the rest of the models based on metrics like AIC, AICc, BIC, and R squared. Apart from presenting the best fit model, you can also visualize the decomposed model with its level, trend, and seasonality.</p>
+<p>To start building the forecasting models on your dataset, click the <strong>TIME SERIES</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/60934762-6302-403e-bb7e-66328512e21a_10.html" /><figcaption aria-hidden="true">Building forecasting models</figcaption>
+</figure>
+<p>This will present you with a dashboard with all the information about the best model, other models, and the decomposed model.</p>
+<p><strong>Best Model</strong> <embed src="../../pluralsight2.imgix.net/guides/f6b67666-87be-40b9-bbed-ead35c58d4e2_11.html" /></p>
+<p><strong>Comparison of Models</strong> <embed src="../../pluralsight2.imgix.net/guides/254f3925-d004-41f2-96d4-d96814e35e6b_12.html" /></p>
+<p><strong>Decomposed Model</strong> <embed src="../../pluralsight2.imgix.net/guides/c14f729c-924d-4e21-a0f4-da99eaaff467_13.html" /></p>
+<h2 id="applying-the-model-on-the-test-dataset">Applying the Model on the Test Dataset</h2>
+<p>So far you have built the model on your training dataset. Now, you need to apply this model on the remaining 20% of data that is inside the testing dataset. To do so, click on the <strong>EVALUATE</strong> button, select the testing dataset, and then click the green <strong>Evaluate</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a9e18c88-ebd2-4eec-976e-be2df6740fe6_14.html" /><figcaption aria-hidden="true">Evaluating the model on the testing dataset</figcaption>
+</figure>
+<p>After the evaluation, you will receive a dashboard with the original training, testing, and forecasting data. Given below is the forecast for the first three best models. The testing data is differentiated in the highlighted area.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fc328a5b-c450-4ce0-a5db-b5d2745502ee_15.html" /><figcaption aria-hidden="true">Forecasting on the testing dataset</figcaption>
+</figure>
+<p>You can forecast the original data based on any of the available models and, if needed, export the chart in a PNG image with or without legends.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>BigML has an efficient, state-of-the-art infrastructure to support data processing, visualizations, and building supervised/unsupervised machine learning models. Currently, it has nine built-in datasets and even gives you the flexibility to upload your own datasets (maximum size 10KB) for your practice, free of cost. This guide presented an end-to-end project (importing/configuring a dataset and building/evaluating models) to get you started with BigML. The Pluralsight course <a href="https://www.pluralsight.com/courses/leveraging-online-resources-python-analytics">Leveraging Online Resources for Python Analytics</a> also covers BigML for building and sharing analytics. For a more detailed study, you can always refer to <a href="https://bigml.com/documentation/">BigML documentation</a>.</p>
+<p>3</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

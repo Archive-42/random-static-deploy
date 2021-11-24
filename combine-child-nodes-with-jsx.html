@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>combine-child-nodes-with-jsx</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="combine-child-nodes-with-jsx">Combine Child Nodes with JSX</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 19, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>1,352 Views</p></li>
+<li><p>Nov 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>1,352 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>3</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-creatingthechildjsxelements" class="menu-link">Creating the Child JSX Elements</a></li>
+<li><a href="#module-combiningthechildjsxnodeswiththeparentnodes" class="menu-link">Combining the Child JSX Nodes with the Parent Nodes</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>JSX (JavaScript XML) is most suitable for writing JavaScript within the HTML mark-up. It is a primary option to use with React because of its way of presenting DOM elements and maintainability. While developing with React, it’s essential to use the combination of the parent-child element or a group of elements rendered dynamically based on the supportive conditions so that it can be sufficient to manage the DOM elements.</p>
+<p>The JSX can render child elements within the parent element separately, and you will learn the same approach in this guide.</p>
+<h2 id="creating-the-child-jsx-elements">Creating the Child JSX Elements</h2>
+<p>Before rendering or combining various child JSX elements, you need to create them either within the <span class="jsx-3120878690"><code>render()</code></span> or by creating a separate function and returning the desired set of JSX mark-up. For combining the child JSX elements, you need to make sure that it fits into the same supported element where you want to render it.</p>
+<p>For example, you want to render multiple <span class="jsx-3120878690"><code>&lt;Button&gt;</code></span> as a separate JSX element. Thus, you will need to have a <span class="jsx-3120878690"><code>&lt;ButtonToolbar&gt;</code></span> kind of container where you can render those child JSX buttons. Create one function which returns the list if <span class="jsx-3120878690"><code>&lt;li&gt;</code></span> elements as given below.</p>
+<pre><code>1renderList1 = () =&gt; {
+2    return (
+3      &lt;&gt;
+4        &lt;li&gt;Item 1&lt;/li&gt;
+5        &lt;li&gt;Item 2&lt;/li&gt;
+6        &lt;li&gt;Item 3&lt;/li&gt;
+7        &lt;li&gt;Item 4&lt;/li&gt;
+8        &lt;li&gt;Item 5&lt;/li&gt;
+9      &lt;/&gt;
+10    );
+11};</code></pre>
+<p>jsx</p>
+<p>The above function returns the fragment of five different <span class="jsx-3120878690"><code>&lt;li&gt;</code></span> items, which can be rendered only within the <span class="jsx-3120878690"><code>&lt;ul&gt;</code></span> element as it only supports <span class="jsx-3120878690"><code>&lt;li&gt;</code></span> as a child element.</p>
+<p>Create another function that returns a fragment of five more lists of <span class="jsx-3120878690"><code>&lt;li&gt;</code></span> elements.</p>
+<pre><code>1renderList2 = () =&gt; {
+2    return (
+3      &lt;&gt;
+4        &lt;li&gt;Item 6&lt;/li&gt;
+5        &lt;li&gt;Item 7&lt;/li&gt;
+6        &lt;li&gt;Item 8&lt;/li&gt;
+7        &lt;li&gt;Item 9&lt;/li&gt;
+8        &lt;li&gt;Item 10&lt;/li&gt;
+9      &lt;/&gt;
+10    );
+11};</code></pre>
+<p>jsx</p>
+<p>Both the function <span class="jsx-3120878690"><code>renderList1()</code></span> and <span class="jsx-3120878690"><code>renderList2()</code></span> are almost the same except their values; now, it’s a challenge to render the list of <span class="jsx-3120878690"><code>&lt;li&gt;</code></span> elements into a single <span class="jsx-3120878690"><code>&lt;ul&gt;</code></span> element by combining them.</p>
+<h2 id="combining-the-child-jsx-nodes-with-the-parent-nodes">Combining the Child JSX Nodes with the Parent Nodes</h2>
+<p>In the previous section, there are two separate functions created, which returns the set of <span class="jsx-3120878690"><code>&lt;li&gt;</code></span> elements, but they should get rendered within the single <span class="jsx-3120878690"><code>&lt;ul&gt;</code></span> element.</p>
+<p>The JSX comes with much more flexibility than you can even put into any function in line with the HTML mark-up, and the respective function’s content will get rendered as it returns. Below is one of the simplest pieces of code that combines the two different JSX code sets into one and renders its respective content.</p>
+<pre><code>1render() {
+2    return (
+3      &lt;&gt;
+4        &lt;div&gt;
+5          &lt;ul&gt;
+6            {this.renderList1()}
+7            {this.renderList2()}
+8          &lt;/ul&gt;
+9        &lt;/div&gt;
+10      &lt;/&gt;
+11    );
+12}</code></pre>
+<p>jsx</p>
+<p>Inside the <span class="jsx-3120878690"><code>&lt;ul&gt;</code></span> element, if two different functions get used and wrapped with the curly braces <span class="jsx-3120878690"><code>{ }</code></span> it means the content of the function/expression will get executed, and elements will get rendered wherever they’re referenced.</p>
+<p>Below is the complete code of the example.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3export class Example1 extends Component {
+4    renderList1 = () =&gt; {
+5        return (
+6            &lt;&gt;
+7                &lt;li&gt;Item 1&lt;/li&gt;
+8                &lt;li&gt;Item 2&lt;/li&gt;
+9                &lt;li&gt;Item 3&lt;/li&gt;
+10                &lt;li&gt;Item 4&lt;/li&gt;
+11                &lt;li&gt;Item 5&lt;/li&gt;
+12            &lt;/&gt;
+13        );
+14    };
+15
+16    renderList2 = () =&gt; {
+17        return (
+18            &lt;&gt;
+19                &lt;li&gt;Item 6&lt;/li&gt;
+20                &lt;li&gt;Item 7&lt;/li&gt;
+21                &lt;li&gt;Item 8&lt;/li&gt;
+22                &lt;li&gt;Item 9&lt;/li&gt;
+23                &lt;li&gt;Item 10&lt;/li&gt;
+24            &lt;/&gt;
+25        );
+26    };
+27
+28    render() {
+29        return (
+30            &lt;&gt;
+31                &lt;div&gt;
+32                    &lt;ul&gt;
+33                        {this.renderList1()}
+34                        {this.renderList2()}
+35                    &lt;/ul&gt;
+36                &lt;/div&gt;
+37            &lt;/&gt;
+38        );
+39    }
+40}
+41
+42export default Example1;</code></pre>
+<p>jsx</p>
+<p>Once you run the above example, you can see that the set of JSX elements coming from a collection of the function gets rendered inside the single<span class="jsx-3120878690"><code>&lt;ul&gt;</code></span> element as an unordered list.</p>
+<p>You can try creating the function and returning the set of JSX elements. By using the functional rendering approach, code will be easy to manage and pretty effective to combine child nodes using the JSX syntax.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>JSX is always a handy option for React.js developers because of JavaScript within the HTML mark-up, and rendering the parent-child JSX elements is an easier way than ever before because of its straight-forward syntax.</p>
+<p>You can try combining the parent and child nodes and render the child nodes conditionally; this is how you can implement JSX effectively with your React app.</p>
+<p>3</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

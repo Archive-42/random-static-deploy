@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>interactivity-in-tableau-data-visualizations</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/ce501f54-fed2-4c77-a499-71e5d2c571d4.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Chhaya Wagmi</p>
+<h1 id="interactivity-in-tableau-data-visualizations">Interactivity in Tableau Data Visualizations</h1>
+<h3 id="chhaya-wagmi">Chhaya Wagmi</h3>
+<ul>
+<li><p>Nov 1, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>1,177 Views</p></li>
+<li><p>Nov 1, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>1,177 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">General Visualization Principles</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Visualization</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-displayingoneoutofmanyfeatures" class="menu-link">Displaying One Out of Many Features</a></li>
+<li><a href="#module-displayingmultiplechartsdynamicallyinadashboard" class="menu-link">Displaying Multiple Charts Dynamically in a Dashboard</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>A picture is worth 1,000 words, but a one-minute, 30-FPS video is worth 1,800 pictures—which means as you increase the dimension, you get more information at the cost of increased complexity.</p>
+<p>When you are up for a presentation, it is important to understand what kind of media you put on your slides. When you present results to stakeholders and clients, you need to precisely and concisely convey important information. You can fill your Powerpoint slides with text and some images, but is that the most efficient way to present your insights? Maybe, maybe not! If you convert your images from static to dynamic, they can convey a lot more information while also hiding unnecessary information.</p>
+<p>In this guide, you will learn how to create dynamic charts in Tableau that contain additional information and yet display only what is asked for.</p>
+<h2 id="displaying-one-out-of-many-features">Displaying One Out of Many Features</h2>
+<p>Consider a bar chart that consists of hundreds of bars. All of these bars can be adjusted in a single view, but nobody can recognize the labels associated with them due to overlapping text. Instead, when you have a lot of bars, a better option is to visualize only each bar and the data associated with it one at a time.</p>
+<p>To try this in Tableau, start with the <strong>Sample - Superstore</strong> dataset. In your worksheet, drag and drop the <strong>Profit</strong> and <strong>Sales</strong> measures to columns and the <strong>Sub-Category</strong> dimension to rows. These actions will result in the following chart: <embed src="../../pluralsight2.imgix.net/guides/187a5c11-d900-41eb-b2af-af08e3b1ef5b_1.html" /></p>
+<p>The chart displays the profit and sales of each product sub-category. To visualize only one product’s profit and sales, right-click on <strong>Sub-Category</strong> from the data pane and select <strong>Show Filter</strong>. This will open up a new card on the right side of the sheet: <embed src="../../pluralsight2.imgix.net/guides/23e648f9-6660-44ef-b520-ebbf1e379d5e_2.html" /></p>
+<p>To display details of only one product at a time, first, click on <strong>(All)</strong>, which will deselect all the sub-categories. Next, select the name of any category, here, <strong>Phones</strong>. <embed src="../../pluralsight2.imgix.net/guides/61db5f13-a767-44f5-953e-53cdd0d893a8_3.html" /></p>
+<p>When you have hundreds of product names inside the card and you find it difficult to search for a specific product name, you can always use the <strong>Find Values</strong> option. This option lets you type the name of the product instead of manually searching for it.</p>
+<h2 id="displaying-multiple-charts-dynamically-in-a-dashboard">Displaying Multiple Charts Dynamically in a Dashboard</h2>
+<p>How can you present information from multiple charts in the same area? Maybe you can use dual-axis charts that combine data of multiple time-series into one chart, or maybe you can go for sub-plotting! Most people find the dual-axis plot a little difficult to understand due to multiple magnitudes sharing the same space. As far as sub-plotting is concerned, four to nine sub-plots work in a chart, but increasing the number to 20, 40, and so on only diminishes the size of each sub-plot.</p>
+<p>A better solution to visualize multiple plots in a single chart is to place a drop-down list next to the chart and let users select which plot they want to visualize. This way you get a properly sized chart without the confusion of multiple magnitudes mixing together.</p>
+<p>To create a dynamic dashboard, load the <strong>Sample - Superstore</strong> dataset in Tableau. You will be creating three charts, each representing one of the following relationships:</p>
+<ul>
+<li>Chart 1: Profit in each state</li>
+<li>Chart 2: Profit in each city</li>
+<li>Chart 3: Profit in each postal code zone</li>
+</ul>
+<p>Drag and drop <strong>Profit</strong> to the <strong>Columns</strong> shelf followed by <strong>State</strong>, <strong>City</strong>, or <strong>Postal Code</strong> to the <strong>Rows</strong> shelf, one in each of the three sheets. If you wish, you can rename the charts in each sheet.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e1d69a42-8602-4abc-a752-76d180d9543a_4.html" /><figcaption aria-hidden="true">Profit in each State</figcaption>
+</figure>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d4107465-4ccc-4ded-a0ba-3e80f22cbe05_5.html" /><figcaption aria-hidden="true">Profit in each City</figcaption>
+</figure>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4008e77d-5d71-41de-8fde-3b3b524dfc5c_6.html" /><figcaption aria-hidden="true">Profit in each Postal Code zones</figcaption>
+</figure>
+<p>Next, create a new string parameter, <strong>Specify a Location</strong>, with a list of three values (<strong>State</strong>, <strong>City</strong>, <strong>Postal Code</strong>). Remember that the names of the <strong>Value</strong> and <strong>Display As</strong> columns are same, as shown: <embed src="../../pluralsight2.imgix.net/guides/eb3bbcff-d917-4f2c-a370-922d1b39d1fc_7.html" /></p>
+<p>With the parameter in its place, create a new calculated field with the same name as the parameter: <embed src="../../pluralsight2.imgix.net/guides/1bb7cf1d-5102-40a3-812d-8be7a162b198_8.html" /></p>
+<p>Now, go to each of the three sheets and perform these steps:</p>
+<ol type="1">
+<li>Right-click on the created parameter and click <strong>Show Parameter Control</strong>. This opens up a card on the extreme right of the chart. Select a value associated with the chart. For example, if you are on a chart that displays profit in each city, select <strong>City</strong>.</li>
+<li>Drag and drop the created calculated field in the <strong>Filters</strong> card, which opens up a dialog box. Select the value within the dialog box, as shown below for the city chart: <embed src="../../pluralsight2.imgix.net/guides/11f22345-9f60-4a70-a29d-8737eb185fdd_9.html" /></li>
+</ol>
+<p>With the above operations complete, you can move ahead to create a dashboard. Once on the dashboard, drag and drop the horizontal layout object in the blank white space. Next, drag and drop each of the three sheets in the dashboard working area and hide the title of each sheet, if needed. This completes the creation of a dynamic chart in Tableau.</p>
+<p>To visualize the chart, open the dashboard in a presentation view and let the user select an option. Below is a preview of the “Profit in each State” chart: <embed src="../../pluralsight2.imgix.net/guides/8feb104b-437b-4b77-9600-24f90ef5e2c1_10.html" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Tableau has a built-in labeling feature that lets you view the details of your chart just by hovering the mouse. You can further increase the productivity of your charts by either providing a filter to display only one out of many features or toggling between charts using a drop-down menu. This guide has explained both of these methods. You can learn more about creating dynamic Tableau charts from <a href="https://www.tableau.com/about/blog/2016/1/how-create-dynamic-tableau-dashboard-layouts-sliding-containers-48269">this</a> blog.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

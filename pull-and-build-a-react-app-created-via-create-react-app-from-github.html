@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>pull-and-build-a-react-app-created-via-create-react-app-from-github</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="pull-and-build-a-react-app-created-via-create-react-app-from-github">Pull and Build a React App Created via create-react-app from GitHub</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Oct 23, 2020</p></li>
+<li><p>3 Min read</p></li>
+<li><p>3,599 Views</p></li>
+<li><p>Oct 23, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">3 Min</span> read</p></li>
+<li><p>3,599 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-pullingandbuildingaprojectcreatedwithcreatereactapp" class="menu-link">Pulling and Building a Project Created With create-react-app</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The create-react-app tool is the best way to get started with a new React app. Instead of needing to bring in related dependencies, bundlers, etc. into your new project, create-react-app abstracts all of that away so that you can easily get started writing code. If you desire more fine-grained control, you can “eject” from the create-react-app environment and manage the inner workings yourself. But for many apps, letting create-react-app abstract away all of the build configurations is an enormously helpful timesaver.</p>
+<p>In this guide, you will learn how to identify, pull, and then build a React app that has been created using create-react-app.</p>
+<p>Let’s get started!</p>
+<blockquote>
+<p>Note: This guide assumes that you have a Node version &gt;= v8.10, an NPM version &gt;=5.2, and the git command-line tool installed on your machine.</p>
+</blockquote>
+<h2 id="pulling-and-building-a-project-created-with-create-react-app">Pulling and Building a Project Created With create-react-app</h2>
+<p>You will know that an app has been created using create-react-app when you can find the package <span class="jsx-3120878690"><code>react-scripts</code></span> in the <span class="jsx-3120878690"><code>package.json</code></span> file of the project. If you see this dependency, you can almost be certain that the project was built using create-react-app. Another hint can be found by looking for the <span class="jsx-3120878690"><code>"eject"</code></span> script located within the scripts section of the <span class="jsx-3120878690"><code>package.json</code></span> as this is an NPM script that ejects the app from the create-react-app environment.</p>
+<p>Now that you know how to identify a create-react-app, you can use git to pull the project from GitHub. This step entails simply navigating to the project’s repository on GitHub, selecting the remote URL from within the green <strong>Code</strong> dropdown, and then running <span class="jsx-3120878690"><code>git clone &lt;project's remote repo                                       url&gt;</code></span> on your local machine. This command will clone down a local version of this remote project.</p>
+<p>With your project pulled, you’re ready to start building. There are two ways to build an app created with create-react-app. You can do a development build or a production build. The development build can be started by running <span class="jsx-3120878690"><code>npm start</code></span>. This will bring up a local server containing the development version of the app and will automatically refresh when you change the source code.</p>
+<p>For a production build, you simply need to run <span class="jsx-3120878690"><code>npm run build</code></span>. This command will build a production-ready version of the app that is ready to be deployed.</p>
+<p>To recap:</p>
+<p>Development Build:</p>
+<pre><code>1npm start</code></pre>
+<p>Production Build:</p>
+<pre><code>1npm run build</code></pre>
+<blockquote>
+<p>Note: If these commands do not exist, it is likely that the specific project you are looking at has customized their scripts. In this case, you will need to make sure to read the relevant GitHub README.md file in order to understand which commands build the project.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>Pulling and building an app that was created via create-react-app is easy! There are just two simple scripts that let you build development and production versions of the app. This is probably why create-react-app is now officially supported by Facebook when it comes to using a tool to bootstrap new React apps.</p>
+<p>For more information regarding create-react-app and how to interface with it, please check out the relevant create-react-app <a href="https://create-react-app.dev/docs/getting-started/#get-started-immediately">documentation</a>.</p>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

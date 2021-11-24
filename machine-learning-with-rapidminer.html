@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>machine-learning-with-rapidminer</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/ce501f54-fed2-4c77-a499-71e5d2c571d4.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Chhaya Wagmi</p>
+<h1 id="machine-learning-with-rapidminer">Machine Learning with RapidMiner</h1>
+<h3 id="chhaya-wagmi">Chhaya Wagmi</h3>
+<ul>
+<li><p>Oct 1, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>907 Views</p></li>
+<li><p>Oct 1, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>907 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-settingupthedata" class="menu-link">Setting Up the Data</a></li>
+<li><a href="#module-buildingyourfirstregressionmodel" class="menu-link">Building Your First Regression Model</a></li>
+<li><a href="#module-buildingyourfirstclassificationmodel" class="menu-link">Building Your First Classification Model</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>RapidMiner is one of the finest tools for building machine learning models, including deep learning models. According to a <a href="https://www.kdnuggets.com/2018/05/poll-tools-analytics-data-science-machine-learning-results.html/2">KDnuggets 2018 poll</a>, RapidMiner stands at second place, beating R, Excel, and many other known software packages in frequency of use in real projects.</p>
+<p>In this guide, you will learn how to build your first regression and classification model using RapidMiner.</p>
+<h2 id="setting-up-the-data">Setting Up the Data</h2>
+<p>To start, download the <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data?select=train.csv">House Prices: Advanced Regression Techniques</a> training dataset from Kaggle. The dataset has 81 attributes and 1460 records. To focus on machine learning and not data cleaning, create a dataset consisting of only five attributes: <strong>OverallQual</strong>, <strong>LotArea</strong>, <strong>Street</strong>, <strong>GarageArea</strong>, and <strong>SalePrice</strong> . These five attributes will be used in building both regression and classification models.</p>
+<h3 id="loading-data-in-rapidminer">Loading Data in RapidMiner</h3>
+<p>Download <a href="https://my.rapidminer.com/nexus/account/index.html#downloads">RapidMiner Studio</a>, install it on your device, and register yourself. Once you are registered, open the software, which will give you the following dialog box:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cf8e31cb-e102-4bae-a9a6-59441f1a1275_1.html" /><figcaption aria-hidden="true">Auto Model</figcaption>
+</figure>
+<p>Select <strong>Auto Model</strong>, which will take you to the following screen:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fabfda43-9bbb-4190-9fc4-6bd4beac1ffb_2.html" /><figcaption aria-hidden="true">Data window</figcaption>
+</figure>
+<p>Click the <strong>IMPORT NEW DATA</strong> button, which will open a new dialog box. Select the location of the dataset, and click <strong>Next</strong> a few times without changing the data. As the last step, select the current <strong>data</strong> folder or create a new folder to upload the data into RapidMiner. This will bring you to the first step of building a machine learning model:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e0450a28-92be-4065-82e6-83a7622de093_3.html" /><figcaption aria-hidden="true">Select Task</figcaption>
+</figure>
+<h2 id="building-your-first-regression-model">Building Your First Regression Model</h2>
+<p>To build the regression model, start by clicking on the <strong>Predict</strong> button, which will ask you to choose a target column by showing the following pop-up:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5bdb4f17-2d8e-47a1-93c8-0e6ca704183e_4.html" /><figcaption aria-hidden="true">Target Column</figcaption>
+</figure>
+<p>Choose the <strong>SalePrice</strong> column as the target column and click <strong>Next</strong>. This will bring you to the next page, <strong>Prepare Target</strong>:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/3cf5e792-6b58-40d2-8e61-ee35d134b662_5.html" /><figcaption aria-hidden="true">Prepare Target</figcaption>
+</figure>
+<p>This page provides you the histogram of the target column. Click <strong>Next</strong> and you will land on the <strong>Select Input</strong> page. This page provides important information about each independent feature of the dataset.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ccce888b-a33d-49ad-b902-ad9de1c9c98d_6.html" /><figcaption aria-hidden="true">Select Input</figcaption>
+</figure>
+<p>In the above image, notice that RapidMiner has already discarded the <strong>Street</strong> attribute and given a positive response for the <strong>LotArea</strong> and <strong>GarageArea</strong> attributes and a neutral response for the <strong>OverQual</strong> attribute. You can discard the attributes that are highlighted with a yellow dot, too. In this case, all three attributes (marked with green and yellow dots) are considered inputs. Click <strong>Next</strong> to arrive at the next page, <strong>Model Types</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/6b8cd173-c605-41c9-89e1-3588cf8c0eb5_7.html" /><figcaption aria-hidden="true">Regression models</figcaption>
+</figure>
+<p>If you are aware of other machine learning tools, you may notice in the above image how convenient RapidMiner has made building machine learning models by providing options to build all the models at once. All you need to do is select the ones necessary for your project. In this case, all the models are selected.</p>
+<p>Additionally, on the same page, you have a few options related to data preparation. You can apply those functions as needed. Once everything is set, click <strong>Run</strong>. After all the models are built, you will observe a page similar to this:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4d4df31d-dfe0-4dd2-b5ae-dd8ab05530f6_8.html" /><figcaption aria-hidden="true">Model Outputs</figcaption>
+</figure>
+<p>This page provides an overview of a selected metric (available metrics are root mean squared error, absolute error, relative error, squared error, and correlation), runtimes in milliseconds, and indicates which model has the best performance (orange badge), fastest total time (running stick figure in blue), and fastest scoring time (running stick figure in purple).</p>
+<p>For this dataset, the deep learning model provided the best performance. You can review the complete model details, data prediction, and much more under the <strong>Deep Learning</strong> drop-down menu available on the left-hand side of the overview page. These two figures show the importance of attributes and the prediction chart for this data set:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/87331db1-2f1d-4100-8a65-3c5972894d6d_9.html" /><figcaption aria-hidden="true">Important Factors</figcaption>
+</figure>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/3c22775f-f71f-4b27-8310-5b9a9aadcb15_10.html" /><figcaption aria-hidden="true">Predictions Chart</figcaption>
+</figure>
+<p>Finally, you can deploy the deep learning model and export it for future use.</p>
+<h2 id="building-your-first-classification-model">Building Your First Classification Model</h2>
+<p>To build a classification model, most of the steps will be similar to building a regression model. To begin with, select the same dataset with five attributes and click <strong>Next</strong>. Click <strong>Predict</strong> and select <strong>OverallQual</strong> attribute as your target attribute.</p>
+<p>On the <strong>Prepare Target</strong> page, you will notice that the <strong>OverQual</strong> attribute has only 10 classes spread across integers 1 to 10. By default, RapidMiner builds a regression model. To switch to the classification side, toggle the button underneath the histogram <strong>Turn into Classification</strong> and change the <strong>Number of Classes</strong> from 2 to 10.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/befc2b3c-fdc9-4388-ae57-4b66c3441e9b_11.html" /><figcaption aria-hidden="true">Selecting classes</figcaption>
+</figure>
+<p>When all the above changes are completed, click <strong>Next</strong>. On the <strong>Select Inputs</strong> page, you have three supportive attributes and only one non-supportive attribute.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/627349fa-a879-4250-92cb-f03dbad9daf5_12.html" /><figcaption aria-hidden="true">Inputs</figcaption>
+</figure>
+<p>Click <strong>Next</strong> to arrive at the <strong>Model Types</strong> page. Since you are building a classification model, you will receive a new list of models as shown below:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b392d886-4f3a-474a-8805-237c4b2ebc9d_13.html" /><figcaption aria-hidden="true">Classification models</figcaption>
+</figure>
+<p>You can select any number of models from this list. For now, all of the models are selected. You also have a data preparation column, similar to the regression scenario. Click <strong>Run</strong>, and once all the models are built, you will see this overview page:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2ed8d423-85e8-4603-a4ef-bda8ced9745e_15.html" /><figcaption aria-hidden="true">Classification models result</figcaption>
+</figure>
+<p>For this dataset, the <strong>deep learning</strong> model is again the best performer and also provides the best gain (orange dollar sign icon). The weights associated with each attribute are shown below:</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1a62c967-3be9-4ea1-bac4-9abecc774b87_16.html" /><figcaption aria-hidden="true">Weights</figcaption>
+</figure>
+<p>You can further optimize this or other models as needed and export them for future use.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>RapidMiner helps you build multiple predictive models with just a few clicks and thus has an edge over other machine learning languages like Python and R. You can use RapidMiner to quickly test commonly known models on your dataset and later customize the best performing model. To learn more about RapidMiner, go through the <a href="https://pluralsight.com/library/courses/rapidminer-getting-started/table-of-contents">RapidMiner: Getting Started</a> course on Pluralsight.</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

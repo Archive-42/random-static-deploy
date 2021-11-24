@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>selection-methods-in-tableau-maps</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/a90da03f-c20c-41af-a9a3-c39cb62d7065.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="using-selection-methods-in-tableau-maps">Using Selection Methods in Tableau Maps</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Oct 14, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>1,689 Views</p></li>
+<li><p>Oct 14, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>1,689 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Tableau</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-showingorhidingtheviewtoolbar" class="menu-link">Showing or Hiding the View Toolbar</a></li>
+<li><a href="#module-individualormultiplemarksselection" class="menu-link">Individual or Multiple Marks Selection</a></li>
+<li><a href="#module-rectangularselection" class="menu-link">Rectangular Selection</a></li>
+<li><a href="#module-radialselection" class="menu-link">Radial Selection</a></li>
+<li><a href="#module-lassoselection" class="menu-link">Lasso Selection</a></li>
+<li><a href="#module-keyboardshortcuts" class="menu-link">Keyboard Shortcuts</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Tableau has extensive mapping capabilities with multiple configurations to represent data geographically. Being able to configure and use data point selection methods in maps is an essential skill for the Tableau developers and users. The three methods available in Tableau for selecting items include rectangular, lasso, and radial selection, each of which can be used for specific use cases. In this guide, you will learn how to configure selection methods, explore a dataset by selecting geographical areas or data points on maps, and relevant use cases for selection methods.</p>
+<h2 id="showing-or-hiding-the-view-toolbar">Showing or Hiding the View Toolbar</h2>
+<p>For all map-based visuals, the view menu and search functionality are turned on by default in Tableau. They can be accessed by hovering on the map visual as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8560bdf7-94b0-4c97-8c28-4a1c87ac5a2a_1.html" /><figcaption aria-hidden="true">View menu</figcaption>
+</figure>
+<p>If you want to turn the view toolbar on or off, click on <strong>Map</strong> in the top toolbar and then click on <strong>Map Options</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/14cf80a4-d355-413e-940a-ee3d7fcb7374_2.html" /><figcaption aria-hidden="true">Map Options Menu</figcaption>
+</figure>
+<p>A Map Options popup will appear with multiple check-boxes that can be used to turn on or off relevant features for the map as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2f523a5c-2045-4c5a-a175-9b11bf0eeacd_3.html" /><figcaption aria-hidden="true">Map Options menu</figcaption>
+</figure>
+<h2 id="individual-or-multiple-marks-selection">Individual or Multiple Marks Selection</h2>
+<p>An individual mark can be selected on a map by clicking on the mark. In order to select multiple marks, hold the <strong>Control key</strong> on your keyboard and click on each mark you want to select.</p>
+<p>There are three other selection methods available In the <strong>view toolbar</strong>, including rectangular selection, lasso selection, and radial selection.</p>
+<h2 id="rectangular-selection">Rectangular Selection</h2>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b26e47fb-71fd-4ac1-b28c-83fc31f6412b_r.html" /><figcaption aria-hidden="true">rectangular selection</figcaption>
+</figure>
+<p>This is the default selection method enabled in a Tableau map. It enables you to select multiple marks on a map through a rectangular projection. Multiple states have been selected in the symbol map below using rectangular selection.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0e08e91c-fdbd-4791-bce7-6d0177f20710_1.html" /><figcaption aria-hidden="true">rectangular selection</figcaption>
+</figure>
+<h2 id="radial-selection">Radial Selection</h2>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ef01047a-2f63-4724-b8de-66a32d0530d7_ra.html" /><figcaption aria-hidden="true">radial selection</figcaption>
+</figure>
+<p>Radial selection is quite useful if want to select data points within a certain radius from a central data point or you want to select nearby data points in a circular manner. If you want to see the radius measurement while selecting, ensure that the metric option is enabled in the map options as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/030c94a9-4ad6-486f-a645-a2a59985ebe2_3.html" /><figcaption aria-hidden="true">map scale</figcaption>
+</figure>
+<blockquote>
+<p><strong>Note:</strong> The metric is not displayed in radial selection unless you zoom in to a specific level in the map.</p>
+</blockquote>
+<p>Next, select the radial selection option and zoom in to the required level for selecting the data points. For example, in the image below, the cities within a 35 km radius of Oklahoma City have been selected using radial selection.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b84bf68c-a1ad-4a29-9c4d-06b90734792a_4.html" /><figcaption aria-hidden="true">radial</figcaption>
+</figure>
+<h2 id="lasso-selection">Lasso Selection</h2>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4df87b60-b13a-457c-9d3b-e83c53708a00_la.html" /><figcaption aria-hidden="true">lasso selection</figcaption>
+</figure>
+<p>The lasso selection option enables you to select multiple marks by drawing a freehand projection over the map. It is quite useful if you want to select certain data points and avoid specific ones around them, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e79b4f8-74a3-4c1a-bd9f-5527c12275fe_2.html" /><figcaption aria-hidden="true">lasso selection</figcaption>
+</figure>
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+<p>If the view menu is hidden or turned off, selection methods can still be used using the following keyboard shortcuts:</p>
+<ul>
+<li>Lasso selection: d key</li>
+<li>Rectangular selection: a key</li>
+<li>Radial selection: s key</li>
+<li>Zoom area: z key</li>
+<li>Pan: f key (You can also pan throughout the map by holding the shift key)</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you learned about various selection methods available in Tableau maps, their relevant use cases, and keyboard shortcuts for using them. To learn more about mapping capabilities in Tableau, <a href="https://pluralsight.pxf.io/4Qkqo">check out this amazing course</a>. To learn about zooming and panning in Tableau maps, <a href="https://pluralsight.pxf.io/NdvYb">refer to this guide</a>.</p>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

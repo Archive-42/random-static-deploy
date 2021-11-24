@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>understanding-the-angular-root-app-module</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="understanding-the-angular-root-app-module">Understanding the Angular Root App Module</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Sep 29, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>1,560 Views</p></li>
+<li><p>Sep 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>1,560 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Angular</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p>Introduction</p>
+<p>7</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-rootapplicationmodule" class="menu-link">Root Application Module</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The more complex your app is, the more important it is to adhere to the <em>separation of concerns</em> design principle. In software engineering, separation of concerns is a design principle where you split your program or app up into different areas of intent. For instance, in an Angular app for showing movie ratings, you may have the following pieces of functionality:</p>
+<ul>
+<li>Display movie information</li>
+<li>Provide user profiles</li>
+<li>Fetch movie information</li>
+<li>Allow rating of movies</li>
+<li>Recommend new movies</li>
+</ul>
+<p>At first glance, this seems straightforward. However, even an app that only needs the above features can quickly become unwieldy without properly separating each piece of functionality into its own self-contained area within the code. Modules are how you ensure that your Angular app follows this design principle. In this guide, you will learn about the Angular module system. You will learn how you can use this system to properly structure your app with special focus on the root app module.</p>
+<p>Let’s dive in!</p>
+<h2 id="root-application-module">Root Application Module</h2>
+<p>Angular modules are the top-level architectural type within your Angular app. Modules exist at the highest level of abstraction available within the Angular framework. Everything in your app is ultimately structured around modules. This is powerful! It means that you can easily encapsulate code within a module and share or reuse it throughout your app. When looking at the Angular module system, all things must begin with the root app module.</p>
+<p>The root app module is a necessary portion of every Angular app. By default, this module is named <span class="jsx-3120878690"><code>AppModule</code></span>, although it is possible to rename this module if you so choose. The <span class="jsx-3120878690"><code>AppModule</code></span> is the entry point to your app. You can think of the <span class="jsx-3120878690"><code>AppModule</code></span> in a similar fashion to the <span class="jsx-3120878690"><code>main</code></span> function that is available in other languages such as C# and C++. Acting as an entry point, it is also the top-level container for your app’s functionality and view layer.</p>
+<p>When you generate a new Angular app, the <span class="jsx-3120878690"><code>AppModule</code></span> is generated at <span class="jsx-3120878690"><code>src/app/app.module.ts</code></span> and looks like this:</p>
+<pre><code>1import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+2import { NgModule } from &#39;@angular/core&#39;;
+3
+4import { AppComponent } from &#39;./app.component&#39;;
+5
+6@NgModule({
+7  declarations: [
+8    AppComponent
+9  ],
+10  imports: [
+11    BrowserModule
+12  ],
+13  providers: [],
+14  bootstrap: [AppComponent]
+15})
+16export class AppModule { }</code></pre>
+<p>typescript</p>
+<p>Ideally, you want to keep your <span class="jsx-3120878690"><code>AppModule</code></span> as slim and as unchanged from the above code as possible. You can keep your <span class="jsx-3120878690"><code>AppModule</code></span> slim via the following techniques:</p>
+<ul>
+<li>Only import modules that are absolutely necessary for your app to load initially</li>
+<li>Only declare Angular components, directives, or pipes that you want globally available</li>
+</ul>
+<p>By following these two principles, you can ensure that your app doesn’t become bloated. The question is, “How is it possible to follow these two principles?” I mean, after all, you need more components and functionality in your app! The answer lies within feature modules and lazy loading. The term <em>feature modules</em> was coined to describe the best practice of creating different modules within your Angular app that correspond to different features of your app. Lazy loading is a term used to describe the ability of your app to load JavaScript “lazily” on an on-demand basis.</p>
+<p>Following the example of the movie app above, you could have a feature module that is entirely responsible for recommending new movies. This module might look like this:</p>
+<pre><code>1...
+2@NgModule({
+3  declarations: [
+4    RecommendationComponent,
+5    RecommendationChartComponent,
+6    ApprovalComponent
+7  ],
+8  imports: [
+9    BrowserModule,
+10    ReactiveFormsModule,
+11    SharedModule
+12  ],
+13  providers: []
+14})
+15export class RecommendationModule { }</code></pre>
+<p>typescript</p>
+<p>But be careful! You don’t want to import this new feature module into the <span class="jsx-3120878690"><code>AppModule</code></span> unless you explicitly mean to. By ensuring that this feature module is connected to a lazily loaded route, you can ensure that your <span class="jsx-3120878690"><code>AppModule</code></span> doesn’t load your feature module eagerly and that the <span class="jsx-3120878690"><code>RecommendationModule</code></span> is instead loaded on demand. This means that your bundle size is smaller and that your app continues to load speedily!</p>
+<p>Lazy loading is a big topic in and of itself, and thus it is beyond the scope of this guide. For more info on lazy loading, check out this related <a href="https://app.pluralsight.com/guides/bundling-and-code-splitting-in-angular">Pluralsight guide</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The root app module is just the beginning. It is a necessary part of any Angular app, but it is also just the entry point to the rest of your app’s feature modules. A healthy Angular app imports only exactly what is needed within the root <span class="jsx-3120878690"><code>AppModule</code></span> because all of the JavaScript within this module is eagerly loaded. By importing the bare minimum into your <span class="jsx-3120878690"><code>AppModule</code></span>, you can ensure that your app loads as fast as possible.</p>
+<p>To learn more about Angular modules and how you can use them to structure your app in the way that makes the most sense, check out the Angular <a href="https://angular.io/guide/ngmodules">module documentation</a>.</p>
+<p>7</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

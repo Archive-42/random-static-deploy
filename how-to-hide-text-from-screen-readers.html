@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-hide-text-from-screen-readers</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/6a09bbcc-4892-4d50-a42e-421eb7b98d0c.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Matt Ferderer</p>
+<h1 id="how-to-hide-text-from-screen-readers">How to Hide Text from Screen Readers</h1>
+<h3 id="matt-ferderer">Matt Ferderer</h3>
+<ul>
+<li><p>Nov 12, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>11,017 Views</p></li>
+<li><p>Nov 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>11,017 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>11</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-commonscenarios" class="menu-link">Common Scenarios</a></li>
+<li><a href="#module-methodstohidefromscreenreaders" class="menu-link">Methods to Hide from Screen Readers</a></li>
+<li><a href="#module-trapstowatchoutfor" class="menu-link">Traps to Watch Out For</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#module-abouttheauthor" class="menu-link">About the Author</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>It’s common to add text, links, and other elements to a website that you hide with CSS or JavaScript, but this can result in useability problems for screen readers and other devices.</p>
+<p>A person using a screen reader might have trouble navigating your website if the content is skipped over. The person might also become frustrated if the content is repeated or confused if the content is out of place.</p>
+<p>Two of the most common screen readers are <a href="https://www.freedomscientific.com/products/software/jaws/">JAWS</a> and <a href="https://www.nvaccess.org/">NVDA</a>. The NVDA screen reader is free, while JAWS requires a license purchased.</p>
+<p>This guide discusses common scenarios where you might want to hide content from a screen reader or show content only to a screen reader. The guide will also point out scenarios that cause trouble and additional resources to learn more about accessibility.</p>
+<h2 id="common-scenarios">Common Scenarios</h2>
+<p>A website will often display a logo multiple times to reinforce a brand. But having a screen reader announce your company name each time might become an annoyance. It will also slow down screen reader users when they consume your content. Logos and other decorative images throughout a website may not add value to a person hearing the content of your website. These would be great situations to hide content from a screen reader.</p>
+<p>In the opposite scenario, you might have content hidden visually but you want to make sure a screen reader will still read it. You might have special instructions for people without visual access. To solve for this, every website should have a “skip to main content” anchor link that allows a user to skip listening to less important sections of your page.</p>
+<p>An additional scenario is to hide the content from everyone. Your website might require the user to perform an action before you display the content. An expand and collapse button, a read more button, or panels that toggle content fit both this scenario and the prior scenario, depending on how much text there is to show or how important that text it is.</p>
+<h2 id="methods-to-hide-from-screen-readers">Methods to Hide from Screen Readers</h2>
+<p>To hide text from a screen reader and display it visually, use the <span class="jsx-3120878690"><code>aria-hidden</code></span> attribute and set it to true.</p>
+<p><span class="jsx-3120878690"><code>&lt;p                                       aria-hidden="true"&gt;Visible                                       text screen readers should                                       ignore&lt;/p&gt;</code></span></p>
+<p>To hide text from a screen reader and hide it visually use the <span class="jsx-3120878690"><code>hidden</code></span> attribute.</p>
+<p><span class="jsx-3120878690"><code>&lt;p hidden&gt;Hidden text screen                                       readers should also ignore&lt;/p&gt;</code></span></p>
+<p>You can also use CSS to set <span class="jsx-3120878690"><code>display: none</code></span> or <span class="jsx-3120878690"><code>visibility: hidden</code></span> to hide an element from screen readers and visually.</p>
+<p>To show an element to a screen reader and hide it visually you need to use a CSS pattern to make the text appear off-screen or not fit into a one-pixel visible area. <a href="https://webaim.org/techniques/css/invisiblecontent/">WebAim</a> offers two solutions.</p>
+<h2 id="traps-to-watch-out-for">Traps to Watch Out For</h2>
+<p>If you use <span class="jsx-3120878690"><code>aria-describedby</code></span> in the same element as <span class="jsx-3120878690"><code>aria-hidden="true"</code></span> the screen reader may read it.</p>
+<p>The <span class="jsx-3120878690"><code>aria-hidden</code></span> attribute does not work on <a href="https://www.w3.org/TR/using-aria/#fourth">focusable elements</a> such as form inputs, links, and buttons.</p>
+<p>If you use <span class="jsx-3120878690"><code>aria-hidden</code></span> on an element with child elements, the child elements will be hidden as well.</p>
+<pre><code>1&lt;div aria-hidden=&quot;true&quot;&gt;
+2    &lt;p&gt;This element will is hidden from screen readers.&lt;/p&gt;
+3&lt;div&gt;</code></pre>
+<p>html</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Putting time and effort into <a href="https://www.pluralsight.com/courses/codemash-session-102">accessibility benefits everyone!</a> Accessibility helps with <a href="https://www.pluralsight.com/courses/semantic-html">Search Engine Optimization (SEO)</a> and makes content more accessible even for people who don’t use screen readers.</p>
+<p>To learn more about accessibility, Pluralsight offers a great <a href="https://www.pluralsight.com/courses/developing-websites-accessibility-getting-started">“Getting Started” course</a> and a course on <a href="https://www.pluralsight.com/courses/web-accessibility-meeting-guidelines">Web Accessibility Guidelines</a>.</p>
+<p>You can also read the W3C’s guidelines on <a href="https://www.w3.org/TR/using-aria/#fourth">how to use ARIA.</a></p>
+<h2 id="about-the-author">About the Author</h2>
+<p>Matt Ferderer is a software developer who <a href="https://twitter.com/mattferderer">tweets</a>, <a href="https://linkedin.com/in/mattferderer">posts</a>, and <a href="https://mattferderer.com/">blogs about web development</a>.</p>
+<p>11</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

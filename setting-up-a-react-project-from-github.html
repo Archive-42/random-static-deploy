@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>setting-up-a-react-project-from-github</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/d87e74d1-8e02-494a-9052-eb43fe48f3ac.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="setting-up-a-react-project-from-github">Setting Up a React Project from GitHub</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Oct 20, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>15,246 Views</p></li>
+<li><p>Oct 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>15,246 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>30</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-basictermsandcommandofgit" class="menu-link">Basic Terms and Command of Git</a></li>
+<li><a href="#module-prerequisite" class="menu-link">Prerequisite:</a></li>
+<li><a href="#module-clonearepositoryusingsshlink" class="menu-link">Clone a Repository Using SSH Link</a></li>
+<li><a href="#module-clonearepositoryusinghttplink" class="menu-link">Clone a Repository Using HTTP Link</a></li>
+<li><a href="#module-clonearepositoryusinggithubcli" class="menu-link">Clone a Repository Using GitHub CLI</a></li>
+<li><a href="#module-alternativeoptionstosetuparepository" class="menu-link">Alternative Options to Set Up a Repository</a></li>
+<li><a href="#module-runaclonedreactproject" class="menu-link">Run a Cloned React Project</a></li>
+<li><a href="#module-tips" class="menu-link">Tips</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>GitHub is the most widely used hosting service provider for projects and files to manage data changes effectively. Apart from repository hosting, GitHub also offers many other services like <span class="jsx-3120878690"><code>gists</code></span>, CI/CD integration, package publication, GitHub APIs, GitHub Pages, sponsors, and much more. The <span class="jsx-3120878690"><code>create-react-app</code></span> tool automatically adds a <span class="jsx-3120878690"><code>.gitignore</code></span> file that contains the names or patterns to ignore files/directories while pushing the code to the GitHub server. <span class="jsx-3120878690"><code>git</code></span> and <span class="jsx-3120878690"><code>GitHub</code></span> are widely used to develop software in a collaborative environment. This guide explains the details of setting up a React project from a GitHub repository using different methods.</p>
+<h2 id="basic-terms-and-command-of-git">Basic Terms and Command of Git</h2>
+<p>There is some important terminology related to <span class="jsx-3120878690"><code>git</code></span> files and commands that are required to understand how <span class="jsx-3120878690"><code>git</code></span> works:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>git</code></span> is a tool to manage the history of a project using <span class="jsx-3120878690"><code>git</code></span> commands. The history details are stored in a hidden directory named <span class="jsx-3120878690"><code>.git</code></span>.</li>
+<li><span class="jsx-3120878690"><code>repository</code></span> is a conventional name of a <span class="jsx-3120878690"><code>git</code></span> project hosted on the GitHub server.</li>
+<li><span class="jsx-3120878690"><code>.gitignore</code></span> files contain the names (or patterns) of the files or directories that will neither be tracked nor uploaded to a GitHub repository by <span class="jsx-3120878690"><code>git</code></span>.</li>
+<li><span class="jsx-3120878690"><code>remote</code></span> is the command used to add SSH or HTTPS URL links of a GitHub repository.</li>
+<li><span class="jsx-3120878690"><code>origin</code></span> is just a conventional name for a GitHub repository URL.</li>
+<li><span class="jsx-3120878690"><code>staged</code></span> can be visualized as a bucket of files or directories whose changes are ready to be stored. The <span class="jsx-3120878690"><code>add</code></span> command is used to stage changes.</li>
+<li><span class="jsx-3120878690"><code>commit</code></span> is used to store the state of all the staged files with an optional message.</li>
+<li><span class="jsx-3120878690"><code>pull</code></span> is used to copy the code from a remote branch in the current project.</li>
+<li><span class="jsx-3120878690"><code>push</code></span> is used to move the committed changes to a remote repository.</li>
+</ul>
+<h2 id="prerequisite">Prerequisite:</h2>
+<p>Install the following tools to set up a GitHub project:</p>
+<ul>
+<li>The <span class="jsx-3120878690"><code>git</code></span> tool is used to set up an environment to execute <span class="jsx-3120878690"><code>git</code></span> commands, so <a href="https://git-scm.com/downloads">download and install the git tool</a>.</li>
+</ul>
+<p>Optional</p>
+<ul>
+<li><span class="jsx-3120878690"><code>Putty</code></span> is a tool for windows to generate SSH keys. Download and install the <a href="https://www.putty.org/">Putty tool</a> as per your Windows OS type (32 or 64).</li>
+</ul>
+<h2 id="clone-a-repository-using-ssh-link">Clone a Repository Using SSH Link</h2>
+<p>Cloning is the process of creating a local copy of a remote repository. A GitHub repository can be cloned using an SSH or HTML link. <a href="https://en.wikipedia.org/wiki/Ssh_(Secure_Shell)">SSH</a> is a protocol to securely communicate with a server using a handshake mechanism and <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">public-key cryptography</a> technique. A secure connection allows you to execute <span class="jsx-3120878690"><code>git</code></span> instructions from the command line (terminal) without confirming GitHub credentials for every push/pull operation.</p>
+<p>Follow the below steps to create an SSH public/private key pair and add the public key to the <span class="jsx-3120878690"><code>GitHub</code></span> account:</p>
+<h3 id="add-github-account-details">1. Add GitHub account details</h3>
+<p><span class="jsx-3120878690"><code>git</code></span> maintains a global and local (per project) configuration file that is used to store required details like email, user-name, editing software, etc. Update the value of your GitHub account user name and email in the <span class="jsx-3120878690"><code>git</code></span> configuration file:</p>
+<pre><code>1git config --global user.name &quot;Your name here&quot;
+2git config --global user.email &quot;[email protected]&quot;</code></pre>
+<p>bash</p>
+<h3 id="generate-ssh-keys">2. Generate SSH keys</h3>
+<p>SSH keys can be generated using <span class="jsx-3120878690"><code>git</code></span> bash or the <a href="https://www.putty.org/">Putty tool</a> to generate keys. Follow the below steps to generate SSH keys on Mac or Linux:</p>
+<p>If an SSH key already exists then you can use the existing key.</p>
+<ul>
+<li><p>Generate SSH Keys using <span class="jsx-3120878690"><code>ssh-keygen</code></span>:</p>
+<pre><code>1ssh-keygen -t rsa -C &quot;[email protected]&quot;</code></pre>
+<p>bash</p>
+<p>Press enter for every input to generate the key.</p>
+<blockquote>
+<p>A <span class="jsx-3120878690"><code>passphrase</code></span> can be used to provide an extra layer of security to SSH keys. If a passphrase if used then <span class="jsx-3120878690"><code>git</code></span> will prompt to enter the <span class="jsx-3120878690"><code>passphrase</code></span> before using the SSH key, although <span class="jsx-3120878690"><code>passphrase</code></span> can be saved in <span class="jsx-3120878690"><code>ssh-agent</code></span> like key-chain access to automatically provide the value of the <span class="jsx-3120878690"><code>passphrase</code></span>.</p>
+</blockquote></li>
+<li><p>Copy the generated SSH key: 1# Mac 2pbcopy &lt; ~/.ssh/id_rsa.pub</p>
+<p>bash</p>
+<p>On Linux, get the content of the SSH key using the <span class="jsx-3120878690"><code>cat</code></span> command: 1cat &lt; ~/.ssh/id_rsa.pub</p>
+<p>bash</p>
+<p>For Windows, the key can be generated using <span class="jsx-3120878690"><code>git</code></span> <span class="jsx-3120878690"><code>bash</code></span> (or putty), so open the <span class="jsx-3120878690"><code>git</code></span> <span class="jsx-3120878690"><code>bash</code></span> console and type:</p>
+<p>1ssh-keygen -t rsa</p></li>
+</ul>
+<p>bash</p>
+<p>Now copy the content of <span class="jsx-3120878690"><code>your_home_directory/.ssh/id_rsa.pub</code></span> file.</p>
+<h3 id="add-ssh-to-github-account">3. Add SSH to GitHub account</h3>
+<p>Open settings from the profile icon, select <strong>SSH and GPG keys</strong>, and add the copied SSH key: <embed src="../../pluralsight2.imgix.net/guides/ca46ddca-74d9-404a-9240-76343163e13a_Screenshot_2020-10-08_at_4.28.48_PM.html" /></p>
+<h3 id="clone-project">4. Clone Project</h3>
+<p>Use the <span class="jsx-3120878690"><code>git clone</code></span> command to clone the project in the current directory, using an <span class="jsx-3120878690"><code>SSH</code></span> link:</p>
+<pre><code>1git clone [email protected]:/UserName/RepoName.git</code></pre>
+<p>bash</p>
+<blockquote>
+<p>An SSH link of a GitHub repository can be only be retrieved via a logged-in GitHub account.</p>
+</blockquote>
+<h2 id="clone-a-repository-using-http-link">Clone a Repository Using HTTP Link</h2>
+<p>An HTTP URL is used to clone any public or private repository from a GitHub account. The major drawback of using an HTTP URL is that <span class="jsx-3120878690"><code>git</code></span> will ask for a user-name and password for authentication before performing any operation on a GitHub repository. To clone a GitHub repository, copy the HTTP URL of the GitHub repository <embed src="../../pluralsight2.imgix.net/guides/5b07ac87-b618-4d23-bd9a-f0f76bb9d2c6_9._manage_node_modules_with_github_2.html" /></p>
+<p>execute the <span class="jsx-3120878690"><code>clone</code></span> command:</p>
+<pre><code>1git clone https://github.com/UserName/RepoName.git</code></pre>
+<p>bash</p>
+<h2 id="clone-a-repository-using-github-cli">Clone a Repository Using GitHub CLI</h2>
+<p>The <a href="https://github.com/cli/cli">GitHub CLI</a> brings capabilities of GitHub web UI to the command line to perform operations like creating a pull request, track issues, fork a repository, etc. Use the <span class="jsx-3120878690"><code>auth</code></span> command to authenticate the account and clone the project using the <span class="jsx-3120878690"><code>clone</code></span> command:</p>
+<pre><code>1gh auth login
+2gh repo clone UserName/RepoName</code></pre>
+<p>bash</p>
+<ul>
+<li><p>The <span class="jsx-3120878690"><code>auth</code></span> command can take a <span class="jsx-3120878690"><code>--web</code></span> flag to authenticate using a browser. It can also accept authentication token using a <span class="jsx-3120878690"><code>--with-token</code></span> flag.</p>
+<p>1gh auth login –with-token &lt; myGitHubToken.txt</p></li>
+</ul>
+<p>bash</p>
+<ul>
+<li><p>The <span class="jsx-3120878690"><code>clone</code></span> a command allows to omit the current user name and can work with the repository name associated with the logged-in user account:</p>
+<p>1gh repo clone RepoName</p></li>
+</ul>
+<p>bash</p>
+<h2 id="alternative-options-to-set-up-a-repository">Alternative Options to Set Up a Repository</h2>
+<p>There are two other official ways to set up a GitHub repository:</p>
+<ol type="1">
+<li>Use the download option to get a compressed file of a codebase and uncompress it.</li>
+<li>Install the <a href="https://desktop.github.com/">GitHub Desktop</a> tool and choose the <strong>Open with GitHub Desktop</strong> option on a repository.</li>
+</ol>
+<h2 id="run-a-cloned-react-project">Run a Cloned React Project</h2>
+<p>The <span class="jsx-3120878690"><code>node_modules</code></span> directory is not a part of a cloned repository and should be downloaded using the <span class="jsx-3120878690"><code>npm install</code></span> command to download all the direct and transitive dependencies mentioned in the <span class="jsx-3120878690"><code>package.json</code></span> file:</p>
+<pre><code>1# make sure that you are in the root directory of the project, use&quot; pwd&quot; or &quot;cd&quot; for windows
+2cd RepoName
+3npm install</code></pre>
+<p>sh</p>
+<p>It will take some time to download all the dependencies into a <span class="jsx-3120878690"><code>node_modules</code></span> directory, and after the download completion, run the project:</p>
+<pre><code>1npm start</code></pre>
+<p>sh</p>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>A <span class="jsx-3120878690"><code>node_modules</code></span> directory can take up more than 200MB, so it should not be a part of a repository.</li>
+<li>If <span class="jsx-3120878690"><code>node_modules</code></span> is already a part of a repository then it can be removed using <span class="jsx-3120878690"><code>git rm -r --cached node_modules</code></span> command, though make sure to commit and push the changes to the remote server first.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>A GitHub repository can be cloned using <span class="jsx-3120878690"><code>git</code></span> and <span class="jsx-3120878690"><code>gh</code></span> tools. Use an SSH key to auto-authenticate. There are many free software available to manage <span class="jsx-3120878690"><code>git</code></span> projects. Try out the <span class="jsx-3120878690"><code>GitHub CLI</code></span> tools to bring all the features of the GitHub UI to terminal. Happy coding!</p>
+<p>30</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>adding-slicers-to-a-power-bi-report</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="adding-slicers-to-a-power-bi-report">Adding Slicers to a Power BI Report</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 20, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>1,860 Views</p></li>
+<li><p>Nov 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>1,860 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>14</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-addingvisualization" class="menu-link">Adding Visualization</a></li>
+<li><a href="#module-addingslicertothechart" class="menu-link">Adding Slicer to the Chart</a></li>
+<li><a href="#module-formattingtheslicer" class="menu-link">Formatting the Slicer</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In Power BI, the filters option is used to drill down on a particular chart. But sometimes you want a selection to be applied to all the visuals in the report. Slicers are the on-canvas filters that get applied to all reports or charts in the page. This helps in interacting dynamically with the Power BI report. This guide will demonstrate how to utilize the slicer option in Power BI desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursal across years. The data contains 3,000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The variables to be used in this guide are described below:</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</p></li>
+<li><p><span class="jsx-3120878690"><code>Date</code></span>: Date of loan disbursal.</p></li>
+<li><p><span class="jsx-3120878690"><code>Purpose</code></span>: Purpose for which loan was disbursed.</p></li>
+<li><p><span class="jsx-3120878690"><code>Interest_rate</code></span>: Annual interest rate charged on the disbursed loan.</p></li>
+<li><p><span class="jsx-3120878690"><code>Weeknum</code></span>: Week number when the loan was disbursed.</p></li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open the Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> option and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="adding-visualization">Adding Visualization</h2>
+<p>To begin, you will need a chart, table, or matrix. You will create a <strong>line and stacked column chart</strong> in this guide. You can locate it in the <strong>Visualizations</strong> pane. Click on the chart and it will create a chart box in the canvas. Nothing is displayed because you are yet to add the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/59895bb6-1460-4723-89e5-8ae149e2fa24_s1.html" /><figcaption aria-hidden="true">s1</figcaption>
+</figure>
+<p>You can resize the chart on the canvas, and the next step is to fill the visualization arguments. Drag the <span class="jsx-3120878690"><code>Date</code></span> variable into the <strong>Shared axis</strong> field, and <span class="jsx-3120878690"><code>Loan_disbursed</code></span> in the <strong>Column values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/45e59477-2327-477c-b287-aa2922449c7c_s2.html" /><figcaption aria-hidden="true">s2</figcaption>
+</figure>
+<p>Drag the <span class="jsx-3120878690"><code>Interest_rate</code></span> variable into the <strong>Line values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0fd20b3a-6b0d-458d-af46-11c67d384a95_s3.html" /><figcaption aria-hidden="true">s3</figcaption>
+</figure>
+<p>You can see that the interest rate values are adding up, which is incorrect. To change it to average, right click and select the <strong>Average</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/451388fc-40bb-40e5-83a8-aa333d6fe11a_s4.html" /><figcaption aria-hidden="true">s4</figcaption>
+</figure>
+<p>The above steps will create the desired chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8722f1de-6746-4927-ab96-4050ccad6d79_s5.html" /><figcaption aria-hidden="true">s5</figcaption>
+</figure>
+<p>You can format the chart and turn on <strong>Data labels</strong> as shown below. This displays the values in the chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/089640e8-f1f4-4c00-9c29-81697e801524_s6.html" /><figcaption aria-hidden="true">s6</figcaption>
+</figure>
+<p>To understand the functionality of slicers better, you can add one more chart. This time you will create a tree map chart. Start by clicking on the <strong>Treemap</strong> option under <strong>Visualizations</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/491c468b-c822-4dce-8ae3-31053d920895_s7.html" /><figcaption aria-hidden="true">s7</figcaption>
+</figure>
+<p>Drag the variable <strong>Weeknum</strong> into <strong>Group</strong> field, and <span class="jsx-3120878690"><code>Loan_disbursed</code></span> into the <strong>Values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/340fce27-e61a-44de-babc-cd061f3ccec1_s8.html" /><figcaption aria-hidden="true">s8</figcaption>
+</figure>
+<p>You have the desired charts into the canvas, and you are now ready to explore the functionality of slicers.</p>
+<h2 id="adding-slicer-to-the-chart">Adding Slicer to the Chart</h2>
+<p>To begin, click on the <strong>Slicer</strong> option that creates a slicer box in the canvas.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e7f6c76c-fdfd-42bf-a0a4-fc45de60dced_s9.html" /><figcaption aria-hidden="true">s9</figcaption>
+</figure>
+<p>The slicer you will build is on the <span class="jsx-3120878690"><code>Purpose</code></span> variable. The objective is to look at loan disbursal, interest rate and week number with respect to the <span class="jsx-3120878690"><code>Purpose</code></span> variable. Drag the variable into the <strong>Field</strong> option as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4ac84039-77b6-43de-9f6c-7587fcba5e4b_s10.html" /><figcaption aria-hidden="true">s10</figcaption>
+</figure>
+<p>You can see the slicer box with different categories of <span class="jsx-3120878690"><code>Purpose</code></span> variable.</p>
+<h2 id="formatting-the-slicer">Formatting the Slicer</h2>
+<p>Under the <strong>Format</strong> pane, you will see various options for formatting the slicer. The <strong>Selection controls</strong> option details how you can control the slicer display.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c74edfdb-19ce-49d3-a1ea-f7e8ff5cc9b0_s11.html" /><figcaption aria-hidden="true">s11</figcaption>
+</figure>
+<p>Turn on the <strong>Show “Select all” option</strong> , and turn off the <strong>Multi-select with CTRL</strong> opton.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fa123c91-9de4-4930-9de4-2374169becab_s12.html" /><figcaption aria-hidden="true">s12</figcaption>
+</figure>
+<p>If you want to display the charts on the canvas, only for the <strong>Education</strong> label of the <span class="jsx-3120878690"><code>Purpose</code></span> variable, click on the label as shown below. This will change both the visuals in the canvas, which are now sliced to display only the <strong>Education</strong> category.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cc7035e3-f30f-4b4a-b8f5-25aeca4c7279_s13.html" /><figcaption aria-hidden="true">s13</figcaption>
+</figure>
+<p>You can perform multiple selections of categories as shown below, which displays the visuals for categories, <em>Education</em>, <em>Home</em>, and <em>Personal</em>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ee405c02-f510-4238-84cc-04967381ad05_s14.html" /><figcaption aria-hidden="true">s14</figcaption>
+</figure>
+<p>Now the charts titled <strong>Loan_disbursed and Average of Interest_rate by Year</strong> and <strong>Loan_disbursed by Weeknum</strong> will slice the data and display the result for categories, <em>Education</em>, <em>Home</em>, and <em>Personal</em>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Slicing the data is an integral component of data manipulation and exploratory data analysis. To be able to visualize the different charts at the same time, with single or multiple slicers, is an important skill in descriptive and diagnostic analytics. This a common task and is sector agnostic in nature, which means it has applications across industries such as banking and financial services, manufacturing, utilities, ecommerce, retail, etc. This skill will improve your analytics and business intelligence capabilities.</p>
+<p>To learn more about building powerful visualizations in Power BI desktop, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/build-a-treemap-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implement-clustering-in-powerbi">Implement Clustering in PowerBI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/filter-data-in-power-bi">Filter Data in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implementing-hierarchical-axis-and-concatenation-in-power-bi">Implementing Hierarchical Axis and Concatenation in Power BI</a></p></li>
+</ol>
+<p>14</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

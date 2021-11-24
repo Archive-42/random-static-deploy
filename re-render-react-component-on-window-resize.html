@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>re-render-react-component-on-window-resize</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/jake-trent-v1.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Jake Trent</p>
+<h1 id="re-render-a-react-component-on-window-resize">Re-render a React Component on Window Resize</h1>
+<h3 id="jake-trent">Jake Trent</h3>
+<ul>
+<li><p>Oct 20, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>157,195 Views</p></li>
+<li><p>Oct 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>157,195 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>238</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-listenforresize" class="menu-link">Listen for Resize</a></li>
+<li><a href="#module-rerenderonresize" class="menu-link">Re-render on Resize</a></li>
+<li><a href="#module-cleanuplisteners" class="menu-link">Cleanup Listeners</a></li>
+<li><a href="#module-resizinglessoften" class="menu-link">Resizing Less Often</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Most of the time, we attempt to create <a href="https://reactjs.org/">React</a> apps that have flexible UIs, responding to the available visual space. Sometimes, however, this is neither possible or practical. In such instances, it can be useful to re-render a React component explicitly when the window or viewport size changes.</p>
+<h2 id="listen-for-resize">Listen for Resize</h2>
+<p>React doesn’t have a resize event baked into it, but we can listen to the native browser <span class="jsx-3120878690"><code>window</code></span> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event">resize</a> event from within our React component:</p>
+<pre><code>1import React from &#39;react&#39;
+2function MyComponent() {
+3  React.useEffect(() =&gt; {
+4    function handleResize() {
+5      console.log(&#39;resized to: &#39;, window.innerWidth, &#39;x&#39;, window.innerHeight)
+6    
+7}
+8
+9    window.addEventListener(&#39;resize&#39;, handleResize)
+10  })
+11  return &lt;div&gt;w00t!&lt;/div&gt;
+12}</code></pre>
+<p>javascript</p>
+<p>This code will simply listen for the window resize event and console log something like “resized to: 1024 x 768”.</p>
+<h2 id="re-render-on-resize">Re-render on Resize</h2>
+<p>But the above code will not yet re-render anything when the resize event is detected. We still have to tell React itself that something has changed in order to trigger a re-render.</p>
+<p>Under normal conditions, React will re-render a component when its props or state changes. To trigger a re-render of <span class="jsx-3120878690"><code>MyComponent</code></span> in the example, we’ll set internal state on the component when the event is detected:</p>
+<pre><code>1import React from &#39;react&#39;
+2function MyComponent() {
+3  const [dimensions, setDimensions] = React.useState({ 
+4    height: window.innerHeight,
+5    width: window.innerWidth
+6  })
+7  React.useEffect(() =&gt; {
+8    function handleResize() {
+9      setDimensions({
+10        height: window.innerHeight,
+11        width: window.innerWidth
+12      })
+13    
+14}
+15
+16    window.addEventListener(&#39;resize&#39;, handleResize)
+17  })
+18  return &lt;div&gt;Rendered at {dimensions.width} x {dimensions.height}&lt;/div&gt;
+19}</code></pre>
+<p>javascript</p>
+<p>Now we have set up some internal state, <span class="jsx-3120878690"><code>dimensions</code></span>, that has height and width properties. Inside <span class="jsx-3120878690"><code>handleResize</code></span>, we no longer simply <span class="jsx-3120878690"><code>console.log</code></span>, but instead set new state when the resize is detected, using <span class="jsx-3120878690"><code>setDimensions</code></span>. If we only cared about height or width resizes exclusively, we could track only what we needed.</p>
+<p>Additionally, to show that a re-render is actually occurring, we’ve changed the output to print something like “Rendered at 1024 x 768”.</p>
+<h2 id="cleanup-listeners">Cleanup Listeners</h2>
+<p>When adding an event listener, such as we are for the resize event, we should make sure to clean up after ourselves. In the example so far, we haven’t, and that could cause our app problems later.</p>
+<p>React executes components multiple times, whenever it senses the need. And in each re-render, <span class="jsx-3120878690"><code>useEffect</code></span> is going to be called again. This will create <span class="jsx-3120878690"><code>n</code></span> new event bindings of <span class="jsx-3120878690"><code>handleResize</code></span> to the resize event. If this component is re-rendered often, this could create a serious memory leak in our program. We only ever need or want one event listener. If we always clean up established event listeners before creating new ones, we’ll ensure a single listener.</p>
+<p>React gives us a way to do this with <span class="jsx-3120878690"><code>useEffect</code></span>. When passing a function to <span class="jsx-3120878690"><code>useEffect</code></span>, if <em>that</em> function also returns a function, that returned function will be called to perform any needed cleanup. We can put our <span class="jsx-3120878690"><code>removeEventListener</code></span> code there:</p>
+<pre><code>1import React from &#39;react&#39;
+2function MyComponent() {
+3  const [dimensions, setDimensions] = React.useState({ 
+4    height: window.innerHeight,
+5    width: window.innerWidth
+6  })
+7  React.useEffect(() =&gt; {
+8    function handleResize() {
+9      setDimensions({
+10        height: window.innerHeight,
+11        width: window.innerWidth
+12      })
+13    
+14}
+15
+16    window.addEventListener(&#39;resize&#39;, handleResize)
+17
+18    return _ =&gt; {
+19      window.removeEventListener(&#39;resize&#39;, handleResize)
+20    
+21}
+22  })
+23  return &lt;div&gt;Rendered at {dimensions.width} x {dimensions.height}&lt;/div&gt;
+24}</code></pre>
+<p>javascript</p>
+<p>Now we’re cleaned up nice and responsibly.</p>
+<h2 id="resizing-less-often">Resizing Less Often</h2>
+<p>Currently, our example code is set up to call <span class="jsx-3120878690"><code>handleResize</code></span> as often as the window resizes. We’re setting state and re-rendering for every single pixel change as often as the event loop will let us.</p>
+<p>But what if there’s a good reason to handling the resizing less often than that? We might want to be less aggressive in our re-rendering for performance reasons, such as in the case of a slow or expensive-to-render component.</p>
+<p>In such a case, we can <em>debounce</em> the resize handling and thus the re-rendering. This will mean to throttle or wait between calls to our <span class="jsx-3120878690"><code>handleResize</code></span> function. There are solid debounce implementations. Let’s add a short and simple one to our example:</p>
+<pre><code>1import React from &#39;react&#39;
+2
+3function debounce(fn, ms) {
+4  let timer
+5  return _ =&gt; {
+6    clearTimeout(timer)
+7    timer = setTimeout(_ =&gt; {
+8      timer = null
+9      fn.apply(this, arguments)
+10    }, ms)
+11  };
+12}
+13
+14function MyComponent() {
+15  const [dimensions, setDimensions] = React.useState({ 
+16    height: window.innerHeight,
+17    width: window.innerWidth
+18  })
+19  React.useEffect(() =&gt; {
+20    const debouncedHandleResize = debounce(function handleResize() {
+21      setDimensions({
+22        height: window.innerHeight,
+23        width: window.innerWidth
+24      })
+25    }, 1000)
+26
+27    window.addEventListener(&#39;resize&#39;, debouncedHandleResize)
+28
+29    return _ =&gt; {
+30      window.removeEventListener(&#39;resize&#39;, debouncedHandleResize)
+31    
+32}
+33  })
+34  return &lt;div&gt;Rendered at {dimensions.width} x {dimensions.height}&lt;/div&gt;
+35}</code></pre>
+<p>javascript</p>
+<p>Note that we wrap <span class="jsx-3120878690"><code>handleResize</code></span> in a <span class="jsx-3120878690"><code>debounce()</code></span> call and bind the new function that it returns to the <span class="jsx-3120878690"><code>debouncedHandleResize</code></span> variable. Then we use this variable instead in both the event listener setup and cleanup.</p>
+<p>The <span class="jsx-3120878690"><code>debounce()</code></span> call has as its second parameter 1000ms, meaning that we are ensuring the <span class="jsx-3120878690"><code>handleResize</code></span> code is called a maximum of once per second.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Bringing together the ability to listen to the native resize event, clean up after those event bindings, and control how often the event handler runs, we can now confidently re-render our React component in response to any viewport resize event.</p>
+<p>To see this code in action, check out this <a href="https://codesandbox.io/s/condescending-https-z6fmh">running example</a>.</p>
+<p>238</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

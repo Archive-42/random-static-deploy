@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>visualizing-text-data-using-word-cloud-in-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="visualizing-text-data-using-word-cloud-in-azure-machine-learning-studio">Visualizing Text Data using Word Cloud in Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 12, 2020</p></li>
+<li><p>10 Min read</p></li>
+<li><p>879 Views</p></li>
+<li><p>Oct 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">10 Min</span> read</p></li>
+<li><p>879 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-textpreprocessing" class="menu-link">Text Preprocessing</a></li>
+<li><a href="#module-buildawordcloud" class="menu-link">Build a Word Cloud</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The amount of text data has grown exponentially in recent years, resulting in an ever-increasing need to analyze the massive amounts of such data. Word clouds provide an excellent option to analyze text data through visualization in the form of tags, or words, where the importance of a word is explained by its frequency. In this guide, you will learn how to visualize text data using the word cloud feature in Azure Machine Learning Studio.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with Twitter data of the Bollywood movie <em>Rangoon</em>. The movie was released on February 24, 2017, and the tweets were extracted on February 25. These tweets have been stored in a file named <strong>movietweets</strong>. The data contains tweets in rows, and the column you will consider is the <span class="jsx-3120878690"><code>text</code></span> variable, which contains the tweet. Start by loading the data into the workspace.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click the <strong>EXPERIMENTS</strong> option, listed on the left sidebar, followed by the <strong>NEW</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0118bc28-9689-41bd-a5b7-22d378d3bbc8_k0.html" /><figcaption aria-hidden="true">wc0</figcaption>
+</figure>
+<p>Next, click on the blank experiment and a new workspace will open. Give the name <strong>WordCloud</strong> to the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0379a40c-d3be-45e5-b777-6374d8322ab3_wc1.html" /><figcaption aria-hidden="true">wc1</figcaption>
+</figure>
+<p>Next, load the data into the workspace. Click <strong>NEW</strong>, and select the <strong>DATASET</strong> option shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ac8aa886-8ec1-4d3d-af63-9b69c7ae1685_wc2.html" /><figcaption aria-hidden="true">wc2</figcaption>
+</figure>
+<p>The selection above will open a window, shown below, which can be used to upload the dataset from the local system.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8c1c5663-ce06-4ec4-b194-b78c35c3af39_wc3.html" /><figcaption aria-hidden="true">wc3</figcaption>
+</figure>
+<p>Once the data is loaded, you can see it in the <strong>Saved Datasets</strong> option. The file name is <strong>movietweets.csv</strong>. The next step is to drag it from the <strong>Saved Datasets</strong> list into the workspace. To explore this data, right-click and select the <strong>Visualize</strong> option, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/edffbc49-4550-49df-b6af-d980ec984aaf_wc4.html" /><figcaption aria-hidden="true">wc4</figcaption>
+</figure>
+<p>You can see there are 14933 rows and 20 columns.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/81f3ee94-317c-4661-a0fd-1ab97cdbed5d_wc5.html" /><figcaption aria-hidden="true">wc5</figcaption>
+</figure>
+<h2 id="text-preprocessing">Text Preprocessing</h2>
+<p>It is important to pre-process text before you visualize it with a word cloud. Common pre-processing steps include:</p>
+<ol type="1">
+<li>Remove punctuation: The rule of thumb is to remove everything that is not in the form x,y,z.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Remove stop words: These are unhelpful words like “the”, “is”, or “at”. These are not helpful because the frequency of such stop words is high in the corpus, but they don’t help in differentiating the target classes. The removal of stop words also reduces the data size.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Conversion to lowercase: Words like “Clinical” and “clinical” need to be considered as one word. Hence, these are converted to lowercase.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Stemming: The goal of stemming is to reduce the number of inflectional forms of words appearing in the text. This causes words such as “argue,” “argued,” “arguing,” and “argues” to be reduced to their common stem, “argu”. This helps in decreasing the size of the vocabulary space.</li>
+</ol>
+<p>The <strong>Preprocess Text</strong> module is used to perform these and other text cleaning steps. Search and drag the module into the workspace. Connect it to the data as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/801230d6-2d3b-4da5-bd2e-9a763d043ffa_wc6.html" /><figcaption aria-hidden="true">wc6</figcaption>
+</figure>
+<p>You must specify the text variable to be pre-processed. Click on the <strong>Launch column selector</strong> option, and select the <span class="jsx-3120878690"><code>text</code></span> variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/44f78a23-d81c-444b-a74f-3235570cc67b_wc7.html" /><figcaption aria-hidden="true">wc7</figcaption>
+</figure>
+<p>Run the experiment and click <strong>Visualize</strong> to see the result. The <span class="jsx-3120878690"><code>Preprocessed text</code></span> variable contains the processed text.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1121409a-4084-4afb-9858-d5e492c9221f_wc8.html" /><figcaption aria-hidden="true">wc8</figcaption>
+</figure>
+<h2 id="build-a-word-cloud">Build a Word Cloud</h2>
+<p>You have performed the pre-processing step, and the corpus is ready to be used for building a word cloud. You will use the R programming language to generate the word cloud. The <strong>Execute R Script</strong> module is used to execute R codes in the machine learning experiment.</p>
+<p>To begin, search and add the <strong>Execute R Script</strong> module to the experiment. Next, connect the data to the first input port (left-most) of the module.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d378030b-198e-4795-8664-f030c057d973_wc10.html" /><figcaption aria-hidden="true">wc10</figcaption>
+</figure>
+<p>Click on the module and under the <strong>Properties</strong> pane. You will see the option of writing your R script. Enter the code as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/031c8352-12b6-41a8-8089-15e6e281a65e_wcloudscript.html" /><figcaption aria-hidden="true">code</figcaption>
+</figure>
+<p>You can also copy the code below.</p>
+<pre><code>1#lines 1 to 4
+2
+3library(tm)
+4library(wordcloud)
+5library(RColorBrewer)
+6dataset &lt;- maml.mapInputPort(1)
+7
+8# lines 5 to 12 – text preprocessing 
+9
+10commatokenizer = function(x) unlist(strsplit(as.character(x),&quot;,&quot;))
+11corpus &lt;- Corpus(DataframeSource(data.frame(dataset[,1])))
+12corpus = tm_map(corpus, removePunctuation)
+13corpus = tm_map(corpus, content_transformer(tolower))
+14corpus = tm_map(corpus, removeNumbers)
+15corpus = tm_map(corpus, stripWhitespace)
+16corpus = tm_map(corpus, removeWords, stopwords(&#39;english&#39;))
+17corpus = tm_map(corpus, stemDocument)
+18
+19# lines 13 and 14 - Create term-document matrix, frequency 
+20
+21tdm = TermDocumentMatrix(corpus,control=list(tokenize=commatokenizer))
+22freq &lt;- rowSums(as.matrix(tdm))
+23
+24# line 15
+25
+26wordcloud(names(freq),freq,min.freq = 10, max.words=150, 
+27random.order=FALSE, random.color=FALSE, rot.per=.25,colors=brewer.pal(8, &quot;Dark2&quot;)) </code></pre>
+<p>{r}</p>
+<h3 id="code-explanation">Code Explanation</h3>
+<p>In the code above, the first three lines of code load the required libraries. The fourth line creates a dataframe, <span class="jsx-3120878690"><code>dataset1</code></span>, which is mapped to the first input port with the function,<span class="jsx-3120878690"><code>mam1.mapInputPort()</code></span>.</p>
+<p>Line of codes from five to twelve perform further refining on the earlier preprocessed text data with the <span class="jsx-3120878690"><code>tm_map</code></span> function. The next two lines create the document term matrix and store the frequency of words in the <span class="jsx-3120878690"><code>freq</code></span> object. Finally, the <span class="jsx-3120878690"><code>wordcloud()</code></span> function is used to build the word cloud. The major arguments of this function are given below.</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>min.freq</code></span>: An argument which ensures that words with a frequency below <span class="jsx-3120878690"><code>min.freq</code></span> will not be plotted in the word cloud.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li><span class="jsx-3120878690"><code>max.words</code></span>: The maximum number of words to be plotted.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li><span class="jsx-3120878690"><code>random.order</code></span>: An argument that specifies plotting of words in random order. If false, the words are plotted in decreasing frequency.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li><span class="jsx-3120878690"><code>rot.per</code></span>: The proportion of words with 90-degree rotation (vertical text).</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li><span class="jsx-3120878690"><code>colors</code></span>: An argument that specifies the color of words from least to most frequent.</li>
+</ol>
+<p>The above arguments have been provided in the <span class="jsx-3120878690"><code>wordcloud()</code></span> function. Once you have set up the experiment, the next step is to run it.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0ab2d0cb-feaf-40b3-ba8e-cefb43cfffed_wc12.html" /><figcaption aria-hidden="true">wc12</figcaption>
+</figure>
+<p>On successful completion, you can see the green tick in the module.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1f0870a7-3ac7-447a-a7f4-2e5776046c2f_wc13.html" /><figcaption aria-hidden="true">wc13</figcaption>
+</figure>
+<p>Right-click and select <strong>Visualize</strong> to look at the output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4f9c5bb5-e6ad-4635-bbe9-2acf0d818708_wc14.html" /><figcaption aria-hidden="true">wc14</figcaption>
+</figure>
+<p>The following output is displayed. The word cloud generated shows that the words are plotted in decreasing frequency, which means that the most frequent words are in the center of the word cloud, and the words with lower frequency are farther away from the center.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8ca52825-8562-44dd-bfd6-514d9c520b68_wcloudfinalimage.html" /><figcaption aria-hidden="true">wordcloud</figcaption>
+</figure>
+<p>You can see that the word “rangoon” is at the center of the word cloud, which makes sense as it was the name of the movie. Another interesting word is “miss,” because the name of the central character in the movie was Miss Julia. This way, you can analyze the important words in a text corpus using a word cloud.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Word clouds are very useful in sentiment analysis as they highlight the key words in text. This has application in Twitter, Facebook, and other social media analytics tasks. Word clouds are also applied to build marketing campaigns or plan promotional advertisements where significant words are used.</p>
+<p>In this guide, you learned how to visualize text data using Word Cloud in Azure ML Studio. You can learn more on text visualization with guides on other technologies like <a href="natural-language-processing-visualizing-text-data-using-word-cloud/index.html">Python</a> and <a href="visualization-text-data-using-word-cloud-r/index.html">R</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+<li><p><a href="named-entity-recognition-with-azure-machine-learning-studio/index.html">Named Entity Recognition with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-analytics-with-azure-machine-learning-studio/index.html">Text Analytics with Azure Machine Learning Studio</a></p></li>
+</ol>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

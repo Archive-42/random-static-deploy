@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>transfer-learning-in-deep-learning-using-tensorflow-2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="transfer-learning-in-deep-learning-using-tensorflow-2.0">Transfer Learning in Deep Learning Using Tensorflow 2.0</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 16, 2020</p></li>
+<li><p>12 Min read</p></li>
+<li><p>6,181 Views</p></li>
+<li><p>Nov 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">12 Min</span> read</p></li>
+<li><p>6,181 Views</p></li>
+</ul>
+<p>Overview</p>
+<p>24</p>
+<ul>
+<li><a href="#module-overview" class="menu-link">Overview</a></li>
+<li><a href="#module-whymobilenet" class="menu-link">Why MobileNet?</a></li>
+<li><a href="#module-mobilenetarchitecture" class="menu-link">MobileNet Architecture</a></li>
+<li><a href="#module-buildamobilenetmodel" class="menu-link">Build a MobileNet Model</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>TensorFlow is one of the top deep learning libraries today. A previously published guide, <a href="introduction-to-resnet.html">Transfer Learning with ResNet</a>, explored the Pytorch framework. This guide will take on transfer learning (TL) using the TensorFlow library. The TensorFlow framework is smooth and uncomplicated for building models.</p>
+<p>In this guide, you will learn how to use a pre-trained MobileNet model using <a href="https://tfhub.dev/">TensorFlow Hub (TFHub)</a>, a library for the publication, discovery, and consumption of reusable parts of machine learning models.</p>
+<p>You’ll use a dataset from Kaggle to predict whether images depict aliens or predators. Click <a href="https://www.kaggle.com/pmigdal/alien-vs-predator-images">here</a> to download the dataset.</p>
+<h2 id="why-mobilenet">Why MobileNet?</h2>
+<p><embed src="../../pluralsight2.imgix.net/guides/aed5dea2-eee5-4f3b-9009-0260f2618f56_lxmpLDR.html" />Source: <a href="https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html">Google AI Labs</a></p>
+<p>Computer vision networks have the responsibility to make a deeper network achieve higher accuracy. In short, the deeper the model, the harder it is to optimize. For compact applications, it becomes inconvenient to maintain the number of operations as the system has limited computation and power.</p>
+<p><a href="https://arxiv.org/pdf/1704.04861.pdf">MobileNet</a> was introduced to mitigate these problems. It has two versions, MobileNet-V1 and MobileNet-V2. This guide will stick to MobileNet-V2. Compared to other models, such as Inception, MobileNet outperforms with latency, size, and accuracy. To build lighter deep neural networks, it uses <em>Depthwise Separable Convolution (DSC)</em> layers.</p>
+<h2 id="mobilenet-architecture">MobileNet Architecture</h2>
+<p>The main aim of TL is to implement a model quickly. There will be no change in the MobileNet architecture whatsoever. The model will transfer the features it has learned from a different dataset that has performed the same task.</p>
+<p><embed src="../../pluralsight2.imgix.net/guides/ab2c2ab1-c916-4339-98a2-8603d77da6cd_lxmpLDR.html" />Source: <a href="https://www.researchgate.net/publication/332381425_A_Model_for_Identifying_Historical_Landmarks_of_Bangladesh_from_Image_Content_Using_a_Depth-Wise_Convolutional_Neural_Network">Thermal Stresses—Advanced Theory and Applications</a></p>
+<p>While applying the composite function in the standard convolution layer, the convolution kernel is applied to all the channels of the input image and slides the weighted sum to the next pixel. MobileNet uses this standard convolution filter on only the first layer.</p>
+<h3 id="depthwise-separable-convolution">Depthwise Separable Convolution</h3>
+<p>The next layer is <em>depthwise separable convolution</em>, which is the combination of <em>depthwise</em> and <em>pointwise</em> convolution.</p>
+<h4 id="depthwise-convolution">Depthwise Convolution</h4>
+<p>Unlike standard convolution, a depthwise convolution maps only one convolution on each input channel separately. The channel dimension of the output image (3 RGB) will be the same as that of an input image.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d1467d7f-f4ce-4f0e-bed7-71ec4ebf5a6e_0OQ4Az9.html" /><figcaption aria-hidden="true">Depthwise conv. filters</figcaption>
+</figure>
+<p>Source: <a href="https://www.researchgate.net/publication/332381425_A_Model_for_Identifying_Historical_Landmarks_of_Bangladesh_from_Image_Content_Using_a_Depth-Wise_Convolutional_Neural_Network">Thermal Stresses—Advanced Theory and Applications</a></p>
+<h4 id="pointwise-convolution">Pointwise Convolution</h4>
+<p>This is the last operation of the filtering stage. It’s more or less similar to regular convolution but with a 1x1 filter. The idea behind pointwise convolution is to merge the features created by depthwise convolution, which creates new features.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e4f0e620-ab60-4462-aa9b-d364f1679df8_7ZkAhVC.html" /><figcaption aria-hidden="true">Pointwise Conv. Filter</figcaption>
+</figure>
+<p>Source: <a href="https://www.researchgate.net/publication/332381425_A_Model_for_Identifying_Historical_Landmarks_of_Bangladesh_from_Image_Content_Using_a_Depth-Wise_Convolutional_Neural_Network">Thermal Stresses—Advanced Theory and Applications</a></p>
+<p>The cost function of DSC is the sum of the cost of depthwise and pointwise convolution.</p>
+<p><embed src="../../pluralsight2.imgix.net/guides/2ed3b143-4a02-4be6-bb41-8a8190af5838_1vuTUZP.html" /> Source: <a href="https://www.arxiv-vanity.com/papers/1704.04861/">MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a></p>
+<p>Other than this, MobileNet offers two more parameters to reduce the operations further:</p>
+<ul>
+<li><strong>Width Multiplier:</strong> This introduces the variable α ∈ (0, 1) to thin the number of channels. Instead of producing N channels, it will produce αxN channels. It will choose 1 if you need a smaller model.</li>
+<li><strong>Resolution Multiplier:</strong> This introduces the variable ρ ∈ (0, 1), it is used to reduce the size of the input image from 244, 192, 160px or 128px. 1 is the baseline for image size 224px.</li>
+</ul>
+<p>You can train the model on a 224x224 image and then use it on 128x128 images as MobileNet uses Global Average Pooling and doesn’t flatten layers.</p>
+<h3 id="mobilenet-v2">MobileNet-V2</h3>
+<p>The MobileNet-V2 pre-trained version is available <a href="https://tfhub.dev/google/imagenet/mobilenet_v2_100_224/feature_vector/2">here</a>. Its weights were initially obtained by training on the ILSVRC-2012-CLS dataset for image classification (Imagenet).</p>
+<p>The basic building blocks in MobileNet-V1 and V2:</p>
+<p><embed src="../../pluralsight2.imgix.net/guides/c98ab0e7-2f13-42d7-a4b6-3976da83fa92_ipUgeNz.html" /> Source: <a href="https://www.arxiv-vanity.com/papers/1704.04861/">MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a></p>
+<p>The final MobileNet-V2architecture looks like this:</p>
+<p><embed src="../../pluralsight2.imgix.net/guides/9a7667c3-b9e4-426b-8dd0-456976f1ea23_QlQqc5F.html" /> Source: References <a href="#">3</a></p>
+<p><a href="https://www.hindawi.com/journals/misy/2020/7602384/" class="uri">https://www.hindawi.com/journals/misy/2020/7602384/</a></p>
+<h2 id="build-a-mobilenet-model">Build a MobileNet Model</h2>
+<p>Now that you know the elements of MobileNet, you can build the model from scratch to make it more customize or use the pre-trained-model and save some time.</p>
+<p>Let’s see how the code works. Start with importing the essential libraries.</p>
+<pre><code>1import os 
+2import tensorflow as tf
+3import tensorflow_hub as hub
+4from tensorflow.keras import layers, Sequential
+5import tensorflow.keras.backend as K
+6from tensorflow.keras.preprocessing import image
+7from tensorflow.keras.preprocessing.image import ImageDataGenerator
+8from tensorflow.keras.callbacks import EarlyStopping
+9import pathlib
+10import matplotlib.pyplot as plt
+11import seaborn as sns
+12sns.set()
+13import numpy as np</code></pre>
+<p>python</p>
+<pre><code>1train_root = &quot;../alien-vs-predator-images/train&quot;
+2test_root = &quot;../alien-vs-predator-images/validation&quot;</code></pre>
+<p>python</p>
+<pre><code>1image_path = train_root + &quot;/alien/103.jpg&quot;
+2def image_load(image_path):
+3    loaded_image = image.load_img(image_path)
+4    image_rel = pathlib.Path(image_path).relative_to(train_root)
+5    print(image_rel)
+6    return loaded_image</code></pre>
+<p>python</p>
+<p>Testing the above function:</p>
+<pre><code>1image_load(image_path)</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../pluralsight2.imgix.net/guides/36049603-d636-4abc-b868-a77198b72a5e_KSDpeXk.html" /></p>
+<p>The data seems ready. But to use it, you need load it into the model.</p>
+<pre><code>1train_generator = ImageDataGenerator(rescale=1/255) 
+2test_generator = ImageDataGenerator(rescale=1/255) 
+3
+4train_image_data = train_generator.flow_from_directory(str(train_root),target_size=(224,224))
+5test_image_data = test_generator.flow_from_directory(str(test_root), target_size=(224,224))</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/6DDd9ed.html" /></p>
+<p>TFHub also distributes models without the top classification layer. It uses <span class="jsx-3120878690"><code>feature_extractor</code></span> for transfer learning.</p>
+<pre><code>1# Model-url
+2feature_extractor_url = &quot;https://tfhub.dev/google/imagenet/mobilenet_v2_100_224/feature_vector/2&quot;</code></pre>
+<p>python</p>
+<pre><code>1def feature_extractor(x):
+2  feature_extractor_module = hub.Module(feature_extractor_url)
+3  return feature_extractor_module(x)
+4
+5IMAGE_SIZE = hub.get_expected_image_size(hub.Module(feature_extractor_url))
+6IMAGE_SIZE</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/Zyt4iDt.html" /></p>
+<pre><code>1for image_batch, label_batch in train_image_data:
+2    print(&quot;Image-batch-shape:&quot;,image_batch.shape)
+3    print(&quot;Label-batch-shape:&quot;,label_batch.shape)
+4    break</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/TycNfAy.html" /></p>
+<pre><code>1for test_image_batch, test_label_batch in test_image_data:
+2    print(&quot;Image-batch-shape:&quot;,test_image_batch.shape)
+3    print(&quot;Label-batch-shape:&quot;,test_label_batch.shape)
+4    break</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/TycNfAy.html" /></p>
+<pre><code>1feature_extractor_layer = layers.Lambda(feature_extractor,input_shape=IMAGE_SIZE+[3])</code></pre>
+<p>python</p>
+<p>Freeze the variables in the feature extractor so that training only modifies the new classifier layer.</p>
+<pre><code>1feature_extractor_layer.trainable = False</code></pre>
+<p>python</p>
+<pre><code>1model = Sequential([
+2    feature_extractor_layer,
+3    layers.Dense(train_image_data.num_classes, activation = &quot;softmax&quot;)
+4    ])
+5model.summary()</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/7UQsT3T.html" /></p>
+<p>Next, initialize the TFHub module.</p>
+<pre><code>1sess = K.get_session()
+2init = tf.global_variables_initializer()
+3
+4sess.run(init)</code></pre>
+<p>python</p>
+<p>Test a single image.</p>
+<pre><code>1result = model.predict(image_batch)
+2result.shape</code></pre>
+<p>python</p>
+<pre><code>1(32, 2)</code></pre>
+<p>The next step is to compile the model with an optimizer.</p>
+<pre><code>1model.compile(
+2    optimizer = tf.train.AdamOptimizer(),
+3    loss = &quot;categorical_crossentropy&quot;,
+4    metrics = [&#39;accuracy&#39;]
+5    )</code></pre>
+<p>python</p>
+<p>Create a custom callback to visualize the training progress during every epoch.</p>
+<pre><code>1class CollectBatchStats(tf.keras.callbacks.Callback):
+2  def __init__(self):
+3    self.batch_losses = []
+4    self.batch_acc = []
+5    
+6  def on_batch_end(self, batch, logs=None):
+7    self.batch_losses.append(logs[&#39;loss&#39;])
+8    self.batch_acc.append(logs[&#39;acc&#39;])
+9    
+10# Early stopping to stop the training if loss start to increase. It also avoids overfitting.
+11es = EarlyStopping(patience=2,monitor=&quot;val_loss&quot;)</code></pre>
+<p>python</p>
+<p>Then, use CallBacks to record accuracy and loss.</p>
+<pre><code>1batch_stats = CollectBatchStats()
+2# fitting the model
+3model.fit((item for item in train_image_data), epochs = 3,
+4         steps_per_epoch=21,
+5         callbacks = [batch_stats, es],validation_data=test_image_data)</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/Pp7K6U0.html" /></p>
+<p>Now, get the ordered list of labels.</p>
+<pre><code>1label_names = sorted(train_image_data.class_indices.items(), key=lambda pair:pair[1])
+2label_names = np.array([key.title() for key, value in label_names])
+3label_names</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/j4foe9m.html" /></p>
+<p>You’re almost finished. Run predictions for the test batch.</p>
+<pre><code>1result_batch = model.predict(test_image_batch)
+2
+3labels_batch = label_names[np.argmax(result_batch, axis=-1)]
+4labels_batch</code></pre>
+<p>python</p>
+<p>Output: <embed src="../../i.imgur.com/cDV5dA8.html" /></p>
+<p>And finally, show the predicted results.</p>
+<pre><code>1plt.figure(figsize=(13,10))
+2for n in range(30):
+3  plt.subplot(6,5,n+1)
+4  plt.imshow(test_image_batch[n])
+5  plt.title(labels_batch[n])
+6  plt.axis(&#39;off&#39;)
+7  plt.suptitle(&quot;Model predictions&quot;)</code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/afa851ec-6885-474e-a57d-bcee51e7c2b3_SpAcV4m.html" /><figcaption aria-hidden="true">Model Prediction</figcaption>
+</figure>
+<p>You may save the model for later use.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Well done! The accuracy is ~94%. Your small but powerful NN model is ready. The trade-off between performance and speed is acceptable unless it is deployable on an embedded device and gives real-time offline detection.</p>
+<p>To have good control of building the models, I recommend running the code on different datasets. Notice the accuracy and run time. This guide has given you a brief explanation of how to use pre-trained models in the TensorFlow library and MobileNet architecture. Read the links mentioned in the guide for a better understanding. You can create compact and insanely fast classifiers using MobileNets. They are widely used in NLP applications.</p>
+<p>If you have any questions, feel free to reach out to me at <a href="https://www.codealphabet.com/contact">CodeAlphabet</a>.</p>
+<p>24</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

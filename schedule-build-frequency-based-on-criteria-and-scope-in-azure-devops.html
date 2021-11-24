@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>schedule-build-frequency-based-on-criteria-and-scope-in-azure-devops</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/fc1d1699-dd35-49d9-826b-26b579432689.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Ronika Mehta</p>
+<h1 id="schedule-build-frequency-based-on-criteria-and-scope-in-azure-devops">Schedule Build Frequency Based on Criteria and Scope in Azure DevOps</h1>
+<h3 id="ronika-mehta">Ronika Mehta</h3>
+<ul>
+<li><p>Nov 18, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>1,858 Views</p></li>
+<li><p>Nov 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>1,858 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Security</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">General Security Principles</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Security Principles</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">General Security Principles</span></p>
+<p>Introduction</p>
+<p>12</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-differenttriggersinazurepipelines" class="menu-link">Different Triggers in Azure Pipelines</a></li>
+<li><a href="#module-configuretriggersinazurepipelines" class="menu-link">Configure Triggers in Azure Pipelines</a></li>
+<li><a href="#module-configurecitriggers" class="menu-link">Configure CI Triggers</a></li>
+<li><a href="#module-configurescheduletriggers" class="menu-link">Configure Schedule Triggers</a></li>
+<li><a href="#module-configurebuildcompletion" class="menu-link">Configure Build Completion</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Nowadays, quality assurance (QA) teams and developers want to validate ongoing features as they become available in the source branch. Most software companies want to establish an automated process to deploy the latest changes to their environments without doing a manual intervention from a devOps engineer.</p>
+<p>This can be done by running Azure pipelines at stipulated intervals or in a scheduled manner. It can be achieved using the <em>triggers</em> option provided by Azure evOps in Continuous Integration (CI) or Continuous Deployment (CD) pipelines.</p>
+<p>This guide describes steps to set up build frequency or schedules using Triggers in the Azure DevOps pipelines.</p>
+<h2 id="different-triggers-in-azure-pipelines">Different Triggers in Azure Pipelines</h2>
+<p>Azure pipelines support many types of triggers. Based on the type of your pipeline, select the appropriate trigger and related option. Triggers help to run a pipeline automatically.</p>
+<p>Continuous Integration (CI) triggers vary based on the type of repository you build in your pipeline. They include:</p>
+<ul>
+<li>CI triggers in Azure Repos Git</li>
+<li>CI triggers in GitHub</li>
+<li>CI triggers in Bitbucket Cloud</li>
+<li>CI triggers in Team Foundation Version Control (TFVC)</li>
+</ul>
+<p>Let’s learn about the end-to-end process of configuring triggers for pipelines using the Azure Repos Git approach.</p>
+<h2 id="configure-triggers-in-azure-pipelines">Configure Triggers in Azure Pipelines</h2>
+<p>Azure DevOps supports classic builds as well as YAML-based pipelines. Let’s take a classic build pipeline as an example and try to configure triggers with various options.</p>
+<p>This guide assumes that you’ve already created a pipeline using classic build. If you’ve not done so, then you can create a classic build pipeline for Azure Repo Git. You can find more information about creating build pipeline documentation <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops">here</a>.</p>
+<p>To configure triggers in your build pipeline, navigate to the <strong>Pipelines &gt; Pipelines</strong> option as shown in the figure below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/db4626d1-07e7-4c6f-97ac-49a6591e90f6_Pipelines.html" /><figcaption aria-hidden="true">Pipelines</figcaption>
+</figure>
+<p>This fetches all the available pipelines from your project. Select a pipeline for which you want to configure a trigger, then click on the <strong>Edit</strong> button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bba77260-9cf2-4129-b7ed-7360b015e1af_Demo_Pipeline.html" /><figcaption aria-hidden="true">Build Pipeline list</figcaption>
+</figure>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5e57946a-3f5b-4991-8057-e3c5a01e87e4_Edit_Pipeline.html" /><figcaption aria-hidden="true">Edit Pipeline</figcaption>
+</figure>
+<p>Navigate to the <strong>Triggers</strong> menu.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a74c65ee-b526-4da6-9238-7d835932143d_CI_Triggers.html" /><figcaption aria-hidden="true">CI Triggers</figcaption>
+</figure>
+<p>Now, it’s time to deep dive into each setting and explore the various build frequency option to configure your build pipelines. The following section will explain each trigger option in detail and give tips for scheduling build frequency in Azure pipelines.</p>
+<h2 id="configure-ci-triggers">Configure CI Triggers</h2>
+<p>Continuous Integration (CI) triggers cause a pipeline to run whenever you push an update to the specified branches or tags.</p>
+<p>If the <strong>Enable continuous integration</strong> option is enabled, then it triggers only when new changes are uploaded to the branch.</p>
+<p>If the <strong>Batch changes while a build is in progress</strong> option is enabled, then the system waits until the current run is completed and then queues another run of all changes that have not yet been built so far. This option is useful if a team frequently uploads a change to the branch.</p>
+<p><strong>Branch filters</strong> is another feature provided by Azure pipelines to trigger the build only when specified criteria are matched. Branch filters also support wildcard characters while configuring a branch specification. <em>Example</em>: features/pluralsight/*</p>
+<p><strong>Path filters</strong> is another great option if you want to trigger a build when a specific file is changed. The order of path filters doesn’t matter, and paths are case-sensitive. Be sure that you’re using the same case as a real folder’s name.</p>
+<h2 id="configure-schedule-triggers">Configure Schedule Triggers</h2>
+<p>Azure pipelines provide you the capability to run build on a specified schedule. This is a very useful feature for a software project team to deploy changes using nightly build. So, the next day team will have all changes deployed to their respective environments.</p>
+<p>Let’s configure a build that runs every night at 2:00 AM at a specified time zone as shown in the figure below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2c4ebb69-79dc-47da-b034-851b12d3d258_Schedule_Triggers.html" /><figcaption aria-hidden="true">Schedule Triggers</figcaption>
+</figure>
+<p>It also provides you <strong>branch filters</strong> feature-capability (same as CI triggers, explained in the previous section) to run only when a specified branch is changed.</p>
+<p>If you wish to run scheduled build only when a branch is uploaded with new changes then be sure that you’ve checked the option <strong>Only schedule builds if the source or pipeline has changed</strong>.</p>
+<h2 id="configure-build-completion">Configure Build Completion</h2>
+<p>This is a practical business use case where software companies have multiple products that are dependent on each other. These products are usually built independently, but if the parent product is changed then the dependent product needs to be rebuilt or re-validated.</p>
+<p>To configure the <strong>Build completion</strong> option, click on the <strong>Add</strong> button and select <strong>Triggering build</strong> from the dropdown.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/db9f2af6-6084-476a-bee5-5f9c2aca2269_Build_Completion.html" /><figcaption aria-hidden="true">Build Completion</figcaption>
+</figure>
+<p>This option also supports the branch filters feature explained in the previous section of this guide.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide demonstrated how to schedule triggers on various branches and run a build on a specified schedule at different intervals, and how to use path filters and various other options.</p>
+<p>It helps software development project teams to get advantages including:</p>
+<ul>
+<li>Configure an automated way to deploy or build changes as per your project requirements</li>
+<li>No manual intervention needed</li>
+<li>Easy to deploy or build multiple products</li>
+<li>Easy to handle complex deployment</li>
+</ul>
+<p>Azure pipeline trigger options can be configured using YAML-based pipelines. You can explore more on that feature to further build on this guide. Thank you for reading.</p>
+<p>12</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

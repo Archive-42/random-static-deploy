@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>filter-data-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="filter-data-in-power-bi">Filter Data in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 18, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>1,275 Views</p></li>
+<li><p>Nov 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>1,275 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-addingchart" class="menu-link">Adding Chart</a></li>
+<li><a href="#module-filteroperations" class="menu-link">Filter Operations</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>On many occasions, analysts are required to filter the data down to specific areas such as highest sales regions, or most expensive inventory items. This requires filtering down the data to specific points under consideration. Exploratory data analysis, which is used for both descriptive and diagnostics analytics, requires many filter operations on the data. You are also required to filter the visualization dashboards you prepare. This guide will demonstrate how to apply filters in Power BI Desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursal across years. The data contains 3,000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The variables to be used in this guide are described below:</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</p></li>
+<li><p><span class="jsx-3120878690"><code>Weeknum</code></span>: Week number of the year.</p></li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open the Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="adding-chart">Adding Chart</h2>
+<p>To perform filter operations in Power BI, you will need a chart, table or a matrix. You will create a <em>treemap</em> chart in this guide. You can locate it in the <strong>Visualizations</strong> pane.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dd749941-18d4-4a31-9801-bf86535ac67b_f1.html" /><figcaption aria-hidden="true">f1</figcaption>
+</figure>
+<p>Click on the chart shown above, and it will create a chart box in the canvas. Nothing is displayed because you are yet to add the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e625f887-7292-4b4e-b991-b018108110b2_f2.html" /><figcaption aria-hidden="true">f2</figcaption>
+</figure>
+<p>You can resize the chart on the canvas. The next step is to fill the visualization arguments under the <strong>Fields</strong> option as shown below. The two variables to be used are <span class="jsx-3120878690"><code>Weeknum</code></span> and <span class="jsx-3120878690"><code>Loan_disbursed</code></span>. Drag the variable <span class="jsx-3120878690"><code>Weeknum</code></span> into the <strong>Group</strong> field, and <span class="jsx-3120878690"><code>Loan_disbursed</code></span> in the <strong>Values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e707f6f7-3372-4133-8491-81b928830b78_f3.html" /><figcaption aria-hidden="true">f3</figcaption>
+</figure>
+<p>The output above shows that the treemap visual is created, and the next step is to explore the filter options.</p>
+<h2 id="filter-operations">Filter Operations</h2>
+<p>The filter operations are performed with the <strong>Filters</strong> pane. Once the visual is created, the <strong>Filters</strong> pane automatically displays the variables under <strong>Filters on this visual</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/658db878-3b59-4560-9215-8675d56442b3_f4.html" /><figcaption aria-hidden="true">f4</figcaption>
+</figure>
+<h3 id="filter-on-numerical-variable">Filter on Numerical Variable</h3>
+<p>Numerical and qualitative variables require different filter operations. To begin, click on the <span class="jsx-3120878690"><code>Loan_disbursed</code></span> variable under <strong>Filters on this visual</strong>. Next, you will see many options to filter under <strong>Show items when the value</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/086364aa-d529-4956-bb50-169175821af3_f5.html" /><figcaption aria-hidden="true">f5</figcaption>
+</figure>
+<p>The filter operation to perform is to look at a week’s numbers when the loan disbursed was less than $5 million. Type the value as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8022fe5a-09eb-4a79-83fd-738653ef66a8_f6new.html" /><figcaption aria-hidden="true">f6</figcaption>
+</figure>
+<p>Click on <strong>Apply filter</strong> that gives the command to Power BI to perform this filter operation on the selected visual and display the resulting chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4be043c8-0704-4ecd-8127-1c26c347c38c_f7.html" /><figcaption aria-hidden="true">f7</figcaption>
+</figure>
+<p>You can see from the output that there are five weeks of numbers that have less than $5 million loan disbursal.</p>
+<p>To extend the example above, if you want to find the week’s numbers when the loan disbursal was between $5 million and $10 million, you can select the <strong>And</strong> option during filter.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b7baca3c-d934-44b6-a9f1-a2a19c4840fb_exloan1.html" /><figcaption aria-hidden="true">ex1</figcaption>
+</figure>
+<p>This will create the desired output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8e42a1c1-55f1-4b51-85ec-2b46a80bf023_extra2.html" /><figcaption aria-hidden="true">ex2</figcaption>
+</figure>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a6ef1e8d-b998-4776-8c51-fd102608d9d7_extra3.html" /><figcaption aria-hidden="true">ex3</figcaption>
+</figure>
+<h3 id="filter-on-categorical-variable">Filter on Categorical Variable</h3>
+<p>Categorical variables are defined as features in which mathematical operations can’t be performed. In the chart, <span class="jsx-3120878690"><code>Weeknum</code></span> is the categorical feature because even though it is represented as numbers, you cannot add two weeks.</p>
+<p>For <span class="jsx-3120878690"><code>Weeknum</code></span> variable, there are several options available under <strong>Filter type</strong>. There are three types of filter operations: <strong>Basic filtering</strong>, <strong>Advanced filtering</strong>, and <strong>Top N</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/04989b6b-4c46-428d-a502-173373d3ccfc_f8.html" /><figcaption aria-hidden="true">f8</figcaption>
+</figure>
+<p>You will begin with <strong>Basic filtering</strong>. If you want to look at <span class="jsx-3120878690"><code>Loan_disbursed</code></span> in the last few weeks of the year, especially closer to Christmas, you can select the corresponding weeks’ numbers.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1cf05aba-7f26-44b6-ae04-9f2dec588bb0_f9.html" /><figcaption aria-hidden="true">f9</figcaption>
+</figure>
+<p>The other common filter operations performed on categorical features is to filter the categories of the variable against a measure. For example, if you want to use the top ten weeks in terms of <span class="jsx-3120878690"><code>Loan_disbursed</code></span>, you can use the <strong>Top N</strong> filter.</p>
+<p>Start by selecting <strong>Top N</strong> as <strong>Filter type</strong>. Under <strong>Show items</strong>, select <strong>Top</strong> and set the value to 10. Finally, drag the <span class="jsx-3120878690"><code>Loan_disbursed</code></span> variable to the <strong>By value</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/6037553e-4e2c-41b3-bddb-ce1f3a8db368_f10new.html" /><figcaption aria-hidden="true">f10</figcaption>
+</figure>
+<p>Click on <strong>Apply filter</strong> and the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/eb0cb9d8-9130-4488-bcbe-18c33c921af2_f11.html" /><figcaption aria-hidden="true">f11</figcaption>
+</figure>
+<p>The above output shows that the week with the highest loan disbursal is week 42, followed by week 41 and so on.</p>
+<p>It is easy to select the bottom ten weeks with lowest loan disbursal, which requires only one change to be made from the above selection. Under <strong>Show items</strong>, select <strong>Bottom</strong> and click on <strong>Apply filter</strong>. This will generate the following result.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a54c3fb3-e1fb-4734-b1c9-0e1b4838fbe9_f12.html" /><figcaption aria-hidden="true">f12</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Exploratory data analysis is an integral part of machine learning and data science. To explore the data from different dimensions, it is required to perform several filter operations. This a common task and is sector agnostic in nature, which means it has applications across industries such as banking and financial services, manufacturing, utilities, ecommerce, retail, etc. This skill will improve your analytics and business intelligence capabilities.</p>
+<p>To learn more about building powerful visualization in Power BI desktop, please refer to the following guides:</p>
+<ul>
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+</ul>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

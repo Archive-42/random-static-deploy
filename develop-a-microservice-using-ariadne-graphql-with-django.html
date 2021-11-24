@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>develop-a-microservice-using-ariadne-graphql-with-django</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="develop-a-microservice-using-ariadne-graphql-with-django">Develop a Microservice Using Ariadne GraphQL with Django</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Oct 19, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>2,877 Views</p></li>
+<li><p>Oct 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>2,877 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>24</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-ariadnegraphql" class="menu-link">Ariadne GraphQL</a></li>
+<li><a href="#module-sampleapp" class="menu-link">Sample App</a></li>
+<li><a href="#module-runtheapp" class="menu-link">Run the App</a></li>
+<li><a href="#module-apiscreens" class="menu-link">API Screens</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Most modern applications are developed in a decoupled manner. The front end and backend are separate applications, often connected via an application programming interface (API). This makes knowledge of APIs and API development paramount.</p>
+<p>With a robust API, a backend system can serve several frontend clients. They could be web or mobile-based clients.</p>
+<p>This guide assumes you have a basic understanding of APIs and Django web framework and at least intermediate-level proficiency in Python and GraphQL.</p>
+<p>An introductory guide on Django can be found <a href="introduction-to-web-development-in-python-and-django.html">here</a>.</p>
+<h2 id="ariadne-graphql">Ariadne GraphQL</h2>
+<p><a href="https://ariadnegraphql.org/">Ariadne GraphQL</a> is an interpretation of <a href="https://graphql.org/">graphql</a> for Python. It was developed by the software house <a href="https://mirumee.com/">Mirumee</a>. Its main aim was to address the shortcomings of <a href="https://docs.graphene-python.org/projects/django/en/latest/">graphene</a>.</p>
+<p>To install Ariadne and the GraphQL core, run the command below on your terminal.</p>
+<pre><code>1pip install ariadne graphql-core</code></pre>
+<p>bash</p>
+<h2 id="sample-app">Sample App</h2>
+<p>For this exercise, you will develop a Django app that displays data from the default Sqlite3 database. The data is a list of schools and their populations.</p>
+<p>To get started, start a new Django project by running the below command.</p>
+<pre><code>1django-admin startproject school_list</code></pre>
+<p>bash</p>
+<p>Next, create an app and name it school_stats using the below command.</p>
+<pre><code>1python3 manage.py startapp school_stats</code></pre>
+<p>python</p>
+<p>The app is now set up. What remains is to develop the school model, the Ariadne GraphQL schema that consists of <a href="https://graphql.org/learn/queries/">queries</a> and <a href="https://graphql.org/learn/queries/">mutations</a> and to configure the URL to show the GraphQL playground interface. The code block below shows the model and what fields make up the database table. Copy the code block into the <span class="jsx-3120878690"><code>models.py</code></span> file.</p>
+<pre><code>1from django.db import models
+2
+3class School(models.Model):
+4   school_name = models.CharField(max_length=20)
+5   school_population = models.IntegerField(default=100)
+6   added_on = models.DateTimeField(auto_now_add=True)
+7   
+8   def __str__(self):
+9       return self.school_name</code></pre>
+<p>python</p>
+<p>The model needs data. To add the data, you will need to access the admin panel. This requires superuser access. The next step is to create a superuser account using the following command.</p>
+<pre><code>1python manage.py createsuperuser</code></pre>
+<p>python</p>
+<p>This will be an interactive process where you will give essential details and register your user. For the app and model to be visible, they need to be registered with the Django project and <span class="jsx-3120878690"><code>admin.py</code></span>. To register the app and also Ariadne, a third-party app, add their names to the list of installed apps in <span class="jsx-3120878690"><code>settings.py</code></span>.</p>
+<p>Copy the list below to your <span class="jsx-3120878690"><code>settings.py</code></span> and replace the existing list.</p>
+<pre><code>1INSTALLED_APPS = [
+2    &#39;django.contrib.admin&#39;,
+3    &#39;django.contrib.auth&#39;,
+4    &#39;django.contrib.contenttypes&#39;,
+5    &#39;django.contrib.sessions&#39;,
+6    &#39;django.contrib.messages&#39;,
+7    &#39;django.contrib.staticfiles&#39;,
+8    &#39;school_stats&#39;,
+9    &quot;ariadne.contrib.django&quot;,
+10]</code></pre>
+<p>python</p>
+<p>To ensure the <span class="jsx-3120878690"><code>School</code></span> model is visible on the admin pane, register it in the <span class="jsx-3120878690"><code>admin.py</code></span> file. Add the code block below to your <span class="jsx-3120878690"><code>admin.py</code></span> file.</p>
+<pre><code>1from django.contrib import admin
+2from .models import School
+3admin.site.register(School)</code></pre>
+<p>python</p>
+<h3 id="graphql-schema-and-resolver">GraphQL Schema and Resolver</h3>
+<p>The first step in developing the GraphQL part is developing the schema. In your schema, you will have a mutation for adding schools, a <span class="jsx-3120878690"><code>School</code></span> input object, a query for viewing schools, and a <span class="jsx-3120878690"><code>School</code></span> object that will be returned as a result of the query. Since the schema is simple, you can do an <em>in-file</em> schema. The code block below defines the schema and assigns the <span class="jsx-3120878690"><code>type_defs</code></span> variable. Within the <span class="jsx-3120878690"><code>school_stats</code></span> app, create a file and name it <span class="jsx-3120878690"><code>resolver.py</code></span>. Add the following block.</p>
+<pre><code>1type_defs= &quot;&quot;&quot;
+2
+3type Query{
+4    all_schools: [School]
+5}
+6
+7type School {
+8    id: ID
+9    school_name: String!
+10    school_population: Int!
+11
+12}
+13type Mutation{
+14    add_school(input: SchoolInput): SchoolResults
+15
+16}
+17input SchoolInput {
+18    school_name: String
+19    school_population: Int
+20}
+21  type SchoolResults {
+22        created: Boolean!
+23        school: School
+24        err: String
+25}
+26
+27&quot;&quot;&quot;</code></pre>
+<p>python</p>
+<h3 id="graphql-query">GraphQL Query</h3>
+<p>To set up the query, you need to return data from the model. This requires a query resolver for the query <span class="jsx-3120878690"><code>all_schools</code></span> created in the schema. In your <span class="jsx-3120878690"><code>resolver.py</code></span> file, add the following function.</p>
+<pre><code>1from ariadne import QueryType, make_executable_schema, MutationType
+2from .models import School
+3query = QueryType()
+4
+5@query.field(&#39;all_schools&#39;)
+6def resolve_schools(*_):
+7    return School.objects.all()</code></pre>
+<p>python</p>
+<h3 id="graphql-mutation">GraphQL Mutation</h3>
+<p>Similar to the queries, set up a resolver for the mutation that will create a record in the database.</p>
+<pre><code>1mutation = MutationType()
+2
+3@mutation.field(&#39;add_school&#39;)
+4def resolve_add_school(_,info, input):
+5
+6    school = School.objects.create(school_name=input[&#39;school_name&#39;], school_population=input[&#39;school_population&#39;])      
+7    return {&#39;created&#39;: True, &#39;school&#39;: school, &#39;err&#39;: None}</code></pre>
+<p>python</p>
+<h3 id="make-schema-executable">Make Schema Executable</h3>
+<p>To execute the schema and make it available for use in the GraphQL playground, add the following line of code.</p>
+<pre><code>1schema = make_executable_schema(type_defs, query, mutation)</code></pre>
+<p>python</p>
+<h3 id="url-configuration">URL Configuration</h3>
+<p>To configure the URL, configure the main project’s <span class="jsx-3120878690"><code>urls.py</code></span> file to direct any traffic to the school_stats app using the <span class="jsx-3120878690"><code>path</code></span> function, as in the code block below.</p>
+<pre><code>1from django.urls import path, include
+2from django.contrib import admin
+3urlpatterns = [
+4    path(&#39;admin/&#39;, admin.site.urls),
+5    path(&#39;&#39;, include(&#39;school_stats.urls&#39;)),
+6
+7]</code></pre>
+<p>python</p>
+<p>Next, create a <span class="jsx-3120878690"><code>urls.py</code></span> file and load the graphQL view and schema to the default URL.</p>
+<pre><code>1from django.urls import path, include
+2from ariadne.contrib.django.views import GraphQLView
+3from .resolver import schema
+4urlpatterns = [
+5    path(&#39;graphql/&#39;, GraphQLView.as_view(schema=schema), name=&#39;graphql&#39;),
+6    path(&#39;&#39;, GraphQLView.as_view(schema=schema), name=&#39;graphql&#39;),
+7]</code></pre>
+<p>python</p>
+<h2 id="run-the-app">Run the App</h2>
+<p>When all has been set up, the final step is migrating the changes and running the server. To make migrations, run the command:</p>
+<pre><code>1python manage.py makemigrations</code></pre>
+<p>bash</p>
+<p>To migrate the model changes into the default database, run the command:</p>
+<pre><code>1python manage.py migrate</code></pre>
+<p>bash</p>
+<p>To start the server and run the app, run the command:</p>
+<pre><code>1python manage.py runserver</code></pre>
+<p>bash</p>
+<h2 id="api-screens">API Screens</h2>
+<h3 id="sample-mutation">Sample Mutation</h3>
+<p>In the GraphQL playground, execute the below mutation to create a record. To create more records, change the variables.</p>
+<pre><code>1mutation {
+2  add_school(input: {school_name:&quot;SchoolZ&quot;, school_population:330})
+3  {
+4    created
+5    school{
+6      school_name
+7      school_population
+8    }
+9    err
+10  }
+11}</code></pre>
+<p>graphql</p>
+<p><embed src="../../pluralsight2.imgix.net/guides/b7a7eaee-c8b7-4735-84a1-d3aee303bf58_Screenshot_from_2020-10-16_14-48-51.html" />Mutation Result</p>
+<h3 id="sample-query">Sample Query</h3>
+<pre><code>1query{
+2  all_schools{
+3    school_name
+4    school_population
+5  }
+6}</code></pre>
+<p>graphql</p>
+<p><embed src="../../pluralsight2.imgix.net/guides/0c6fa204-d5d8-4182-9c30-97aa4aa32521_Screenshot_from_2020-10-16_14-49-15.html" />Query Result</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The vital skill of API development can be applied in job positions such as backend developer, API/middleware developer, and full stack developer.</p>
+<p>Ariadne GraphQL is a relatively new package, and it has some interesting use cases. To further build on these basics, follow these <a href="https://ariadnegraphql.org/docs/django-integration.html">Django integration</a> and <a href="https://ariadnegraphql.org/docs/flask-integration.html">Flask integration</a> guides to learn how to use Django, Flask and Ariadne GraphQL to develop a microservice.</p>
+<p>24</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

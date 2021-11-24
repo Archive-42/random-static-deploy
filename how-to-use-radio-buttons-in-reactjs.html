@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-use-radio-buttons-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="how-to-use-radio-buttons-in-reactjs">How to Use Radio Buttons in ReactJS</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 12, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>208,840 Views</p></li>
+<li><p>Nov 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>208,840 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Client-side Framework</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>289</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-usingaradiobuttongroup" class="menu-link">Using a Radio Button Group</a></li>
+<li><a href="#module-usingaradiobuttongroupwithaform" class="menu-link">Using a Radio Button Group with a Form</a></li>
+<li><a href="#module-radiobuttonsfromthirdpartylibraries" class="menu-link">Radio Buttons from Third-party Libraries</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>While working with a web app, you might need to use various form controls such as text boxes, checkboxes, dropdowns, file uploads, or radio buttons in order to use HTML elements or third-party libraries for React, such as <span class="jsx-3120878690"><code>material-ui</code></span>.</p>
+<p>In this guide, you’ll learn the basics of the radio button, how to use it in a group, and how to access the selected radio button value on change event.</p>
+<h2 id="using-a-radio-button-group">Using a Radio Button Group</h2>
+<p>Radio buttons let a user choose a single option from a list of multiple radio buttons and submit its value.</p>
+<p>For example, here’s how to use radio buttons without a form:</p>
+<pre><code>1render() {
+2    return (
+3      &lt;div&gt;
+4        &lt;input type=&quot;radio&quot; value=&quot;Male&quot; name=&quot;gender&quot; /&gt; Male
+5        &lt;input type=&quot;radio&quot; value=&quot;Female&quot; name=&quot;gender&quot; /&gt; Female
+6        &lt;input type=&quot;radio&quot; value=&quot;Other&quot; name=&quot;gender&quot; /&gt; Other
+7      &lt;/div&gt;
+8    );
+9  }</code></pre>
+<p>jsx</p>
+<p>In this example, there are three radio buttons and one additional property called <span class="jsx-3120878690"><code>gender</code></span>.</p>
+<p>Because that name property puts all the radio buttons into a group, you can get the value once the user selects any of them, as explained below.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3class Demo1 extends Component {
+4  constructor() {
+5    super();
+6    this.state = {
+7      name: &quot;React&quot;
+8    };
+9    this.onChangeValue = this.onChangeValue.bind(this);
+10  }
+11
+12  onChangeValue(event) {
+13    console.log(event.target.value);
+14  }
+15
+16  render() {
+17    return (
+18      &lt;div onChange={this.onChangeValue}&gt;
+19        &lt;input type=&quot;radio&quot; value=&quot;Male&quot; name=&quot;gender&quot; /&gt; Male
+20        &lt;input type=&quot;radio&quot; value=&quot;Female&quot; name=&quot;gender&quot; /&gt; Female
+21        &lt;input type=&quot;radio&quot; value=&quot;Other&quot; name=&quot;gender&quot; /&gt; Other
+22      &lt;/div&gt;
+23    );
+24  }
+25}
+26
+27export default Demo1;</code></pre>
+<p>jsx</p>
+<p>The function <span class="jsx-3120878690"><code>onChangeValue()</code></span> is attached with <span class="jsx-3120878690"><code>div</code></span> so as soon as the user selects any radio button, it will be reflected in the function.</p>
+<h2 id="using-a-radio-button-group-with-a-form">Using a Radio Button Group with a Form</h2>
+<p>The previous example used radio buttons with a change action, but you can also use radio button groups with a form.</p>
+<p>Set up a form with a radio button group like this.</p>
+<pre><code>1  render() {
+2    return (
+3      &lt;form onSubmit={this.formSubmit}&gt;
+4        &lt;div className=&quot;radio&quot;&gt;
+5          &lt;label&gt;
+6            &lt;input
+7              type=&quot;radio&quot;
+8              value=&quot;Male&quot;
+9              checked={this.state.selectedOption === &quot;Male&quot;}
+10              onChange={this.onValueChange}
+11            /&gt;
+12            Male
+13          &lt;/label&gt;
+14        &lt;/div&gt;
+15        &lt;div className=&quot;radio&quot;&gt;
+16          &lt;label&gt;
+17            &lt;input
+18              type=&quot;radio&quot;
+19              value=&quot;Female&quot;
+20              checked={this.state.selectedOption === &quot;Female&quot;}
+21              onChange={this.onValueChange}
+22            /&gt;
+23            Female
+24          &lt;/label&gt;
+25        &lt;/div&gt;
+26        &lt;div className=&quot;radio&quot;&gt;
+27          &lt;label&gt;
+28            &lt;input
+29              type=&quot;radio&quot;
+30              value=&quot;Other&quot;
+31              checked={this.state.selectedOption === &quot;Other&quot;}
+32              onChange={this.onValueChange}
+33            /&gt;
+34            Other
+35          &lt;/label&gt;
+36        &lt;/div&gt;
+37        &lt;div&gt;
+38          Selected option is : {this.state.selectedOption}
+39        &lt;/div&gt;
+40        &lt;button className=&quot;btn btn-default&quot; type=&quot;submit&quot;&gt;
+41          Submit
+42        &lt;/button&gt;
+43      &lt;/form&gt;
+44    );
+45  }</code></pre>
+<p>jsx</p>
+<p>As you can see in the above example, in the form there are three different radio buttons along with the submit button, and each radio button is attached with one <span class="jsx-3120878690"><code>onChange</code></span> function, called <span class="jsx-3120878690"><code>onValueChange()</code></span>.</p>
+<pre><code>1onValueChange(event) {
+2    this.setState({
+3      selectedOption: event.target.value
+4    });
+5  }</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>onChangeValue()</code></span> function gets called when the user selects the radio button from the group, and the value is updated into the component state.</p>
+<p>When the user is done with the selection, they may want to submit the form. The submit method is called <span class="jsx-3120878690"><code>formSubmit()</code></span>.</p>
+<pre><code>1formSubmit(event) {
+2    event.preventDefault();
+3    console.log(this.state.selectedOption)
+4  }</code></pre>
+<p>jsx</p>
+<p>Once the user submits the form, pass the state values to the API endpoint to post or update the data.</p>
+<p>The complete example should look like this.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3class Demo2 extends Component {
+4  constructor() {
+5    super();
+6    this.state = {
+7      name: &quot;React&quot;
+8    };
+9    this.onValueChange = this.onValueChange.bind(this);
+10    this.formSubmit = this.formSubmit.bind(this);
+11  }
+12
+13  onValueChange(event) {
+14    this.setState({
+15      selectedOption: event.target.value
+16    });
+17  }
+18
+19  formSubmit(event) {
+20    event.preventDefault();
+21    console.log(this.state.selectedOption)
+22  }
+23
+24  render() {
+25    return (
+26      &lt;form onSubmit={this.formSubmit}&gt;
+27        &lt;div className=&quot;radio&quot;&gt;
+28          &lt;label&gt;
+29            &lt;input
+30              type=&quot;radio&quot;
+31              value=&quot;Male&quot;
+32              checked={this.state.selectedOption === &quot;Male&quot;}
+33              onChange={this.onValueChange}
+34            /&gt;
+35            Male
+36          &lt;/label&gt;
+37        &lt;/div&gt;
+38        &lt;div className=&quot;radio&quot;&gt;
+39          &lt;label&gt;
+40            &lt;input
+41              type=&quot;radio&quot;
+42              value=&quot;Female&quot;
+43              checked={this.state.selectedOption === &quot;Female&quot;}
+44              onChange={this.onValueChange}
+45            /&gt;
+46            Female
+47          &lt;/label&gt;
+48        &lt;/div&gt;
+49        &lt;div className=&quot;radio&quot;&gt;
+50          &lt;label&gt;
+51            &lt;input
+52              type=&quot;radio&quot;
+53              value=&quot;Other&quot;
+54              checked={this.state.selectedOption === &quot;Other&quot;}
+55              onChange={this.onValueChange}
+56            /&gt;
+57            Other
+58          &lt;/label&gt;
+59        &lt;/div&gt;
+60        &lt;div&gt;
+61          Selected option is : {this.state.selectedOption}
+62        &lt;/div&gt;
+63        &lt;button className=&quot;btn btn-default&quot; type=&quot;submit&quot;&gt;
+64          Submit
+65        &lt;/button&gt;
+66      &lt;/form&gt;
+67    );
+68  }
+69}
+70
+71export default Demo2;</code></pre>
+<p>jsx</p>
+<p>This complete example used a radio button group with the form. As soon as the user submits the form, the value will be used for the API endpoint communication. The <span class="jsx-3120878690"><code>checked</code></span> property of the radio button is responsible to selected it once it finds the suitable value from the current state.</p>
+<h2 id="radio-buttons-from-third-party-libraries">Radio Buttons from Third-party Libraries</h2>
+<p>You can use HTML input with the type as radio button. If you need to use different styling, make use of some third-party libraries that provide radio button elements:</p>
+<ul>
+<li>material-ui</li>
+<li>react-radio-buttons</li>
+<li>react-radio-button</li>
+<li>react-radio-button-group</li>
+<li>react-radio-group</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide explained how to use radio buttons as a group, how to use them with a form element, and where to find radio buttons from various third-party sources.</p>
+<p>That’s the power of managing forms with radio button groups. If you have any queries, feel free to reach out at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>289</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

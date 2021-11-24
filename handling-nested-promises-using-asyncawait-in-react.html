@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>handling-nested-promises-using-asyncawait-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="handling-nested-promises-using-asyncawait-in-react">Handling Nested Promises Using Async/Await in React</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Sep 25, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>18,584 Views</p></li>
+<li><p>Sep 25, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>18,584 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-problemoverviewnestedpromises" class="menu-link">Problem Overview: Nested Promises</a></li>
+<li><a href="#module-interimsolutionpromisechaining" class="menu-link">Interim Solution: Promise Chaining</a></li>
+<li><a href="#module-theoptimalsolutionasyncawait" class="menu-link">The Optimal Solution: Async/Await</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Asynchronous code always carries cognitive overhead with it. It may be that the human mind is used to thinking synchronously and so trying to make sense of asynchronous code can seem daunting. There have been many constructs throughout the years that try to mitigate this complexity. For a long time, the only way to model asynchronicity in JavaScript code was via callbacks. The problem with callbacks was that they left a trail of “spaghetti” code through your application—you may be familiar with the term “callback hell”.</p>
+<p>Modern JavaScript introduced a new way of modeling asynchronous code: Promises. Promises gave JavaScript and React developers the ability to write asynchronous code without callbacks—however, it is still easy to nest promises in the old style, and this can lead to hard-to-read code.</p>
+<p>The new async/await keywords introduced into modern JavaScript aim to solve this problem by providing “syntactic sugar” on top of promises. In this guide, you will learn how to take advantage of async/await in order to simplify nested promises in your React app. You will see how you can not only cut the amount of asynchronous code you write in half but also remove most of the mental complexity that is involved. You will see how async/await syntax allows you to reason about asynchronous code in a synchronous manner.</p>
+<p>Let’s get started.</p>
+<h2 id="problem-overview-nested-promises">Problem Overview: Nested Promises</h2>
+<p>It is not uncommon to see code written in the following fashion. Below, you can see some typical asynchronous code that is using nested promises in order to make successive HTTP requests to get “fish and chips”. Most of the time, the reason you will see code written like this is that often it is your first instinct in writing asynchronous code.</p>
+<pre><code>1// my-component.jsx
+2
+3// We have to get chips after we get fish...
+4getFishAndChips = () =&gt; {
+5    fetch(this.fishApiUrl) // Request fish
+6        .then(fishRes =&gt; {
+7            fishRes.json().then(fish =&gt; {
+8                this.fish = fish;
+9
+10                const fishIds = fish.map(fish =&gt; fish.id);
+11
+12                fetch( // Request chips using fish ids
+13                        this.chipsApiUrl,
+14                        {
+15                            method: &#39;POST&#39;,
+16                            body: JSON.stringify({ fishIds })
+17                        }
+18                    )
+19                    .then(chipsRes =&gt; {
+20                        chipsRes.json().then(chips =&gt; {
+21                            this.chips = chips;
+22                        })
+23                    })
+24            })
+25        })
+26}</code></pre>
+<p>javascript</p>
+<p>The above code nests two <span class="jsx-3120878690"><code>fetch</code></span> calls in order to ensure that you request chips after you request fish. This is because, in order to request chips, you need to send an array of fish IDs with the POST request. This works, however, there is a huge readability problem here. Writing the above code is akin to trading callback hell for … promise hell! Who wants to do that!? It is possible to dramatically reduce the amount of code needed for this feature. Let’s take a look at promise chaining!</p>
+<h2 id="interim-solution-promise-chaining">Interim Solution: Promise Chaining</h2>
+<p>The first way to remove the nesting of these <span class="jsx-3120878690"><code>fetch</code></span> calls is to use what is known as promise chaining. Promise chaining can be achieved by simply returning another promise from within a call to <span class="jsx-3120878690"><code>Promise.then</code></span>. The following example shows how to do this:</p>
+<pre><code>1// We have to get chips after we get fish...
+2getFishAndChips = () =&gt; {
+3    fetch(this.fishApiUrl) // Request fish
+4        .then(response =&gt; response.json())
+5        .then(fish =&gt; {
+6            this.fish = fish;
+7
+8            const fishIds = fish.map(fish =&gt; fish.id);
+9
+10            return fetch( // Request chips using fish ids
+11                        this.chipsApiUrl,
+12                        {
+13                            method: &#39;POST&#39;,
+14                            body: JSON.stringify({ fishIds })
+15                        }
+16                    );
+17        })
+18        .then(response =&gt; response.json())
+19        .then(chips =&gt; {
+20            this.chips = chips;
+21        });
+22}</code></pre>
+<p>javascript</p>
+<p>This is great! The code is much more maintainable, succinct, and readable. But we can do even better! With the new async/await syntax that has been brought into JavaScript, we can remove the use of multiple calls to <span class="jsx-3120878690"><code>Promise.then</code></span> entirely! You will see how this can be achieved in the next section.</p>
+<h2 id="the-optimal-solution-asyncawait">The Optimal Solution: Async/Await</h2>
+<p>The async/await keywords are a wonderful mechanism for modeling asynchronous control-flow in computer programs. In JavaScript, these keywords are syntactic sugar on top of Promises—they abstract away the calls to <span class="jsx-3120878690"><code>Promise.then</code></span>. In the following code, we refactor the <span class="jsx-3120878690"><code>getFishAndChips</code></span> function to use async/await.</p>
+<pre><code>1// We have to get chips after we get fish...
+2getFishAndChips = async () =&gt; {
+3    const fish = await fetch(this.fishApiUrl).then(response =&gt; response.json());
+4
+5    const fishIds = fish.map(fish =&gt; fish.id),
+6    chipReqOpts = { method: &#39;POST&#39;, body: JSON.stringify({ fishIds }) };
+7
+8    const chips = await fetch(this.chipsApiUrl, chipReqOpts).then(response =&gt; response.json());
+9}</code></pre>
+<p>javascript</p>
+<p>Wow! Compare the first code snippet from the first section with this code. What a difference! We have dramatically condensed the code used while achieving the same effect. This code is easier to read and maintain. You can easily see how a lot of the mental complexity is reduced by being able to reason about the code in a synchronous fashion—no nesting required! All that is needed is to mark your async function with the <span class="jsx-3120878690"><code>async</code></span> keyword. This enables you to use the <span class="jsx-3120878690"><code>await</code></span> keyword to resolve promises for you! The async/await mechanism for control flow is an extremely powerful way to reason about anything asynchronous within your app.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>It can be difficult to compose chained sequences of asynchronous actions within your app. Nesting promises is an unfortunate byproduct of implementing this. But thankfully, as you’ve seen in this guide, avoiding and/or refactoring nested promises is easily achieved via either promise chaining or async/await syntax. Of these two solutions, the most readable code was written using async/await syntax, so strive to use this in your own app!</p>
+<p>You can now be confident in writing modern and readable asynchronous code within your React components! For more information, check out the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">documentation</a> for async/await syntax.</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

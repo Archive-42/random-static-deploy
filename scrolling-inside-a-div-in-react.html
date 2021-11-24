@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>scrolling-inside-a-div-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7450715d-ef86-4d3e-a9ce-3add2c879a77.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Vartika Chaudhary</p>
+<h1 id="scrolling-inside-a-div-in-react">Scrolling Inside a div in React</h1>
+<h3 id="vartika-chaudhary">Vartika Chaudhary</h3>
+<ul>
+<li><p>Nov 4, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>54,347 Views</p></li>
+<li><p>Nov 4, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>54,347 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>42</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-overview" class="menu-link">Overview</a></li>
+<li><a href="#module-smoothscrolling" class="menu-link">Smooth Scrolling</a></li>
+<li><a href="#module-singledirectionscrolling" class="menu-link">Single-Direction Scrolling</a></li>
+<li><a href="#module-bidirectionalscrolling" class="menu-link">Bi-directional Scrolling</a></li>
+<li><a href="#module-disablingthescrollbarwhenapopupappears" class="menu-link">Disabling the Scroll Bar when a Popup Appears</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Scrolling is defined as sliding-effect movement on images, text, or graphics across the computer display screen horizontally, vertically, or both. When developing web pages, you can enable scrolling by default for the complete webpage or only the areas where it is required.</p>
+<p>The <span class="jsx-3120878690"><code>div</code></span> is a tag element provided by the HTML language to reserve a particular part of the computer screen so that certain features can be added to the webpage. This makes the webpage work more efficiently and look more attractive to a user.</p>
+<p>In this guide, you will learn about different types of scrolling inside the <span class="jsx-3120878690"><code>div</code></span> tag and how to disable scroll movement when a popup appears.</p>
+<h2 id="overview">Overview</h2>
+<p>Scrolling inside a <span class="jsx-3120878690"><code>div</code></span> tag can be accomplished through three methods: smooth scrolling, single-direction scrolling, and bi-directional scrolling.</p>
+<p>To understand all these scrolling methods, consider the following example: Suppose you want to build a webpage that contains basic information about birds in a text format. The webpage consists of three different <span class="jsx-3120878690"><code>div</code></span>s. You will get to apply each scrolling type to each of these <span class="jsx-3120878690"><code>div</code></span>s.</p>
+<h2 id="smooth-scrolling">Smooth Scrolling</h2>
+<p>Smooth scrolling can be applied when there is a single-pixel increment in every scroll—that is, the scroll is so smooth that you can read as you scroll further.</p>
+<p>Continuing the previous example: The first <span class="jsx-3120878690"><code>div</code></span> contains the heading of the page and three buttons at the end. The first button directs you to the birds’ growth content, the second to their lifestyle content, and the third to their food intake content. When you click on any of these buttons, you are redirected to that content within the same webpage. Here, smooth scrolling is applied to the buttons for smooth redirection. Below is the code for creating the <span class="jsx-3120878690"><code>div</code></span> and adding data into the <span class="jsx-3120878690"><code>div</code></span>.</p>
+<pre><code>1&lt;body&gt;
+2 &lt;div id=”menu”&gt;&lt;/div&gt;
+3&lt;/body&gt;</code></pre>
+<p>html</p>
+<pre><code>1class Article_1 extends Component {
+2 render() {
+3  return(
+4   &lt;div&gt;
+5    &lt;h1&gt;BIRDS&lt;/h1&gt;
+6    &lt;br/&gt;
+7    &lt;button&gt;&lt;a href=&quot;#growth&quot;&gt;Birds: Growth&lt;/a&gt;&lt;/button&gt;
+8    &lt;button&gt;&lt;a href=&quot;#lifestyle&quot;&gt;Birds: Lifestyle&lt;/a&gt;&lt;/button&gt;
+9    &lt;button&gt;&lt;a href=&quot;#food&quot;&gt;Birds: Food&lt;/a&gt;&lt;/button&gt;
+10   &lt;/div&gt;
+11  )
+12 }
+13}
+14
+15ReactDOM.render(&lt;Article_1/&gt;, document.querySelector(&#39;#menu&#39;));</code></pre>
+<p>javascript</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/6dc22f4b-040c-44f7-902d-9de88ae5e421_smooth_1.html" /><figcaption aria-hidden="true">menu div</figcaption>
+</figure>
+<p>The smooth scrolling is achieved by placing <span class="jsx-3120878690"><code>scroll-behavior: smooth</code></span> in the <span class="jsx-3120878690"><code>html</code></span> inside the <span class="jsx-3120878690"><code>style</code></span> tag.</p>
+<pre><code>1html {
+2 scroll-behaviour: smooth;
+3}</code></pre>
+<p>css</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/64a3ff9c-3328-4eac-9670-d54a57d4be14_smooth_2.html" /><figcaption aria-hidden="true">smooth scroll</figcaption>
+</figure>
+<h2 id="single-direction-scrolling">Single-Direction Scrolling</h2>
+<p>Single-direction scrolling can be applied when the scroll movement is either horizontal or vertical.</p>
+<p>Continuing the previous example: When the first button, <strong>Birds: Growth</strong>, is clicked, it redirects to the content of the second <span class="jsx-3120878690"><code>div</code></span>, which stores information about birds’ growth. The information in this <span class="jsx-3120878690"><code>div</code></span> will be presented in a vertical overflow manner. Below is the code for creating the <span class="jsx-3120878690"><code>div</code></span> and adding the information into it.</p>
+<pre><code>1&lt;body&gt;
+2 …
+3 &lt;div id=”growth”&gt;&lt;/div&gt;
+4&lt;/body&gt;</code></pre>
+<p>html</p>
+<pre><code>1class Article_2 extends Component {
+2 render() {
+3  return(
+4   &lt;div&gt;
+5    &lt;h2&gt;Birds: Growth&lt;/h2&gt;
+6    &lt;p&gt;…..&lt;/p&gt;
+7   &lt;/div&gt;
+8  )
+9 }
+10}
+11
+12ReactDOM.render(&lt;Article_2/&gt;, document.querySelector(&#39;#growth&#39;));</code></pre>
+<p>javascript</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4f00f4d8-d6e2-4344-b3ca-7123e47ee876_single_direction_1.html" /><figcaption aria-hidden="true">before single-scroll</figcaption>
+</figure>
+<p>To fit all the text inside the div, the single-direction scrolling method will be used. You can apply it by placing the <span class="jsx-3120878690"><code>overflow-y:scroll</code></span> in the id <span class="jsx-3120878690"><code>growth</code></span> inside the <span class="jsx-3120878690"><code>style</code></span> tag.</p>
+<pre><code>1#growth {
+2 ...
+3 overflow-y: scroll;
+4}</code></pre>
+<p>css</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/159167a0-642b-475c-9ed7-3db1b95e62de_single_direction_2.html" /><figcaption aria-hidden="true">after single-scroll</figcaption>
+</figure>
+<p>Notice the scroll bar on the right side of the <span class="jsx-3120878690"><code>div</code></span>.</p>
+<h2 id="bi-directional-scrolling">Bi-directional Scrolling</h2>
+<p>Bi-directional scrolling can be applied when the scroll movement is on both axie, horizontal and vertical.</p>
+<p>Continuing the previous example: When the second button, *<em>Birds: Lifestyle</em>,* is clicked, it redirects to the content of third <span class="jsx-3120878690"><code>div</code></span>, which stores the information about birds’ lifestyle. The information in this <span class="jsx-3120878690"><code>div</code></span> will be represented in both a horizontal and vertical overflow manner. Below is the code for creating the <span class="jsx-3120878690"><code>div</code></span> and adding the information into it.</p>
+<pre><code>1&lt;body&gt;
+2 …
+3 &lt;div id=”lifestyle”&gt;&lt;/div&gt;
+4 ....
+5&lt;/body&gt;</code></pre>
+<p>html</p>
+<pre><code>1class Article_3 extends Component {
+2 render() {
+3  return(
+4   &lt;div&gt;
+5    &lt;h2&gt;Birds: Lifestyle&lt;/h2&gt;
+6    &lt;p&gt;…..&lt;/p&gt;
+7   &lt;/div&gt;
+8  )
+9 }
+10}
+11
+12ReactDOM.render(&lt;Article_3/&gt;, document.querySelector(&#39;#lifestyle&#39;));</code></pre>
+<p>javascript</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/473b7fb8-1e7e-400e-a311-0543be858c25_bi-directional_1.html" /><figcaption aria-hidden="true">before bi-scroll</figcaption>
+</figure>
+<p>To fit all the text inside the div, the bi-directional scrolling method will be used. You can apply it by placing the <span class="jsx-3120878690"><code>overflow:scroll</code></span> and <span class="jsx-3120878690"><code>white-space:nowrap</code></span> in the id <span class="jsx-3120878690"><code>lifestyle</code></span> inside the <span class="jsx-3120878690"><code>style</code></span> tag.</p>
+<pre><code>1#lifestyle {
+2 ….
+3 overflow: scroll;
+4 white-space: nowrap;
+5}</code></pre>
+<p>css</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1105b106-4ee7-4b05-901f-4be5caf209b4_bi-directional_2.html" /><figcaption aria-hidden="true">after bi-scroll</figcaption>
+</figure>
+<p>Notice the scroll bar at the bottom and right side of the <span class="jsx-3120878690"><code>div</code></span>.</p>
+<h2 id="disabling-the-scroll-bar-when-a-popup-appears">Disabling the Scroll Bar when a Popup Appears</h2>
+<p>A popups presents a dialog box that shows up on the computer screen whenever the webpage wants to give you a notification, alert, or confirmation.</p>
+<p>Continuing the previous example: After reading all the information, you can exit the web page by clicking the <strong>Exit</strong> button. This opens up a dialog box that shows a goodbye message. While the pop-up is present on the screen, make sure that the scroll bar behind the webpage is disabled. Below is the code for creating the button and popup:</p>
+<pre><code>1&lt;body&gt;
+2 ….
+3 &lt;div id=”exit”&gt;&lt;/div&gt;
+4&lt;/body&gt;</code></pre>
+<p>html</p>
+<pre><code>1function popup() {
+2 alert(&#39;Thank you for visiting!!&#39;);
+3}
+4
+5const click = (
+6 &lt;button onClick={popup}&gt;Exit&lt;/button&gt;
+7);
+8
+9ReactDOM.render(click, document.querySelector(&#39;#exit&#39;));</code></pre>
+<p>javascript</p>
+<p>In the image below, the scroll bar is accessible while the popup is on the screen.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ef2c99a3-237c-4c6d-b74c-2d306fe1c6f0_popup_1.html" /><figcaption aria-hidden="true">enable scroll</figcaption>
+</figure>
+<p>To stop the scrolling behind the dialog box, add <span class="jsx-3120878690"><code>addEventListener()</code></span> and <span class="jsx-3120878690"><code>removeEventListener()</code></span> functions to the <span class="jsx-3120878690"><code>popup()</code></span> function.</p>
+<pre><code>1function noscroll() {
+2 window.scrollTo(0,0);
+3}
+4
+5function popup() {
+6 alert(&#39;Thank you for visiting&#39;);
+7 window.addEventListener(&quot;scroll&quot;, noscroll);
+8 window.removeEventListener(&quot;scroll&quot;, noscroll);
+9}
+10
+11const click = (
+12 &lt;button onClick={popup}&gt;Exit&lt;/button&gt;
+13);
+14
+15ReactDOM.render(click, document.querySelector(&#39;#exit&#39;));</code></pre>
+<p>javascript</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7418600c-faef-4e12-877a-5960abdb6764_popup_2.html" /><figcaption aria-hidden="true">disable scroll</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>As a frontend developer, scrolling is a basic feature you need on your webpages. The scrolling provided by default is applied to the whole webpage, whereas manually added scrolling is used to avoid the overflow of any <span class="jsx-3120878690"><code>div</code></span>. Scroll movement can be applied to a single axis or both axes. You can also disable the scrolling feature so it doesn’t interfere with a popup. Refer to information on the <span class="jsx-3120878690"><code>react-scroll</code></span> <a href="https://www.npmjs.com/package/react-scroll">component</a> to learn more about animating vertical scrolling.</p>
+<p>42</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

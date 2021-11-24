@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>move-items-between-two-components-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="move-items-between-two-components-in-react">Move Items Between Two Components in React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 10, 2020</p></li>
+<li><p>10 Min read</p></li>
+<li><p>5,705 Views</p></li>
+<li><p>Nov 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">10 Min</span> read</p></li>
+<li><p>5,705 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>13</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-usecase" class="menu-link">Use Case</a></li>
+<li><a href="#module-implementation" class="menu-link">Implementation</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React allows you to share data between components through props. Your component tree can be structured such that two <em>sibling components</em> can share the same data through a parent component’s state. This idea can be extended to many use cases, such as moving data or items between two components to convey different meanings to the user.</p>
+<p>In this guide, you’ll learn how to move items between two components in React using a practical example.</p>
+<h2 id="use-case">Use Case</h2>
+<p>A practical use case where you would need to move items between two or more components would be a task-managing web app where employers update the status of given tasks. In this example, you’ll build a simple version of a task manager app and move items from one component to another using props. For brevity and simplicity, assume that each task has only two possible statuses,<span class="jsx-3120878690"><code>Completed</code></span> or <span class="jsx-3120878690"><code>Pending</code></span>. On clicking a button, you can move a particular task from <span class="jsx-3120878690"><code>Pending</code></span> to <span class="jsx-3120878690"><code>Completed</code></span> and vice versa.</p>
+<h2 id="implementation">Implementation</h2>
+<p>Start by creating an empty React project.</p>
+<pre><code>1npx create-react-app react-taskmanager</code></pre>
+<p>Head over to <span class="jsx-3120878690"><code>App.css</code></span> and add the following styles.</p>
+<pre><code>1.App{
+2  background: lightgray;
+3  height: 100vh;
+4}
+5
+6
+7.items{
+8  padding: 60px 160px;
+9  display: flex;
+10  /* align-items: center; */
+11  justify-content: space-between;
+12}
+13
+14.pending,.completed{
+15  background: #ffffff;
+16  width: 400px;
+17  padding: 10px 20px;
+18  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+19}
+20
+21.item{
+22  display: flex;
+23  align-items: center;
+24  justify-content: space-between;
+25}
+26
+27button{
+28  cursor: pointer;
+29  padding: 5px 10px;
+30  outline: none;
+31  border-radius: 10px;
+32  border: none;
+33}
+34
+35.mark_complete{
+36  background: greenyellow;
+37}
+38
+39.mark_pending{
+40  background: tomato;
+41  color: #ffffff;
+42}</code></pre>
+<p>css</p>
+<p>Inside the <span class="jsx-3120878690"><code>src</code></span> folder, create three components: <span class="jsx-3120878690"><code>Items.js</code></span>, <span class="jsx-3120878690"><code>Pending.js</code></span>, and <span class="jsx-3120878690"><code>Completed.js</code></span>. As their names suggest, these components will be used for rendering all items, pending items, and completed items, respectively. Have a look at the following boilerplates for reference.</p>
+<pre><code>1import React from &#39;react&#39;
+2
+3export const Pending = () =&gt; {
+4
+5    return (
+6        &lt;div className=&quot;pending&quot;&gt;
+7            &lt;h1&gt;Pending&lt;/h1&gt; 
+8        &lt;/div&gt;
+9    )
+10}</code></pre>
+<p>jsx</p>
+<p>Similarly, you can create <span class="jsx-3120878690"><code>Completed.js</code></span>.</p>
+<pre><code>1import React from &#39;react&#39;
+2
+3export const Completed = () =&gt; {
+4
+5    return (
+6        &lt;div className=&quot;completed&quot;&gt;
+7            &lt;h1&gt;Completed&lt;/h1&gt; 
+8        &lt;/div&gt;
+9    )
+10}</code></pre>
+<p>jsx</p>
+<p>Render both these components inside <span class="jsx-3120878690"><code>Items.js</code></span>.</p>
+<pre><code>1import React from &#39;react&#39;
+2import { Completed } from &#39;./Completed&#39;
+3import { Pending } from &#39;./Pending&#39;
+4
+5export const Items = () =&gt; {
+6
+7    return (
+8        &lt;div class=&quot;items&quot;&gt;
+9            &lt;Pending /&gt;
+10               &lt;Completed /&gt;
+11        &lt;/div&gt;
+12    )
+13}</code></pre>
+<p>jsx</p>
+<h3 id="creating-the-items-component">Creating the Items Component</h3>
+<p>As the <span class="jsx-3120878690"><code>Items Component</code></span> is the parent component for both <span class="jsx-3120878690"><code>Pending.js</code></span> and <span class="jsx-3120878690"><code>Completed.js</code></span>, it will need a state to store all the items and a method that will move items from one component to another. First, create a piece of state to store the items or tasks with dummy data, as shown.</p>
+<pre><code>1import React,{useState,useEffect} from &#39;react&#39;
+2import { Completed } from &#39;./Completed&#39;
+3import { Pending } from &#39;./Pending&#39;
+4
+5export const Items = () =&gt; {
+6    const [items,setItems]=useState([
+7        {
+8            id: 1,
+9            title:&#39;Manage ORM for client XYZ&#39;,
+10            status:&#39;Pending&#39;
+11        },
+12        {
+13            id: 2,
+14            title:&#39;Review Summer Intern project report&#39;,
+15            status:&#39;Pending&#39;
+16        },
+17        {
+18            id: 3,
+19            title:&#39;Host Landing Page for Gerry Pizza Shop&#39;,
+20            status:&#39;Pending&#39;
+21        },
+22        {
+23            id: 4,
+24            title:&#39;Release Junior Developer payment&#39;,
+25            status:&#39;Completed&#39;
+26        },
+27        {
+28            id: 5,
+29            title:&#39;Discuss Digital Marketing requirements &#39;,
+30            status:&#39;Completed&#39;
+31        },
+32        {
+33            id: 6,
+34            title:&#39;Discuss technology budget with CTO&#39;,
+35            status:&#39;Pending&#39;
+36        }
+37    ])
+38    return (
+39        &lt;div class=&quot;items&quot;&gt;
+40           &lt;Pending/&gt;
+41           &lt;Completed/&gt;
+42        &lt;/div&gt;
+43    )
+44}</code></pre>
+<p>jsx</p>
+<p>Every item is an object that consists of several properties, including a <span class="jsx-3120878690"><code>status</code></span> property. The <span class="jsx-3120878690"><code>status</code></span> property is used to indicate the component in which this item lies. For instance, if the status of an item says <span class="jsx-3120878690"><code>Pending</code></span>, it will be rendered inside the <span class="jsx-3120878690"><code>Pending</code></span> component, and you can move it to the <span class="jsx-3120878690"><code>Completed</code></span> component. Thus, moving an item from one component to another simply means changing the <span class="jsx-3120878690"><code>status</code></span> property for that particular item.</p>
+<p>Create a method that takes in an <span class="jsx-3120878690"><code>id</code></span> and <span class="jsx-3120878690"><code>newStatus</code></span> for that item. Loop through all the <span class="jsx-3120878690"><code>items</code></span> and find the item to update using the <span class="jsx-3120878690"><code>id</code></span> passed to this method, and change its status to <span class="jsx-3120878690"><code>newStatus</code></span>.</p>
+<pre><code>1const updateStatus=(id,newStatus)=&gt;{
+2        let allItems=items;
+3        allItems=allItems.map(item=&gt;{
+4            if(item.id===id){
+5                console.log(&#39;in here&#39;)
+6                item.status=newStatus;
+7            }
+8        return item
+9        })
+10        setItems(allItems)
+11  }</code></pre>
+<p>javascript</p>
+<p>Finally, pass both <span class="jsx-3120878690"><code>items</code></span> and <span class="jsx-3120878690"><code>updateStatus</code></span> to the <span class="jsx-3120878690"><code>Completed</code></span> and <span class="jsx-3120878690"><code>Pending</code></span> components.</p>
+<pre><code>1&lt;Pending items={items} setItems={setItems} updateStatus={updateStatus}/&gt;
+2&lt;Completed items={items} setItems={setItems} updateStatus={updateStatus}/&gt;</code></pre>
+<p>jsx</p>
+<p>Now both the above components can call the <span class="jsx-3120878690"><code>updateStatus</code></span> method by accessing it through props. You can have a look at the entire <span class="jsx-3120878690"><code>Items</code></span> component below.</p>
+<pre><code>1import React,{useState,useEffect} from &#39;react&#39;
+2import { Completed } from &#39;./Completed&#39;
+3import { Pending } from &#39;./Pending&#39;
+4
+5export const Items = () =&gt; {
+6    const [items,setItems]=useState([
+7        {
+8            id: 1,
+9            title:&#39;Manage ORM for client XYZ&#39;,
+10            status:&#39;Pending&#39;
+11        },
+12        {
+13            id: 2,
+14            title:&#39;Review Summer Intern project report&#39;,
+15            status:&#39;Pending&#39;
+16        },
+17        {
+18            id: 3,
+19            title:&#39;Host Landing Page for Gerry Pizza Shop&#39;,
+20            status:&#39;Pending&#39;
+21        },
+22        {
+23            id: 4,
+24            title:&#39;Release Junior Developer payment&#39;,
+25            status:&#39;Completed&#39;
+26        },
+27        {
+28            id: 5,
+29            title:&#39;Discuss Digital Marketing requirements &#39;,
+30            status:&#39;Completed&#39;
+31        },
+32        {
+33            id: 6,
+34            title:&#39;Discuss technology budget with CTO&#39;,
+35            status:&#39;Pending&#39;
+36        }
+37    ])
+38    const updateStatus=(id,newStatus)=&gt;{
+39        let allItems=items;
+40        allItems=allItems.map(item=&gt;{
+41            if(item.id===id){
+42                console.log(&#39;in here&#39;)
+43                item.status=newStatus;
+44            }
+45        return item
+46        })
+47        setItems(allItems)
+48    }
+49    return (
+50        &lt;div class=&quot;items&quot;&gt;
+51           &lt;Pending items={items} setItems={setItems} updateStatus={updateStatus}/&gt;
+52           &lt;Completed items={items} setItems={setItems} updateStatus={updateStatus}/&gt;
+53        &lt;/div&gt;
+54    )
+55}</code></pre>
+<p>jsx</p>
+<h3 id="moving-items-by-calling-updatestatus">Moving Items by Calling updateStatus()</h3>
+<p>The final step is to consume the props from the <span class="jsx-3120878690"><code>Items</code></span> component inside the <span class="jsx-3120878690"><code>Pending</code></span> and <span class="jsx-3120878690"><code>Completed</code></span> components to render the list of items and fire the <span class="jsx-3120878690"><code>updateStatus()</code></span> for each item, moving that item from its current component to the next component. You can <em>destructure</em> <span class="jsx-3120878690"><code>items</code></span> and <span class="jsx-3120878690"><code>updateStatus()</code></span> directly from props and loop through them, as shown below. Attach an <span class="jsx-3120878690"><code>onClick()</code></span> event to the <strong>Mark Complete</strong> button, and pass in the current item <span class="jsx-3120878690"><code>id</code></span> and new status <span class="jsx-3120878690"><code>Completed</code></span> as parameters. Inside this component, only render the item having the status <span class="jsx-3120878690"><code>Pending</code></span>.</p>
+<pre><code>1import React from &#39;react&#39;
+2
+3export const Pending = ({items,setItems,updateStatus}) =&gt; {
+4
+5    return (
+6        &lt;div className=&quot;pending&quot;&gt;
+7            &lt;h1&gt;Pending&lt;/h1&gt;
+8
+9                {
+10                    items &amp;&amp; items.map(item=&gt;{
+11                        if(item &amp;&amp; item.status===&#39;Pending&#39;)
+12                        return &lt;&gt;&lt;p className=&quot;item&quot; key={item.id}&gt;{item.title} &lt;button  className=&quot;mark_complete&quot; key={item.id} onClick={()=&gt;{updateStatus(item.id,&#39;Completed&#39;)}}&gt;Mark Complete&lt;/button&gt;&lt;/p&gt;&lt;/&gt;
+13                    })
+14                }
+15 
+16        &lt;/div&gt;
+17    )
+18}</code></pre>
+<p>jsx</p>
+<p>Similarly, you can create the <span class="jsx-3120878690"><code>Completed</code></span> component and pass in <span class="jsx-3120878690"><code>Pending</code></span> as the second parameter to the <span class="jsx-3120878690"><code>updateStatus()</code></span> method. Here you only need to render the item having the status <span class="jsx-3120878690"><code>Completed</code></span>.</p>
+<pre><code>1import React from &#39;react&#39;
+2
+3export const Completed = ({items,setItems,updateStatus}) =&gt; {
+4    return (
+5        &lt;div className=&quot;completed&quot;&gt;
+6            &lt;h1&gt;Completed&lt;/h1&gt;
+7            {
+8                    items &amp;&amp; items.map(item=&gt;{
+9                        if(item &amp;&amp; item.status===&#39;Completed&#39;)
+10                        return &lt;&gt;&lt;p className=&quot;item&quot; key={item.id}&gt;{item.title} &lt;button className=&quot;mark_pending&quot; key={item.id} onClick={()=&gt;{updateStatus(item.id,&#39;Pending&#39;)}}&gt;Mark Pending&lt;/button&gt;&lt;/p&gt;&lt;/&gt;
+11                    })
+12                }
+13 
+14        &lt;/div&gt;
+15    )
+16}</code></pre>
+<p>jsx</p>
+<p>When you click the buttons from the list in the card, the corresponding item’s status is changed through <span class="jsx-3120878690"><code>props</code></span>, causing the <span class="jsx-3120878690"><code>Items</code></span> component to <em>re-render</em>. Since both the <span class="jsx-3120878690"><code>Completed</code></span> and <span class="jsx-3120878690"><code>Pending</code></span> components` also re-render, the item renders inside the other component on the DOM and it seems that the item has moved from one component to another.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>You can use the example demonstrated in this guide for a variety of use cases, such as passing a username from one component to another in a multi-step signup form. Usually, data or items that are shared between two or more components only <em>seem</em> to be owned by them, but in reality they are owned by the parent component. You can explore libraries like React-Router to pass items or data via your router or Context API and Redux to build a global state and move items by dispatching actions. This type of pattern is preferred for large and complex apps to avoid hefty prop drilling.</p>
+<p>If you have any questions regarding this guide, feel free to ask me at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>13</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

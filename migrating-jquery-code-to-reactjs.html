@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>migrating-jquery-code-to-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="migrating-jquery-code-to-react.js">Migrating jQuery Code to React.js</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Sep 28, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>7,822 Views</p></li>
+<li><p>Sep 28, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>7,822 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>13</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-referencingdomelements" class="menu-link">Referencing DOM Elements</a></li>
+<li><a href="#module-managingstate" class="menu-link">Managing State</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>jQuery is a widely used JavaScript framework for frontend web development. Some of its main strengths include easily referencing DOM elements, applying actionable items to elements—such as logic when clicking a button—and extensibility with a wide array of libraries already available. However, jQuery tends to do a lot of things that standard JavaScript can already do. Additionally, state management isn’t ready-baked, which React.js already solves as its primary feature.</p>
+<p>Companies like Github are <a href="https://github.blog/2018-09-06-removing-jquery-from-github-frontend/">starting to move away from jQuery</a> toward other things, even vanilla JavaScript. If you plan to slowly transition your existing jQuery code to React.js, this guide will show you a few things you might want to watch out for.</p>
+<h2 id="referencing-dom-elements">Referencing DOM Elements</h2>
+<p>Both jQuery and React.js reference target DOM elements to add additional processing, but their approaches are fundamentally different. Given the following HTML:</p>
+<pre><code>1&lt;button id=&quot;btn-click&quot;&gt;
+2  Click Me
+3&lt;/button&gt;</code></pre>
+<p>HTML</p>
+<p>How does each JavaScript framework attach clickable function logic to it?</p>
+<h3 id="jquery">jQuery</h3>
+<pre><code>1var $btnClick = $(&quot;#btn-click&quot;);
+2
+3$btnClick.on(&quot;click&quot;, function() {
+4  alert(&quot;Button was clicked!&quot;);
+5});</code></pre>
+<p>javascript</p>
+<p>As you can see in jQuery, a developer would have to first reference the DOM element using the <span class="jsx-3120878690"><code>$()</code></span> function and passing either an id reference <span class="jsx-3120878690"><code>#</code></span> or a class reference <span class="jsx-3120878690"><code>.</code></span>. The click-event handler is then passed as a first argument string to the <span class="jsx-3120878690"><code>on()</code></span> function call of a queried element. The second argument is the function itself, which in this case simply alerts, “Button was clicked!”</p>
+<h3 id="react.js">React.js</h3>
+<p>If in jQuery, JavaScript is treated separately from HTML elements (thus the “query” part), React.js treats the rendered HTML UI as part of the container in what’s referred to as a component. The component will contain all the necessary elements to be rendered in a target <span class="jsx-3120878690"><code>&lt;div&gt;</code></span>. The <span class="jsx-3120878690"><code>&lt;button&gt;</code></span> element itself will not be part of the initial HTML. Instead, you might have the following <span class="jsx-3120878690"><code>&lt;div&gt;</code></span> element:</p>
+<pre><code>1&lt;div id=&quot;react-root&quot;&gt;&lt;/div&gt;</code></pre>
+<p>HTML</p>
+<p>You would first have to define a component in a separate JavaScript file that renders the button:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class ButtonComponent extends React.Component {
+4  constructor(props) {
+5    super(props);
+6  }
+7
+8  handleButtonClicked() {
+9    alert(&quot;Button was clicked!&quot;);
+10  }
+11
+12  render() {
+13    return (
+14      &lt;div&gt;
+15        &lt;button onClick={this.handleButtonClicked.bind(this)}&gt;
+16          Click Me
+17        &lt;/button&gt;
+18      &lt;/div&gt;
+19    );
+20  }
+21}</code></pre>
+<p>javascript</p>
+<p>All HTML elements to be rendered by a component are returned as JSX, an extension to JavaScript that allows declaration of HTML-like elements in React.js to define how an interface should be rendered. Notice that no <span class="jsx-3120878690"><code>id</code></span> attribute was set to the <span class="jsx-3120878690"><code>&lt;button&gt;</code></span> element. Instead, you attach an event handler that points to the method definition of <span class="jsx-3120878690"><code>handleButtonClicked()</code></span>. You include a <span class="jsx-3120878690"><code>.bind(this)</code></span> to allow the value of <span class="jsx-3120878690"><code>this</code></span> to be retained throughout the function call. This is a way to pass the instance of the component itself, exposing other methods both innate to a <span class="jsx-3120878690"><code>React.Component</code></span>, such as <span class="jsx-3120878690"><code>setState()</code></span>, or user-defined. You could say that no explicit reference was needed. The main difference compared to jQuery is that a React.js component will store all its UI needs as opposed to jQuery, which assumes that the UI element is rendered in HTML.</p>
+<h2 id="managing-state">Managing State</h2>
+<p>Managing the value of a JavaScript variable within a page can tend to get messy. For example, suppose you have a variable called <span class="jsx-3120878690"><code>message</code></span> representing a shoutout in your application. You’d like to have that <span class="jsx-3120878690"><code>message</code></span> displayed within a container <span class="jsx-3120878690"><code>&lt;div&gt;</code></span> like so:</p>
+<pre><code>1&lt;div id=&quot;message&quot;&gt;Message goes here&lt;/div&gt;</code></pre>
+<p>HTML</p>
+<h3 id="jquery-1">jQuery</h3>
+<p>In a jQuery approach, everything is still read from top to bottom. You might have the following code to first extract the current message:</p>
+<pre><code>1var message = $(&quot;#message&quot;).html();</code></pre>
+<p>javascript</p>
+<p>To update the message, you have to reference the <span class="jsx-3120878690"><code>&lt;div&gt;</code></span> again and insert the new value:</p>
+<pre><code>1var message = &quot;New message&quot;; // Normally set by some other logical routine
+2
+3$(&quot;#message&quot;).html(message);</code></pre>
+<p>javascript</p>
+<p>One downside to this approach is that the message has to be set multiple times—once for extracting the value and again for assigning a new value to it. Furthermore, additional code is needed to insert the <span class="jsx-3120878690"><code>message</code></span> back to the target <span class="jsx-3120878690"><code>&lt;div&gt;</code></span>. This tends to get messy, especially if you have another routine that might set a new value for <span class="jsx-3120878690"><code>message</code></span>. In that case, you would have to call <span class="jsx-3120878690"><code>$("#message").html(message)</code></span> again.</p>
+<h3 id="react.js-1">React.js</h3>
+<p>React.js solves this problem by maintaining a single instance of a variable through a component’s <span class="jsx-3120878690"><code>state</code></span>. Each React.js component will have a <span class="jsx-3120878690"><code>state</code></span> object defined within it and is initinalized in the component’s constructor. For example, suppose that you want to maintain that same <span class="jsx-3120878690"><code>message</code></span> value, and whatever logical routine would affect its value would automatically reflect in the component’s UI. You might have the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class MessageComponent extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      message: &quot;&quot;
+9    }
+10  }
+11
+12  updateMessage(message) {
+13    this.setState({
+14      message: message
+15    });
+16  }
+17
+18  render() {
+19    return (
+20      &lt;div&gt;
+21        {this.state.message}
+22      &lt;/div&gt;
+23    );
+24  }
+25}</code></pre>
+<p>javascript</p>
+<p>Notice that you set the <span class="jsx-3120878690"><code>message</code></span> initially in the component’s <span class="jsx-3120878690"><code>state</code></span> within the constructor. The component has a method called <span class="jsx-3120878690"><code>updateMessage(message)</code></span>, which in turn calls a component’s <span class="jsx-3120878690"><code>setState()</code></span> method to update the value of <span class="jsx-3120878690"><code>message</code></span>. The idea here is that every time <span class="jsx-3120878690"><code>setState()</code></span> is called, the component will re-render the UI as called in <span class="jsx-3120878690"><code>render()</code></span>, since <span class="jsx-3120878690"><code>render()</code></span> returns JSX that displays the <span class="jsx-3120878690"><code>message</code></span> via <span class="jsx-3120878690"><code>this.state.message</code></span> with whatever value it currently has.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>React.js may seem complicated at first, but in terms of maintainability in the long run, it tends to keep everything organized by using proper state management. jQuery is easy to use but tends to get messy as more code is added to the mix. If you plan to migrate to React.js from a jQuery setup, always keep in mind the following:</p>
+<ol type="1">
+<li>Design your components as independent UI elements that can be mounted to your page.</li>
+<li>Use state variables and utility methods within a component to control how values are rendered by the component.</li>
+<li>A call to <span class="jsx-3120878690"><code>setState()</code></span> will invoke a re-render of the component’s UI via <span class="jsx-3120878690"><code>render()</code></span> together with the updated state values.</li>
+</ol>
+<p>13</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-use-forked-npm-dependencies</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="how-to-use-forked-npm-dependencies-in-react">How to Use Forked NPM Dependencies in React</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Oct 10, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>6,692 Views</p></li>
+<li><p>Oct 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>6,692 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-usingaforkednpmdependency" class="menu-link">Using A Forked NPM Dependency</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>When using open-source software in your project, odds are you will run into an NPM dependency that doesn’t do <em>quite</em> what you want it to. This dependency may be the 95% solution to the problem you’re looking for, but maybe it is missing a feature that you need or has a bug that needs to be worked around for your use case. So what do you do in these types of situations? If your team doesn’t have time to create your own custom solution to the problem, many times it is best to create a pull request to the repo in question. This can work very well in projects that are actively maintained, but it can sometimes take <em>months</em> or even <em>years</em> before some pull requests are merged into a project.</p>
+<p>One way you can work around this limitation is to create your own fork of the project. You can change the project’s code to your heart’s delight and add that feature or fix that bug. Once complete, you can submit your pull request to the upstream open-source project … but while you wait for this pull request to get merged, did you know that you can use the code within your fork <em>now</em> simply by altering your package.json file? In this guide, you will learn how to do just that!</p>
+<p>Let’s dive in.</p>
+<h2 id="using-a-forked-npm-dependency">Using A Forked NPM Dependency</h2>
+<p>In order to install a forked dependency into your project or app, you first need to create a fork! Creating a forked repository is very easy within GitHub. All you have to do is navigate to the repo of the project that you want to fork and select the <strong>Fork</strong> button. After you click this button, GitHub will create a copy of this repo within your user namespace. If the repo lived at <span class="jsx-3120878690"><code>user-name/custom-npm-dep</code></span>, you now will have a new repo within your user namespace like this: <span class="jsx-3120878690"><code>&lt;your-user-name&gt;/custom-npm-dep</code></span>.</p>
+<p>With the project forked, the next step is to make code changes to facilitate the behavior you are looking for. Often, NPM projects have a <span class="jsx-3120878690"><code>CONTRIBUTING.md</code></span> file that gives a detailed guide of how to successfully submit a pull request to the project. If this file exists, be sure to check it out!</p>
+<p>After you’ve made the code changes that are needed, you are ready to submit a pull request. This can easily be done from within GitHub’s UI. For more information and for a detailed guide, <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">check this out</a>.</p>
+<p>Now you’re in “pull request limbo”… Who knows how long it will take to get this pull request merged and for a new release of the dependency to come out?! But it’s ok—there is a way around this waiting time. Let’s take a look at an example <span class="jsx-3120878690"><code>package.json</code></span> that is not using the forked project:</p>
+<pre><code>1&quot;dependencies&quot;: {
+2    &quot;custom-node-dep&quot;: ^1.2.3
+3    ...
+4}</code></pre>
+<p>json</p>
+<p>Currently, you are installing the <span class="jsx-3120878690"><code>custom-node-dep</code></span> package directly from NPM. In order to use the fork, change this line in the configuration to:</p>
+<pre><code>1&quot;dependencies&quot;: {
+2    &quot;custom-node-dep&quot;: &quot;https://github.com/&lt;your-user-name&gt;/custom-node-dep.git&quot;
+3    ...
+4}</code></pre>
+<p>json</p>
+<p>The above configuration changes the version number of the <span class="jsx-3120878690"><code>custom-node-dep</code></span> project to a direct link to the source code. If the project in question is a library that is well set up with a <span class="jsx-3120878690"><code>prepublish</code></span> command, this is all you will need to do! However, if the project is not being installed correctly, you might have to build it manually. You can achieve this by ensuring that all build files within the forked repo are not hidden from source control after you build. How you do this is specific to the forked project. Usually, an <span class="jsx-3120878690"><code>npm run build</code></span> command is sufficient to build the project. Whatever directory the build files are outputted to, you will need to make sure to remove from the <span class="jsx-3120878690"><code>.gitignore</code></span>. This will ensure that the <span class="jsx-3120878690"><code>package.json</code></span> downloads all of the needed build files when you <span class="jsx-3120878690"><code>npm install</code></span> your app’s dependencies.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And there you have it! Because NPM allows for direct downloading of packages from source control, you don’t have to wait on pull requests to get merged, and your app can benefit from custom code changes <em>now</em>. This capability can allow your team to move fast to fix bugs coming from third-party dependencies.</p>
+<p>For more information, check out the “dependencies” portion of the NPM <a href="https://docs.npmjs.com/files/package.json#dependencies">documentation</a>.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

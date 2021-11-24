@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>using-react-2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="using-react.js-with-bootstrap">Using React.js With Bootstrap</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Nov 3, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>2,407 Views</p></li>
+<li><p>Nov 3, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>2,407 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>9</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-settinguptheapp" class="menu-link">Setting Up the App</a></li>
+<li><a href="#module-usingbootstrap" class="menu-link">Using Bootstrap</a></li>
+<li><a href="#module-importingcomponents" class="menu-link">Importing Components</a></li>
+<li><a href="#module-creatingapage" class="menu-link">Creating a Page</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p><a href="https://getbootstrap.com/">Bootstrap</a> is the most popular frontend component library. It comes packed with lots of components out of the box with little to no customization necessary, depending on your use case or requirements. In this guide, you’ll learn how to use React (the world’s most popular frontend library) with Bootstrap (the world’s most popular component library).</p>
+<h2 id="setting-up-the-app">Setting Up the App</h2>
+<p>To get started, run the following command in your terminal to set up your React project.</p>
+<pre><code>11. npx create-react-app &lt;YOUR_APP_NAME&gt;
+2
+32. cd &lt;YOUR_APP_NAME&gt;
+4
+53. yarn start or npm start</code></pre>
+<p>bash</p>
+<p><span class="jsx-3120878690"><code>&lt;YOUR_APP_NAME&gt;</code></span> refers the name you’d like to give to your React project.</p>
+<p>If you really want to get started quickly without the pain of setting up a <span class="jsx-3120878690"><code>create-react-app</code></span> project, open up your browser and visit <a href="https://react.new/">https://react.new</a> to get a fully configured React development environment via <a href="https://codesandbox.io/">https://codesandbox.io</a> .</p>
+<h2 id="using-bootstrap">Using Bootstrap</h2>
+<p>Bootstrap can be used in different ways, including:</p>
+<ol type="1">
+<li>Downloading the bootstrap production files</li>
+<li>Adding CDN links to your html file.</li>
+<li>Downloading via a package manager such as npm or yarn.</li>
+</ol>
+<p>In this guide you’ll install Bootstrap with a package manager and install the React Bootstrap library, which comes with React components you can use easily.</p>
+<p>Run the following command to install <span class="jsx-3120878690"><code>react-bootstrap</code></span>.</p>
+<pre><code>1npm install react-bootstrap bootstrap
+2
+3                          OR
+4
+5yarn add react-bootstrap bootstrap</code></pre>
+<p>bash</p>
+<p>React Bootstrap doesn’t use a precise version of Bootstrap, but you’ll need to add some default styling to use the components. Add the following line of code to your <span class="jsx-3120878690"><code>src/index.js</code></span> or <span class="jsx-3120878690"><code>src/App.js</code></span> file.</p>
+<pre><code>1import &#39;bootstrap/dist/css/bootstrap.min.css&#39;</code></pre>
+<p>jsx</p>
+<h2 id="importing-components">Importing Components</h2>
+<p>Components from React Bootstrap can be imported in two ways.</p>
+<ol type="1">
+<li><p>Importing a specific component</p>
+<p>1import Modal from ‘react-bootstrap/Modal’;</p></li>
+</ol>
+<p>jsx</p>
+<ol type="1">
+<li><p>Importing <span class="jsx-3120878690"><code>react-bootstrap</code></span> and using one component</p>
+<p>1import { Modal } from ‘react-bootstrap/Modal’;</p></li>
+</ol>
+<p>jsx</p>
+<blockquote>
+<p><strong>Note:</strong> The React Bootstrap documentation recommends that you use the first method, as it reduces the amount of code you send to the client. The second method sends the complete library to the client, adding unnecessary bytes and degrading the performance of your app.</p>
+</blockquote>
+<h2 id="creating-a-page">Creating a Page</h2>
+<p>First, import all the components needed. As mentioned in the “Importing components” section, all components will be imported individually.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import &#39;bootstrap/dist/css/bootstrap.min.css&#39;
+3import Navbar from &#39;react-bootstrap/Navbar&#39;;
+4import Nav from &#39;react-bootstrap/Nav&#39;;
+5import NavDropdown from &#39;react-bootstrap/NavDropdown&#39;;
+6import Jumbotron from &#39;react-bootstrap/Jumbotron&#39;;
+7import Button from &#39;react-bootstrap/Button&#39;;</code></pre>
+<p>jsx</p>
+<p>Next, add a navigation bar to the app.</p>
+<pre><code>1function NavBar(){
+2  return(
+3    &lt;Navbar collapseOnSelect expand=&quot;lg&quot; bg=&quot;dark&quot; variant=&quot;dark&quot;&gt;
+4  &lt;Navbar.Brand href=&quot;#home&quot;&gt;React-Bootstrap&lt;/Navbar.Brand&gt;
+5  &lt;Navbar.Toggle aria-controls=&quot;responsive-navbar-nav&quot; /&gt;
+6  &lt;Navbar.Collapse id=&quot;responsive-navbar-nav&quot;&gt;
+7    &lt;Nav className=&quot;mr-auto&quot;&gt;
+8      &lt;Nav.Link href=&quot;#features&quot;&gt;Features&lt;/Nav.Link&gt;
+9      &lt;Nav.Link href=&quot;#pricing&quot;&gt;Pricing&lt;/Nav.Link&gt;
+10      &lt;NavDropdown title=&quot;Dropdown&quot; id=&quot;collasible-nav-dropdown&quot;&gt;
+11        &lt;NavDropdown.Item href=&quot;#action/3.1&quot;&gt;Action&lt;/NavDropdown.Item&gt;
+12        &lt;NavDropdown.Item href=&quot;#action/3.2&quot;&gt;Another action&lt;/NavDropdown.Item&gt;
+13        &lt;NavDropdown.Item href=&quot;#action/3.3&quot;&gt;Something&lt;/NavDropdown.Item&gt;
+14        &lt;NavDropdown.Divider /&gt;
+15        &lt;NavDropdown.Item href=&quot;#action/3.4&quot;&gt;Separated link&lt;/NavDropdown.Item&gt;
+16      &lt;/NavDropdown&gt;
+17    &lt;/Nav&gt;
+18    &lt;Nav&gt;
+19      &lt;Nav.Link href=&quot;#deets&quot;&gt;More deets&lt;/Nav.Link&gt;
+20      &lt;Nav.Link eventKey={2} href=&quot;#memes&quot;&gt;
+21        Dank memes
+22      &lt;/Nav.Link&gt;
+23    &lt;/Nav&gt;
+24  &lt;/Navbar.Collapse&gt;
+25&lt;/Navbar&gt;
+26  )
+27}</code></pre>
+<p>jsx</p>
+<p>Add a jumbotron to the app with some text.</p>
+<pre><code>1function Heading(){
+2  return(
+3    &lt;Jumbotron&gt;
+4  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+5  &lt;p&gt;
+6    This is a simple bootstrap application built following a Pluralsight guide.
+7  &lt;/p&gt;
+8  &lt;p&gt;
+9    &lt;Button variant=&quot;primary&quot;&gt;Learn more&lt;/Button&gt;
+10  &lt;/p&gt;
+11&lt;/Jumbotron&gt;
+12  )
+13}</code></pre>
+<p>jsx</p>
+<p>Add the jumbotron and navbar to your app.</p>
+<pre><code>1export default function App() {
+2  return (
+3    &lt;div className=&quot;App&quot;&gt;
+4      &lt;NavBar/&gt;
+5      &lt;Heading/&gt;
+6    &lt;/div&gt;
+7  );
+8}</code></pre>
+<p>jsx</p>
+<p>Your complete app should look like this.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import &#39;bootstrap/dist/css/bootstrap.min.css&#39;
+3import Navbar from &#39;react-bootstrap/Navbar&#39;;
+4import Nav from &#39;react-bootstrap/Nav&#39;;
+5import NavDropdown from &#39;react-bootstrap/NavDropdown&#39;;
+6import Jumbotron from &#39;react-bootstrap/Jumbotron&#39;;
+7import Button from &#39;react-bootstrap/Button&#39;;
+8
+9function NavBar(){
+10  return(
+11    &lt;Navbar collapseOnSelect expand=&quot;lg&quot; bg=&quot;dark&quot; variant=&quot;dark&quot;&gt;
+12  &lt;Navbar.Brand href=&quot;#home&quot;&gt;React-Bootstrap&lt;/Navbar.Brand&gt;
+13  &lt;Navbar.Toggle aria-controls=&quot;responsive-navbar-nav&quot; /&gt;
+14  &lt;Navbar.Collapse id=&quot;responsive-navbar-nav&quot;&gt;
+15    &lt;Nav className=&quot;mr-auto&quot;&gt;
+16      &lt;Nav.Link href=&quot;#features&quot;&gt;Features&lt;/Nav.Link&gt;
+17      &lt;Nav.Link href=&quot;#pricing&quot;&gt;Pricing&lt;/Nav.Link&gt;
+18      &lt;NavDropdown title=&quot;Dropdown&quot; id=&quot;collasible-nav-dropdown&quot;&gt;
+19        &lt;NavDropdown.Item href=&quot;#action/3.1&quot;&gt;Action&lt;/NavDropdown.Item&gt;
+20        &lt;NavDropdown.Item href=&quot;#action/3.2&quot;&gt;Another action&lt;/NavDropdown.Item&gt;
+21        &lt;NavDropdown.Item href=&quot;#action/3.3&quot;&gt;Something&lt;/NavDropdown.Item&gt;
+22        &lt;NavDropdown.Divider /&gt;
+23        &lt;NavDropdown.Item href=&quot;#action/3.4&quot;&gt;Separated link&lt;/NavDropdown.Item&gt;
+24      &lt;/NavDropdown&gt;
+25    &lt;/Nav&gt;
+26    &lt;Nav&gt;
+27      &lt;Nav.Link href=&quot;#deets&quot;&gt;More deets&lt;/Nav.Link&gt;
+28      &lt;Nav.Link eventKey={2} href=&quot;#memes&quot;&gt;
+29        Dank memes
+30      &lt;/Nav.Link&gt;
+31    &lt;/Nav&gt;
+32  &lt;/Navbar.Collapse&gt;
+33&lt;/Navbar&gt;
+34  )
+35}
+36
+37function Heading(){
+38  return(
+39    &lt;Jumbotron&gt;
+40  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+41  &lt;p&gt;
+42    This is a simple bootstrap application built following a Pluralsight guide.
+43  &lt;/p&gt;
+44  &lt;p&gt;
+45    &lt;Button variant=&quot;primary&quot;&gt;Learn more&lt;/Button&gt;
+46  &lt;/p&gt;
+47&lt;/Jumbotron&gt;
+48  )
+49}
+50export default function App() {
+51  return (
+52    &lt;div className=&quot;App&quot;&gt;
+53      &lt;NavBar/&gt;
+54      &lt;Heading/&gt;
+55    &lt;/div&gt;
+56  );
+57}</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And that’s it! In this guide, you learned about Bootstrap and how to integrate it into your React projects so you don’t have to reinvent the wheel every time you’re creating an app. You can follow the official documentation of <a href="https://react-bootstrap.github.io/">React Bootstrap</a> and also the <a href="https://getbootstrap.com/docs/4.2/components">official Bootstrap documentation</a>.</p>
+<p>Feel free to ping me on Twitter, as always, <span class="citation" data-cites="DesmondNyamador">[@DesmondNyamador]</span>(https://twitter.com/DesmondNyamador) if you’d like to talk more about this or any other questions you may have. Stay safe!</p>
+<p>9</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

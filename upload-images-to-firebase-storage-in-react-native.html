@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>upload-images-to-firebase-storage-in-react-native</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/d87e74d1-8e02-494a-9052-eb43fe48f3ac.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="upload-images-to-firebase-storage-in-react-native">Upload Images to Firebase Storage in React Native</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Oct 17, 2020</p></li>
+<li><p>10 Min read</p></li>
+<li><p>21,872 Views</p></li>
+<li><p>Oct 17, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">10 Min</span> read</p></li>
+<li><p>21,872 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>28</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-uploadingfilestofirebasestorage" class="menu-link">Uploading Files to Firebase Storage</a></li>
+<li><a href="#module-imagepickeroptimizations" class="menu-link">Image Picker Optimizations</a></li>
+<li><a href="#module-displayuploadingstatus" class="menu-link">Display Uploading Status</a></li>
+<li><a href="#module-tips" class="menu-link">Tips</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The Firebase storage NPM module provides access to the Firebase app instance to create a reference object that is used to upload images to the Firebase storage. The Firebase storage bucket can store the data using a file or folder. A <span class="jsx-3120878690"><code>reference</code></span> instance can also take a string path value to upload an image to Firebase storage.</p>
+<p>This guide explains the steps to upload a selected image from a device to Firebase storage using the image picker helper functions. Check out these previous guides for more context and complete details:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/setting-up-a-firebase-project-for-react-native">Setting Up a Firebase Project for React Native</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/integrate-firebase-storage-and-image-picker-in-react-native">Integrate Firebase Storage and Image Picker in React Native</a></p></li>
+<li><p>Upload Images to Firebase Storage in React Native (this guide)</p></li>
+</ol>
+<h2 id="uploading-files-to-firebase-storage">Uploading Files to Firebase Storage</h2>
+<p>The <span class="jsx-3120878690"><code>@react-native-firebase/storage</code></span> module provides access to the <span class="jsx-3120878690"><code>FirebaseApp</code></span> instance that is used to upload media content into the Firebase storage. A <span class="jsx-3120878690"><code>storage()</code></span> instance contains all the necessary details to verify and establish a connection with the Firebase server app to access storage contents.</p>
+<p>Follow these steps to upload an image to Firebase storage:</p>
+<ol type="1">
+<li><p>Import the default Firebase app module.</p></li>
+<li><p>Create an instance of the Firebase storage API and use the <span class="jsx-3120878690"><code>ref</code></span> function to get a reference instance to upload an image.</p></li>
+<li><p>Invoke the <span class="jsx-3120878690"><code>putFile</code></span> function with a file path/URI to upload the file to Firebase storage.</p></li>
+<li><p>The <span class="jsx-3120878690"><code>puFile</code></span> function returns a <span class="jsx-3120878690"><code>task</code></span> object that supports <span class="jsx-3120878690"><code>Promise</code></span> based implementation to track the result of the upload process using the <span class="jsx-3120878690"><code>then</code></span> function.</p>
+<p>1import storage from ‘<span class="citation" data-cites="react-native-firebase/storage">@react-native-firebase/storage</span>’; // 1 2 3uploadImageToStorage(path, imageName) { 4 let reference = storage().ref(imageName); // 2 5 let task = reference.putFile(path); // 3 6 7 task.then(() =&gt; { // 4 8 console.log(‘Image uploaded to the bucket!’); 9 }).catch((e) =&gt; console.log(‘uploading image error =&gt;’, e)); 10}</p></li>
+</ol>
+<p>JSX</p>
+<p>The <span class="jsx-3120878690"><code>reference</code></span> instance also supports different file formats, such as <span class="jsx-3120878690"><code>put(Blob | Uint8Array |                                       ArrayBuffer)</code></span>, and provides a <span class="jsx-3120878690"><code>putString</code></span> to upload different types of data.</p>
+<h2 id="image-picker-optimizations">Image Picker Optimizations</h2>
+<p>The image picker implementation can be optimized with the <span class="jsx-3120878690"><code>Platform.select</code></span> function. A <span class="jsx-3120878690"><code>response</code></span> object can be used to retrieve platform-specific values and the name of the file:</p>
+<ul>
+<li><p><strong>Getting a Platform-specific Image Path/URI</strong>: Android and iOS use different path/URI schema formats to access the images. iOS uses the <span class="jsx-3120878690"><code>file:///</code></span> schema in path value, whereas Android uses a plain URI to access images. The different file path or URI values can be handled using the <span class="jsx-3120878690"><code>Platform</code></span> API to verify the OS type at run time:</p>
+<p>1/** 2 * Get platform specific value from response 3 */ 4getPlatformPath({ path, uri }) { 5 return Platform.select({ 6 android: { path }, 7 ios: { uri } 8 }) 9}</p></li>
+</ul>
+<p>JSX</p>
+<p><strong>Note:</strong> It’s recommended to use platform APIs as any change in API can break our custom logic. Also, the image path should be formatted to support the <span class="jsx-3120878690"><code>file:///</code></span> protocol.</p>
+<ul>
+<li><strong>Getting an Image Name</strong>: The <span class="jsx-3120878690"><code>response</code></span> object provides the name of the file using the <span class="jsx-3120878690"><code>response.fileName</code></span> property, which can be used to store the images with default names instead of custom names.</li>
+</ul>
+<h2 id="display-uploading-status">Display Uploading Status</h2>
+<p>It is important to inform the user about the image loading process. This can be done using the <span class="jsx-3120878690"><code>ActivityIndicator</code></span> component to show a circular progress indicator on the UI. The progress indicator is shown during the image uploading process. Follow these steps to implement it:</p>
+<ol type="1">
+<li><p>Create an <span class="jsx-3120878690"><code>isLoading</code></span> property to track the uploading task status.</p></li>
+<li><p>Update the value of <span class="jsx-3120878690"><code>isLoading</code></span> to <span class="jsx-3120878690"><code>true</code></span> at the beginning of the uploading task and set it to <span class="jsx-3120878690"><code>false</code></span> inside the <span class="jsx-3120878690"><code>then</code></span> and <span class="jsx-3120878690"><code>catch</code></span>.</p></li>
+<li><p>Import <span class="jsx-3120878690"><code>ActivityIndicator</code></span> and display it using the <span class="jsx-3120878690"><code>isLoading</code></span> value:</p>
+<p>1// App.js 2/** 3 * <span class="citation" data-cites="author">@author</span> Pavneet Singh 4 */ 5 6import React from “react”; 7import { 8 StyleSheet, 9 View, 10 Button, 11 Image, 12 ActivityIndicator, 13 Platform, 14 SafeAreaView, 15 Text, 16} from “react-native”; 17import storage from ‘<span class="citation" data-cites="react-native-firebase/storage">@react-native-firebase/storage</span>’; 18import ImagePicker from ‘react-native-image-picker’; 19export default class App extends React.Component { 20 21 state = { 22 imagePath: require(“./img/default.jpg”), 23 isLoading: false, 24 status: ’‘, 25 } 26 27 chooseFile = () =&gt; { 28 this.setState({ status:’’ }); 29 var options = { 30 title: ‘Select Image’, 31 customButtons: [ 32 { name: ‘customOptionKey’, title: ‘Choose Photo from Custom Option’ }, 33 ], 34 storageOptions: { 35 skipBackup: true, // do not backup to iCloud 36 path: ‘images’, // store camera images under Pictures/images for android and Documents/images for iOS 37 }, 38 }; 39 ImagePicker.showImagePicker(options, response =&gt; { 40 if (response.didCancel) { 41 console.log(‘User cancelled image picker’, storage()); 42 } else if (response.error) { 43 console.log(‘ImagePicker Error:’, response.error); 44 } else if (response.customButton) { 45 console.log(‘User tapped custom button:’, response.customButton); 46 } else { 47 let path = this.getPlatformPath(response).value; 48 let fileName = this.getFileName(response.fileName, path); 49 this.setState({ imagePath: path }); 50 this.uploadImageToStorage(path, fileName); 51 } 52 }); 53 }; 54 55 getFileName(name, path) { 56 if (name != null) { return name; } 57 58 if (Platform.OS === “ios”) { 59 path = “~” + path.substring(path.indexOf(“/Documents”)); 60 } 61 return path.split(“/”).pop(); 62 } 63 64 uploadImageToStorage(path, name) { 65 this.setState({ isLoading: true }); 66 let reference = storage().ref(name); 67 let task = reference.putFile(path); 68 task.then(() =&gt; { 69 console.log(‘Image uploaded to the bucket!’); 70 this.setState({ isLoading: false, status: ‘Image uploaded successfully’ }); 71 }).catch((e) =&gt; { 72 status = ‘Something went wrong’; 73 console.log(‘uploading image error =&gt;’, e); 74 this.setState({ isLoading: false, status: ‘Something went wrong’ }); 75 }); 76 } 77 78 /** 79 * Get platform specific value from response 80 */ 81 getPlatformPath({ path, uri }) { 82 return Platform.select({ 83 android: { “value”: path }, 84 ios: { “value”: uri } 85 }) 86 } 87 88 getPlatformURI(imagePath) { 89 let imgSource = imagePath; 90 if (isNaN(imagePath)) { 91 imgSource = { uri: this.state.imagePath }; 92 if (Platform.OS == ‘android’) { 93 imgSource.uri = “file:///” + imgSource.uri; 94 } 95 } 96 return imgSource 97 } 98 99 render() { 100 let { imagePath } = this.state; 101 let imgSource = this.getPlatformURI(imagePath) 102 return ( 103 <SafeAreaView style={styles.container}> 104 {this.state.isLoading &amp;&amp; <ActivityIndicator size="large" style={styles.loadingIndicator} />} 105 <View style={styles.imgContainer}> 106 <Text style={styles.boldTextStyle}>{this.state.status}</Text> 107 <Image style={styles.uploadImage} source={imgSource} /> 108 <View style={styles.eightyWidthStyle} > 109 &lt;Button title={‘Upload Image’} onPress={this.chooseFile}&gt;</Button> 110 </View> 111 </View> 112 </SafeAreaView> 113 ) 114 } 115} 116 117const styles = StyleSheet.create({ 118 container: { 119 flex: 1, 120 width: ‘100%’, 121 height: ‘100%’, 122 backgroundColor: ‘#e6e6fa’, 123 }, 124 imgContainer: { 125 alignItems: ‘center’, 126 justifyContent: ‘center’, 127 position: ‘absolute’, 128 width: ‘100%’, 129 height: ‘100%’ 130 }, 131 eightyWidthStyle: { 132 width: ‘80%’, 133 margin: 2, 134 }, 135 uploadImage: { 136 width: ‘80%’, 137 height: 300, 138 }, 139 loadingIndicator: { 140 zIndex: 5, 141 width: ‘100%’, 142 height: ‘100%’, 143 }, 144 boldTextStyle: { 145 fontWeight: ‘bold’, 146 fontSize: 22, 147 color: ‘#5EB0E5’, 148 } 149 150});</p></li>
+</ol>
+<p>JSX</p>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><p>Validating network availability can help to prompt the user to enable internet connectivity for the image loading task. The <a href="https://github.com/react-native-community/react-native-netinfo">react-native-netinfo</a> NPM module is the official way to identify the network status.</p></li>
+<li><p>Use the Firebase authentication feature to allow only authenticated users to access data.</p></li>
+<li><p>The <span class="jsx-3120878690"><code>react-native-image-picker</code></span> also supports custom buttons with the <span class="jsx-3120878690"><code>customButtons</code></span> option property to fetch images from other platforms or custom social media APIs.</p></li>
+<li><p>The Firebase rules can also be modified to allow only public read and authenticated writes:</p>
+<p>1alternately 2 allow read; 3 allow write: if request.auth != null;</p></li>
+</ul>
+<p>Read more about the <a href="https://firebase.googleblog.com/2019/03/firebase-security-rules-admin-sdk-tips.html">Firebase rules here</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Firebase is specifically optimized to address issues on mobile devices with many other great services. It is important to integrate Firebase configuration and rules (or authentication services) carefully. React Native offers all the required NPM plugins to integrate Firebase services and required features to fetch images, check network status, and much more. The complete optimized codebase is available on the <a href="https://github.com/Pavneet-Sing/RNFirebaseStorage">RNFirebaseStorage</a> repository. Happy coding!</p>
+<p>28</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

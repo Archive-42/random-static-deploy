@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>convert-strings-to-json-objects-in-javascript-with-eval</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="convert-strings-to-json-objects-in-javascript-with-eval">Convert Strings to JSON Objects in JavaScript with eval()</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 10, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>93,671 Views</p></li>
+<li><p>Oct 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>93,671 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>18</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-convertstringtojsonusingjsonstringify" class="menu-link">Convert String to JSON Using json.stringify()</a></li>
+<li><a href="#module-convertstringtojsonusingeval" class="menu-link">Convert String to JSON Using eval()</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React supports JSON file transformation from different sources such as strings, arrays, and objects, and JavaScript allows you to convert string to JSON data. A JSON can be used from either the local file or the server’s API response because JSON is now becoming a standardized approach for data transmission between client and server.</p>
+<p>String data can be easily converted to JSON using the <span class="jsx-3120878690"><code>stringify()</code></span> function, and also it can be done using <span class="jsx-3120878690"><code>eval()</code></span>, which accepts the JavaScript expression that you will learn about in this guide.</p>
+<h2 id="convert-string-to-json-using-json.stringify">Convert String to JSON Using json.stringify()</h2>
+<p>The JSON data contains the key-value pair as string values; thus, sometimes the data may in a string format and need to send over API call. The data should be formatted to send the request data from the client to the server, and the response will be mostly in the JSON format, but you can convert the string to JSON using the function <span class="jsx-3120878690"><code>stringify()</code></span>. The basic syntax of the function <span class="jsx-3120878690"><code>stringify()</code></span> is as follows:</p>
+<pre><code>1JSON.stringify(source_of_data)</code></pre>
+<p>jsx</p>
+<p>The source of data can be anything like a state variable, <span class="jsx-3120878690"><code>const</code></span> variable with a string value, and so on.</p>
+<p>Let’s run through a simple React-based example. Create a state variable into the component as demonstrated below.</p>
+<pre><code>1constructor(props) {
+2    super(props);
+3    this.state = {
+4      stringData: {
+5        categories: [
+6          {
+7            name: &quot;test 1&quot;,
+8            department: &quot;Information Technology&quot;
+9          },
+10          {
+11            name: &quot;test 2&quot;,
+12            department: &quot;Computer Engineering&quot;
+13          },
+14          {
+15            name: &quot;test 3&quot;,
+16            department: &quot;Information Technology&quot;
+17          }
+18        ]
+19      }
+20    };
+21}</code></pre>
+<p>jsx</p>
+<p>Here in state object, there is one additional array called <span class="jsx-3120878690"><code>categories</code></span> containing multiple objects with category name and department.</p>
+<p>You can also use the plain string with an array and also the array of objects or singular objects. The next step is to convert the object to JSON, as shown below.</p>
+<pre><code>1componentDidMount() {
+2    // Converting a string to JSON
+3    let jsonData = JSON.stringify(this.state.stringData);
+4    console.log(jsonData);
+5}</code></pre>
+<p>jsx</p>
+<p>In the above code lines, the data source is <span class="jsx-3120878690"><code>this.state.stringData</code></span>, a state variable containing an array of objects.</p>
+<p>When you open the browser console, the output will look like this.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/add3f78a-03b3-415b-be52-2f8e89031248_2.html" /><figcaption aria-hidden="true">String to JSON using json.stringify()</figcaption>
+</figure>
+<p>The array of objects is now converted to JSON, and it can be sent over to the server to pass the request as a JSON file format using the <span class="jsx-3120878690"><code>stringify()</code></span> function.</p>
+<h2 id="convert-string-to-json-using-eval">Convert String to JSON Using eval()</h2>
+<p>The <span class="jsx-3120878690"><code>eval()</code></span> function in JavaScript is used to take an expression and return the string. As a result, it can be used to convert the string into JSON.</p>
+<p>The string or an expression can be the value of <span class="jsx-3120878690"><code>eval()</code></span>, and even if you pass multiple statements as an expression, the result will still work. The simple syntax for using <span class="jsx-3120878690"><code>eval()</code></span> is as follows:</p>
+<pre><code>1eval(string_value)</code></pre>
+<p>jsx</p>
+<p>Let’s now create a sample state object, similar to the previous section.</p>
+<pre><code>1constructor(props) {
+2    super(props);
+3    this.state = {
+4      stringData: {
+5        categories: [
+6          {
+7            name: &quot;test 1&quot;,
+8            department: &quot;Information Technology&quot;
+9          },
+10          {
+11            name: &quot;test 2&quot;,
+12            department: &quot;Computer Engineering&quot;
+13          },
+14          {
+15            name: &quot;test 3&quot;,
+16            department: &quot;Information Technology&quot;
+17          }
+18        ]
+19      }
+20    };
+21}</code></pre>
+<p>jsx</p>
+<p>After creating the state variable, pass the state variable <span class="jsx-3120878690"><code>stringData</code></span> as an argument to the <span class="jsx-3120878690"><code>eval()</code></span>, as shown below.</p>
+<pre><code>1componentDidMount() {
+2    let evalData = eval(this.state.stringData);
+3    console.log(evalData);
+4}</code></pre>
+<p>jsx</p>
+<p>The statement in the above lines of code uses the <span class="jsx-3120878690"><code>eval()</code></span> function followed by the state variable as an argument, <span class="jsx-3120878690"><code>this.state.stringData</code></span>, which converts the data into the specific format.</p>
+<p>Once you run the example, the output will be something like this.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/da7d9065-85d5-44e2-8c4e-3ad718f9e5a8_1.html" /><figcaption aria-hidden="true">String to JSON using eval()</figcaption>
+</figure>
+<p>The output contains <span class="jsx-3120878690"><code>categories</code></span>, which is the key of an array and has three different objects along with it.</p>
+<blockquote>
+<p><strong>Note:</strong> According to the official guidelines from <a href="https://developer.mozilla.org/"><strong>https://developer.mozilla.org/</strong></a> , <span class="jsx-3120878690"><code>eval()</code></span> is a dangerous function that executes the code its passed with the caller’s privileges. If you run <span class="jsx-3120878690"><code>eval()</code></span> with a string that could be affected by a malicious party, you may end up running malicious code on the user’s machine with the permissions of your webpage/extension. So it is not entirely suitable to use the <span class="jsx-3120878690"><code>eval()</code></span> function to evaluate the various JavaScript expression as a string because it attracts the malicious activity with the unsecured data.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both functions covered in this guide, <span class="jsx-3120878690"><code>stringify()</code></span> and <span class="jsx-3120878690"><code>eval()</code></span>, are suitable to convert a string value into JSON, but <span class="jsx-3120878690"><code>eval()</code></span> turns to be unsecured to use; hence <span class="jsx-3120878690"><code>stringify()</code></span> is the best approach. You can try <span class="jsx-3120878690"><code>parse()</code></span> to get JSON data and <span class="jsx-3120878690"><code>stringify()</code></span> to convert a string to JSON. I hope this guide provides sufficient information to you for converting a string to JSON.</p>
+<p>18</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

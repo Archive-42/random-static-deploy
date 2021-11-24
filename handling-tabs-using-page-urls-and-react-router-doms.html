@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>handling-tabs-using-page-urls-and-react-router-doms</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="handling-tabs-using-page-urls-and-react-router-doms">Handling Tabs Using Page URLs and React Router Doms</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Sep 29, 2020</p></li>
+<li><p>13 Min read</p></li>
+<li><p>16,090 Views</p></li>
+<li><p>Sep 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">13 Min</span> read</p></li>
+<li><p>16,090 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>30</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-development" class="menu-link">Development</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Tabs are critical elements for grouping similar data in web apps. However, most implementations of tabs in React use React state to maintain the active tab. This has the limitations of:</p>
+<ul>
+<li>Inability to maintain the active tab on refreshing the page</li>
+<li>A lot hassle to redirect to a specific tab</li>
+</ul>
+<p>Learn how to maintain your active tab by using URL parameters and leveraging React Router Dom to overcoming these limitations.</p>
+<p>This guide assumes that you are familiar with React, React Hooks, React Router Dom, Bootstrap, and Reactstrap.</p>
+<h2 id="setup">Setup</h2>
+<p>Setup is split into two steps:</p>
+<ul>
+<li>Setting Up the URL-Managed-Tabs React App</li>
+<li>Installing Reactstrap</li>
+</ul>
+<h3 id="setting-up-the-url-managed-tabs-react-app">Setting Up the URL-Managed-Tabs React App</h3>
+<p>Use Create-React-App, a scaffold that lets you create React apps with no build configurations.</p>
+<p>Ensure you have <span class="jsx-3120878690"><code>create-react-app</code></span> installed on your machine. If not, you can install it by running the following:</p>
+<pre><code>1npm install -g create-react-app</code></pre>
+<p>bash</p>
+<p>Once it is installed, to create the app, run the following:</p>
+<pre><code>1npx create-react-app url-managed-tabs</code></pre>
+<p>bash</p>
+<p>The above command creates a React app with the name <span class="jsx-3120878690"><code>url-managed-tabs</code></span>.</p>
+<p>Navigate to your project’s root directory.</p>
+<pre><code>1cd url-managed-tabs</code></pre>
+<p>bash</p>
+<p>Your folder structure should look like this:</p>
+<pre><code>1url-managed-tabs/    
+2    node_modules/
+3    public/
+4    src/   
+5      App.css
+6        App.js
+7        App.test.js
+8        index.css
+9        index.js
+10        logo.svg
+11        serviceWorker.js
+12        setupTests.js
+13    package.json
+14    README.md
+15    yarn.lock</code></pre>
+<p>To start your app, run the following:</p>
+<pre><code>1yarn start</code></pre>
+<p>bash</p>
+<h3 id="install-reactstrap">Install Reactstrap</h3>
+<p>First, install bootstrap, a pre-requisite for the Reactstrap package.</p>
+<pre><code>1npm install --save bootstrap</code></pre>
+<p>bash</p>
+<p>Then install the Reactstrap package.</p>
+<pre><code>1npm install --save reactstrap</code></pre>
+<p>bash</p>
+<p>Import Bootstrap CSS in the <span class="jsx-3120878690"><code>src/index.js</code></span> file.</p>
+<pre><code>1import &#39;bootstrap/dist/css/bootstrap.min.css&#39;;</code></pre>
+<p>jsx</p>
+<h2 id="development">Development</h2>
+<p>Development will be split into the following steps:</p>
+<ul>
+<li>Create the Tabs</li>
+<li>Install React-Router-Dom</li>
+<li>Create a Route with an Optional Parameter using React Router Dom</li>
+<li>Refactor the Tabs to Use the URL active_page Parameter</li>
+</ul>
+<h3 id="create-the-tabs">Create the Tabs</h3>
+<p>Open the App.js file. Clear everything inside.</p>
+<p>Then, create an object called <span class="jsx-3120878690"><code>tabs</code></span>, defining the title and content of all the tabs.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import {Row, Col} from &#39;reactstrap&#39;;
+3
+4function App() {
+5    const tabs = {
+6            &quot;draft&quot;: {
+7                title: &quot;Draft&quot;,
+8                content: (
+9                    &lt;Row className=&quot;p-2&quot;&gt;
+10                        &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+11                            &lt;h4 className=&quot;text-info&quot;&gt;Draft Tasks&lt;/h4&gt;
+12                        &lt;/Col&gt;
+13                    &lt;/Row&gt;
+14                )
+15            },
+16            &quot;in_progress&quot;: {
+17                title: &quot;In Progress&quot;,
+18                content: (
+19                    &lt;Row className=&quot;p-2&quot;&gt;
+20                        &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+21                            &lt;h4 className=&quot;text-primary&quot;&gt;In Progress Tasks&lt;/h4&gt;
+22                        &lt;/Col&gt;
+23                    &lt;/Row&gt;
+24                )
+25            },
+26            &quot;completed&quot;: {
+27                title: &quot;Completed&quot;,
+28                content: (
+29                    &lt;Row className=&quot;p-2&quot;&gt;
+30                        &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+31                            &lt;h4 className=&quot;text-success&quot;&gt;Completed Tasks&lt;/h4&gt;
+32                        &lt;/Col&gt;
+33                    &lt;/Row&gt;
+34                )
+35            }
+36        }
+37
+38
+39    return (
+40        &lt;React.Fragment/&gt;
+41    );
+42}
+43
+44export default App;</code></pre>
+<p>jsx</p>
+<p>Create the tabs by iterating through the tabs object. Use <span class="jsx-3120878690"><code>useState</code></span> React hook to add <span class="jsx-3120878690"><code>activeTab</code></span> property to the React State of the <span class="jsx-3120878690"><code>App</code></span> Component. Initialize the <span class="jsx-3120878690"><code>activeTab</code></span> property with your preferred tab property name, in this case, <span class="jsx-3120878690"><code>in_progress</code></span>. Define <span class="jsx-3120878690"><code>toggle</code></span> function to handle the change of activeTab on clicking the NavLinks.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import {Row, Col} from &#39;reactstrap&#39;;
+3
+4function App() {
+5    const tabs = {
+6        &quot;draft&quot;: {
+7            title: &quot;Draft&quot;,
+8            content: (
+9                &lt;Row className=&quot;p-2&quot;&gt;
+10                    &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+11                        &lt;h4 className=&quot;text-info&quot;&gt;Draft Tasks&lt;/h4&gt;
+12                    &lt;/Col&gt;
+13                &lt;/Row&gt;
+14            )
+15        },
+16        &quot;in_progress&quot;: {
+17            title: &quot;In Progress&quot;,
+18            content: (
+19                &lt;Row className=&quot;p-2&quot;&gt;
+20                    &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+21                        &lt;h4 className=&quot;text-primary&quot;&gt;In Progress Tasks&lt;/h4&gt;
+22                    &lt;/Col&gt;
+23                &lt;/Row&gt;
+24            )
+25        },
+26        &quot;completed&quot;: {
+27            title: &quot;Completed&quot;,
+28            content: (
+29                &lt;Row className=&quot;p-2&quot;&gt;
+30                    &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+31                        &lt;h4 className=&quot;text-success&quot;&gt;Completed Tasks&lt;/h4&gt;
+32                    &lt;/Col&gt;
+33                &lt;/Row&gt;
+34            )
+35        }
+36    }
+37
+38    const [activeTab, setActiveTab] = useState(&#39;in_progress&#39;);
+39    
+40    const toggle = tab =&gt; {
+41        if (activeTab !== tab) setActiveTab(tab);
+42    }
+43
+44    return (
+45        &lt;div className=&quot;row p-4&quot;&gt;
+46            &lt;div className=&quot;col-lg-12&quot;&gt;
+47                &lt;h2 className=&quot;mb-4&quot;&gt;Tasks&lt;/h2&gt;
+48
+49                &lt;Nav tabs&gt;
+50                    {
+51                        Object.entries(tabs).map((tab) =&gt; (
+52                            &lt;NavItem key={tab[0]}&gt;
+53                                &lt;NavLink
+54                                    className={activeTab === tab[0] ? &quot;active&quot; : &quot;&quot;}
+55                                    onClick={() =&gt; {
+56                                        toggle(tab[0]);
+57                                    }}
+58                                    role=&quot;button&quot;
+59                                &gt;
+60                                    {tab[1].title}
+61                                &lt;/NavLink&gt;
+62                            &lt;/NavItem&gt;
+63                        ))
+64                    }
+65                &lt;/Nav&gt;
+66
+67                &lt;TabContent activeTab={activeTab}&gt;
+68                    {
+69                        Object.entries(tabs).map((tab) =&gt; (
+70                            &lt;TabPane key={tab[0]} tabId={tab[0]}&gt;
+71                                {tab[1].content}
+72                            &lt;/TabPane&gt;
+73                        ))
+74                    }
+75                &lt;/TabContent&gt;
+76            &lt;/div&gt;
+77        &lt;/div&gt;
+78    );
+79}
+80
+81export default App;</code></pre>
+<p>jsx</p>
+<h3 id="install-react-router-dom">Install React Router Dom</h3>
+<pre><code>1npm install --save react-router-dom</code></pre>
+<p>bash</p>
+<p>React Router is a routing library for React. React Router Dom is the dom binding package for React Router.</p>
+<h3 id="create-a-route-with-an-optional-parameter-using-react-router-dom">Create a Route with an Optional Parameter Using React Router Dom</h3>
+<p>Instead of just loading the <span class="jsx-3120878690"><code>App</code></span> component directly in the <span class="jsx-3120878690"><code>index.js</code></span>, define a route for the <span class="jsx-3120878690"><code>App</code></span> component.</p>
+<p>Change the <span class="jsx-3120878690"><code>index.js</code></span> to this:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import ReactDOM from &#39;react-dom&#39;;
+3import &#39;./index.css&#39;;
+4import &#39;bootstrap/dist/css/bootstrap.min.css&#39;;
+5import App from &#39;./App&#39;;
+6import * as serviceWorker from &#39;./serviceWorker&#39;;
+7import {BrowserRouter, Switch, Route} from &quot;react-router-dom&quot;;
+8
+9ReactDOM.render(
+10  &lt;React.StrictMode&gt;
+11      &lt;BrowserRouter&gt;
+12          &lt;Switch&gt;
+13              &lt;Route path=&quot;/:active_tab?&quot; component={App}/&gt;
+14          &lt;/Switch&gt;
+15      &lt;/BrowserRouter&gt;
+16  &lt;/React.StrictMode&gt;,
+17  document.getElementById(&#39;root&#39;)
+18);
+19
+20// If you want your app to work offline and load faster, you can change
+21// unregister() to register() below. Note this comes with some pitfalls.
+22// Learn more about service workers: https://bit.ly/CRA-PWA
+23serviceWorker.unregister();</code></pre>
+<p>jsx</p>
+<p><span class="jsx-3120878690"><code>/:active_tab?</code></span> means that whenever the route on the browser is <span class="jsx-3120878690"><code>/</code></span> then the component to be loaded is <span class="jsx-3120878690"><code>App</code></span>. The route can also take a parameter, though this is not mandatory. For example:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>/</code></span> - the <strong>active_tab</strong> parameter will be <em>undefined</em></li>
+<li><span class="jsx-3120878690"><code>/in_progress</code></span> - the <strong>active_tab</strong> parameter will be <em>in_progress</em></li>
+</ul>
+<p>So let’s take advantage of this and ensure we can maintain our active tabs even on refreshing the page.</p>
+<h3 id="refactor-the-tabs-to-use-the-url-active_page-parameter">Refactor the Tabs to Use the URL active_page parameter</h3>
+<p>Start by creating a variable to hold the default active tab.</p>
+<pre><code>1```jsx
+2const DEFAULT_ACTIVE_TAB = &quot;in_progress&quot;;
+3```</code></pre>
+<p>The URL Parameter can be accessed using React Router Dom’s <span class="jsx-3120878690"><code>useParams</code></span> hook:</p>
+<pre><code>1```jsx
+2const {active_tab} = useParams();
+3```</code></pre>
+<p>Do away with <span class="jsx-3120878690"><code>activeTab</code></span> state variable. Initialize history variable with React Router Dom’s <span class="jsx-3120878690"><code>useHistory</code></span> hook, which is used for navigation.</p>
+<pre><code>1```jsx
+2const history = useHistory();
+3```</code></pre>
+<p>Default the <span class="jsx-3120878690"><code>active_tab</code></span> parameter to the set <span class="jsx-3120878690"><code>DEFAULT_ACTIVE_TAB</code></span> if not <span class="jsx-3120878690"><code>active_tab</code></span> is specified on the URL.</p>
+<pre><code>1```jsx
+2useEffect(() =&gt; {
+3    if(!active_tab){
+4        history.push(`/${DEFAULT_ACTIVE_TAB}`);
+5    }
+6}, []);
+7```</code></pre>
+<p>Refactor the <span class="jsx-3120878690"><code>toggle</code></span> function to the route to the specified tab on click of a NavLink, thereby updating the <span class="jsx-3120878690"><code>active_tab</code></span> URL parameter.</p>
+<pre><code>1```jsx
+2const toggle = tab =&gt; {
+3 if (active_tab !== tab) {
+4      history.push(`/${tab}`);
+5 }
+6}
+7```</code></pre>
+<p>Refactor all initial instances of <span class="jsx-3120878690"><code>activeTab</code></span> to <span class="jsx-3120878690"><code>active_tab</code></span>. The final code should look like this:</p>
+<pre><code>1```jsx
+2import React, {useEffect} from &#39;react&#39;;
+3import {Col, Nav, NavItem, NavLink, Row, TabContent, TabPane} from &#39;reactstrap&#39;;
+4import {useParams, useHistory} from &quot;react-router-dom&quot;
+5
+6function App() {
+7    const DEFAULT_ACTIVE_TAB = &quot;in_progress&quot;;
+8    const tabs = {
+9        &quot;draft&quot;: {
+10            title: &quot;Draft&quot;,
+11            content: (
+12                &lt;Row className=&quot;p-2&quot;&gt;
+13                    &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+14                        &lt;h4 className=&quot;text-info&quot;&gt;Draft Tasks&lt;/h4&gt;
+15                    &lt;/Col&gt;
+16                &lt;/Row&gt;
+17            )
+18        },
+19        &quot;in_progress&quot;: {
+20            title: &quot;In Progress&quot;,
+21            content: (
+22                &lt;Row className=&quot;p-2&quot;&gt;
+23                    &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+24                        &lt;h4 className=&quot;text-primary&quot;&gt;In Progress Tasks&lt;/h4&gt;
+25                    &lt;/Col&gt;
+26                &lt;/Row&gt;
+27            )
+28        },
+29        &quot;completed&quot;: {
+30            title: &quot;Completed&quot;,
+31            content: (
+32                &lt;Row className=&quot;p-2&quot;&gt;
+33                    &lt;Col sm=&quot;12&quot; className=&quot;p-2&quot;&gt;
+34                        &lt;h4 className=&quot;text-success&quot;&gt;Completed Tasks&lt;/h4&gt;
+35                    &lt;/Col&gt;
+36                &lt;/Row&gt;
+37            )
+38        }
+39    }
+40
+41    const {active_tab} = useParams();
+42    const history = useHistory();
+43    
+44    useEffect(() =&gt; {
+45        if(!active_tab){
+46            history.push(`/${DEFAULT_ACTIVE_TAB}`);
+47        }
+48    }, []);
+49
+50    const toggle = tab =&gt; {
+51       if (active_tab !== tab) {
+52            history.push(`/${tab}`);
+53       }
+54    }
+55
+56    return (
+57        &lt;div className=&quot;row p-4&quot;&gt;
+58            &lt;div className=&quot;col-lg-12&quot;&gt;
+59                &lt;h2 className=&quot;mb-4&quot;&gt;Tasks&lt;/h2&gt;
+60
+61                &lt;Nav tabs&gt;
+62                    {
+63                        Object.entries(tabs).map((tab) =&gt; (
+64                            &lt;NavItem key={tab[0]}&gt;
+65                                &lt;NavLink
+66                                    className={active_tab === tab[0] ? &quot;active&quot; : &quot;&quot;}
+67                                    onClick={() =&gt; {
+68                                        toggle(tab[0]);
+69                                    }}
+70                                    role=&quot;button&quot;
+71                                &gt;
+72                                    {tab[1].title}
+73                                &lt;/NavLink&gt;
+74                            &lt;/NavItem&gt;
+75                        ))
+76                    }
+77                &lt;/Nav&gt;
+78
+79                &lt;TabContent activeTab={active_tab}&gt;
+80                    {
+81                        Object.entries(tabs).map((tab) =&gt; (
+82                            &lt;TabPane key={tab[0]} tabId={tab[0]}&gt;
+83                                {tab[1].content}
+84                            &lt;/TabPane&gt;
+85                        ))
+86                    }
+87                &lt;/TabContent&gt;
+88            &lt;/div&gt;
+89        &lt;/div&gt;
+90    );
+91}
+92
+93export default App;
+94```</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>There you have it. The active tab is now maintained using the <span class="jsx-3120878690"><code>active_tab</code></span> URL Parameter. You can now share a link to access a specific tab, e.g., <span class="jsx-3120878690"><code>/completed</code></span>, to redirect to the page with the completed tab active.</p>
+<p>You are now familiar with some of the benefits of optional parameters on routes using React Router Dom and how to implement it. The next challenge is to explore other instances where this could be useful in your React apps.</p>
+<p>30</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

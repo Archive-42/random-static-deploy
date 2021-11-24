@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>render-prettified-api-json-response-with-an-api-tester-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="render-prettified-api-json-response-with-an-api-tester-in-react.js">Render Prettified API JSON Response with an API Tester in React.js</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 1, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>139 Views</p></li>
+<li><p>Oct 1, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>139 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>2</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-userinputofapiendpoint" class="menu-link">User Input of API Endpoint</a></li>
+<li><a href="#module-fetchingdatafromanendpoint" class="menu-link">Fetching Data from an Endpoint</a></li>
+<li><a href="#module-renderingtheprettifiedversion" class="menu-link">Rendering the Prettified Version</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>As a frontend developer, you’ll often find yourself debugging values returned from an API in JSON format. In most cases, these return values are structured into complex nested objects of information. It’s best to visualize the structure of the values being returned by an API directly in the webpage itself with proper indentation and formatting. In this guide, you will create a simple tool in React.js that allows you to do just that.</p>
+<h2 id="setup">Setup</h2>
+<p>First, create a React.js component called <span class="jsx-3120878690"><code>APITester</code></span> that initially looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class APITester extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      jsonData: {},
+10      apiEndpoint: &quot;&quot;
+11    }
+12  }
+13
+14  render() {
+15    return (
+16      &lt;div&gt;
+17        &lt;pre&gt;
+18          {this.state.jsonData}
+19        &lt;/pre&gt;
+20        &lt;hr/&gt;
+21        &lt;input
+22          type=&quot;text&quot;
+23        /&gt;
+24        &lt;button&gt;
+25          Fetch
+26        &lt;/button&gt;
+27      &lt;/div&gt;
+28    );
+29  }
+30}</code></pre>
+<p>javascript</p>
+<p>There are two main state variables to maintain:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>jsonData</code></span>: Used to store the response of the endpoint</li>
+<li><span class="jsx-3120878690"><code>apiEndpoint</code></span>: The API endpoint that the user will specify</li>
+</ol>
+<h2 id="user-input-of-api-endpoint">User Input of API Endpoint</h2>
+<p>Next, fill in the functionality where the user will input the API endpoint in the <span class="jsx-3120878690"><code>input</code></span> element. Every change will update the <span class="jsx-3120878690"><code>apiEndpoint</code></span> state value.</p>
+<p>First, create an event handler to be triggered on every modification of the <span class="jsx-3120878690"><code>input</code></span> element:</p>
+<pre><code>1handleEndpointChanged(event) {
+2  this.setState({
+3    apiEndpoint: event.target.value;
+4  });
+5}</code></pre>
+<p>javascript</p>
+<p>All this function is doing is updating the value of the state property <span class="jsx-3120878690"><code>apiEndpoint</code></span> from <span class="jsx-3120878690"><code>event.target</code></span>, which points to the input element this function refers to.</p>
+<p>Attach the event handler to the <span class="jsx-3120878690"><code>input</code></span> element’s <span class="jsx-3120878690"><code>onChange</code></span> attribute:</p>
+<pre><code>1&lt;input
+2  type=&quot;text&quot;
+3  onChange={this.handleEndpointChanged.bind(this)}
+4/&gt;</code></pre>
+<p>jsx</p>
+<h2 id="fetching-data-from-an-endpoint">Fetching Data from an Endpoint</h2>
+<p>Next, create the event handler every time the button is clicked:</p>
+<pre><code>1handleButtonClicked() {
+2  var context = this;
+3
+4  $.ajax({
+5    url: context.state.apiEndpoint,
+6    dataType: &quot;json&quot;,
+7    method: &quot;GET&quot;,
+8    success: function(response) {
+9      context.setState({
+10        jsonData: response
+11      });
+12    }
+13  });
+14}</code></pre>
+<p>javascript</p>
+<p>This function fetches data from the endpoint as specified by the user, which in turn updates to the value <span class="jsx-3120878690"><code>apiEndpoint</code></span>. It’s expected that the return value will be of <span class="jsx-3120878690"><code>dataType: "json"</code></span>. On a successful call, the state property <span class="jsx-3120878690"><code>jsonData</code></span> will have to be updated to the value of <span class="jsx-3120878690"><code>response</code></span>, which contains the actual return value of the API endpoint <span class="jsx-3120878690"><code>apiEndpoint</code></span>. Notice also that the function uses the variable <span class="jsx-3120878690"><code>context</code></span> to refer to <span class="jsx-3120878690"><code>this</code></span>, which is an instance of the component itself. This is necessary so you can still refer to the <span class="jsx-3120878690"><code>setState()</code></span> method from within the <span class="jsx-3120878690"><code>success</code></span> function. This can also be seen when assigning the value of <span class="jsx-3120878690"><code>url</code></span> in the ajax call to <span class="jsx-3120878690"><code>context.state.apiEndpoint</code></span>.</p>
+<p>Next, attach the event handler to the <span class="jsx-3120878690"><code>onClick</code></span> attribute of the button:</p>
+<pre><code>1&lt;button
+2  onClick={this.handleButtonClicked.bind(this)}
+3&gt;
+4  Fetch
+5&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<p>Once the button is clicked, the function <span class="jsx-3120878690"><code>handleButtonClicked</code></span> will fire and, together with the ajax call, set the value for <span class="jsx-3120878690"><code>jsonData</code></span> to be displayed in a prettified format (that is, with proper indentation, quotes, and nesting of objects).</p>
+<h2 id="rendering-the-prettified-version">Rendering the Prettified Version</h2>
+<p>On every trigger of <span class="jsx-3120878690"><code>setState</code></span>, the <span class="jsx-3120878690"><code>render()</code></span> function will be invoked, thus updating the expected interface of this component. To make sure that the JSON data displayed follows the proper format, there are two requirements:</p>
+<ol type="1">
+<li>Make sure to format the JSON with appropriate escape characters for tabs and nested objects.</li>
+<li>Render the formatted JSON to a <span class="jsx-3120878690"><code>&lt;pre&gt;</code></span> tag to retain its formatting on the web.</li>
+</ol>
+<p>Your <span class="jsx-3120878690"><code>render()</code></span> code should look something like this:</p>
+<pre><code>1render() {
+2  return (
+3    &lt;div&gt;
+4      &lt;pre&gt;
+5        {JSON.stringify(this.state.jsonData, undefined 2)}
+6      &lt;/pre&gt;
+7      &lt;hr/&gt;
+8      &lt;input
+9        type=&quot;text&quot;
+10        onChange={this.handleEndpointChanged.bind(this)}
+11      /&gt;
+12      &lt;button
+13        onClick={this.handleButtonClicked.bind(this)}
+14      &gt;
+15        Fetch
+16      &lt;/button&gt;
+17    &lt;/div&gt;
+18  );
+19}</code></pre>
+<p>jsx</p>
+<p>You have to invoke the function <span class="jsx-3120878690"><code>JSON.stringify(someJsonData, undefined                                       2)</code></span> to insert the necessary escape characters to format the object properly. Next, make sure that the resulting value after <span class="jsx-3120878690"><code>JSON.stringify</code></span> is rendered between <span class="jsx-3120878690"><code>&lt;pre&gt;</code></span> tags. This will allow the page to retain escape characters for proper formatting of the display, thus creating the prettifying effect.</p>
+<h2 id="overall-code">Overall Code</h2>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class APITester extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      jsonData: {},
+10      apiEndpoint: &quot;&quot;
+11    }
+12  }
+13
+14  handleEndpointChanged(event) {
+15    this.setState({
+16      apiEndpoint: event.target.value
+17    });
+18  }
+19
+20  handleButtonClicked() {
+21    var context = this;
+22
+23    $.ajax({
+24      url: context.state.apiEndpoint,
+25      dataType: &quot;json&quot;,
+26      method: &quot;GET&quot;,
+27      success: function(response) {
+28        context.setState({
+29          jsonData: response
+30        });
+31      }
+32    });
+33  }
+34
+35  render() {
+36    return (
+37      &lt;div&gt;
+38        &lt;pre&gt;
+39          {JSON.stringify(this.state.jsonData, undefined, 2)}
+40        &lt;/pre&gt;
+41        &lt;hr/&gt;
+42        &lt;input
+43          type=&quot;text&quot;
+44          onChange={this.handleEndpointChanged.bind(this)}
+45        /&gt;
+46        &lt;button
+47          onClick={this.handleButtonClicked.bind(this)}
+48        &gt;
+49          Fetch
+50        &lt;/button&gt;
+51      &lt;/div&gt;
+52    );
+53  }
+54}</code></pre>
+<p>javascript</p>
+<p>Try it out by entering <a href="https://api.coindesk.com/v1/bpi/currentprice.json" class="uri">https://api.coindesk.com/v1/bpi/currentprice.json</a> into the <span class="jsx-3120878690"><code>input</code></span> element and hitting Fetch. It should return data relating to Bitcoin prices and render it with proper formatting on the webpage.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you created a component that accepts a URL endpoint from the user representing an API that is expected to return JSON data. To examine the return value, the JSON response has to be first cleaned as a string with appropriate formatting using the <span class="jsx-3120878690"><code>JSON.stringify()</code></span> function. When rendering to HTML, in order to retain the escape characters from the stringified JSON, the value has to be within <span class="jsx-3120878690"><code>&lt;pre&gt;</code></span> tags. This way, the rendered data is much more presentable to the user for further analysis of the response.</p>
+<p>Try it yourself, and try to extend the component to include the following:</p>
+<ol type="1">
+<li>Differentiation between a GET and a POST</li>
+<li>Additional parameters with the request (also provided by the user)</li>
+<li>Error handling (in case the API endpoint does not return data type JSON)</li>
+</ol>
+<p>2</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

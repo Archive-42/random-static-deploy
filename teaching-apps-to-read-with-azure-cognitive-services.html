@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>teaching-apps-to-read-with-azure-cognitive-services</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/6455207a-ea14-4964-af40-b569f06f122e.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Douglas Starnes</p>
+<h1 id="teaching-apps-to-read-with-azure-cognitive-services">Teaching Apps to Read with Azure Cognitive Services</h1>
+<h3 id="douglas-starnes">Douglas Starnes</h3>
+<ul>
+<li><p>Nov 3, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>371 Views</p></li>
+<li><p>Nov 3, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>371 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Cognitive Services</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p>Introduction</p>
+<p>8</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-sentimentanalysis" class="menu-link">Sentiment Analysis</a></li>
+<li><a href="#module-namedentityrecognition" class="menu-link">Named Entity Recognition</a></li>
+<li><a href="#module-languagedetection" class="menu-link">Language Detection</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>As users of software applications, we can interact with technology in many ways. We can now talk to a computer and have it understand what we are telling it. We can use computer vision to have a machine recognize facial expressions. But by and large, most of the time we still communicate to computers with plain old text. This is proven by the incredible amount of text data that exists. How can we extract meaningful and actionable insights from that text data?</p>
+<p>Azure Cognitive Services includes the Text Analytics service. This gives developers an easy to use a REST API with client libraries in several mainstream languages, including C#, JavaScript, and Python. The Text Analytics service has several features that are commonly found when working with text in software applications today. In this guide, we will discuss three: sentiment analysis, named entity recognition, and language detection. When using Azure Cognitive Services, you as a developer don’t have to know anything about machine learning or natural language processing. If you can call a REST API or use a language and client library, you can integrate text analytics with your next project! This guide will demonstrate how to use the Text Analytics service with the C# client library.</p>
+<h2 id="setup">Setup</h2>
+<p>The Azure Text Analytics cognitive service has a common setup regardless of the features you need. In the Azure portal, search for the <strong>Text Analytics</strong> service and create a new resource. To experiment, in the pricing tier, select <strong>Free</strong> and avoid incurring charges. When the resource is provisioned, click the <strong>Keys and Endpoints</strong> link on the left. This will show you the API keys and endpoint needed to access the service. Treat the API keys like passwords!</p>
+<p>First, you’ll need to add the <span class="jsx-3120878690"><code>Azure.AI.TextAnalytics</code></span> NuGet package to the project dependencies. The latest version as of the publication of this guide is 5.0.0.</p>
+<p>Add variables for your API key and endpoint.</p>
+<pre><code>1static string API_KEY = &quot;your-api-key&quot;;
+2static string ENDPOINT = &quot;your-endpoint&quot;</code></pre>
+<p>csharp</p>
+<p>The API key is used to create an instance of <span class="jsx-3120878690"><code>AzureKeyCredential</code></span>, which is used to authenticate the account owner. The endpoint is used to create an instance of <span class="jsx-3120878690"><code>Uri</code></span> and is the base location.</p>
+<pre><code>1var azureCredentials = new AzureKeyCredentials(API_KEY);
+2var endpoint = new Uri(ENDPOINT);</code></pre>
+<p>csharp</p>
+<p>All features of Text Analytics will use methods on the <span class="jsx-3120878690"><code>TextAnalyticsClient</code></span> class, so I’ll create an instance:</p>
+<pre><code>1var client = new TextAnalyticsClient(endpoint, azureCredentials);</code></pre>
+<p>csharp</p>
+<h2 id="sentiment-analysis">Sentiment Analysis</h2>
+<p>The first feature of the Text Analytics service this guide will discuss is sentiment analysis. The name is self-explanatory. The service analyzes a piece of text and returns a prediction of whether the sentiment is positive or negative. To analyze the sentiment of a piece of text, call the <span class="jsx-3120878690"><code>AnalyzeSentiment</code></span> method.</p>
+<pre><code>1DocumentSentiment sentimentAnalysisResults = client.AnalyzeSentiment(&quot;Azure Cognitive Service is fantastic when you need to add AI to an application quickly&quot;);</code></pre>
+<p>csharp</p>
+<p>Notice that where I have been using type inference to declare instances of the client and other classes, here I explicitly used <span class="jsx-3120878690"><code>DocumentSentiment</code></span>. This is because the actual return type of <span class="jsx-3120878690"><code>AnalyzeSentiment</code></span> is <span class="jsx-3120878690"><code>Response&lt;DocumentSentiment&gt;</code></span>. The <span class="jsx-3120878690"><code>DocumentSentiment</code></span> will have a <span class="jsx-3120878690"><code>SentenceSentiment</code></span> for each sentence in the analyzed text. These are stored in the <span class="jsx-3120878690"><code>Sentences</code></span> property. The <span class="jsx-3120878690"><code>SentenceSentiment</code></span> has three properties of interest.</p>
+<ul>
+<li><span class="jsx-3120878690"><code>Text</code></span>- the sentence itself</li>
+<li><span class="jsx-3120878690"><code>Sentiment</code></span> - the prediction of ‘Positive’ or ‘Negative’</li>
+<li><span class="jsx-3120878690"><code>ConfidenceScores</code></span> - the values of each sentiment</li>
+</ul>
+<p>The <span class="jsx-3120878690"><code>ConfidenceScores</code></span> property has three values, each between 0.0 and 1.0 inclusive for each sentiment:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>Positive</code></span></li>
+<li><span class="jsx-3120878690"><code>Negative</code></span></li>
+<li><span class="jsx-3120878690"><code>Neutral</code></span></li>
+</ul>
+<p>The prediction for this text is positive <span class="jsx-3120878690"><code>Sentiment</code></span> with a score of 1.0 for <span class="jsx-3120878690"><code>Positive</code></span> and 0.0 for <span class="jsx-3120878690"><code>Negative</code></span> and <span class="jsx-3120878690"><code>Neutral</code></span>.</p>
+<p>If I changed the text to “It’s not so great if you have specialized needs,” the prediction for the <span class="jsx-3120878690"><code>Sentiment</code></span> is negative and the score for <span class="jsx-3120878690"><code>Negative</code></span> is 1.0.</p>
+<h2 id="named-entity-recognition">Named Entity Recognition</h2>
+<p>The Text Analytics service can also parse fourteen different entities out of text. This includes the names of people, geographic locations, email addresses, and phone numbers in the United States and European Union. This is called named entity recognition (NER). Using NER is as simple as using the sentiment analysis. You just call a different method on the <span class="jsx-3120878690"><code>TextAnalyticsClient</code></span> instance. Simply provide the <span class="jsx-3120878690"><code>RecognizeEntities</code></span> method with the text to analyze.</p>
+<pre><code>1var recognizeEntitiesResult = client.RecognizeEntities(&quot;Microsoft Azure is used all over the world from the Australia to Zimbabwe.&quot;)</code></pre>
+<p>csharp</p>
+<p>The return value of <span class="jsx-3120878690"><code>RecognizeEntities</code></span> has a <span class="jsx-3120878690"><code>Value</code></span> property that is a collection of <span class="jsx-3120878690"><code>CategorizedEntity</code></span> for each detected entity in the text. The <span class="jsx-3120878690"><code>CategorizedEntity</code></span> has three properties of interest:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>Text</code></span> - the entity itself</li>
+<li><span class="jsx-3120878690"><code>Category</code></span> - the predicted category of the entity from the list of fourteen</li>
+<li><span class="jsx-3120878690"><code>ConfidenceScore</code></span> - a value between 0.0 and 1.0 inclusive, with 1.0 being the most certain in the predicted category</li>
+</ul>
+<p>If you look at the list of categories in the <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-entity-linking?tabs=version-3">Cognitive Services docs</a>, some of the categories have subcategories. There is also a <span class="jsx-3120878690"><code>Subcategory</code></span> property as well.</p>
+<p>If the Text Analytics service is asked to find entities in the string “Microsoft Azure is used all over the world, from Australia to Zimbabwe,” it will find three entities: “Microsoft Azure”, “Australia”, and “Zimbabwe”. It recognizes “Australia” and “Zimbabwe” as geographic locations with high certainty, 0.91 and 0.87 respectively. However, it predicts that “Microsoft Azure” is an “Organization.” This seems odd as Azure is a software product. And Azure isn’t that certain about the label, either, with just a 0.51 score. If I modify the text to “Microsoft sells software all over the world from Australia to Zimbabwe,” it predicts “Microsoft” is an organization with a score of 0.79. The scores for Australia and Zimbabwe are still quite high. And it also predicts “software” to be a skill with a score of 0.8.</p>
+<h2 id="language-detection">Language Detection</h2>
+<p>While this guide is written in English, it is only one of many languages that the Text Analytics service recognizes. Calling the <span class="jsx-3120878690"><code>DetectLanguage</code></span> method on a <span class="jsx-3120878690"><code>TextAnalyticsClient</code></span> instance will return a value with a predicted language. I’ve used <a href="https://www.microsoft.com/en-us/p/translator/9wzdncrfj3pg?activetab=pivot:overviewtab">Microsoft Translator</a> to translate the string “Microsoft sells software all over the world” into Spanish, Russian, and Japanese.</p>
+<pre><code>1var spanish = &quot;Microsoft vende software en todo el mundo.&quot;;
+2var russian = &quot;Microsoft продает программное обеспечение по всему миру.&quot;;
+3var japanese = &quot;マイクロソフトは世界中でソフトウェアを販売しています。&quot;;</code></pre>
+<p>csharp</p>
+<p>As with the sentiment analysis, I must explicitly declare the type of the return value.</p>
+<pre><code>1DetectedLanguage detectSpanish = client.DetectLanguage(spanish);
+2DetectedLanguage detectRussian = client.DetectLanguage(russian);
+3DetectedLanguage detectJapanese = client.DetectLanguage(japanese);</code></pre>
+<p>csharp</p>
+<p>The <span class="jsx-3120878690"><code>DetectedLanguage</code></span> has a <span class="jsx-3120878690"><code>Name</code></span> property, which is the predicted language for the text.</p>
+<p>If you check the results of analyzing the three translated sentences, you will find that Azure correctly predicts them to be Spanish, Russian, and Japanese. So Azure can work with languages using the Western alphabet, the Cyrillic alphabet used in Russia, and languages like Japanese in which the differences between characters are subtler.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Applications can use Azure Cognitive Services to add sentiment analysis, entity recognition, and language detection. The Text Analytics service requires no knowledge of machine learning and costs a fraction of a penny per transaction. Using the REST API or client libraries, developers can integrate the service into web and mobile applications in almost any language. The hard part is that natural language processing is handled by Microsoft. It’s cheaper and more reliable than trying to train machine learning models yourself. These problems have been solved before, so you get to focus on what makes your applications great! Thanks for reading!</p>
+<p>8</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

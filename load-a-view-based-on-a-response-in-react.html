@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>load-a-view-based-on-a-response-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="load-a-view-based-on-a-response-in-react">Load a View Based on a Response In React</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Nov 1, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>1,484 Views</p></li>
+<li><p>Nov 1, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>1,484 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>0</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-requestingdataoverhttp" class="menu-link">Requesting Data Over HTTP</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Interacting with a server over HTTP is a core part of any web developer’s job. Your user will navigate to a view within your app, expecting to see data presented to them in some manner. Sometimes this data is static and you don’t have to request it from the backend. But most often, this data is dynamic or too large to store statically on the client. When this happens in your React app, it is necessary to use an HTTP client in order to make requests to the server containing the data you need.</p>
+<p>In this guide, you will learn how to use the Axios HTTP client inside your React components in order to load a view based on a given response.</p>
+<p>Let’s get started!</p>
+<blockquote>
+<p><strong>Note:</strong> This guide assumes that you have already created or are working within a React app.</p>
+</blockquote>
+<h2 id="requesting-data-over-http">Requesting Data Over HTTP</h2>
+<p>The first part of loading a view based on an HTTP response is to download and start using an HTTP client. In this guide, we have chosen Axios as our HTTP client library of choice. There are many alternatives! Fetch is a great native client that you can use if you are trying to restrict the number of dependencies you are using in your app.</p>
+<p>To download Axios, navigate to your root project directory where your <span class="jsx-3120878690"><code>package.json</code></span> file is located, and run the command: <span class="jsx-3120878690"><code>npm install --save axios</code></span>. Now you have Axios installed inside your React project and can start using it!</p>
+<p>In the code below, you will see the basic shell of a <span class="jsx-3120878690"><code>DinosaurView</code></span> component. This component’s job is to request a list of dinosaurs from the server via HTTP and then render a list of <span class="jsx-3120878690"><code>Dino</code></span> components based on the response.</p>
+<pre><code>1class DinosaurView Extends React.Component {
+2    constructor(props) {
+3        super(props);
+4
+5        this.state = {
+6            dinosaurs: []
+7        }
+8    }
+9
+10    componentDidMount() {
+11        ...
+12    }
+13
+14    render() {
+15        ...
+16    }
+17}</code></pre>
+<p>jsx</p>
+<p>You need to set our <span class="jsx-3120878690"><code>dinosaurs</code></span> state based on a list of dinosaurs requested within the <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method. The <span class="jsx-3120878690"><code>componentDidMount</code></span> lifecycle method will ensure that the dinosaur data is only requested after the initial render of the <span class="jsx-3120878690"><code>DinosaurView</code></span> component. This is helpful because you can display a simple loading screen while we wait for the request to complete.</p>
+<p>Below is the updated code that shows how to use Axios to make a request to our private dinosaur API.</p>
+<pre><code>1import axios from &#39;axios&#39;;
+2
+3class DinosaurView Extends React.Component {
+4    constructor(props) {
+5        super(props);
+6
+7        this.state = {
+8            dinosaurs: []
+9        }
+10    }
+11
+12    async componentDidMount() {
+13        const dinoResponse = await axios.get(this.props.dinosaurUrl);
+14        this.setState({ dinosaurs: dinoResponse.dinosaurs });
+15    }
+16
+17    render() {
+18        ...
+19    }
+20}</code></pre>
+<p>jsx</p>
+<p>Wow, that was easy! In the above code, you first imported the Axios HTTP client library. Then, you marked <span class="jsx-3120878690"><code>componentDidMount</code></span> as an <span class="jsx-3120878690"><code>async</code></span> function. This enables the use of the<span class="jsx-3120878690"><code>await</code></span> keyword in order to resolve the <span class="jsx-3120878690"><code>Promise</code></span> returned from the call to <span class="jsx-3120878690"><code>axios.get</code></span>. With the response successfully loaded, you then simply used the <span class="jsx-3120878690"><code>setState</code></span> function in order to set the <span class="jsx-3120878690"><code>dinosaurs</code></span> state of the component.</p>
+<p>With your data requested, now it’s time to load your view. Remember, this component simply wants to display a list of <span class="jsx-3120878690"><code>Dino</code></span> components. This can be achieved by implementing the following <span class="jsx-3120878690"><code>render</code></span> function.</p>
+<pre><code>1    ...
+2
+3    render() {
+4        const dinosaurs =
+5            this.state
+6                .dinosaurs
+7                .map(dino =&gt; &lt;Dino name={dino.name} type={dino.type} roar={dino.roar} /&gt;);
+8
+9        return (
+10            &lt;ul&gt;{dinosaurs}&lt;/ul&gt;
+11        )
+12    }
+13}</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>HTTP is almost imperative when it comes to dynamically loading views inside your React app. In order to interact with servers via HTTP, you need to use some sort of HTTP client on the frontend. You can use Axios, the native Fetch client, or any of the other HTTP client NPM packages available for download.</p>
+<p>Of course, HTTP isn’t the only way! GraphQL is becoming a popular choice when it comes to loading views based on requested data from the backend. For more information about GraphQL, please check out the GraphQL <a href="https://graphql.org/">documentation</a>.</p>
+<p>0</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

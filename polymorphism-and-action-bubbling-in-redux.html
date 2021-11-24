@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>polymorphism-and-action-bubbling-in-redux</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="polymorphism-and-action-bubbling-in-redux">Polymorphism and Action Bubbling in Redux</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 18, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>426 Views</p></li>
+<li><p>Oct 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>426 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-polymorphisminredux" class="menu-link">Polymorphism in Redux</a></li>
+<li><a href="#module-actionbubblinginredux" class="menu-link">Action Bubbling in Redux</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Redux gives a lot of power to React apps by managing their complex state through <span class="jsx-3120878690"><code>actions</code></span> and <span class="jsx-3120878690"><code>reducers</code></span>. It is built on the <em>functional programming methodology</em> where reducers are simple functions that update the state in the Redux <span class="jsx-3120878690"><code>store</code></span> on dispatching <span class="jsx-3120878690"><code>actions</code></span>. However, reducers can be made <em>polymorphic</em> and <em>action bubbling</em> can be mimicked using the Redux global store. Since these concepts aren’t original to Redux but an adaptation based on <em>object-oriented programming</em>, they may not be as necessary as in other languages or frameworks. This guide will explain how to achieve polymorphism and action bubbling in Redux.</p>
+<h2 id="polymorphism-in-redux">Polymorphism in Redux</h2>
+<p>Polymorphism is a technique that allows you to do multiple things using a single form. It’s a feature of object-oriented programming through which you can implement <em>function overloading</em>, where a single function can be used to implement different features based on the parameters passed. All the functions have the same name but perform different tasks. Reducers in Redux are also functions inside of which you take <span class="jsx-3120878690"><code>action</code></span> and <span class="jsx-3120878690"><code>state</code></span> as parameters and, on the basis of the action, perform different tasks.</p>
+<p>Consider a simple reducer in a React-Redux app that adds, deletes, or updates todos based on the action passed to it.</p>
+<pre><code>1export default function todoReducer(state=initState,action){
+2 switch(action.type){
+3        case &#39;ADD_TODO&#39;: return {
+4                                ...state,
+5                                todos: [...todos,action.payload.newTodo]
+6                            }
+7        case &#39;UPDATE_TODO&#39;: return {
+8                                ...state,
+9                                todos: todos.map((todo)=&gt;{
+10                                    if(todo.id===action.payload.updatedTodo.id)
+11                                    return action.payload.updatedTodo;
+12                                    else
+13                                    return todo;
+14                                })
+15                            }
+16        case &#39;DELETE_TODO&#39;: return {
+17                                ...state,
+18                                todos: todos.filter(todo=&gt;todo.id!==action.payload.de)
+19                            }
+20        default: return state
+21    }
+22}</code></pre>
+<p>javascript</p>
+<p>You have a simple <span class="jsx-3120878690"><code>todoReducer</code></span> that adds a new todo to the list of todos in your state, updates a particular todo, or deletes a particular todo from your <span class="jsx-3120878690"><code>state</code></span>. This is a common implementation of reducers in a React-Redux app. If at any point you want to add a new todo, you can dispatch an <span class="jsx-3120878690"><code>action</code></span> that looks something like this.</p>
+<pre><code>1dispatch({
+2 type: &#39;ADD_TODO&#39;,
+3 payload:{
+4     newTodo:{
+5         id: 3,
+6         name: &#39;Make a new todo list&#39;,
+7         status: &#39;Pending&#39;
+8     }
+9 }
+10})</code></pre>
+<p>javascript</p>
+<p>Similarly, to update the above todo, dispatch an <span class="jsx-3120878690"><code>action</code></span> like this.</p>
+<pre><code>1dispatch({
+2 type: &#39;UPDATE_TODO&#39;,
+3 payload:{
+4     newTodo:{
+5         id: 3,
+6         name: &#39;Make a new todo list&#39;,
+7         status: &#39;Completed&#39;
+8     }
+9 }
+10})</code></pre>
+<p>javascript</p>
+<p>Thus, actions in the case of a general reducer look like <span class="jsx-3120878690"><code>{type: 'DELETE_TODO', payload:                                       {...}}</code></span> . Using polymorphism, can make this much simpler and more flexible. Instead of having a <span class="jsx-3120878690"><code>switch case</code></span> on every action type in your reducer, you can create a polymorphic reducer that simply calls a <span class="jsx-3120878690"><code>handler</code></span> property on your action and passes the <span class="jsx-3120878690"><code>state</code></span> and <span class="jsx-3120878690"><code>payload</code></span> properties to it. Thus, the above reducer becomes:</p>
+<pre><code>1export default function todoReducer(state = initState, action) {
+2    return action.handler(state, action.payload);
+3}</code></pre>
+<p>javascript</p>
+<p>And your actions would look like</p>
+<pre><code>1{ 
+2    handler: ADD_TODO, 
+3    payload: newTodo:{...}
+4}</code></pre>
+<p>javascript</p>
+<p>And then you can create a function that does the required computation based on the <span class="jsx-3120878690"><code>handler</code></span> and returns the result that, in turn, your reducer returns. This makes your reducer polymorphic in the sense that it returns a single instance that does different things based on the <span class="jsx-3120878690"><code>handler</code></span> property attached to it. You can follow the same pattern for any kind of action by attaching the action type inside the handler property.</p>
+<h2 id="action-bubbling-in-redux">Action Bubbling in Redux</h2>
+<p>Actions are dispatched from a component to fire a reducer that modifies or updates the state. Just like <span class="jsx-3120878690"><code>events</code></span> are <em>bubbled</em> from child element to parent element in JavaScript, action bubbling can find a use case when a child component fires an <span class="jsx-3120878690"><code>action</code></span> to modify a state and you need to do the same with the parent component to use that modified state. However, when you break down this use case, it seems that the relevant information is what actually needs to bubble through your component tree in a <em>bottom-up</em> manner rather than the action itself. Consider the following component subtree in a React-Redux app.</p>
+<pre><code>1export const ParentComponent =()=&gt;{
+2 return(
+3     &lt;ChildComponent/&gt;
+4 )
+5}</code></pre>
+<p>jsx</p>
+<p>The <em>component tree</em> is composed of two components, a <span class="jsx-3120878690"><code>ParentComponent</code></span> and a <span class="jsx-3120878690"><code>ChildComponent</code></span> rendered inside the <span class="jsx-3120878690"><code>ParentComponent</code></span>. If the <span class="jsx-3120878690"><code>ChildComponent</code></span> on dispatching an action can modify the state, <span class="jsx-3120878690"><code>ParentComponent</code></span> can use that modified state directly from your Redux store. It’s important to note that the <span class="jsx-3120878690"><code>state</code></span> referred to here is not <span class="jsx-3120878690"><code>props</code></span> passed down to your child component. Dispatching actions to modify state in a global store, in essence, bubbles information through the tree, top-down fashion, bottom-up fashion, and so on. Thus you can implement action bubbling by bubbling information through actions and updating the global store where the modified state can be used by any component in the component tree.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>It’s important to note that polymorphism is already implemented in Redux reducers to some extent as a single reducer is meant to perform different tasks on the basis of the action passed. The example demonstrated here of creating a polymorphic reducer may not lead to a better approach for small apps having simple actions, and at times it may not be necessary at all. Similarly, as action bubbling is not native to Redux, using the global store to mimic that concept is much better than implementing it from scratch. The ideal implementation might direct away from Redux’s own in-built methodology that gives you powerful abilities to write functional, clean, and structured code.</p>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

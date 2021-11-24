@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>alert-users-to-errors-with-react-bootstrap</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7fc26c97-d391-471d-819e-0695a0c8c46d.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Desmond Nyamador</p>
+<h1 id="alert-users-to-errors-with-react-bootstrap">Alert Users to Errors with React Bootstrap</h1>
+<h3 id="desmond-nyamador">Desmond Nyamador</h3>
+<ul>
+<li><p>Oct 21, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>4,728 Views</p></li>
+<li><p>Oct 21, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>4,728 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>7</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-reactbootstrap" class="menu-link">React Bootstrap</a></li>
+<li><a href="#module-setupdevelopmentenvironment" class="menu-link">Set Up Development Environment</a></li>
+<li><a href="#module-implementingtheapp" class="menu-link">Implementing the App</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Alerts are the ideal way to show feedback to a user when they either provide incorrect data or need to be informed of certain occurrences. In this guide, you’ll use the React Bootstrap library to build an app that displays feedback based on the user’s input.</p>
+<h2 id="react-bootstrap">React Bootstrap</h2>
+<p>Bootstrap is the most popular component-oriented frontend framework by far from the lovely people at Twitter. Unlike other frameworks like Tailwind CSS, which uses <em>utility classes,</em> Bootstrap has fully configurable UI elements that help you to build a full-blown app easily.</p>
+<h2 id="set-up-development-environment">Set Up Development Environment</h2>
+<p>To get started, setup a React development environment by running the command below.</p>
+<pre><code>1npx create-react-app &lt;YOUR_APP_NAME&gt; &amp;&amp; cd &lt;YOUR_APP_NAME&gt;</code></pre>
+<p>bash</p>
+<blockquote>
+<p><strong>Note:</strong> Replace &lt;YOUR_APP_NAME&gt; with your preferred app name.</p>
+</blockquote>
+<p>You can also get a fully configured environment quickly by visiting <a href="https://react.new/">https://react.new</a> in your browser.</p>
+<p>Next, add React Bootstrap to your dependencies by entering the following command in your terminal .</p>
+<pre><code>1npm install react-bootstrap bootstrap</code></pre>
+<p>bash</p>
+<p>There are two ways of importing components in React Bootstrap.</p>
+<ol type="1">
+<li><p>Importing individual components</p>
+<p>1import Card from ‘react-bootstrap/Card’</p></li>
+</ol>
+<p>bash</p>
+<ol type="1">
+<li><p>Destructuring</p>
+<p>1import { Card } from ‘react-bootstrap’</p></li>
+</ol>
+<p>bash</p>
+<p>According to the documentation, the first method is advisable as “doing so pulls only the specific components that you use, which can significantly reduce the amount of code you end up sending to the client”. (<a href="https://react-bootstrap.github.io/getting-started/introduction" class="uri">https://react-bootstrap.github.io/getting-started/introduction</a>)</p>
+<h2 id="implementing-the-app">Implementing the App</h2>
+<p>This application prompts the user to enter a three-letter word and shows the user a success or error alert depending on the input.</p>
+<p>First, add the application skeleton as shown below .</p>
+<pre><code>1import React, {useState} from &quot;react&quot;;\
+2
+3export default function App(){
+4 const [value, setValue] = useState(&quot;&quot;);
+5  const [isValid, setIsValid] = useState(false);
+6
+7    function handleSubmission(){}
+8
+9return (
+10&lt;div className=&quot;App&quot;&gt;
+11  &lt;div&gt;
+12      &lt;h1&gt;Word Master&lt;/h1&gt;
+13      &lt;p&gt;Enter A Three Letter Word&lt;/p&gt;
+14    &lt;input type=&quot;text&quot; onChange={(e) =&gt; setValue(e.target.value)} value={value}/&gt;
+15    &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+16    &lt;/div&gt;
+17    &lt;/div&gt;
+18  );
+19}</code></pre>
+<p>bash</p>
+<p>Next, implement the <span class="jsx-3120878690"><code>handleSubmission</code></span> function to validate the input from the user, as shown below.</p>
+<pre><code>1import React, {useState} from &quot;react&quot;;
+2import Alert from &#39;react-bootstrap/Alert&#39;;
+3import &#39;bootstrap/dist/css/bootstrap.min.css&#39;;
+4
+5export default function App(){
+6 const [value, setValue] = useState(&quot;&quot;);
+7  const [isValid, setIsValid] = useState(false);
+8
+9    function handleSubmission(){
+10        if (value.length &gt; 3 || value.length &lt; 3){ 
+11      setIsValid(false)
+12    }else{
+13      setIsValid(true)
+14    }
+15    }
+16
+17return (
+18&lt;div className=&quot;App&quot;&gt;
+19{isValid 
+20      ? &lt;Alert variant=&quot;success&quot;&gt;Hurray! You&#39;re a genius.&lt;/Alert&gt;
+21      : &lt;Alert variant=&quot;danger&quot;&gt;Oops! Try again&lt;/Alert&gt;
+22}
+23  &lt;div&gt;
+24      &lt;h1&gt;Word Master&lt;/h1&gt;
+25      &lt;p&gt;Enter A Three Letter Word&lt;/p&gt;
+26    &lt;input type=&quot;text&quot; onChange={(e) =&gt; setValue(e.target.value)} value={value}/&gt;
+27    &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+28    &lt;/div&gt;
+29    &lt;/div&gt;
+30  );
+31}</code></pre>
+<p>bash</p>
+<p>Finally, add the control flow to display an error or success message using the React Bootstrap alert component.</p>
+<pre><code>1import React, {useState} from &quot;react&quot;;
+2
+3export default function App(){
+4 const [value, setValue] = useState(&quot;&quot;);
+5  const [isValid, setIsValid] = useState(false);
+6
+7    function handleSubmission(){
+8     if (value.length &gt; 3 || value.length &lt; 3){ 
+9      setIsValid(false)
+10    }else{
+11      setIsValid(true)
+12    }
+13    }
+14
+15return (
+16&lt;div className=&quot;App&quot;&gt;
+17  &lt;div&gt;
+18      &lt;h1&gt;Word Master&lt;/h1&gt;
+19      &lt;p&gt;Enter A Three Letter Word&lt;/p&gt;
+20    &lt;input type=&quot;text&quot; onChange={(e) =&gt; setValue(e.target.value)} value={value}/&gt;
+21    &lt;button onClick={handleSubmission}&gt;Submit&lt;/button&gt;
+22    &lt;/div&gt;
+23    &lt;/div&gt;
+24  );
+25}</code></pre>
+<p>bash</p>
+<p>Now enter a word and check out the feedback received from the world-class word master app you just built.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And that’s a wrap! In this guide, you learned how to use the React Bootstrap alert component to display feedback to a user based on the length of the input. You should try as much as possible to implement this in many other ways to help you gain a better understanding. Read more on React Bootstrap <a href="https://react-bootstrap.github.io/">here</a>. Stay safe!</p>
+<p>7</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

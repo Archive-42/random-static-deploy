@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>integrate-state-management-with-ux-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="integrate-state-management-with-ux-in-react.js">Integrate State Management with UX in React.js</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Oct 21, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>340 Views</p></li>
+<li><p>Oct 21, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>340 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>1</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-context" class="menu-link">Context</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-creatingtheloadingui" class="menu-link">Creating the Loading UI</a></li>
+<li><a href="#module-fetchingdata" class="menu-link">Fetching Data</a></li>
+<li><a href="#module-callingfetchwhencomponentisloaded" class="menu-link">Calling Fetch When Component is Loaded</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>UX is very important when communicating to let the user know what’s happening in your app. A common use case for this would be showing the user a loading interface before the actual interface is shown. This is usually done to allow some long-running background process to finish its work before updating state values of the main component. In this guide, we’ll take a look at a simple approach to perform this effect.</p>
+<h2 id="context">Context</h2>
+<p>First, you have to simulate the long-running process in the form of fetching data from some third party API. For this, use <a href="https://github.com/shevabam/breaking-bad-quotes">this endpoint</a>, which randomly spits out a quote from the hit TV series Breaking Bad (for more API endpoints in this context, please see <a href="https://github.com/shevabam/breaking-bad-quotes" class="uri">https://github.com/shevabam/breaking-bad-quotes</a>). The content of the response will be a JSON array with the following structure:</p>
+<pre><code>1[
+2  {
+3    &quot;quote&quot;: &quot;I am not in danger, Skyler. I AM the danger!&quot;,
+4    &quot;author&quot;: &quot;Walter White&quot;
+5  }
+6]</code></pre>
+<p>json</p>
+<h2 id="setup">Setup</h2>
+<p>Create a React.js component that looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class BBQuoteGenerator extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      quote: false
+10    }
+11  }
+12
+13  render() {
+14    return (
+15      &lt;div&gt;
+16        &lt;h1&gt;
+17          Breaking Bad Quote of the Day
+18        &lt;/h1&gt;
+19      &lt;/div&gt;
+20    );
+21  }
+22}</code></pre>
+<p>javascript</p>
+<p>The <span class="jsx-3120878690"><code>quotes</code></span> state attribute will hold the current quote to be rendered in the app. Notice that even if you’re expecting an array of values similar to the example shown in the previous section, its initial value is <span class="jsx-3120878690"><code>false</code></span>. The logic behind this is that you would first check that the value is not <span class="jsx-3120878690"><code>false</code></span> to display the actual content, indicating that data has indeed been loaded.</p>
+<h2 id="creating-the-loading-ui">Creating the Loading UI</h2>
+<p>You can now extend the rendering part of the component by creating the following utility method that returns UI elements that display the quote if <span class="jsx-3120878690"><code>state.quote</code></span> is not false. Otherwise, display some loading message to the user indicating that the app is still fetching data.</p>
+<pre><code>1renderQuote() {
+2  if(this.state.quote) {
+3    return (
+4      &lt;div&gt;
+5        &lt;h2&gt;
+6          &lt;i&gt;
+7            &quot;{this.state.quote.quote}&quot;
+8          &lt;/i&gt;
+9        &lt;/h2&gt;
+10        &lt;h3&gt;
+11          - {this.state.quote.author}
+12        &lt;/h3&gt;
+13      &lt;/div&gt;
+14    );
+15  } else {
+16    return (
+17      &lt;div&gt;
+18        Loading...
+19      &lt;/div&gt;
+20    );
+21  }
+22}</code></pre>
+<p>javascript</p>
+<p>The function simply returns a single <span class="jsx-3120878690"><code>jsx</code></span> element containing the interface. The <span class="jsx-3120878690"><code>else</code></span> portion indicates a <span class="jsx-3120878690"><code>false</code></span> value for <span class="jsx-3120878690"><code>quote</code></span> and thus renders some loading message. You can easily substitute this with your own loading splash message as long as the <span class="jsx-3120878690"><code>return</code></span> statement returns a single element. For now, it’s just simple text that is being returned to indicate loading.</p>
+<p>You can then invoke the function within the main <span class="jsx-3120878690"><code>render</code></span> call:</p>
+<pre><code>1render() {
+2  return (
+3    &lt;div&gt;
+4      &lt;h1&gt;
+5        Breaking Bad Quote of the Day
+6      &lt;/h1&gt;
+7      {this.renderQuote()}
+8    &lt;/div&gt;
+9  );
+10}</code></pre>
+<p>javascript</p>
+<h2 id="fetching-data">Fetching Data</h2>
+<p>In order to have <span class="jsx-3120878690"><code>quote</code></span> be not <span class="jsx-3120878690"><code>false</code></span>, that is, populate it with actual data, you’d have to create a function that does two things:</p>
+<ol type="1">
+<li>Fetches the data from an API</li>
+<li>Updates the <span class="jsx-3120878690"><code>state.quote</code></span> value of the component to force a re-render of the UI</li>
+</ol>
+<p>Create a function called <span class="jsx-3120878690"><code>fetch()</code></span> that does the following:</p>
+<pre><code>1fetch() {
+2  var context = this;
+3
+4  $.ajax({
+5    url: &quot;https://github.com/shevabam/breaking-bad-quotes&quot;,
+6    dataType: &quot;json&quot;,
+7    method: &quot;GET&quot;,
+8    success: function(response) {
+9      var q = response[0];
+10
+11      context.setState({
+12        quote: q
+13      });
+14    }
+15  });
+16}</code></pre>
+<p>javascript</p>
+<p>The <span class="jsx-3120878690"><code>context</code></span> variable is needed to create a reference to <span class="jsx-3120878690"><code>this</code></span> and represent the instance of the component. This will allow the call of <span class="jsx-3120878690"><code>setState</code></span> to be invoked within the <span class="jsx-3120878690"><code>success</code></span> callback of the AJAX call. Since the expected response is an array, you have to get the first element (<span class="jsx-3120878690"><code>0</code></span>) instead of storing the entire response in <span class="jsx-3120878690"><code>quote</code></span>. Setting the data to <span class="jsx-3120878690"><code>quote</code></span> will now make the data not <span class="jsx-3120878690"><code>false</code></span> and render the actual UI it was intended to display.</p>
+<h2 id="calling-fetch-when-component-is-loaded">Calling Fetch When Component is Loaded</h2>
+<p>Now you have make sure that <span class="jsx-3120878690"><code>fetch</code></span> is triggered as soon as the component is loaded for the first time. To do this, override the <span class="jsx-3120878690"><code>componentDidMount</code></span> function of the component and call <span class="jsx-3120878690"><code>fetch</code></span> within it.</p>
+<pre><code>1componentDidMount() {
+2  this.fetch();
+3}</code></pre>
+<p>javascript</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>The final code looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class BBQuoteGenerator extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      quote: false
+10    }
+11  }
+12
+13  componentDidMount() {
+14    this.fetch();
+15  }
+16
+17  fetch() {
+18    var context = this;
+19
+20    $.ajax({
+21      url: &quot;https://github.com/shevabam/breaking-bad-quotes&quot;,
+22      dataType: &quot;json&quot;,
+23      method: &quot;GET&quot;,
+24      success: function(response) {
+25        var q = response[0];
+26
+27        context.setState({
+28          quote: q
+29        });
+30      }
+31    });
+32  }
+33
+34  renderQuote() {
+35    if(this.state.quote) {
+36      return (
+37        &lt;div&gt;
+38          &lt;h2&gt;
+39            &lt;i&gt;
+40              &quot;{this.state.quote.quote}&quot;
+41            &lt;/i&gt;
+42          &lt;/h2&gt;
+43          &lt;h3&gt;
+44            - {this.state.quote.author}
+45          &lt;/h3&gt;
+46        &lt;/div&gt;
+47      );
+48    } else {
+49      return (
+50        &lt;div&gt;
+51          Loading...
+52        &lt;/div&gt;
+53      );
+54    }
+55  }
+56
+57  render() {
+58    return (
+59      &lt;div&gt;
+60        &lt;h1&gt;
+61          Breaking Bad Quote of the Day
+62        &lt;/h1&gt;
+63        {this.renderQuote()}
+64      &lt;/div&gt;
+65    );
+66  }
+67}</code></pre>
+<p>javascript</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Displaying loading messages initially to the user is a good UX approach to indicate that something is still happening behind the scenes. Using React.js’s state management mechanism, you can use the value of your data to determine when loading is displayed or when the actual UI should be displayed. This can be wrapped in a utility function within the component and called in the main render function. As seen in this example, the main render UI did not have to have any logic in it since the UI switches from loading to display depending on the state value <span class="jsx-3120878690"><code>quote</code></span> as implemented in the logic of <span class="jsx-3120878690"><code>renderQuote</code></span>.</p>
+<p>For any questions/concerns, or if you simply want to chat about programming in general, hit me up <span class="citation" data-cites="happyalampay">[@happyalampay]</span>(https://twitter.com/happyalampay)!</p>
+<p>1</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

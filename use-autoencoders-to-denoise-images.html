@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>use-autoencoders-to-denoise-images</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="use-autoencoders-to-denoise-images">Use Autoencoders to Denoise Images</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 30, 2020</p></li>
+<li><p>14 Min read</p></li>
+<li><p>5,575 Views</p></li>
+<li><p>Nov 30, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">14 Min</span> read</p></li>
+<li><p>5,575 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>24</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatareautoencoders" class="menu-link">What are Autoencoders?</a></li>
+<li><a href="#module-whyautoencoders" class="menu-link">Why Autoencoders?</a></li>
+<li><a href="#module-importlibrariesandloaddataset" class="menu-link">Import Libraries and Load Dataset</a></li>
+<li><a href="#module-preparingtheimagedata" class="menu-link">Preparing the Image Data</a></li>
+<li><a href="#module-addingnoisedenoisingautoencoder" class="menu-link">Adding Noise: Denoising Autoencoder</a></li>
+<li><a href="#module-producingadenoisedimage" class="menu-link">Producing a Denoised Image</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>There are some photos in your albums that make you think, “This picture of grandma is about 50 years old. If only this lovely picture were more clear, more colorful.” The advancement in the technology of digital photography is remarkable. It can give black and white photos and videos color and restore any distorted images, which can be handy evidence for forensic purposes. Computer vision and deep learning techniques just add to this. Neural networks and convolution neural networks are well known for their data modeling techniques and approach.</p>
+<p>This guide will deal with how autoencoders help to reduce noises in an image. It will use the Keras module and Fashion MNIST data. You can download it <a href="https://www.kaggle.com/zalando-research/fashionmnist">here</a>. By the end of this guide, you will learn how autoencoders reconstruct a noisy image.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c4c65f35-36ec-4cf9-96f9-e86c1366b960_15.html" /><figcaption aria-hidden="true">introduction</figcaption>
+</figure>
+<p>​ <a href="https://arxiv.org/abs/1708.07747?context=cs">Image Source</a></p>
+<p>Keras has a remarkably powerful Python-based neural network API, and it runs on top of Tensorflow. I encourage you to look at <a href="image-classification-with-pytorch.html">this guide</a> to get familiar with the components of CNN and how it manipulates the images to perform complex computer vision tasks.</p>
+<p>Image data is made up of pixels. In black and white images, each pixel displays a number ranging from 0 to 255. A color image contains the pixel combination red (R), green (G), blue (B), each ranging from 0 to 255. If an image has a resolution of 748 x 1005, it is a grid with 748 columns and 1005 rows. So that will be 748*1005 = 0.75 megapixels.</p>
+<h2 id="what-are-autoencoders">What are Autoencoders?</h2>
+<p>Autoencoders are tagged under self-supervised learning. Some say it’s unsupervised as they are independent of the labeled responses when coming to classification. They are used by neural networks to perform <em>representation learning</em>. In the image below, the autoencoders contain a bottleneck network that performs <em>compressed knowledge</em> representation for the input. To leverage the autoencoders performing, you need to make sure that they carefully recreate observation and also learn generalized encoding and decoding methods on the training data. In autoencoders, middle layers/hidden core layers are of more value than the output layer.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d02e7f00-2af2-4cdf-bcca-15ce4eaf4935_16.html" /><figcaption aria-hidden="true">encoder and decoder</figcaption>
+</figure>
+<p>If the number of neurons in the middle layer is less than the number of neurons in the input layer, the network extracts the more effective information. The middle layer will not have any other option but to learn the most important image patterns, ignoring the noises. If you have more neurons in the middle layer, the neural network will have a higher capacity to learn the pattern, making the network lazy. It will copy and paste the input values to the output values, learn noises, and not extract any feature.</p>
+<p>Hence, the bottleneck model is essential.</p>
+<p>The guides <a href="encoders-and-decoders-for-neural-machine-translation.html">Encoders and Decoders for Neural Machine Translation</a> and <a href="nmt_-encoder-and-decoder-with-keras.html">NMT: Encoder and Decoder with Keras</a> discuss how encoder and decoder models work hand in hand to produce a giant model used for machine translation. Here, in image denoising, the encoding network will compress the input layer values (bottleneck). Its results will work as input to the middle layer. The decoder network’s job is to reconstruct the information and provide the results. Most computer vision engineers follow symmetry/mirror arrangement when it comes to the number of hidden layers, meaning that the number of hidden layers and neurons in the encoder network will be the same in the decoder network.</p>
+<h2 id="why-autoencoders">Why Autoencoders?</h2>
+<p>To remove the noise from an image, it is important to reduce its dimensionality. Principal Component Analysis (PCA) is used to perform this task. But PCA has limitations; it only applies linear transformation and also contains outliers. On the other hand, autoencoders can introduce non-linearity into the network with the help of their non-linear activation functions and the stack of multiple layers. Outliers, a by-product of dimensionality reduction, can easily be detected by using this neural network.</p>
+<h2 id="import-libraries-and-load-dataset">Import Libraries and Load Dataset</h2>
+<p>The example in this guide will take a reference for <a href="https://blog.keras.io/building-autoencoders-in-keras.html">Keras</a> implementation on Fashion MNIST image modeling. This guide runs on Google Colab GPU. I would strongly recommend using GPU as it improves the training time drastically. Go to <strong>Edit &gt; Notebook Settings</strong>, make changes, and save.</p>
+<p>Skip this part if you are working on a different IDE or aware of how google Colab handles the data.</p>
+<p>If you load your data in a normal folder in Colab, it will be temporarily present. Before starting, mount your drive in the Colab.</p>
+<pre><code>1from google.colab import drive 
+2drive.mount(&#39;/content/drive&#39;) </code></pre>
+<p>python</p>
+<p>Copy and paste the authentication code and press enter.</p>
+<p>You are all set! Import the important libraries and modules.</p>
+<pre><code>1import seaborn as sns 
+2import numpy as np 
+3import pandas as pd 
+4 
+5from sklearn.model_selection import train_test_split 
+6 
+7import matplotlib.pyplot as plt 
+8from tensorflow.keras.models import Sequential, Model 
+9from tensorflow.keras.layers import Dense, Input 
+10from tensorflow.keras.utils import to_categorical 
+11%matplotlib inline 
+12sns.set(style = &#39;white&#39;, context = &#39;notebook&#39;, palette = &#39;deep&#39;) 
+13np.random.seed(42) </code></pre>
+<p>python</p>
+<p>To read the CSV data, you will need <span class="jsx-3120878690"><code>pandas.read_csv</code></span>. It will read the data into the Pandas data frame. Or you can use <span class="jsx-3120878690"><code>keras.dataset</code></span> in the library and import <span class="jsx-3120878690"><code>fashion_mnist</code></span>. Use <span class="jsx-3120878690"><code>fashion.mnist.load_data()</code></span> to use the dataset.</p>
+<pre><code>1train = pd.read_csv(&quot;/content/drive/My Drive/fashion-mnist_test.csv&quot;) 
+2test = pd.read_csv(&quot;/content/drive/My Drive/fashion-mnist_train.csv&quot;) </code></pre>
+<p>python</p>
+<p>Check how pixels look like in the data frame. <span class="jsx-3120878690"><code>train.head()</code></span> will show the first five columns of the data frame.</p>
+<pre><code>1train.head() </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/beed7b16-286b-4f9b-9dc2-78bef691da30_14.html" /><figcaption aria-hidden="true">5 columns of data frame</figcaption>
+</figure>
+<p>So there are 784 total pixels present in the data of size 28x28. A black and white image is in a 2D array form.</p>
+<h2 id="preparing-the-image-data">Preparing the Image Data</h2>
+<p>The data contains black and white images with unsigned integers of the range 0 to 255.</p>
+<p>Here there is a need for scaling the image. Normalize the pixel values by rescaling them to the range 0-1. The first step is to convert the data type from the data frame and series to NumPy <span class="jsx-3120878690"><code>ndarray</code></span>.</p>
+<pre><code>1y_train = train[&quot;label&quot;] 
+2x_train = train.drop(labels = [&quot;label&quot;], axis = 1) 
+3 
+4print(type(x_train)) 
+5print(type(y_train)) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5d33764d-d11a-44ec-816c-6a5bc804219a_7.html" /><figcaption aria-hidden="true">type of class</figcaption>
+</figure>
+<pre><code>1x_train = x_train.to_numpy() 
+2y_train = y_train.to_numpy() 
+3 
+4print(type(x_train)) 
+5print(type(y_train)) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/12c71a9c-8b3f-445d-b8b4-0a7e87524d95_6.html" /><figcaption aria-hidden="true">type</figcaption>
+</figure>
+<pre><code>1x_train = x_train.astype(&#39;float&#39;)/255. </code></pre>
+<p>python</p>
+<p>Now by using the holdout method, split the training and testing data into an 80:20 ratio.</p>
+<pre><code>1x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size = 0.2, random_state = 42) </code></pre>
+<p>python</p>
+<p>Check the number of samples you got.</p>
+<pre><code>1x_train_size = len(x_train) 
+2x_val_size = len(x_val) 
+3 
+4print(x_train_size) 
+5print(x_val_size) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fd4e73d1-7d4d-47dc-b419-7878d44064f7_5.html" /><figcaption aria-hidden="true">x_train_size and x_val_size</figcaption>
+</figure>
+<h2 id="adding-noise-denoising-autoencoder">Adding Noise: Denoising Autoencoder</h2>
+<p>To develop a generalized model, a bit of noise is added to the input data to make it corrupt. The uncorrupted data is maintained, and it acts as the output. Here the model cannot memorize the training data and maps out the result as input. Output targets are different. This forces the model to map the input data to a lower-dimension manifold (a concentration point for input data). Consider an example where the data is comprised of car images; all images that look like cars would be part of a manifold. If this manifold is accurately detected then the added noise can be skipped. You can refer to <a href="https://arxiv.org/abs/1211.4246">this paper</a> to gain more knowledge.</p>
+<p>Add synthetic noise by applying random data on the image data. You will need to normalize that new form of random image too. To achieve that, multiply the random noise by 0.9 and clip the range between 0 to 1. You may also use the Gaussian noise matrix and notice the difference.</p>
+<pre><code>1#method-1 
+2x_train_noisy = x_train + np.random.rand(x_train_size, 784) * 0.9 
+3x_val_noisy = x_val + np.random.rand(x_val_size, 784) * 0.9 
+4 
+5#method-2: Adding Gaussian Noise 
+6# x_train_noisy = x_train + 0.75 * np.random.normal(loc=0.0, scale=1.0, size=x_train.shape) 
+7# x_val_noisy = x_val + 0.75 * np.random.normal(loc=0.0, scale=1.0, size=x_val.shape) 
+8 
+9x_train_noisy = np.clip(x_train_noisy, 0., 1.) 
+10x_val_noisy = np.clip(x_val_noisy, 0., 1.) </code></pre>
+<p>python</p>
+<p>Only for the visualization purpose, the image is reshaped from 1D array to 2D array, 784 to (28,28).</p>
+<pre><code>1def plot(x, p , labels = False): 
+2 plt.figure(figsize = (20,2)) 
+3 for i in range(10): 
+4 plt.subplot(1, 10, i+1) 
+5 plt.imshow(x[i].reshape(28,28), cmap = &#39;binary&#39;) 
+6 plt.xticks([]) 
+7 plt.yticks([]) 
+8 if labels: 
+9 plt.xlabel(np.argmax(p[i])) 
+10 plt.show() 
+11 return 
+12plot(x_train, None) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0073d87d-dbd6-412f-acf4-e42a15aadf24_12.html" /><figcaption aria-hidden="true">plot</figcaption>
+</figure>
+<pre><code>1plot(x_train_noisy,None) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a2f3b442-9c1a-4445-9c18-bbd3a45c2744_13.html" /><figcaption aria-hidden="true">plot</figcaption>
+</figure>
+<p>The input size is of a 1D array. Notice that Dense layer 64 produces the bottleneck. The final layer at the decoder end gives the output of 784 units. The sigmoid function gives out the value between 0 and 1. This layer decides whether to consider the noise pixel or not.</p>
+<pre><code>1input_image = Input(shape = (784, ) ) 
+2 
+3encoded = Dense(512, activation = &#39;relu&#39;)(input_image) 
+4encoded = Dense(512, activation = &#39;relu&#39;)(encoded) 
+5encoded = Dense(256, activation = &#39;relu&#39;)(encoded) 
+6encoded = Dense(256, activation = &#39;relu&#39;)(encoded) 
+7encoded = Dense(64, activation = &#39;relu&#39;)(encoded) 
+8 
+9decoded = Dense(512, activation = &#39;relu&#39;)(encoded) 
+10decoded = Dense(784, activation = &#39;sigmoid&#39;)(decoded) 
+11 
+12autoencoder = Model(input_image, decoded) 
+13autoencoder.compile(loss= &#39;binary_crossentropy&#39; , optimizer = &#39;adam&#39;) 
+14autoencoder.summary() </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b280b72d-d8f8-42ea-b48f-8a6c85661eee_3.html" /><figcaption aria-hidden="true">autoencoder.summary</figcaption>
+</figure>
+<p>The input size is of the 1D array. Notice that the Dense layer <span class="jsx-3120878690"><code>64</code></span> produces the bottleneck. The last layer at the decoder end gives the output of 784 units. The sigmoid function gives out the value between 0 and 1. This layer decides if to consider the noise pixel.</p>
+<pre><code>1import tensorflow as tf 
+2history = autoencoder.fit(x_train_noisy, x_train, epochs=100, batch_size=128, 
+3 shuffle = True, validation_data=(x_val_noisy, x_val)) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a3488c26-a5ac-4d94-93f6-d1062337ffa5_2.html" /><figcaption aria-hidden="true">summary</figcaption>
+</figure>
+<h2 id="producing-a-denoised-image">Producing a Denoised Image</h2>
+<p>Below you can see how well denoised images were produced from noisy ones present in <span class="jsx-3120878690"><code>x_val</code></span>. There are three outputs: original test image, noisy test image, and denoised test image form autoencoders.</p>
+<pre><code>1preds = autoencoder.predict(x_val_noisy) </code></pre>
+<p>python</p>
+<pre><code>1print(&quot;Test Image&quot;) 
+2plot(x_val, None) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dfa22f70-9dc2-4cab-9193-5e2787a703f4_9.html" /><figcaption aria-hidden="true">test image</figcaption>
+</figure>
+<pre><code>1print(&quot;Noisy Image&quot;) 
+2plot(x_val_noisy, None) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bde18445-ff63-4715-9870-84e452052331_10.html" /><figcaption aria-hidden="true">noisy image</figcaption>
+</figure>
+<pre><code>1print(&quot;Denoised Image&quot;) 
+2plot(preds, None) 
+3 </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d8ed8daa-6b60-4de1-bff4-1609876b9c1a_11.html" /><figcaption aria-hidden="true">denoised image</figcaption>
+</figure>
+<p>Plot the loss.</p>
+<pre><code>1def plot_loss(history, x = &#39;loss&#39;, y = &#39;val_loss&#39;): 
+2 fig, ax = plt.subplots( figsize=(20,10)) 
+3 ax.plot(history.history[x]) 
+4 ax.plot(history.history[y]) 
+5 plt.title(&#39;Model Loss&#39;) 
+6 plt.ylabel(y) 
+7 plt.xlabel(x) 
+8 plt.legend([&#39;Train&#39;, &#39;Val&#39;], loc=&#39;upper left&#39;) 
+9 ax.grid(color=&#39;black&#39;) 
+10 plt.show() </code></pre>
+<p>python</p>
+<pre><code>1plot_loss(history) </code></pre>
+<p>python</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/47a9f368-0272-4208-a872-5eaf3f91e905_1.html" /><figcaption aria-hidden="true">Plotting of loss</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>The result is good but there is still scope for narrowing the gap. Play with the hyper-parameters. You can leverage the <a href="implement-hyperparameter-tuning-for-tensorflow2.html">TensorBoard HParam</a> feature that helps you track the progress and visualize it. Adjust the number of epochs. Increase/decrease the layers in the model check for the results each time.</p>
+<p>But what if you have huge image data? The training will take a lot of time. Keras and Pytorch both have many pre-trained CNNs including, <a href="introduction-to-resnet.html">ResNet</a>, <a href="artistic-neural-style-transfer-with-pytorch.html">VGG</a>, <a href="expediting-deep-learning-with-transfer-learning_-pytorch-playbook.html">DenseNet</a>, and <a href="transfer-learning-in-deep-learning-using-tensorflow-2.html">MobileNet</a>. They use a large image database. ImageNet is an open source database you can download for your research and also contribute to.</p>
+<p>Further, you may combine the noise reduction model with the classification model. The autoencoders will try to enhance the image. If you have any questions, feel free to reach out to me at <a href="https://www.codealphabet.com/contact">CodeAlphabet</a>.</p>
+<p>24</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

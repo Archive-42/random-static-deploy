@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>create-react-bootstrap-collapsable-table-row</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="create-a-collapsible-table-row-with-react-bootstrap">Create a Collapsible Table Row with React-Bootstrap</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 10, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>19,390 Views</p></li>
+<li><p>Nov 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>19,390 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>13</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-collapsiblerowusingareactbootstrapcustomimplementation" class="menu-link">Collapsible Row Using a React Bootstrap Custom Implementation</a></li>
+<li><a href="#module-usingotherthirdpartylibraries" class="menu-link">Using Other Third-Party Libraries</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Tables and forms are essential elements used in almost all web apps. Every JavaScript-based framework or library uses different UI frameworks to design their forms and tables to render the record and user interactivity through forms.</p>
+<p>Collapsible rows are a handy option when you want to show child properties or records to the end user, and they also can be useful to show statistics such as charts and reports. In this guide, you will learn how to implement a collapsible row using React Bootstrap and other third-party libraries.</p>
+<h2 id="collapsible-row-using-a-react-bootstrap-custom-implementation">Collapsible Row Using a React Bootstrap Custom Implementation</h2>
+<p>A popular UI framework for React is <span class="jsx-3120878690"><code>react-bootstrap</code></span>, which provides various Bootstrap-backed elements and components for React apps. <span class="jsx-3120878690"><code>react-bootstrap</code></span> contains the set of components and its API to configure components in your app, and it can also change its behavior or appearance based on business requirements.</p>
+<p>To use <span class="jsx-3120878690"><code>react-bootstrap</code></span>, install some libraries, as shown below.</p>
+<pre><code>1npm install react-bootstrap
+2npm install bootstrap</code></pre>
+<p>shell</p>
+<p>After installing both the above libraries, the next step is to import CSS to your app’s parent component, such as <strong>App.js</strong>.</p>
+<pre><code>1import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;</code></pre>
+<p>jsx</p>
+<p>Now import <span class="jsx-3120878690"><code>Table</code></span> from the library <span class="jsx-3120878690"><code>react-bootstrap</code></span>, and also import <span class="jsx-3120878690"><code>collapse.js</code></span>,as shown below.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2// Table from react-bootstrap
+3import { Table } from &quot;react-bootstrap&quot;;
+4// Bootstrap CSS
+5import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;
+6// To make rows collapsible
+7import &quot;bootstrap/js/src/collapse.js&quot;;</code></pre>
+<p>jsx</p>
+<p>The next step is to integrate the table and implement expandable rows. For a quick demonstration, create the table, and with each table row, create one child row to expand.</p>
+<pre><code>1render() {
+2    return (
+3        &lt;&gt;
+4            &lt;Table striped bordered hover&gt;
+5                &lt;thead&gt;
+6                    &lt;tr&gt;
+7                        &lt;th&gt;#&lt;/th&gt;
+8                        &lt;th&gt;Name&lt;/th&gt;
+9                        &lt;th&gt;Email&lt;/th&gt;
+10                    &lt;/tr&gt;
+11                &lt;/thead&gt;
+12                &lt;tbody&gt;
+13                    &lt;tr
+14                        data-toggle=&quot;collapse&quot;
+15                        data-target=&quot;.multi-collapse1&quot;
+16                        aria-controls=&quot;multiCollapseExample1&quot;
+17                    &gt;
+18                        &lt;td&gt;1&lt;/td&gt;
+19                        &lt;td&gt;TEST 123&lt;/td&gt;
+20                        &lt;td&gt;[email protected]&lt;/td&gt;
+21                    &lt;/tr&gt;
+22                    &lt;tr class=&quot;collapse multi-collapse1&quot; id=&quot;multiCollapseExample1&quot;&gt;
+23                        &lt;td&gt;Child col 1&lt;/td&gt;
+24                        &lt;td&gt;Child col 2&lt;/td&gt;
+25                        &lt;td&gt;Child col 3&lt;/td&gt;
+26                    &lt;/tr&gt;
+27                    &lt;tr
+28                        data-toggle=&quot;collapse&quot;
+29                        data-target=&quot;.multi-collapse2&quot;
+30                        aria-controls=&quot;multiCollapseExample2&quot;
+31                    &gt;
+32                        &lt;td&gt;2&lt;/td&gt;
+33                        &lt;td&gt;TEST 456&lt;/td&gt;
+34                        &lt;td&gt;[email protected]&lt;/td&gt;
+35                    &lt;/tr&gt;
+36                    &lt;tr class=&quot;collapse multi-collapse2&quot; id=&quot;multiCollapseExample2&quot;&gt;
+37                        &lt;td&gt;Child col 1&lt;/td&gt;
+38                        &lt;td&gt;Child col 2&lt;/td&gt;
+39                        &lt;td&gt;Child col 3&lt;/td&gt;
+40                    &lt;/tr&gt;
+41                &lt;/tbody&gt;
+42            &lt;/Table&gt;
+43        &lt;/&gt;
+44    );
+45}</code></pre>
+<p>jsx</p>
+<p>In the above table, a few Bootstrap features are developed. Three different properties get attached along with each table row.</p>
+<pre><code>1data-toggle=&quot;collapse&quot;
+2data-target=&quot;.multi-collapse1&quot;
+3aria-controls=&quot;multiCollapseExample1&quot;</code></pre>
+<p>jsx</p>
+<p>All the above properties define the collapsible content target and allow the row to be toggled using the property called <span class="jsx-3120878690"><code>data-toggle</code></span>.</p>
+<p>Once any of the table rows are clicked, their respective child rows should get expanded. However, you need to define a unique identification so that the specific children get expanded.</p>
+<pre><code>1&lt;tr class=&quot;collapse multi-collapse1&quot; id=&quot;multiCollapseExample1&quot;&gt;
+2    &lt;td&gt;Child col 1&lt;/td&gt;
+3    &lt;td&gt;Child col 2&lt;/td&gt;
+4    &lt;td&gt;Child col 3&lt;/td&gt;
+5&lt;/tr&gt;</code></pre>
+<p>jsx</p>
+<p>In the above example, there are two classes defined with the <span class="jsx-3120878690"><code>class</code></span> props, <span class="jsx-3120878690"><code>Collapse</code></span> and <span class="jsx-3120878690"><code>Multi-collapse1</code></span>, which means that once a user clicks the respective row, it is identified by the <span class="jsx-3120878690"><code>id</code></span> props, and individual CSS is applied to either hide or show the error.</p>
+<p>To implement completely working expandable rows using React Bootstrap, follow this code demonstration.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2// Table from react-bootstrap
+3import { Table } from &quot;react-bootstrap&quot;;
+4// Bootstrap CSS
+5import &quot;bootstrap/dist/css/bootstrap.min.css&quot;;
+6// To make rows collapsible
+7import &quot;bootstrap/js/src/collapse.js&quot;;
+8
+9export class Example1 extends Component {
+10    render() {
+11        return (
+12            &lt;&gt;
+13                &lt;Table striped bordered hover&gt;
+14                    &lt;thead&gt;
+15                        &lt;tr&gt;
+16                            &lt;th&gt;#&lt;/th&gt;
+17                            &lt;th&gt;Name&lt;/th&gt;
+18                            &lt;th&gt;Email&lt;/th&gt;
+19                        &lt;/tr&gt;
+20                    &lt;/thead&gt;
+21                    &lt;tbody&gt;
+22                        &lt;tr
+23                            data-toggle=&quot;collapse&quot;
+24                            data-target=&quot;.multi-collapse1&quot;
+25                            aria-controls=&quot;multiCollapseExample1&quot;
+26                        &gt;
+27                            &lt;td&gt;1&lt;/td&gt;
+28                            &lt;td&gt;TEST 123&lt;/td&gt;
+29                            &lt;td&gt;[email protected]&lt;/td&gt;
+30                        &lt;/tr&gt;
+31                        &lt;tr class=&quot;collapse multi-collapse1&quot; id=&quot;multiCollapseExample1&quot;&gt;
+32                            &lt;td&gt;Child col 1&lt;/td&gt;
+33                            &lt;td&gt;Child col 2&lt;/td&gt;
+34                            &lt;td&gt;Child col 3&lt;/td&gt;
+35                        &lt;/tr&gt;
+36                        &lt;tr
+37                            data-toggle=&quot;collapse&quot;
+38                            data-target=&quot;.multi-collapse2&quot;
+39                            aria-controls=&quot;multiCollapseExample2&quot;
+40                        &gt;
+41                            &lt;td&gt;2&lt;/td&gt;
+42                            &lt;td&gt;TEST 456&lt;/td&gt;
+43                            &lt;td&gt;[email protected]&lt;/td&gt;
+44                        &lt;/tr&gt;
+45                        &lt;tr class=&quot;collapse multi-collapse2&quot; id=&quot;multiCollapseExample2&quot;&gt;
+46                            &lt;td&gt;Child col 1&lt;/td&gt;
+47                            &lt;td&gt;Child col 2&lt;/td&gt;
+48                            &lt;td&gt;Child col 3&lt;/td&gt;
+49                        &lt;/tr&gt;
+50                    &lt;/tbody&gt;
+51                &lt;/Table&gt;
+52            &lt;/&gt;
+53        );
+54    }
+55}
+56
+57export default Example1;</code></pre>
+<p>jsx</p>
+<p>This complete example contains a <span class="jsx-3120878690"><code>react-bootstrap</code></span> table, and along with the table row, collapsible properties are defined. And respective child elements have unique identification to expand the specific rows.</p>
+<p>Once you run the above example, the initial output will look like this.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a204c4d9-2684-4443-ac06-55a18b94026b_mfMjSHm.html" /><figcaption aria-hidden="true">Table without expanded records</figcaption>
+</figure>
+<p>Now click on the first row, and the child rows will be expanded, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c176fbac-6a0e-49a5-bc6b-f2cf14e9bcf6_fP15lQE.html" /><figcaption aria-hidden="true">Expanded first table row</figcaption>
+</figure>
+<p>If you click on the second row to expand its child rows, it will look like this.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/307cfb3d-ece2-4366-9e0f-0f464258f3c7_vc9egHk.html" /><figcaption aria-hidden="true">Second expanded table row</figcaption>
+</figure>
+<p>Using the custom table implementation will give you the above output to expand the rows. And to avoid the expanded feature’s misbehavior, you can make it more dynamic and manageable.</p>
+<h2 id="using-other-third-party-libraries">Using Other Third-Party Libraries</h2>
+<p>The table’s custom implementation may help to expand the row. But it comes with some limitations, including lack of time, resources, and efforts.</p>
+<p>However, you can use other third-party libraries to make table rows expand with a more advanced user interface. There are other libraries you can use to get started with expanding a table:</p>
+<ul>
+<li>react-bootstrap-table</li>
+<li>react-bootstrap-table2</li>
+<li>react-collapsing-table</li>
+<li>Material-ui collapsible table</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Tables are the building blocks of any web or mobile app used to show information; hence, they should be well configured to tackle any development challenges.</p>
+<p>Libraries like <span class="jsx-3120878690"><code>react-bootstrap</code></span> and <span class="jsx-3120878690"><code>react-bootstrap-table</code></span> are great choices for using tables and making rows expandable. I hope you will be able to implement a collapsible feature after going through this guide.</p>
+<p>13</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

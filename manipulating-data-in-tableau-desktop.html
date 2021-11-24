@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>manipulating-data-in-tableau-desktop</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/a90da03f-c20c-41af-a9a3-c39cb62d7065.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="manipulating-data-in-tableau-desktop">Manipulating Data in Tableau Desktop</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Nov 18, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>2,263 Views</p></li>
+<li><p>Nov 18, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>2,263 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Tableau</span></p>
+<p>Introduction</p>
+<p>14</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-datapreviewpane" class="menu-link">Data Preview Pane</a></li>
+<li><a href="#module-datainterpreter" class="menu-link">Data Interpreter</a></li>
+<li><a href="#module-datamanipulation" class="menu-link">Data Manipulation</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Quite often, data that needs to be visualized is not in the correct format, shape, or type. To overcome such challenges, Tableau has a feature-rich data pane with multiple inbuilt options related to data manipulation, such as changing data types, splitting strings, pivoting or un-pivoting data, creating custom calculations, and so on. In this guide, you will learn some of the various features and functionalities provided by Tableau to manipulate your dataset and make it fit for visualization.</p>
+<h2 id="data-preview-pane">Data Preview Pane</h2>
+<p>Once you have connected to your data source in Tableau and have chosen the appropriate data table, a set of sample rows from the chosen data table is shown in the <strong>data preview pane</strong> for initial exploration of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ba5e793e-39fa-4bf4-befd-1c4dbb0aae27_Picture1.html" /><figcaption aria-hidden="true">Data Preview Pane</figcaption>
+</figure>
+<p>For each column, the field name is displayed along with its inferred data type through a symbol on the top. Below the data type symbol, the name of the table to which it belongs is mentioned, which is quite useful for reference in case multiple tables are combined through joins in the data pane. There is a colored line at the top of each column that represents the data connection to which the table belongs. This is useful for reference in case cross-database joins are used.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/acca44af-850c-4e17-9de2-040a8439fb53_Picture2.html" /><figcaption aria-hidden="true">Column Header</figcaption>
+</figure>
+<p>You can also switch to the <strong>manage metadata view</strong> to get a list of the data field names as shown below. This vertical listing of columns is quite easy to use to rename them or hide multiple columns in one go.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ce4cf24c-4739-4440-b9f8-38f39152c6b6_Picture3.html" /><figcaption aria-hidden="true">Manage Metadata</figcaption>
+</figure>
+<h2 id="data-interpreter">Data Interpreter</h2>
+<p>If your data source is Excel, CSV, PDF, or Google Sheets and you are facing data-related challenges like stacked headers, additional information in the adjoining header or footer, sub-tables etc., Tableau has a really useful in-built utility to do the cleaning and identification of the tables in your dataset.</p>
+<p>For example, consider the Excel data sheet shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/526202cf-74be-4ea1-a3fc-b0b0528cedaf_Picture4.html" /><figcaption aria-hidden="true">messy excel</figcaption>
+</figure>
+<p>Once you connect it in Tableau, the data preview shows up with the wrong column headers and incorrect interpretation of the data table, rendering it useless for visualization.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e3f2832b-469a-48ba-858e-3dcff0a4dd08_Picture5.html" /><figcaption aria-hidden="true">data preview messy</figcaption>
+</figure>
+<p>After enabling the data interpreter through the checkbox, we get the following result.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/493085f4-feb9-454c-8cdf-b9c8001d2b6e_Picture6.html" /><figcaption aria-hidden="true">cleaned</figcaption>
+</figure>
+<p>The data interpreter identified the data table, identified the correct headers along with their data types, unmerged the column values, and ignored the additional information.</p>
+<h2 id="data-manipulation">Data Manipulation</h2>
+<p>Multiple data manipulation operations can be carried out to make data fit for visualization in the <strong>data preview pane</strong> or the <strong>data pane</strong> in the worksheet view. The data manipulation options vary by the data type of the columns. For example, the <strong>split</strong> option only comes up for string datatype columns, the <strong>create bins</strong> option only comes up for numeric datatype columns, etc.</p>
+<blockquote>
+<p><strong>Note:</strong> All data manipulation is done at the metadata level, which is limited to Tableau only. The changes are not reflected in the original data file or data source.</p>
+</blockquote>
+<h3 id="change-data-type">Change Data Type</h3>
+<p>If Tableau has inferred a wrong data type for a column, the data type can be changed by clicking on the data type symbol in the column header, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5bf08d5b-2ef7-4d60-9ddf-570434a51647_Picture7.html" /><figcaption aria-hidden="true">data type change</figcaption>
+</figure>
+<h3 id="hide">Hide</h3>
+<p>Right-click on the column header and select <strong>hide</strong> to hide an unwanted column from the data view. It is best practice to hide unwanted columns before extract creation in order to reduce the data extract size and reduce latency in load time. Unwanted columns can also be hidden just to prevent any unwanted clutter in the data pane.</p>
+<blockquote>
+<p><strong>Note:</strong> Multiple columns can be selected by holding the control key and left-clicking on the column header. If multiple columns are to be selected in a continuous sequence, hold the shift key and left-click on the first and last column of the sequence. Next, right-click and choose <strong>hide</strong> to hide them collectively.</p>
+</blockquote>
+<h3 id="aliases">Aliases</h3>
+<p>If certain string data values are to be aliased for visuals to make them more intuitive, right-click on the header or the small downward arrow of the column in which data values are to be aliases and choose <strong>alias</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e155866f-015f-4892-b72b-29146f17a99b_Picture8.html" /><figcaption aria-hidden="true">alias</figcaption>
+</figure>
+<p>An <strong>edit alias</strong> window pops up showing the distinct values in the Member column, as shown above. You can add an alias for each member to the corresponding values column.</p>
+<h3 id="group">Group</h3>
+<p>Groups can be created in Tableau for string datatype column values in order to assign the same alias for multiple values or reduce the granularity of values for a column. To create a group for a column, right click on its header and choose <strong>create group</strong>. Next, a <strong>create group</strong> window pops up in which you can select multiple values. Then click on <strong>Group</strong>. This results in grouping those values with a common group name, which can be edited. Once you’ve finished creating the groups, click <strong>ok</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/58f4204b-df7d-475f-a502-b73a8e1e11a5_Picture9.html" /><figcaption aria-hidden="true">group</figcaption>
+</figure>
+<p>As shown above, a new column gets created with the datatype <strong>group</strong>. This new column with grouped values can be used in the visualization instead of the original column.</p>
+<h3 id="split">Split</h3>
+<p>Columns consisting of string values can be easily split into multiple columns using the <strong>split</strong> or <strong>custom split</strong> options. For example, the name field can be split into two columns consisting of the first name and last name using split. Split automatically determines the space delimiter in the string value and splits the strings accordingly.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/983d1a91-4d3b-480c-9813-fc6c43af5da2_Picture10.html" /><figcaption aria-hidden="true">split</figcaption>
+</figure>
+<p>If only a certain part of the string is required after splitting or a custom delimiter has been used in the string value, the <strong>custom split</strong> option can be used. For example, if the last part of the Order ID is required, right-click on the column header and select <strong>custom split</strong>. A custom split window pops up in which you can select the separator or delimiter and how many strings to split off from the beginning, end, or all positions.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8d9b3674-e8aa-435d-80d6-4b769f2210a3_Picture11.html" /><figcaption aria-hidden="true">custom split</figcaption>
+</figure>
+<h3 id="bins">Bins</h3>
+<p>The values of a numeric column can be grouped into bins. Bins are used to convert continuous numeric values into discrete sequences of range values. The bins are then used to visualize the trends in histograms. For example, consider the sales column, which can be converted into bins for plotting a histogram.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/06947f0e-c3e7-4b7f-84fe-a11c64df0d41_Picture12.html" /><figcaption aria-hidden="true">Bins</figcaption>
+</figure>
+<h3 id="calculated-fields">Calculated Fields</h3>
+<p>Calculated fields can be used if you need to create customized logic for manipulating certain data types or data values. There are a large-range of functions available in Tableau that can used individually or collectively for data manipulation. For example, if you want the date format to include the weekday and month in separate columns, a calculated field will need to be created using the formula shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d6557896-91d7-4fb9-bb26-cdcb8a1e3fec_Picture13.html" /><figcaption aria-hidden="true">calculated field</figcaption>
+</figure>
+<h3 id="pivot">Pivot</h3>
+<p>Consider the pivoted dataset shown below. Since the dimension values for the year are the column headers, a chart based on years cannot be plotted. In order to convert this dataset from the pivoted, or wide, shape to the narrow shape, which is preferred for visualization, use the pivot option, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5e146efa-c9a3-4c44-98dc-921737a5e439_Picture14.html" /><figcaption aria-hidden="true">pivot</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, you learned about the essential features and functionality provided by Tableau to deal with challenges related to your dataset and its manipulation to make it fit for building visualizations. To learn more about data manipulation in Tableau, check out these amazing courses:</p>
+<ul>
+<li><a href="https://pluralsight.pxf.io/ZodJR">Collecting and Preparing Data for Tableau Desktop</a></li>
+<li><a href="https://pluralsight.pxf.io/Xgxo5">Manipulating Data in Tableau Desktop</a></li>
+</ul>
+<p>To get more familiar with data literacy concepts, refer to <a href="https://pluralsight.pxf.io/Qo5Xa">this guide</a>.</p>
+<p>14</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

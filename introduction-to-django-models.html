@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>introduction-to-django-models</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="introduction-to-django-models">Introduction to Django Models</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Oct 21, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>1,273 Views</p></li>
+<li><p>Oct 21, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>1,273 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>15</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-djangomodels" class="menu-link">Django Models</a></li>
+<li><a href="#module-samplemodel" class="menu-link">Sample Model</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Django is a web development framework based on Python. Using the model-view-controller (MVC) architecture, it provides a level of abstraction and best practices to ease development.</p>
+<p>This guide will explore the “model” part of the MVC architecture. Models are abstractions of tables in the SQL sense. <a href="https://docs.djangoproject.com/en/3.1/topics/db/models/">Models</a> are the components of the MVC that define the shape of the data. In Django, models are defined using Python classes.</p>
+<p>The guide assumes you have at least intermediate-level skills in Python and at least beginner-level in Django. An introductory guide to Django can be found <a href="introduction-to-web-development-in-python-and-django.html">here</a>.</p>
+<h2 id="django-models">Django Models</h2>
+<p>Each Django model maps to a single database table, and each attribute of the model maps to a database field. Models are a subclass of Django’s <span class="jsx-3120878690"><code>django.db.models.Model</code></span> by default.</p>
+<p>Since they are the source of information about the data within the Django app, Django provides a way to access the stored information for CRUD (create, retrieve, update, delete) operations. This method is referred to as <a href="https://docs.djangoproject.com/en/3.1/topics/db/queries/">queries</a>.</p>
+<h2 id="sample-model">Sample Model</h2>
+<p>To get a better understanding of models, below is a code snippet of a <em>School</em> model with four fields:</p>
+<ul>
+<li><p>name</p></li>
+<li><p>total_population</p></li>
+<li><p>date_of_establishment</p></li>
+<li><p>is_private</p>
+<p>1from django.db import models 2 3class School(models.Model): 4 name = models.CharField(max_length=20) 5 total_population = models.IntegerField(default=200) 6 date_of_establishment = models.DateField() 7 is_private = models.BooleanField(default=False)</p></li>
+</ul>
+<p>python</p>
+<p>In the example above, the <span class="jsx-3120878690"><code>School</code></span> model maps to a School table within the database. The model attributes map to table columns with the same defined properties, such as data types and defaults. The <span class="jsx-3120878690"><code>models.CharField()</code></span> function will generate a <span class="jsx-3120878690"><code>Varchar</code></span> or <span class="jsx-3120878690"><code>String</code></span> field, while the <span class="jsx-3120878690"><code>models.BooleanField()</code></span> will generate a Boolean field within the database.</p>
+<p>The functions provide much-needed abstraction from database operations, which is the objective of an MVC architecture. This makes app development with Django easier.</p>
+<p>Being a Python class, the model can also be further empowered with functions that can further process the data within an instance of an object created from the class.</p>
+<p>For example, consider a scenario where you need to check the total population and status of a school. If the school is private, the total population should not exceed 1,000, and if it does, a message should be returned.</p>
+<pre><code>1def check_population(self):
+2    if self.is_private and self.total_population &gt; 1000:
+3        return &quot;Private school maximum capacity is 1000&quot;</code></pre>
+<p>python</p>
+<h3 id="databases">Databases</h3>
+<p>Models are the components that interact with the databases. In Django, databases are defined within the <span class="jsx-3120878690"><code>settings.py</code></span> file as a configuration dictionary. By default, the boilerplate code generates a connection to a simple SQLite database. Below is a sample configuration dictionary.</p>
+<pre><code>1DATABASES = {
+2    &#39;default&#39;: {
+3        &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
+4        &#39;NAME&#39;: os.path.join(BASE_DIR, &#39;db.sqlite3&#39;),
+5    }
+6}</code></pre>
+<p>python</p>
+<p>For bigger projects, <a href="https://www.postgresql.org/">Postgres</a> is a preferred database due to its reliability and capacity to handle higher traffic. Django integrates smoothly with Postgres. Below is a sample of a connection configuration with Postgres. With Postgres, however, you need some extra work to setup the database and connect it to Django. You can learn more about that in this <a href="https://medium.com/@stackpython/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8">guide</a>.</p>
+<pre><code>1DATABASES = {
+2    &#39;default&#39;: {
+3        &#39;ENGINE&#39;: &#39;django.db.backends.postgresql_psycopg2&#39;,
+4        &#39;NAME&#39;: &#39;myproject&#39;,
+5        &#39;USER&#39;: &#39;myprojectuser&#39;,
+6        &#39;PASSWORD&#39;: &#39;password&#39;,
+7        &#39;HOST&#39;: &#39;localhost&#39;,
+8        &#39;PORT&#39;: &#39;&#39;,
+9    }
+10}</code></pre>
+<p>python</p>
+<p>Since the configuration is a dictionary of dictionaries, this means that it is possible to have more than one database within a Django project. To learn more about using multiple databases, check out this <a href="https://docs.djangoproject.com/en/3.1/topics/db/multi-db/">guide</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>An understanding of the model component of the Django MVC allows you to learn the intricacies of the architecture and customize it for your unique needs.</p>
+<p>To build on this guide, read further about Django model-related concepts, including:</p>
+<ol type="1">
+<li><p>Django Databases: How to connect to different databases and how to deal with more than one database. Consult <a href="https://docs.djangoproject.com/en/3.1/ref/databases/">this guide</a> for reference.</p></li>
+<li><p>Abstract Models and Inheritance: Design your own parent model that others can inherit from. Refer to <a href="https://docs.djangoproject.com/en/3.1/ref/models/options/">this guide</a>.</p></li>
+<li><p>Polymorphism in Django models: Refer to <a href="https://realpython.com/modeling-polymorphism-django-python/">this guide</a> for a deeper dive into the topic.</p></li>
+</ol>
+<p>15</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

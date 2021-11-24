@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>add-large-amounts-of-data-in-the-app-state-in-redux</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="add-large-amounts-of-data-in-the-app-state-in-redux">Add Large Amounts of Data in the App State in Redux</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 16, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>16,327 Views</p></li>
+<li><p>Oct 16, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>16,327 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>33</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-creatingreduxboilerplate" class="menu-link">Creating Redux Boilerplate</a></li>
+<li><a href="#module-creatinglargejsondata" class="menu-link">Creating Large JSON Data</a></li>
+<li><a href="#module-addinglargeamountsofdatainstate" class="menu-link">Adding Large Amounts of Data in State</a></li>
+<li><a href="#module-analyzinglargewriteoperation" class="menu-link">Analyzing Large Write Operation</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Redux stores are global states that store data you want to use across multiple components without drilling props at every level in your component tree. As an app gets large and complex, you might want to store large, bulky data inside your Redux store and access it inside a component. A Redux store doesn’t have a limit on the amount of data stored, so you can pretty much use it to store almost anything, including bulky JSON data, data in table form, etc. This guide will demonstrate how to add large amounts of data in your React Redux app state.</p>
+<h2 id="creating-redux-boilerplate">Creating Redux Boilerplate</h2>
+<p>In an empty Create-React-App React-Redux project, set up a simple store and reducer using the below code in a file called <span class="jsx-3120878690"><code>store.js</code></span> inside the root directory.</p>
+<pre><code>1import { createStore} from &#39;redux&#39;;
+2const initailState={
+3    data:&#39;lorem ipsum&#39;,
+4}
+5const rootReducer=(state=initailState,action)=&gt;{
+6    switch(action.type){
+7        case &#39;ADD_DATA&#39;:
+8            return{
+9                ...state,
+10                data: action.payload
+11            }
+12        default:
+13            return state;
+14    }
+15}
+16
+17export default createStore(rootReducer)</code></pre>
+<p>javascript</p>
+<p>Next, wrap your app around a <span class="jsx-3120878690"><code>Provider</code></span> component and pass the <span class="jsx-3120878690"><code>store</code></span> as <span class="jsx-3120878690"><code>props</code></span> so that all the components inside this <span class="jsx-3120878690"><code>Provider</code></span> component can use the <span class="jsx-3120878690"><code>store</code></span> inside <span class="jsx-3120878690"><code>index.js</code></span>.</p>
+<pre><code>1import React from &#39;react&#39;;
+2import ReactDOM from &#39;react-dom&#39;;
+3import &#39;./index.css&#39;;
+4import App from &#39;./App&#39;;
+5import * as serviceWorker from &#39;./serviceWorker&#39;;
+6import {Provider} from &#39;react-redux&#39;;
+7import store from &#39;./store&#39;;
+8
+9ReactDOM.render(
+10  &lt;React.StrictMode&gt;
+11    &lt;Provider store={store}&gt;
+12      &lt;App /&gt;
+13    &lt;/Provider&gt;
+14  &lt;/React.StrictMode&gt;,
+15  document.getElementById(&#39;root&#39;)
+16);
+17
+18serviceWorker.unregister();</code></pre>
+<p>jsx</p>
+<p>The store will initially have some short and simple data. Next, create a file <span class="jsx-3120878690"><code>action.js</code></span> and create an action creator with an action of type <span class="jsx-3120878690"><code>ADD_DATA</code></span>. It also contains an object <span class="jsx-3120878690"><code>addData</code></span> that connects the action <span class="jsx-3120878690"><code>type</code></span> and <span class="jsx-3120878690"><code>payload</code></span> properties to the data passed through <span class="jsx-3120878690"><code>dispatch()</code></span> method.</p>
+<pre><code>1const data=&#39;new data&#39;;
+2export const ADD_DATA = &quot;ADD_DATA&quot;;
+3export const addData = {
+4      type: ADD_DATA,
+5      payload: data
+6};
+7export default addData;</code></pre>
+<p>jsx</p>
+<p>Finally, connect the <span class="jsx-3120878690"><code>store</code></span> and <span class="jsx-3120878690"><code>dispatch()</code></span> to a component that can dispatch some action and append data to the global state.</p>
+<pre><code>1import React,{useState} from &#39;react&#39;;
+2import {connect} from &#39;react-redux&#39;
+3import {addData} from &#39;./action&#39;;
+4import &#39;./App.css&#39;;
+5
+6function App({addData,data}) {
+7
+8  return (
+9    &lt;div className=&quot;App&quot;&gt;
+10      &lt;h1&gt;App&lt;/h1&gt;
+11      &lt;button onClick={addData}&gt;Add Data&lt;/button&gt;
+12    &lt;/div&gt;
+13  );
+14}
+15
+16const mapStateToProps=(state)=&gt;({ data:state.data })
+17
+18const mapDispatchToProps = (dispatch) =&gt; {
+19  return {
+20    addData: ()=&gt; dispatch(addData)
+21  }
+22}
+23export default connect(mapStateToProps,mapDispatchToProps)(App);</code></pre>
+<p>jsx</p>
+<p>The app component renders a simple button that fires or dispatches the <span class="jsx-3120878690"><code>ADD_DATA</code></span> action. On dispatching this action, you add some simple data to your global store’s state.</p>
+<h2 id="creating-large-json-data">Creating Large JSON Data</h2>
+<p>The next step is to create a <span class="jsx-3120878690"><code>data.js</code></span> file where the dummy data can be put for testing. Create a new file called <span class="jsx-3120878690"><code>data.js</code></span> inside the root directory and add some large amounts of data inside it. The example uses a large JSON data of 1,000 entries created using online mock data generating tool <a href="https://www.mockaroo.com/">Mockaroo</a>. You can use the same tool to generate any kind of large data or use your own data. Inside the <span class="jsx-3120878690"><code>data.js</code></span> file, copy and paste the large JSON data and export it as an object.</p>
+<pre><code>1export default [
+2 {
+3      &quot;id&quot;: 1,
+4      &quot;first_name&quot;: &quot;Zackariah&quot;,
+5      &quot;last_name&quot;: &quot;Rembaud&quot;,
+6      &quot;email&quot;: &quot;[email protected]&quot;,
+7      &quot;gender&quot;: &quot;Male&quot;,
+8      &quot;ip_address&quot;: &quot;40.23.171.141&quot;
+9    },
+10    ...
+11]</code></pre>
+<p>javascript</p>
+<p>This data can be used anywhere throughout your app by importing it like a regular object using the <span class="jsx-3120878690"><code>import</code></span> keyword at the top of your component.</p>
+<pre><code>1import data from &#39;./data.js&#39;;</code></pre>
+<p>jsx</p>
+<h2 id="adding-large-amounts-of-data-in-state">Adding Large Amounts of Data in State</h2>
+<p>Import the large data inside the <span class="jsx-3120878690"><code>action.js</code></span> file and pass this data to the <span class="jsx-3120878690"><code>payload</code></span> property inside the <span class="jsx-3120878690"><code>addData</code></span> object.</p>
+<pre><code>1import data from &#39;./data.js&#39;;
+2
+3export const ADD_DATA = &quot;ADD_DATA&quot;;
+4export const addData = {
+5      type: ADD_DATA,
+6      payload: data
+7};
+8export default addData;</code></pre>
+<p>javascript</p>
+<p>You are now ready to dispatch the <span class="jsx-3120878690"><code>ADD_DATA</code></span> action from your app component and add large JSON data of thousands of entries to your app’s global store’s state. Click the <strong>Add Data</strong> button and you can check that your store’s state contains this large JSON data inside it. Thus you can add any amount of data in your app state by dispatching an action that stores that data in your Redux store through a reducer.</p>
+<h2 id="analyzing-large-write-operation">Analyzing Large Write Operation</h2>
+<p>Storing a single line of data or a thousand entries of a complex JSON object makes no difference to Redux, as your Redux store is independent of the amount of data stored in it. On clicking the Add Data button, the <span class="jsx-3120878690"><code>ADD_DATA</code></span> action is dispatched. This adds the large data inside the store without any flickering or UI lag, indicating that there is no performance difference when you add large data in the app state. You can try out with an even larger data set but the results will be the same.</p>
+<p>For a more detailed analysis, you can use Google Chrome’s Lighthouse to evaluate your app’s performance by generating an app report after performing this operation, in one case using simple data and in another using the large JSON data, and compare the performance reports of both. You will find that both show nearly the same performance, showing that adding large amounts of data doesn’t affect your app’s performance.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Your Redux store imposes no limitations on the size of the data stored. Dispatching an action that performs this operation will not downgrade the performance of your app, so you can safely store any amount of data in your app’s <span class="jsx-3120878690"><code>state</code></span>. However, if you’re storing large data in the app state, at some point you may want to show it to the user by rendering it on the DOM. You may want to use techniques like <a href="https://app.pluralsight.com/guides/how-to-load-components-conditionally-in-reactjs">lazy loading</a> to improve your app’s performance in such situations while still delivering all the content on your app.</p>
+<p>33</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>tableau-essentials_-build-symbol-maps</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/a90da03f-c20c-41af-a9a3-c39cb62d7065.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="tableau-essentials-build-symbol-maps">Tableau Essentials: Build Symbol Maps</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Oct 21, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>1,284 Views</p></li>
+<li><p>Oct 21, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>1,284 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Tableau</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-assigninggeographicroles" class="menu-link">Assigning Geographic Roles</a></li>
+<li><a href="#module-creatingasymbolmap" class="menu-link">Creating a Symbol Map</a></li>
+<li><a href="#module-troubleshootingtips" class="menu-link">Troubleshooting Tips</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Tableau has extensive mapping capabilities with multiple configurations to represent data geographically. A <em>symbol map</em> is a chart type in which quantitative values can be represented for various locations on a map utilizing built-in or custom symbols. To make the visual intuitive for the user, the size, color, and shape properties of the symbols can be leveraged. In this guide, you will learn how to create symbol maps in Tableau along with some relevant use cases.</p>
+<h2 id="assigning-geographic-roles">Assigning Geographic Roles</h2>
+<p>To plot a geographic dimension like country or state on a map, the text field in the dataset must be assigned a corresponding geographic role. Right-click the dimension in the sidebar and choose a geographic role, as shown below. <embed src="../../pluralsight2.imgix.net/guides/f8bae45e-f994-46af-bbd5-554cd64c5389_1.html" /></p>
+<p>The <strong>abc</strong> symbol beside the dimension is changed to a globe once the geographic role is assigned, as shown below. The corresponding latitude and longitude coordinates are generated automatically by Tableau’s built-in map server once the geographic role is assigned to the selected field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7a5b540e-f3ed-40cb-b981-4c124ee820e9_2.html" /><figcaption aria-hidden="true">Geo Role Assigning</figcaption>
+</figure>
+<blockquote>
+<p><strong>Note:</strong> This is an essential prerequisite step. Without the correct geographic role and generated geo-coordinates, Tableau cannot plot the field on a map.</p>
+</blockquote>
+<h2 id="creating-a-symbol-map">Creating a Symbol Map</h2>
+<p>There are a couple of ways to create symbol maps.</p>
+<h3 id="using-the-marks-card">Using the Marks Card</h3>
+<p>When you double-click on a dimension with an assigned geographical role, the map is plotted with the dimension on the details card, and the latitude and longitude pills are placed on the rows and columns. As shown below, each state in the dataset is represented by a circle symbol on the map by default. <embed src="../../pluralsight2.imgix.net/guides/9c04ed9d-8c4f-434b-a087-e6e241c9591f_3.html" /></p>
+<p>Next, in order to leverage the size attribute for the visualization, drag and drop the sales pill onto the size marks card and increase the size as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/70967baa-c649-4fea-ae3f-8d757130f44d_2.html" /><figcaption aria-hidden="true">Symbol Map Size</figcaption>
+</figure>
+<p>The color attribute for the symbols can be leveraged using the color marks card. Drag and drop the profit pill onto the color marks card.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/77d62ff8-9253-427a-9a8e-326a615cd5eb_3.html" /><figcaption aria-hidden="true">Symbol Color</figcaption>
+</figure>
+<p>Three insights are reflected in this symbol map:</p>
+<ul>
+<li>Geographic locations of the various states</li>
+<li>Sales in comparison to other states, which are represented by the size of the circular symbol</li>
+<li>Profit in comparison to other states, which is represented by the color of the circular symbol</li>
+</ul>
+<p>It can be observed that Texas has a substantial number of sales, but they’ve resulted in an overall loss for the state.</p>
+<h4 id="changing-the-symbol-shape">Changing the Symbol Shape</h4>
+<p>You can also change the shape of the symbol to either a built-in shape or your own custom shape.</p>
+<p>In order to use a different shape, click on the drop-down menu in marks and choose shape as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1c2d6c6a-6ba7-4ba0-9043-8d6dc1c68661_4.html" /><figcaption aria-hidden="true">shapes</figcaption>
+</figure>
+<p>Next, click on the shape marks card to select a shape from the default ones as desired. The selected shape gets reflected immediately on the map as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/b0e09163-5de5-460c-90c4-106472f57cf8_5.html" /><figcaption aria-hidden="true">change shape</figcaption>
+</figure>
+<p>In order to add your own custom symbols, copy the image files into a new or existing folder in the shapes directory of your local Tableau repository, which can be found at the following path in Windows OS: <span class="jsx-3120878690"><code>C:\Users\&lt;Your                                       Username&gt;\Documents\My Tableau                                       Repository\Shapes</code></span>. Next, click on the <strong>shape marks card</strong> followed by <strong>more shapes</strong> and then on <strong>reload shapes</strong> as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/83aecd41-69d0-4eec-a3d0-282ea64f003a_6.html" /><figcaption aria-hidden="true">custom shape</figcaption>
+</figure>
+<p>Since the custom shape was added in a folder named “My Custom Shape”, it gets reflected in the dropdown menu and you can choose shapes from within that folder for your symbol map.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/57cfa747-07eb-44cc-8b41-ec08a3660c68_7.html" /><figcaption aria-hidden="true">select custom shape</figcaption>
+</figure>
+<p>Upon clicking <strong>OK</strong>, the default circular symbol gets replaced by the chosen custom shape in the symbol map.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/087433c5-7a0b-463c-b24b-6183f741c7a3_8.html" /><figcaption aria-hidden="true">custom symbol map</figcaption>
+</figure>
+<h3 id="using-the-show-me-menu">Using the Show Me Menu</h3>
+<p>Another technique for creating a symbol map is to click on a dimension with an assigned geographic role, hold the control key, click on a measure, and release the control key. Next, click on the symbol map icon in the <strong>Show Me</strong> menu, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5a4ea061-4ffe-4025-87ca-319b8ae493d7_9.html" /><figcaption aria-hidden="true">symbol map show me</figcaption>
+</figure>
+<p>This results in the symbol map shown below with the chosen measure reflected per the symbol size in the map.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dd3ad47a-b7e8-40c7-ae47-f9b1eb57052f_10.html" /><figcaption aria-hidden="true">show me symbol map</figcaption>
+</figure>
+<h4 id="using-multiple-symbols-based-on-a-dimension">Using Multiple Symbols Based on a Dimension</h4>
+<p>In a symbol map, the shape marks card can also be used to allocate different shapes based on a chosen dimension or measure.</p>
+<p>In order to reflect the state shape by region, select the shape option from the drop-down menu in the marks card. Next, drag and drop the region dimension onto the shapes marks card.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/feb3500e-21b1-41a4-90bf-ab245fa9f60c_11.html" /><figcaption aria-hidden="true">region symbol</figcaption>
+</figure>
+<p>This symbol map intuitively reflects which state had the most sales in either of the regions.</p>
+<h2 id="troubleshooting-tips">Troubleshooting Tips</h2>
+<ul>
+<li>If a blank map comes up with an unknown location indicator, select the appropriate country name or match the state names manually using the <strong>Edit Locations</strong> dialogue box, as shown below.</li>
+</ul>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0138b4ab-cc72-4673-8337-9d6c41935f04_10.html" /><figcaption aria-hidden="true">Edit Locations</figcaption>
+</figure>
+<p>If the country name is present in the dataset, that dimension can be selected by clicking the <strong>from field</strong> radio button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8c1b47b0-fef4-4c32-987e-1a7f71f39d31_12.html" /><figcaption aria-hidden="true">From field</figcaption>
+</figure>
+<p>Otherwise, choose the correct country name for the states from the drop-down manually by clicking on the <strong>fixed</strong> radio button.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/9fb7450c-fdce-46c8-8c97-96b99c37d723_11.html" /><figcaption aria-hidden="true">Edit Locations</figcaption>
+</figure>
+<p>If any of the states are unrecognized, which could be due to spelling differences in the dataset, the state names in the data can be matched with the standardized state names in the Tableau map server backend by using the matching location column, as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8afa5b39-fa81-40d1-a4cb-43ec47f6632d_13.html" /><figcaption aria-hidden="true">Matching Locations</figcaption>
+</figure>
+<blockquote>
+<p><strong>Note:</strong> The same steps can be followed if you face issues using fields with another geographic role, such as ZIP code or city, but remember that even though many geographic roles are international, <a href="https://help.tableau.com/current/pro/desktop/en-us/maps_geographicroles.htm">some are limited to the U.S. only</a>.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide covered how to create a symbol map in Tableau with default and custom shapes, different use cases, and troubleshooting tips. Apart from symbol maps, filled maps can also be created in Tableau and are used to represent different geographic territories on a map with areas colored based on a measure or dimension.</p>
+<p>To learn more about mapping capabilities in Tableau, <a href="https://pluralsight.pxf.io/4Qkqo">check out this amazing course</a>.</p>
+<p>And here are a few other guides that can help you learn more about Tableau maps:</p>
+<ul>
+<li><a href="https://pluralsight.pxf.io/9NLrQ">Build Filled Maps in Tableau</a></li>
+<li><a href="https://pluralsight.pxf.io/NdvYb">Zooming and Panning in Tableau Maps</a></li>
+<li><a href="https://pluralsight.pxf.io/rVaBB">Using Selection Methods in Tableau Maps</a></li>
+</ul>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

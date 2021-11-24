@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>best-practices-with-the-angular-style-guide</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/b80bbd58-40e1-4db4-a8e5-12bb0fecc089.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Zachary Bennett</p>
+<h1 id="best-practices-with-the-angular-style-guide">Best Practices with the Angular Style Guide</h1>
+<h3 id="zachary-bennett">Zachary Bennett</h3>
+<ul>
+<li><p>Sep 29, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>3,539 Views</p></li>
+<li><p>Sep 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>3,539 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Angular</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p>Introduction</p>
+<p>14</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-namingconventions" class="menu-link">Naming Conventions</a></li>
+<li><a href="#module-ruleofone" class="menu-link">Rule of One</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Angular is a big, opinionated JavaScript framework that is heavily used by enterprises and organizations that are looking to write JavaScript that scales. When using any big framework like Angular—especially on a developer team of substantial size—it is imperative that you follow recommended best practices. Following the official Angular style guide is a big step towards producing clean, maintainable code that is written the “Angular” way. By following the style guide, you will ensure that your code stands the test of time!</p>
+<p>In this guide, we will touch on some of the key principles kept within the <a href="https://angular.io/guide/styleguide">Angular coding style guide</a> and look at some code samples in order to cement our knowledge.</p>
+<p>Let’s dive in!</p>
+<h2 id="naming-conventions">Naming Conventions</h2>
+<p>The first best practice is a blanket term that covers the many naming conventions that are each considered to be the “Angular” way of naming entities within your app. The following is a list of the most important conventions to use when naming things:</p>
+<ul>
+<li><p>File names should always be dash-delimited, with dots being used to denote the “type” of the file so that it is easy to tell what entity is contained with the file. Ex: Prefer <span class="jsx-3120878690"><code>currency-converter.pipe.ts</code></span> over <span class="jsx-3120878690"><code>currencyConverterPipe.ts</code></span></p></li>
+<li><p>All service classes should end with the term <span class="jsx-3120878690"><code>Service</code></span>. Ex:</p>
+<pre><code>1@Injectable()
+2export class ShippingLaneService {
+3...</code></pre>
+<p>typescript</p></li>
+<li><p>Selectors for your components should always be dash-delimited, like files, and contain the appropriate app prefix. This is so that your custom selectors closely match the surrounding HTML but are also easily distinguishable due to the prefix. Ex:</p>
+<pre><code>1&lt;div&gt;
+2    &lt;app-customer-navbar&gt;&lt;/app-customer-navbar&gt;
+3&lt;/div&gt;
+4...</code></pre>
+<p>html</p></li>
+<li><p>Module classes should always end with the term <span class="jsx-3120878690"><code>Module</code></span> so that it is clear what functionality is encapsulated by this class/module. Ex: 1@NgModule({ 2… 3}) 4export class ShippingLaneModule { 5…</p>
+<p>typescript</p></li>
+</ul>
+<p>By following these naming conventions, you will ensure that your app is more easily maintainable. Developers who onboard onto your project will have a much easier time getting up to speed! For more naming conventions, check out the <a href="https://angular.io/guide/styleguide#naming">naming portion</a> of the official Angular style guide.</p>
+<h2 id="rule-of-one">Rule of One</h2>
+<p>Another important piece to the Angular style guide is the Rule of One. The Rule of One is adapted from the Single Responsibility Principle in software engineering that essentially states that your app or program should be split up into different areas of concern with each area focused on one piece of program or system functionality.</p>
+<p>For example, let’s say your Angular app is concerned with showing shipping lanes to users on a map. Adhering to the Rule of One means that your Angular app will be split into different feature modules that each implement the business logic for one feature. For this app, you may have the following features:</p>
+<ul>
+<li>Interactive map</li>
+<li>Shipping lane data ingest</li>
+<li>User profile</li>
+</ul>
+<p>In order to ensure that this app follows the Rule of One, you would essentially create a separate module for each one of these features. At a high level, each of these modules might look like the following:</p>
+<pre><code>1// map.module.ts
+2NgModule({...})
+3export class MapModule {
+4    // Declares map-related components and services
+5    // Each of these nested components and services also follow the &quot;Rule of One&quot;
+6}</code></pre>
+<p>typescript</p>
+<pre><code>1// shipping-lane.module.ts
+2NgModule({...})
+3export class ShippingLaneModule {
+4    // Declares shipping lane related components and services, i.e. ShippingLaneService, ShippingLaneComponent
+5    // Each of these nested components and services also follow the &quot;Rule of One&quot;
+6}</code></pre>
+<p>typescript</p>
+<pre><code>1// user-profile.module.ts
+2NgModule({...})
+3export class UserProfileModule {
+4    // Declares user profile related components and services
+5    // Each of these nested components and services also follow the &quot;Rule of One&quot;
+6}</code></pre>
+<p>typescript</p>
+<p>By following the Rule of One, you will ensure that your app is as simple as possible. This will make your app much more maintainable in the long run.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>By following these suggestions from the Angular style guide, you are gaining the following benefits:</p>
+<ul>
+<li>Your app will be more maintainable and easy to reason about</li>
+<li>New developers will be onboarded much more easily because your app is doing things “the Angular way”</li>
+<li>Your app will play nicely with other Angular dependencies and third-party components</li>
+</ul>
+<p>Out of these benefits, arguably the most important one is the ease of onboarding new developers. By following the Angular style guide closely, you can ensure that new Angular developers can easily get up to speed on your app because they will not have to learn a bunch of custom domain knowledge. This means less mental complexity, and that is always a good thing when it comes to developing your app!</p>
+<p>For a deeper dive and to see how else the Angular style guide can benefit your app, you can check out the official <a href="https://angular.io/guide/styleguide#angular-coding-style-guide">Angular coding style guide</a>.</p>
+<p>14</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

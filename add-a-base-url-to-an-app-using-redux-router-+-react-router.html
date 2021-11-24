@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>add-a-base-url-to-an-app-using-redux-router-+-react-router</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="add-a-base-url-to-an-app-using-redux-and-react-router">Add a Base URL to an App Using Redux and React Router</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 1, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>30,501 View s</p></li>
+<li><p>Nov 1, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min </span> read</p></li>
+<li><p>30,501 View s</p></li>
+</ul>
+<p><span class="jsx-3759398792"> </span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"> </span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"> </span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"> </span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>15</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-reactrouterexample" class="menu-link">React-Router Example</a></li>
+<li><a href="#module-integratingredux" class="menu-link">Integrating Redux</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>A primary ingredient in any traditional or single-page app is routing. Routing is the ability to navigate from one page to another. In a typical single-page app, you can use React Router to do the routing for you. But as the app grows and the global state gets complicated, you may need to use a state management library like Redux.</p>
+<p>The app may also be running on a different path (<a href="https://example.com/app" class="uri">https://example.com/app</a>) and not on the root domain, adding additional complexity. In this guide, you will learn how to set up a base URL in React Router and how to combine Redux seamlessly.</p>
+<h2 id="react-router-example">React-Router Example</h2>
+<p>This section covers how to add a base URL in a simple React app using React Router.</p>
+<h3 id="install-react-router">Install React-Router</h3>
+<p>The first step is to install the <span class="jsx-3120878690"><code>react-router-dom</code></span> dependency in your app.</p>
+<pre><code>1npm i react-router-dom</code></pre>
+<h3 id="configure-the-routes">Configure the Routes</h3>
+<p>Next, add the page components as routes in the app.</p>
+<pre><code>1const HomePage = () =&gt; {
+2  return (
+3    &lt;div&gt;
+4      &lt;h2&gt;Home&lt;/h2&gt;
+5    &lt;/div&gt;
+6  );
+7};
+8
+9const ContactPage = () =&gt; {
+10  return (
+11    &lt;div&gt;
+12      &lt;h2&gt;Contact&lt;/h2&gt;
+13    &lt;/div&gt;
+14  );
+15};
+16
+17const ProfilePage = () =&gt; {
+18  return (
+19    &lt;div&gt;
+20      &lt;h2&gt;Profile&lt;/h2&gt;
+21    &lt;/div&gt;
+22  );
+23};</code></pre>
+<p>jsx</p>
+<p>Pass the above page components as children to the <span class="jsx-3120878690"><code>Route</code></span> component and wrap with the <span class="jsx-3120878690"><code>Switch</code></span> component from <span class="jsx-3120878690"><code>react-router-dom</code></span>.</p>
+<pre><code>1import { Route, Switch } from &quot;react-router-dom&quot;;
+2// ...
+3
+4const Main = () =&gt; {
+5  return (
+6    &lt;div className=&quot;app&quot;&gt;
+7      &lt;Navbar /&gt;
+8      &lt;div className=&quot;content&quot;&gt;
+9        &lt;Switch&gt;
+10          &lt;Route exact path=&quot;/&quot;&gt;
+11            &lt;HomePage /&gt;
+12          &lt;/Route&gt;
+13          &lt;Route path=&quot;/contact&quot;&gt;
+14            &lt;ContactPage /&gt;
+15          &lt;/Route&gt;
+16          &lt;Route path=&quot;/profile&quot;&gt;
+17            &lt;ProfilePage /&gt;
+18          &lt;/Route&gt;
+19        &lt;/Switch&gt;
+20      &lt;/div&gt;
+21    &lt;/div&gt;
+22  );
+23};</code></pre>
+<p>jsx</p>
+<h3 id="adding-a-base-url">Adding a Base URL</h3>
+<p>Import the <span class="jsx-3120878690"><code>BrowserRouter</code></span> component from <span class="jsx-3120878690"><code>react-router-dom</code></span>. The <span class="jsx-3120878690"><code>BrowserRouter</code></span> component has a <span class="jsx-3120878690"><code>basename</code></span> prop, which accepts a string as its value in case the React app is hosted from a sub-directory.</p>
+<pre><code>1import { BrowserRouter } from &quot;react-router-dom&quot;;
+2
+3const App = () =&gt; {
+4  return (
+5    &lt;BrowserRouter basename=&quot;/app&quot;&gt;
+6      &lt;Main /&gt;
+7    &lt;/BrowserRouter&gt;
+8  );
+9};</code></pre>
+<p>jsx</p>
+<p>Adding <span class="jsx-3120878690"><code>basename</code></span> in the <span class="jsx-3120878690"><code>BrowserRouter</code></span> component ensures that all the links in the routes are prefixed with the base URL. For example, <span class="jsx-3120878690"><code>&lt;Link to='/contact'                                       /&gt;</code></span> will be rendered as <span class="jsx-3120878690"><code>&lt;a                                       href='/app/contact'&gt;</code></span>.</p>
+<h2 id="integrating-redux">Integrating Redux</h2>
+<p>In this section, you will integrate Redux with the above React Router set up.</p>
+<p>The <span class="jsx-3120878690"><code>connected-react-router</code></span> package is recommended by the maintainers of React Router for deeper Redux integration. To install <span class="jsx-3120878690"><code>connected-react-router</code></span>, run the following command.</p>
+<pre><code>1npm i connected-react-router</code></pre>
+<h3 id="creating-the-history-object">Creating the history Object</h3>
+<p>The <span class="jsx-3120878690"><code>history</code></span> object can be used to change the browser’s history session programmatically. To create a <span class="jsx-3120878690"><code>history</code></span> object, import the <span class="jsx-3120878690"><code>createBrowserHistory</code></span> function from the <span class="jsx-3120878690"><code>history</code></span> package and create the object as shown below.</p>
+<pre><code>1import { createBrowserHistory } from &quot;history&quot;;
+2
+3const history = createBrowserHistory();</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>history</code></span> package is a dependency of <span class="jsx-3120878690"><code>react-router-dom</code></span>, so you don’t have to install it again.</p>
+<h3 id="create-router-connected-store">Create Router Connected Store</h3>
+<p>Next, connect the history object to the store. To do that, import the <span class="jsx-3120878690"><code>connectRouter</code></span> helper function from <span class="jsx-3120878690"><code>connected-react-router</code></span> package and provide the created history object.</p>
+<pre><code>1import { connectRouter } from &quot;connected-react-router&quot;;
+2import { createStore } from &quot;redux&quot;;
+3
+4const reducer = (initialState, action) =&gt; {
+5  // ...
+6};
+7
+8const store = createStore(connectRouter(history)(reducer));</code></pre>
+<p>jsx</p>
+<h3 id="adding-routermiddleware-to-redux">Adding <span class="jsx-3120878690"><code>routerMiddleware</code></span> to Redux</h3>
+<p><span class="jsx-3120878690"><code>routerMiddleware</code></span> will dispatch the history actions to the Redux store. Use the <span class="jsx-3120878690"><code>applyMiddleware</code></span> helper function from <span class="jsx-3120878690"><code>redux</code></span> to include <span class="jsx-3120878690"><code>routerMiddleware</code></span> in the app.</p>
+<pre><code>1import { connectRouter, routerMiddleware } from &quot;connected-react-router&quot;;
+2import { createStore, applyMiddleware } from &quot;redux&quot;;
+3
+4const store = createStore(
+5  connectRouter(history)(reducer),
+6  applyMiddleware(routerMiddleware(history))
+7);</code></pre>
+<p>js</p>
+<h3 id="using-connectedrouter-component">Using ConnectedRouter Component</h3>
+<p>You’re almost done. The last step is to use the <span class="jsx-3120878690"><code>ConnectedRouter</code></span> component and pass the history object as a prop. Make sure you wrap the <span class="jsx-3120878690"><code>ConnectedRouter</code></span> component with the <span class="jsx-3120878690"><code>Provider</code></span> component from <span class="jsx-3120878690"><code>react-redux</code></span>.</p>
+<pre><code>1import { ConnectedRouter } from &quot;connected-react-router&quot;;
+2import { Provider } from &quot;react-redux&quot;;</code></pre>
+<p>jsx</p>
+<pre><code>1const App = () =&gt; {
+2  return (
+3    &lt;Provider store={store}&gt;
+4      &lt;ConnectedRouter history={history}&gt;
+5        &lt;BrowserRouter basename=&quot;/app&quot;&gt;
+6          &lt;Main /&gt;
+7        &lt;/BrowserRouter&gt;
+8      &lt;/ConnectedRouter&gt;
+9    &lt;/Provider&gt;
+10  );
+11};</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Redux is a vital component of the React ecosystem, so you need to understand how to integrate React-Router and Redux and how they work together. React Router has an excellent section on <a href="https://reactrouter.com/web/guides/deep-redux-integration">deep Redux integration</a> that you may want to read for a better understanding of how things work under the hood.</p>
+<p>15</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>create-tooltips-in-d3js</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="create-tooltips-in-d3.js">Create Tooltips in D3.js</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Sep 29, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>12,029 Views</p></li>
+<li><p>Sep 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>12,029 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>21</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-twoapproachestotooltips" class="menu-link">Two Approaches To Tooltips</a></li>
+<li><a href="#module-addingtooltipsusingthetitlesvgelement" class="menu-link">Adding Tooltips Using the Title SVG Element</a></li>
+<li><a href="#module-usingmouseeventstocontroltooltips" class="menu-link">Using Mouse Events to Control Tooltips</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Tooltips are a feature designers can use when they want to gradually reveal information to users as they hover or place keyboard focus over an element. In this guide, you will learn two approaches to enhancing your D3.js charts by implementing tooltips.</p>
+<p>This guide builds on a previous guide, <a href="https://app.pluralsight.com/guides/using-d3.js-inside-a-react-app">Using D3.js Inside a React App</a>, that covers how to set up a simple bar chart in D3.js using static in-memory data. Here you will extend that bar chart with tooltips.</p>
+<h2 id="two-approaches-to-tooltips">Two Approaches To Tooltips</h2>
+<p>There are two possible methods of creating tooltips in D3.js. The first method is by creating the SVG <span class="jsx-3120878690"><code>&lt;title&gt;</code></span> tags as a descendant of an interactable element. The second approach is to use <span class="jsx-3120878690"><code>mouseover</code></span>, <span class="jsx-3120878690"><code>mosueleave</code></span>, and <span class="jsx-3120878690"><code>mousemove</code></span> events to dynamically move and change the visibility of a tooltip. The first approach is simple to implement but can lead to unnecessarily creating more elements that can hurt performance. Both approaches will be demonstrated.</p>
+<h2 id="adding-tooltips-using-the-title-svg-element">Adding Tooltips Using the Title SVG Element</h2>
+<p>In <a href="https://app.pluralsight.com/guides/using-d3.js-inside-a-react-app">Using D3.js Inside a React App</a>, the <span class="jsx-3120878690"><code>&lt;BarChart /&gt;</code></span> component creates the <span class="jsx-3120878690"><code>&lt;rect&gt;</code></span> element per sales year. To add a simple tooltip, you can insert the <span class="jsx-3120878690"><code>&lt;title /&gt;</code></span> tag inside the interactable elements. This means that the SVG hierarchy looks like this:</p>
+<pre><code>1&lt;svg&gt;
+2  &lt;g class=&quot;plot-area&quot;&gt;
+3  &lt;rect class=&quot;bar&quot; x=&quot;46&quot; width=&quot;13&quot; y=&quot;37&quot; height=&quot;433&quot;&gt;
+4    &lt;title&gt;Sales were 8949000 in 1980&lt;/title&gt;
+5  &lt;/rect&gt;
+6  &lt;rect class=&quot;bar&quot; x=&quot;60&quot; width=&quot;13&quot; y=&quot;-61&quot; height=&quot;531&quot;&gt;
+7    &lt;title&gt;Sales were 10979000 in 1985&lt;/title&gt;
+8  &lt;/rect&gt;
+9  &lt;/g&gt;
+10  ...
+11&lt;/svg&gt;</code></pre>
+<p>html</p>
+<p>The SVG element has been simplified for brevity.</p>
+<p>To do this with D3.js, you only need a minor update to the code that joins the data to the <span class="jsx-3120878690"><code>&lt;rect /&gt;</code></span> elements.</p>
+<pre><code>1svg
+2  .select(&quot;.plot-area&quot;)
+3  .attr(&quot;fill&quot;, &quot;steelblue&quot;)
+4  .selectAll(&quot;.bar&quot;)
+5  .data(data)
+6  .join(&quot;rect&quot;)
+7  .attr(&quot;class&quot;, &quot;bar&quot;)
+8  .attr(&quot;x&quot;, (d) =&gt; x(d.year))
+9  .attr(&quot;width&quot;, x.bandwidth())
+10  .attr(&quot;y&quot;, (d) =&gt; y1(d.sales))
+11  .attr(&quot;height&quot;, (d) =&gt; y1(0) - y1(d.sales))
+12  .append(&#39;title&#39;)
+13  .text((d) =&gt; `Sales were ${d.sales} in ${d.year}`);</code></pre>
+<p>javascript</p>
+<p>The last two lines add the <span class="jsx-3120878690"><code>&lt;title /&gt;</code></span> and dynamically set the text. The results are illustrated below: <embed src="../../pluralsight2.imgix.net/guides/ffe8ebc7-9587-4911-8dad-6e06174c84d8_Screenshot_2020-09-27_000818.html" /></p>
+<h2 id="using-mouse-events-to-control-tooltips">Using Mouse Events to Control Tooltips</h2>
+<p>The second approach is to use <span class="jsx-3120878690"><code>mousemove</code></span>, <span class="jsx-3120878690"><code>mouseleave</code></span>, and <span class="jsx-3120878690"><code>mouseenter</code></span> events to control the visibility, styling, and position of tooltips. This approach requires more code but gives you more control. The updated <span class="jsx-3120878690"><code>&lt;BarChart /&gt;</code></span> component with this approach is demonstrated below:</p>
+<pre><code>1import { useD3 } from &quot;./hooks/useD3&quot;;
+2import React from &quot;react&quot;;
+3import * as d3 from &quot;d3&quot;;
+4
+5function BarChart({ data }) {
+6  const ref = useD3(
+7    (svg) =&gt; {
+8      const height = 500;
+9      const width = 500;
+10      const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+11
+12      const x = d3
+13        .scaleBand()
+14        .domain(data.map((d) =&gt; d.year))
+15        .rangeRound([margin.left, width - margin.right])
+16        .padding(0.1);
+17
+18      const y1 = d3
+19        .scaleLinear()
+20        .domain([0, d3.max(data, (d) =&gt; d.sales)])
+21        .rangeRound([height - margin.bottom, margin.top]);
+22
+23      const xAxis = (g) =&gt;
+24        g.attr(&quot;transform&quot;, `translate(0,${height - margin.bottom})`).call(
+25          d3
+26            .axisBottom(x)
+27            .tickValues(
+28              d3
+29                .ticks(...d3.extent(x.domain()), width / 40)
+30                .filter((v) =&gt; x(v) !== undefined)
+31            )
+32            .tickSizeOuter(0)
+33        );
+34
+35      const y1Axis = (g) =&gt;
+36        g
+37          .attr(&quot;transform&quot;, `translate(${margin.left},0)`)
+38          .style(&quot;color&quot;, &quot;steelblue&quot;)
+39          .call(d3.axisLeft(y1).ticks(null, &quot;s&quot;))
+40          .call((g) =&gt; g.select(&quot;.domain&quot;).remove())
+41          .call((g) =&gt;
+42            g
+43              .append(&quot;text&quot;)
+44              .attr(&quot;x&quot;, -margin.left)
+45              .attr(&quot;y&quot;, 10)
+46              .attr(&quot;fill&quot;, &quot;currentColor&quot;)
+47              .attr(&quot;text-anchor&quot;, &quot;start&quot;)
+48              .text(data.y1)
+49          );
+50
+51      svg.select(&quot;.x-axis&quot;).call(xAxis);
+52      svg.select(&quot;.y-axis&quot;).call(y1Axis);
+53
+54      var tooltip = d3.select(&#39;.tooltip-area&#39;)
+55        .style(&#39;opacity&#39;, 0);
+56
+57      const mouseover = (event, d) =&gt; {
+58        tooltip.style(&quot;opacity&quot;, 1);
+59      };
+60
+61      const mouseleave = (event, d) =&gt; {
+62        // tooltip.style(&#39;opacity&#39;, 0);
+63      }
+64
+65      const mousemove = (event, d) =&gt; {
+66        const text = d3.select(&#39;.tooltip-area__text&#39;);
+67        text.text(`Sales were ${d.sales} in ${d.year}`);
+68        const [x, y] = d3.pointer(event);
+69
+70        tooltip
+71          .attr(&#39;transform&#39;, `translate(${x}, ${y})`);
+72      };
+73
+74      svg
+75        .select(&quot;.plot-area&quot;)
+76        .attr(&quot;fill&quot;, &quot;steelblue&quot;)
+77        .selectAll(&quot;.bar&quot;)
+78        .data(data)
+79        .join(&quot;rect&quot;)
+80        .attr(&quot;class&quot;, &quot;bar&quot;)
+81        .attr(&quot;x&quot;, (d) =&gt; x(d.year))
+82        .attr(&quot;width&quot;, x.bandwidth())
+83        .attr(&quot;y&quot;, (d) =&gt; y1(d.sales))
+84        .attr(&quot;height&quot;, (d) =&gt; y1(0) - y1(d.sales))
+85        .on(&quot;mousemove&quot;, mousemove)
+86        .on(&quot;mouseleave&quot;, mouseleave)
+87        .on(&quot;mouseover&quot;, mouseover);
+88    },
+89    [data.length]
+90  );
+91
+92  return (
+93    &lt;&gt;
+94      &lt;svg
+95        ref={ref}
+96        style={{
+97          height: 500,
+98          width: &quot;100%&quot;,
+99          marginRight: &quot;0px&quot;,
+100          marginLeft: &quot;0px&quot;,
+101        }}
+102      &gt;
+103        &lt;g className=&quot;plot-area&quot; /&gt;
+104        &lt;g className=&quot;x-axis&quot; /&gt;
+105        &lt;g className=&quot;y-axis&quot; /&gt;
+106        &lt;g className=&quot;tooltip-area&quot;&gt;
+107          &lt;text className=&quot;tooltip-area__text&quot;&gt;aas&lt;/text&gt;
+108        &lt;/g&gt;
+109      &lt;/svg&gt;
+110    &lt;/&gt;
+111  );
+112}
+113
+114export default BarChart;</code></pre>
+<p>javascript</p>
+<p>You have performed the following necessary changes:</p>
+<ul>
+<li>Updated the <span class="jsx-3120878690"><code>jsx</code></span> to include a <span class="jsx-3120878690"><code>tooltip-area</code></span> group</li>
+<li>Created a callback function for <span class="jsx-3120878690"><code>mouseover</code></span> that makes the tooltip visible</li>
+<li>Created a callback function for <span class="jsx-3120878690"><code>mouseleave</code></span> that hides the tooltip when your mouse is no longer on the <span class="jsx-3120878690"><code>&lt;rect /&gt;</code></span> element</li>
+<li>Created a callback function for <span class="jsx-3120878690"><code>mousemove</code></span> that repositions and updates the tooltip text as you move between different <span class="jsx-3120878690"><code>&lt;rect /&gt;</code></span> elements</li>
+</ul>
+<p>You may also want to create extra elements to help you style the tooltip. However, this is out of scope of this guide. As a final note on this approach, the code to do this has changed between different versions of D3.js. The code snippet demonstrated above is for version 6. You can learn more about the changes in the <a href="https://observablehq.com/@d3/d3v6-migration-guide">D3 6.0 migration guide</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Tooltips allow you to gradually reveal extra information to users. However, they are not always the solution to your data presentation problems. You can learn more about how you should and shouldn’t be using tooltips by reading these <a href="https://www.nngroup.com/articles/tooltip-guidelines/">Tooltip Guidelines</a>.</p>
+<p>21</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>styling-a-react-app-with-material-ui</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/330d16ca-90a4-4029-89e6-bf3ff9456993.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Ashutosh Singh</p>
+<h1 id="styling-a-react-app-with-material-ui">Styling a React App with Material UI</h1>
+<h3 id="ashutosh-singh">Ashutosh Singh</h3>
+<ul>
+<li><p>Oct 30, 2020</p></li>
+<li><p>13 Min read</p></li>
+<li><p>18,322 Views</p></li>
+<li><p>Oct 30, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">13 Min</span> read</p></li>
+<li><p>18,322 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>91</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-settingupreactapp" class="menu-link">Setting Up React App</a></li>
+<li><a href="#module-fetchingdatafromtheapi" class="menu-link">Fetching Data from the API</a></li>
+<li><a href="#module-usingacontainertowrapareactapp" class="menu-link">Using a Container to Wrap a React App</a></li>
+<li><a href="#module-addingheadingtoreactapp" class="menu-link">Adding Heading to React App</a></li>
+<li><a href="#module-creatingcharactercards" class="menu-link">Creating Character Cards</a></li>
+<li><a href="#module-addingnameandstatustocard" class="menu-link">Adding Name and Status to Card</a></li>
+<li><a href="#module-usinggridcomponent" class="menu-link">Using Grid Component</a></li>
+<li><a href="#module-completecode" class="menu-link">Complete Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This guide will discuss the step-by-step process of creating and styling a React app with Material UI.</p>
+<p>This app will use the character endpoint of the <a href="https://finalspaceapi.com/">Final Space API</a>, a free RESTful API that provides information about characters, episodes, and locations of the Final Space TV show.</p>
+<p>This guide assumes you already know how to install and configure Material UI in a React app. You can read <a href="https://app.pluralsight.com/guides/installing-and-using-material-ui-with-react/">Installing and Using Material UI with React</a> to get started.</p>
+<h2 id="setting-up-react-app">Setting Up React App</h2>
+<p>You can use a <a href="https://create-react-app.dev/">Create React App</a> template to quickly initialize a React project without doing any manual configurations.</p>
+<p>In your project’s root directory, run the following command.</p>
+<pre><code>1npx create-react-app react-material-ui-example
+2cd react-material-ui-example</code></pre>
+<p>bash</p>
+<p>To install Material-UI, run the following command in your React project’s root directory.</p>
+<pre><code>1npm install @material-ui/core</code></pre>
+<p>bash</p>
+<p>Add the following code to the <span class="jsx-3120878690"><code>&lt;head&gt;</code></span> tag of your <span class="jsx-3120878690"><code>public/index.html</code></span> file.</p>
+<pre><code>1&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap&quot; /&gt;</code></pre>
+<p>html</p>
+<p>Delete <span class="jsx-3120878690"><code>App.css</code></span>, <span class="jsx-3120878690"><code>index.css</code></span>, <span class="jsx-3120878690"><code>logo.svg</code></span> from the <span class="jsx-3120878690"><code>src</code></span> directory.</p>
+<p>Remove <span class="jsx-3120878690"><code>index.css</code></span> import from the <span class="jsx-3120878690"><code>src/index.js</code></span> file.</p>
+<pre><code>1// src/index.js
+2import React from &#39;react&#39;;
+3import ReactDOM from &#39;react-dom&#39;;
+4import App from &#39;./App&#39;;
+5
+6ReactDOM.render(
+7  &lt;React.StrictMode&gt;
+8    &lt;App /&gt;
+9  &lt;/React.StrictMode&gt;,
+10  document.getElementById(&#39;root&#39;)
+11);</code></pre>
+<p>JSX</p>
+<p>Modify your <span class="jsx-3120878690"><code>src/App.js</code></span> file like this.</p>
+<pre><code>1// src/App.js
+2import React, { useEffect, useState } from &quot;react&quot;;
+3
+4function App() {
+5  return &lt;div&gt;&lt;/div&gt;;
+6}
+7
+8export default App;</code></pre>
+<p>JSX</p>
+<p>Start the development server by running the following command in the terminal.</p>
+<pre><code>1npm start</code></pre>
+<p>bash</p>
+<p>Navigate to <a href="http://localhost:3000/">http://localhost:3000</a>; you will see a blank page since your app is currently empty.</p>
+<h2 id="fetching-data-from-the-api">Fetching Data from the API</h2>
+<p>First, you need to fetch data from the <span class="jsx-3120878690"><code>/character</code></span> endpoint of the Final Space API. You can do this by using <span class="jsx-3120878690"><code>fetch()</code></span> inside the <span class="jsx-3120878690"><code>useEffect()</code></span> hook and storing the response data inside the state variable. You can also use <span class="jsx-3120878690"><code>axios</code></span> to make API requests.</p>
+<p>By providing an empty array as a second argument to <span class="jsx-3120878690"><code>useEffect()</code></span>, you can ensure that the request is made only after the initial render.</p>
+<pre><code>1function App() {
+2  const [data, setData] = useState([]);
+3  useEffect(() =&gt; {
+4    fetch(&quot;https://finalspaceapi.com/api/v0/character/?limit=12&quot;)
+5      .then((res) =&gt; res.json())
+6      .then((data) =&gt; setData(data));
+7  }, []);
+8
+9  return &lt;div&gt;&lt;/div&gt;;
+10}
+11
+12export default App;</code></pre>
+<p>JSX</p>
+<p>In the above code, you have limited the response from the endpoint by passing the <span class="jsx-3120878690"><code>/?limit=12</code></span> query in the URL.</p>
+<h2 id="using-a-container-to-wrap-a-react-app">Using a Container to Wrap a React App</h2>
+<p>Now, you will use the <span class="jsx-3120878690"><code>Container</code></span> component to add some margins to the app.</p>
+<p>Import <span class="jsx-3120878690"><code>Container</code></span> from the Material-UI library.</p>
+<pre><code>1import Container from &quot;@material-ui/core/Container&quot;;</code></pre>
+<p>JSX</p>
+<p>Now, use it inside the <span class="jsx-3120878690"><code>App()</code></span> function.</p>
+<pre><code>1return (
+2  &lt;div&gt;
+3    &lt;Container&gt; &lt;/Container&gt;
+4  &lt;/div&gt;
+5);</code></pre>
+<p>JSX</p>
+<p>You will not see any change on your app, but some margins have been added to it, which will be apparent after adding other components inside <span class="jsx-3120878690"><code>Container</code></span>.</p>
+<h2 id="adding-heading-to-react-app">Adding Heading to React App</h2>
+<p>Your app needs a heading; for this, use the <span class="jsx-3120878690"><code>Typography</code></span> component of the Material-UI library. Import this component in <span class="jsx-3120878690"><code>App.js</code></span> file.</p>
+<pre><code>1import Typography from &quot;@material-ui/core/Typography&quot;;</code></pre>
+<p>JSX</p>
+<p>Now, use it inside the <span class="jsx-3120878690"><code>Container</code></span> component.</p>
+<pre><code>1&lt;Container&gt;
+2  &lt;Typography color=&quot;textPrimary&quot; gutterBottom variant=&quot;h2&quot; align=&quot;center&quot;&gt;
+3    React Material UI Example
+4  &lt;/Typography&gt;
+5&lt;/Container&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bcc44f1c-16ae-4478-b1b4-b7d3cfbecd69_Screenshot_2020-10-10_React_App(9).html" /><figcaption aria-hidden="true">heading</figcaption>
+</figure>
+<p>These are the props that are used:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>gutterBottom</code></span>: Adds margin to the bottom of the component.</li>
+<li><span class="jsx-3120878690"><code>color="textPrimary"</code></span>: Specifies the color of the text. You can use <span class="jsx-3120878690"><code>textSeconadry</code></span>, <span class="jsx-3120878690"><code>primary</code></span>, etc. also.</li>
+<li><span class="jsx-3120878690"><code>align="center"</code></span>: Center aligns the component.</li>
+<li><span class="jsx-3120878690"><code>variant="h2"</code></span>: Applies the theme typography styles.</li>
+</ul>
+<p>There are even more props that you can pass to style the <span class="jsx-3120878690"><code>Typography</code></span> component. You can read about them <a href="https://material-ui.com/api/typography/">here</a>.</p>
+<h2 id="creating-character-cards">Creating Character Cards</h2>
+<p>Next, you need to decide which data to show in your app; this project will display <span class="jsx-3120878690"><code>name</code></span>, <span class="jsx-3120878690"><code>image</code></span>, and <span class="jsx-3120878690"><code>status</code></span> of the character. You can check out the <a href="https://finalspaceapi.com/docs/character#character-schema">Character Schema</a> and add additional data to the app.</p>
+<p>You will import and use <span class="jsx-3120878690"><code>Card</code></span>,<span class="jsx-3120878690"><code>CardMedia</code></span>, and <span class="jsx-3120878690"><code>CardContent</code></span> components to create cards for each character.</p>
+<pre><code>1import Card from &quot;@material-ui/core/Card&quot;;
+2import CardContent from &quot;@material-ui/core/CardContent&quot;;
+3import CardMedia from &quot;@material-ui/core/CardMedia&quot;;</code></pre>
+<p>JSX</p>
+<p><span class="jsx-3120878690"><code>CardContent</code></span> is used to show information, and <span class="jsx-3120878690"><code>CardMedia</code></span> is used to display an image inside the <span class="jsx-3120878690"><code>Card</code></span> component.</p>
+<p>The source of the image goes in the <span class="jsx-3120878690"><code>image</code></span> prop of the <span class="jsx-3120878690"><code>CardMedia</code></span> component.</p>
+<p>Use the <span class="jsx-3120878690"><code>.map()</code></span> method on the <span class="jsx-3120878690"><code>data</code></span> variable to create individual cards for characters. Add the following code after the <span class="jsx-3120878690"><code>&lt;Typography&gt;</code></span> component.</p>
+<pre><code>1{
+2  data.map((character) =&gt; (
+3    &lt;Card
+4      style={{
+5        maxWidth: 345,
+6        boxShadow: &quot;0 5px 8px 0 rgba(0, 0, 0, 0.3)&quot;,
+7        backgroundColor: &quot;#fafafa&quot;,
+8      }}
+9    &gt;
+10      &lt;CardMedia style={{ height: &quot;300px&quot; }} image={character.img_url} /&gt;
+11    &lt;/Card&gt;
+12  ))
+13}</code></pre>
+<p>JSX</p>
+<p>Here is how your app will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/6e46d27f-fe6f-4840-a898-c696dd088d38_Screenshot_2020-10-10_React_App(10).html" /><figcaption aria-hidden="true">preview</figcaption>
+</figure>
+<p>In the above code, you have used inline styling to style the <span class="jsx-3120878690"><code>Card</code></span> and <span class="jsx-3120878690"><code>CardImage</code></span> components; it works but makes your code look messy.</p>
+<p>Luckily, Material-UI provides a solution for this: <span class="jsx-3120878690"><code>makeStyles</code></span>. Using <span class="jsx-3120878690"><code>makeStyles</code></span>, you can add CSS in JS without making your code look messy.</p>
+<p>First, you need to import <span class="jsx-3120878690"><code>makeStyles</code></span> in your app.</p>
+<pre><code>1import { makeStyles } from &quot;@material-ui/core/styles&quot;;</code></pre>
+<p>JSX</p>
+<p>Next, pass all the CSS you need in your app as an object to <span class="jsx-3120878690"><code>makeStyles</code></span> and store it inside a variable, <span class="jsx-3120878690"><code>useStyles</code></span>. This code comes before the <span class="jsx-3120878690"><code>App()</code></span> function. You can create nested objects to style different components.</p>
+<p>Here, <span class="jsx-3120878690"><code>card</code></span> is for styling the <span class="jsx-3120878690"><code>Card</code></span> component and <span class="jsx-3120878690"><code>media</code></span> is for styling the <span class="jsx-3120878690"><code>CardImage</code></span> component.</p>
+<pre><code>1const useStyles = makeStyles({
+2  card: {
+3    maxWidth: 345,
+4    boxShadow: &quot;0 5px 8px 0 rgba(0, 0, 0, 0.3)&quot;,
+5    backgroundColor: &quot;#fafafa&quot;,
+6  },
+7  media: {
+8    height: 300,
+9  },
+10});
+11
+12function App() {
+13  ...
+14}
+15export default App;</code></pre>
+<p>JSX</p>
+<p>To use this inside <span class="jsx-3120878690"><code>App()</code></span> function, initialize a variable before the <span class="jsx-3120878690"><code>return</code></span> statement.</p>
+<pre><code>1const classes = useStyles();</code></pre>
+<p>JSX</p>
+<p>And that’s it. You can now pass this <span class="jsx-3120878690"><code>classes</code></span> and the nested object inside it as the <span class="jsx-3120878690"><code>className</code></span> to style the component.</p>
+<pre><code>1{
+2  data.map((character) =&gt; (
+3    &lt;Card className={classes.card}&gt;
+4      &lt;CardMedia className={classes.media} image={character.img_url} /&gt;
+5    &lt;/Card&gt;
+6  ))
+7}</code></pre>
+<p>JSX</p>
+<p>Navigate to <a href="http://localhost:3000/">http://localhost:3000</a>; you will notice that your app looks just the same as before.</p>
+<h2 id="adding-name-and-status-to-card">Adding Name and Status to Card</h2>
+<p>The next step is to add the <span class="jsx-3120878690"><code>name</code></span> and <span class="jsx-3120878690"><code>status</code></span> of the character using the <span class="jsx-3120878690"><code>CardContent</code></span> and <span class="jsx-3120878690"><code>Typography</code></span> component.</p>
+<p>Add the following code inside the <span class="jsx-3120878690"><code>Card</code></span> component.</p>
+<pre><code>1&lt;Card className={classes.card}&gt;
+2  &lt;CardMedia className={classes.media} image={character.img_url} /&gt;
+3  &lt;CardContent&gt;
+4    &lt;Typography color=&quot;primary&quot; variant=&quot;h5&quot;&gt;
+5      {character.name}
+6    &lt;/Typography&gt;
+7    &lt;Typography color=&quot;textSecondary&quot; variant=&quot;subtitle2&quot;&gt;
+8      {character.status}
+9    &lt;/Typography&gt;
+10  &lt;/CardContent&gt;
+11&lt;/Card&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8e97c993-05e8-48e4-8438-58b2006126df_Screenshot_2020-10-10_React_App(11).html" /><figcaption aria-hidden="true">gary</figcaption>
+</figure>
+<p>As you can see, here you have used the <span class="jsx-3120878690"><code>Typography</code></span> component three times, and all of them look entirely different. So the output can change significantly based on what values are passed to a component’s prop.</p>
+<h2 id="using-grid-component">Using Grid Component</h2>
+<p>This column of cards doesn’t look right. To fix this, you will use the <span class="jsx-3120878690"><code>Grid</code></span> component to change the app’s layout.</p>
+<p>First, import the <span class="jsx-3120878690"><code>Grid</code></span> component in your <span class="jsx-3120878690"><code>App.js</code></span>file.</p>
+<pre><code>1import Grid from &quot;@material-ui/core/Grid&quot;;</code></pre>
+<p>JSX</p>
+<p>Next, wrap all the cards inside a <span class="jsx-3120878690"><code>Grid</code></span> component. You can use two types of layout with <span class="jsx-3120878690"><code>Grid,</code></span> i.e., <span class="jsx-3120878690"><code>item</code></span> and <span class="jsx-3120878690"><code>container</code></span>. Here you will use the <span class="jsx-3120878690"><code>container</code></span> layout.</p>
+<pre><code>1&lt;Grid container spacing={3}&gt;
+2  {data.map((character) =&gt; (
+3    &lt;Card className={classes.card}&gt;
+4      &lt;CardMedia className={classes.media} image={character.img_url} /&gt;
+5      &lt;CardContent&gt;
+6        &lt;Typography color=&quot;primary&quot; variant=&quot;h5&quot;&gt;
+7          {character.name}
+8        &lt;/Typography&gt;
+9        &lt;Typography color=&quot;textSecondary&quot; variant=&quot;subtitle2&quot;&gt;
+10          {character.status}
+11        &lt;/Typography&gt;
+12      &lt;/CardContent&gt;
+13    &lt;/Card&gt;
+14  ))}
+15&lt;/Grid&gt;</code></pre>
+<p>JSX</p>
+<p>Next, wrap each individual card inside the <span class="jsx-3120878690"><code>Grid</code></span> component with the <span class="jsx-3120878690"><code>item</code></span> layout.</p>
+<pre><code>1{
+2  data.map((character) =&gt; (
+3    &lt;Grid item xs={12} sm={4} key={character.id}&gt;
+4      &lt;Card className={classes.card}&gt;
+5        &lt;CardMedia className={classes.media} image={character.img_url} /&gt;
+6        &lt;CardContent&gt;
+7          &lt;Typography color=&quot;primary&quot; variant=&quot;h5&quot;&gt;
+8            {character.name}
+9          &lt;/Typography&gt;
+10          &lt;Typography color=&quot;textSecondary&quot; variant=&quot;subtitle2&quot;&gt;
+11            {character.status}
+12          &lt;/Typography&gt;
+13        &lt;/CardContent&gt;
+14      &lt;/Card&gt;
+15    &lt;/Grid&gt;
+16  ));
+17}</code></pre>
+<p>JSX</p>
+<p>When mapping over an array in React, you need to pass a <a href="https://reactjs.org/docs/lists-and-keys.html">key</a> prop to distinguish each child element. Here, the <span class="jsx-3120878690"><code>id</code></span> of the character is passed to the <span class="jsx-3120878690"><code>key</code></span> prop.</p>
+<p>In the above code, <span class="jsx-3120878690"><code>xs</code></span> and <span class="jsx-3120878690"><code>sm</code></span> grid breakpoints are set as <span class="jsx-3120878690"><code>12</code></span> and <span class="jsx-3120878690"><code>4</code></span>, respectively. If you are not familiar with grid breakpoints, you can read more about them <a href="https://getbootstrap.com/docs/4.0/layout/grid/">here</a>.</p>
+<p>Here is how your app will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/91759059-4f9c-4a96-923e-f1c07322b3a8_Screenshot_2020-10-10_React_App.html" /><figcaption aria-hidden="true">final_app</figcaption>
+</figure>
+<h2 id="complete-code">Complete Code</h2>
+<p>Here is the complete code for this app.</p>
+<pre><code>1import React, { useEffect, useState } from &quot;react&quot;;
+2import Container from &quot;@material-ui/core/Container&quot;;
+3import Card from &quot;@material-ui/core/Card&quot;;
+4import Typography from &quot;@material-ui/core/Typography&quot;;
+5import CardContent from &quot;@material-ui/core/CardContent&quot;;
+6import CardMedia from &quot;@material-ui/core/CardMedia&quot;;
+7import { makeStyles } from &quot;@material-ui/core/styles&quot;;
+8import Grid from &quot;@material-ui/core/Grid&quot;;
+9
+10const useStyles = makeStyles({
+11  card: {
+12    maxWidth: 345,
+13    boxShadow: &quot;0 5px 8px 0 rgba(0, 0, 0, 0.3)&quot;,
+14    backgroundColor: &quot;#fafafa&quot;,
+15  },
+16  media: {
+17    height: 300,
+18  },
+19});
+20
+21function App() {
+22
+23  const [data, setData] = useState([]);
+24
+25  useEffect(() =&gt; {
+26    fetch(&quot;https://finalspaceapi.com/api/v0/character/?limit=12&quot;)
+27      .then((res) =&gt; res.json())
+28      .then((data) =&gt; setData(data));
+29  }, []);
+30
+31  const classes = useStyles();
+32
+33  return (
+34    &lt;div&gt;
+35      &lt;Container&gt;
+36        &lt;Typography
+37          color=&quot;textPrimary&quot;
+38          gutterBottom
+39          variant=&quot;h2&quot;
+40          align=&quot;center&quot;
+41        &gt;
+42          React Material UI Example{&quot; &quot;}
+43        &lt;/Typography&gt;
+44        &lt;Grid container spacing={3}&gt;
+45          {data.map((character) =&gt; (
+46            &lt;Grid item xs={12} sm={4} key={character.id}&gt;
+47              &lt;Card className={classes.card}&gt;
+48                &lt;CardMedia
+49                  className={classes.media}
+50                  image={character.img_url}
+51                /&gt;
+52                &lt;CardContent&gt;
+53                  &lt;Typography color=&quot;primary&quot; variant=&quot;h5&quot;&gt;
+54                    {character.name}
+55                  &lt;/Typography&gt;
+56                  &lt;Typography color=&quot;textSecondary&quot; variant=&quot;subtitle2&quot;&gt;
+57                    {character.status}
+58                  &lt;/Typography&gt;
+59                &lt;/CardContent&gt;
+60              &lt;/Card&gt;
+61            &lt;/Grid&gt;
+62          ))}
+63        &lt;/Grid&gt;
+64      &lt;/Container&gt;
+65    &lt;/div&gt;
+66  );
+67}
+68
+69export default App;</code></pre>
+<p>JSX</p>
+<p>You can explore this React app <a href="../../stackblitz.com/edit/react-nyzamve773.html?file=src/App.js">here</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide demonstrated the step-by-step process of creating and styling a React app with Material UI. You should try to customize this app further with different Material UI components and layouts.</p>
+<p>Here are some additional resources that can be helpful.</p>
+<ul>
+<li><a href="https://material-ui.com/">Material UI Docs</a></li>
+<li><a href="https://material.io/">Material Design</a></li>
+<li><a href="https://finalspaceapi.com/docs/">Final Space API docs</a></li>
+</ul>
+<p>Happy coding!</p>
+<p>91</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

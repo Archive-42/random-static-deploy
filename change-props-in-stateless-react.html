@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>change-props-in-stateless-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="change-props-in-stateless-react.js-components-through-parent-functions">Change Props in Stateless React.js Components through Parent Functions</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Sep 28, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>7,049 Views</p></li>
+<li><p>Sep 28, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>7,049 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-propsasstoreofvalues" class="menu-link">Props as Store of Values</a></li>
+<li><a href="#module-updatingpropsfrommethodcalls" class="menu-link">Updating Props From Method Calls</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This guide will analyze the primary role of <span class="jsx-3120878690"><code>props</code></span> in a React.js component, how it is different from <span class="jsx-3120878690"><code>state</code></span>, and when to use it over <span class="jsx-3120878690"><code>state</code></span>. This will be done by seeing how <span class="jsx-3120878690"><code>props</code></span> values are changed within a component as well as how they can be used to update the <span class="jsx-3120878690"><code>state</code></span> of an external component.</p>
+<p>Developers sometimes interchange <span class="jsx-3120878690"><code>props</code></span> and <span class="jsx-3120878690"><code>state</code></span> as both can be accessed via the instance of a component and hold data. However, if a component needs to maintain data independent of external components calling it, then <span class="jsx-3120878690"><code>state</code></span> should be used. If a component needs to render data and invoke functions from another component, those data should be passed through <span class="jsx-3120878690"><code>props</code></span>.</p>
+<h2 id="setup">Setup</h2>
+<p>Suppose that you have two components, <span class="jsx-3120878690"><code>Display</code></span> and <span class="jsx-3120878690"><code>Controls</code></span>. <span class="jsx-3120878690"><code>Display</code></span> will maintain all display information of the application. For now, it will be a simple <span class="jsx-3120878690"><code>message</code></span> maintained within the <span class="jsx-3120878690"><code>state</code></span> of <span class="jsx-3120878690"><code>Display</code></span>. To update the <span class="jsx-3120878690"><code>message</code></span> of <span class="jsx-3120878690"><code>Display</code></span>, you will have to invoke its method, <span class="jsx-3120878690"><code>updateMessage(message)</code></span>.</p>
+<h3 id="display">Display</h3>
+<p>Create a component <span class="jsx-3120878690"><code>Display</code></span> which initially looks like this:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class Display extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      message: &quot;&quot;
+9    }
+10  }
+11
+12  updateMessage(message) {
+13    this.setState({
+14      message: message
+15    });
+16  }
+17
+18  render() {
+19    return (
+20      &lt;div&gt;
+21        {this.state.message}
+22      &lt;/div&gt;
+23    );
+24  }
+25}</code></pre>
+<p>javascript</p>
+<p>Notice that all <span class="jsx-3120878690"><code>updateMessage(message)</code></span> is doing is updating the <span class="jsx-3120878690"><code>message</code></span> within <span class="jsx-3120878690"><code>Display</code></span>’s <span class="jsx-3120878690"><code>state</code></span> by invoking <span class="jsx-3120878690"><code>setState()</code></span>.</p>
+<h3 id="controls">Controls</h3>
+<p>Next, create a <span class="jsx-3120878690"><code>Controls</code></span> component that will contain an <span class="jsx-3120878690"><code>input</code></span> element. <span class="jsx-3120878690"><code>Controls</code></span> will be a stateless component—that is, you will not be maintaining any <span class="jsx-3120878690"><code>state</code></span> values within it. Instead, it will make use of values in <span class="jsx-3120878690"><code>props</code></span> to be rendered within it.</p>
+<p>Create a <span class="jsx-3120878690"><code>Controls</code></span> component that looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class Controls extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {}
+8  }
+9
+10  render() {
+11    &lt;div&gt;
+12      &lt;input
+13        type=&quot;text&quot;
+14      /&gt;
+15      Message: {this.props.message}
+16    &lt;/div&gt;
+17  }
+18}</code></pre>
+<p>javascript</p>
+<h2 id="props-as-store-of-values">Props as Store of Values</h2>
+<p>Notice that in <span class="jsx-3120878690"><code>Controls</code></span>’s constructor, <span class="jsx-3120878690"><code>props</code></span> is passed. This means that <span class="jsx-3120878690"><code>props</code></span> as a set of values are always passed to a component by another component. In this case, that includes values coming from <span class="jsx-3120878690"><code>Display</code></span> towards <span class="jsx-3120878690"><code>Controls</code></span>. Within the constructor, a React.js component calls <span class="jsx-3120878690"><code>super(props)</code></span> to store the passed <span class="jsx-3120878690"><code>props</code></span> as a property of the component (since everything eventually extends <span class="jsx-3120878690"><code>React.Component</code></span>, every component has the <span class="jsx-3120878690"><code>props</code></span> member within it).</p>
+<p>Now, in the following line within <span class="jsx-3120878690"><code>Controls</code></span>’s render you have:</p>
+<pre><code>1Message: {this.props.message}</code></pre>
+<p>jsx</p>
+<p>This allows this component to display the values of <span class="jsx-3120878690"><code>props</code></span> that were passed to it—in this case, the <span class="jsx-3120878690"><code>message</code></span>.</p>
+<h2 id="updating-props-from-method-calls">Updating Props From Method Calls</h2>
+<p>How then can you update <span class="jsx-3120878690"><code>message</code></span> within <span class="jsx-3120878690"><code>Display</code></span>? The trick is to update the state of the component calling <span class="jsx-3120878690"><code>Display</code></span>. To do so, you should be able to invoke <span class="jsx-3120878690"><code>Display</code></span>’s <span class="jsx-3120878690"><code>updateMessage(message)</code></span> method from <span class="jsx-3120878690"><code>Controls</code></span> by passing it to <span class="jsx-3120878690"><code>props</code></span> as well. You have to first invoke <span class="jsx-3120878690"><code>Controls</code></span> within <span class="jsx-3120878690"><code>Display</code></span> and pass <span class="jsx-3120878690"><code>message</code></span> as well as <span class="jsx-3120878690"><code>updateMessage</code></span> to its props by a set of key value pairs. Import it first at the top part of <span class="jsx-3120878690"><code>Display</code></span>:</p>
+<pre><code>1import Controls from &quot;./Controls&quot;;</code></pre>
+<p>javascript</p>
+<p>This assumes that <span class="jsx-3120878690"><code>Controls.js</code></span> is within the same directory as <span class="jsx-3120878690"><code>Display.js</code></span>.</p>
+<p>Next, display <span class="jsx-3120878690"><code>Controls</code></span> within <span class="jsx-3120878690"><code>Display</code></span>’s <span class="jsx-3120878690"><code>render()</code></span>:</p>
+<pre><code>1render() {
+2  return (
+3    &lt;div&gt;
+4      {this.state.message}
+5      &lt;hr/&gt;
+6      &lt;Controls
+7        message={this.state.message}
+8        updateMessage={this.updateMessage.bind(this)}
+9      /&gt;
+10    &lt;/div&gt;
+11  );
+12}</code></pre>
+<p>javascript</p>
+<p>Notice how <span class="jsx-3120878690"><code>message</code></span> and <span class="jsx-3120878690"><code>updateMessage</code></span> become keys that <span class="jsx-3120878690"><code>Controls</code></span> assigned a value and a method, just like passing values of attributes in an HTML element.</p>
+<p>Next, the value of the <span class="jsx-3120878690"><code>input</code></span> element of <span class="jsx-3120878690"><code>Controls</code></span> should be bound to the <span class="jsx-3120878690"><code>props.message</code></span>.</p>
+<pre><code>1&lt;input
+2  type=&quot;text&quot;
+3  value={this.props.message}
+4/&gt;</code></pre>
+<p>jsx</p>
+<p>This means that if <span class="jsx-3120878690"><code>props.message</code></span> is updated, the value will displayed within <span class="jsx-3120878690"><code>input</code></span>. But the only way to <span class="jsx-3120878690"><code>update</code></span> the <span class="jsx-3120878690"><code>props</code></span> of <span class="jsx-3120878690"><code>Controls</code></span> if it is passed by the calling component, <span class="jsx-3120878690"><code>Display</code></span>.</p>
+<p>Next, create a method within <span class="jsx-3120878690"><code>Controls</code></span> called <span class="jsx-3120878690"><code>updateMessage(event)</code></span> that will be bound to the <span class="jsx-3120878690"><code>onChange</code></span> attribute of the <span class="jsx-3120878690"><code>input</code></span> element.</p>
+<pre><code>1updateMessage(event) {
+2  this.props.updateMessage(event.target.value);
+3}</code></pre>
+<p>javascript</p>
+<p>Notice that it accepts <span class="jsx-3120878690"><code>event</code></span>, which contains <span class="jsx-3120878690"><code>target</code></span>, which is a reference to the <span class="jsx-3120878690"><code>input</code></span> element it is bound to. The <span class="jsx-3120878690"><code>target</code></span>’s <span class="jsx-3120878690"><code>value</code></span> will then be the value that the user put in. You pass this value to the <span class="jsx-3120878690"><code>updateMessage</code></span> invoked from <span class="jsx-3120878690"><code>props</code></span>, which is currently a reference to the <span class="jsx-3120878690"><code>updateMessage</code></span> of the calling component <span class="jsx-3120878690"><code>Display</code></span>. Update <span class="jsx-3120878690"><code>Controls</code></span>’s <span class="jsx-3120878690"><code>input</code></span> element to hook in <span class="jsx-3120878690"><code>updateMessage</code></span>:</p>
+<pre><code>1&lt;input
+2  type=&quot;text&quot;
+3  value={this.props.message}
+4  onChange={this.updateMessage.bind(this)}
+5/&gt;</code></pre>
+<p>jsx</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>Your final code should look like the following:</p>
+<h3 id="display-1">Display</h3>
+<pre><code>1import React from &#39;react&#39;;
+2import Controls from &#39;./Controls&#39;;
+3
+4export default class Display extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      message: &quot;&quot;
+10    }
+11  }
+12
+13  updateMessage(message) {
+14    this.setState({
+15      message: message
+16    });
+17  }
+18
+19  render() {
+20    return (
+21      &lt;div&gt;
+22        {this.state.message}
+23        &lt;hr/&gt;
+24        &lt;Controls
+25          message={this.state.message}
+26          updateMessage={this.updateMessage.bind(this)}
+27        /&gt;
+28      &lt;/div&gt;
+29    );
+30  }
+31}</code></pre>
+<p>javascript</p>
+<h3 id="controls-1">Controls</h3>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class Controls extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {}
+8  }
+9
+10  updateMessage(event) {
+11    this.props.updateMessage(event.target.value);
+12  }
+13
+14  render() {
+15    return (
+16      &lt;div&gt;
+17        &lt;input
+18          type=&quot;text&quot;
+19          value={this.props.message}
+20          onChange={this.updateMessage.bind(this)}
+21        /&gt;
+22      &lt;/div&gt;
+23    );
+24  }
+25}</code></pre>
+<p>javascript</p>
+<p>As the user enters values in the <span class="jsx-3120878690"><code>input</code></span> element, <span class="jsx-3120878690"><code>updateMessage</code></span> of <span class="jsx-3120878690"><code>Controls</code></span> will be triggered, which in turn calls <span class="jsx-3120878690"><code>updateMessage</code></span> of <span class="jsx-3120878690"><code>Display</code></span>. Since the logic of <span class="jsx-3120878690"><code>updateMessage</code></span> of <span class="jsx-3120878690"><code>Display</code></span> updates its state, it forces a call to <span class="jsx-3120878690"><code>render()</code></span>, which in turn passes the updated <span class="jsx-3120878690"><code>message</code></span> back to <span class="jsx-3120878690"><code>Controls</code></span> via <span class="jsx-3120878690"><code>props</code></span>, which in turn is bound to <span class="jsx-3120878690"><code>Controls</code></span>’s <span class="jsx-3120878690"><code>input</code></span>’s value.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p><span class="jsx-3120878690"><code>props</code></span> are different from <span class="jsx-3120878690"><code>state</code></span> because <span class="jsx-3120878690"><code>props</code></span> values are passed to a component whereas <span class="jsx-3120878690"><code>state</code></span> values are initialized within a component. A component can be stateless and only use the <span class="jsx-3120878690"><code>props</code></span> values passed to it. These values can either contain references to a calling component’s <span class="jsx-3120878690"><code>state</code></span> values or references to a calling component’s method. <span class="jsx-3120878690"><code>props</code></span> containing a method can invoke that method from the calling component. If the <span class="jsx-3120878690"><code>state</code></span> of a calling component’s <span class="jsx-3120878690"><code>Display</code></span> method is updated, the component that is called <span class="jsx-3120878690"><code>Controls</code></span> will receive the updated values, thus updating its <span class="jsx-3120878690"><code>props</code></span>.</p>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

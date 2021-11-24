@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-show-and-hide-reactjs-components</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="how-to-show-and-hide-reactjs-components">How to Show and Hide ReactJS Components</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 2, 2020</p></li>
+<li><p>12 Min read</p></li>
+<li><p>180,279 Views</p></li>
+<li><p>Nov 2, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">12 Min</span> read</p></li>
+<li><p>180,279 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>296</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-hideorshowcomponentinreact" class="menu-link">Hide or Show Component in React</a></li>
+<li><a href="#module-hideorshowelementsinreact" class="menu-link">Hide or Show Elements in React</a></li>
+<li><a href="#module-hideorshowcomponentselementsusingprops" class="menu-link">Hide or Show Components/Elements Using Props</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React is a wholly component-based architecture used to create a rich user interface and components.</p>
+<p>Everything in the React app is a component, so we have to play around with components most of the time; hence, we may have to hide or show different components based on the specific condition.</p>
+<p>To show or hide any component using any condition, we should have the values, and based on those values, we can hide or show a component using different conditional operators.</p>
+<p>In this guide, we are going to learn the simplest ways to hide or show components in React.</p>
+<h2 id="hide-or-show-component-in-react">Hide or Show Component in React</h2>
+<p>A component is a single unit, and combining multiple units creates a complete application. But what if we want to hide or show a component frequently?</p>
+<p>Let’s say we have a component called <span class="jsx-3120878690"><code>Demo1</code></span>, and we want to hide it based on the Boolean value true/false. We can use different conditional operators to achieve this functionality.</p>
+<p>Create three different files called <span class="jsx-3120878690"><code>Demo1.js</code></span>, <span class="jsx-3120878690"><code>Demo2.js</code></span>, and <span class="jsx-3120878690"><code>Demo3.js</code></span>, and paste the following lines of source code into them:</p>
+<p><strong>Demo1.js</strong></p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3class Demo1 extends Component {
+4  constructor() {
+5    super();
+6    this.state = {
+7      name: &quot;React&quot;
+8    };
+9  }
+10
+11  render() {
+12    return &lt;div&gt;This is Demo1 component&lt;/div&gt;;
+13  }
+14}
+15
+16export default Demo1;</code></pre>
+<p>jsx</p>
+<p><strong>Demo2.js</strong></p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3class Demo2 extends Component {
+4  constructor() {
+5    super();
+6    this.state = {
+7      name: &quot;React&quot;
+8    };
+9  }
+10
+11  render() {
+12    return &lt;div&gt;This is Demo2 component&lt;/div&gt;;
+13  }
+14}
+15
+16export default Demo2;</code></pre>
+<p>jsx</p>
+<p><strong>Demo3.js</strong></p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3class Demo3 extends Component {
+4  constructor() {
+5    super();
+6    this.state = {
+7      name: &quot;React&quot;
+8    };
+9  }
+10
+11  render() {
+12    return &lt;div&gt;This is Demo3 component&lt;/div&gt;;
+13  }
+14}
+15
+16export default Demo3;</code></pre>
+<p>jsx</p>
+<p>All these files are child components, or independent components we are going to use into a parent component called <span class="jsx-3120878690"><code>index.js</code></span>.</p>
+<p>Open the file <strong>index.js</strong> and create three different variables into the state, like this.:</p>
+<pre><code>1constructor() {
+2    super();
+3    this.state = {
+4      name: &quot;React&quot;,
+5      showHideDemo1: false,
+6      showHideDemo2: false,
+7      showHideDemo3: false
+8    };
+9  }</code></pre>
+<p>jsx</p>
+<p>In state objects, we have three different Boolean variables with <span class="jsx-3120878690"><code>false</code></span> as the default value, and these variables will be used to show or hide the specific component.</p>
+<p>We will use logical and operator, <span class="jsx-3120878690"><code>(&amp;&amp;)</code></span>, in order to show components based on the condition along with the button click event, which is explained in the following example.</p>
+<p><strong>Index.js</strong></p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { render } from &quot;react-dom&quot;;
+3import Demo1 from &quot;./Demo1&quot;;
+4import Demo2 from &quot;./Demo2&quot;;
+5import Demo3 from &quot;./Demo3&quot;;
+6
+7class App extends Component {
+8  constructor() {
+9    super();
+10    this.state = {
+11      name: &quot;React&quot;,
+12      showHideDemo1: false,
+13      showHideDemo2: false,
+14      showHideDemo3: false
+15    };
+16    this.hideComponent = this.hideComponent.bind(this);
+17  }
+18
+19  hideComponent(name) {
+20    console.log(name);
+21    switch (name) {
+22      case &quot;showHideDemo1&quot;:
+23        this.setState({ showHideDemo1: !this.state.showHideDemo1 });
+24        break;
+25      case &quot;showHideDemo2&quot;:
+26        this.setState({ showHideDemo2: !this.state.showHideDemo2 });
+27        break;
+28      case &quot;showHideDemo3&quot;:
+29        this.setState({ showHideDemo3: !this.state.showHideDemo3 });
+30        break;
+31      default:
+32        null;
+33    }
+34  }
+35
+36  render() {
+37    const { showHideDemo1, showHideDemo2, showHideDemo3 } = this.state;
+38    return (
+39      &lt;div&gt;
+40        {showHideDemo1 &amp;&amp; &lt;Demo1 /&gt;}
+41        &lt;hr /&gt;
+42        {showHideDemo2 &amp;&amp; &lt;Demo2 /&gt;}
+43        &lt;hr /&gt;
+44        {showHideDemo3 &amp;&amp; &lt;Demo3 /&gt;}
+45        &lt;hr /&gt;
+46        &lt;div&gt;
+47          &lt;button onClick={() =&gt; this.hideComponent(&quot;showHideDemo1&quot;)}&gt;
+48            Click to hide Demo1 component
+49          &lt;/button&gt;
+50          &lt;button onClick={() =&gt; this.hideComponent(&quot;showHideDemo2&quot;)}&gt;
+51            Click to hide Demo2 component
+52          &lt;/button&gt;
+53          &lt;button onClick={() =&gt; this.hideComponent(&quot;showHideDemo3&quot;)}&gt;
+54            Click to hide Demo3 component
+55          &lt;/button&gt;
+56        &lt;/div&gt;
+57      &lt;/div&gt;
+58    );
+59  }
+60}
+61
+62render(&lt;App /&gt;, document.getElementById(&quot;root&quot;));</code></pre>
+<p>jsx</p>
+<p>Let’s understand how this example works.</p>
+<ul>
+<li><p>We have three different state variables along with the default value.</p></li>
+<li><p>We imported three child components and used the condition that the child component will be rendered only if we get <span class="jsx-3120878690"><code>true</code></span> as a value from the variable. If the condition is <span class="jsx-3120878690"><code>true</code></span>, then it will be rendered; otherwise, it will not.</p></li>
+<li><p>We have three different buttons, and on click of every button, the event is attached using a switch case in order to change the value of the state variables.</p></li>
+<li><p>The click event is called <span class="jsx-3120878690"><code>hideComponent()</code></span>, which is used to change the state values based on the button click event along with the button name, which decides that the specific state value will be updated.</p>
+<p>1switch (name) { 2 case “showHideDemo1”: 3 this.setState({ showHideDemo1: !this.state.showHideDemo1 }); 4 break; 5 case “showHideDemo2”: 6 this.setState({ showHideDemo2: !this.state.showHideDemo2 }); 7 break; 8 case “showHideDemo3”: 9 this.setState({ showHideDemo3: !this.state.showHideDemo3 }); 10 break; 11 default: 12 null; 13 }</p></li>
+</ul>
+<p>jsx</p>
+<p>From the button click event, we will get a string that identifies which button is clicked. Based on the given string, the appropriate state value will be updated.</p>
+<p>This is how, based on the state value and the logical and operator, we can show or hide the components directly. Other ways are also possible. For example, we can make use of logical not, <span class="jsx-3120878690"><code>(!)</code></span>, and logical or operator, <span class="jsx-3120878690"><code>(||)</code></span>.</p>
+<p>This is an example of how to hide or show a component based on the condition, but it is also possible to hide or show elements. Let’s see how that works in the next section of this guide.</p>
+<h2 id="hide-or-show-elements-in-react">Hide or Show Elements in React</h2>
+<p>We have seen an example of how to hide or show a component, but we may need to hide or show a specific element. We can do this using another approach.</p>
+<p>Let’s jump directly to the example, where we will create a simple form along with two input boxes and one submit button.</p>
+<p>Create a new file called <span class="jsx-3120878690"><code>Demo4.js</code></span> and paste the following lines of source code.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3class Demo4 extends Component {
+4  constructor() {
+5    super();
+6    this.state = {
+7      showHideFName: true,
+8      showHideLName: true
+9    };
+10    this.hideComponent = this.hideComponent.bind(this);
+11  }
+12
+13  hideComponent(name) {
+14    switch (name) {
+15      case &quot;showHideFName&quot;:
+16        this.setState({ showHideFName: !this.state.showHideFName });
+17        break;
+18      case &quot;showHideLName&quot;:
+19        this.setState({ showHideLName: !this.state.showHideLName });
+20        break;
+21      default:
+22        null;
+23    }
+24  }
+25
+26  render() {
+27    const { showHideFName, showHideLName } = this.state;
+28    return (
+29      &lt;div&gt;
+30        &lt;table&gt;
+31          {showHideFName &amp;&amp; (
+32            &lt;tr&gt;
+33              &lt;td&gt;First Name :&lt;/td&gt;
+34              &lt;td&gt;
+35                &lt;input type=&quot;text&quot; id=&quot;fName&quot; /&gt;
+36              &lt;/td&gt;
+37            &lt;/tr&gt;
+38          )}
+39          {showHideLName &amp;&amp; (
+40            &lt;tr&gt;
+41              &lt;td&gt;Last Name :&lt;/td&gt;
+42              &lt;td&gt;
+43                &lt;input type=&quot;text&quot; id=&quot;lName&quot; /&gt;
+44              &lt;/td&gt;
+45            &lt;/tr&gt;
+46          )}
+47          {showHideFName &amp;&amp; showHideLName &amp;&amp; (
+48            &lt;tr&gt;
+49              &lt;td&gt;
+50                &lt;button&gt;Submit&lt;/button&gt;
+51              &lt;/td&gt;
+52            &lt;/tr&gt;
+53          )}
+54          &lt;tr&gt;
+55            &lt;td&gt;
+56              &lt;button onClick={() =&gt; this.hideComponent(&quot;showHideFName&quot;)}&gt;
+57                Hide First Name
+58              &lt;/button&gt;
+59            &lt;/td&gt;
+60            &lt;td&gt;
+61              &lt;button onClick={() =&gt; this.hideComponent(&quot;showHideLName&quot;)}&gt;
+62                Hide Last Name
+63              &lt;/button&gt;
+64            &lt;/td&gt;
+65          &lt;/tr&gt;
+66        &lt;/table&gt;
+67      &lt;/div&gt;
+68    );
+69  }
+70}
+71
+72export default Demo4;</code></pre>
+<p>jsx</p>
+<p>It seems like a huge file, so let’s discuss each and everything about this component.</p>
+<p>First of all, we have two different state variables along with the default value.</p>
+<p>The <span class="jsx-3120878690"><code>render ()</code></span> method contains the different form controls along with the submit button, but it is surrounded by the condition, which looks like this.</p>
+<pre><code>1{showHideFName &amp;&amp; (
+2            &lt;tr&gt;
+3              &lt;td&gt;First Name :&lt;/td&gt;
+4              &lt;td&gt;
+5                &lt;input type=&quot;text&quot; id=&quot;fName&quot; /&gt;
+6              &lt;/td&gt;
+7            &lt;/tr&gt;
+8          )}</code></pre>
+<p>jsx</p>
+<p>The specific table row will only be rendered if the condition will be <span class="jsx-3120878690"><code>true</code></span>; otherwise, it won’t be visible into the DOM. The same thing applies to the other form controls, including the last name input box and the submit button control.</p>
+<p>At last, we have an additional two buttons with the event attached, which are used to trigger an action by providing the unique string that identifies which button was clicked.</p>
+<p>As soon as the button is clicked, the method <span class="jsx-3120878690"><code>hideComponent()</code></span> comes into the picture. It is used to update the state values based on the unique identifier that we are getting from the button control.</p>
+<pre><code>1switch (name) {
+2      case &quot;showHideFName&quot;:
+3        this.setState({ showHideFName: !this.state.showHideFName });
+4        break;
+5      case &quot;showHideLName&quot;:
+6        this.setState({ showHideLName: !this.state.showHideLName });
+7        break;
+8      default:
+9        null;
+10    }</code></pre>
+<p>jsx</p>
+<p>We have two use cases. We can hide the first name input control if the first button is clicked; otherwise, the other case will be matched, and if any of the string matches with the desired value, then the appropriate state value will be updated.</p>
+<p>So based on the click event, the state values will be updated, and based on the Boolean value, the specific table row hides or shows into the DOM.</p>
+<h2 id="hide-or-show-componentselements-using-props">Hide or Show Components/Elements Using Props</h2>
+<p>Props is a read-only piece of data which is used to consume some information or perform some action. Hence, props can also be used to hide or show a component.</p>
+<p>For example, if we pass props, based on the props value, we can hide or show the elements, just like in the below example.</p>
+<pre><code>1&lt;Demo1 
+2    showHideDemo1={this.state.showHideDemo1} 
+3/&gt;</code></pre>
+<p>jsx</p>
+<p>Here in this example, the props we have declared is called <span class="jsx-3120878690"><code>showHideDemo1</code></span> along with the state value. Now, let’s consume this props in the child component.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2
+3class Demo1 extends Component {
+4  constructor() {
+5    super();
+6    this.state = {
+7      name: &quot;React&quot;
+8    };
+9  }
+10
+11  render() {
+12    const { showHideDemo1 } = this.props;
+13    return &lt;&gt;{showHideDemo1 &amp;&amp; &lt;div&gt;This is Demo1 component&lt;/div&gt;}&lt;/&gt;;
+14  }
+15}
+16
+17export default Demo1;</code></pre>
+<p>jsx</p>
+<p>In this example, we have used props from the parent component and will show or hide the <span class="jsx-3120878690"><code>div</code></span> conditionally using the same props.</p>
+<p>This is another approach to hide or show different elements based on the condition or the variable’s value. The choice will be yours based on the approach most suitable for your requirements.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, we have learned two different approaches to hide or show either a component or an element.</p>
+<p>Using the logical operator is probably the best option because it is a pretty optimistic way to render components based on the condition.</p>
+<p>Please follow my other React guides to learn more. If you have any queries, feel free to ask at <a href="https://www.codealphabet.com/contact">Codealphabet</a>. Stay tuned for more exciting guides.</p>
+<p>296</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

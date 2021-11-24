@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>introduction-to-django-forms</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/9be54a1d-e543-404c-8736-beb1adf2cc26.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Kimaru Thagana</p>
+<h1 id="introduction-to-django-forms">Introduction to Django Forms</h1>
+<h3 id="kimaru-thagana">Kimaru Thagana</h3>
+<ul>
+<li><p>Oct 28, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>993 Views</p></li>
+<li><p>Oct 28, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>993 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Django</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Back End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Server-side Frameworks</span></p>
+<p>Introduction</p>
+<p>10</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-formsindjango" class="menu-link">Forms in Django</a></li>
+<li><a href="#module-sampleapp" class="menu-link">Sample App</a></li>
+<li><a href="#module-modelform" class="menu-link">ModelForm</a></li>
+<li><a href="#module-normalform" class="menu-link">Normal Form</a></li>
+<li><a href="#module-thirdpartypackages" class="menu-link">Third-party Packages</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Web applications run on user interactions. Users enter data that is processed or stored and later displayed via web pages and views. With Django, a crucial component of data collection is <a href="https://docs.djangoproject.com/en/3.1/topics/forms/">forms</a>. The methods and assets needed to generate a form are found in Django’s <em>FORM</em> class, which is accessed by the import <span class="jsx-3120878690"><code>from django import forms</code></span>.</p>
+<p>This guide will explore how to use forms in Django as a data capture tool. It assumes that you have at least beginner level knowledge in Django and a general understanding of the Django MVC. An introductory guide to Django can be found <a href="introduction-to-web-development-in-python-and-django.html">here</a>.</p>
+<h2 id="forms-in-django">Forms in Django</h2>
+<p>Since forms are data entry components, they can be an entry point for malicious attacks, such as <a href="https://www.w3schools.com/sql/sql_injection.asp">SQL injection</a> and <a href="https://portswigger.net/web-security/csrf">cross site request forgery</a>. To prevent this, Django has some security checks, such as a <a href="https://docs.djangoproject.com/en/1.11/_modules/django/middleware/csrf/">CSRF token</a> and checking form validity before saving. More about form security can be learned from the <a href="https://docs.djangoproject.com/en/3.1/topics/security/">Django docs</a>.</p>
+<h2 id="sample-app">Sample App</h2>
+<p>To better understand the use of forms, and specifically model forms in Django, consider a use case where your client wishes to build an inventory management web app. Part of the scope is building a web form for capturing new inventory items as well as a login form. Below is a snippet of the <span class="jsx-3120878690"><code>Inventory</code></span> model that influences how the inventory form is be designed.</p>
+<pre><code>1from django.db import models
+2class Inventory(models.Model):
+3    item = models.CharField(max_length=20)
+4    item_code = models.IntegerField()
+5    item_condition = models.CharField(max_length=50)
+6    quantity = models.IntegerField()
+7    def __str__(self):
+8        return self.item</code></pre>
+<p>python</p>
+<h2 id="modelform">ModelForm</h2>
+<p>Model forms are components that are derived from an existing model. Simply, they are forms specifically for a model that you specify. Generating a model form is quite easy. Below is a code snippet of one for the <span class="jsx-3120878690"><code>Inventory</code></span> model. As best practice, forms in Django are defined in <span class="jsx-3120878690"><code>forms.py</code></span>.</p>
+<pre><code>1from django import forms
+2
+3from .models import Inventory
+4
+5class InventoryForm(forms.ModelForm):
+6
+7    class Meta:
+8        # the model
+9        model = Inventory
+10        # the fields you want visible in the form
+11        fields = (&#39;item&#39;, &#39;item_code&#39;,&#39;item_description&#39;)</code></pre>
+<p>python</p>
+<p>For the form to be visible to the user, you have to render it in an HTML file. This means you need both a view and an HTML file.</p>
+<h3 id="form-view-in-views.py">Form View in views.py</h3>
+<pre><code>1from .forms import InventoryForm
+2from django.shortcuts import render
+3def new_inventory(request):
+4    if request.method == &quot;POST&quot;: # data was sent to server
+5        form = InventoryForm(request.POST)# instantiate form object with data sent from user   
+6        if form.is_valid(): # no errors or missing values
+7            form.save() # save form data to database
+8    else: # normal get request
+9        form = InventoryForm() # instantiate empty form
+10    
+11    return render(request, &#39;inventoryapp/add_inventory.html&#39;, {&#39;form&#39;: form})</code></pre>
+<p>python</p>
+<p>The code block above renders a model form for the <span class="jsx-3120878690"><code>Inventory</code></span> model onto an HTML page.</p>
+<h3 id="form-view-in-html-file">Form View in HTML File</h3>
+<p>Below is a snippet of an HTML file in which the form is rendered. The HTML file is referenced in the <span class="jsx-3120878690"><code>new_inventory</code></span> view as <span class="jsx-3120878690"><code>add_inventory.html</code></span>.</p>
+<pre><code>1{% extends &#39;myapp/base.html&#39; %}
+2
+3{% block content %}
+4    &lt;h2&gt;New inventory&lt;/h2&gt;
+5    &lt;form method=&quot;POST&quot; class=&quot;inventory-form&quot;&gt;{% csrf_token %}
+6        {{ form.as_p }}
+7        &lt;button type=&quot;submit&quot; class=&quot;save btn btn-default&quot;&gt;Save&lt;/button&gt;
+8    &lt;/form&gt;
+9{% endblock %}</code></pre>
+<p>html</p>
+<h2 id="normal-form">Normal Form</h2>
+<p>This type of form does not serve a model. It is used to get information from the user and process it in one way or another. A common use case is a login form. It is not linked to a model, but you use the username and password to authenticate a user. Below are code snippets for how to set up a simple form</p>
+<h3 id="forms.py">forms.py</h3>
+<pre><code>1from django import forms
+2
+3class LoginForm(forms.Form):
+4    username = forms.CharField(label=&#39;Your name&#39;, max_length=100)
+5    password = forms.PasswordInput()</code></pre>
+<p>python</p>
+<h3 id="views.py">views.py</h3>
+<pre><code>1from django.http import HttpResponseRedirect
+2from django.shortcuts import render
+3
+4from .forms import LoginForm
+5
+6def get_name(request):
+7    if request.method == &#39;POST&#39;: # data was sent from user
+8        # instantiate form object with data sent from user
+9        form = LoginForm(request.POST)
+10        if form.is_valid(): # no errors
+11            # authenticate user and log them in
+12            # redirect to dashboard:
+13            return HttpResponseRedirect(&#39;/dashboard/&#39;)
+14    else: # get request
+15        form = LoginForm()
+16
+17    return render(request, &#39;login.html&#39;, {&#39;form&#39;: form})</code></pre>
+<p>python</p>
+<h3 id="html-file">HTML File</h3>
+<pre><code>1&lt;form action=&quot;/login/&quot; method=&quot;post&quot;&gt;
+2    {% csrf_token %}
+3    {{ form }}
+4    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+5&lt;/form&gt;</code></pre>
+<p>html</p>
+<h2 id="third-party-packages">Third-party Packages</h2>
+<p>The basic forms rendered are not usually as appealing as one would wish. They need more work on styling. For this, third-party packages have been developed to style forms and give them a face lift. The most common are:</p>
+<ol type="1">
+<li><p><a href="https://pypi.org/project/django-widget-tweaks/">Django widget tweaks</a></p></li>
+<li><p><a href="https://django-crispy-forms.readthedocs.io/">Django crispy forms</a></p></li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Mastery of form manipulation and associated methods gives you the power to design better and more efficient data collection techniques within a Django web app.</p>
+<p>To further build on this guide and your knowledge of forms, follow this official <a href="https://docs.djangoproject.com/en/3.1/ref/class-based-views/mixins-editing/#formmixin">guide</a> to learn more about <em>FormMixins</em>, classes that provide methods and facilities for creating and displaying forms. They are most commonly used with <a href="https://docs.djangoproject.com/en/3.1/topics/class-based-views/">Class-based Views (CBV)</a>.</p>
+<p>10</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

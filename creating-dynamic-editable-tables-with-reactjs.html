@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>creating-dynamic-editable-tables-with-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="creating-dynamic-editable-tables-with-react">Creating Dynamic, Editable Tables with React</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Sep 25, 2020</p></li>
+<li><p>9 Min read</p></li>
+<li><p>38,904 Views</p></li>
+<li><p>Sep 25, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">9 Min</span> read</p></li>
+<li><p>38,904 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>82</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-addingitems" class="menu-link">Adding Items</a></li>
+<li><a href="#module-modifyingitems" class="menu-link">Modifying Items</a></li>
+<li><a href="#module-deletingitems" class="menu-link">Deleting Items</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React.js allows you to build complex forms while maintaining the values of the objects bound to the forms. An example of such complexity is maintaining an array of values that can be modified by the user all in a single interface. We can express this by creating a table where each row contains an input element corresponding to the value of an element in the array of an object we want to maintain.</p>
+<p>This guide will show you the different approaches to building such a form and how this relates to state management in React.js.</p>
+<h2 id="setup">Setup</h2>
+<p>You’ll be creating a single component called <span class="jsx-3120878690"><code>DynamicTable</code></span> that maintains two state attributes: a <span class="jsx-3120878690"><code>message</code></span> and an array of messages called <span class="jsx-3120878690"><code>items</code></span>. Code in the following to get you started:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class DynamicTable extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      message: &quot;&quot;,
+9      items: []
+10    }
+11  }
+12
+13  render() {
+14    return (
+15      &lt;div&gt;
+16        &lt;table&gt;
+17          &lt;thead&gt;
+18            &lt;tr&gt;
+19              &lt;th&gt;Item&lt;/th&gt;
+20              &lt;th&gt;Actions&lt;/th&gt;
+21            &lt;/tr&gt;
+22          &lt;/thead&gt;
+23          &lt;tbody&gt;
+24          &lt;/tbody&gt;
+25        &lt;/table&gt;
+26      &lt;/div&gt;
+27    );
+28  }
+29}</code></pre>
+<p>javascript</p>
+<p>Notice that the component uses the complete form of an HTML table. React.js complains if you don’t have the <span class="jsx-3120878690"><code>tbody</code></span> when you insert rows within <span class="jsx-3120878690"><code>table</code></span>.</p>
+<h2 id="adding-items">Adding Items</h2>
+<p>Create a simple interface that will allow the user to input a message and a button to submit that message. The idea is that if the user clicks the button, it will take the value of the message and add it to the <span class="jsx-3120878690"><code>items</code></span> array. As the user changes the value in the input, the <span class="jsx-3120878690"><code>message</code></span> state will be updated. The UI will lie just below the table, so your <span class="jsx-3120878690"><code>render()</code></span> method will look like the following:</p>
+<pre><code>1render() {
+2  return (
+3    &lt;div&gt;
+4      &lt;table&gt;
+5        &lt;thead&gt;
+6          &lt;tr&gt;
+7            &lt;th&gt;Item&lt;/th&gt;
+8            &lt;th&gt;Actions&lt;/th&gt;
+9          &lt;/tr&gt;
+10        &lt;/thead&gt;
+11        &lt;tbody&gt;
+12        &lt;/tbody&gt;
+13      &lt;/table&gt;
+14      &lt;hr/&gt;
+15      &lt;input type=&quot;text&quot; /&gt;
+16      &lt;button&gt;
+17        Add Item
+18      &lt;/button&gt;
+19    &lt;/div&gt;
+20  );
+21}</code></pre>
+<p>javascript</p>
+<p>Add in the event handler to update the message:</p>
+<pre><code>1updateMessage(event) {
+2  this.setState({
+3    message: event.target.value
+4  });
+5}</code></pre>
+<p>javascript</p>
+<p>Bind the event handler to the <span class="jsx-3120878690"><code>onChange</code></span> attribute of the input:</p>
+<pre><code>1&lt;input type=&quot;text&quot; onChange={this.updateMessage.bind(this} /&gt;</code></pre>
+<p>jsx</p>
+<p>Next, create the event handler for the button when it is clicked:</p>
+<pre><code>1handleClick() {
+2  var items = this.state.items;
+3
+4  items.push(this.state.message);
+5
+6  this.setState({
+7    items: items
+8  });
+9}</code></pre>
+<p>javascript</p>
+<p>All the function is doing is taking the current array of <span class="jsx-3120878690"><code>items</code></span> and the current value of <span class="jsx-3120878690"><code>message</code></span> and pushes them to the array before updating the state.</p>
+<p>Bind the event handler to the <span class="jsx-3120878690"><code>onClick</code></span> attribute of the button:</p>
+<pre><code>1&lt;button onClick={this.handleClick.bind(this)}&gt;
+2  Add Item
+3&lt;/button&gt;</code></pre>
+<p>jsx</p>
+<p>To render the <span class="jsx-3120878690"><code>items</code></span> in the table, create a separate function that returns rendered JSX:</p>
+<pre><code>1renderRows() {
+2  var context = this;
+3
+4  return  this.state.items.map(function(o, i) {
+5            return (
+6              &lt;tr key={&quot;item-&quot; + i}&gt;
+7                &lt;td&gt;
+8                  &lt;input
+9                    type=&quot;text&quot;
+10                    value={o}
+11                  /&gt;
+12                &lt;/td&gt;
+13                &lt;td&gt;
+14                  &lt;button&gt;
+15                    Delete
+16                  &lt;/button&gt;
+17                &lt;/td&gt;
+18              &lt;/tr&gt;
+19            );
+20          });
+21}</code></pre>
+<p>javascript</p>
+<p>There are two important concepts here:</p>
+<ol type="1">
+<li>Since <span class="jsx-3120878690"><code>items</code></span> is a dynamic array that’s expected to grow or shrink at any time, the function that maps these values to individual <span class="jsx-3120878690"><code>&lt;tr&gt;</code></span> tags should maintain a <span class="jsx-3120878690"><code>key</code></span> attribute for each node it produces. It is a requirement for React.js that the value of its <span class="jsx-3120878690"><code>key</code></span> should be unique within the parent element (in this case, <span class="jsx-3120878690"><code>&lt;tbody&gt;</code></span>). Thus, the value <span class="jsx-3120878690"><code>"item-" + i</code></span> is used where <span class="jsx-3120878690"><code>i</code></span> is the index of an element in the mapped array.</li>
+<li>A separate <span class="jsx-3120878690"><code>context</code></span> variable is used to reference <span class="jsx-3120878690"><code>this</code></span> since within the nested returns, you’ll need to refer to the instance of the <span class="jsx-3120878690"><code>DynamicTable</code></span> component to bind event handlers to <span class="jsx-3120878690"><code>input</code></span> and <span class="jsx-3120878690"><code>button</code></span> later on.</li>
+</ol>
+<p>Invoke <span class="jsx-3120878690"><code>renderRows()</code></span> within the body of the table as follows:</p>
+<pre><code>1&lt;tbody&gt;
+2  {this.renderRows()}
+3&lt;/tbody&gt;</code></pre>
+<p>jsx</p>
+<h2 id="modifying-items">Modifying Items</h2>
+<p>To modify each element in <span class="jsx-3120878690"><code>items</code></span> within the <span class="jsx-3120878690"><code>input</code></span> of each table row, you’ll have to create an event handler that knows which index in the array should be updated. Create a function that looks like this:</p>
+<pre><code>1handleItemChanged(i, event) {
+2  var items = this.state.items;
+3
+4  items[i] = event.target.value;
+5
+6  this.setState({
+7    items: items
+8  });
+9}</code></pre>
+<p>javascript</p>
+<p>Notice that the first argument to the function is <span class="jsx-3120878690"><code>i</code></span>, corresponding to the index of the array. The second argument is <span class="jsx-3120878690"><code>event</code></span>, which has a property <span class="jsx-3120878690"><code>target</code></span> referring to the <span class="jsx-3120878690"><code>input</code></span> element at hand. You can then update the element at index <span class="jsx-3120878690"><code>i</code></span> of <span class="jsx-3120878690"><code>items</code></span> by assigning it <span class="jsx-3120878690"><code>event.target.value</code></span>.</p>
+<p>Hook it in the table row’s <span class="jsx-3120878690"><code>input</code></span> element’s <span class="jsx-3120878690"><code>onChange</code></span> attribute:</p>
+<pre><code>1&lt;td&gt;
+2  &lt;input
+3    type=&quot;text&quot;
+4    value={o}
+5    onChange={context.handleItemChanged.bind(context, i)}
+6  /&gt;
+7&lt;/td&gt;</code></pre>
+<p>jsx</p>
+<p>As seen in the code, <span class="jsx-3120878690"><code>context</code></span> is used to call <span class="jsx-3120878690"><code>handleItemChanged</code></span> since it is a reference to <span class="jsx-3120878690"><code>this</code></span>, which is a reference to the component itself. Next, <span class="jsx-3120878690"><code>context</code></span> is bound to the function from <span class="jsx-3120878690"><code>bind()</code></span> as the first argument. Everything after <span class="jsx-3120878690"><code>context</code></span> becomes an argument to the function. In this case you pass <span class="jsx-3120878690"><code>i</code></span>, which is the index as given by the mapping function.</p>
+<h2 id="deleting-items">Deleting Items</h2>
+<p>You can use the same technique to delete items by creating a single event handler for each button generated:</p>
+<pre><code>1handleItemDelete(i) {
+2  var items = this.state.items;
+3
+4  items.splice(i, 1);
+5
+6  this.setState({
+7    items: items
+8  });
+9}</code></pre>
+<p>javascript</p>
+<p>The method takes in the index <span class="jsx-3120878690"><code>i</code></span> and uses it as an argument to <span class="jsx-3120878690"><code>splice(index, x)</code></span>, which removes <span class="jsx-3120878690"><code>x</code></span> items from the array at starting index <span class="jsx-3120878690"><code>index</code></span>. In this case, you just want to remove <span class="jsx-3120878690"><code>1</code></span> item, which is the item itself at index <span class="jsx-3120878690"><code>i</code></span>.</p>
+<p>Attach it to the button’s <span class="jsx-3120878690"><code>onClick</code></span> attribute binding index <span class="jsx-3120878690"><code>i</code></span> as well:</p>
+<pre><code>1&lt;td&gt;
+2  &lt;button
+3    onClick={context.handleItemDelete.bind(context, i)}
+4  &gt;
+5    Delete
+6  &lt;/button&gt;
+7&lt;/td&gt;</code></pre>
+<p>jsx</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>The complete code looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2
+3export default class DynamicTable extends React.Component {
+4  constructor(props) {
+5    super(props);
+6
+7    this.state = {
+8      message: &quot;&quot;,
+9      items: []
+10    }
+11  }
+12
+13  updateMessage(event) {
+14    this.setState({
+15      message: event.target.value
+16    });
+17  }
+18
+19  handleClick() {
+20    var items = this.state.items;
+21
+22    items.push(this.state.message);
+23
+24    this.setState({
+25      items: items,
+26      message: &quot;&quot;
+27    });
+28  }
+29
+30  handleItemChanged(i, event) {
+31    var items = this.state.items;
+32    items[i]  = event.target.value;
+33
+34    this.setState({
+35      items: items
+36    });
+37  }
+38
+39  handleItemDeleted(i) {
+40    var items = this.state.items;
+41
+42    items.splice(i, 1);
+43
+44    this.setState({
+45      items: items
+46    });
+47  }
+48
+49  renderRows() {
+50    var context = this;
+51
+52    return  this.state.items.map(function(o, i) {
+53              return (
+54                &lt;tr key={&quot;item-&quot; + i}&gt;
+55                  &lt;td&gt;
+56                    &lt;input
+57                      type=&quot;text&quot;
+58                      value={o}
+59                      onChange={context.handleItemChanged.bind(context, i)}
+60                    /&gt;
+61                  &lt;/td&gt;
+62                  &lt;td&gt;
+63                    &lt;button
+64                      onClick={context.handleItemDeleted.bind(context, i)}
+65                    &gt;
+66                      Delete
+67                    &lt;/button&gt;
+68                  &lt;/td&gt;
+69                &lt;/tr&gt;
+70              );
+71            });
+72  }
+73
+74  render() {
+75    return (
+76      &lt;div&gt;
+77        &lt;table className=&quot;&quot;&gt;
+78          &lt;thead&gt;
+79            &lt;tr&gt;
+80              &lt;th&gt;
+81                Item
+82              &lt;/th&gt;
+83              &lt;th&gt;
+84                Actions
+85              &lt;/th&gt;
+86            &lt;/tr&gt;
+87          &lt;/thead&gt;
+88          &lt;tbody&gt;
+89            {this.renderRows()}
+90          &lt;/tbody&gt;
+91        &lt;/table&gt;
+92        &lt;hr/&gt;
+93        &lt;input
+94          type=&quot;text&quot;
+95          value={this.state.message}
+96          onChange={this.updateMessage.bind(this)}
+97        /&gt;
+98        &lt;button
+99          onClick={this.handleClick.bind(this)}
+100        &gt;
+101          Add Item
+102        &lt;/button&gt;
+103      &lt;/div&gt;
+104    );
+105  }
+106}</code></pre>
+<p>javascript</p>
+<p>Try it out yourself and see that items can be added, modified, and deleted all within a single component.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, child elements are created dynamically and are dependent on the state value of an array maintained by the component. Each element of the array can be modified directly with its own corresponding interface, which is automatically bound to the state by passing the index value to the event handler. As a challenge, try to work with an array of objects instead of an array of strings in order to create more complex nested array bound elements!</p>
+<p>82</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

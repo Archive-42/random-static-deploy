@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>find-specific-elements-from-the-dom-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="find-specific-elements-from-the-dom-in-react">Find Specific Elements from the DOM in React</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 10, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>24,319 Views</p></li>
+<li><p>Nov 10, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>24,319 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>17</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-accessadomelementusingref" class="menu-link">Access a DOM Element Using Ref</a></li>
+<li><a href="#module-accessadomelementusingreactdomfinddomnode" class="menu-link">Access a DOM Element Using ReactDOM.findDOMNode</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Web apps contain various HTML elements rendered into the DOM, and based on user interaction, any of the specific DOM elements can be accessed through code. Accessing DOM elements allows you to fetch elements’ HTML content, their child elements, or sometimes a specific element’s value to process it.</p>
+<p>There are various ways to access any of the DOM elements. In this guide, you are going to learn a few approaches that can help you access some specific DOM elements.</p>
+<h2 id="access-a-dom-element-using-ref">Access a DOM Element Using Ref</h2>
+<p><span class="jsx-3120878690"><code>ref</code></span> is a common approach to access various DOM elements that work on setting the <span class="jsx-3120878690"><code>ref</code></span> to an element and accessing it based on the name of <span class="jsx-3120878690"><code>ref</code></span> in the component.</p>
+<p>Based on the official <a href="https://reactjs.org/docs/refs-and-the-dom.html#when-to-use-refs">docs</a>, <span class="jsx-3120878690"><code>ref</code></span> is suitable for:</p>
+<ul>
+<li>Managing focus, text selection, or media playback</li>
+<li>Triggering imperative animations</li>
+<li>Integrating with third-party DOM libraries</li>
+</ul>
+<p>With React 16.3.0, the way to create <span class="jsx-3120878690"><code>ref</code></span> is different now than in earlier versions of React. Below is the basic syntax to create the <span class="jsx-3120878690"><code>ref</code></span>.</p>
+<pre><code>1this.ref_name = React.createRef();</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>ref</code></span> created using <span class="jsx-3120878690"><code>createRef()</code></span> and the variable <span class="jsx-3120878690"><code>ref_name</code></span> can be attached to any DOM element.</p>
+<p>To demonstrate, create a simple form with input control and a button. Once a user clicks on the button, the input value should be accessed through the <span class="jsx-3120878690"><code>ref</code></span>.</p>
+<pre><code>1constructor(props) {
+2    super(props);
+3    // Created ref
+4    this.myInputRef = React.createRef();
+5    this.getInputValue = this.getInputValue.bind(this);
+6}</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>ref</code></span> created gets the constructor’s input value, creates the form, and assigns <span class="jsx-3120878690"><code>ref</code></span> to the input element.</p>
+<pre><code>1render() {
+2    return (
+3      &lt;&gt;
+4        &lt;div&gt;
+5          &lt;input type=&quot;text&quot; ref={this.myInputRef} /&gt;
+6          &lt;button onClick={this.getInputValue}&gt;Submit&lt;/button&gt;
+7        &lt;/div&gt;
+8      &lt;/&gt;
+9    );
+10}</code></pre>
+<p>jsx</p>
+<p>Along with the <span class="jsx-3120878690"><code>&lt;input&gt;</code></span> control, an additional prop is used, <span class="jsx-3120878690"><code>ref</code></span>, followed by the name of the ref created by you previously. Below is the function from which the value of the input gets accessed.</p>
+<pre><code>1getInputValue() {
+2    const inputValue = this.myInputRef.current.value;
+3    console.log(inputValue)
+4}</code></pre>
+<p>jsx</p>
+<p>So using the statement <span class="jsx-3120878690"><code>this.myInputRef.current.value</code></span>, the input value can be accessed directly. If you want to access the complete HTML element, you can do it as demonstrated below.</p>
+<pre><code>1const inputElement = this.myInputRef.current;</code></pre>
+<p>jsx</p>
+<p>One thing to keep in mind is that you cannot use <span class="jsx-3120878690"><code>ref</code></span> with a function because it does not have any instance to the current component.</p>
+<h2 id="access-a-dom-element-using-reactdom.finddomnode">Access a DOM Element Using ReactDOM.findDOMNode</h2>
+<p>So far in this guide, you have seen how <span class="jsx-3120878690"><code>ref</code></span> is used to access a DOM element and its value. However, there are other approaches that can also be helpful, and one of them is <span class="jsx-3120878690"><code>ReactDOM.findDOMNode()</code></span>.</p>
+<p><span class="jsx-3120878690"><code>findDOMNode()</code></span> is used to find a specific node from the DOM tree and access its various properties, such as its inner HTML, child elements, type of element, etc. In short, it can return all the supported DOM measurements related to the kind of element.</p>
+<p>The syntax to use <span class="jsx-3120878690"><code>findDOMNode()</code></span> in React is as follows:</p>
+<pre><code>1ReactDOM.findDOMNode(component_name)</code></pre>
+<p>jsx</p>
+<p>Along with <span class="jsx-3120878690"><code>findDOMNode()</code></span>, you can pass the name of the component or element you want to access from the DOM. To illustrate the concept, let’s create an example that has input control and a button. With a click on the button, input control should be focused.</p>
+<p>Create the <span class="jsx-3120878690"><code>ref</code></span> for input control is as demonstrated below.</p>
+<pre><code>1constructor(props) {
+2    super(props);
+3    this.myInputRef = React.createRef();
+4    this.state = {};
+5    this.onFocusInput = this.onFocusInput.bind(this);
+6}</code></pre>
+<p>jsx</p>
+<p>After creating the <span class="jsx-3120878690"><code>ref</code></span>, create one input control and add additional props called <span class="jsx-3120878690"><code>ref</code></span>. Once the user clicks the button, the input will be accessed from <span class="jsx-3120878690"><code>findDOMNode()</code></span>.</p>
+<pre><code>1render() {
+2    return (
+3      &lt;&gt;
+4        &lt;div&gt;
+5          &lt;input type=&quot;text&quot; ref={this.myInputRef} /&gt;
+6          &lt;button onClick={this.onFocusInput}&gt;FOCUS&lt;/button&gt;
+7        &lt;/div&gt;
+8      &lt;/&gt;
+9    );
+10}</code></pre>
+<p>jsx</p>
+<p>Once the user clicks on the focus button, it goes to the function <span class="jsx-3120878690"><code>onFocusInput</code></span> and tries to find the DOM element based on the <span class="jsx-3120878690"><code>ref</code></span> and then uses the <span class="jsx-3120878690"><code>focus()</code></span> method to focus the selected input control.</p>
+<pre><code>1onFocusInput() {
+2    ReactDOM.findDOMNode(this.myInputRef.current).focus();
+3}</code></pre>
+<p>jsx</p>
+<p>Observe that as soon as you click on the button, input control is auto-focused, which is done by using <span class="jsx-3120878690"><code>findDOMNode()</code></span> along with the <span class="jsx-3120878690"><code>focus()</code></span> method.</p>
+<blockquote>
+<p><strong>Note</strong> : As per the official <a href="https://reactjs.org/docs/react-dom.html#finddomnode">docs</a>, <span class="jsx-3120878690"><code>findDOMNode()</code></span> only works on mounted components (that is, components that are placed in the DOM.) If you try to call on an element that has yet not mounted (like calling <span class="jsx-3120878690"><code>findDOMNode()</code></span> in <span class="jsx-3120878690"><code>render()</code></span> on a component that has yet to be created), an exception will get thrown. <span class="jsx-3120878690"><code>findDOMNode</code></span> cannot be used on function components.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>Accessing DOM elements and their current values is a top concern when working in web apps. There should be a suitable approach that makes your DOM manipulation way easier than ever before.</p>
+<p>All DOM elements in React can be accessed in multiple ways, such as <span class="jsx-3120878690"><code>ref</code></span> or <span class="jsx-3120878690"><code>findDOMNode()</code></span>, so choose your implementation approach wisely. I hope this guide helped you understand how to access DOM elements.</p>
+<p>17</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

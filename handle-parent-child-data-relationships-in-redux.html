@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>handle-parent-child-data-relationships-in-redux</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="handle-parent-child-data-relationships-in-redux">Handle Parent-Child Data Relationships in Redux</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Oct 26, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>7,194 Views</p></li>
+<li><p>Oct 26, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>7,194 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>15</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-passingdatabetweencomponents" class="menu-link">Passing Data Between Components</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Redux is an excellent library for state management in client-side JavaScript-based apps. It is framework agnostic, meaning it can be used with any other UI or JavaScript framework. Redux maintains the state of the whole app in a single immutable state object, which cannot be accessed or modified directly.</p>
+<p>When working on React-Redux apps, you will come across many use cases where you have to pass and manage data between components. In this guide, you will learn how to handle parent-child data relationships in Redux.</p>
+<h2 id="passing-data-between-components">Passing Data Between Components</h2>
+<p>As mentioned earlier, you cannot change the state object or the global store directly. To change the state object, you need to use actions and reducers. An action is simply a JavaScript object that passes information to reducers, and reducers are pure functions that return an updated state based on the current action that was dispatched.</p>
+<p>Consider an example where you have counters in the parent and child components. You need to update the counter in the parent component from the child component and vice-versa.</p>
+<p>So the initial, or default, state will look as follows.</p>
+<pre><code>1const initialState = {
+2    parentCounter: 0,
+3    childCounter: 0,
+4};</code></pre>
+<p>js</p>
+<p>To update the state you need to create a reducer, as shown below.</p>
+<pre><code>1function reducer(state = initialState, action) {
+2    switch (action.type) {
+3        case &quot;INCREMENT_PARENT&quot;:
+4            return { ...state, parentCounter: state.parentCounter + 1 };
+5        case &quot;INCREMENT_CHILD&quot;:
+6            return { ...state, childCounter: state.childCounter + 1 };
+7        default:
+8            return state;
+9    }
+10}</code></pre>
+<p>js</p>
+<p>In the parent component, dispatch the <span class="jsx-3120878690"><code>INCREMENT_CHILD</code></span> action so the reducer updates the counter in the child component. To make the <span class="jsx-3120878690"><code>dispatch</code></span> method available as a prop, use the <span class="jsx-3120878690"><code>connect()</code></span> method. Also, pass the <span class="jsx-3120878690"><code>mapStateToProps</code></span> argument to the <span class="jsx-3120878690"><code>connect</code></span> method so the parent’s counter value is sent as the prop to the component.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { connect } from &quot;react-redux&quot;;
+3
+4import Child from &quot;./Child&quot;;
+5
+6class Parent extends Component {
+7  incrementChildCounter = () =&gt; {
+8    this.props.dispatch({ type: &quot;INCREMENT_CHILD&quot; });
+9  };
+10  render() {
+11    return (
+12      &lt;div className=&quot;parent-component&quot;&gt;
+13        &lt;div&gt;
+14          This is the parent component - [COUNTER: {this.props.counter}]
+15        &lt;/div&gt;
+16        &lt;button onClick={this.incrementChildCounter}&gt;
+17          Increment Child Counter
+18        &lt;/button&gt;
+19        &lt;Child /&gt;
+20      &lt;/div&gt;
+21    );
+22  }
+23}
+24
+25const mapStateToProps = (state) =&gt; ({
+26  counter: state.parentCounter,
+27});
+28
+29export default connect(mapStateToProps)(Parent);</code></pre>
+<p>jsx</p>
+<p>Follow the same steps for the child component, except the child component needs to dispatch the <span class="jsx-3120878690"><code>INCREMENT_PARENT</code></span> action.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { connect } from &quot;react-redux&quot;;
+3
+4class Child extends Component {
+5  incrementParentCounter = () =&gt; {
+6    this.props.dispatch({ type: &quot;INCREMENT_PARENT&quot; });
+7  };
+8  render() {
+9    return (
+10      &lt;div className=&quot;child-component&quot;&gt;
+11        &lt;div&gt;This is the child component - [COUNTER: {this.props.counter}]&lt;/div&gt;
+12        &lt;button onClick={this.incrementParentCounter}&gt;
+13          Increment Parent Counter
+14        &lt;/button&gt;
+15      &lt;/div&gt;
+16    );
+17  }
+18}
+19
+20const mapStateToProps = (state) =&gt; ({
+21  counter: state.childCounter,
+22});
+23
+24export default connect(mapStateToProps)(Child);</code></pre>
+<p>jsx</p>
+<p>In the main <span class="jsx-3120878690"><code>App</code></span> component, wrap the <span class="jsx-3120878690"><code>Parent</code></span> component with the <span class="jsx-3120878690"><code>Provider</code></span> component from the <span class="jsx-3120878690"><code>react-redux</code></span> package and pass the store as a prop.</p>
+<pre><code>1import { Provider } from &quot;react-redux&quot;;
+2import { createStore } from &quot;redux&quot;;
+3
+4const store = createStore(reducer);
+5
+6function App() {
+7  return (
+8    &lt;div className=&quot;App&quot;&gt;
+9      &lt;Provider store={store}&gt;
+10        &lt;Parent /&gt;
+11      &lt;/Provider&gt;
+12    &lt;/div&gt;
+13  );
+14}</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>With Redux, you might complain that there is a lot of boilerplate and overhead for creating actions and reducers and architecting the app. Even Redux suggests that you should start with a basic React app and use Redux only when the app state grows and it becomes difficult to predict state. You can refer to <a href="https://redux.js.org/faq/general#when-should-i-use-redux">this</a> section of the Redux docs to read more on the topic.</p>
+<p>15</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

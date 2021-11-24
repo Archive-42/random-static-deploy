@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>testing-golang-code</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/dc7e9418-80cb-4265-834a-c3f76b809ebe.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Michael Levan</p>
+<h1 id="testing-code-in-go-language">Testing Code in Go Language</h1>
+<h3 id="michael-levan">Michael Levan</h3>
+<ul>
+<li><p>Oct 2, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>1,947 Views</p></li>
+<li><p>Oct 2, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>1,947 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Programming Languages</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">General Purpose</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages, Frameworks, and Tools</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Golang (Go)</span></p>
+<p>Introduction</p>
+<p>16</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-thegotestingpackage" class="menu-link">The Go Testing Package</a></li>
+<li><a href="#module-testingexample" class="menu-link">Testing Example</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Have you ever used an app or some code from GitHub, received errors, and had no idea why? Maybe you had to reach out to the vendor or the maintainer of the GitHub repository to ask for help. These types of situations can be mitigated with proper testing.</p>
+<p>When it comes to code quality, one of the first things you should think about is testing code. Testing code from the start is the difference between shipping a product that is riddled with bugs and one that is consumer-ready.</p>
+<p>In this guide, you’ll learn the first steps toward getting started with testing in Go using the built-in testing package.</p>
+<h2 id="the-go-testing-package">The Go Testing Package</h2>
+<p>When you’re testing code in other languages besides Go, one of the first questions to come to mind is, <em>What library or framework am I going to use?</em> Luckily, with Go, there is a testing package built in. That means the testing package is part of the standard library and you don’t have to use an external framework.</p>
+<p>The package provides support for ad-hoc and automated testing of Go packages. Once you write the test, you can run it using the <span class="jsx-3120878690"><code>go test</code></span> command.</p>
+<p>The <span class="jsx-3120878690"><code>go test</code></span> command will look at all Go files in the current directory where you’re running the command form. <span class="jsx-3120878690"><code>go test</code></span> will look for two keywords:</p>
+<ol type="1">
+<li>Any Go file that ends with <span class="jsx-3120878690"><code>_test.go</code></span></li>
+<li>All function names that start with <span class="jsx-3120878690"><code>Test</code></span></li>
+</ol>
+<p>Although not mandatory, the function name should start with a capital <span class="jsx-3120878690"><code>T</code></span>. Otherwise, linters like Golint will throw errors to the console.</p>
+<p>Some popular ways to use the Go testing package include:</p>
+<ul>
+<li>Running tests directly from the command-line in an ad-hoc fashion.</li>
+<li>Running automated tests</li>
+<li>Running tests in pipelines. For example, you can use a GitHub Actions workflow to kick off a Go test. That means the test will run before the code even attempts to build, so you know if issues occur from the start.</li>
+</ul>
+<h3 id="benchmark-tests">Benchmark Tests</h3>
+<p>A cool feature included in the Go testing package is for benchmark tests,—that is, to see the speed of the code. If fast code and deploying quickly is important to you, you may find yourself testing solutions in different languages. An example is testing a function in Python vs. Go and seeing which one is faster.</p>
+<p>With the benchmark feature, you can easily clock the code.</p>
+<h2 id="testing-example">Testing Example</h2>
+<p>There are many types of testing. Some of the most popular include:</p>
+<ul>
+<li>Unit testing</li>
+<li>Integration testing</li>
+<li>Mock testing</li>
+<li>Smoke testing</li>
+<li>Regression testing</li>
+<li>User acceptance testing</li>
+</ul>
+<p>And there are many others.</p>
+<p>In fact, the different types of testing can fill a whole book (and there are books to prove it).</p>
+<p>The key type of test this guide will focus on is unit testing, which is a test that ensures each part of your code delivers the desired output, that is, what you’re expecting.</p>
+<p>Below is an example of a Go test.</p>
+<pre><code>1package main
+2
+3import (
+4 &quot;testing&quot;
+5
+6    &quot;github.com/stretchr/testify/assert&quot;
+7)
+8
+9func TestAddition(t *testing.T) {
+10    x := 2
+11    y := 2
+12
+13   assert.Equal(t, x, y, &quot;x and y should be the same&quot;)
+14}</code></pre>
+<p>go</p>
+<p>Let’s go over it section by section.</p>
+<p>The first section is to create a main package.</p>
+<pre><code>1package main</code></pre>
+<p>go</p>
+<p>Next, specify what packages you want to import. The first is the standard test package and the second is an <span class="jsx-3120878690"><code>assert</code></span> package. Assert provides a list of testing tools, for example, to see whether two values equal each other in a unit test.</p>
+<pre><code>1import (
+2 &quot;testing&quot;
+3
+4    &quot;github.com/stretchr/testify/assert&quot;
+5)</code></pre>
+<p>go</p>
+<p>Finally, you have the function. The function is comprised of a few key aspects that are a must for testing:</p>
+<ul>
+<li>First, the function name starts with <span class="jsx-3120878690"><code>Test</code></span>, which tells Go that this function isn’t just a standard function, but a testing function.</li>
+<li>The argument <span class="jsx-3120878690"><code>t</code></span> is of type <span class="jsx-3120878690"><code>*testing.T</code></span>. <span class="jsx-3120878690"><code>*testing</code></span> is calling the value of type testing and type <span class="jsx-3120878690"><code>.T</code></span> is for managing test state and formatted test logs.</li>
+</ul>
+<p>The function itself returns a simple test. It tests whether the <span class="jsx-3120878690"><code>x</code></span> and <span class="jsx-3120878690"><code>y</code></span> variable are both of an <span class="jsx-3120878690"><code>int</code></span> of 2. To test that the two variables are equal, use the <span class="jsx-3120878690"><code>assert</code></span> package.</p>
+<p>The assert package contains:</p>
+<ul>
+<li><p>The <span class="jsx-3120878690"><code>t</code></span> argument to let assert know that you’re testing against the function</p></li>
+<li><p>The two variables, <span class="jsx-3120878690"><code>x</code></span> and <span class="jsx-3120878690"><code>y</code></span>, which are passed in because those are the variables you’re testing</p></li>
+<li><p>The string <span class="jsx-3120878690"><code>"x and why should be the                                         same"</code></span>, which tells the <span class="jsx-3120878690"><code>Equal()</code></span> function what the desired outcome should be</p>
+<p>1func TestAddition(t *testing.T) { 2 x := 2 3 y := 2 4 5 assert.Equal(t, x, y, “x and y should be the same”) 6}</p></li>
+</ul>
+<p>go</p>
+<p>Save the code into a Go file. Remember, the Go file needs to end with <span class="jsx-3120878690"><code>_test.go</code></span>. For simplicity’s sake, save the Go file as <span class="jsx-3120878690"><code>main_test.go</code></span>.</p>
+<p>To run the test, run the following command:</p>
+<pre><code>1go test main_test.go</code></pre>
+<p>go</p>
+<p>The output should look similar to the screenshot below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/acfd0875-0db5-4aa0-8245-e7f8bf16ddb4_1.html" /><figcaption aria-hidden="true">Go Test</figcaption>
+</figure>
+<p>Congrats! You have successfully run a unit test in Go.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Quality code is important in all scenarios, whether it’s code going out to a customer or code staying internal for your fellow teammates to use. One thing holds true: the code must work. Code that you write can work at that exact moment, but once it’s committed to source control, you have zero idea whether it’ll work again unless you’re manually testing it every five minutes.</p>
+<p>With tests, you can remove that manual process of having to test code and automate the testing process. It saves you time and helps everyone by ensuring the code they’re interacting with works as expected.</p>
+<p>16</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-use-managed-identity-with-azure-sql-database</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/7aa57bc1-6266-4719-a497-c3ab18a28f5d.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Benney Au</p>
+<h1 id="how-to-use-managed-identities-with-azure-sql-database">How to Use Managed Identities with Azure SQL Database</h1>
+<h3 id="benney-au">Benney Au</h3>
+<ul>
+<li><p>Oct 26, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>21,766 Views</p></li>
+<li><p>Oct 26, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>21,766 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Azure</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p>Introduction</p>
+<p>49</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-configureyourazuredatabase" class="menu-link">Configure Your Azure Database</a></li>
+<li><a href="#module-updateyoursqlconnectiontousemanagedidentities" class="menu-link">Update Your SQL Connection to Use Managed Identities</a></li>
+<li><a href="#module-updateyourconnectionstring" class="menu-link">Update Your Connection String</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p><em>Managed identities</em> is a Microsoft Azure feature that allows Azure resources to authenticate or authorize themselves with other supported Azure resources. The appeal is that secrets such as database passwords are not required to be copied onto developers’ machines or checked into source control.</p>
+<p>In this guide, you will learn how to use managed identities to connect a .NET app service to Azure SQL Database using managed identities.</p>
+<blockquote>
+<p><strong>Note</strong>: Beginning with <a href="https://github.com/dotnet/SqlClient/releases/tag/v2.1.0-preview2">Microsoft.Data.SqlClient version 2.1.0-preview2</a> the nuget package provides out of the box support for Managed Identity.</p>
+</blockquote>
+<h2 id="configure-your-azure-database">Configure Your Azure Database</h2>
+<p>In order to allow managed identities to connect to Azure SQL Database, you need to enable Azure Active Directory (AD) authentication and create the managed users in the database.</p>
+<p>To enable Azure AD authentication for your Azure SQL Server, make sure there is an Azure AD admin configured for the database server.</p>
+<p>Then, enable authentication from your managed identity by creating a <em>contained user</em>. This differs from on-premises SQL Server instances that require both a server login and a database user. First, ensure that a system-assigned identity is set for your app service. Once an identity has been assigned to your app service, run the below SQL to create a contained user with some roles to read and write to the database.</p>
+<pre><code>1create user [my-app-service] from external provider;
+2alter role db_datareader add member [my-app-service];
+3alter role db_datawriter add member [my-app-service];
+4
+5create user [my-app-service/slots/staging] from external provider;
+6alter role db_datareader add member [my-app-service/slots/staging];
+7alter role db_datawriter add member [my-app-service/slots/staging];</code></pre>
+<p>sql</p>
+<blockquote>
+<p><strong>Note</strong>: <span class="jsx-3120878690"><code>my-app-service</code></span> is a placeholder. You will need to replace it with the name of your own app service. Further, for system-assigned identities, different deployment slots have their own individual identities.</p>
+</blockquote>
+<h2 id="update-your-sql-connection-to-use-managed-identities">Update Your SQL Connection to Use Managed Identities</h2>
+<p>Now that you have created the SQL users and assigned them read and write roles, you need to change your app to use managed identities for authentication and authorization.</p>
+<p>To start using an Azure App Service managed identity, create a new project and install a few packages.</p>
+<pre><code>1mkdir PLSQLManagedIdentity
+2cd PLSQLManagedIdentity
+3dotnet new mvc
+4dotnet add package Microsoft.Azure.Services.AppAuthentication
+5dotnet add package Microsoft.Data.SqlClient</code></pre>
+<p>sh</p>
+<p>The package <span class="jsx-3120878690"><code>Microsoft.Azure.Services.AppAuthentication</code></span> is an Azure SDK that simplifies authentication.</p>
+<p>When you run the code on your development machine, it will use the Azure CLI or Visual Studio login to authenticate. When you run the code in an Azure App Service, it will use the system-assigned identity.</p>
+<p>Next add the class <span class="jsx-3120878690"><code>SqlAppAuthenticationProvider</code></span> to your project.</p>
+<pre><code>1/// &lt;summary&gt;
+2/// An implementation of SqlAuthenticationProvider that implements Active Directory Interactive SQL authentication.
+3/// &lt;/summary&gt;
+4public class SqlAppAuthenticationProvider : SqlAuthenticationProvider
+5{
+6    private static readonly AzureServiceTokenProvider _tokenProvider = new AzureServiceTokenProvider();
+7
+8    /// &lt;summary&gt;
+9    /// Acquires an access token for SQL using AzureServiceTokenProvider with the given SQL authentication parameters.
+10    /// &lt;/summary&gt;
+11    /// &lt;param name=&quot;parameters&quot;&gt;The parameters needed in order to obtain a SQL access token&lt;/param&gt;
+12    /// &lt;returns&gt;&lt;/returns&gt;
+13    public override async Task&lt;SqlAuthenticationToken&gt; AcquireTokenAsync(SqlAuthenticationParameters parameters)
+14    {
+15        var authResult = await _tokenProvider.GetAuthenticationResultAsync(&quot;https://database.windows.net/&quot;).ConfigureAwait(false);
+16
+17        return new SqlAuthenticationToken(authResult.AccessToken, authResult.ExpiresOn);
+18    }
+19
+20    /// &lt;summary&gt;
+21    /// Implements virtual method in SqlAuthenticationProvider. Only Active Directory Interactive Authentication is supported.
+22    /// &lt;/summary&gt;
+23    /// &lt;param name=&quot;authenticationMethod&quot;&gt;The SQL authentication method to check whether supported&lt;/param&gt;
+24    /// &lt;returns&gt;&lt;/returns&gt;
+25    public override bool IsSupported(SqlAuthenticationMethod authenticationMethod)
+26    {
+27        return authenticationMethod == SqlAuthenticationMethod.ActiveDirectoryInteractive;
+28    }
+29}</code></pre>
+<p>csharp</p>
+<p>Then in your <span class="jsx-3120878690"><code>Program.cs</code></span>, register the new <span class="jsx-3120878690"><code>SqlAuthenticationProvider</code></span> using the following as the first line of the main method.</p>
+<pre><code>1SqlAuthenticationProvider.SetProvider(SqlAuthenticationMethod.ActiveDirectoryInteractive, new SqlAppAuthenticationProvider());</code></pre>
+<p>csharp</p>
+<p>The two code snippets together will look for SQL connection strings that contain <span class="jsx-3120878690"><code>Authentication=Active Directory                                       Interactive</code></span>. When found, they will use the <span class="jsx-3120878690"><code>AzureServiceTokenProvider</code></span> to fetch an access token to authenticate with Azure SQL Database.</p>
+<h2 id="update-your-connection-string">Update Your Connection String</h2>
+<p>You have now set up all the pieces to authorize your app to your Azure database. Your connection string can be updated to the following:</p>
+<pre><code>1Server=xxxxxxx.database.windows.net,1433;Database=yyyyyyyyy;UID=a;Authentication=Active Directory Interactive</code></pre>
+<p>You only need to specify the <span class="jsx-3120878690"><code>server</code></span>, <span class="jsx-3120878690"><code>authentication</code></span>, and the <span class="jsx-3120878690"><code>database</code></span> name. <span class="jsx-3120878690"><code>UID</code></span> is set to an arbitrary value since it is required for the connection string to pass validation. However, it is not used for system-assigned managed identity and Azure CLI authentication.</p>
+<blockquote>
+<p><strong>Note:</strong> If you are using user-assigned identities and not using the global Azure region, you will need to modify the <span class="jsx-3120878690"><code>SqlAppAuthenticationProvider</code></span> class. Refer to Microsoft’s implementation of <a href="https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/mgmtcommon/AppAuthentication/Azure.Services.AppAuthentication/SqlAppAuthenticationProvider.cs#L14">SqlAppAuthenticationProvider</a>, which allocates more memory but is more flexible as reference.</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>Microsoft Azure has a growing list of <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities">services that support managed identities for Azure resources</a>. Using managed identities, can enhance the security of your application since you don’t need to manage secrets yourself. Your app can now connect to Azure SQL Database without the need for a username or password. To build on these skills, read about <a href="https://app.pluralsight.com/guides/how-to-define-azure-rbac">How to Define Azure Role-based Access Control (RBAC)</a>.</p>
+<p>49</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

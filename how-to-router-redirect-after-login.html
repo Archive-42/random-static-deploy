@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-router-redirect-after-login</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="how-to-router-redirect-after-login">How to Router Redirect After Login</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 12, 2020</p></li>
+<li><p>17 Min read</p></li>
+<li><p>200,280 Views</p></li>
+<li><p>Nov 12, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">17 Min</span> read</p></li>
+<li><p>200,280 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> React</span></p>
+<p>Introduction</p>
+<p>393</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-loginform" class="menu-link">Login Form</a></li>
+<li><a href="#module-actionsandmiddlewares" class="menu-link">Actions and Middlewares</a></li>
+<li><a href="#module-reducerfunction" class="menu-link">Reducer Function</a></li>
+<li><a href="#module-hocforauthentication" class="menu-link">HOC for Authentication</a></li>
+<li><a href="#module-completesourcecode" class="menu-link">Complete Source Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>With the popularity of Redux and React increasing with each passing day, it’s a no-brainer to give them the attention they deserve. React uses Redux’s state for maintaining state throughout the app. The purpose of the state is to keep your application state synchronized with the Redux store.</p>
+<p>In this guide, we are going to learn how to redirect a user after a successful login.. Usually, when we are building web apps, there’s a requirement that the user must be logged in to use the app. In that case, we need to take care of the user’s identity and manage his authentication token in the application state and redirect the user to protected routes.</p>
+<p>For styling this demo, I’ll be using <span class="jsx-3120878690"><code>material-ui</code></span>. Please run the following command to add it to your dependencies.</p>
+<pre><code>1npm i @material-ui/core @material-ui/lab</code></pre>
+<p>console</p>
+<p>Please note that this guide assumes you have a fair understanding of modern ES6 syntax.</p>
+<h2 id="login-form">Login Form</h2>
+<p>The login form has two fields: <strong>Email</strong> and <strong>Password</strong>. When the user clicks on the <strong>Submit</strong> button, we will dispatch a <span class="jsx-3120878690"><code>login</code></span> action with the type <span class="jsx-3120878690"><code>LOGIN</code></span> and payload as the form values. To manage the state in the component, I have used React hooks, which is now a default method for managing state in functional components.</p>
+<pre><code>1import React, { useState } from &quot;react&quot;;
+2import { TextField, Typography, Button } from &quot;@material-ui/core&quot;;
+3import { connect } from &quot;react-redux&quot;;
+4import { login } from &quot;../actions/auth&quot;;
+5import MuiAlert from &quot;@material-ui/lab/Alert&quot;;
+6
+7function Alert(props) {
+8  return &lt;MuiAlert elevation={6} variant=&quot;filled&quot; {...props} /&gt;;
+9}
+10
+11export default connect(null, { login })(props =&gt; {
+12  const [email, setEmail] = useState(&quot;&quot;);
+13  const [password, setPassword] = useState(&quot;&quot;);
+14  const [error, setError] = useState(&quot;&quot;);
+15
+16  const submitForm = () =&gt; {
+17    if (email === &quot;&quot; || password === &quot;&quot;) {
+18      setError(&quot;Fields are required&quot;);
+19      return;
+20    }
+21    props.login({ email, password });
+22  };
+23
+24  return (
+25    &lt;form&gt;
+26      &lt;Typography variant=&quot;h5&quot; style={{ marginBottom: 8 }}&gt;
+27        Login
+28      &lt;/Typography&gt;
+29      &lt;TextField
+30        label=&quot;Email&quot;
+31        variant=&quot;outlined&quot;
+32        fullWidth
+33        className=&quot;form-input&quot;
+34        value={email}
+35        onChange={e =&gt; setEmail(e.target.value)}
+36      /&gt;
+37      &lt;TextField
+38        label=&quot;Password&quot;
+39        variant=&quot;outlined&quot;
+40        fullWidth
+41        className=&quot;form-input&quot;
+42        type=&quot;password&quot;
+43        value={password}
+44        onChange={e =&gt; setPassword(e.target.value)}
+45      /&gt;
+46      &lt;Button
+47        variant=&quot;contained&quot;
+48        color=&quot;primary&quot;
+49        fullWidth
+50        className=&quot;form-input&quot;
+51        size=&quot;large&quot;
+52        onClick={submitForm}
+53      &gt;
+54        Login
+55      &lt;/Button&gt;
+56
+57      {error &amp;&amp; (
+58        &lt;Alert severity=&quot;error&quot; onClick={() =&gt; setError(null)}&gt;
+59          {props.error || error}
+60        &lt;/Alert&gt;
+61      )}
+62    &lt;/form&gt;
+63  );
+64});</code></pre>
+<p>jsx</p>
+<h2 id="actions-and-middlewares">Actions and Middlewares</h2>
+<p>As in this previous <a href="how-to-abort-request-while-navigating-away-from-the-component-in-react.html">guide</a>, we’ll use middleware to handle the network requests to send the login details to our server. Check out the other guide if you are not familiar with middlewares in Redux.</p>
+<h3 id="auth.js">auth.js</h3>
+<pre><code>1export const LOGIN = &quot;LOGIN&quot;;
+2export const LOGOUT = &quot;LOGOUT&quot;;
+3
+4export const login = user =&gt; {
+5  return {
+6    type: LOGIN,
+7    payload: user
+8  };
+9};
+10
+11export const logout = () =&gt; {
+12  return {
+13    type: LOGOUT
+14  };
+15};</code></pre>
+<p>js</p>
+<p>When the <span class="jsx-3120878690"><code>LOGIN</code></span> action is dispatched, we will catch the action in out middleware and dispatch the <span class="jsx-3120878690"><code>API_REQUEST</code></span> action along with the login form values data. If the request is successful, we will dispatch the <span class="jsx-3120878690"><code>API_SUCCESS</code></span> action, and if there is an error, we will dispatch the <span class="jsx-3120878690"><code>API_ERROR</code></span> action.</p>
+<h3 id="app.js">app.js</h3>
+<pre><code>1import { apiRequest } from &quot;../actions/api&quot;;
+2import { LOGIN } from &quot;../actions/auth&quot;;
+3
+4const SERVER_URL = `https://61m46.sse.codesandbox.io`;
+5
+6export const appMiddleware = () =&gt; next =&gt; action =&gt; {
+7  next(action);
+8  switch (action.type) {
+9    case LOGIN: {
+10      next(
+11        apiRequest({
+12          url: `${SERVER_URL}/login`,
+13          method: &quot;POST&quot;,
+14          data: action.payload
+15        })
+16      );
+17      break;
+18    }
+19    default:
+20      break;
+21  }
+22};</code></pre>
+<p>js</p>
+<h2 id="reducer-function">Reducer Function</h2>
+<p>In the reducer function, we will set the user’s <span class="jsx-3120878690"><code>AUTH</code></span> token, which is sent by the server. In a real-world application, the token is saved in the cookie for security reasons, but for simplicity, we are going to store it in local storage. While setting the default state, we check the local storage for whether the user token exists or not.</p>
+<pre><code>1import { SET_LOADER } from &quot;./actions/ui&quot;;
+2import { API_SUCCESS, API_ERROR } from &quot;./actions/api&quot;;
+3import { LOGOUT } from &quot;./actions/auth&quot;;
+4
+5export default (
+6  state = {
+7    isAuthUser: !!localStorage.getItem(&quot;user&quot;),
+8    user: JSON.parse(localStorage.getItem(&quot;user&quot;)) || {},
+9    isLoading: false,
+10    error: null
+11  },
+12  action
+13) =&gt; {
+14  switch (action.type) {
+15    case API_SUCCESS:
+16      localStorage.setItem(&quot;user&quot;, JSON.stringify(action.payload.user));
+17      return { ...state, isAuthUser: true, user: action.payload.user };
+18    case API_ERROR:
+19      return { ...state, error: action.payload };
+20    case SET_LOADER:
+21      return { ...state, isLoading: action.payload };
+22    case LOGOUT:
+23      localStorage.removeItem(&quot;user&quot;);
+24      return { ...state, isAuthUser: false, user: {} };
+25    default:
+26      return state;
+27  }
+28};</code></pre>
+<p>js</p>
+<h2 id="hoc-for-authentication">HOC for Authentication</h2>
+<p>To authenticate the user across pages, we need to create a higher-order component (HOC) to wrap the <span class="jsx-3120878690"><code>&lt;Router /&gt;</code></span> component. You might be thinking, why do we have to authenticate the user for every page? Well, that’s because, in a single-page app, we need to maintain the user’s session on the client-side.</p>
+<p>There are two types of routes when it comes to authentication. One is a guest route, which can only be accessed by guest users, such as the login page or register page. The second is a private route, which can only be accessed by an authenticated user.</p>
+<p>If the user is not authenticated, we will redirect to the index page; otherwise, we will redirect to the home page.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { connect } from &quot;react-redux&quot;;
+3import { Redirect, Route } from &quot;react-router&quot;;
+4
+5const AuthRoute = props =&gt; {
+6  const { isAuthUser, type } = props;
+7  if (type === &quot;guest&quot; &amp;&amp; isAuthUser) return &lt;Redirect to=&quot;/home&quot; /&gt;;
+8  else if (type === &quot;private&quot; &amp;&amp; !isAuthUser) return &lt;Redirect to=&quot;/&quot; /&gt;;
+9
+10  return &lt;Route {...props} /&gt;;
+11};
+12
+13const mapStateToProps = ({ isAuthUser }) =&gt; ({
+14  isAuthUser
+15});
+16
+17export default connect(mapStateToProps)(AuthRoute);</code></pre>
+<p>jsx</p>
+<h3 id="using-the-component">Using the Component</h3>
+<p>In the <span class="jsx-3120878690"><code>&lt;App /&gt;</code></span> component, we will define all the routes in our application. We will use the <span class="jsx-3120878690"><code>&lt;AuthRoute /&gt;</code></span> component that we created in the previous section to specify the type of route, whether it is a private or a guest route.</p>
+<pre><code>1export default function App() {
+2  return (
+3    &lt;Provider store={store}&gt;
+4      &lt;Router&gt;
+5        &lt;NavBar /&gt;
+6        &lt;div className=&quot;container&quot;&gt;
+7          &lt;Switch&gt;
+8            &lt;AuthRoute path=&quot;/login&quot; type=&quot;guest&quot;&gt;
+9              &lt;LoginPage /&gt;
+10            &lt;/AuthRoute&gt;
+11            &lt;AuthRoute path=&quot;/home&quot; render={HomePage} type=&quot;private&quot; /&gt;
+12            &lt;AuthRoute path=&quot;/my-account&quot; type=&quot;private&quot;&gt;
+13              &lt;MyAccount /&gt;
+14            &lt;/AuthRoute&gt;
+15            &lt;Route path=&quot;/&quot; render={IndexPage} /&gt;
+16          &lt;/Switch&gt;
+17        &lt;/div&gt;
+18      &lt;/Router&gt;
+19    &lt;/Provider&gt;
+20  );
+21}</code></pre>
+<p>jsx</p>
+<h2 id="complete-source-code">Complete Source Code</h2>
+<h3 id="index.js">index.js</h3>
+<p><span class="jsx-3120878690"><code>index.js</code></span> will be the entry file of our web application. Here, we will mount the root component to an element, i.e., a <span class="jsx-3120878690"><code>&lt;div&gt;</code></span> with an id of <span class="jsx-3120878690"><code>root</code></span>.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import ReactDOM from &quot;react-dom&quot;;
+3
+4import App from &quot;./App&quot;;
+5
+6const rootElement = document.getElementById(&quot;root&quot;);
+7ReactDOM.render(&lt;App /&gt;, rootElement);</code></pre>
+<p>jsx</p>
+<h3 id="app.js-1">App.js</h3>
+<p>In the <span class="jsx-3120878690"><code>App.js</code></span> file, we have defined the main or the root component, i.e., the <span class="jsx-3120878690"><code>&lt;App /&gt;</code></span> component. We will be wrapping all the child components in the <span class="jsx-3120878690"><code>&lt;Provider /&gt;</code></span> component from the <span class="jsx-3120878690"><code>react-redux</code></span> library to make the global redux store available throughout the application.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { BrowserRouter as Router, Switch, Route } from &quot;react-router-dom&quot;;
+3import &quot;./app.css&quot;;
+4import { Provider } from &quot;react-redux&quot;;
+5import { applyMiddleware } from &quot;redux&quot;;
+6
+7import reducer from &quot;./reducer&quot;;
+8import { createStore } from &quot;redux&quot;;
+9
+10import NavBar from &quot;./components/Nav&quot;;
+11import { Typography, Divider } from &quot;@material-ui/core&quot;;
+12
+13import AuthRoute from &quot;./components/AuthRoute&quot;;
+14
+15import HomePage from &quot;./pages/HomePage&quot;;
+16import LoginPage from &quot;./pages/Login&quot;;
+17
+18import { appMiddleware } from &quot;./middlewares/app&quot;;
+19import { apiMiddleware } from &quot;./middlewares/core&quot;;
+20import MyAccount from &quot;./pages/MyAccount&quot;;
+21
+22const createStoreWithMiddleware = applyMiddleware(
+23  appMiddleware,
+24  apiMiddleware
+25)(createStore);
+26
+27const store = createStoreWithMiddleware(reducer);
+28
+29const IndexPage = () =&gt; (
+30  &lt;&gt;
+31    &lt;Typography variant=&quot;h3&quot;&gt;Welcome to the App&lt;/Typography&gt;
+32    &lt;Divider style={{ marginTop: 10, marginBottom: 10 }} /&gt;
+33    &lt;Typography variant=&quot;h6&quot;&gt;Feel free to take a look around&lt;/Typography&gt;
+34  &lt;/&gt;
+35);
+36
+37export default function App() {
+38  return (
+39    &lt;Provider store={store}&gt;
+40      &lt;Router&gt;
+41        &lt;NavBar /&gt;
+42        &lt;div className=&quot;container&quot;&gt;
+43          &lt;Switch&gt;
+44            &lt;AuthRoute path=&quot;/home&quot; render={HomePage} type=&quot;private&quot; /&gt;
+45            &lt;AuthRoute path=&quot;/login&quot; type=&quot;guest&quot;&gt;
+46              &lt;LoginPage /&gt;
+47            &lt;/AuthRoute&gt;
+48            &lt;AuthRoute path=&quot;/my-account&quot; type=&quot;private&quot;&gt;
+49              &lt;MyAccount /&gt;
+50            &lt;/AuthRoute&gt;
+51            &lt;Route path=&quot;/&quot; render={IndexPage} /&gt;
+52          &lt;/Switch&gt;
+53        &lt;/div&gt;
+54      &lt;/Router&gt;
+55    &lt;/Provider&gt;
+56  );
+57}</code></pre>
+<p>jsx</p>
+<p>Notice that we have used the <span class="jsx-3120878690"><code>&lt;Router /&gt;</code></span> and <span class="jsx-3120878690"><code>&lt;Switch /&gt;</code></span> components from <span class="jsx-3120878690"><code>react-router-dom</code></span> for leveraging client-side routing.</p>
+<h3 id="reducer.js">reducer.js</h3>
+<pre><code>1import { SET_LOADER } from &quot;./actions/ui&quot;;
+2import { API_SUCCESS, API_ERROR } from &quot;./actions/api&quot;;
+3import { LOGOUT } from &quot;./actions/auth&quot;;
+4
+5export default (
+6  state = {
+7    isAuthUser: !!localStorage.getItem(&quot;user&quot;),
+8    user: JSON.parse(localStorage.getItem(&quot;user&quot;)) || {},
+9    isLoading: false,
+10    error: null
+11  },
+12  action
+13) =&gt; {
+14  switch (action.type) {
+15    case API_SUCCESS:
+16      localStorage.setItem(&quot;user&quot;, JSON.stringify(action.payload.user));
+17      return { ...state, isAuthUser: true, user: action.payload.user };
+18    case API_ERROR:
+19      return { ...state, error: action.payload };
+20    case SET_LOADER:
+21      return { ...state, isLoading: action.payload };
+22    case LOGOUT:
+23      localStorage.removeItem(&quot;user&quot;);
+24      return { ...state, isAuthUser: false, user: {} };
+25    default:
+26      return state;
+27  }
+28};</code></pre>
+<p>js</p>
+<p><strong>MIDDLEWARES</strong></p>
+<p>We’ll be creating two types of redux middlewares: an <span class="jsx-3120878690"><code>appMiddleware</code></span> and a <span class="jsx-3120878690"><code>coreMiddleware</code></span>. The <span class="jsx-3120878690"><code>appMiddeware</code></span> will be responsible for handling the API requests. In this case, we pass the relevant data for the API request through the <span class="jsx-3120878690"><code>LOGIN</code></span> action, and in the <span class="jsx-3120878690"><code>coreMiddleware</code></span>, we catch the <span class="jsx-3120878690"><code>API_REQUEST</code></span> action and make the network request using the <span class="jsx-3120878690"><code>axios</code></span> HTTP library.</p>
+<h3 id="app.js-2">app.js</h3>
+<pre><code>1import { apiRequest } from &quot;../actions/api&quot;;
+2import { LOGIN } from &quot;../actions/auth&quot;;
+3
+4const SERVER_URL = `https://61m46.sse.codesandbox.io`;
+5
+6export const appMiddleware = () =&gt; next =&gt; action =&gt; {
+7  next(action);
+8  switch (action.type) {
+9    case LOGIN: {
+10      next(
+11        apiRequest({
+12          url: `${SERVER_URL}/login`,
+13          method: &quot;POST&quot;,
+14          data: action.payload
+15        })
+16      );
+17      break;
+18    }
+19    default:
+20      break;
+21  }
+22};</code></pre>
+<p>js</p>
+<h3 id="core.js">core.js</h3>
+<pre><code>1import axios from &quot;axios&quot;;
+2import { API_REQUEST, apiError, apiSuccess } from &quot;../actions/api&quot;;
+3import { setLoader } from &quot;../actions/ui&quot;;
+4
+5export const apiMiddleware = ({ dispatch }) =&gt; next =&gt; action =&gt; {
+6  next(action);
+7
+8  if (action.type === API_REQUEST) {
+9    dispatch(setLoader(true));
+10    const { url, method, data } = action.meta;
+11    axios({
+12      method,
+13      url,
+14      data
+15    })
+16      .then(({ data }) =&gt; dispatch(apiSuccess({ response: data })))
+17      .catch(error =&gt; {
+18        console.log(error);
+19        dispatch(apiError({ error: error.response.data }));
+20      });
+21  }
+22};</code></pre>
+<p>js</p>
+<p><strong>COMPONENTS</strong></p>
+<h3 id="authroute.js">AuthRoute.js</h3>
+<p>The <span class="jsx-3120878690"><code>&lt;AuthRoute /&gt;</code></span> component is a higher-order component that wraps the <span class="jsx-3120878690"><code>&lt;Route /&gt;</code></span> component of <span class="jsx-3120878690"><code>react-router</code></span> to keep the routes specific to our application as private or public.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { connect } from &quot;react-redux&quot;;
+3import { Redirect, Route } from &quot;react-router&quot;;
+4
+5const AuthRoute = props =&gt; {
+6  const { isAuthUser, type } = props;
+7  if (type === &quot;guest&quot; &amp;&amp; isAuthUser) return &lt;Redirect to=&quot;/home&quot; /&gt;;
+8  else if (type === &quot;private&quot; &amp;&amp; !isAuthUser) return &lt;Redirect to=&quot;/&quot; /&gt;;
+9
+10  return &lt;Route {...props} /&gt;;
+11};
+12
+13const mapStateToProps = ({ isAuthUser }) =&gt; ({
+14  isAuthUser
+15});
+16
+17export default connect(mapStateToProps)(AuthRoute);</code></pre>
+<p>jsx</p>
+<h3 id="nav.js">Nav.js</h3>
+<p>In the <span class="jsx-3120878690"><code>&lt;Navbar /&gt;</code></span> component, we are merely creating the navigation menu for our application. Notice that I have used the <span class="jsx-3120878690"><code>&lt;AppBar /&gt;</code></span> component from <span class="jsx-3120878690"><code>material-ui</code></span> to give it a native look.</p>
+<pre><code>1import React, { Component } from &quot;react&quot;;
+2import { Link } from &quot;react-router-dom&quot;;
+3import { AppBar, Toolbar, Button, Typography } from &quot;@material-ui/core&quot;;
+4import { connect } from &quot;react-redux&quot;;
+5
+6import { logout } from &quot;../actions/auth&quot;;
+7
+8class NavBar extends Component {
+9  render() {
+10    return (
+11      &lt;AppBar position=&quot;static&quot; style={{ display: &quot;flex&quot; }}&gt;
+12        &lt;Toolbar&gt;
+13          &lt;Typography variant=&quot;h6&quot;&gt;My App&lt;/Typography&gt;
+14          &lt;div style={{ marginLeft: &quot;auto&quot; }}&gt;
+15            {this.props.isAuthUser ? (
+16              &lt;&gt;
+17                &lt;Link to=&quot;/home&quot;&gt;
+18                  &lt;Button color=&quot;inherit&quot;&gt;Home&lt;/Button&gt;
+19                &lt;/Link&gt;
+20                &lt;Link to=&quot;/my-account&quot;&gt;
+21                  &lt;Button color=&quot;inherit&quot;&gt;My Account&lt;/Button&gt;
+22                &lt;/Link&gt;
+23                &lt;Button color=&quot;inherit&quot; onClick={this.props.logout}&gt;
+24                  Logout
+25                &lt;/Button&gt;
+26              &lt;/&gt;
+27            ) : (
+28              &lt;Link to=&quot;/login&quot;&gt;
+29                &lt;Button color=&quot;inherit&quot;&gt;Login&lt;/Button&gt;
+30              &lt;/Link&gt;
+31            )}
+32          &lt;/div&gt;
+33        &lt;/Toolbar&gt;
+34      &lt;/AppBar&gt;
+35    );
+36  }
+37}
+38
+39export default connect(({ isAuthUser }) =&gt; ({ isAuthUser }), { logout })(
+40  NavBar
+41);</code></pre>
+<p>jsx</p>
+<p><strong>PAGES</strong></p>
+<h3 id="login.js">Login.js</h3>
+<p>In the <span class="jsx-3120878690"><code>Login.js</code></span> file, we are creating the page component that displays the login form. We have used the modern React hooks to leverage state in a functional component. This allows us to make the code more precise and easier to maintain.</p>
+<pre><code>1import React, { useState } from &quot;react&quot;;
+2import { TextField, Typography, Button } from &quot;@material-ui/core&quot;;
+3import { connect } from &quot;react-redux&quot;;
+4import { login } from &quot;../actions/auth&quot;;
+5import MuiAlert from &quot;@material-ui/lab/Alert&quot;;
+6
+7function Alert(props) {
+8  return &lt;MuiAlert elevation={6} variant=&quot;filled&quot; {...props} /&gt;;
+9}
+10
+11export default connect(({ isLoading }) =&gt; ({ isLoading }), { login })(props =&gt; {
+12  const [email, setEmail] = useState(&quot;&quot;);
+13  const [password, setPassword] = useState(&quot;&quot;);
+14  const [error, setError] = useState(&quot;&quot;);
+15
+16  const submitForm = () =&gt; {
+17    if (email === &quot;&quot; || password === &quot;&quot;) {
+18      setError(&quot;Fields are required&quot;);
+19      return;
+20    }
+21    props.login({ email, password });
+22  };
+23
+24  return (
+25    &lt;form&gt;
+26      &lt;Typography variant=&quot;h5&quot; style={{ marginBottom: 8 }}&gt;
+27        Login
+28      &lt;/Typography&gt;
+29      &lt;TextField
+30        label=&quot;Email&quot;
+31        variant=&quot;outlined&quot;
+32        fullWidth
+33        className=&quot;form-input&quot;
+34        value={email}
+35        onChange={e =&gt; setEmail(e.target.value)}
+36      /&gt;
+37      &lt;TextField
+38        label=&quot;Password&quot;
+39        variant=&quot;outlined&quot;
+40        fullWidth
+41        className=&quot;form-input&quot;
+42        type=&quot;password&quot;
+43        value={password}
+44        onChange={e =&gt; setPassword(e.target.value)}
+45      /&gt;
+46      &lt;Button
+47        variant=&quot;contained&quot;
+48        color=&quot;primary&quot;
+49        fullWidth
+50        className=&quot;form-input&quot;
+51        size=&quot;large&quot;
+52        onClick={submitForm}
+53      &gt;
+54        Login
+55      &lt;/Button&gt;
+56
+57      {(props.error || error) &amp;&amp; (
+58        &lt;Alert severity=&quot;error&quot; onClick={() =&gt; setError(null)}&gt;
+59          {props.error || error}
+60        &lt;/Alert&gt;
+61      )}
+62    &lt;/form&gt;
+63  );
+64});</code></pre>
+<p>jsx</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, we took a look at how to create a higher-order component to manage the authentication of a user in a single-page app. Securely storing the <span class="jsx-3120878690"><code>AUTH</code></span> token is an essential factor, and although we have used local storage in this guide, it is recommended that you use cookies. Leveraging Redux middlewares to handle API requests is another skill you need to know, as I have stressed in an earlier article.</p>
+<p>That’s it from this guide. I believe you can now take your React skills to the next level. If you have any queries, feel free to reach out at <a href="https://codealphabet.com/contact">Codealphabet</a>.</p>
+<p>393</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

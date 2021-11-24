@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>installing-and-using-material-ui-with-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/330d16ca-90a4-4029-89e6-bf3ff9456993.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Ashutosh Singh</p>
+<h1 id="installing-and-using-material-ui-with-react">Installing and Using Material UI with React</h1>
+<h3 id="ashutosh-singh">Ashutosh Singh</h3>
+<ul>
+<li><p>Oct 29, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>15,544 Views</p></li>
+<li><p>Oct 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>15,544 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>60</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-installation" class="menu-link">Installation</a></li>
+<li><a href="#module-basicusage" class="menu-link">Basic Usage</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>With over 60,000 <a href="https://github.com/mui-org/material-ui">GitHub stars</a>, <em>Material-UI</em> is one of the most popular React UI libraries. It has components, styles, themes, icons, and so much more and can be used as a single resource for all your styling needs.</p>
+<p>In this guide, we will discuss how to install Material-UI, import components, and use them inside your React app.</p>
+<h2 id="installation">Installation</h2>
+<p>To install Material-UI, run the following command in your React project’s root directory.</p>
+<pre><code>1npm install @material-ui/core</code></pre>
+<p>bash</p>
+<p>Or if you prefer <span class="jsx-3120878690"><code>yarn</code></span>, run the following command.</p>
+<pre><code>1yarn add @material-ui/core</code></pre>
+<p>bash</p>
+<p>Material-UI works best with Roboto font, but it is not automatically loaded by Material-UI, so you will have to add it yourself. There are many ways to do this. One of the easier ways is by using Google Web Fonts.</p>
+<p>Add the following code to the <span class="jsx-3120878690"><code>&lt;head&gt;</code></span> tag of your <span class="jsx-3120878690"><code>public/index.html</code></span> file.</p>
+<pre><code>1&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap&quot; /&gt;</code></pre>
+<p>html</p>
+<h3 id="icons">Icons</h3>
+<p>With Material-UI, you can use both font icons and SVG icons. To use font icons, add the following code to the <span class="jsx-3120878690"><code>&lt;head&gt;</code></span> tag of your <span class="jsx-3120878690"><code>public/index.html</code></span> file.</p>
+<pre><code>1&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;</code></pre>
+<p>html</p>
+<p>To use SVG icons, run the following command, and install <span class="jsx-3120878690"><code>@material-ui/icons</code></span> as a dependency.</p>
+<pre><code>1npm install @material-ui/icons</code></pre>
+<p>bash</p>
+<h2 id="basic-usage">Basic Usage</h2>
+<p>In this section, we will discuss how to use Material-UI in your app. We will style a <span class="jsx-3120878690"><code>&lt;Button&gt;</code></span> component using various props.</p>
+<h3 id="button">Button</h3>
+<p>The first thing to do in order to use any Material-UI component is to import that component. In your <span class="jsx-3120878690"><code>App.js</code></span>, add the following code at the top with other imports.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { Button } from &#39;@material-ui/core&#39;;</code></pre>
+<p>JSX</p>
+<p>Or you can import by pulling specific components from the library.</p>
+<pre><code>1import Button from &#39;@material-ui/core/Button&#39;;</code></pre>
+<p>JSX</p>
+<p>Now use this component inside the <span class="jsx-3120878690"><code>App()</code></span> function, then pass <span class="jsx-3120878690"><code>primary</code></span> in <span class="jsx-3120878690"><code>color</code></span> prop and <span class="jsx-3120878690"><code>contained</code></span> in <span class="jsx-3120878690"><code>variant</code></span> prop.</p>
+<pre><code>1export default function App() {
+2  return (
+3    &lt;div&gt;
+4      &lt;Button color=&quot;primary&quot; variant=&quot;contained&quot;&gt;
+5        Click Me
+6      &lt;/Button&gt;
+7    &lt;/div&gt;
+8  );
+9}</code></pre>
+<p>JSX</p>
+<p>Here is how this button will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ae4b50ed-8647-4711-b723-5fe03ce30018_Screenshot_2020-10-10_React_App.html" /><figcaption aria-hidden="true">primary_contained</figcaption>
+</figure>
+<p>You can change the size by passing the <span class="jsx-3120878690"><code>size</code></span> prop to the <span class="jsx-3120878690"><code>Button</code></span> component. This <span class="jsx-3120878690"><code>size</code></span> prop can take <span class="jsx-3120878690"><code>small</code></span>, <span class="jsx-3120878690"><code>medium</code></span>, and <span class="jsx-3120878690"><code>large</code></span> as its value.</p>
+<pre><code>1&lt;Button size=&quot;large&quot; color=&quot;primary&quot; variant=&quot;contained&quot;&gt;
+2  Click Me
+3&lt;/Button&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this button will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/4a0dff0c-df75-4cb4-a2ac-9c4be0a6d81c_Screenshot_2020-10-10_React_App(2).html" /><figcaption aria-hidden="true">large_button</figcaption>
+</figure>
+<p>You can also add icons to this button using <span class="jsx-3120878690"><code>startIcon</code></span> and <span class="jsx-3120878690"><code>endIcon</code></span> props; as the name suggests, <span class="jsx-3120878690"><code>startIcon</code></span> adds icon before the text of the button and <span class="jsx-3120878690"><code>endIcon</code></span> adds it after the text.</p>
+<p>But first, you need to import the icons into your <span class="jsx-3120878690"><code>App.js</code></span>. In this example, you will create login and logout buttons. You can search for your desired icons <a href="https://material-ui.com/components/material-icons/">here</a>.</p>
+<p>Import <span class="jsx-3120878690"><code>AccountCircle</code></span> icon from <span class="jsx-3120878690"><code>@material-ui/icons</code></span>.</p>
+<pre><code>1import LoginIcon from &#39;@material-ui/icons/AccountCircle&#39;;</code></pre>
+<p>JSX</p>
+<p>Now, pass this <span class="jsx-3120878690"><code>LoginIcon</code></span> to the <span class="jsx-3120878690"><code>startIcon</code></span> prop of the <span class="jsx-3120878690"><code>Button</code></span> component.</p>
+<pre><code>1&lt;Button startIcon={&lt;LoginIcon /&gt;} color=&quot;primary&quot; variant=&quot;contained&quot;&gt;
+2  Login
+3&lt;/Button&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this button will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/367f2073-b9d6-4e81-b150-f571ad83d9b1_Screenshot_2020-10-10_React_App(3).html" /><figcaption aria-hidden="true">login</figcaption>
+</figure>
+<p>You can also pass this icon to the <span class="jsx-3120878690"><code>endIcon</code></span> prop.</p>
+<pre><code>1&lt;Button endIcon={&lt;LoginIcon /&gt;} color=&quot;primary&quot; variant=&quot;contained&quot;&gt;
+2  Login
+3&lt;/Button&gt;;</code></pre>
+<p>JSX</p>
+<p>Here is how this button will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7495b7c2-608d-4209-bfe8-30630464f0f1_Screenshot_2020-10-10_React_App(4).html" /><figcaption aria-hidden="true">login_endIcon</figcaption>
+</figure>
+<p>Now for the logout button. Import the <span class="jsx-3120878690"><code>ExitToApp</code></span> icon from <span class="jsx-3120878690"><code>@material-ui/icons</code></span>.</p>
+<pre><code>1import LogoutIcon from &#39;@material-ui/icons/ExitToApp&#39;;</code></pre>
+<p>JSX</p>
+<p>For the logout button, pass <span class="jsx-3120878690"><code>secondary</code></span> to the <span class="jsx-3120878690"><code>color</code></span> prop, which will make the button red; that makes sense since it is a logout button.</p>
+<pre><code>1&lt;Button startIcon={&lt;LogoutIcon /&gt;} color=&quot;secondary&quot; variant=&quot;contained&quot;&gt;
+2  Logout
+3&lt;/Button&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this button will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/996ac3f4-c0da-4abf-9e0a-125f41502c96_Screenshot_2020-10-10_React_App(5).html" /><figcaption aria-hidden="true">logout</figcaption>
+</figure>
+<p>You can further group these buttons using the <span class="jsx-3120878690"><code>ButtonGroup</code></span> component. First, import the <span class="jsx-3120878690"><code>ButtonGroup</code></span> component to <span class="jsx-3120878690"><code>App.js</code></span>.</p>
+<pre><code>1import ButtonGroup from &quot;@material-ui/core/ButtonGroup&quot;;</code></pre>
+<p>JSX</p>
+<p>Using <span class="jsx-3120878690"><code>ButtonGroup</code></span>, remove repetitive props from the buttons and pass them to <span class="jsx-3120878690"><code>ButtonGroup</code></span> instead.</p>
+<p>For example, here <span class="jsx-3120878690"><code>varaint="contained"</code></span> is common to both the buttons, so you can pass it to <span class="jsx-3120878690"><code>ButtonGroup</code></span> instead and remove it from individual buttons.</p>
+<pre><code>1&lt;ButtonGroup variant=&quot;contained&quot;&gt;
+2  &lt;Button endIcon={&lt;LoginIcon /&gt;} color=&quot;primary&quot;&gt;
+3    Login
+4  &lt;/Button&gt;
+5  &lt;Button startIcon={&lt;LogoutIcon /&gt;} color=&quot;secondary&quot;&gt;
+6    Logout
+7  &lt;/Button&gt;
+8&lt;/ButtonGroup&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/86705ea8-1640-446c-9376-aaebfddaa5b4_Screenshot_2020-10-10_React_App(6).html" /><figcaption aria-hidden="true">buttongroup</figcaption>
+</figure>
+<p>You can also change the buttons’ orientation by passing the <span class="jsx-3120878690"><code>orientation</code></span> prop to the <span class="jsx-3120878690"><code>ButtonGroup</code></span> component.</p>
+<pre><code>1&lt;ButtonGroup variant=&quot;contained&quot; orientation=&quot;vertical&quot;&gt;
+2...
+3&lt;/ButtonGroup&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f9e44dfc-164d-4feb-8675-a9acc3bc10a4_Screenshot_2020-10-10_React_App(7).html" /><figcaption aria-hidden="true">vertical</figcaption>
+</figure>
+<p>You can explore all the examples discussed above <a href="../../stackblitz.com/edit/react-materialui-usee773.html?file=src/App.js">here</a>.</p>
+<p>There are many props besides the one discussed here available for every component. You can read more about them in the official docs.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, we discussed how to install and use Material UI in any React app. We also saw how to add icons and style components.</p>
+<p>Try to explore different components, themes, icons, and styles available in Material UI. Here are some additional resources that can be helpful.</p>
+<ul>
+<li><a href="https://material-ui.com/">Material UI Docs</a></li>
+<li><a href="https://material.io/">Material Design</a></li>
+<li><a href="styling-a-react-app-with-material-ui.html">Styling a React App with Material UI</a></li>
+</ul>
+<p>Happy coding!</p>
+<p>60</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

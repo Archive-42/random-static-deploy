@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>require-material-ui-by-webpack</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c7859b4f-a0e9-4f74-8559-62f43bdcabea.jpeg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Gaurav Singhal</p>
+<h1 id="require-material-ui-by-webpack">Require Material-UI by Webpack</h1>
+<h3 id="gaurav-singhal">Gaurav Singhal</h3>
+<ul>
+<li><p>Nov 5, 2020</p></li>
+<li><p>5 Min read</p></li>
+<li><p>2,951 Views</p></li>
+<li><p>Nov 5, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">5 Min</span> read</p></li>
+<li><p>2,951 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>8</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-installandgetstartedwithmaterialui" class="menu-link">Install and Get Started with Material-UI</a></li>
+<li><a href="#module-importmaterialuicomponentsusingwebpack" class="menu-link">Import Material-UI Components Using Webpack</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>React does not have its own UI elements/components, but you can use any third-party UI framework. These frameworks provides a bunch of components for the UI requirements.</p>
+<p>The Material-UI is one of the popular UI frameworks designed for React, and contains various ready-to-integrate components. Still, if you use a webpack, then it should be configured while using webpack configuration. This guide will demonstrate how to use Material-UI and its various components configured with webpack.</p>
+<h2 id="install-and-get-started-with-material-ui">Install and Get Started with Material-UI</h2>
+<p>The initial step to getting started with Material-UI is to install the package using the below command.</p>
+<pre><code>1npm install @material-ui/core</code></pre>
+<p>shell</p>
+<p>After completing the installation, the next step is to import the useful component from Material-UI and use it in any React component. This example uses the <span class="jsx-3120878690"><code>Breadcrumbs</code></span> functionality.</p>
+<pre><code>1import Typography from &#39;@material-ui/core/Typography&#39;;
+2import Breadcrumbs from &#39;@material-ui/core/Breadcrumbs&#39;;
+3import Link from &#39;@material-ui/core/Link&#39;;
+4
+5function App() {
+6  return (
+7    &lt;div className=&quot;App&quot;&gt;
+8      &lt;Breadcrumbs aria-label=&quot;breadcrumb&quot;&gt;
+9        &lt;Link color=&quot;inherit&quot; href=&quot;/&quot;&gt;
+10          Parent Page
+11      &lt;/Link&gt;
+12        &lt;Link color=&quot;inherit&quot; href=&quot;/&quot;&gt;
+13          Child Page
+14      &lt;/Link&gt;
+15        &lt;Typography color=&quot;textPrimary&quot;&gt;Current Page&lt;/Typography&gt;
+16      &lt;/Breadcrumbs&gt;
+17    &lt;/div&gt;
+18  );
+19}
+20
+21export default App;</code></pre>
+<p>jsx</p>
+<p>The above file imports the <span class="jsx-3120878690"><code>BreadCrumbs</code></span> component from <span class="jsx-3120878690"><code>material-ui</code></span> and uses it in the render function, and requires child components and props. The above approach is the simplest way to get started with Material-UI in no time. However, if you are using a custom webpack configuration, you need to follow some additional configuration.</p>
+<h2 id="import-material-ui-components-using-webpack">Import Material-UI Components Using Webpack</h2>
+<p>The webpack configuration depends on resolving modules based on the path from which it’s referenced. There are multiple ways to require Material-UI or other such libraries, and one of them is the <em>module resolving</em> approach along with <span class="jsx-3120878690"><code>eslint</code></span>.</p>
+<p>Using the <span class="jsx-3120878690"><code>eslint</code></span>, specify the module path or require it into the webpack config.</p>
+<pre><code>1{
+2  &quot;rules&quot;: {
+3    &quot;no-restricted-imports&quot;: [
+4      &quot;error&quot;,
+5      {
+6        &quot;patterns&quot;: [&quot;@material-ui/*/*/*&quot;]
+7      }
+8    ]
+9  }
+10}</code></pre>
+<p>js</p>
+<p>After configuring the above settings, any false import statement gets highlighted as a false import statement.</p>
+<p>If you want to try different plugins, other plugins are available to include the Material-UI and its respective packages:</p>
+<ul>
+<li><a href="https://github.com/ant-design/babel-plugin-import">babel-plugin-import</a></li>
+<li><a href="https://www.npmjs.com/package/babel-plugin-transform-imports">babel-plugin-transform-imports</a></li>
+</ul>
+<p>Before using any of the above libraries, you need to create the file <span class="jsx-3120878690"><code>.babelrc.js</code></span> in your React app’s root directory.</p>
+<p><strong>.babelrx.js</strong></p>
+<pre><code>1const plugin = [
+2  [
+3    &#39;babel-plugin-transform-imports&#39;,
+4    {
+5      &#39;@material-ui/core&#39;: {
+6        &#39;transform&#39;: &#39;@material-ui/core/${member}&#39;,
+7        &#39;preventFullImport&#39;: true
+8      }
+9    }
+10  ]
+11];
+12
+13module.exports = {plugin};</code></pre>
+<p>js</p>
+<p>The above example imports the <span class="jsx-3120878690"><code>@material-ui/core</code></span> library and provides transformation to import the package members such as <span class="jsx-3120878690"><code>Button</code></span>, <span class="jsx-3120878690"><code>Breadcrumbs</code></span>, etc.</p>
+<pre><code>1import Breadcrumbs from ‘@material-ui/core/Breadcrumbs’;</code></pre>
+<p>jsx</p>
+<p>The webpack transformed import helps you require the only valuable part of the module rather than importing the whole package and resolving the specific module.</p>
+<pre><code>1import { Breadcrumbs } from ‘@material-ui/core’;</code></pre>
+<p>jsx</p>
+<p>The above statement will import the complete library packages and will resolve <span class="jsx-3120878690"><code>Breadcrumbs</code></span> at the time of compilation, so the module resolver comes in handy when you want to decrease the overall bundling efforts.</p>
+<p>You can also use <span class="jsx-3120878690"><code>webpack.resolve</code></span> to resolve the given path’s exact match.</p>
+<pre><code>1module.exports = {
+2  //...
+3  resolve: {
+4    alias: {
+5      abcd$: path.resolve(__dirname, &#39;path/to/file_name.js&#39;)
+6    }
+7  }
+8};</code></pre>
+<p>js</p>
+<p>The above config will resolve the path to the normal path from where it gets imported.</p>
+<pre><code>1import file1 from &#39;folder1&#39;; // Path resolved
+2import file2 from &#39;folder2/file.js&#39;; // Not matched and resolved</code></pre>
+<p>jsx</p>
+<p>The <span class="jsx-3120878690"><code>file1</code></span> is an exported member of the <span class="jsx-3120878690"><code>folder1</code></span> location. Hence, it will get resolved based on the specified path resolver, and <span class="jsx-3120878690"><code>file2</code></span> will not get resolved because it’s trying to resolve against the specific path.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Material-UI is a great UI framework for React apps, and using it with the webpack allows you to minimize bundling size by implementing a custom import statement resolver.</p>
+<p>You can use module resolver libraries such as <span class="jsx-3120878690"><code>babel-plugin-transform-imports</code></span> to define the concrete standard to import any external libraries and resolve them efficiently. If you have any queries, feel free to ask at <a href="https://www.codealphabet.com/contact">Code Alphabet</a>.</p>
+<p>8</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

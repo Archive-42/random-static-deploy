@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-mock-angular-components-and-use-no-schema-errors</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/default.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Chris Parker</p>
+<h1 id="how-to-mock-angular-components-using-the-no-errors-schema">How to Mock Angular Components Using the No Errors Schema</h1>
+<h3 id="chris-parker">Chris Parker</h3>
+<ul>
+<li><p>Oct 7, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>3,944 Views</p></li>
+<li><p>Oct 7, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>3,944 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages Frameworks and Tools</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Front End Web Developer</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1=""> Angular</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-integrationtestsvsunittests" class="menu-link">Integration Tests vs. Unit Tests?</a></li>
+<li><a href="#module-mockingcomponents" class="menu-link">Mocking Components</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Mocking is a great idea for testing Angular apps because it makes maintenance easier and helps reduce future bugs. There are a few complex tools, such as XUnit, for mocking an Angular CLI project.</p>
+<p>You can execute the mocking methods described in this guide only if you use vanilla Jasmine + Angular Testbed. However, you may use Spectator (for less boilerplate with test setup) and <span class="jsx-3120878690"><code>ng-mocks</code></span> for mocking components, pipes, and directives.</p>
+<h2 id="integration-tests-vs.-unit-tests">Integration Tests vs. Unit Tests?</h2>
+<p>You can avoid mocking if you decide to create an integration test. But how can you decide whether to create a unit test or an integration test?</p>
+<p>Create a unit test when:</p>
+<p>• The unit for testing contains the logic required to be tested individually and ensures that a feature is working as expected.</p>
+<p>• You are testing integrations with third-party libraries.</p>
+<p>Create an integration test when:</p>
+<p>• Integration between components is required for creating a meaningful test.</p>
+<p>• You’re testing a component that comprises simple logic and needs to communicate with other components to create a valid test.</p>
+<p>• You need to verify integration with any kind of third party library.</p>
+<h2 id="mocking-components">Mocking Components</h2>
+<p>You can easily avoid mocking components by shallow testing, which uses <span class="jsx-3120878690"><code>schemas: [NO_ERRORS_SCHEMA]</code></span>, so the component under the test’s template is not instantiating component tags. If you have a test that needs to interact with another component, for instance, through a view child, you need to have a mock of the component if you don’t want to create an integration test.</p>
+<p>You will often find a testing module for easier mocking in unit tests of Angular libraries, such as the Angular Routing library. You should create something similar with components you want to create mocks for by creating a <span class="jsx-3120878690"><code>*my-component-name*.component.mock.ts</code></span> beside the component file. Thus, you will easily get a mock of the component. You can also have the mock implement the component to ensure that the mock and the component are exposing a similar method.</p>
+<p>Once you have created a mock file for a component, it will be easy to get a mock of the component when needed.</p>
+<p>An example of a component mock is given here:</p>
+<pre><code>1@Component({
+2  selector: &#39;app-todo-item&#39;,
+3  template: &#39;&#39;
+4})
+5export class MyToDoListComponentMock implements OnInit, MyToDoListComponent {
+6
+7  @Input() public myToDoList: MyToDoList;
+8  @Input() public viewOnlyTODO: boolean;
+9  @Output() public todoRemove = new EventEmitter();
+10  @Output() public todoModify = new EventEmitter();
+11
+12  constructor() { }
+13
+14  public ngOnInit() {
+15  }
+16
+17  public itemClick() {
+18  }
+19
+20  public removeClick() {
+21  }
+22
+23  public modifyClick() {
+24  }
+25}</code></pre>
+<p>javascript</p>
+<p>The mocks are then imported, as shown below:</p>
+<pre><code>1    TestBed.configureTestingModule({
+2
+3      declarations: [
+4     MyToDoListComponentMock,
+5     AddTodoListComponentMock
+6   ],
+7 ...</code></pre>
+<p>javascript</p>
+<p>You may wish that there were a simpler and less boilerplate way to create mocks for components in Angular, such as creating them with Jasmine spies. But you have to apply the component decorator to the class to make it a component.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>You saw how to mock dependencies in Angular tests in this guide. In comparison to other test libraries, such as XUnit, the Angular testing setup is very basic, but certain tricks can reduce the workload for creating mocks in unit tests. Unit tests should be the most crucial aspect of your test coverage, and they are the easiest to maintain.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

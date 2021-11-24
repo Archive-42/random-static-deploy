@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>programming-your-first-quantum-circuit-with-ibm-quantum-experience</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/2fc6e7af-c83f-44b3-a657-76ef40d36783.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Ara Medina</p>
+<h1 id="programming-your-first-quantum-circuit-with-ibm-quantum-experience">Programming Your First Quantum Circuit with IBM Quantum Experience</h1>
+<h3 id="ara-medina">Ara Medina</h3>
+<ul>
+<li><p>Nov 17, 2020</p></li>
+<li><p>10 Min read</p></li>
+<li><p>1,769 Views</p></li>
+<li><p>Nov 17, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">10 Min</span> read</p></li>
+<li><p>1,769 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages, Frameworks, and Tools</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Application Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Quantum Computing</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">General Quantum Computing Principles</span></p>
+<p>Introduction</p>
+<p>42</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-navigatetheenvironment" class="menu-link">Navigate the Environment</a></li>
+<li><a href="#module-createanotebook" class="menu-link">Create a Notebook</a></li>
+<li><a href="#module-buildthecircuit" class="menu-link">Build the Circuit</a></li>
+<li><a href="#module-executethecircuitonasimulator" class="menu-link">Execute the Circuit on a Simulator</a></li>
+<li><a href="#module-analyzethecircuit" class="menu-link">Analyze the Circuit</a></li>
+<li><a href="#module-addquantumgates" class="menu-link">Add Quantum Gates</a></li>
+<li><a href="#module-executiononarealquantumsystem" class="menu-link">Execution on a Real Quantum System</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>As quantum computing gains popularity, various cloud providers are making quantum computers available to the public on their platforms. This guide will focus on the IBM Quantum Experience platform, and show you how to program your first basic quantum circuit.</p>
+<p>You’ll get to execute that circuit, first using a quantum simulator running on a classical machine, and then on a real quantum device!</p>
+<h2 id="navigate-the-environment">Navigate the Environment</h2>
+<p>First, get acquainted with the platform by going to the <a href="https://quantum-computing.ibm.com/">homepage</a>. You’ll need to either create a new IBMid or sign in with a third-party provider like GitHub.</p>
+<p>Once you’ve logged in, navigate to the <strong>Quantum Lab</strong> using the left-side navigation bar. This is where your notebooks will live. A notebook refers to a Jupyter Notebook, which is an open source, interactive environment that runs Python code in the browser, and is especially useful for data analysis and equations. These notebook documents use .ipynb for their file extension.</p>
+<h2 id="create-a-notebook">Create a Notebook</h2>
+<p>Create a new notebook by using the <strong>New Notebook +</strong> button. You’ll see that some code is already written for you, in what is called a <em>cell</em>. You can run a cell by clicking on it so that it becomes highlighted, then clicking the <strong>Run</strong> button in the top navigation.</p>
+<p>This cell contains default imports that will help you get started. It’s important to notice that you are importing Qiskit, which is IBM’s open source quantum SDK that uses Python as its programming language. With Qiskit, you can program quantum circuits and run them on simulators or actual quantum systems.</p>
+<h2 id="build-the-circuit">Build the Circuit</h2>
+<p>Programs written in Qiskit have three main components: build, execute, and analyze. Let’s start with the build step.</p>
+<h3 id="initialize">Initialize</h3>
+<p>In the following code, you are initializing two <a href="https://sandramedina.me/blog/2020/7/24/characteristics-of-qubits-and-quantum-processing">qubits</a> and two classical bits, respectively, in a quantum circuit called <span class="jsx-3120878690"><code>qc</code></span>:</p>
+<pre><code>1# cell 2
+2qc = QuantumCircuit(
+3    2, # quantum register with 2 qubits
+4    2 # classical register with 2 classical bits
+5)</code></pre>
+<p>python</p>
+<p>Classical bits have two states: 0 and 1. Think of these states as tails and heads on a coin. When programming a classical computer, you are always turning the coin back and forth between these two states.</p>
+<p>Similarly qubits, <em>when measured</em>, also exist in the 0 or 1 state. However, before they are measured qubits can also be put into a state of probability called <em>superposition</em>. Imagine this as something like the state the coin is in while it’s in midair after a flip. Quantum researchers leverage this unique characteristic of qubits for tasks that require tremendous processing power.</p>
+<p>When these qubits and classical bits are initialized, their states are all 0.</p>
+<p>While you are <em>measuring</em> the qubits, you are <em>storing</em> the results in the classical bits. The first list in <span class="jsx-3120878690"><code>qc.measure()</code></span> represents the quantum register and the second list represents the classical register. You are mapping one to the other:</p>
+<pre><code>1# cell 2
+2qc.measure([0,1], [0,1])</code></pre>
+<p>python</p>
+<h2 id="execute-the-circuit-on-a-simulator">Execute the Circuit on a Simulator</h2>
+<p>You have not told your circuit to do anything interesting yet in the build step, but before you get back to that, you need to execute the circuit.</p>
+<h3 id="specify-a-simulator">Specify a Simulator</h3>
+<p>Run your circuit on a quantum simulator first. In this case, that means running optimized C++ code on a classical machine.</p>
+<p>Aer is the simulator component of Qiskit, the most frequently used simulator being <span class="jsx-3120878690"><code>QasmSimulator</code></span> because it allows for multi-shot executions:</p>
+<pre><code>1# cell 2
+2simulator = Aer.get_backend(&#39;qasm_simulator&#39;)</code></pre>
+<p>python</p>
+<h3 id="run-the-circuit">Run the Circuit</h3>
+<p>Execute the circuit and specify a number of <em>shots</em> (how many times you want to repeat the experiment):</p>
+<pre><code>1# cell 2
+2job = execute(qc, simulator, shots=1000)</code></pre>
+<p>python</p>
+<h3 id="capture-experiment-results">Capture Experiment Results</h3>
+<p>Now, store and format the results of the 1,000 shots that took place:</p>
+<pre><code>1# cell 2
+2result = job.result()
+3counts = result.get_counts(qc)
+4print(&quot;\nCount:&quot;,counts)</code></pre>
+<p>python</p>
+<p>All the code so far should be pasted, in order, into the second cell of your notebook. Once it’s all there, run the cell. Your output should read:</p>
+<pre><code>1Count: {&#39;00&#39;: 1000}</code></pre>
+<p>This means that out of the 1,000 shots you ran, 1,000 times you measured the state 00 (one 0 for each qubit).</p>
+<h2 id="analyze-the-circuit">Analyze the Circuit</h2>
+<p>One basic step of circuit analysis is simply drawing it. To do so, add this line to the end of your program in the second cell:</p>
+<pre><code>1# cell 2
+2qc.draw()</code></pre>
+<p>python</p>
+<p>When you run the cell block now, you should see an image printed: <embed src="../../pluralsight2.imgix.net/guides/230914b7-0c38-4c90-9562-86287591fed3_Screen_Shot_2020-11-03_at_4.29.58_PM.html" /></p>
+<h3 id="read-a-circuit-diagram">Read a Circuit Diagram</h3>
+<p>This is a circuit diagram, and you’ll see <em>circuit wires</em> for each of the two qubits (annotated with q0 and q1), as well as a double gray line representing the classical bits (annotated with c and a number representing the number of classical bits, in this case two).</p>
+<p>Reading from left to right, you’ll notice the gauge symbol. This represents the measurement operation. The double gray line coming off the symbol has an arrow pointing to the classical circuit wire and a 0 next to it, meaning you are storing the measurement of qubit q0 in classical bit 0. Moving right, you can see this repeated but for qubit q1 and classical bit 1.</p>
+<h3 id="plot-the-results">Plot the Results</h3>
+<p>Create a third cell, and add this line:</p>
+<pre><code>1# cell 3
+2plot_histogram(counts)</code></pre>
+<p>python</p>
+<p>Run this cell and you’ll see a graph of your experiment results printed: <embed src="../../pluralsight2.imgix.net/guides/875099f5-6c4c-4735-a932-ab2f65ef7af7_Screen_Shot_2020-11-03_at_4.27.31_PM.html" /></p>
+<p>You can see that in this graph, the probability of getting the result 00 is 1.00 or 100%.</p>
+<h2 id="add-quantum-gates">Add Quantum Gates</h2>
+<p>Now you can go back and actually manipulate the qubits using <a href="https://sandramedina.me/blog/2020/8/17/getting-familiar-with-quantum-gates-without-the-math-for-now">quantum gates</a>.</p>
+<p>Classical computers also use <a href="https://sandramedina.me/blog/2020/7/21/classical-binary-computation">classical gates</a>, but in modern programming you generally don’t see them because they are abstracted away. A simple classical gate is the <em>NOT</em> gate, which flips a bit from 0 to 1. Some classical gates have related quantum gates, and NOT (also called <em>X</em> or <em>Pauli-X</em> in the quantum world) is one of them.</p>
+<p>Before you call <span class="jsx-3120878690"><code>qc.measure()</code></span> in the second cell, add this line:</p>
+<pre><code>1# cell 2
+2qc.h(0)</code></pre>
+<p>python</p>
+<p>Here, <span class="jsx-3120878690"><code>h</code></span> stands for <em>Hadamard</em>, which is the name of the gate you are applying, in this case to qubit 0. For now, you can think of the Hadamard gate as putting the coin (a.k.a. qubit) into a state where it is spinning in midair after a flip. The probability of how the coin will land is 50/50. This even split in probability is called <em>uniform superposition</em>.</p>
+<p>Run the second cell again. Notice that there are now two results (00 and 01) and they were each measured about 50% of the time. One of the qubits was always measured in the 0 state, while the other was sometimes in the 0 state and sometimes in the 1 state.</p>
+<p>You might notice something odd here. You manipulated qubit 0, the first one in the register list. However in the printed results, it’s not the first qubit that is variable but the second. This is because when it comes to <em>strings</em>, Qiskit numbers the bits from <em>right to left</em>.</p>
+<h2 id="execution-on-a-real-quantum-system">Execution on a Real Quantum System</h2>
+<p>So far, in this guide, you’ve only used a simulator to run your circuit. Simulators work great when you are trying estimate how a small number of qubits will behave, and realistically, that is all you will be doing for a while. But what if you wanted to run your experiment on a <em>real</em> quantum device?</p>
+<p>For simplicity, start by removing the line with the Hadamard gate. This takes you back to the original experiment, where you saw the result 00 output 100% of the time.</p>
+<p>Then, replace the line where you currently define <span class="jsx-3120878690"><code>provider</code></span> in the first cell with the following:</p>
+<pre><code>1# cell 1
+2provider = IBMQ.get_provider(hub=&#39;ibm-q&#39;)
+3backends = provider.backends(simulator=False, operational=True)
+4backend = backends[0]
+5backend</code></pre>
+<p>python</p>
+<p>Run this first cell to see information printed out about the backend you are going to use.</p>
+<p>In the second cell, replace the line defining <span class="jsx-3120878690"><code>job</code></span> with the following:</p>
+<pre><code>1# cell 2
+2job = execute(qc, backend, shots=1000)</code></pre>
+<p>python</p>
+<p>Now run the second cell (this may take a few minutes).</p>
+<p>Do you notice anything interesting? If you view the count output, you’ll see that you no longer have just one state that was measured, you have four! Why does this happen?</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/d866d3a2-153f-47aa-8a9f-119be030d005_Screen_Shot_2020-11-03_at_6.16.34_PM.html" /><figcaption aria-hidden="true">Histogram of a quantum experiment run on a real quantum system</figcaption>
+</figure>
+<p>Quantum systems are extremely sensitive and are prone to interference from their environment, which has an impact on the state of the qubits. This is also why you should run the experiment many times—if you ran it just one time, your result could be very inaccurate.</p>
+<p>If you want to see information about the job you just ran, go to the <strong>Results</strong> tab in the left-side navigation.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Now that you’ve seen how a basic circuit works, you can start building on it with more qubits and more <a href="https://qiskit.org/textbook/ch-states/single-qubit-gates.html">quantum gates</a>. To learn more about quantum computing in general, check out my Pluralsight <a href="https://app.pluralsight.com/guides/introduction-to-quantum-computing-basics">guide</a> covering the basic principles, as well as the IBM <a href="https://qiskit.org/textbook/what-is-quantum.html">docs</a>.</p>
+<p>42</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

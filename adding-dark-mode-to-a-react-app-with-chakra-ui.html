@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>adding-dark-mode-to-a-react-app-with-chakra-ui</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/330d16ca-90a4-4029-89e6-bf3ff9456993.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Ashutosh Singh</p>
+<h1 id="adding-dark-mode-to-a-react-app-with-chakra-ui">Adding Dark Mode to a React App with Chakra UI</h1>
+<h3 id="ashutosh-singh">Ashutosh Singh</h3>
+<ul>
+<li><p>Nov 3, 2020</p></li>
+<li><p>6 Min read</p></li>
+<li><p>5,443 Views</p></li>
+<li><p>Nov 3, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">6 Min</span> read</p></li>
+<li><p>5,443 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>15</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-installationandsetup" class="menu-link">Installation and Setup</a></li>
+<li><a href="#module-creatingtogglecomponent" class="menu-link">Creating Toggle Component</a></li>
+<li><a href="#module-addingflexandbuttoncomponent" class="menu-link">Adding Flex and Button Component</a></li>
+<li><a href="#module-addingdarkmode" class="menu-link">Adding Dark Mode</a></li>
+<li><a href="#module-completecode" class="menu-link">Complete Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In this guide, you will learn how to add dark mode to your React app using <a href="https://chakra-ui.com/">Chakra UI</a>. Aside from being cool and trendy, dark mode also enhances accessibility for light-sensitive users.</p>
+<p>This guide assumes you already know how to install and configure Chakra UI in a React app. You can read <a href="installing-and-using-chakra-ui-with-react.html">Installing and Using Chakra UI with React</a> to get started.</p>
+<h2 id="installation-and-setup">Installation and Setup</h2>
+<p>In your project’s root directory, run the following command.</p>
+<pre><code>1npx create-react-app react-dark-mode
+2cd react-dark-mode</code></pre>
+<p>bash</p>
+<p>Install <span class="jsx-3120878690"><code>chakra-ui</code></span> by running the following command.</p>
+<pre><code>1npm install @chakra-ui/core @emotion/core @emotion/styled emotion-theming</code></pre>
+<p>bash</p>
+<p>Run the following command to start the development server.</p>
+<pre><code>1npm start</code></pre>
+<p>bash</p>
+<p>Import and add the <span class="jsx-3120878690"><code>ThemeProvider</code></span>, <span class="jsx-3120878690"><code>ColorModeProvider</code></span>, and <span class="jsx-3120878690"><code>CSSReset</code></span> components in your <span class="jsx-3120878690"><code>App.js</code></span>.</p>
+<p>Modify your <span class="jsx-3120878690"><code>App.js</code></span> like this.</p>
+<pre><code>1import {
+2  ThemeProvider,
+3  theme,
+4  ColorModeProvider,
+5  CSSReset,
+6} from &quot;@chakra-ui/core&quot;;
+7
+8function App() {
+9  return (
+10    &lt;ThemeProvider theme={theme}&gt;
+11      &lt;ColorModeProvider&gt;
+12        &lt;CSSReset /&gt;
+13      &lt;/ColorModeProvider&gt;
+14    &lt;/ThemeProvider&gt;
+15  );
+16}
+17
+18export default App;</code></pre>
+<p>JSX</p>
+<p>Head over to <span class="jsx-3120878690"><code>http://localhost:3000</code></span>; your app will be blank now.</p>
+<h2 id="creating-toggle-component">Creating Toggle Component</h2>
+<p>In this section, we will create a new component that will toggle the React app between dark and light modes.</p>
+<p>Create a new file named <span class="jsx-3120878690"><code>Toggle.js</code></span> in the <span class="jsx-3120878690"><code>src</code></span> directory. Run the following commands in your project’s root directory to create the file.</p>
+<pre><code>1cd src
+2touch Toggle.js</code></pre>
+<p>bash</p>
+<p>Add the following code to <span class="jsx-3120878690"><code>Toggle.js</code></span>; this will create an empty functional component in <span class="jsx-3120878690"><code>Toggle.js</code></span>.</p>
+<pre><code>1import React from &#39;react&#39;
+2
+3export default function Toggle() {
+4    return (
+5        &lt;div&gt;
+6            
+7        &lt;/div&gt;
+8    )
+9}</code></pre>
+<p>JSX</p>
+<p>Import and add this <span class="jsx-3120878690"><code>Toggle</code></span> component to <span class="jsx-3120878690"><code>App.js</code></span>.</p>
+<pre><code>1import {
+2  ThemeProvider,
+3  theme,
+4  ColorModeProvider,
+5  CSSReset,
+6} from &quot;@chakra-ui/core&quot;;
+7import Toggle from &quot;./Toggle&quot;;
+8
+9function App() {
+10  return (
+11    &lt;ThemeProvider theme={theme}&gt;
+12      &lt;ColorModeProvider&gt;
+13        &lt;CSSReset /&gt;
+14        &lt;Toggle /&gt;
+15      &lt;/ColorModeProvider&gt;
+16    &lt;/ThemeProvider&gt;
+17  );
+18}
+19
+20export default App;</code></pre>
+<p>JSX</p>
+<h2 id="adding-flex-and-button-component">Adding Flex and Button Component</h2>
+<p>Import <span class="jsx-3120878690"><code>Flex</code></span> from <span class="jsx-3120878690"><code>chakar-ui</code></span> and use it inside the <span class="jsx-3120878690"><code>Toggle</code></span> component.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { Flex } from &quot;@chakra-ui/core&quot;;
+3export default function Toggle() {
+4  return (
+5    &lt;div&gt;
+6      &lt;Flex
+7        align=&quot;center&quot;
+8        justify=&quot;center&quot;
+9        height=&quot;100vh&quot;
+10        direction=&quot;column&quot;
+11      &gt;&lt;/Flex&gt;
+12    &lt;/div&gt;
+13  );
+14}</code></pre>
+<p>JSX</p>
+<p>You will not see a change, but your app’s layout has been changed, which will be apparent after adding more components.</p>
+<p>Import the <span class="jsx-3120878690"><code>Button</code></span> component from <span class="jsx-3120878690"><code>chakra-ui</code></span>.</p>
+<pre><code>1import { Flex, Button } from &quot;@chakra-ui/core&quot;;</code></pre>
+<p>JSX</p>
+<p>Use this button component inside <span class="jsx-3120878690"><code>Flex</code></span>.</p>
+<pre><code>1&lt;Flex align=&quot;center&quot; justify=&quot;center&quot; height=&quot;100vh&quot; direction=&quot;column&quot;&gt;
+2  &lt;Button size=&quot;lg&quot;&gt;Toggle Mode&lt;/Button&gt;
+3&lt;/Flex&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how your app will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fa56e7e1-217c-45ad-983a-737c4b4449a1_Screenshot_2020-10-30_React_App.html" /><figcaption aria-hidden="true">button</figcaption>
+</figure>
+<p>This button does not do anything yet. In the next section, we will add the logic for changing modes.</p>
+<h2 id="adding-dark-mode">Adding Dark Mode</h2>
+<p>Import <span class="jsx-3120878690"><code>useColorMode</code></span> from <span class="jsx-3120878690"><code>chakra-ui</code></span>.</p>
+<pre><code>1import { Flex, Button, useColorMode } from &quot;@chakra-ui/core&quot;;</code></pre>
+<p>JSX</p>
+<p>Extract <span class="jsx-3120878690"><code>colorMode</code></span> and <span class="jsx-3120878690"><code>toggleColorMode</code></span> from <span class="jsx-3120878690"><code>useColorMode</code></span> using destructuring.</p>
+<pre><code>1const Toggle = () =&gt; {
+2  const { colorMode, toggleColorMode } = useColorMode();
+3
+4  return(
+5...
+6)
+7};</code></pre>
+<p>JSX</p>
+<p>Add the <span class="jsx-3120878690"><code>toggleColorMode()</code></span> function to the button’s <span class="jsx-3120878690"><code>onClick</code></span> event.</p>
+<pre><code>1&lt;Button size=&quot;lg&quot; onClick={() =&gt; toggleColorMode()}&gt;
+2  Toggle Mode
+3&lt;/Button&gt;</code></pre>
+<p>JSX</p>
+<p>And it’s done; you have created and added a dark mode toggle button to your React app.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/25ba0d31-6f56-4081-9c87-bf79cfd1f73b_ezgif.com-video-to-gif.html" /><figcaption aria-hidden="true">gif</figcaption>
+</figure>
+<p>You can use <span class="jsx-3120878690"><code>colorMode</code></span> to display the current mode. For example, instead of <span class="jsx-3120878690"><code>Toggle Mode</code></span> as the button text, you can use <span class="jsx-3120878690"><code>{colorMode}</code></span>, and it will show you the current mode.</p>
+<pre><code>1&lt;Button size=&quot;lg&quot; onClick={() =&gt; toggleColorMode()}&gt;
+2  {colorMode}
+3&lt;/Button&gt;</code></pre>
+<p>JSX</p>
+<p>Here is how this will look.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/48443d89-3bf2-4cd4-8d45-a7a58ff1da5a_ezgif.com-video-to-gif(1).html" /><figcaption aria-hidden="true">colorMode GIF</figcaption>
+</figure>
+<h2 id="complete-code">Complete Code</h2>
+<p>Here is the complete code for the example. You can also see a <a href="https://react-dark-mode-eight.vercel.app/">live example</a> and code on <a href="https://github.com/lelouchB/react-dark-mode">GitHub</a>.</p>
+<pre><code>1import React from &quot;react&quot;;
+2import { Button, Flex, useColorMode } from &quot;@chakra-ui/core&quot;;
+3
+4const Toggle = () =&gt; {
+5  const { colorMode, toggleColorMode } = useColorMode();
+6
+7  return (
+8    &lt;div&gt;
+9      &lt;Flex align=&quot;center&quot; justify=&quot;center&quot; height=&quot;100vh&quot; direction=&quot;column&quot;&gt;
+10        &lt;Button size=&quot;lg&quot; onClick={() =&gt; toggleColorMode()}&gt;
+11         Toggle Mode {colorMode}
+12        &lt;/Button&gt;
+13      &lt;/Flex&gt;
+14    &lt;/div&gt;
+15  );
+16};
+17
+18export default Toggle;</code></pre>
+<p>JSX</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, we discussed the step-by-step process of adding a dark mode toggle button to a React app. You can take this toggle button a step further by using icons for light and dark mode to change the theme.</p>
+<p>Here are some additional resources that can be helpful.</p>
+<ul>
+<li><a href="https://chakra-ui.com/">Chakra UI Docs</a></li>
+<li><a href="https://github.com/chakra-ui/chakra-ui">Chakra UI GitHub</a></li>
+</ul>
+<p>Happy coding!</p>
+<p>15</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

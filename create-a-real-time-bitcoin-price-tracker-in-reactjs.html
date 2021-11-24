@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>create-a-real-time-bitcoin-price-tracker-in-reactjs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/44cbcce0-5f4f-499e-8ec4-29fc953fc992.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Raphael Alampay</p>
+<h1 id="create-a-real-time-bitcoin-price-tracker-in-react">Create a Real-time Bitcoin Price Tracker in React</h1>
+<h3 id="raphael-alampay">Raphael Alampay</h3>
+<ul>
+<li><p>Sep 25, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>3,749 Views</p></li>
+<li><p>Sep 25, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>3,749 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>21</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-setup" class="menu-link">Setup</a></li>
+<li><a href="#module-fetchingfromanapi" class="menu-link">Fetching from an API</a></li>
+<li><a href="#module-callingfetchthefirsttime" class="menu-link">Calling fetch() the First Time</a></li>
+<li><a href="#module-overallcode" class="menu-link">Overall Code</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Suppose you want to create a standalone React.js component that interacts with an API that you can plug into your own app as a subcomponent. In this guide, we will take a look at building a Bitcoin (BTC) price tracker that is fully automated (no interaction with a user) and updates the price dynamically every three seconds from Coindesk’s public API. We will take a look at the requirements of calling an API, recursive calls after a time interval, and binding data to a component’s state for rendering.</p>
+<h2 id="setup">Setup</h2>
+<p>First, create a React.js component called <span class="jsx-3120878690"><code>BTCTracker</code></span> that makes use of the jQuery library (for API calls later on). The initial code is as follows:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class BTCTracker extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      price: 0.00,
+10      lastFetch: &quot;&quot;
+11    }
+12  }
+13
+14  render() {
+15    return (
+16      &lt;div&gt;
+17        &lt;h1&gt;
+18          BTC Price: {this.state.price}
+19          &lt;small&gt;
+20            {this.state.lastFetch}
+21          &lt;/small&gt;
+22        &lt;/h1&gt;
+23      &lt;/div&gt;
+24    );
+25  }
+26}</code></pre>
+<p>javascript</p>
+<p>This component maintains two state variables, namely:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>price</code></span>: The current price of Bitcoin against the US Dollar</li>
+<li><span class="jsx-3120878690"><code>lastFetch</code></span>: The timestamp when it was last fetched from the API</li>
+</ol>
+<p>These values are rendered in the component’s UI and should change with every call of <span class="jsx-3120878690"><code>setState()</code></span>.</p>
+<h2 id="fetching-from-an-api">Fetching from an API</h2>
+<p>Next, create a function to fetch data from a third-party API. In this case, you’ll be using <a href="https://api.coindesk.com/v1/bpi/currentprice.json">Coindesk’s public API</a>, which returns data in the following format:</p>
+<pre><code>1{
+2  time: {
+3    updated: &quot;Sep 16, 2020 18:43:00 UTC&quot;,
+4    updatedISO: &quot;2020-09-16T18:43:00+00:00&quot;,
+5    updateduk: &quot;Sep 16, 2020 at 19:43 BST&quot;
+6  },
+7  disclaimer: &quot;This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org&quot;,
+8  chartName: &quot;Bitcoin&quot;,
+9  bpi: {
+10    USD: {
+11      code: &quot;USD&quot;,
+12      symbol: &quot;&amp;#36;&quot;,
+13      rate: &quot;11,091.2212&quot;,
+14      description: &quot;United States Dollar&quot;,
+15      rate_float: 11091.2212
+16    },
+17    GBP: {
+18      code: &quot;GBP&quot;,
+19      symbol: &quot;&amp;pound;&quot;,
+20      rate: &quot;8,436.3156&quot;,
+21      description: &quot;British Pound Sterling&quot;,
+22      rate_float: 8436.3156
+23    },
+24    EUR: {
+25      code: &quot;EUR&quot;,
+26      symbol: &quot;&amp;euro;&quot;,
+27      rate: &quot;9,395.0075&quot;,
+28      description: &quot;Euro&quot;,
+29      rate_float: 9395.0075
+30    }
+31  }
+32}</code></pre>
+<p>json</p>
+<p>Assuming that the returned value can be stored in a variable called <span class="jsx-3120878690"><code>response</code></span>, you should set your state values to the following based on the response’s structure:</p>
+<ol type="1">
+<li><span class="jsx-3120878690"><code>price</code></span> to <span class="jsx-3120878690"><code>response.bpi.USD.rate</code></span> to get the USD rate</li>
+<li><span class="jsx-3120878690"><code>lastFetch</code></span> to <span class="jsx-3120878690"><code>response.time.updated</code></span> to get the last time this data was updated</li>
+</ol>
+<p>Create a function called <span class="jsx-3120878690"><code>fetch()</code></span> that contains the following:</p>
+<pre><code>1fetch() {
+2  var context = this;
+3
+4  window.setTimeout(function() {
+5    $.ajax({
+6      url: &quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;,
+7      dataType: &quot;json&quot;,
+8      method: &quot;GET&quot;,
+9      success: function(response) {
+10        context.setState({
+11          price: response.bpi.USD.rate,
+12          lastFetch: response.time.updated
+13        });
+14      }
+15    });
+16  }, 3000);
+17}</code></pre>
+<p>javascript</p>
+<p>The first thing you notice is that a <span class="jsx-3120878690"><code>context</code></span> variable is used to refer to <span class="jsx-3120878690"><code>this</code></span>. This is so your code can still refer to the component within the anonymous functions called in <span class="jsx-3120878690"><code>setTimeout</code></span> or the one assigned to <span class="jsx-3120878690"><code>success</code></span>. Remember that you still have to invoke <span class="jsx-3120878690"><code>setState</code></span>, which is a function of a React component to update the state values.</p>
+<p>Second, <span class="jsx-3120878690"><code>window.setTimeout(f, s)</code></span> is called where <span class="jsx-3120878690"><code>f</code></span> is a function and <span class="jsx-3120878690"><code>s</code></span> is the number of milliseconds until the function fires. In this case, <span class="jsx-3120878690"><code>f</code></span> is set to be a function that invokes the jQuery ajax call to the API and <span class="jsx-3120878690"><code>s</code></span> is set to 3000 (approximately three seconds).</p>
+<p>Third, the function passed to <span class="jsx-3120878690"><code>success</code></span> will accept <span class="jsx-3120878690"><code>response</code></span> in the form of JSON, which is the JSON data returned by the API. It is assumed to be JSON due to the <span class="jsx-3120878690"><code>dataType: "json"</code></span> that you pass to jQuery’s <span class="jsx-3120878690"><code>ajax()</code></span> call.</p>
+<p>The final thing the <span class="jsx-3120878690"><code>success</code></span> function will do is invoke <span class="jsx-3120878690"><code>fetch()</code></span> again as called by <span class="jsx-3120878690"><code>context</code></span>, which is a reference to the instance of the component. As a result, this rescursive strategy will call <span class="jsx-3120878690"><code>fetch()</code></span> every three seconds, thus automating the call to the external API.</p>
+<h2 id="calling-fetch-the-first-time">Calling fetch() the First Time</h2>
+<p>Since the user won’t invoke <span class="jsx-3120878690"><code>fetch()</code></span>, the method has to be called once <span class="jsx-3120878690"><code>BTCTracker</code></span> is loaded. You can use the lifecycle method <span class="jsx-3120878690"><code>componentDidMount()</code></span> to call any logic once a React.js component is loaded. In this case, <span class="jsx-3120878690"><code>BTCTracker</code></span>’s <span class="jsx-3120878690"><code>componentDidMount()</code></span> will simply call <span class="jsx-3120878690"><code>fetch()</code></span>:</p>
+<pre><code>1componentDidMount() {
+2  this.fetch();
+3}</code></pre>
+<p>javascript</p>
+<h2 id="overall-code">Overall Code</h2>
+<p>The final code of the component looks like the following:</p>
+<pre><code>1import React from &#39;react&#39;;
+2import $ from &#39;jquery&#39;;
+3
+4export default class BTCTracker extends React.Component {
+5  constructor(props) {
+6    super(props);
+7
+8    this.state = {
+9      price: 0.00,
+10      lastFetch: &quot;&quot;
+11    }
+12  }
+13
+14  componentDidMount() {
+15    this.fetch();
+16  }
+17
+18  fetch() {
+19    var context = this;
+20
+21    window.setTimeout(function() {
+22      $.ajax({
+23        url: &quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;,
+24        dataType: &quot;json&quot;,
+25        method: &quot;GET&quot;,
+26        success: function(response) {
+27          context.setState({
+28            price: response.bpi.USD.rate,
+29            lastFetch: response.time.updated
+30          });
+31        }
+32      });
+33    }, 3000);
+34  }
+35
+36  render() {
+37    return (
+38      &lt;div&gt;
+39        &lt;h1&gt;
+40          BTC Price: {this.state.price}
+41          &lt;small&gt;
+42            {this.state.lastFetch}
+43          &lt;/small&gt;
+44        &lt;/h1&gt;
+45      &lt;/div&gt;
+46    );
+47  }
+48}</code></pre>
+<p>javascript</p>
+<p>Try mounting the component on your page and start tracking Bitcoin’s rate!</p>
+<pre><code>1ReactDOM.render(
+2  &lt;BTCTracker /&gt;,
+3  document.getElementById(&quot;react-root&quot;)
+4);</code></pre>
+<p>javascript</p>
+<p>The price should refresh every three seconds.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>There might be cases where you need a React.js component to perform autonomously without any user interaction. This allows information to be dynamically rendered, allowing a richer user experience, and provides more options for information communicated back to the user. This is done through recursive calls within small time intervals. Since data is often taken from a third-party API, this approach allows the creation of more information-driven, self-serving components for your interface, such as dashboards with aggregated information from various sources.</p>
+<p>As an exercise, try to integrate the other attributes returned by Coindesk’s API, such as the rate of Bitcoin against the British Pound and the Euro.</p>
+<p>21</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

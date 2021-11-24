@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>explore-the-analytics-pane-in-power-bi</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="explore-the-analytics-pane-in-power-bi">Explore the Analytics Pane in Power BI</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Nov 20, 2020</p></li>
+<li><p>7 Min read</p></li>
+<li><p>694 Views</p></li>
+<li><p>Nov 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">7 Min</span> read</p></li>
+<li><p>694 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Microsoft Power BI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Business Intelligence</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingdata" class="menu-link">Loading Data</a></li>
+<li><a href="#module-addingvisualization" class="menu-link">Adding Visualization</a></li>
+<li><a href="#module-analyticspane" class="menu-link">Analytics Pane</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In visualization and BI, once you’ve got your report and visuals ready, you might still want to do some further analysis. For example, you might want to highlight a line indicating the minimum, mean or maximum values in the chart. In Power BI, the analytics pane captures all the analytical options available for any selected chart at your disposal. In this guide, you will learn how to explore and implement the analytics pane in Power BI desktop.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with a fictitious data set of bank loan disbursal across years. The data contains 3,000 observations and 17 variables. You can download the dataset <a href="https://github.com/decisionsciences300/Data/blob/main/BIData.xlsx">here</a>. The variables to be used in this guide are described below:</p>
+<ol type="1">
+<li><p><span class="jsx-3120878690"><code>Loan_disbursed</code></span>: Loan amount (in US dollars) disbursed by the bank.</p></li>
+<li><p><span class="jsx-3120878690"><code>Month</code></span>: Month of loan disbursal.</p></li>
+</ol>
+<p>Start by loading the data.</p>
+<h2 id="loading-data">Loading Data</h2>
+<p>Once you open the Power BI Desktop, the following output is displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/16c4cce1-5d1e-4c00-a4c0-34ee7dd58ccb_b1.html" /><figcaption aria-hidden="true">b1</figcaption>
+</figure>
+<p>Click on <strong>Get data</strong> option and select <strong>Excel</strong> from the options.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/044933be-9a35-4730-8384-d3c1eb1850cb_b2.html" /><figcaption aria-hidden="true">b2</figcaption>
+</figure>
+<p>Browse to the location of the file and select it. The name of the file is <strong>BIdata.xlsx</strong>, and the sheet you will load is <strong>BIData</strong> sheet. The preview of the data is shown, and once you are satisfied that you are loading the right file, click <strong>Load</strong>.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0b295b3c-a9d4-4d8b-aea7-d84d9c14f75b_b3.html" /><figcaption aria-hidden="true">b3</figcaption>
+</figure>
+<p>You have loaded the file, and you can save the dashboard. It is named <strong>PowerBI Visualization</strong>. The <strong>Fields</strong> pane contains the variables of the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/7e56fe50-9d78-42b5-b82e-7ee3cdf26a86_b4.html" /><figcaption aria-hidden="true">b4</figcaption>
+</figure>
+<h2 id="adding-visualization">Adding Visualization</h2>
+<p>To begin, you will need a chart, table, or matrix. You will create a <em>clustered column chart</em> in this guide. You can locate it in the <strong>Visualizations</strong> pane. Click on the chart and it will create a chart box in the canvas. Nothing is displayed because you haven’t yet added the required visualization arguments.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/12b36123-a15d-4d5f-8236-b968dd6c16f2_a1.html" /><figcaption aria-hidden="true">a1</figcaption>
+</figure>
+<p>You can resize the chart on the canvas. The next step is to fill the visualization arguments under the <strong>Fields</strong> option as shown below. Drag the variable <span class="jsx-3120878690"><code>Month</code></span> into the <strong>Axis</strong> field, and <span class="jsx-3120878690"><code>Loan_disbursed</code></span> in the <strong>Values</strong> field.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f3a8d737-34eb-4ef7-96e6-36cd64ec4b9d_a2.html" /><figcaption aria-hidden="true">a2</figcaption>
+</figure>
+<p>The output above shows the <strong>Loan_disbursed by Month</strong> chart. You can perform some formatting options. For example, you can turn on the <strong>Data labels</strong> option as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/33a3908c-0785-425c-81ec-f30b6bd4d8c4_a3.html" /><figcaption aria-hidden="true">a3</figcaption>
+</figure>
+<p>You can also increase the size of the labels. Set the <strong>Text size</strong> to 12.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/38b5ac30-194a-4820-bd5f-bae395d35e85_a4.html" /><figcaption aria-hidden="true">a4</figcaption>
+</figure>
+<p>The desired chart is created, and you can now explore the analytics pane.</p>
+<h2 id="analytics-pane">Analytics Pane</h2>
+<p>Once you have a chart selected, you might want to perform several analytical operations on it. To look at the options available, select the chart, and look at the <strong>Analytics</strong> option. This looks like a little magnifying glass.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fcf8a917-6eac-41ac-9a80-18858b85bc7f_a5.html" /><figcaption aria-hidden="true">a5</figcaption>
+</figure>
+<p>You can see all the analytical options available for this chart.</p>
+<h3 id="plotting-minimum-and-maximum-lines-to-the-chart.">Plotting Minimum and Maximum Lines to the Chart.</h3>
+<p>Click on the <strong>Min line</strong> option as shown above and click <strong>Add</strong>. You can change the <strong>Color</strong> and <strong>Transparency</strong> as shown below. This will create the resulting output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1d686d14-0884-4926-9283-cf2d856c74cb_a6.html" /><figcaption aria-hidden="true">a6</figcaption>
+</figure>
+<p>Repeat the process for <strong>Max line</strong> option and you can keep a different color for contrast.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ab45231d-6dd1-4152-a81a-23081bcf26f2_a7new.html" /><figcaption aria-hidden="true">a7n</figcaption>
+</figure>
+<p>The above output shows that the minimum and maximum values are $24 million and $49 million, respectively.</p>
+<h3 id="adding-average-line-to-the-chart">Adding Average Line to the Chart</h3>
+<p>The minimum and maximum lines are good, but often as analysts you want to look at the average line. Click on the <strong>Average line</strong> and click <strong>Add</strong>. You can change the <strong>Color</strong> and <strong>Transparency</strong> as shown below. This will create the resulting output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/8e7e0d7e-39a1-4e22-8872-dd2a40a71f6b_a8.html" /><figcaption aria-hidden="true">a8</figcaption>
+</figure>
+<p>The average monthly loan disbursed stands at $37 million.</p>
+<h3 id="adding-percentile-lines-to-the-chart">Adding Percentile Lines to the Chart</h3>
+<p>Outlier detection is an important task in business intelligence and machine learning. One of the common techniques of doing this is to cap the outlier points with certain percentile values. In this case, you will select the tenth and ninetieth percentile point for outlier detection.</p>
+<p>Start by removing the lines by clicking on the <strong>x</strong> sign. This is not necessary, but you can do it to understand the percentile line better.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bc04fc44-1a75-4fa4-a72e-bd4ab4d78b5a_a9.html" /><figcaption aria-hidden="true">a9</figcaption>
+</figure>
+<p>Once you have removed the lines, it will result in the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/1dbbf86c-6423-493b-9947-4a4fad13baaf_a10.html" /><figcaption aria-hidden="true">a10</figcaption>
+</figure>
+<p>Click on the <strong>Percentile line</strong> and click <strong>Add</strong>. Set the percentile value to 90.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cc2e5602-c637-411c-af88-b6139ba166cf_a11.html" /><figcaption aria-hidden="true">a11</figcaption>
+</figure>
+<p>The output shows that the line around the ninetieth percentile value is plotted in the chart.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/30cd54ed-a4e9-40dc-8114-b1341ba57a8a_a12.html" /><figcaption aria-hidden="true">a12</figcaption>
+</figure>
+<p>To add the tenth percentile value, click again on <strong>Add</strong> as shown above, and set the percentile value to 10.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a6b24e0f-4505-4401-9196-837a7e7aff19_a13.html" /><figcaption aria-hidden="true">a13</figcaption>
+</figure>
+<p>Now you have the chart with required percentile values. The values outside these two percentile lines will be considered outliers. In this case, the values $24 million, $48 million, and $49 million are outliers.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Analytical skills are one of the most sought after and in-demand skillsets of this decade. It is a sector agnostic skill and is used in every organization across sectors. Power BI Desktop provides many useful analytical features in the analytics pane, and this knowledge will help you strengthen your analytics and business intelligence capabilities.</p>
+<p>To learn more about building powerful visualization in Power BI desktop, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="https://app.pluralsight.com/guides/create-a-combination-chart-in-power-bi:-bar-chart-with-line">Create a Combination Chart in Power BI: Bar Chart with Line</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/table-and-matrix-visualization-in-power-bi">Table and Matrix Visualization in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/build-a-treemap-and-pie-chart-in-power-bi">Build a Tree Map and Pie Chart in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implement-clustering-in-powerbi">Implement Clustering in PowerBI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/filter-data-in-power-bi">Filter Data in Power BI</a></p></li>
+<li><p><a href="https://app.pluralsight.com/guides/implementing-hierarchical-axis-and-concatenation-in-power-bi">Implementing Hierarchical Axis and Concatenation in Power BI</a></p></li>
+</ol>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

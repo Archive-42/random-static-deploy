@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>descriptive-statistics-with-azure-machine-learning-studio</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/c83827e7-f216-4494-a2d3-5c84aa7047e8.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Deepika Singh</p>
+<h1 id="descriptive-statistics-with-azure-machine-learning-studio">Descriptive Statistics with Azure Machine Learning Studio</h1>
+<h3 id="deepika-singh">Deepika Singh</h3>
+<ul>
+<li><p>Oct 19, 2020</p></li>
+<li><p>11 Min read</p></li>
+<li><p>803 Views</p></li>
+<li><p>Oct 19, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">11 Min</span> read</p></li>
+<li><p>803 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Cloud Application Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Machine Learning and AI</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Azure Machine Learning Service</span></p>
+<p>Introduction</p>
+<p>4</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-data" class="menu-link">Data</a></li>
+<li><a href="#module-loadingthedata" class="menu-link">Loading the Data</a></li>
+<li><a href="#module-descriptivestatistics" class="menu-link">Descriptive Statistics</a></li>
+<li><a href="#module-editingmetadata" class="menu-link">Editing Metadata</a></li>
+<li><a href="#module-summarizingdata" class="menu-link">Summarizing Data</a></li>
+<li><a href="#module-basicstatisticswithrmodule" class="menu-link">Basic Statistics with R Module</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p><em>Descriptive statistics</em> is a field in statistics that describes data. It’s useful in data understanding and exploration, an extremely important task in machine learning. It’s also used to identify data errors and anomalies, an important data modelling task in machine learning. In this guide, you will learn how to generate descriptive statistics for the variables in data using Azure Machine Learning Studio.</p>
+<h2 id="data">Data</h2>
+<p>In this guide, you will work with the Adult Census Income Binary Classification dataset available in Azure Machine Learning Studio. This is a subset of the 1994 census database using working adults over the age of 16 with an adjusted income index of greater than 100. The data is used as a classification machine learning problem where the objective is to classify people using demographics to predict whether a person earns over US$50,000 a year. The data comes from the <a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a>.</p>
+<h2 id="loading-the-data">Loading the Data</h2>
+<p>Once you have logged into your Azure Machine Learning Studio account, click on the <strong>EXPERIMENTS</strong> option, listed on the left sidebar, followed by the <strong>NEW</strong> button. Next, click on the blank experiment and give the name <strong>Descriptive Statistics</strong> to the workspace. The following screen will be displayed.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/dc454961-70de-40ee-bb94-99e84d3cfe45_ds1.html" /><figcaption aria-hidden="true">ds1</figcaption>
+</figure>
+<p>Under the <strong>Saved Datasets</strong> option, drag <strong>Adult census Income Binary</strong> dataset into the workspace. Right-click and select the <strong>Visualize</strong> option to explore the data.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/db3e6b3a-97e8-4f90-b312-4e1a0074452c_ds2.html" /><figcaption aria-hidden="true">ds2</figcaption>
+</figure>
+<p>The data contains 32561 rows and 15 columns. Selecting any variable will display its Statistics as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e2c7b799-3bf6-446b-9ee1-3b4fe0540307_ds3.html" /><figcaption aria-hidden="true">ds3</figcaption>
+</figure>
+<p>The output above shows that <span class="jsx-3120878690"><code>Income</code></span> is a string feature type. This and similar features will be converted to categorical.</p>
+<h2 id="descriptive-statistics">Descriptive Statistics</h2>
+<p>The most popular measures used in descriptive statistics are highlighted below.</p>
+<ol type="1">
+<li>Mean: Mean represents the arithmetic average of the data. It is calculated by taking the sum of the values and dividing by the number of observations.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Median: The middle-most value of a variable in a data, when arranged in an ascending or descending order, is its median value.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>Mode: Mode represents the most frequent value of a variable in the data and is the only central tendency measure that can be used with both numeric and categorical variables.</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li><p>IQR: The Interquartile Range (IQR) is calculated as the difference between the third quartile (75th percentile) and the first quartile (25th percentile).</p></li>
+<li><p>Range: The difference between the maximum and minimum values of a variable gives its range.</p></li>
+</ol>
+<p>The following sections outline the implementation in Azure Machine Learning Studio.</p>
+<h2 id="editing-metadata">Editing Metadata</h2>
+<p>The first step is to convert the variables to the right data type. Search and drag the <strong>Edit Metadata</strong> module into the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5138f294-dfc6-4760-8bcb-6aef74867c30_ds6.html" /><figcaption aria-hidden="true">ds6</figcaption>
+</figure>
+<p>Click on the <strong>Launch column selector</strong> option in the righthand side of the workspace and select the string variables from the available columns.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/55f6c5a2-e2e4-446b-9d8d-5a167f402f45_ds7.html" /><figcaption aria-hidden="true">ds7</figcaption>
+</figure>
+<p>Once you have made selections, the selected columns will be displayed in the workspace. Next, from the dropdown options under <strong>Categorical</strong>, select the <strong>Make categorical</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/02af5e02-9bc4-4df2-b9e0-5e4ec6e96448_ds8.html" /><figcaption aria-hidden="true">ds8</figcaption>
+</figure>
+<p>Next, click on the <strong>Run</strong> button at the bottom of the workspace, and right-click to <strong>Visualize</strong> the output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/c827663d-cba6-4745-9ad5-c21f0fdfcadd_ds9.html" /><figcaption aria-hidden="true">ds9</figcaption>
+</figure>
+<p>The above output shows that the variable <span class="jsx-3120878690"><code>workclass</code></span> is converted to <strong>Categorical Feature</strong>.</p>
+<h2 id="summarizing-data">Summarizing Data</h2>
+<p>The <strong>Summarize Data</strong> module is used to generate descriptive statistics for the variables in the dataset. This module is in the <strong>Statistical Functions</strong> category. Search and drag it in the workspace.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ae6dcdb7-4f2e-4c03-814f-535cca8fa55e_ds10.html" /><figcaption aria-hidden="true">ds10</figcaption>
+</figure>
+<p>Run the experiment, and right-click to select <strong>Visualize</strong> to look at the output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/671094fc-c813-4a09-8503-54b67da15720_ds11.html" /><figcaption aria-hidden="true">ds11</figcaption>
+</figure>
+<p>The following output is generated. You can look at the range of statistical measures such as count, missing value count, mean, median, and mode of each variable.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/ba304cf5-63b5-4a5f-806a-4d10fab75296_ds12.html" /><figcaption aria-hidden="true">ds12</figcaption>
+</figure>
+<h3 id="interpretation-of-the-output">Interpretation of the Output</h3>
+<p>The variable <span class="jsx-3120878690"><code>age</code></span> has no missing values, and the mean, median, and mode values are 38.6 years, 37 years, and 36 years, respectively. The minimum age value is 17 years, while the maximum age is 90 years. This means the range of the <span class="jsx-3120878690"><code>age</code></span> variable is 73 years. The interquartile range can be calculated by computing the difference between the first quartile (28 years) and third quartile (48 years). This gives the IQR value of 20 years.</p>
+<p>In the same manner, the descriptive statistics of numerical variables can be computed. The above output also shows the presence of missing values. It is advisable to clean missing values and look again at the summary statistics.</p>
+<h3 id="missing-value-treatment">Missing Value Treatment</h3>
+<p>Search and drag the <strong>Clean Missing Data</strong> module into the experiment workspace. Connect the <strong>Edit Metadata</strong> module with the input port of the <strong>Clean Missing Data</strong> module.</p>
+<p>On the right-hand side of the workspace, there are different options to perform the <strong>Clean Missing Data</strong> operation. There are several methods of dealing with missing values. One of the advanced techniques is using the <em>MICE</em> technique. MICE stands for multivariate imputation by chained equations, and it works by creating multiple imputations (replacement values) for multivariate missing data. Under the <strong>Cleaning mode</strong> tab, select the <strong>Replace using MICE</strong> option. Keep all the other options as default.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/fc405c86-8fec-4d90-9b5f-265756d9e322_ds16.html" /><figcaption aria-hidden="true">ds16</figcaption>
+</figure>
+<p>Run the experiment, and once the experiment run is completed, right-click and select <strong>Visualize</strong>. The following output is generated.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/cf109fb7-227a-4921-a1d3-f88932d81227_ds17.html" /><figcaption aria-hidden="true">ds17</figcaption>
+</figure>
+<p>Now selecting any variable will display zero missing values. You will next summarize the data again with the <strong>Summarize Data</strong> module. Drag and connect the module with the <strong>Clean Missing Data</strong> module, and run the module.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bc356c23-4f96-416f-b9ea-1fa7b4928931_ds18.html" /><figcaption aria-hidden="true">ds18</figcaption>
+</figure>
+<p>Once the module run is completed, right-click and select the <strong>Visualize</strong> option.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/f7463a4c-c395-4965-b669-a07802b54a66_ds19.html" /><figcaption aria-hidden="true">ds19</figcaption>
+</figure>
+<p>The output below shows that the missing values have been treated.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/e332095e-101d-4527-886d-b3746e0c8dcd_ds20.html" /><figcaption aria-hidden="true">ds20</figcaption>
+</figure>
+<h2 id="basic-statistics-with-r-module">Basic Statistics with R Module</h2>
+<p>You can use the <span class="jsx-3120878690"><code>summary()</code></span> function in R to print the summary statistics of all the variables. The <strong>Execute R Script</strong> module can be used to execute R codes in the machine learning experiment.</p>
+<p>To begin, search and add the <strong>Execute R Script</strong> module to your experiment. Next, connect the data to the first input port (left-most) of the <strong>Execute R Script</strong> module.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/0630558b-4142-48a0-bae5-0cdcfe7750de_ds23.html" /><figcaption aria-hidden="true">ds23</figcaption>
+</figure>
+<p>Click on the module and under the <strong>Properties</strong> pane, you will see the option of writing your R script. Enter the code as shown below.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/12ffee4b-84f7-4d4e-b753-1e6055de43e9_ds24.html" /><figcaption aria-hidden="true">ds24</figcaption>
+</figure>
+<p>You can also copy the code from below.</p>
+<pre><code>1dataset1 = mam1.mapInputPort(1)
+2summary(dataset1)
+3mam1.mapOutputPort(“dataset1”); </code></pre>
+<p>{r}</p>
+<p>Run the experiment and on successful completion, right-click and select <strong>Visualize</strong> to look at the data again.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/2c913fd8-1c55-4979-8889-6212398fcc93_ds26.html" /><figcaption aria-hidden="true">ds26</figcaption>
+</figure>
+<p>Completing the above steps will generate the following output.</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/58af175f-27e3-486e-86ad-eb470ba18ec0_ds27.html" /><figcaption aria-hidden="true">ds27</figcaption>
+</figure>
+<p>The output above prints the summary statistics of both numerical and categorical variables. For example, the variable <span class="jsx-3120878690"><code>workclass</code></span> has the highest frequency of 24,482 for the label <strong>Private</strong>. This is the mode for the variable.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Descriptive statistics have multiple applications. They are used in descriptive analytics, business intelligence, and preparing MIS reports. They are also used in the six sigma quality assurance domain, where control limits are defined using summary statistical measures. Descriptive statistics are also used in exploratory data analysis, an important task of machine learning.</p>
+<p>In this guide, you learned how to generate descriptive statistics for a dataset in Azure Machine Learning Studio. You can learn more about this concept with guides on other technologies like <a href="interpreting-data-using-descriptive-statistics-python/index.html">Python</a> and <a href="interpreting-data-using-descriptive-statistics-r/index.html">R</a>.</p>
+<p>To learn more about data science and machine learning using Azure Machine Learning Studio, please refer to the following guides:</p>
+<ol type="1">
+<li><p><a href="getting-started-with-azure-ml-studio/index.html">Getting Started with Azure ML Studio</a></p></li>
+<li><p><a href="cleaning-data-with-azure-ml-studio/index.html">Cleaning Data with Azure ML Studio</a></p></li>
+<li><p><a href="data-preprocessing-with-azure-ml-studio/index.html">Data Preprocessing with Azure ML Studio</a></p></li>
+<li><p><a href="classification-modeling-with-azure-ml-studio/index.html">Classification Modeling with Azure ML Studio</a></p></li>
+<li><p><a href="regression-modeling-with-azure-ml-studio/index.html">Regression Modeling with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="model-validation-in-azure-ml-studio/index.html">Model Validation in Azure ML Studio</a></p></li>
+<li><p><a href="r-and-python-scripts-in-azure-ml-studio/index.html">R and Python Scripts in Azure ML Studio</a></p></li>
+<li><p><a href="advanced-machine-learning-modeling-in-azure-ml-studio/index.html">Advanced Machine Learning Modeling in Azure ML Studio</a></p></li>
+<li><p><a href="named-entity-recognition-with-azure-machine-learning-studio/index.html">Named Entity Recognition with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="text-analytics-with-azure-machine-learning-studio/index.html">Text Analytics with Azure Machine Learning Studio</a></p></li>
+<li><p><a href="extract-key-phrases-from-text-in-azure-machine-learning-studio/index.html">Extract Key Phrases from Text in Azure Machine Learning Studio</a></p></li>
+<li><p><a href="visualizing-text-data-using-word-cloud-in-azure-machine-learning-studio/index.html">Visualizing Text Data using Word Cloud in Azure Machine Learning Studio</a></p></li>
+</ol>
+<p>4</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

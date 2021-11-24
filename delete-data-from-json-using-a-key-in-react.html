@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>delete-data-from-json-using-a-key-in-react</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/d87e74d1-8e02-494a-9052-eb43fe48f3ac.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Pavneet Singh</p>
+<h1 id="delete-data-from-json-using-a-key-in-react">Delete Data from JSON Using a Key in React</h1>
+<h3 id="pavneet-singh">Pavneet Singh</h3>
+<ul>
+<li><p>Nov 9, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>10,541 Views</p></li>
+<li><p>Nov 9, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>10,541 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Front End Web Development</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Client-side Frameworks</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">React</span></p>
+<p>Introduction</p>
+<p>6</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-createajsonobject" class="menu-link">Create a JSON Object</a></li>
+<li><a href="#module-deletedatafromjsonstringusingregularexpressions" class="menu-link">Delete Data from JSON String using Regular Expressions</a></li>
+<li><a href="#module-deletedatafromjsonusingjavascriptobjects" class="menu-link">Delete Data from JSON using JavaScript Objects</a></li>
+<li><a href="#module-tips" class="menu-link">Tips</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>JavaScript Object Notation (JSON) is a widely popular key-value-based data format used to store and transfer data. JSON uses basic data types, such as string, boolean, int, decimal, object, arrays, and <span class="jsx-3120878690"><code>null</code></span>, to transfer data using predefined hierarchy and key-value pairs. Due to its concise structure and durability, JSON is supported by most development platforms, No-SQL databases, REST, GraphQL, and so on.</p>
+<p>A JSON string can easily be converted to a JavaScript object by using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a> API to directly access the data by using dot notation and keys. The inbuilt JSON support allows you to easily integrate REST APIs, data management, and dynamic component design in React. This guide explains the steps to parse JSON data and perform the delete operation on a nested JSON object using a key as input.</p>
+<h2 id="create-a-json-object">Create a JSON Object</h2>
+<p>A JSON object is represented using a pair of curly braces (<span class="jsx-3120878690"><code>{}</code></span>), and the key-value is separated by using a colon (<span class="jsx-3120878690"><code>:</code></span>). A JSON string can be created using a combination of single and double quotes:</p>
+<pre><code>1let jsonStr = &#39;{&quot;name&quot;:&quot;ABC&quot;, &quot;age&quot;:10 }&#39;;</code></pre>
+<p>JS</p>
+<blockquote>
+<p><strong>Note:</strong> JSON strings must only use double quotes to wrap key and values. Use single quotes to wrap a JSON string. The <span class="jsx-3120878690"><code>jsonStr</code></span> can be converted to a JavaScript object using the <span class="jsx-3120878690"><code>parse</code></span> method:</p>
+<pre><code>1let jsonObj = JSON.parse(jsonStr);
+2console.log(jsonObj.name, jsonObj.age); // ABC : 10</code></pre>
+<p>JS</p>
+<p>The <span class="jsx-3120878690"><code>eval</code></span> function is also used for parsing:</p>
+<pre><code>1let jsonObj = eval(&#39;(&#39;+jsonStr+&#39;)&#39;);</code></pre>
+<p>JS</p>
+<p>The use of <span class="jsx-3120878690"><code>eval</code></span> is not recommended because <span class="jsx-3120878690"><code>eval</code></span> can used as a loophole to run malformed instructions, though unlike the <span class="jsx-3120878690"><code>parse</code></span> function, <span class="jsx-3120878690"><code>eval</code></span> can transform a JSON string wrapped in double quotes:</p>
+<pre><code>1let jsonObj = eval(&#39;(&#39;+ &quot;{&#39;name&#39;:&#39;ABC&#39;, &#39;age&#39;:10 }&quot; +&#39;)&#39;);</code></pre>
+<p>JS</p>
+</blockquote>
+<h2 id="delete-data-from-json-string-using-regular-expressions">Delete Data from JSON String using Regular Expressions</h2>
+<p>Regular expressions can be used to find and replace a specific portion of a string using the <span class="jsx-3120878690"><code>replace</code></span> function. A pair of double quotes with key can be used to create a pattern:</p>
+<pre><code>1let jsonStr = &#39;{&quot;name&quot;:&quot;ABC&quot;, &quot;age&quot;:10 }&#39;;
+2let key = &quot;age&quot;;
+3let cleanJsonRegex = new RegExp(`,.*${key}.*[, ]`, &quot;g&quot;);
+4let nameJsonStr = jsonStr.replace(cleanJsonRegex, &quot;&quot;);
+5console.log(nameJsonStr); // &quot;{\&quot;name\&quot;:\&quot;ABC\&quot;}&quot;</code></pre>
+<p>JS</p>
+<p>The <span class="jsx-3120878690"><code>cleanJsonRegex</code></span> object defines the pattern to match a specific key-value pair, and it can be explained as:</p>
+<ul>
+<li><span class="jsx-3120878690"><code>,</code></span> match a comma character</li>
+<li><span class="jsx-3120878690"><code>.*</code></span> match zero or more character except for line terminators (<span class="jsx-3120878690"><code>\n</code></span>)</li>
+<li><span class="jsx-3120878690"><code>${key}.*</code></span> match the exact value of <span class="jsx-3120878690"><code>key</code></span> and zero or more characters after the <span class="jsx-3120878690"><code>key</code></span></li>
+<li><span class="jsx-3120878690"><code>[, ]</code></span> match either a comma or space</li>
+<li><span class="jsx-3120878690"><code>g</code></span> flag will match all possible matches in the <span class="jsx-3120878690"><code>jsonStr</code></span></li>
+</ul>
+<p>The <span class="jsx-3120878690"><code>replace</code></span> function finds and replaces the matched data from the <span class="jsx-3120878690"><code>jsonStr</code></span> and returns a resultant <span class="jsx-3120878690"><code>string</code></span>.</p>
+<blockquote>
+<p><strong>Note:</strong> Regular expressions are quite powerful but they are also fragile so always avoid the use of regular expressions with complex data.</p>
+</blockquote>
+<h2 id="delete-data-from-json-using-javascript-objects">Delete Data from JSON using JavaScript Objects</h2>
+<p>JavaScript objects offer a convenient way to access JSON data using dot notation and indexes for JSON arrays. Use the <span class="jsx-3120878690"><code>parse</code></span> function to convert a JSON string to JavaScript object:</p>
+<pre><code>1let jsonStr = &#39;{&quot;name&quot;:&quot;ABC&quot;, &quot;age&quot;:10, &quot;phone&quot;:[&quot;1234567890&quot;,&quot;1234567890&quot;]}&#39;;
+2let jsonObj = JSON.parse(jsonStr);</code></pre>
+<p>JS</p>
+<p>The <span class="jsx-3120878690"><code>delete</code></span> operator can be used to remove a key-value pair from a JavaScript object:</p>
+<pre><code>1delete jsonObj.name;
+2/* after delete
+3{
+4  age: 10,
+5  phone: [&quot;1234567890&quot;, &quot;1234567890&quot;]
+6}
+7*/</code></pre>
+<p>JS</p>
+<p>Alternately, string keys can be used to delete a key-value pair:</p>
+<pre><code>1let key = &#39;name&#39;;
+2delete jsonObj[key];</code></pre>
+<p>JS</p>
+<p>The advantage of using string keys with a JavaScript object is that it allows the use of keys having special characters:</p>
+<pre><code>1delete jsonObj[&#39;class.name&#39;];</code></pre>
+<p>JS</p>
+<h2 id="tips">Tips</h2>
+<p>• Use <span class="jsx-3120878690"><code>stringify</code></span> to covert a JavaScript object to a JSON string:</p>
+<pre><code>1let obj = {name: &quot;ABC&quot;};
+2console.log(JSON.stringify(obj));</code></pre>
+<p>JS</p>
+<p>• Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toJSON">toJSON</a> to get string representation of date objects. • For better support, use typescript for static type checking support.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>JSON and JavaScript objects have almost the same syntax and inbuilt browser support to parse JSON string as a JavaScript object. Always prefer the use of JavaScript objects to access JSON data. Happy coding!</p>
+<p>6</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

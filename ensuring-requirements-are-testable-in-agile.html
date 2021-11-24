@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ensuring-requirements-are-testable-in-agile</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/d2983462-0d78-4938-873c-ac1e9f6590c7.png" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Victor Dantas</p>
+<h1 id="ensuring-requirements-are-testable-in-agile">Ensuring Requirements are Testable in Agile</h1>
+<h3 id="victor-dantas">Victor Dantas</h3>
+<ul>
+<li><p>Nov 20, 2020</p></li>
+<li><p>10 Min read</p></li>
+<li><p>3,439 Views</p></li>
+<li><p>Nov 20, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">10 Min</span> read</p></li>
+<li><p>3,439 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Requirements and Estimation</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages, Frameworks, and Tools</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Practices</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Requirements and Estimation</span></p>
+<p>Introduction</p>
+<p>92</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-whatmakesarequirementtestable" class="menu-link">What Makes a Requirement Testable</a></li>
+<li><a href="#module-rewritinguserstoriesfortestability" class="menu-link">Rewriting User Stories for Testability</a></li>
+<li><a href="#module-acceptancetestdrivendevelopmentatdd" class="menu-link">Acceptance Test-Driven Development (ATDD)</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In Agile, requirements are defined as user stories, which are user-centric expressions of the system’s functionality. While having the advantage of bringing the user to the center of the conversation and, ultimately, leading to the development of a product that delivers real value to end users, this also creates room for vagueness and lack of clarity in the requirements.</p>
+<p>One of the responsibilities of a product owner (with the involvement of the development team) is breaking down and refining user stories to come up with concrete requirements that are stated in language that more closely matches the engineering effort that they entail. During this exercise, a specific set of acceptance criteria should also be defined for user stories (if not already explicitly defined by the user). One crucial aspect to succeed in doing this, however, is ensuring that all requirements are <em>testable</em>, i.e. they make it possible to develop tests that clearly determine whether acceptance criteria are met or not.</p>
+<p>This guide will demonstrate how to approach requirements in Agile to ensure they are testable.</p>
+<h2 id="what-makes-a-requirement-testable">What Makes a Requirement Testable</h2>
+<p>To be testable, a requirement must be clear, measurable, and complete. This guide is going to explore each of these qualities separately.</p>
+<h3 id="clear">Clear</h3>
+<p>A requirement should not contain ambiguity or vague terms that are open to interpretation. An example of an <em>unclear</em> requirement would be:</p>
+<p><em>The sign up form should be intuitive</em></p>
+<p>“Intuitive” is up to interpretation and ambiguous. Here’s a more clear statement for the same requirement:</p>
+<p><em>The sign up form should ask for a username, email address, and password with input hints in each field</em></p>
+<p>This defines much more clearly what exactly the sign up form will contain: not any less, and not any more of what was specified. This certainly goes in the direction of something intuitive (given the extra detail of adding input hints), but it makes it much more obvious when the requirements are indeed met.</p>
+<h3 id="measurable">Measurable</h3>
+<p>A requirement should be measurable in the sense of making every quantifiable feature have an actual quantity, or range, as opposing to containing qualifying terms such as “fast,” “many,” or “high.” An example of a non-measurable requirement would be:</p>
+<p><em>The API should respond quickly to requests even when a lot of users are accessing it</em></p>
+<p>Here’s a much better version:</p>
+<p><em>The API’s response time should be less than three seconds for the maximum expected number of concurrent users, and less than one second for a single user</em></p>
+<p>Now there is a clear measure on how <em>fast</em> it should be and what a <em>lot of</em> users means. The maximum expected number of concurrent users may not be known by the user or product owner, but it’s still a clearly defined quantity that can be measured and stipulated.</p>
+<h3 id="complete">Complete</h3>
+<p>A requirement should contain all relevant information on the core functionality that it captures, and it should not contain more than a single functionality. An example of non-completeness:</p>
+<p><em>The user profile should contain the user’s picture, and clicking on the picture will open the picture editing page where the user can replace the picture or reposition it.</em></p>
+<p>Firstly, this requirement could use some additional information, for example:</p>
+<p><em>The user profile should display the user’s stored thumbnail picture, and clicking anywhere on the picture will open the picture editing page where the user can replace the picture and/or reposition it.</em></p>
+<p>Now it looks more complete in terms of information, but it still doesn’t meet the completeness property, as it contains more than one function. It would be better to break it down into three separate requirements:</p>
+<ul>
+<li><em>The user profile should display the user’s stored thumbnail picture.</em></li>
+<li><em>Clicking anywhere on the picture will open the picture editing page.</em></li>
+<li><em>The picture editing page should allow the user to replace the picture and/or reposition it.</em></li>
+</ul>
+<p>Finally, it should be noted that a requirement should <em>not</em> include implementation details. It should be about the functionality, not the exact way it must be engineered (unless it strongly relates to the user experience and the overall perception of the functionality).</p>
+<h2 id="rewriting-user-stories-for-testability">Rewriting User Stories for Testability</h2>
+<p>User stories are typically worded as, “As a [persona], I want [feature] so that [goal],” and come most often from end users themselves and not the product team. This almost by definition means user stories are not entirely clear, measurable, or complete. However, the process described in a <a href="https://app.pluralsight.com/guides/refine-user-stories-and-acceptance-criteria-with-agile">previous guide on refining user stories and acceptance criteria</a>, when executed correctly, should lead to refined user stories that are rewritten for clarity, and broken down into more atomic units of work with a list of independently testable acceptance criteria.</p>
+<p>Therefore, the refining process should ensure that:</p>
+<ul>
+<li>User stories are short enough to fit into one sprint or backlog iteration, and to encompass a single functionality (a <em>complete</em> requirement).</li>
+<li>User stories or at least acceptance criteria are clear, i.e. any vague statements are re-captured as more precise ones.</li>
+<li>User stories or at least acceptance criteria are measurable, i.e. qualifiers such as “a lot,” “many,” “better,” or “easier” should be rewritten through the engineering lens of measuring and quantifying.</li>
+<li>User stories’ acceptance criteria determine the specific and <em>testable</em> conditions for acceptance by the user.</li>
+</ul>
+<p>The acceptance criteria are what determine the testability of the user story, and it is thus the most important component when it comes to ensuring that requirements are testable. Acceptance criteria can be more easily defined in a way that observes the principles of testable requirements when the user stories themselves do. However, there is some flexibility in how user stories capture requirements; after all, they’re <em>user stories</em>, even after refinement. That being said, one of the main objectives of the refining process is to elicit each user story’s acceptance criteria since it may not be immediately clear from the way it is stated what they are. And the acceptance criteria is really what incorporates testability into the stories. In addition, by enforcing a structure such as “Given [precondition], when I [do some action] then I expect [result],” an acceptance criterion facilitates clarity by imposing contextual information on pre-existing state/situation and the expected resulting state after some action is performed.</p>
+<p>Here’s one example from that previous guide of a <em>refined</em> user story:</p>
+<p><em>As a registered user, I want to log in with my username and password so that the system can authenticate me and I can trust it.</em></p>
+<p>With the following acceptance criterion:</p>
+<p><em>Given that I am a registered user and logged out, if I go to the log in page and enter my username and password and click on Log in, then the data associated to my user should be accessible.</em></p>
+<p>Note that, in addition to not containing some of the vague terms previously discussed, by establishing a very specific context and action, this acceptance criterion is clear and unambiguous. It’s also complete in its function specificity. A user story will typically have not a single but a few acceptance criteria, so there’s no need for one acceptance criterion to capture the requirement (user story) in its entirety from a testability perspective, which means there’s no completeness in that sense at a criterion level. But, it’s important that all acceptance criteria combined cover all the testable components of the user story, and that each criterion relates to one single functionality.</p>
+<p>Finally, consider the importance of having acceptance criteria that are <em>measurable</em>. Indeed, the above criterion is measurable (the action is well defined and the outcome is binary: either data is accessible, or it isn’t).</p>
+<h2 id="acceptance-test-driven-development-atdd">Acceptance Test-Driven Development (ATDD)</h2>
+<p>ATDD is a development methodology derived from the Test Driven Development (TDD) to fit the Agile model. The main goal of this methodology is to improve code quality by writing acceptance tests <em>before the coding activities start</em>. And, because acceptance criteria are more closely tied to end users’ expectations (as opposed to traditional developer-driven software tests), this helps guide the implementation of user stories in the direction of an acceptable end product from the start. In addition, during the effort of writing concrete test cases and scenarios based on the acceptance criteria, there might be questions that surface ambiguities and further need for clarification of the requirements.</p>
+<p>When code is written with the primary goal of passing the tests, which in turn are written with the primary goal of delivering the expected value to the end users (since they are <em>acceptance</em> criteria), Agile teams are more likely to succeed in delivering quality software.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In Agile, user stories can come with ambiguous, unclear statements about a system’s functionality or behavior. Refining user stories and determining acceptance criteria are two key team efforts that will lead to better requirements. However, it is still important to ensure they are testable, and for that we have established a few guiding principles, namely that requirements must be clear, measurable, and complete. By relating that to the Agile framework of user stories and acceptance criteria, we have a mental framework to help us ensure that we are able to test all requirements.</p>
+<p>Finally, the ATDD methodology is something to incorporate if you want to set your team up for success, as it brings testability to the beginning of the software development work, which should help you spot unclear requirements from the start and also influence the overall code quality in a positive way.</p>
+<p>To dig a little further, check out these related guides:</p>
+<ul>
+<li><a href="https://app.pluralsight.com/guides/refine-user-stories-and-acceptance-criteria-with-agile">Refining User Stories and Acceptance Criteria</a></li>
+<li><a href="https://app.pluralsight.com/guides/break-down-agile-user-stories-into-tasks-and-estimate-level-of-effort">Break Down Agile User Stories into Tasks and Estimate Level of Effort</a></li>
+<li><a href="https://app.pluralsight.com/guides/read-and-understand-architectural-design-specifications-with-agile">Read and Understand Architectural Design Specifications with Agile</a></li>
+</ul>
+<p>92</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

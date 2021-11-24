@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>interactive-queries-on-hadoop-with-presto</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/lg/98bf39ab-eb2b-4e8d-abe5-e48d02fba40c.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Miguel Saavedra</p>
+<h1 id="interactive-queries-on-hadoop-with-presto">Interactive Queries on Hadoop with Presto</h1>
+<h3 id="miguel-saavedra">Miguel Saavedra</h3>
+<ul>
+<li><p>Oct 5, 2020</p></li>
+<li><p>4 Min read</p></li>
+<li><p>1,639 Views</p></li>
+<li><p>Oct 5, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">4 Min</span> read</p></li>
+<li><p>1,639 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Presto</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Big Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p>Introduction</p>
+<p>11</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-prestoarchitecture" class="menu-link">Presto Architecture</a></li>
+<li><a href="#module-runningqueriesinpresto" class="menu-link">Running Queries in Presto</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Batch processing has been the go-to use case for big data for decades. However, recent years have seen the rise of and need for interactive queries and analytics. Both traditional and modern batch processing frameworks fail to address the need for low-latency queries through a familiar yet useful interface.</p>
+<p>Presto is an interactive in-memory query engine with an ANSI SQL interface. This guide will explore the benefits of the Presto query engine and how to run distributed in-memory queries in a Hadoop environment. The contents assume prior knowledge of the Hadoop ecosystem and the Hive Metastore.</p>
+<h2 id="presto-architecture">Presto Architecture</h2>
+<p><embed src="../../images2.imgbox.com/00/d0/ic7qWsPX_o.html" /> Source <a href="https://prestodb.io/docs/current/overview/concepts.html">Presto Documentation</a></p>
+<p>Like most big data frameworks, Presto has a coordinator server that manages worker nodes. The Presto Coordinator needs to connect to a data catalog, normally <span class="jsx-3120878690"><code>HCatalog</code></span>, built on top of the Hive Metastore. The Hive Metastore will contain the data schema information.</p>
+<p>The workers will take care of reading data to and from the data store, whether it’s S3, HDFS, or other compatible data stores. The operations are all executed in memory, and if the cluster runs out of memory then the job will fail by default with an <span class="jsx-3120878690"><code>Out of memory</code></span> error. The in-memory execution will allow the queries to run and return the results incredibly quickly. The general rule of thumb is that the whole dataset you are analyzing should fit into memory.</p>
+<h2 id="running-queries-in-presto">Running Queries in Presto</h2>
+<p>To run queries using presto, you first need to create a Hive table. The following snippets are taken from the SQL on MapReduce with Hive guide.</p>
+<h3 id="create-the-hive-table">Create the Hive Table</h3>
+<p>Start a <span class="jsx-3120878690"><code>beeline</code></span> session to connect to Hive.</p>
+<pre><code>1beeline -u jdbc:hive2://&lt;ip&gt;:10000/ -n &lt;username&gt;</code></pre>
+<p>bash</p>
+<p>Afterwards, create a table that points to your data source.</p>
+<pre><code>1CREATE EXTERNAL TABLE amazon_reviews_parquet(
+2  marketplace string, 
+3  customer_id string, 
+4  review_id string, 
+5  product_id string, 
+6  product_parent string, 
+7  product_title string, 
+8  star_rating int, 
+9  helpful_votes int, 
+10  total_votes int, 
+11  vine string, 
+12  verified_purchase string, 
+13  review_headline string, 
+14  review_body string, 
+15  review_date bigint, 
+16  year int)
+17PARTITIONED BY (product_category string)
+18ROW FORMAT SERDE 
+19  &#39;org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe&#39; 
+20STORED AS INPUTFORMAT 
+21  &#39;org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat&#39; 
+22OUTPUTFORMAT 
+23  &#39;org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat&#39;
+24LOCATION
+25  &#39;s3://amazon-reviews-pds/parquet/&#39;</code></pre>
+<p>sql</p>
+<p>Finally, have Hive automatically identify the data partitions.</p>
+<h3 id="start-and-interactive-presto-session">Start and Interactive Presto Session</h3>
+<p>To connect presto to Hive, all you need to do is run the CLI client and specify that you are using the <span class="jsx-3120878690"><code>hive</code></span> data catalog.</p>
+<pre><code>1presto-cli --catalog hive --schema default</code></pre>
+<p>bash</p>
+<p>Afterwards, you can run your query in an interactive shell prompt. To showcase the difference in query latency, this image shows the following query <span class="jsx-3120878690"><code>SELECT product_category, COUNT(*) FROM                                       amazon_reviews_parquet GROUP BY                                       product_category;</code></span> run on Hive. The query takes approximately 30 minutes to complete using the Hive execution engine.</p>
+<figure>
+<embed src="../../images2.imgbox.com/21/94/prtocVEk_o.html" /><figcaption aria-hidden="true">Hive Query</figcaption>
+</figure>
+<p>This is the benchmark for the query run on Presto. The query takes less than a minute to obtain the same results.</p>
+<figure>
+<embed src="../../images2.imgbox.com/72/bd/OgEksQ5g_o.html" /><figcaption aria-hidden="true">Presto Query</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Presto enables interactive querying on a large dataset. You write a query and get a result far more quickly than with other tools. However, speed comes at a price. The requirement that your entire data set fits in memory can make Presto an expensive tool to deploy. Most users therefore use Presto in managed service environments such as <a href="https://app.pluralsight.com/library/courses/introduction-amazon-athena">Amazon Athena</a> or <a href="https://www.starburstdata.com/presto-azure/">Azure Starburst Presto</a>.</p>
+<p>11</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>

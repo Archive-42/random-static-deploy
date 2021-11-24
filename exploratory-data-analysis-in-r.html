@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>exploratory-data-analysis-in-r</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span data-css-15b13by="" aria-hidden="false">Get started</span></p>
+<p><span data-css-15b13by="" aria-hidden="false">Log in</span></p>
+<p><img src="../../pluralsight.imgix.net/author/default.jpg" alt="Author avatar" class="jsx-3841407315" /></p>
+<p>Nishant Kumar Singh</p>
+<h1 id="exploratory-data-analysis-in-r-with-tidyverse">Exploratory Data Analysis in R with Tidyverse</h1>
+<h3 id="nishant-kumar-singh">Nishant Kumar Singh</h3>
+<ul>
+<li><p>Oct 29, 2020</p></li>
+<li><p>8 Min read</p></li>
+<li><p>3,110 Views</p></li>
+<li><p>Oct 29, 2020</p></li>
+<li><p><span class="jsx-3759398792" itemprop="timeRequired">8 Min</span> read</p></li>
+<li><p>3,110 Views</p></li>
+</ul>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Data Analytics</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">Languages and Libraries</span></p>
+<p><span class="jsx-3759398792"></span></p>
+<p><span data-css-1997kh1="">R</span></p>
+<p>Introduction</p>
+<p>5</p>
+<ul>
+<li><a href="#module-introduction" class="menu-link">Introduction</a></li>
+<li><a href="#module-askingquestions" class="menu-link">Asking Questions</a></li>
+<li><a href="#module-variation" class="menu-link">Variation</a></li>
+<li><a href="#module-covariation" class="menu-link">Covariation</a></li>
+<li><a href="#module-correlationplot" class="menu-link">Correlation plot</a></li>
+<li><a href="#module-conclusion" class="menu-link">Conclusion</a></li>
+<li><a href="#top" class="menu-link">Top</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Exploratory data analysis (EDA) is not based on a set set of rules or formulas. It is rather a state of curiosity about a dataset. In the beginning, you are free to explore in any direction that seems valid to you; later, your exploration will depend on the ideas that you can apply to the dataset.</p>
+<p>In short, exploratory data analysis is an iterative process that can be divided into three steps:</p>
+<ul>
+<li>Generate questions about your data</li>
+<li>Visualize, transform, and model your data for the answers</li>
+<li>Use your learning to generate more questions</li>
+</ul>
+<p>This guide will demonstrate how to use the Tidyverse library, which contains all the necessary tools to perform EDA.</p>
+<pre><code>1# installing and loading tidyverse
+2
+3install.packages(&quot;tidyverse&quot;)
+4library(tidyverse)</code></pre>
+<p>html</p>
+<h2 id="asking-questions">Asking Questions</h2>
+<p>To develop an understanding of your data, you have to ask questions. These questions need to focus your attention on a specific part of your dataset. Exploratory data analysis is a creative process, and it focuses on the quality of the questions rather than quantity. But asking a quality question is difficult when you are starting out.</p>
+<p>However, there are few questions that are always helpful to start the iteration of analysis:</p>
+<ul>
+<li>What type of variation occurs within the variables?</li>
+<li>What type of covariation occurs between the variables?</li>
+</ul>
+<p>The following sections will work on these two questions in a dataset.</p>
+<h2 id="variation">Variation</h2>
+<p>The change of values of a variable is called <em>variation</em>. In real life, there is always some variation because there is always some amount of error involved while measuring quantities. Even categorical variables show variation.</p>
+<p>The most efficient way to see the variation is through visualizing the variables’ distribution. It can also be called <em>univariate analysis</em>. How to visualize the distribution of a variable depends upon whether it is categorical or continuous.</p>
+<p>This guide will do EDA on the following dataset.</p>
+<pre><code>1# Loading data 
+2data(&quot;diamonds&quot;)
+3
+4# Getting the column names from the dataset
+5colnames(diamonds)
+6
+7  &quot;carat&quot;   &quot;cut&quot;     &quot;color&quot;   &quot;clarity&quot; &quot;depth&quot;   &quot;table&quot;   &quot;price&quot;   &quot;x&quot;       &quot;y&quot;       &quot;z&quot;  
+8
+9# lets look at the sample data 
+10head(diamonds)
+11
+12# A tibble: 6 x 10
+13  carat       cut       color   clarity  depth  table  price     x     y     z
+14  &lt;dbl&gt;    &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+151 0.23      Ideal         E      SI2         61.5    55    326  3.95  3.98  2.43
+162 0.21     Premium   E      SI1          59.8    61    326  3.89  3.84  2.31
+173 0.23    Good         E      VS1        56.9    65    327  4.05  4.07  2.31
+184 0.290 Premium    I      VS2        62.4    58    334  4.2   4.23  2.63
+195 0.31     Good        J      SI2         63.3    58    335  4.34  4.35  2.75
+206 0.24  Very Good J     VVS2       62.8    57    336  3.94  3.96  2.48  </code></pre>
+<p>html</p>
+<p>When you look at the data you can decide whether a variable is categorical or continuous. Look at the distribution for the variable <span class="jsx-3120878690"><code>cut</code></span> by plotting a bar chart.</p>
+<pre><code>1# Plotting a bar plot
+2
+3ggplot(data = diamonds) +
+4  geom_bar(mapping = aes(x = cut))
+5  </code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/5f727237-cd2f-4a97-8c54-d9a30de5776e_EDA1.html" /><figcaption aria-hidden="true">BarPlot</figcaption>
+</figure>
+<p>In the plot, you can see the distribution of the variable.</p>
+<p>Now, pick a continuous variable and plot its distribution.</p>
+<pre><code>1ggplot(data = diamonds) +
+2  geom_histogram(mapping = aes(x = carat), binwidth = 0.5)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bda89bd9-5102-4e11-97b0-a39a03c3670b_EDA2.html" /><figcaption aria-hidden="true">Histogram1</figcaption>
+</figure>
+<p>Here, the <span class="jsx-3120878690"><code>binwidth</code></span> argument is used to set the range of the values in each bar of the histogram, the lower the <span class="jsx-3120878690"><code>binwidth</code></span> the detailed information histogram will show.</p>
+<pre><code>1ggplot(data = diamonds) +
+2  geom_histogram(mapping = aes(x = carat), binwidth = 0.1)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/bedfee35-5315-4096-b9b7-c1927bc02661_EDA3.html" /><figcaption aria-hidden="true">Histogram2</figcaption>
+</figure>
+<p>Now that you have analyzed two variables separately, suppose you want to know <span class="jsx-3120878690"><code>carat</code></span> values are distributed for each <span class="jsx-3120878690"><code>cut</code></span>. You can find the answer again by plotting those two variables. The below example plots the data points in two different ways.</p>
+<pre><code>1# Creating facets
+2ggplot(data = diamonds) +
+3  geom_histogram(mapping = aes(x = carat), binwidth = 0.1)+
+4  facet_wrap(~cut)</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/377f0c42-46c3-4573-950b-c71741caec9b_EDA4.html" /><figcaption aria-hidden="true">facet</figcaption>
+</figure>
+<pre><code>1# Creating frequency polygon
+2ggplot(data = diamonds, mapping = aes(x = carat, colour = cut)) +
+3  geom_freqpoly(binwidth = 0.1)
+4  </code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/a2460405-bca0-4914-95db-99cca96ca1b4_EDA5.html" /><figcaption aria-hidden="true">FrequencyPolygon</figcaption>
+</figure>
+<p>You can decide which plot is better suited for analyzing the variables in your use case.</p>
+<p>These variations might prompt questions such as why there are unusual values in some variables, whether there is any pattern in the distribution, etc. How you investigate depends on your data and your thought process.</p>
+<h2 id="covariation">Covariation</h2>
+<p><em>Covariation</em> is when the values of two or more variables vary in a related manner. The best way to discover covariation is to visualize the relation.</p>
+<p>This example plots the relationship between two continuous variables: <span class="jsx-3120878690"><code>price</code></span> and <span class="jsx-3120878690"><code>carat</code></span>.</p>
+<pre><code>1# plotting a scatter plot 
+2
+3ggplot(data = diamonds) +
+4  geom_point(mapping = aes(x = carat, y = price))</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/06de1838-4b23-4f3d-bfc5-5a6957a66d85_EDA6.html" /><figcaption aria-hidden="true">ScatterPlot</figcaption>
+</figure>
+<p>As you can see in the plot, it is obvious that with an increase in carat the price also increases, but due to a large number of data points, it creates an issue of <em>overplot</em>. Overplot is when there are too many data points in a plot, making it very difficult to summarize the findings from the plot.</p>
+<p>Instead, try using a boxplot to divide the continuous data points into quartiles. In this example, you will take <span class="jsx-3120878690"><code>carat</code></span> as a categorical variable and create a bin of 0.1.</p>
+<pre><code>1# creating boxplot
+2
+3ggplot(data = diamonds, mapping = aes(x = carat, y = price)) + 
+4  geom_boxplot(mapping = aes(group = cut_width(carat, 0.1)))</code></pre>
+<p>html</p>
+<figure>
+<embed src="../../pluralsight2.imgix.net/guides/68e6699a-e35f-47b5-adb1-212a846e1835_EDA7.html" /><figcaption aria-hidden="true">Boxplot</figcaption>
+</figure>
+<p>Now you can see a few unusual data points. For instance, some one carat diamonds have an exceptionally high price, and the average price of three carat diamonds is relatively low. The data points above three carats can be ignored because they are not contributing much to the analysis. With this plot, you can find the relationship between two categorical variables or one categorical and one continuous variable.</p>
+<h2 id="correlation-plot">Correlation plot</h2>
+<p>Another way to find covariation between all continuous columns of the dataset is to create a <em>correlation plot.</em> This method is efficient and can filter out the columns for which you need to do a more detailed analysis.</p>
+<pre><code>1#install package
+2install.packages(&quot;corrplot&quot;)</code></pre>
+<p>html</p>
+<pre><code>1# loading corrplot
+2library(corrplot)
+3# Creating correlation matrix for diamonds dataset
+4D &lt;- cor(diamonds[,c(1, 5,6,7,8,9)])
+5coorplot(D, method = &quot;circle&quot;)</code></pre>
+<p>html</p>
+<p><embed src="../../pluralsight2.imgix.net/guides/fd6e459d-d16d-4c82-8b97-d4091ae3b176_EDA8.html" /> In this plot, the columns with high correlation will show the extreme values that range between 1 and -1; the values near 0 have low correlation.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Whenever there is unknown data handed to you for analysis or some other work you will need to do exploratory data analysis. To do an efficient exploratory data analysis in R you will, knowledge of a few packages will help you write code for handling data. The most important libraries are <a href="https://app.pluralsight.com/guides/explore-r-libraries:-ggplot2">ggplot2</a> and <a href="https://app.pluralsight.com/guides/data-manipulation-with-dplyr">dplyr</a>. You can get more information <a href="https://www.tidyverse.org/">here</a>.</p>
+<p>5</p>
+<p><a href="https://www.pluralsight.com/product/paths"><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></p>
+</body>
+</html>
